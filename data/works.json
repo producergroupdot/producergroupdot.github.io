@@ -10,6 +10,20 @@
     "producers": ["jisun", "miseon"],
     "year": "2025–26",
     "yearFrom": 2025,
+    "runs": [
+      {
+        "start": "2026-07-16",
+        "end": "2026-07-19",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "TINC", "en": "TINC" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "", "en": "" },
+        "link": "",
+        "time": "",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "", "en": "" }
+      }
+    ],
     "status": "ongoing",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -31,6 +45,20 @@
     "producers": ["jisun"],
     "year": "2026",
     "yearFrom": 2026,
+    "runs": [
+      {
+        "start": "2026-10-15",
+        "end": "2026-10-17",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "대학로예술극장 소극장", "en": "Daehakro Arts Theater Small Hall" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "", "en": "" },
+        "link": "",
+        "time": "",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "", "en": "" }
+      }
+    ],
     "status": "upcoming",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -52,6 +80,32 @@
     "producers": [],
     "year": "2026",
     "yearFrom": 2026,
+    "runs": [
+      {
+        "start": "2026-09-11",
+        "end": "2026-09-13",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "성수아트홀", "en": "Seongsu Art Hall" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "", "en": "" },
+        "link": "",
+        "time": "",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "", "en": "" }
+      },
+      {
+        "start": "2026-10-22",
+        "end": "2026-10-24",
+        "city": { "ko": "런던", "en": "London" },
+        "venue": { "ko": "The Coronet Theatre", "en": "The Coronet Theatre" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "", "en": "" },
+        "link": "",
+        "time": "",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "", "en": "" }
+      }
+    ],
     "status": "upcoming",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -73,6 +127,7 @@
     "producers": ["jisun", "bongmin"],
     "year": "2024",
     "yearFrom": 2024,
+    "runs": [],
     "status": "done",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -97,6 +152,7 @@
     "producers": ["jisun", "bongmin"],
     "year": "2023",
     "yearFrom": 2023,
+    "runs": [],
     "status": "done",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -118,6 +174,7 @@
     "producers": [],
     "year": "2022–",
     "yearFrom": 2022,
+    "runs": [],
     "status": "done",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -142,6 +199,20 @@
     "producers": ["bongmin"],
     "year": "2023–",
     "yearFrom": 2023,
+    "runs": [
+      {
+        "start": "2026-07-14",
+        "end": "2026-07-15",
+        "city": { "ko": "바르셀로나", "en": "Barcelona" },
+        "venue": { "ko": "Mercat de les Flors", "en": "Mercat de les Flors" },
+        "kind": { "ko": "투어", "en": "Tour" },
+        "dotRole": { "ko": "투어 기획·운영", "en": "Touring" },
+        "link": "",
+        "time": "",
+        "date": { "ko": "2026.7.14–15", "en": "14–15 July 2026" },
+        "note": { "ko": "투어 · 확인 필요", "en": "Tour" }
+      }
+    ],
     "status": "ongoing",
     "lead": { "ko": "물이 가득 찬 수조를 둘러싸고 앉아, 같은 물속에 몸을 담근다.", "en": "Seated around a tank of water, we find ourselves in the same water." },
     "body": {
@@ -168,6 +239,7 @@
     "producers": ["jisun", "miseon"],
     "year": "2025–26",
     "yearFrom": 2025,
+    "runs": [],
     "status": "ongoing",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -192,6 +264,7 @@
     "producers": ["jisun"],
     "year": "2024–",
     "yearFrom": 2024,
+    "runs": [],
     "status": "ongoing",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -213,6 +286,7 @@
     "producers": ["jisun"],
     "year": "2024–",
     "yearFrom": 2024,
+    "runs": [],
     "status": "ongoing",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -234,6 +308,7 @@
     "producers": ["jisun"],
     "year": "2020–22",
     "yearFrom": 2020,
+    "runs": [],
     "status": "done",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -255,6 +330,7 @@
     "producers": ["jisun"],
     "year": "2014–",
     "yearFrom": 2014,
+    "runs": [],
     "status": "ongoing",
     "lead": { "ko": "", "en": "" },
     "body": { "ko": "", "en": "" },
@@ -268,7 +344,7 @@
   {
     "id": "monthly-grandmothers",
     "type": "project",
-    "category": { "ko": "창작 프로그램", "en": "Creative Programme" },
+    "category": { "ko": "둥지230", "en": "Doongji 230" },
     "title": { "ko": "월간 할머니들", "en": "Monthly Grandmothers" },
     "subtitle": { "ko": "8월~12월 5명의 작가들의 릴레이 낭독", "en": "" },
     "artist": { "ko": "극단 호랑이기운", "en": "Tiger Energy Theatre Company" },
@@ -276,6 +352,68 @@
     "producers": ["miseon", "jisun"],
     "year": "2026",
     "yearFrom": 2026,
+    "runs": [
+      {
+        "start": "2026-08-31",
+        "end": "2026-08-31",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "둥지230", "en": "Doongji 230" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "link": "",
+        "time": "19:30",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "이오진 〈계엄〉", "en": "" }
+      },
+      {
+        "start": "2026-09-28",
+        "end": "2026-09-28",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "둥지230", "en": "Doongji 230" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "link": "",
+        "time": "19:30",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "안정민 〈미얄의 귀환〉", "en": "" }
+      },
+      {
+        "start": "2026-10-19",
+        "end": "2026-10-19",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "둥지230", "en": "Doongji 230" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "link": "",
+        "time": "19:30",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "나수민 〈사자밥〉", "en": "" }
+      },
+      {
+        "start": "2026-11-30",
+        "end": "2026-11-30",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "둥지230", "en": "Doongji 230" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "link": "",
+        "time": "19:30",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "김연재 〈사냥꾼의 밤〉", "en": "" }
+      },
+      {
+        "start": "2026-12-28",
+        "end": "2026-12-28",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "둥지230", "en": "Doongji 230" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "link": "",
+        "time": "19:30",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "신효진 〈복을 빕니다〉", "en": "" }
+      }
+    ],
     "status": "ongoing",
     "lead": { "ko": "우리는 무사히 할머니가 될 수 있을까.", "en": "" },
     "body": {

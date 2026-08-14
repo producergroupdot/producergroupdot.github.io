@@ -10,21 +10,17 @@ async function json(name) {
 }
 
 export async function loadSite() {
-  const [producers, works, runs, artists, nowOrder, about] = await Promise.all([
+  const [producers, works, artists, nowOrder, about] = await Promise.all([
     json('producers.json'),
     json('works.json'),
-    json('runs.json'),
     json('artists.json'),
     json('now.json'),
     json('about.json'),
   ]);
 
   const producerById = new Map(producers.map((p) => [p.id, p]));
-  const runsByWork = new Map();
-  for (const r of runs) {
-    if (!runsByWork.has(r.workId)) runsByWork.set(r.workId, []);
-    runsByWork.get(r.workId).push(r);
-  }
 
-  return { producers, works, runs, artists, nowOrder, about, producerById, runsByWork };
+  /* 회차는 works.json 의 각 작품 안에 있다(work.runs). 따로 읽지 않는다 —
+     같은 데이터를 두 곳에 두면 반드시 한쪽만 고쳐져 어긋난다. */
+  return { producers, works, artists, nowOrder, about, producerById };
 }

@@ -91,6 +91,7 @@ a.card:hover .t{ text-decoration-thickness:1.5px }
 .card .m .who i{ width:8px; height:8px }
 .card .m .yr{ font-family:var(--mono); font-size:11px; opacity:.5; margin-left:4px }
 
+.card .cities{ display:block; margin-top:4px; opacity:.5 }
 .card .note-flag{ margin-top:8px }
 
 .cards .empty{ padding:20px 0 40px; opacity:.6 }

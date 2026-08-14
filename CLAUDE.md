@@ -142,7 +142,13 @@ Explore more — 카드 4장
 
 ### Artists
 
-자유 배치 캔버스. 높이 72vh, 항목마다 좌표와 지름을 가집니다.
+자유 배치 캔버스. **높이 96vh**, 항목마다 지름을 가집니다.
+좌표는 새로고침할 때마다 무작위로 뽑습니다(`artists.json` 의 좌표는 실패했을 때의 되돌림용).
+
+겹침 검사는 원이 아니라 **'원 + 라벨'을 감싸는 사각형**으로 합니다 —
+폭 `max(지름, 236)`, 높이 `지름 + 92`, 사각형끼리 최소 34px(간격 28 + 플로팅 6).
+원만 검사하면 라벨이 옆 원을 덮습니다. 캔버스가 72vh 였을 때는 이 사각형이 들어갈
+자리가 없어 1440px 폭에서 열 번 중 아홉 번 고정 배치로 되돌아갔습니다.
 
 ```
 (2%, 0%, 26vh) (29%, 40%, 17vh) (70%, 3%, 23vh) (9%, 58%, 18vh) (65%, 54%, 15vh)
@@ -182,11 +188,24 @@ data/
                    year, status, lead{ko,en}, body{ko,en}, venue{ko,en}, produced{ko,en},
                    commission{ko,en}, keywords{ko,en}, cover, homeFeature
   credits.json     workId, order, role{ko,en}, name{ko,en}
-  runs.json        workId, from, to, date{ko,en}, venue{ko,en}, city{ko,en}, time, note{ko,en}
+  (runs.json 은 2026-08-15 works.json 안으로 옮겼습니다 — 아래 참고)
   links.json       workId, label{ko,en}, url
   photos.json      file, subject, photographer{ko,en}, year, consent, isCover, caption{ko,en}
   now.json         홈 Now에 나올 작업 ID 배열. 적힌 차례대로 그린다.
 ```
+
+**회차(runs)는 작품 안에 있습니다.** `works.json` 의 각 항목이 `runs` 배열을 가집니다.
+
+```
+runs[]  start, end, city{ko,en}, venue{ko,en}, kind{ko,en}, dotRole{ko,en}, link
+        (+ time, date{ko,en}, note{ko,en})
+kind    초연 · 재연 · 투어 · 공동제작
+dotRole 도트가 그 회차에서 맡은 역할. production 이 아니면 화면에 따로 적는다.
+```
+
+작품과 회차를 두 파일에 나눠 두면 한쪽만 고쳐져 반드시 어긋납니다.
+Works 카드의 연도 범위·도시, 정렬 기준(가장 최근 회차), 홈 Now 의 날짜·장소가
+모두 이 배열에서 나옵니다.
 
 **국문/영문은 처음부터 `{ko, en}` 객체로.** 나중에 붙이면 전부 다시 손대야 합니다.
 `en` 이 비면 `ko` 를 그대로 내보내는 헬퍼 하나(`t(field, lang)`)를 만들고 전부 그걸 거칩니다.

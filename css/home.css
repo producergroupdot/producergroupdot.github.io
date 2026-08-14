@@ -126,7 +126,7 @@
 .nowhead .all:hover{ opacity:1; text-decoration:underline; text-underline-offset:3px }
 
 /* 열을 고정폭으로 잡아 줄이 흐트러지지 않게 한다.
-   [제목 flex] [날짜 190] [장소 260] [색점 56] */
+   [유형 64] [제목 flex] [날짜 190] [장소 260] [색점 56] */
 #now-list .row{
   display:flex;
   align-items:center;
@@ -135,7 +135,18 @@
   padding:0;
   border-bottom:.5px solid var(--line);
 }
-#now-list .row.past{ opacity:.45 }
+/* 지난 것은 제목은 그대로 두고 날짜·장소·색점만 흐리게 한다.
+   줄 전체에 opacity 를 걸면 제목까지 흐려지고, 자식에서 되돌릴 수 없다. */
+#now-list .row.past .when { opacity:calc(.75 * .62) }
+#now-list .row.past .where{ opacity:calc(.5  * .62) }
+#now-list .row.past .who  { opacity:.62 }
+#now-list .row.past .kind { opacity:calc(.55 * .62) }
+
+#now-list .kind{
+  width:64px; flex:none;
+  font-family:var(--mono); font-size:11px;
+  opacity:.55;
+}
 
 #now-list .t{
   flex:1;
@@ -185,6 +196,7 @@
     gap:10px;
     padding:12px 0;
   }
+  #now-list .kind{ display:none }   /* 좁은 화면에서는 유형까지 넣을 자리가 없다 */
   #now-list .when{ width:auto; text-align:left }
   #now-list .who{ width:auto; margin-left:auto }
   #now-list .where{ flex:1 0 100%; width:auto }

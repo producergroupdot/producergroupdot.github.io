@@ -77,11 +77,15 @@ export function injectProducerColors(producers) {
     vars.push(
       `--p-${p.id}-field:${c.field}`,
       `--p-${p.id}-dot:${c.dot}`,
+      `--p-${p.id}-point:${c.point || c.field}`,
       `--p-${p.id}-on:${c.on}`
     );
     rules.push(
       `.field-${p.id}{background:var(--p-${p.id}-field);color:var(--p-${p.id}-on)}`,
-      `.dot-${p.id}{background:var(--p-${p.id}-dot)}`
+      /* 점은 면 색을 그대로 쓰고 얇은 잉크 테두리로 크림 위에서도 보이게 한다.
+         진한 짝(dot)은 글자에만 쓴다 — 점에 쓰면 노랑이 올리브로 보인다. */
+      `.dot-${p.id}{background:var(--p-${p.id}-point);box-shadow:inset 0 0 0 .5px var(--dot-edge)}`,
+      `.text-${p.id}{color:var(--p-${p.id}-dot)}`
     );
   }
   const style = document.createElement('style');

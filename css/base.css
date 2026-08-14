@@ -193,7 +193,10 @@ body.menu-open{ overflow:hidden }   /* 열려 있는 동안 뒤쪽 스크롤 잠
 /* ---------- 색점 ---------- */
 .who{ display:flex; gap:5px; align-items:center }
 .who i{ width:9px; height:9px; border-radius:50%; display:block; flex:none }
-.who i.none{ background:none; box-shadow:inset 0 0 0 1px var(--lavender) }
+/* 담당 미지정. 라벤더로 채운다 — 테두리만 그리면 파란 선처럼 보이고
+   채워진 네 개의 점 사이에서 혼자 비어 보인다.
+   라벤더는 구조색이라 사람으로 오해될 일이 없다. */
+.who i.none{ background:var(--lavender); box-shadow:inset 0 0 0 .5px var(--dot-edge) }
 
 /* ---------- 특수문자 SVG ---------- */
 .glyph-hex{

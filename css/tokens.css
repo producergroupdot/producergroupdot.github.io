@@ -28,6 +28,10 @@
   --line:   rgb(var(--fg-rgb) / .22);    /* 옅은 구분선 */
   --line-s: rgb(var(--fg-rgb) / .45);    /* 진한 구분선 */
 
+  /* 색점 테두리. 점은 면 색을 그대로 쓰므로 크림 위에서 밝은 색(노랑)이
+     번져 보이지 않도록 잉크 실선을 두른다. */
+  --dot-edge: rgb(29 29 27 / .32);
+
   /* --- 서체 --- */
   --sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
   --disp: "Archivo", "Pretendard Variable", Pretendard, sans-serif;   /* 제목·메뉴 600 */

@@ -1,7 +1,7 @@
 /* home.js — 홈 화면. data/*.json 을 읽어 모자이크와 Now 를 그린다. */
 
 import { loadSite } from './data.js';
-import { t } from './i18n.js';
+import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   logo, footer, pageUrl, link, photo, coverCandidates,
@@ -42,8 +42,8 @@ function joinDates(runs) {
   let lastYear = '';
   return runs
     .map((r) => {
-      const year = r.from.slice(0, 4);
-      let s = t(r.date) || fmtRange(r.from, r.to);
+      const year = r.start.slice(0, 4);
+      let s = t(r.date) || fmtRange(r.start, r.end);
       if (year === lastYear && s.startsWith(`${year}.`)) s = s.slice(year.length + 1);
       lastYear = year;
       return s;
@@ -194,7 +194,7 @@ function renderMosaic(site) {
 
 /** 오늘 기준 앞뒤 3개월 안에 회차가 있는 공연 + 진행 중인 프로젝트. */
 function nowItems(site, today = new Date()) {
-  const { works, runs, nowOrder } = site;
+  const { works, nowOrder } = site;
   const from = new Date(today);
   from.setMonth(from.getMonth() - 3);
   const to = new Date(today);
@@ -211,9 +211,10 @@ function nowItems(site, today = new Date()) {
     const w = workById.get(id);
     if (!w) return; // 없는 id 는 조용히 건너뛴다
 
-    const rs = runs
-      .filter((r) => r.workId === id && r.to >= A && r.from <= Z)
-      .sort((x, y) => (x.from < y.from ? -1 : 1));
+    /* 회차는 이제 작품 안에 있다(works.json 의 runs). */
+    const rs = (w.runs || [])
+      .filter((r) => r.end >= A && r.start <= Z)
+      .sort((x, y) => (x.start < y.start ? -1 : 1));
 
     if (rs.length) {
       /* 한 작업의 여러 회차는 한 줄로 합친다. 같은 작업이 줄만 늘리지 않게. */
@@ -231,13 +232,13 @@ function nowItems(site, today = new Date()) {
       items.push({
         work: w,
         order,
-        sort: rs[0].from,
+        sort: rs[0].start,
         when: joinDates(rs),
         where,
         /* 회차별 메모(낭독 작가·작품 같은 것)는 여러 줄이 되면 한 줄에 담기지 않는다.
            합쳐진 줄에서는 접고, 작업 상세의 일정에서 펼친다. */
         note: rs.length === 1 ? t(rs[0].note) : '',
-        past: rs.every((r) => r.to < T), // 모든 회차가 끝났을 때만 지난 것
+        past: rs.every((r) => r.end < T), // 모든 회차가 끝났을 때만 지난 것
       });
     } else if (w.status === 'ongoing') {
       /* 회차가 따로 없는 진행 중 프로젝트는 한 줄로. */
@@ -254,11 +255,22 @@ function nowItems(site, today = new Date()) {
 /* 제목 · 날짜 · 장소 · 색점 순. 색점은 오른쪽 끝 고정폭 칸에 조용히 놓는다 —
    맨 앞에 두면 제목보다 먼저 눈에 들어온다.
    지난 것은 배지 대신 줄 전체를 흐리게 해서 구분한다. */
+/** 공연 / 프로젝트. 영문 화면에서는 Production / Project. */
+const typeName = (w) =>
+  lang.current === 'en'
+    ? w.type === 'performance'
+      ? 'Production'
+      : 'Project'
+    : w.type === 'performance'
+      ? '공연'
+      : '프로젝트';
+
 function nowRow(it, producerById) {
   return link(
     pageUrl('work', it.work.id),
     `.row${it.past ? '.past' : ''}`,
     null,
+    el('span.kind.meta', { text: typeName(it.work) }),
     /* 제목은 한 덩어리로 감싼다. .t 가 flex 라서 감싸지 않으면
        SVG 육각형이 각각 별개의 flex 항목이 되어 제목이 벌어진다. */
     el(

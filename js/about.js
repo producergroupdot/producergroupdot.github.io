@@ -3,7 +3,7 @@
 import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
-  el, injectProducerColors, topBar, footer, pageUrl, link, photo, faceCandidates,
+  el, injectProducerColors, topBar, footer, pageUrl, link, photo, faceCandidates, shuffle,
 } from './ui.js';
 
 /* 사진은 파일만 올리면 뜬다 — JSON 을 고칠 필요가 없다.
@@ -44,19 +44,31 @@ function faceBlob(p) {
 
 function people(producers) {
   const row = el('div.people');
-  for (const p of producers) {
+
+  /* 네 칸의 차례는 새로고침할 때마다 섞는다 — 홈 모자이크와 같은 방식.
+     넷 사이에 앞뒤가 없다는 것이 도트의 수평성이다. */
+  for (const p of shuffle(producers)) {
+    /* 칸 자체는 링크가 아니다. 안에 이름 링크와 mailto 링크 둘이 들어가는데
+       <a> 안에 <a> 를 넣을 수 없기 때문. */
     row.append(
-      link(
-        pageUrl('producer', p.id),
-        `.person.field-${p.id}${p.color.dark ? '.on-dark' : ''}`,
-        { 'aria-label': t(p.name) },
+      el(
+        `div.person.field-${p.id}${p.color.dark ? '.on-dark' : ''}`,
+        null,
         faceBlob(p),
         el('span.meta', { text: t(p.role, 'en') || 'Producer' }),
         el(
-          'span',
+          'span.person-b',
           null,
-          el('h3', { text: t(p.name, 'en') }),
-          el('span.kr', { text: t(p.name, 'ko') })
+          link(
+            pageUrl('producer', p.id),
+            '.person-name',
+            { 'aria-label': t(p.name) },
+            el('h3', { text: t(p.name, 'en') }),
+            el('span.kr', { text: t(p.name, 'ko') })
+          ),
+          p.dotEmail
+            ? el('a.person-mail', { href: `mailto:${p.dotEmail}`, text: p.dotEmail })
+            : null
         )
       )
     );

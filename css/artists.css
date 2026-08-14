@@ -6,8 +6,11 @@
 
 #artists-list{
   position:relative;
-  height:72vh;
-  min-height:540px;
+  /* 원 + 라벨 사각형이 서로 34px 떨어져야 하므로 72vh 로는 자리가 안 난다.
+     1440px 폭에서 무작위 배치가 열 번 중 아홉 번 실패해 고정 배치로 되돌아갔다.
+     96vh 로 키우니 열 번 중 아홉 번 성공한다. */
+  height:96vh;
+  min-height:660px;
   /* 아래 여백이 넉넉해야 한다 — 가장 아래 원의 라벨이 캔버스 밖으로 최대 43px 내려온다.
      여백이 좁으면 그 글자가 푸터에 닿는다. */
   margin:0 var(--pad) 80px;
@@ -23,6 +26,12 @@
   top:var(--y);
   width:var(--d);
   display:block;
+  /* 아주 느린 위아래 흔들림. 주기와 시작 시점은 JS 가 원마다 다르게 준다. */
+  animation:float var(--float-dur, 11s) ease-in-out var(--float-delay, 0s) infinite;
+}
+@keyframes float{
+  0%, 100%{ transform:translateY(-6px) }
+  50%     { transform:translateY(6px) }
 }
 
 .face{
@@ -63,8 +72,14 @@
   position:relative;
   z-index:2;
   padding-top:14px;
-  min-width:236px;
   display:block;
+
+  /* 라벨이 원보다 넓으면 좌우로 균등하게 넘친다.
+     겹침 검사가 쓰는 사각형(폭 = max(지름, 236))과 화면이 어긋나지 않게
+     한쪽으로만 밀리지 않도록 가운데를 맞춘다. */
+  --label-w: max(var(--d), 236px);
+  width:var(--label-w);
+  margin-left:calc((var(--d) - var(--label-w)) / 2);
 }
 .artist .info .who{ margin-bottom:7px }
 .artist h3{ font-size:20px; line-height:1.25; letter-spacing:-.01em }
@@ -97,6 +112,7 @@ a.artist:hover h3{
   #artists-list .artist{
     position:static;
     width:auto;
+    animation:none;          /* 세로 목록에서는 흔들리지 않는다 */
     display:grid;
     grid-template-columns:100px 1fr;
     column-gap:18px;
@@ -106,7 +122,7 @@ a.artist:hover h3{
   }
   .artist .face{ width:100px; height:100px }
   .artist .face b{ font-size:22px }
-  .artist .info{ padding-top:0; min-width:0 }
+  .artist .info{ padding-top:0; width:auto; margin-left:0 }
   .artist h3{ font-size:18px }
 }
 

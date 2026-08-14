@@ -7,6 +7,7 @@
       "dark": true,
       "field": "#2A5982",
       "dot": "#004575",
+      "point": "#2A5982",
       "on": "var(--cream)"
     },
     "role": { "ko": "프로듀서", "en": "Producer" },
@@ -18,7 +19,8 @@
       "img/producers/heejin-01.jpg",
       "img/producers/heejin-02.jpg",
       "img/producers/heejin-03.jpg"
-    ]
+    ],
+    "dotEmail": "producergroup.88@gmail.com"
   },
   {
     "id": "bongmin",
@@ -28,6 +30,7 @@
       "dark": true,
       "field": "#245E55",
       "dot": "#014E45",
+      "point": "#245E55",
       "on": "var(--cream)"
     },
     "role": { "ko": "프로듀서", "en": "Producer" },
@@ -40,7 +43,8 @@
       "img/producers/bongmin-02.jpg",
       "img/producers/bongmin-03.jpg",
       "img/producers/bongmin-04.jpg"
-    ]
+    ],
+    "dotEmail": "producergroup.17@gmail.com"
   },
   {
     "id": "jisun",
@@ -50,6 +54,7 @@
       "dark": false,
       "field": "#EAC119",
       "dot": "#776101",
+      "point": "#E0B60F",
       "on": "var(--ink)"
     },
     "role": { "ko": "프로듀서", "en": "Producer" },
@@ -99,7 +104,8 @@
       "img/producers/jisun-01.jpg",
       "img/producers/jisun-05.jpg",
       "img/producers/jisun-07.jpg"
-    ]
+    ],
+    "dotEmail": "producergroup.44@gmail.com"
   },
   {
     "id": "miseon",
@@ -109,6 +115,7 @@
       "dark": true,
       "field": "#C63F3E",
       "dot": "#9E0117",
+      "point": "#C63F3E",
       "on": "var(--cream-hi)"
     },
     "role": { "ko": "프로듀서", "en": "Producer" },
@@ -120,6 +127,7 @@
       "img/producers/miseon-01.jpg",
       "img/producers/miseon-02.jpg",
       "img/producers/miseon-03.jpg"
-    ]
+    ],
+    "dotEmail": "producergroup.14@gmail.com"
   }
 ]
