@@ -23,7 +23,7 @@
     "pos": {
       "x": "2%",
       "y": "0%",
-      "d": "clamp(150px, 22vh, 240px)"
+      "d": "clamp(150px, 20vh, 190px)"
     },
     "photoCredit": { "ko": "박지선", "en": "Park Jisun" }
   },
@@ -39,7 +39,7 @@
     "pos": {
       "x": "29%",
       "y": "40%",
-      "d": "clamp(105px, 15vh, 165px)"
+      "d": "clamp(160px, 22vh, 210px)"
     },
     "photoTemp": true,
     "photoCredit": { "ko": "박지선", "en": "Park Jisun" }
@@ -64,7 +64,7 @@
     "pos": {
       "x": "70%",
       "y": "3%",
-      "d": "clamp(130px, 19vh, 210px)"
+      "d": "clamp(170px, 24vh, 235px)"
     },
     "photoCredit": { "ko": "JD Woo / SPAF", "en": "JD Woo / SPAF" }
   },
@@ -92,7 +92,7 @@
     "pos": {
       "x": "9%",
       "y": "58%",
-      "d": "clamp(110px, 16vh, 175px)"
+      "d": "clamp(165px, 23vh, 220px)"
     },
     "photoCredit": { "ko": "박지선", "en": "Park Jisun" }
   },
@@ -106,9 +106,9 @@
     "links": [],
     "photo": "",
     "pos": {
-      "x": "65%",
-      "y": "54%",
-      "d": "clamp(95px, 13vh, 145px)"
+      "x": "72%",
+      "y": "58%",
+      "d": "clamp(155px, 21vh, 200px)"
     }
   }
 ]

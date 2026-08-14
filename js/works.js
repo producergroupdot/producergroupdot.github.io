@@ -16,6 +16,7 @@ const CATEGORIES = [
   { key: 'international-network', label: '국제 네트워크', en: 'International Network' },
   { key: 'residency', label: '레지던시', en: 'Residency' },
   { key: 'research', label: '리서치', en: 'Research' },
+  { key: 'creative-programme', label: '창작 프로그램', en: 'Creative Programme' },
 ];
 
 /** 영문 이름을 키로 삼는다 — 국문 표기가 바뀌어도 주소와 필터는 그대로다. */
@@ -193,7 +194,7 @@ async function main() {
     const site = await loadSite();
     injectProducerColors(site.producers);
 
-    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'works'));
+    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'works', site.about));
     document.getElementById('works-footer').replaceChildren(footer());
 
     readQuery();

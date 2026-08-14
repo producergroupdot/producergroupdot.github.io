@@ -67,6 +67,94 @@ h1,h2,h3,h4{ font-family:var(--disp); font-weight:var(--w-disp); letter-spacing:
 /* 아직 만들지 않은 페이지로 가는 자리. 링크가 아니라 그냥 글자다. */
 .inert{ cursor:default }
 
+/* ---------- 햄버거 (모바일 전용) ---------- */
+.burger{
+  display:none;                 /* 데스크톱에서는 안 보인다 */
+  width:44px; height:44px;      /* 손가락으로 누를 만한 크기 */
+  align-items:center;
+  justify-content:center;
+  background:none; border:none; cursor:pointer;
+  color:inherit;
+  margin-right:-10px;
+}
+.burger-i,
+.burger-i::before,
+.burger-i::after{
+  display:block;
+  width:22px; height:1.5px;
+  background:currentColor;
+  content:'';
+}
+.burger-i{ position:relative }
+.burger-i::before{ position:absolute; top:-7px }
+.burger-i::after { position:absolute; top:7px }
+
+/* ---------- 모바일 전체화면 메뉴 ---------- */
+/* 라벤더는 구조색이라 메뉴에 쓴다. 프로듀서 네 색은 사람을 가리키므로 쓰지 않는다. */
+.menu-overlay{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:var(--lavender);
+  color:var(--cream);
+  --fg-rgb: var(--cream-rgb);   /* 구분선도 함께 뒤집힌다 */
+  display:flex;
+  flex-direction:column;
+  padding:14px var(--pad) 30px;
+  overflow-y:auto;
+}
+body.menu-open{ overflow:hidden }   /* 열려 있는 동안 뒤쪽 스크롤 잠금 */
+
+.menu-x{
+  align-self:flex-start;
+  width:48px; height:48px;
+  margin-bottom:18px;
+  font-size:24px; line-height:1;
+  background:none; border:none; cursor:pointer;
+  color:inherit;
+}
+
+.menu-list{ display:flex; flex-direction:column }
+.menu-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  min-height:56px;              /* 손가락으로 누르기 좋은 높이 */
+  padding:10px 0;
+  font-family:var(--disp);
+  font-size:28px;
+  font-weight:var(--w-disp);
+  letter-spacing:-.03em;
+  border-bottom:.5px solid rgb(var(--fg-rgb) / .4);
+}
+.menu-item .arrow{ font-size:22px; opacity:.75 }
+.menu-item.inert{ opacity:.5 }
+
+.menu-social{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  padding:32px 0 0;
+}
+.menu-social .sico{ opacity:.85 }
+.menu-social .sico svg{ width:24px; height:24px }
+
+.menu-mail{
+  margin-top:auto;
+  padding-top:28px;
+  font-size:15px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:.5px;
+}
+
+@media (max-width:900px){
+  .burger{ display:flex }
+  .bar nav{ display:none }          /* 메뉴는 햄버거 안으로 들어간다 */
+  .bar .langswitch{ display:none }
+}
+
 /* ---------- 매스트헤드 ----------
    제목만. 빵부스러기 링크는 넣지 않는다 — 상단 메뉴와 중복이다.
    Works · Artists · About 이 같은 것을 쓴다. */

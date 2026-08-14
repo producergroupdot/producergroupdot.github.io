@@ -184,6 +184,36 @@ export function logo(producers, exclude = []) {
 
 /* ---------- 사진 ---------- */
 
+/* ---------- 프로듀서 얼굴 사진 ---------- */
+
+const FACE_TRIES = 8; //  producers.json 에 목록이 없을 때 img/producers/<id>-01.jpg … -08.jpg 를 두드려 본다
+
+const nn = (n) => String(n).padStart(2, '0');
+
+export const shuffle = (xs) => {
+  const a = [...xs];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+
+/**
+ * 그 사람의 얼굴 사진 후보. 페이지를 열 때마다 차례가 섞이므로
+ * 뜨는 것 중 하나가 무작위로 걸린다.
+ *
+ * where='about' 이면 aboutPhotos 를 먼저 본다 — About 의 원은 작아서
+ * 얼굴이 크게 나온 사진만 골라 써야 하기 때문. 없으면 photos 전체를 쓴다.
+ */
+export const faceCandidates = (p, where) => {
+  const list =
+    (where === 'about' && p.aboutPhotos?.length ? p.aboutPhotos : null) ||
+    (p.photos?.length ? p.photos : null) ||
+    Array.from({ length: FACE_TRIES }, (_, i) => `img/producers/${p.id}-${nn(i + 1)}.jpg`);
+  return shuffle(list);
+};
+
 /** 파일명이 TEMP- 로 시작하면 임시 이미지다. 폴더에 넣을 때 붙이는 표시. */
 export function isTempFile(src) {
   return /(^|\/)TEMP-/.test(src || '');
@@ -231,13 +261,19 @@ const NAV = [
   ['about', 'About'],
 ];
 
-export function topBar(producers, here) {
+export function topBar(producers, here, about) {
   const nav = el('nav');
   for (const [kind, label] of NAV) {
     const url = pageUrl(kind);
     const item = link(url, kind === here ? '.here' : '', null, label);
     nav.append(item);
   }
+
+  /* 햄버거는 모바일에서만 보인다(CSS). Contact 는 상단 메뉴에 넣지 않는다 —
+     모바일 메뉴·푸터·About 맨 아래, 세 군데에만 둔다. */
+  const burger = el('button.burger', { type: 'button', 'aria-label': '메뉴 열기', 'aria-expanded': 'false' });
+  burger.append(el('span.burger-i', { 'aria-hidden': 'true' }));
+  burger.addEventListener('click', () => openMenu(about, burger));
 
   return el(
     'div.bar',
@@ -246,8 +282,62 @@ export function topBar(producers, here) {
     link(pageUrl('home'), '.wordmark', null, 'PRODUCER GROUP ', el('span.wordmark-light', { text: 'DOT' })),
     nav,
     el('span.spacer'),
-    el('span.meta.langswitch', { text: 'KO / EN' })
+    el('span.meta.langswitch', { text: 'KO / EN' }),
+    burger
   );
+}
+
+/* ---------- 모바일 전체화면 메뉴 ---------- */
+
+/* 라벤더는 구조색이라 메뉴에 쓸 수 있다. 프로듀서 네 색은 사람을 가리키므로 쓰지 않는다. */
+const MENU = [
+  ['works', 'Works'],
+  ['artists', 'Artists'],
+  ['about', 'About'],
+];
+
+function openMenu(about, burger) {
+  const close = el('button.menu-x', { type: 'button', 'aria-label': '메뉴 닫기' }, '✕');
+
+  const list = el('nav.menu-list');
+  for (const [kind, label] of MENU) {
+    const url = pageUrl(kind);
+    list.append(link(url, '.menu-item', null, el('span', { text: label }), el('span.arrow', { text: '→' })));
+  }
+  /* Contact 는 페이지가 아니라 About 맨 아래 블록으로 간다. */
+  const contactUrl = pageUrl('about');
+  list.append(
+    link(contactUrl ? `${contactUrl}#contact` : '', '.menu-item', null,
+      el('span', { text: 'Contact' }), el('span.arrow', { text: '→' }))
+  );
+
+  const socials = el('div.menu-social');
+  socials.append(
+    sico('https://www.instagram.com/producergroupdot/', 'Instagram', 'instagram'),
+    sico('https://www.youtube.com/channel/UCW_8rEDfkNiyIS9J8axn0LA', 'YouTube', 'youtube'),
+    sico('https://www.instagram.com/doongji230/', '둥지230 Instagram', 'instagram')
+  );
+
+  const overlay = el('div.menu-overlay', { role: 'dialog', 'aria-modal': 'true', 'aria-label': '메뉴' },
+    close, list, socials,
+    about?.email ? el('a.menu-mail', { href: `mailto:${about.email}`, text: about.email }) : null);
+
+  const shut = () => {
+    overlay.remove();
+    document.body.classList.remove('menu-open'); // 뒤쪽 스크롤 잠금 해제
+    burger.setAttribute('aria-expanded', 'false');
+    burger.focus();
+    document.removeEventListener('keydown', onKey);
+  };
+  const onKey = (e) => e.key === 'Escape' && shut();
+
+  close.addEventListener('click', shut);
+  document.addEventListener('keydown', onKey);
+
+  document.body.append(overlay);
+  document.body.classList.add('menu-open'); // 열려 있는 동안 뒤쪽 스크롤 잠금
+  burger.setAttribute('aria-expanded', 'true');
+  close.focus();
 }
 
 /* ---------- 푸터 ---------- */
@@ -266,12 +356,15 @@ function sico(href, label, key) {
 }
 
 export function footer() {
+  /* Contact 는 상단 메뉴에 없다. 여기와 모바일 메뉴, About 맨 아래 — 세 군데뿐이다. */
+  const about = pageUrl('about');
   return el(
     'footer',
     null,
     el('span.meta', { text: '프로듀서그룹 도트 Producer Group DOT' }),
     sico('https://www.instagram.com/producergroupdot/', 'Instagram', 'instagram'),
     sico('https://www.youtube.com/channel/UCW_8rEDfkNiyIS9J8axn0LA', 'YouTube', 'youtube'),
+    link(about ? `${about}#contact` : '', '.meta.foot-contact', null, 'Contact'),
     el('span.spacer'),
     el('span.meta.langswitch', { text: 'KO / EN' })
   );

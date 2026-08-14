@@ -144,6 +144,11 @@
   align-items:center;
   gap:10px;
   font-size:15px;
+  overflow:hidden;
+}
+/* 제목 자체는 한 줄 안에서만 흐른다. 육각형 SVG 도 글자 사이에 그대로 놓인다. */
+#now-list .t-title{
+  min-width:0;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;

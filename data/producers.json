@@ -13,7 +13,12 @@
     "bio": { "ko": "", "en": "" },
     "email": "",
     "links": [],
-    "photo": ""
+    "photo": "",
+    "photos": [
+      "img/producers/heejin-01.jpg",
+      "img/producers/heejin-02.jpg",
+      "img/producers/heejin-03.jpg"
+    ]
   },
   {
     "id": "bongmin",
@@ -29,7 +34,13 @@
     "bio": { "ko": "", "en": "" },
     "email": "",
     "links": [],
-    "photo": ""
+    "photo": "",
+    "photos": [
+      "img/producers/bongmin-01.jpg",
+      "img/producers/bongmin-02.jpg",
+      "img/producers/bongmin-03.jpg",
+      "img/producers/bongmin-04.jpg"
+    ]
   },
   {
     "id": "jisun",
@@ -73,7 +84,22 @@
     "illustration": {
       "file": "img/producers/jisun-illustration.png",
       "caption": { "ko": "파타고니아", "en": "" }
-    }
+    },
+    "photos": [
+      "img/producers/jisun-01.jpg",
+      "img/producers/jisun-02.jpg",
+      "img/producers/jisun-03.jpg",
+      "img/producers/jisun-04.jpg",
+      "img/producers/jisun-05.jpg",
+      "img/producers/jisun-06.jpg",
+      "img/producers/jisun-07.jpg",
+      "img/producers/jisun-08.jpg"
+    ],
+    "aboutPhotos": [
+      "img/producers/jisun-01.jpg",
+      "img/producers/jisun-05.jpg",
+      "img/producers/jisun-07.jpg"
+    ]
   },
   {
     "id": "miseon",
@@ -89,6 +115,11 @@
     "bio": { "ko": "", "en": "" },
     "email": "",
     "links": [],
-    "photo": ""
+    "photo": "",
+    "photos": [
+      "img/producers/miseon-01.jpg",
+      "img/producers/miseon-02.jpg",
+      "img/producers/miseon-03.jpg"
+    ]
   }
 ]

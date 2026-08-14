@@ -8,7 +8,9 @@
   position:relative;
   height:72vh;
   min-height:540px;
-  margin:0 var(--pad) 30px;
+  /* 아래 여백이 넉넉해야 한다 — 가장 아래 원의 라벨이 캔버스 밖으로 최대 43px 내려온다.
+     여백이 좁으면 그 글자가 푸터에 닿는다. */
+  margin:0 var(--pad) 80px;
 }
 
 /* 자리와 크기는 JS 가 --x · --y · --d 로 넘긴다(값은 artists.json).

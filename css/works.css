@@ -10,7 +10,9 @@
 }
 .secbar .label{ opacity:.5 }
 
-.seg{ display:flex; flex-wrap:wrap; border:.5px solid var(--line-s) }
+/* 여섯 칸이라 좁아지면 두 줄로 접힌다. 접힌 줄 사이에도 선이 보이도록
+   테두리를 칸마다 준다 — 바깥 테두리 하나만 두면 접힌 자리가 벌어져 보인다. */
+.seg{ display:flex; flex-wrap:wrap; gap:0; border:.5px solid var(--line-s) }
 .seg button{
   padding:5px 13px;
   font-family:var(--mono); font-size:11px;
@@ -102,6 +104,14 @@ a.card:hover .t{ text-decoration-thickness:1.5px }
   .cards{ columns:1 }
   .card{ margin-bottom:30px }
   .secbar{ gap:12px }
-  .secbar .seg{ width:100% }        /* 다섯 칸이라 모바일에서는 한 줄을 다 쓴다 */
-  .secbar .seg button{ flex:1; text-align:center; padding:6px 8px }
+  /* 여섯 칸 → 세 칸씩 두 줄. 한 줄에 다 넣으면 글자가 뭉개진다. */
+  .secbar .seg{ width:100% }
+  .secbar .seg button{
+    flex:1 1 33.333%;
+    max-width:33.333%;
+    text-align:center;
+    padding:8px 6px;
+  }
+  /* 접힌 두 줄 사이 구분선 */
+  .secbar .seg button:nth-child(n+4){ border-top:.5px solid var(--line-s) }
 }

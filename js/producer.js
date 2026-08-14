@@ -6,7 +6,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
-  topBar, footer, pageUrl, link, categoryBadge,
+  topBar, footer, pageUrl, link, categoryBadge, photo, faceCandidates,
 } from './ui.js';
 
 /** 최근 것이 위로. works.html 과 같은 기준. */
@@ -26,12 +26,26 @@ function head(person) {
       )
     : null;
 
+  /* 얼굴 사진 원. 일러스트는 오른쪽 칸에 있으므로 왼쪽 칸 맨 위에 두어 겹치지 않는다.
+     평소 흑백, 마우스를 올리면 컬러로 풀린다 — Artists 원과 같은 규칙. */
+  const faceCircle = (() => {
+    const box = el('span.pface');
+    box.append(
+      photo(faceCandidates(person), () => {
+        box.remove(); // 사진이 없으면 자리도 남기지 않는다
+        return el('span');
+      })
+    );
+    return box;
+  })();
+
   return el(
     'header.phead',
     null,
     el(
       'div.phead-l',
       null,
+      faceCircle,
       el('span.phead-role', null, el(`i.dot.dot-${person.id}`), el('span.meta', { text: t(person.role) })),
       el('h1', { text: t(person.name) }),
       person.name.en ? el('p.roman', { text: person.name.en }) : null
@@ -134,7 +148,7 @@ async function main() {
     if (person.color.dark) document.body.classList.add('on-dark');
     document.title = `${t(person.name)} · 프로듀서그룹 도트`;
 
-    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'about'));
+    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'about', site.about));
     document.getElementById('page').replaceChildren(
       head(person),
       el(

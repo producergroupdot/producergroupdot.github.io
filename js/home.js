@@ -218,16 +218,25 @@ function nowItems(site, today = new Date()) {
     if (rs.length) {
       /* 한 작업의 여러 회차는 한 줄로 합친다. 같은 작업이 줄만 늘리지 않게. */
       const unique = (xs) => [...new Set(xs.filter(Boolean))];
+      const venues = unique(rs.map((r) => t(r.venue)));
+      const times = unique(rs.map((r) => r.time));
+
+      /* 장소가 하나면 도시·장소를 그대로 쓰고, 여럿이면 도시만 모은다.
+         회차마다 시간이 같으면 그 시간도 한 번 보여준다. */
+      const where =
+        venues.length === 1
+          ? unique([...unique(rs.map((r) => t(r.city))), venues[0], times.length === 1 ? times[0] : '']).join(' · ')
+          : unique(rs.map((r) => t(r.city))).join(' · ');
+
       items.push({
         work: w,
         order,
         sort: rs[0].from,
         when: joinDates(rs),
-        where:
-          rs.length === 1
-            ? unique([t(rs[0].city), t(rs[0].venue)]).join(' · ')
-            : unique(rs.map((r) => t(r.city))).join(' · '),
-        note: unique(rs.map((r) => t(r.note))).join(' · '),
+        where,
+        /* 회차별 메모(낭독 작가·작품 같은 것)는 여러 줄이 되면 한 줄에 담기지 않는다.
+           합쳐진 줄에서는 접고, 작업 상세의 일정에서 펼친다. */
+        note: rs.length === 1 ? t(rs[0].note) : '',
         past: rs.every((r) => r.to < T), // 모든 회차가 끝났을 때만 지난 것
       });
     } else if (w.status === 'ongoing') {
@@ -250,10 +259,12 @@ function nowRow(it, producerById) {
     pageUrl('work', it.work.id),
     `.row${it.past ? '.past' : ''}`,
     null,
+    /* 제목은 한 덩어리로 감싼다. .t 가 flex 라서 감싸지 않으면
+       SVG 육각형이 각각 별개의 flex 항목이 되어 제목이 벌어진다. */
     el(
       'span.t',
       null,
-      titleNodes(t(it.work.title)),
+      el('span.t-title', null, titleNodes(t(it.work.title))),
       it.note ? el('span.note-flag.meta', { text: it.note }) : null
     ),
     el('span.when', { text: it.when }),

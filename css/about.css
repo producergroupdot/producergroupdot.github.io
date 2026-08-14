@@ -31,7 +31,9 @@
   position:relative;
   overflow:hidden;
   isolation:isolate;
-  min-height:170px;
+  /* 원이 132px 로 커지면 아래 끝이 20+132=152px 이다.
+     이름·직함이 그 아래에서 시작하도록 칸 높이를 잡는다. */
+  min-height:236px;
   padding:20px var(--pad);
   display:flex;
   flex-direction:column;
@@ -40,17 +42,34 @@
 }
 a.person:hover{ filter:brightness(1.06) }
 
-/* 모서리에 반쯤 걸치는 원. 그 칸의 글자색에서 뽑는다 —
-   다른 사람의 색을 얹으면 색이 누구를 가리키는지 흐려진다. */
+/* 모서리에 반쯤 걸치는 원. 안에 얼굴 사진이 흑백으로 들어간다.
+   마우스를 올리면 원이 커지면서 색면을 덮고 컬러로 바뀐다.
+   크기를 transform 이 아니라 width/height 로 키운다 — transform 으로 확대하면
+   사진이 같이 늘어나 뭉개진다. */
 .person .pblob{
+  --blob:104px;
   position:absolute;
-  width:78px; height:78px;
-  right:-26px; top:-26px;
+  width:var(--blob); height:var(--blob);
+  right:20px; top:20px;             /* 모서리에서 안으로 20px */
   border-radius:50%;
-  background:currentColor;
-  opacity:.2;
-  z-index:-1;
+  overflow:hidden;
+  z-index:-1;                       /* 글자는 늘 사진 위에 남는다 */
+  transition:width .35s var(--ease), height .35s var(--ease);
 }
+.person .pblob .cover{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  filter:grayscale(1) contrast(1.04);
+  transition:filter .35s;
+}
+/* 얼굴을 알아볼 만큼만 커진다. 색면을 덮지 않는다. */
+.person:hover .pblob{ --blob:132px }
+.person:hover .pblob .cover{ filter:none }
+
+/* 사진이 아직 없는 사람은 빈 원만. 커지지도 않는다. */
+.person .pblob.no-photo{ background:currentColor; opacity:.2 }
+.person:hover .pblob.no-photo{ --blob:104px }
 .person .meta{ opacity:.75 }
 .person h3{
   font-size:clamp(15px,1.5vw,19px);
@@ -97,8 +116,37 @@ a.person:hover{ filter:brightness(1.06) }
 }
 .dj-btn:hover{ background:var(--cream); color:var(--ink) }
 
-/* ---------- 연결 ---------- */
-.contact{ padding:44px var(--pad) 0 }
+/* ---------- '함께' 가로 띠 ---------- */
+/* 캡션 없이 사진만. 사진이 하나도 없으면 제목만 남으므로 그때는 통째로 감춘다. */
+.together{ padding:44px 0 0 }
+.together .sec{ padding:0 var(--pad) 0 }
+/* 한 줄에 네 장쯤 보이고 나머지는 옆으로 스크롤. 몇 장이든 규칙이 같다. */
+.together-strip{
+  display:flex;
+  gap:0;
+  margin-top:22px;
+  overflow-x:auto;
+  scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch;
+  padding-left:var(--pad);
+}
+.together-strip::after{ content:''; flex:0 0 var(--pad) }   /* 마지막 장 뒤 여백 */
+.together-item{
+  flex:0 0 auto;
+  width:calc((100vw - var(--pad) * 2) / 4);
+  aspect-ratio:3/2;
+  overflow:hidden;
+  scroll-snap-align:start;
+}
+.together-item .cover{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+}
+.together:has(.together-strip:empty){ display:none }
+
+/* ---------- Contact (페이지 맨 아래 블록) ---------- */
+.contact{ padding:44px var(--pad) 0; scroll-margin-top:80px }
 .contact h2{
   font-size:14px;
   letter-spacing:.02em;
@@ -119,6 +167,13 @@ a.person:hover{ filter:brightness(1.06) }
 @media (max-width:900px){
   .about-cols{ columns:1 }
   .people{ grid-template-columns:repeat(2,1fr) }
+
+  /* 좁은 화면에서는 한 장을 크게 두고 옆으로 넘긴다. */
+  .together-item{ width:74vw }
+  /* 모바일은 칸이 좁으므로 원도 조금 작게. 호버가 없는 화면이라 커지지도 않는다. */
+  .person{ min-height:196px }
+  .person .pblob{ --blob:88px; right:16px; top:16px }
+  .person:hover .pblob{ --blob:88px }
   .sec{ padding-top:36px }
   .doongji{ margin-top:32px; padding:38px var(--pad) }
   .dj-dot{ width:190px; height:190px; right:-70px; top:-70px }
@@ -126,5 +181,4 @@ a.person:hover{ filter:brightness(1.06) }
 }
 @media (max-width:520px){
   .people{ grid-template-columns:1fr }
-  .person{ min-height:132px }
 }

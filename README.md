@@ -17,9 +17,21 @@ img/
   works/<작업ID>/01.jpg   02.jpg   03.jpg …    작업 사진
   works/<작업ID>/poster.jpg                     포스터
   artists/<예술가ID>.jpg                        예술가
-  producers/<프로듀서ID>.jpg                    프로듀서
+  producers/<프로듀서ID>-01.jpg  -02.jpg …      프로듀서 얼굴 (About 네 칸)
+  about/together/01.jpg  02.jpg …               About '함께' 가로 띠
   home/<이름>.jpg                               홈 전용 (파노라마 · 세로)
 ```
+
+**About 페이지의 사진 두 가지는 파일만 넣으면 됩니다. JSON은 안 고쳐도 됩니다.**
+
+- `img/producers/heejin-01.jpg` 처럼 넣으면 About의 그 사람 칸 오른쪽 위 원에 들어갑니다.
+  한 사람에 여러 장 넣으면 페이지를 열 때마다 그중 하나가 무작위로 나옵니다.
+  `-01` 부터 `-06` 까지 찾습니다. 프로듀서 ID는 `heejin` · `bongmin` · `jisun` · `miseon`.
+- `img/about/together/01.jpg` 부터 `12.jpg` 까지 넣으면 둥지230 배너 아래 '함께' 띠에 차례로 들어갑니다.
+  없는 번호는 그냥 건너뜁니다. 중간이 비어도 괜찮습니다.
+
+여섯 장·열두 장보다 많이 넣고 싶으면 `data/producers.json` 의 `photos`,
+`data/about.json` 의 `together` 에 파일 목록을 적으면 그쪽이 우선합니다.
 
 폴더 안에 무엇이 들어 있는지, 무엇을 아직 못 구했는지는 [img/README.txt](img/README.txt) 에
 정리돼 있습니다. 사진을 넣거나 뺄 때 그 파일도 같이 고쳐주세요 — 촬영자 크레딧이 거기 있습니다.
