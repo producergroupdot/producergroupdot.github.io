@@ -30,14 +30,17 @@ export function el(spec, attrs, ...children) {
  * 아직 만들지 않은 페이지는 null 로 두면 링크가 걸리지 않고 그냥 글자로 나온다.
  * 페이지를 만들면 이 표에서 한 줄만 고치면 사이트 전체의 링크가 한꺼번에 살아난다.
  */
+/* 프로듀서 상세는 한 사람씩 만들고 있다. 여기 적힌 사람만 링크가 걸린다. */
+const PRODUCER_PAGES = new Set(['jisun']);
+
 const PAGES = {
   home: () => 'index.html',
   works: (query) => 'works.html' + (query || ''),
-  artists: null, //  만들면 → () => 'artists.html'
-  about: null, //  만들면 → () => 'about.html'
+  artists: () => 'artists.html',
+  about: () => 'about.html',
   work: null, //  만들면 → (id) => `work.html?id=${id}`   (작업 상세)
-  producer: null, //  만들면 → (id) => `producer.html?id=${id}`
-  artist: null, //  만들면 → (id) => `artist.html?id=${id}`
+  producer: (id) => (PRODUCER_PAGES.has(id) ? `producers/${id}.html` : ''),
+  artist: (id) => `artists/${id}.html`,
 };
 
 /** 있는 페이지면 주소를, 없으면 빈 문자열을 돌려준다. */
@@ -107,6 +110,22 @@ export function fieldClass(producerIds) {
   return producerIds && producerIds.length ? `field-${producerIds[0]}` : 'c-lav';
 }
 
+/* ---------- 카테고리 배지 ---------- */
+
+/**
+ * 일의 종류를 제목 앞에 네모로 표시한다. 카드와 작업 상세가 같은 것을 쓴다.
+ *
+ * 색은 절대 쓰지 않는다 — 네 가지 색은 사람(담당 프로듀서)을 가리키는 표시이고
+ * 카테고리는 일의 종류다. 둘이 섞이면 색이 무엇을 뜻하는지 알 수 없게 된다.
+ * 그래서 배지는 잉크색 얇은 테두리 + 잉크 글씨뿐이다.
+ *
+ * 카테고리가 아직 안 정해진 작업은 아무것도 그리지 않는다(빈 네모를 두지 않는다).
+ */
+export function categoryBadge(work) {
+  const label = t(work.category);
+  return label ? el('span.cat.meta', { text: label }) : null;
+}
+
 /* ---------- 특수문자는 폰트에 맡기지 않는다 (함정 5) ---------- */
 
 const HEX_TOKEN = /\{hex\}/g;
@@ -165,14 +184,41 @@ export function logo(producers, exclude = []) {
 
 /* ---------- 사진 ---------- */
 
+/** 파일명이 TEMP- 로 시작하면 임시 이미지다. 폴더에 넣을 때 붙이는 표시. */
+export function isTempFile(src) {
+  return /(^|\/)TEMP-/.test(src || '');
+}
+
+/** 작업 표지로 시도할 경로들 — cover 먼저, 없으면 01.jpg, 그 다음 poster.jpg. */
+export function coverCandidates(work) {
+  return [work.cover, `img/works/${work.id}/01.jpg`, `img/works/${work.id}/poster.jpg`].filter(
+    (v, i, all) => v && all.indexOf(v) === i
+  );
+}
+
 /**
- * 표지 사진. 파일이 아직 없으면 색면으로 조용히 떨어진다.
- * 경로를 미리 적어두고 사진은 나중에 넣을 수 있게 하기 위한 것 —
- * data/works.json 의 cover 는 파일이 없어도 그대로 두면 된다.
+ * 후보 경로를 차례로 시도하는 사진.
+ * 전부 실패하면 fallback() 으로 갈아끼운다 — 색면 + '사진 준비 중'.
+ * onResolved 에는 실제로 뜬 경로가 들어온다(TEMP- 판정용).
+ *
+ * 폴더에 파일만 넣으면 JSON 을 고치지 않아도 사진이 뜨게 하기 위한 것.
  */
-export function coverImage(src, fallback) {
-  const img = el('img.cover', { src, alt: '', loading: 'lazy' });
-  img.addEventListener('error', () => img.replaceWith(fallback()), { once: true });
+export function photo(candidates, fallback, onResolved) {
+  const list = (candidates || []).filter(Boolean);
+  const img = el('img.cover', { alt: '', loading: 'lazy' });
+  let next = 0;
+
+  const advance = () => {
+    if (next >= list.length) {
+      img.replaceWith(fallback());
+      return;
+    }
+    img.src = list[next++];
+  };
+
+  img.addEventListener('error', advance);
+  img.addEventListener('load', () => onResolved && onResolved(img.getAttribute('src')));
+  advance();
   return img;
 }
 

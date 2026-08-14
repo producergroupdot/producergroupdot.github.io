@@ -29,6 +29,8 @@
 [works/hihihistory]  poster.jpg                 2026 SPAF 포스터
 [works/tnn]          4장                        사진 제공 한국문화예술위원회
 [works/app]          4장                        APP 캠프 기록
+[works/on-the-birds-day] 8장                    사진 박지선 Park Jisun
+[works/energy]       8장                        사진 박지선 Park Jisun
 
 
 ★ 반드시 교체해야 하는 것 — 파일명 앞에 TEMP- 가 붙어 있습니다
@@ -48,12 +50,21 @@ artists/TEMP-untitledroad.jpg
 ★ 아직 없는 것
 --------------
 
-works/on-the-birds-day/   권병준 〈새들의 날에〉
-  구글 포토 앨범에만 있어 파일로 받지 못했습니다.
-  photos.app.goo.gl/MzWpvUQxngfAkKyFA 에서 내려받아 넣으세요.
+works/mooljil/            코끼리들이 웃는다 〈물질〉
 
-works/climate/            기후변화 예술가 레지던시
-works/aesthethics/        Aesth:ethics
+
+★ 규칙에서 벗어나 있는 것 — 정리하면 좋습니다
+--------------------------------------------
+
+works/aesthethics.jpg
+  폴더가 아니라 낱장 파일입니다. 지금은 works.json 의 cover 가 이 파일을
+  직접 가리키고 있어 화면에는 정상으로 나옵니다.
+  works/aesthethics/01.jpg 로 옮기면 규칙과 같아집니다.
+
+works/climate-residency/2020/  2021/  2022/
+  해마다 폴더가 한 겹 더 있습니다. 표지는 2020/01.jpg 로 걸어두었습니다.
+  01.jpg 를 자동으로 찾는 규칙은 이 한 겹을 넘어가지 못하므로,
+  표지를 바꾸려면 works.json 의 cover 를 직접 고쳐야 합니다.
 artists/kwon.jpg          권병준
 artists/elephants.jpg     코끼리들이 웃는다
 

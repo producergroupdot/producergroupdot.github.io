@@ -1,0 +1,93 @@
+/* producer.css — 프로듀서 상세. 페이지 전체가 그 사람의 색이 된다. */
+
+/* 배경·글자색은 js/ui.js 가 producers.json 에서 만든 .field-<id> 가 준다.
+   여기에 색값을 적지 않는다. */
+.producer-page{
+  min-height:100vh;
+
+  /* 선은 전경색에서 파생시킨다. 어두운 면(.on-dark)에서는 --fg-rgb 가 크림으로
+     뒤집히므로 아래 두 줄이 그대로 따라온다 — 색값을 직접 쓰면 선이 사라진다(함정 4). */
+  --line:   rgb(var(--fg-rgb) / .28);
+  --line-s: rgb(var(--fg-rgb) / .5);
+}
+
+/* 상단 메뉴바도 같이 물든다. background:inherit 은 base.css 에 있다. */
+.producer-page .bar{ border-bottom:.5px solid var(--line-s) }
+.producer-page .logo{ color:inherit }
+
+/* ---------- 머리 ---------- */
+
+.phead{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:start;
+  padding:56px var(--pad) 44px;
+}
+.phead-role{ display:flex; align-items:center; gap:9px; margin-bottom:18px }
+.phead-role .dot{ width:11px; height:11px; border-radius:50%; display:block; flex:none }
+.phead h1{
+  font-size:clamp(40px,6vw,84px);
+  letter-spacing:-.045em;
+  line-height:.94;
+}
+.phead .roman{
+  font-family:var(--disp);
+  font-size:clamp(16px,1.6vw,22px);
+  font-weight:var(--w-mid);
+  letter-spacing:-.01em;
+  opacity:.7;
+  margin-top:10px;
+}
+
+/* 일러스트는 크림 액자에 담는다 — 색면 위에서 그림이 뜨게. */
+.frame{
+  background:var(--cream);
+  padding:12px;
+  width:100%;
+  max-width:248px;
+  justify-self:end;
+}
+.frame img{ width:100%; height:auto; display:block }
+.frame figcaption{
+  color:var(--ink);
+  opacity:.6;
+  padding-top:9px;
+}
+
+/* ---------- 본문 + 사이드바 ---------- */
+
+.pbody{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:48px;
+  padding:34px var(--pad) 0;
+  border-top:.5px solid var(--line-s);
+}
+.prose p{
+  font-size:16px;
+  line-height:1.75;
+  max-width:60ch;
+  margin:0 0 18px;
+}
+.prose p:last-child{ margin-bottom:0 }
+
+/* 사이드바(.pside · .sblock · .wlist · .llist · .plist)는 예술가 상세도 함께 쓰므로
+   base.css 에 있다. */
+
+/* ---------- 모바일 ---------- */
+
+@media (max-width:900px){
+  .phead{
+    grid-template-columns:1fr;
+    gap:28px;
+    padding:32px var(--pad) 28px;
+  }
+  .frame{ justify-self:start; max-width:200px }
+  .pbody{
+    grid-template-columns:1fr;
+    gap:34px;
+    padding:26px var(--pad) 0;
+  }
+  .prose p{ font-size:15.5px }
+}

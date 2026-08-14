@@ -1,0 +1,33 @@
+{
+  "intro": [
+    { "ko": "프로듀서그룹 도트는 공연예술 프로듀서 콜렉티브입니다. '창의성(Creativity)', '독립성(Independence)', '수평성(Horizontality)'을 핵심 가치로, 각자의 방식으로 또는 함께, 다양한 협업과 창작을 이어가고 있습니다.", "en": "" },
+    { "ko": "도트는 하나의 거대한 시스템 안에 머물기보다, 하나의 점(dot)으로서 독립적으로 서 있기를 선택합니다. 도트의 프로듀서들은 각각이 창의적이고 독립적인 점으로 존재하며, 이 점들이 서로를 연결하고 세상과 연결되며 새로운 공간과 가능성을 만들어냅니다.", "en": "" },
+    { "ko": "2014년에 결성된 프로듀서그룹 도트는 네 명의 여성 프로듀서로 구성되어 있습니다. 연극, 무용, 다원예술 분야의 예술가들과 협력하며 국내 창작, 국제공동제작, 국제 투어 등을 기획하고 조직하고 있습니다.", "en": "" },
+    { "ko": "공연 제작뿐 아니라 주제 중심의 리서치, 레지던시, 네트워크 구축 등 과정 중심의 예술 활동 역시 도트의 중요한 축을 이룹니다.", "en": "" },
+    { "ko": "2014년에는 아시아 프로듀서 플랫폼(Asian Producers' Platform, APP)을 공동 창립하였으며, 이후 매년 APP의 공동 기획 파트너로 참여하고 있습니다.", "en": "" }
+  ],
+
+  "doongji": {
+    "label": { "ko": "Space", "en": "Space" },
+    "title": { "ko": "둥지230", "en": "Doongji 230" },
+    "body": {
+      "ko": "프로듀서그룹 도트와 무제의 길이 함께 운영하는 예술 작업공간입니다. 동료 기획자와 예술가들이 만나 대화하고 서로의 작업을 나눕니다.",
+      "en": ""
+    },
+    "link": {
+      "label": { "ko": "공간 및 프로그램 보기 →", "en": "Space and programmes →" },
+      "url": "https://www.instagram.com/doongji230/"
+    }
+  },
+
+  "links": [
+    { "label": { "ko": "인스타그램 @producergroupdot", "en": "Instagram @producergroupdot" },
+      "url": "https://www.instagram.com/producergroupdot/" },
+    { "label": { "ko": "유튜브", "en": "YouTube" },
+      "url": "https://www.youtube.com/channel/UCW_8rEDfkNiyIS9J8axn0LA" },
+    { "label": { "ko": "둥지230", "en": "Doongji 230" },
+      "url": "https://www.instagram.com/doongji230/" }
+  ],
+
+  "email": ""
+}

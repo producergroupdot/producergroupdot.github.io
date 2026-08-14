@@ -5,14 +5,22 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
-  topBar, footer, pageUrl, link, coverImage,
+  topBar, footer, pageUrl, link, photo, coverCandidates, isTempFile, categoryBadge,
 } from './ui.js';
 
-const TYPES = [
-  { key: 'all', label: '전체' },
-  { key: 'performance', label: '공연' },
-  { key: 'project', label: '프로젝트' },
+/* 상단 필터. 카테고리(일의 종류)로 거른다.
+   data 의 type(공연/프로젝트)은 홈의 개수 표시에 쓰이므로 그대로 남아 있다. */
+const CATEGORIES = [
+  { key: 'all', label: '전체', en: '' },
+  { key: 'production', label: '공연', en: 'Production' },
+  { key: 'international-network', label: '국제 네트워크', en: 'International Network' },
+  { key: 'residency', label: '레지던시', en: 'Residency' },
+  { key: 'research', label: '리서치', en: 'Research' },
 ];
+
+/** 영문 이름을 키로 삼는다 — 국문 표기가 바뀌어도 주소와 필터는 그대로다. */
+const categoryKey = (work) =>
+  (t(work.category, 'en') || '').toLowerCase().replace(/\s+/g, '-');
 
 const typeLabel = (w) => (w.type === 'performance' ? 'Production' : 'Project');
 
@@ -20,32 +28,48 @@ const typeLabel = (w) => (w.type === 'performance' ? 'Production' : 'Project');
    비율은 CSS 클래스로만 준다 — 인라인 style 금지. */
 const AR_COUNT = 6;
 
-const state = { type: 'all', producer: null };
+const state = { category: 'all', producer: null };
+
+/* ---------- 차례 ---------- */
+
+/** '2025–' 처럼 끝이 열려 있거나 status 가 ongoing 이면 진행 중으로 본다. */
+const isOngoing = (w) => w.status === 'ongoing' || /[–-]\s*$/.test(w.year || '');
+
+/**
+ * 최근 것이 위로. 같은 연도면 진행 중인 것이 위로.
+ * 연도는 '2025–26' 처럼 범위일 수 있어서 시작 연도(yearFrom)로 본다.
+ */
+function byRecency(a, b) {
+  return (b.yearFrom || 0) - (a.yearFrom || 0) || isOngoing(b) - isOngoing(a);
+}
 
 /* ---------- 주소와 상태 ---------- */
 
 function readQuery() {
   const q = new URLSearchParams(location.search);
-  const type = q.get('type');
-  if (TYPES.some((x) => x.key === type)) state.type = type;
+  const c = q.get('category');
+  if (CATEGORIES.some((x) => x.key === c)) state.category = c;
   const p = q.get('producer');
   if (p) state.producer = p;
 }
 
 function writeQuery() {
   const q = new URLSearchParams();
-  if (state.type !== 'all') q.set('type', state.type);
+  if (state.category !== 'all') q.set('category', state.category);
   if (state.producer) q.set('producer', state.producer);
   const s = q.toString();
   history.replaceState(null, '', s ? `?${s}` : location.pathname);
 }
 
+/* 카테고리 필터와 프로듀서 색점 필터는 동시에 걸린다. */
 const filtered = (works) =>
-  works.filter(
-    (w) =>
-      (state.type === 'all' || w.type === state.type) &&
-      (!state.producer || (w.producers || []).includes(state.producer))
-  );
+  works
+    .filter(
+      (w) =>
+        (state.category === 'all' || categoryKey(w) === state.category) &&
+        (!state.producer || (w.producers || []).includes(state.producer))
+    )
+    .sort(byRecency);
 
 /* ---------- 카드 ---------- */
 
@@ -60,13 +84,25 @@ function coverBlock(work, i) {
 }
 
 function cardVisual(work, i) {
-  if (!work.cover) return coverBlock(work, i);
-  return el(
-    'span.wrapimg',
-    null,
-    work.coverTemp ? el('span.tmp', { text: '임시 이미지' }) : null,
-    coverImage(work.cover, () => coverBlock(work, i))
+  const wrap = el('span.wrapimg');
+  const tmp = el('span.tmp', { text: '임시 이미지' });
+
+  const markTemp = () => {
+    if (!tmp.parentNode) wrap.prepend(tmp);
+  };
+  if (work.coverTemp) markTemp();
+
+  wrap.append(
+    photo(
+      coverCandidates(work),
+      () => {
+        tmp.remove(); // 색면으로 떨어졌으면 임시 라벨도 같이 걷는다
+        return coverBlock(work, i);
+      },
+      (src) => isTempFile(src) && markTemp()
+    )
   );
+  return wrap;
 }
 
 function card(work, i, producerById) {
@@ -75,20 +111,23 @@ function card(work, i, producerById) {
     '.card',
     { 'aria-label': titleText(t(work.title)) },
     cardVisual(work, i),
+    categoryBadge(work),
     el('span.t', null, titleNodes(t(work.title))),
     el('span.a', { text: t(work.artist) }),
-    el('span.m', null, dots(work.producers, producerById), el('span.yr', { text: work.year }))
+    el('span.m', null, dots(work.producers, producerById), el('span.yr', { text: work.year })),
+    /* 확인이 필요한 항목은 화면에 드러나 있어야 넷이 같이 볼 수 있다. */
+    t(work.note) ? el('span.note-flag.meta', { text: t(work.note) }) : null
   );
 }
 
 /* ---------- 필터 줄 ---------- */
 
 function buildFilters(site, rerender) {
-  const seg = el('span.seg', { role: 'group', 'aria-label': '종류' });
-  for (const type of TYPES) {
-    const b = el('button', { type: 'button', text: type.label, 'data-type': type.key });
+  const seg = el('span.seg', { role: 'group', 'aria-label': '카테고리' });
+  for (const cat of CATEGORIES) {
+    const b = el('button', { type: 'button', text: cat.label, 'data-category': cat.key });
     b.addEventListener('click', () => {
-      state.type = type.key;
+      state.category = cat.key;
       rerender();
     });
     seg.append(b);
@@ -117,7 +156,7 @@ function buildFilters(site, rerender) {
 
 function syncFilterUI({ seg, pdots }) {
   for (const b of seg.children) {
-    const on = b.dataset.type === state.type;
+    const on = b.dataset.category === state.category;
     b.classList.toggle('on', on);
     b.setAttribute('aria-pressed', String(on));
   }
@@ -135,10 +174,7 @@ function render(site, ui) {
 
   syncFilterUI(ui);
 
-  const typeName = TYPES.find((x) => x.key === state.type).label;
-  const who = state.producer ? site.producerById.get(state.producer) : null;
-  document.getElementById('works-h2').textContent = who ? `${typeName} · ${t(who.name)}` : typeName;
-
+  /* 무엇이 선택됐는지는 위 필터에 이미 드러나 있다. 큰 소제목으로 되풀이하지 않는다. */
   const cards = document.getElementById('works-list');
   cards.replaceChildren(
     ...(list.length

@@ -15,10 +15,14 @@
 ```
 img/
   works/<작업ID>/01.jpg   02.jpg   03.jpg …    작업 사진
+  works/<작업ID>/poster.jpg                     포스터
   artists/<예술가ID>.jpg                        예술가
   producers/<프로듀서ID>.jpg                    프로듀서
-  home/<이름>.jpg                               홈 전용 파노라마
+  home/<이름>.jpg                               홈 전용 (파노라마 · 세로)
 ```
+
+폴더 안에 무엇이 들어 있는지, 무엇을 아직 못 구했는지는 [img/README.txt](img/README.txt) 에
+정리돼 있습니다. 사진을 넣거나 뺄 때 그 파일도 같이 고쳐주세요 — 촬영자 크레딧이 거기 있습니다.
 
 - `<작업ID>` 는 `data/works.json` 의 `id` 와 **똑같이** 씁니다. 영문 소문자와 하이픈만.
   예 — 〈싱크 디 싱크〉는 `id: "sync-de-sync"` 이므로 `img/works/sync-de-sync/01.jpg`
@@ -41,34 +45,36 @@ img/
 
 ### 표지 사진 고르기
 
-작업 인덱스와 홈에 나오는 표지는 `data/works.json` 의 `cover` 가 가리킵니다.
-기본값은 `01.jpg` 이고, 다른 사진을 표지로 쓰고 싶으면 그 줄만 고치면 됩니다.
+**보통은 아무것도 안 해도 됩니다.** 폴더에 `01.jpg` 를 넣으면 그게 표지가 됩니다.
+`01.jpg` 가 없으면 `poster.jpg` 를 찾습니다(포스터만 있는 작업이 그렇습니다).
+둘 다 없으면 담당 프로듀서 색면 + `사진 준비 중` 으로 나옵니다.
+
+다른 사진을 표지로 쓰고 싶을 때만 `data/works.json` 의 `cover` 를 고칩니다.
 
 ```json
-"cover": "img/works/sync-de-sync/01.jpg"
+"cover": "img/works/sync-de-sync/03.jpg"
 ```
 
-홈 아래쪽 파노라마 두 칸은 따로 `homePhoto` 를 봅니다.
+홈의 사진 자리는 칸 비율이 정해져 있어서 미리 잘라둔 홈 전용 파일을 따로 씁니다.
+`homePhotos` 가 자리마다 어떤 파일을 쓸지 정합니다.
 
 ```json
-"homePhoto": "img/home/ganghwa-wide.jpg"
+"homePhotos": { "mosaic-wide-a": "img/home/ganghwa-panorama.jpg" }
 ```
 
-**파일이 아직 없어도 사이트는 깨지지 않습니다.** 사진 자리에 담당 프로듀서 색면과
-`사진 준비 중` 이라는 작은 글씨가 대신 들어갑니다. 파일을 넣으면 그 자리가 사진으로 바뀝니다.
-경로를 미리 적어두어도 괜찮습니다.
+자리 이름은 `mosaic-tall`(가운데 세로 3:4) · `mosaic-wide-a` · `mosaic-wide-b`(아래 파노라마 5:2) 입니다.
+홈 전용 파일이 없으면 그 작업의 표지로 떨어집니다.
 
 ### 임시로 넣는 사진
 
-정식 사진이 아직 없어서 급한 대로 넣는 사진에는 표시를 남겨주세요.
-카드 왼쪽 위에 `임시 이미지` 라벨이 붙습니다.
+정식 사진이 아직 없어서 급한 대로 넣는 사진은 **파일명 앞에 `TEMP-` 를 붙이세요.**
 
-```json
-"cover": "img/works/energy/01.jpg",
-"coverTemp": true
+```
+img/works/gwantong-18/TEMP-01.jpg
 ```
 
-나중에 정식 사진으로 바꿀 때 `coverTemp` 줄을 지우면 됩니다.
+카드 왼쪽 위에 `임시 이미지` 라벨이 자동으로 붙습니다. JSON은 건드릴 필요 없습니다.
+정식 사진으로 바꿀 때는 `TEMP-` 를 뗀 이름으로 넣으면 라벨도 같이 사라집니다.
 
 ### 촬영자 크레딧
 

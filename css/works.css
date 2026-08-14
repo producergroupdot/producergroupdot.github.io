@@ -1,23 +1,16 @@
 /* works.css — 작업 인덱스. 매스트헤드 · 필터 줄 · 3열 메이슨리 카드 */
 
-/* ---------- 매스트헤드 ----------
-   제목만. 빵부스러기 링크는 넣지 않는다 — 상단 메뉴와 중복이다. */
-.masthead{ padding:52px var(--pad) 34px }
-.masthead h1{
-  font-size:clamp(38px,5.6vw,76px);
-  letter-spacing:-.045em;
-  line-height:.93;
-}
+/* 매스트헤드는 여러 페이지가 함께 쓰므로 base.css 에 있다. */
 
-/* ---------- 필터 줄 ---------- */
+/* ---------- 필터 줄 ----------
+   무엇이 선택됐는지는 이 줄이 보여준다. 아래에 큰 소제목으로 되풀이하지 않는다. */
 .secbar{
   display:flex; align-items:center; gap:16px; flex-wrap:wrap;
   padding:0 var(--pad) 26px;
 }
-.secbar h2{ font-size:clamp(24px,2.8vw,38px); letter-spacing:-.03em }
 .secbar .label{ opacity:.5 }
 
-.seg{ display:flex; border:.5px solid var(--line-s) }
+.seg{ display:flex; flex-wrap:wrap; border:.5px solid var(--line-s) }
 .seg button{
   padding:5px 13px;
   font-family:var(--mono); font-size:11px;
@@ -80,6 +73,8 @@
 .ar-6{ aspect-ratio:3/4 }
 
 /* 카드 글자 */
+.card .cat{ margin-top:11px }
+.card .cat + .t{ margin-top:6px }   /* 배지가 있으면 제목 위 여백을 줄인다 */
 .card .t{
   display:block;
   margin-top:11px;
@@ -94,6 +89,8 @@ a.card:hover .t{ text-decoration-thickness:1.5px }
 .card .m .who i{ width:8px; height:8px }
 .card .m .yr{ font-family:var(--mono); font-size:11px; opacity:.5; margin-left:4px }
 
+.card .note-flag{ margin-top:8px }
+
 .cards .empty{ padding:20px 0 40px; opacity:.6 }
 .count{ padding:14px var(--pad) 0; opacity:.55 }
 
@@ -105,5 +102,6 @@ a.card:hover .t{ text-decoration-thickness:1.5px }
   .cards{ columns:1 }
   .card{ margin-bottom:30px }
   .secbar{ gap:12px }
-  .secbar h2{ width:100% }
+  .secbar .seg{ width:100% }        /* 다섯 칸이라 모바일에서는 한 줄을 다 쓴다 */
+  .secbar .seg button{ flex:1; text-align:center; padding:6px 8px }
 }

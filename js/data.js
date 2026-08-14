@@ -10,10 +10,13 @@ async function json(name) {
 }
 
 export async function loadSite() {
-  const [producers, works, runs] = await Promise.all([
+  const [producers, works, runs, artists, nowOrder, about] = await Promise.all([
     json('producers.json'),
     json('works.json'),
     json('runs.json'),
+    json('artists.json'),
+    json('now.json'),
+    json('about.json'),
   ]);
 
   const producerById = new Map(producers.map((p) => [p.id, p]));
@@ -23,5 +26,5 @@ export async function loadSite() {
     runsByWork.get(r.workId).push(r);
   }
 
-  return { producers, works, runs, producerById, runsByWork };
+  return { producers, works, runs, artists, nowOrder, about, producerById, runsByWork };
 }

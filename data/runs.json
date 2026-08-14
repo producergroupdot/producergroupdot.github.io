@@ -38,5 +38,15 @@
     "city": { "ko": "서울", "en": "Seoul" },
     "time": "",
     "note": { "ko": "", "en": "" }
+  },
+  {
+    "workId": "mooljil",
+    "from": "2026-07-14",
+    "to": "2026-07-15",
+    "date": { "ko": "2026.7.14–15", "en": "14–15 July 2026" },
+    "venue": { "ko": "Mercat de les Flors", "en": "Mercat de les Flors" },
+    "city": { "ko": "바르셀로나", "en": "Barcelona" },
+    "time": "",
+    "note": { "ko": "투어 · 확인 필요", "en": "Tour" }
   }
 ]

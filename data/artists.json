@@ -1,0 +1,128 @@
+[
+  {
+    "id": "hwang",
+    "name": { "ko": "황수현", "en": "Hwang Soo-hyun" },
+    "field": { "ko": "안무가", "en": "Choreographer" },
+    "producers": ["jisun"],
+    "since": "2025~",
+    "bio": {
+      "ko": "황수현은 춤을 매개로 신체 경험의 잠재성을 확장해 온 안무가다. 춤을 단순히 시각적으로 보여지는 형식을 넘어 몸과 몸, 몸과 공간, 그리고 눈에 보이지 않는 것들 사이에 발생하는 '경험의 구조'로 다룬다. 주로 호흡과 구음, 진동, 어둠, 미세한 운동감각 같은 비가시적 요소들을 안무의 핵심 재료로 삼는다. 〈검정감각〉, 〈음———〉, 〈카베에〉, 〈Zzz〉 등의 작품을 통해 시각 중심의 관람 방식을 전복하고, 서로 다른 몸들이 극장이라는 공간 안에서 함께 감각하는 '공동의 상태'를 탐구해왔다. 최근에는 이러한 감각적 경험을 가능하게 했던 방식들이 하나의 고정된 틀로 굳어지는 것을 경계하며, 몸이 환경과 또 다른 방식으로 관계 맺을 수 있는 새로운 안무적 실험을 이어가고 있다.\n\n주요 작품으로 〈세계〉(2026), 〈sync de sync〉(2025), 〈Zzz〉(2023), 〈카베에〉(2023) 등이 있으며, 〈음 ━—━〉으로 제27회 무용예술상 안무상(2021)을 수상하고 문화체육관광부장관 표창(2020)을 받았다. 또한 〈검정감각〉을 통해 한국춤비평가협회 '2019 베스트 작품상'을 수상했다.",
+      "en": ""
+    },
+    "links": [
+      {
+        "label": { "ko": "웹사이트", "en": "Website" },
+        "url": "http://soohyunhwang.com/"
+      },
+      {
+        "label": { "ko": "@shh_works", "en": "@shh_works" },
+        "url": "https://www.instagram.com/shh_works/"
+      }
+    ],
+    "photo": "img/artists/TEMP-hwang.jpg",
+    "photoTemp": true,
+    "pos": {
+      "x": "2%",
+      "y": "0%",
+      "d": "26vh"
+    }
+  },
+  {
+    "id": "ambiguous",
+    "name": { "ko": "앰비규어스 댄스 컴퍼니", "en": "Ambiguous Dance Company" },
+    "field": { "ko": "예술감독 김보람", "en": "Artistic Director Kim Boram" },
+    "producers": [],
+    "since": "",
+    "bio": { "ko": "", "en": "" },
+    "links": [],
+    "photo": "img/artists/TEMP-ambiguous.jpg",
+    "photoTemp": true,
+    "pos": {
+      "x": "29%",
+      "y": "40%",
+      "d": "17vh"
+    }
+  },
+  {
+    "id": "kwon",
+    "name": { "ko": "권병준", "en": "Kwon Byungjun" },
+    "field": { "ko": "미디어 아티스트 · 로봇시어터컴퍼니", "en": "Media Artist · Robot Theatre Company" },
+    "producers": ["jisun", "bongmin"],
+    "since": "2017~",
+    "bio": {
+      "ko": "권병준은 예술과 기술을 결합하는 하드웨어 연구자이자, 소리를 기반으로 작업하는 미디어 아티스트다. 1990년대 초반 밴드 활동으로 음악을 시작해, 2000년대 중반 네덜란드의 전자악기 연구개발기관 스타임(STEIM)에서 하드웨어 엔지니어로 일했다.\n\n2018년부터 전시형 퍼포먼스를 위한 로봇을 개발하며 기계적 움직임을 탐구하고, 빛과 소리, 행위와 서사를 결합한 작업을 이어오고 있다. 2023년 국립현대미술관 '올해의 작가상'을 수상했다.\n\n로봇시어터컴퍼니(알오티씨 R.O.T.C)는 권병준이 이끄는 예술가 콜렉티브로, 인간 퍼포머와 로봇이 공존하는 새로운 형태의 음악극을 만들고자 한다.",
+      "en": ""
+    },
+    "links": [
+      {
+        "label": { "ko": "웹사이트", "en": "Website" },
+        "url": "https://byungjun.pe.kr/"
+      }
+    ],
+    "photo": "",
+    "pos": {
+      "x": "70%",
+      "y": "3%",
+      "d": "23vh"
+    }
+  },
+  {
+    "id": "untitledroad",
+    "name": { "ko": "무제의 길", "en": "Untitled Road" },
+    "field": { "ko": "연출 김보람", "en": "Director Kim Borahm" },
+    "producers": ["jisun"],
+    "since": "2014~",
+    "bio": {
+      "ko": "김보람은 게임의 여러 요소를 끌어와 몰입형 게임 연극을 만듭니다. 관객이 하나의 이야기를 여러 방식으로 겪고 곱씹게 하는 작업입니다. 특히 게임이 유연하게 전환되는 성질, 그리고 그것이 연극이라는 경험을 어디까지 넓힐 수 있는지에 관심을 두고 있습니다.",
+      "en": ""
+    },
+    "links": [
+      {
+        "label": { "ko": "웹사이트", "en": "Website" },
+        "url": "https://www.untitledroad.com/"
+      },
+      {
+        "label": { "ko": "@borahmkim", "en": "@borahmkim" },
+        "url": "https://www.instagram.com/borahmkim/"
+      }
+    ],
+    "photo": "img/artists/TEMP-untitledroad.jpg",
+    "photoTemp": true,
+    "pos": {
+      "x": "9%",
+      "y": "58%",
+      "d": "18vh"
+    }
+  },
+  {
+    "id": "elephants",
+    "name": { "ko": "코끼리들이 웃는다", "en": "Elephants Laugh" },
+    "field": { "ko": "연출 이진엽", "en": "Director Lee Jinyup" },
+    "producers": ["bongmin"],
+    "since": "",
+    "bio": { "ko": "", "en": "" },
+    "links": [],
+    "photo": "",
+    "pos": {
+      "x": "65%",
+      "y": "54%",
+      "d": "15vh"
+    }
+  },
+  {
+    "id": "jiyeon-x-jeonhwan",
+    "name": { "ko": "지연X전환", "en": "" },
+    "field": { "ko": "", "en": "" },
+    "producers": [],
+    "since": "",
+    "bio": { "ko": "", "en": "" },
+    "links": [],
+    "photo": "",
+    "pos": {
+      "x": "44%",
+      "y": "6%",
+      "d": "15vh"
+    },
+    "note": { "ko": "좌표 임시 · 명단 유지 여부 확인 필요", "en": "" }
+  }
+]

@@ -1,0 +1,130 @@
+/* about.css — 도트 소개 · 프로듀서 4인 · 둥지230 · 연결 */
+
+/* ---------- 소개문 3단 ---------- */
+.about-cols{
+  columns:3;
+  column-gap:34px;
+  padding:0 var(--pad);
+  font-size:14.5px;
+  line-height:1.75;
+}
+.about-cols p{
+  margin:0 0 14px;
+  break-inside:avoid;      /* 문단이 단 사이에서 잘리지 않게 */
+}
+
+/* ---------- 소제목 ---------- */
+.sec{
+  padding:52px var(--pad) 0;
+  font-size:clamp(22px,2.4vw,32px);
+  letter-spacing:-.03em;
+}
+
+/* ---------- 프로듀서 네 칸 ---------- */
+.people{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;                   /* 색면끼리는 붙인다 */
+  margin-top:22px;
+}
+.person{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  min-height:170px;
+  padding:20px var(--pad);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transition:filter .2s;
+}
+a.person:hover{ filter:brightness(1.06) }
+
+/* 모서리에 반쯤 걸치는 원. 그 칸의 글자색에서 뽑는다 —
+   다른 사람의 색을 얹으면 색이 누구를 가리키는지 흐려진다. */
+.person .pblob{
+  position:absolute;
+  width:78px; height:78px;
+  right:-26px; top:-26px;
+  border-radius:50%;
+  background:currentColor;
+  opacity:.2;
+  z-index:-1;
+}
+.person .meta{ opacity:.75 }
+.person h3{
+  font-size:clamp(15px,1.5vw,19px);
+  letter-spacing:-.01em;
+}
+.person .kr{ font-size:13px; opacity:.8; display:block; margin-top:3px }
+
+/* ---------- 둥지230 ---------- */
+/* 페이지에서 유일한 어두운 면. 작게 만들지 않는다. */
+.doongji{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  margin-top:44px;
+  padding:64px var(--pad);
+  background:var(--ink);
+  color:var(--cream);
+}
+.dj-dot{
+  position:absolute;
+  right:-90px; top:-90px;
+  width:340px; height:340px;
+  border-radius:50%;
+  background:var(--lavender);
+  opacity:.9;
+  z-index:-1;
+}
+.dj-in{ position:relative; max-width:52ch }
+.dj-in .meta{ opacity:.7 }
+.doongji h2{
+  font-size:clamp(34px,4.6vw,62px);
+  letter-spacing:-.04em;
+  line-height:1;
+  margin:10px 0 16px;
+}
+.doongji p{ font-size:16px; line-height:1.65; opacity:.85 }
+.dj-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:11px 20px;
+  border:.5px solid var(--cream);
+  font-size:14px;
+  transition:background .2s, color .2s;
+}
+.dj-btn:hover{ background:var(--cream); color:var(--ink) }
+
+/* ---------- 연결 ---------- */
+.contact{ padding:44px var(--pad) 0 }
+.contact h2{
+  font-size:14px;
+  letter-spacing:.02em;
+  padding-bottom:9px;
+  border-bottom:.5px solid var(--line-s);
+}
+.clist{ list-style:none; margin-top:14px }
+.clist li{ padding:7px 0 }
+.clist a{
+  font-size:15px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:.5px;
+}
+.clist a:hover{ text-decoration-thickness:1.5px }
+
+/* ---------- 모바일 ---------- */
+@media (max-width:900px){
+  .about-cols{ columns:1 }
+  .people{ grid-template-columns:repeat(2,1fr) }
+  .sec{ padding-top:36px }
+  .doongji{ margin-top:32px; padding:38px var(--pad) }
+  .dj-dot{ width:190px; height:190px; right:-70px; top:-70px }
+  .contact{ padding-top:34px }
+}
+@media (max-width:520px){
+  .people{ grid-template-columns:1fr }
+  .person{ min-height:132px }
+}

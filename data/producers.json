@@ -42,10 +42,38 @@
       "on": "var(--ink)"
     },
     "role": { "ko": "프로듀서", "en": "Producer" },
-    "bio": { "ko": "", "en": "" },
-    "email": "",
-    "links": [],
-    "photo": ""
+    "bio": {
+      "ko": "박지선은 크리에이티브 프로듀서이자 독립 기획자, 리서처이며 예술 정책 자문가입니다. 동시대를 읽고, 질문을 던지고, 대화하며 길을 찾아 나갑니다. 독립적으로, 수평적으로, 창의적으로 일하기를 좋아합니다.\n\n2000년대 초부터 춘천마임축제, 서울국제공연예술제(SPAF), 아시테지 국제총회 등 여러 축제를 기획했고, 2002년부터 2009년까지 춘천마임축제 기획실장으로 일했습니다. 2005년 아시아나우(AsiaNow)를 공동 설립해 한국 연극의 해외진출과 국제공동제작을 이끌었으며, 2009년부터 2012년까지 예술경영지원센터에서 서울아트마켓(PAMS)을 총괄했습니다.\n\n2014년 도트를 공동 창립했습니다. 같은 해 아시아 프로듀서 플랫폼(APP)을 제안해 일본·대만·호주의 동료들과 공동 창설했고, 서커스 아시아 네트워크(CAN)의 공동 설립자이기도 합니다.\n\n경계와 공존, 도시, 기후위기, 기술의 시대라는 서로 맞닿은 질문들 앞에서 예술의 근본을 다시 묻습니다. 코끼리들이 웃는다, 창작그룹 노니, 무제의 길, 로봇시어터컴퍼니(권병준), 황수현과 장르의 경계를 넘나드는 실험을 이어왔고, 2020년부터 화천 예술텃밭과 기후변화 예술가 레지던시를, 2021년부터 국립현대무용단과 〈무용×기술 창작 랩〉을 매년 기획하고 있습니다.\n\n결과보다 과정을, 시장보다 관계를, 위계보다 수평을 지향합니다. 늘 걸으며 이동하다 보면, 좋은 동료들을 만나고, 협력하고 연대합니다.",
+      "en": ""
+    },
+    "email": "jisunarts@yahoo.com",
+    "links": [
+      {
+        "label": { "ko": "개인 웹사이트", "en": "Website" },
+        "url": "https://jisunarts.github.io"
+      },
+      {
+        "label": { "ko": "아시아 프로듀서 플랫폼 APP", "en": "Asia Producers' Platform" },
+        "url": "https://www.asianproducersplatform.com"
+      },
+      {
+        "label": { "ko": "기후변화 예술가 레지던시", "en": "Climate Change Artist Residency" },
+        "url": "http://artstutbatclimatechange.com"
+      },
+      {
+        "label": { "ko": "둥지230", "en": "Doongji 230" },
+        "url": "https://www.instagram.com/doongji230/"
+      },
+      {
+        "label": { "ko": "인스타그램", "en": "Instagram" },
+        "url": "https://www.instagram.com/jisun_park_092/"
+      }
+    ],
+    "photo": "",
+    "illustration": {
+      "file": "img/producers/jisun-illustration.png",
+      "caption": { "ko": "파타고니아", "en": "" }
+    }
   },
   {
     "id": "miseon",

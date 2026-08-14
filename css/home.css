@@ -126,7 +126,65 @@
 .nowhead .all{ opacity:.6 }
 .nowhead .all:hover{ opacity:1; text-decoration:underline; text-underline-offset:3px }
 
+/* 열을 고정폭으로 잡아 줄이 흐트러지지 않게 한다.
+   [제목 flex] [날짜 190] [장소 260] [색점 56] */
+#now-list .row{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  height:46px;              /* 모든 줄 높이를 같게 — 한 줄만 높아지면 눈에 걸린다 */
+  padding:0;
+  border-bottom:.5px solid var(--line);
+}
+#now-list .row.past{ opacity:.45 }
+
+#now-list .t{
+  flex:1;
+  min-width:0;              /* 없으면 flex 항목이 줄어들지 않아 말줄임이 안 걸린다 */
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:15px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#now-list .when{
+  width:190px; flex:none;
+  text-align:right;
+  font-family:var(--mono); font-size:11px;
+  font-variant-numeric:tabular-nums;   /* 숫자 폭을 맞춰 세로로 떨어지게 */
+  opacity:.75;
+}
+#now-list .where{
+  width:260px; flex:none;
+  font-family:var(--mono); font-size:11px;
+  opacity:.5;
+  white-space:nowrap;       /* 길어도 두 줄로 넘기지 않는다 */
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#now-list .who{
+  width:56px; flex:none;
+  justify-content:flex-end;
+}
+#now-list .note-flag{ flex:none }
+
 #now-list .empty{ padding:18px 0; opacity:.55 }
+
+/* 모바일 — 제목과 날짜만 첫 줄에 두고 장소는 아래로 내린다. */
+@media (max-width:900px){
+  #now-list .row{
+    height:auto;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:10px;
+    padding:12px 0;
+  }
+  #now-list .when{ width:auto; text-align:left }
+  #now-list .who{ width:auto; margin-left:auto }
+  #now-list .where{ flex:1 0 100%; width:auto }
+}
 
 /* ===========================================================
    Now 아래 사진 3장
