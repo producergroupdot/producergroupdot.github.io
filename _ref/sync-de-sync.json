@@ -1,0 +1,88 @@
+{
+  "id": "sync-de-sync",
+  "category": "performance",
+  "producers": ["jisun", "miseon"],
+  "artist": "hwang-soohyeon",
+  "cover": "img/works/sync-de-sync/01.jpg",
+  "images": [
+    "img/works/sync-de-sync/01.jpg",
+    "img/works/sync-de-sync/02.jpg",
+    "img/works/sync-de-sync/03.jpg",
+    "img/works/sync-de-sync/04.jpg"
+  ],
+  "years": "2025–26",
+
+  "title": {
+    "ko": "싱크 디 싱크",
+    "en": "sync de sync"
+  },
+  "subtitle": {
+    "ko": "황수현 · 2년에 걸친 감각의 실험",
+    "en": "Soohyeon Hwang"
+  },
+  "lead": {
+    "ko": "감각은 어떻게 맞고, 어떻게 어긋나는가.",
+    "en": "How senses sync, and how they come apart."
+  },
+
+  "body": {
+    "ko": [
+      "〈싱크 디 싱크〉는 안무가 황수현이 감각의 sync와 desync를 다루는 작업입니다. 무용수들은 서로의 감각을 맞추려 하고, 그 시도는 번번이 어긋납니다. 작품은 그 어긋남을 실패가 아니라 관계가 드러나는 자리로 봅니다.",
+      "텍스트는 '미래완료 시제'를 중심에 둡니다. 아직 오지 않았는데 이미 끝나 있는 시간을 말하는 문장들이 무대 위 몸의 현재와 겹치면서, 지금 벌어지는 일을 선형적인 시간에서 떼어냅니다.",
+      "2025년 TINC에서 2인 퍼포먼스로 초연했고, 2026년에는 같은 창작진이 다시 모여 2인무와 3인무를 함께 올렸습니다. 두 편 모두 초연의 재연이 아니라 방법론과 재료만 공유하는 새로운 작업이며, 특히 3인무는 사실상 신작에 가깝습니다. 퍼포머가 한 명 늘면서 2인무의 닫힌 구조가 열리고, 몸과 공간과 텍스트 사이의 관계가 드러났습니다.",
+      "2026년에는 다큐멘터리 감독과 협업해 리허설과 공연을 촬영했습니다. 라이브가 아닌 영상의 언어로 다시 쓰인 〈싱크 디 싱크〉입니다. 리허설 기록과 사진을 모은 웹 포토북도 이 작업의 감각 아카이브로 함께 만들어졌습니다.",
+      "도트는 크리에이티브 프로듀싱과 기획·행정을 맡아 2년에 걸친 창작 과정과 두 번의 공연을 함께 했습니다."
+    ],
+    "en": []
+  },
+
+  "accordions": [
+    {
+      "title": { "ko": "일정", "en": "Dates" },
+      "rows": [
+        { "ko": "2025. 8. 14 – 16  오후 7시 · TINC", "en": "14–16 Aug 2025, 7:00pm · TINC" },
+        { "ko": "2026. 7. 16 – 19  오후 7시 30분 · TINC", "en": "16–19 Jul 2026, 7:30pm · TINC" }
+      ]
+    },
+    {
+      "title": { "ko": "정보", "en": "Info" },
+      "rows": [
+        { "ko": "장소 · TINC (This is Not A Church)", "en": "Venue · TINC (This is Not A Church)" },
+        { "ko": "러닝타임 · 60분", "en": "Running time · 60 min" },
+        { "ko": "도트의 역할 · 크리에이티브 프로듀싱, 기획·행정", "en": "DOT · creative producing, planning and administration" }
+      ]
+    },
+    {
+      "title": { "ko": "크레딧", "en": "Credits" },
+      "rows": [
+        { "ko": "컨셉·안무 · 황수현", "en": "Concept & Choreography · Soohyeon Hwang" },
+        { "ko": "리서치·출연 · 정나원, 최승윤, 황수현", "en": "" },
+        { "ko": "사운드 · 홍초선", "en": "" },
+        { "ko": "조명 디자인 · 공연화", "en": "" },
+        { "ko": "조명팀 · 김인애, 오채은", "en": "" },
+        { "ko": "영상 · 윤재민(2025), 백종관(2026)", "en": "" },
+        { "ko": "리허설 어시스턴트 · 강호정", "en": "" },
+        { "ko": "아웃사이드 아이 · 손나예", "en": "" },
+        { "ko": "크리에이티브 프로듀서 · 박지선", "en": "Creative Producer · Jisun Park" },
+        { "ko": "기획·행정 · 송미선", "en": "Planning & Administration · Miseon Song" },
+        { "ko": "무대감독 · 최진아(2025), 김세현(2026)", "en": "" },
+        { "ko": "셋업·진행 · 김지현, 김채민", "en": "" },
+        { "ko": "그래픽 디자인 · 홍소이", "en": "" }
+      ]
+    },
+    {
+      "title": { "ko": "후원", "en": "Support" },
+      "rows": [
+        { "ko": "서울특별시, 서울문화재단", "en": "Seoul Metropolitan Government, Seoul Foundation for Arts and Culture" },
+        { "ko": "2026년 서울문화재단 예술창작활동지원(다년) 선정", "en": "" }
+      ]
+    },
+    {
+      "title": { "ko": "링크", "en": "Links" },
+      "rows": [
+        { "ko": "프로그램북", "en": "Programme book", "url": "https://soohyunhwang.com/syncdesync/" },
+        { "ko": "웹 포토북", "en": "Web photobook", "url": "" }
+      ]
+    }
+  ]
+}

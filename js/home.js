@@ -204,9 +204,8 @@ function nowItems(site, today = new Date()) {
   const workById = new Map(works.map((w) => [w.id, w]));
   const items = [];
 
-  /* 무엇이 Now 에 나오고 어떤 차례로 나오는지는 data/now.json 이 정한다.
-     날짜만으로는 원하는 차례가 안 나오고, 진행 중인 일 중에 무엇을 앞에 둘지는
-     사람이 정할 일이라서다. 배열에 없는 작업은 Now 에 나오지 않는다(Works 에는 남는다). */
+  /* 무엇이 Now 에 나오는지는 data/now.json 이 정한다(배열에 없으면 안 나온다).
+     차례는 works.json 의 order 가 정한다 — Works 페이지와 같은 기준이다. */
   (nowOrder || []).forEach((id, order) => {
     const w = workById.get(id);
     if (!w) return; // 없는 id 는 조용히 건너뛴다
@@ -246,8 +245,14 @@ function nowItems(site, today = new Date()) {
     }
   });
 
-  /* 지난 것은 배열 차례와 상관없이 늘 맨 아래. 그 안에서는 배열 차례를 따른다. */
-  items.sort((a, b) => a.past - b.past || a.order - b.order || (a.sort < b.sort ? -1 : 1));
+  /* 차례는 works.json 의 order 가 정한다(Works 페이지와 같은 기준).
+     지난 것만 예외로 늘 맨 아래에 둔다. */
+  items.sort(
+    (a, b) =>
+      a.past - b.past ||
+      (a.work.order ?? Infinity) - (b.work.order ?? Infinity) ||
+      (a.sort < b.sort ? -1 : 1)
+  );
 
   return { items };
 }

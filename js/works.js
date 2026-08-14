@@ -57,10 +57,15 @@ function yearSpan(w) {
 const runCities = (w) => [...new Set((w.runs || []).map((r) => t(r.city)).filter(Boolean))];
 
 /**
- * 가장 최근 회차가 위로. 초연 연도가 아니라 마지막으로 관객을 만난 때를 기준으로 삼는다.
- * 같은 날이면 진행 중인 것이 위로.
+ * 차례는 works.json 의 order 가 정한다. 날짜로 자동 정렬하지 않는다 —
+ * 무엇을 앞세울지는 사람이 정할 일이다.
+ * order 가 없는 작업은 맨 뒤로 가고, 그 안에서만 최신 회차 순으로 늘어선다.
+ * 필터는 걸러내기만 하고 차례는 건드리지 않는다.
  */
-function byRecency(a, b) {
+function byOrder(a, b) {
+  const ao = a.order ?? Infinity;
+  const bo = b.order ?? Infinity;
+  if (ao !== bo) return ao - bo;
   return latestRun(b).localeCompare(latestRun(a)) || isOngoing(b) - isOngoing(a);
 }
 
@@ -90,7 +95,7 @@ const filtered = (works) =>
         (state.category === 'all' || categoryKey(w) === state.category) &&
         (!state.producer || (w.producers || []).includes(state.producer))
     )
-    .sort(byRecency);
+    .sort(byOrder);
 
 /* ---------- 카드 ---------- */
 
@@ -131,11 +136,18 @@ function card(work, i, producerById) {
     pageUrl('work', work.id),
     '.card',
     { 'aria-label': titleText(t(work.title)) },
+    /* 값이 없는 줄은 아예 만들지 않는다 — 빈 span 은 빈 줄로 보인다.
+       카드에는 리드를 쓰지 않는다(제목·예술가·연도까지만). */
     cardVisual(work, i),
     categoryBadge(work),
     el('span.t', null, titleNodes(t(work.title))),
-    el('span.a', { text: t(work.artist) }),
-    el('span.m', null, dots(work.producers, producerById), el('span.yr', { text: yearSpan(work) })),
+    t(work.artist) ? el('span.a', { text: t(work.artist) }) : null,
+    el(
+      'span.m',
+      null,
+      dots(work.producers, producerById),
+      yearSpan(work) ? el('span.yr', { text: yearSpan(work) }) : null
+    ),
     /* 회차가 열린 도시. 회차가 없는 작업에는 줄이 생기지 않는다. */
     runCities(work).length ? el('span.cities.meta', { text: runCities(work).join(' · ') }) : null,
     /* 확인이 필요한 항목은 화면에 드러나 있어야 넷이 같이 볼 수 있다. */

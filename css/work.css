@@ -1,0 +1,154 @@
+/* work.css — 작업 상세.
+   패널 78% 위에 오른쪽 사진이 걸쳐 나온다. 사진은 절대 위치라
+   패널 높이에 잡히지 않으므로 js/work.js 의 fitPanel() 이 높이를 맞춘다. */
+
+/* ---------- 제목 블록 ---------- */
+.dhead{ padding:52px var(--pad) 34px }
+.dmeta{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.dmeta .dtype, .dmeta .dyear{ opacity:.55 }
+.dhead h1{
+  font-size:clamp(34px,5vw,68px);
+  letter-spacing:-.04em;
+  line-height:1;
+}
+.dhead .dsub{
+  font-size:clamp(16px,1.5vw,21px);
+  font-weight:var(--w-body);
+  margin-top:14px;
+  max-width:46ch;
+}
+.dhead .dartist{
+  font-family:var(--mono);
+  font-size:11px;
+  opacity:.55;
+  margin-top:10px;
+}
+
+/* ---------- 패널 + 걸쳐 나오는 사진 ---------- */
+.dwrap{
+  position:relative;
+  border-top:.5px solid var(--line-s);
+}
+.dpanel{
+  width:78%;
+  background:var(--panel);
+  padding:40px 46px 46px var(--pad);
+}
+.dpanel .lead{
+  font-size:clamp(18px,1.9vw,24px);
+  line-height:1.5;
+  max-width:42ch;
+  margin-bottom:22px;
+}
+.dpanel p{
+  font-size:15.5px;
+  line-height:1.75;
+  max-width:52ch;
+  margin:0 0 15px;
+}
+
+.dimg{
+  position:absolute;
+  right:0;
+  top:70px;
+  width:47%;
+}
+.dimg .cover{ width:100%; height:auto; display:block }
+.dimg .block{
+  width:100%;
+  aspect-ratio:3/2;
+  display:flex; align-items:flex-end;
+  padding:16px;
+  position:relative; overflow:hidden; isolation:isolate;
+}
+.dimg .tmp{
+  position:absolute; left:8px; top:8px; z-index:1;
+  font-family:var(--mono); font-size:10px; letter-spacing:.02em;
+  background:rgb(29 29 27 / .62); color:var(--cream);
+  padding:2px 6px; border-radius:3px;
+}
+
+/* 색면 대체는 Works 카드와 같은 모양 */
+.blob-card{
+  position:absolute; width:130px; height:130px; border-radius:50%;
+  right:-34px; top:-40px; z-index:-1;
+  background:currentColor; opacity:.18;
+}
+.block-t{
+  font-family:var(--disp); font-weight:var(--w-disp);
+  font-size:17px; letter-spacing:-.02em; opacity:.5;
+}
+
+/* ---------- 아코디언 ---------- */
+/* 값이 없는 항목은 아예 만들지 않는다(js/work.js). 여기 규칙은 있는 것만 그린다. */
+.acc{ margin-top:30px; max-width:52ch }
+.acc details{ border-top:.5px solid var(--line) }
+.acc details:last-child{ border-bottom:.5px solid var(--line) }
+.acc summary{
+  display:flex; gap:12px; align-items:baseline;
+  padding:11px 0;
+  cursor:pointer;
+  font-size:16px;
+  list-style:none;
+}
+.acc summary::-webkit-details-marker{ display:none }
+.acc summary::before{ content:'+'; font-family:var(--mono); font-size:17px; width:14px }
+.acc details[open] summary::before{ content:'−' }
+.acc-rows{ list-style:none; padding:2px 0 16px 26px }
+.acc-rows li{ font-size:14px; line-height:1.7 }
+.acc-rows a{ text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:.5px }
+.acc-rows a:hover{ text-decoration-thickness:1.5px }
+
+/* ---------- 사진 4장 가로 띠 ---------- */
+.dstrip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.dstrip:empty{ display:none }   /* 한 장도 없으면 자리도 없다 */
+.dstrip .cover{ width:100%; aspect-ratio:3/2; object-fit:cover; display:block }
+
+/* ---------- Explore more ---------- */
+.more{
+  padding:52px var(--pad) 0;
+  border-top:.5px solid var(--line-s);
+  margin-top:44px;
+}
+.more h2{
+  font-size:clamp(24px,2.8vw,38px);
+  letter-spacing:-.03em;
+  margin-bottom:24px;
+}
+.mgrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px }
+.mcard{ display:block }
+.mcard .wrapimg{ display:block; position:relative }
+.mcard .cover, .mcard .block{ width:100%; aspect-ratio:3/2; object-fit:cover; display:block }
+.mcard .block{ display:flex; align-items:flex-end; padding:14px; position:relative; overflow:hidden; isolation:isolate }
+.mcard .cat{ margin-top:11px }
+.mcard .t{
+  display:block; margin-top:6px; font-size:16px;
+  text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:.5px;
+}
+a.mcard:hover .t{ text-decoration-thickness:1.5px }
+.mcard .m{ display:flex; gap:5px; align-items:center; margin-top:7px }
+.mcard .m .who i{ width:8px; height:8px }
+.mcard .m .yr{ font-family:var(--mono); font-size:11px; opacity:.5; margin-left:4px }
+
+/* ---------- 모바일 ---------- */
+@media (max-width:900px){
+  .dhead{ padding:30px var(--pad) 24px }
+  .dwrap{ min-height:0 !important }      /* JS 가 잡아둔 높이를 무르게 한다 */
+  .dpanel{ width:100%; padding:28px var(--pad) 30px }
+  .dimg{
+    position:static;
+    width:100%;
+    padding:0 var(--pad);
+    margin-top:22px;
+  }
+  .dstrip{ grid-template-columns:repeat(2,1fr) }
+  .more{ padding-top:36px; margin-top:32px }
+  .mgrid{ grid-template-columns:repeat(2,1fr); gap:18px }
+}

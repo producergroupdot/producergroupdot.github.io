@@ -1,10 +1,11 @@
 [
   {
     "id": "sync-de-sync",
+    "order": 8,
     "type": "performance",
     "category": { "ko": "공연", "en": "Production" },
-    "title": { "ko": "싱크 디 싱크", "en": "Sync de Sync" },
-    "subtitle": { "ko": "", "en": "" },
+    "title": { "ko": "싱크 디 싱크", "en": "sync de sync" },
+    "subtitle": { "ko": "황수현 · 2년에 걸친 감각의 실험", "en": "Soohyeon Hwang" },
     "artist": { "ko": "황수현", "en": "Hwang Soo-hyun" },
     "artists": ["hwang"],
     "producers": ["jisun", "miseon"],
@@ -12,30 +13,99 @@
     "yearFrom": 2025,
     "runs": [
       {
+        "start": "2025-08-14",
+        "end": "2025-08-16",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "TINC", "en": "TINC" },
+        "kind": { "ko": "초연", "en": "Premiere" },
+        "dotRole": { "ko": "크리에이티브 프로듀싱, 기획·행정", "en": "Creative producing, planning and administration" },
+        "link": "",
+        "time": "19:00",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "", "en": "" }
+      },
+      {
         "start": "2026-07-16",
         "end": "2026-07-19",
         "city": { "ko": "서울", "en": "Seoul" },
         "venue": { "ko": "TINC", "en": "TINC" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "", "en": "" },
+        "kind": { "ko": "신작", "en": "New work" },
+        "dotRole": { "ko": "크리에이티브 프로듀싱, 기획·행정", "en": "Creative producing, planning and administration" },
         "link": "",
-        "time": "",
+        "time": "19:30",
         "date": { "ko": "", "en": "" },
         "note": { "ko": "", "en": "" }
       }
     ],
     "status": "ongoing",
     "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
+    "body": {
+      "ko": "〈sync de sync〉는 조율되고 틀어지는 순간, 완전한 일치도 완전한 분리도 아닌 상태에서 작동하는 감각들을 따라간다. 말은 입술과 성대를 지나 소리와 진동으로 흩어지고, 움직임은 형태보다 몸을 통과한 파동과 질감으로 번진다.\n\n빛과 어둠, 온도와 공기, 무대 안팎의 보이는 것들과 보이지 않는 것들은 서로 겹치고 스며들며 감각의 얽힘을 만든다. 그 얽힘은 공간의 밀도, 온도와 습도, 기운의 변화를 몸에 닿게 한다.\n\n〈sync de sync〉는 고정되지 않는 주변 환경에 반응하며, 현재의 감각 안에 이미 도착한 변화를 더듬는다.",
+      "en": ""
+    },
+    "venue": { "ko": "TINC (This is Not A Church)", "en": "TINC (This is Not A Church)" },
     "produced": { "ko": "", "en": "" },
+    "dotRole": { "ko": "크리에이티브 프로듀싱, 기획·행정", "en": "creative producing, planning and administration" },
     "commission": { "ko": "", "en": "" },
     "keywords": { "ko": "", "en": "" },
+    "accordions": [
+      {
+        "title": { "ko": "일정", "en": "Dates" },
+        "rows": [
+          { "ko": "2025. 8. 14 – 16  오후 7시 · TINC", "en": "14–16 Aug 2025, 7:00pm · TINC" },
+          { "ko": "2026. 7. 16 – 19  오후 7시 30분 · TINC", "en": "16–19 Jul 2026, 7:30pm · TINC" }
+        ]
+      },
+      {
+        "title": { "ko": "정보", "en": "Info" },
+        "rows": [
+          { "ko": "장소 · TINC (This is Not A Church)", "en": "Venue · TINC (This is Not A Church)" },
+          { "ko": "러닝타임 · 60분", "en": "Running time · 60 min" },
+          { "ko": "도트의 역할 · 크리에이티브 프로듀싱, 기획·행정", "en": "DOT · creative producing, planning and administration" }
+        ]
+      },
+      {
+        "title": { "ko": "크레딧", "en": "Credits" },
+        "rows": [
+          { "ko": "컨셉·안무 · 황수현", "en": "Concept & Choreography · Soohyeon Hwang" },
+          { "ko": "리서치·출연 · 정나원, 최승윤, 황수현", "en": "" },
+          { "ko": "사운드 · 홍초선", "en": "" },
+          { "ko": "조명 디자인 · 공연화", "en": "" },
+          { "ko": "조명팀 · 김인애, 오채은", "en": "" },
+          { "ko": "영상 · 윤재민(2025), 백종관(2026)", "en": "" },
+          { "ko": "리허설 어시스턴트 · 강호정", "en": "" },
+          { "ko": "아웃사이드 아이 · 손나예", "en": "" },
+          { "ko": "크리에이티브 프로듀서 · 박지선", "en": "Creative Producer · Jisun Park" },
+          { "ko": "기획·행정 · 송미선", "en": "Planning & Administration · Miseon Song" },
+          { "ko": "무대감독 · 최진아(2025), 김세현(2026)", "en": "" },
+          { "ko": "셋업·진행 · 김지현, 김채민", "en": "" },
+          { "ko": "그래픽 디자인 · 홍소이", "en": "" }
+        ]
+      },
+      {
+        "title": { "ko": "후원", "en": "Support" },
+        "rows": [
+          { "ko": "서울특별시, 서울문화재단", "en": "Seoul Metropolitan Government, Seoul Foundation for Arts and Culture" },
+          { "ko": "2026년 서울문화재단 예술창작활동지원(다년) 선정", "en": "" }
+        ]
+      },
+      {
+        "title": { "ko": "링크", "en": "Links" },
+        "rows": [
+          {
+            "ko": "프로그램북",
+            "en": "Programme book",
+            "url": "https://soohyunhwang.com/syncdesync/"
+          }
+        ]
+      }
+    ],
     "cover": "img/works/sync-de-sync/01.jpg",
     "homeFeature": ["band-2"]
   },
   {
     "id": "hihihistory",
+    "order": 2,
     "type": "performance",
     "category": { "ko": "공연", "en": "Production" },
     "title": { "ko": "히히히스토리", "en": "Hihihistory" },
@@ -71,13 +141,14 @@
   },
   {
     "id": "gwantong-18",
+    "order": 3,
     "type": "performance",
     "category": { "ko": "공연", "en": "Production" },
     "title": { "ko": "관통 18", "en": "" },
     "subtitle": { "ko": "", "en": "" },
     "artist": { "ko": "김보람 · 앰비규어스 댄스 컴퍼니", "en": "Kim Boram · Ambiguous Dance Company" },
     "artists": ["ambiguous"],
-    "producers": [],
+    "producers": ["heejin"],
     "year": "2026",
     "yearFrom": 2026,
     "runs": [
@@ -118,6 +189,7 @@
   },
   {
     "id": "on-the-birds-day",
+    "order": 10,
     "type": "performance",
     "category": { "ko": "공연", "en": "Production" },
     "title": { "ko": "새들의 날에", "en": "On the Birds' Day" },
@@ -143,6 +215,7 @@
   },
   {
     "id": "energy",
+    "order": 11,
     "type": "performance",
     "category": { "ko": "공연", "en": "Production" },
     "title": { "ko": "에너지 — 보이지 않는 언어", "en": "Energy — The Invisible Language" },
@@ -165,13 +238,14 @@
   },
   {
     "id": "moving-a-forest",
+    "order": 7,
     "type": "performance",
     "category": { "ko": "공연", "en": "Production" },
     "title": { "ko": "움직이는 숲", "en": "Moving a Forest" },
     "subtitle": { "ko": "", "en": "" },
     "artist": { "ko": "무제의 길", "en": "Untitled Road" },
     "artists": ["untitledroad"],
-    "producers": [],
+    "producers": ["jisun", "bongmin"],
     "year": "2022–",
     "yearFrom": 2022,
     "runs": [],
@@ -190,6 +264,7 @@
   },
   {
     "id": "mooljil",
+    "order": 9,
     "type": "performance",
     "category": { "ko": "공연", "en": "Production" },
     "title": { "ko": "물질", "en": "Mooljil" },
@@ -230,6 +305,7 @@
   },
   {
     "id": "ganghwa",
+    "order": 4,
     "type": "project",
     "category": { "ko": "레지던시", "en": "Residency" },
     "title": { "ko": "{hex}{hex}의 섬 : 강화도", "en": "" },
@@ -255,13 +331,14 @@
   },
   {
     "id": "tnn",
+    "order": 6,
     "type": "project",
     "category": { "ko": "국제 네트워크", "en": "International Network" },
     "title": { "ko": "TNN The Next Normal", "en": "TNN The Next Normal" },
     "subtitle": { "ko": "", "en": "" },
     "artist": { "ko": "아시아 네트워크", "en": "Asia Network" },
     "artists": [],
-    "producers": ["jisun"],
+    "producers": ["jisun", "miseon", "bongmin"],
     "year": "2024–",
     "yearFrom": 2024,
     "runs": [],
@@ -277,6 +354,7 @@
   },
   {
     "id": "aesthethics",
+    "order": 5,
     "type": "project",
     "category": { "ko": "리서치", "en": "Research" },
     "title": { "ko": "Aesth:ethics", "en": "Aesth:ethics" },
@@ -299,13 +377,14 @@
   },
   {
     "id": "climate-residency",
+    "order": 12,
     "type": "project",
     "category": { "ko": "레지던시", "en": "Residency" },
     "title": { "ko": "기후변화 예술가 레지던시", "en": "Climate Change Artist Residency" },
     "subtitle": { "ko": "", "en": "" },
     "artist": { "ko": "예술텃밭", "en": "Art Garden" },
     "artists": [],
-    "producers": ["jisun"],
+    "producers": ["jisun", "bongmin"],
     "year": "2020–22",
     "yearFrom": 2020,
     "runs": [],
@@ -321,6 +400,7 @@
   },
   {
     "id": "app",
+    "order": 13,
     "type": "project",
     "category": { "ko": "국제 네트워크", "en": "International Network" },
     "title": { "ko": "아시아 프로듀서 플랫폼 APP", "en": "Asia Producers' Platform" },
@@ -343,6 +423,7 @@
   },
   {
     "id": "monthly-grandmothers",
+    "order": 1,
     "type": "project",
     "category": { "ko": "둥지230", "en": "Doongji 230" },
     "title": { "ko": "월간 할머니들", "en": "Monthly Grandmothers" },

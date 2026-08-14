@@ -38,7 +38,7 @@ const PAGES = {
   works: (query) => 'works.html' + (query || ''),
   artists: () => 'artists.html',
   about: () => 'about.html',
-  work: null, //  만들면 → (id) => `work.html?id=${id}`   (작업 상세)
+  work: (id) => `work.html?id=${id}`,
   producer: (id) => (PRODUCER_PAGES.has(id) ? `producers/${id}.html` : ''),
   artist: (id) => `artists/${id}.html`,
 };
@@ -98,13 +98,13 @@ export function injectProducerColors(producers) {
 export function dots(producerIds, producerById) {
   const wrap = el('span.who');
   if (!producerIds || !producerIds.length) {
-    wrap.append(el('i.none', { title: '담당 미지정', 'aria-label': '담당 미지정' }));
+    wrap.append(el('i.dot.none', { title: '담당 미지정', 'aria-label': '담당 미지정' }));
     return wrap;
   }
   for (const id of producerIds) {
     const p = producerById.get(id);
     if (!p) continue;
-    wrap.append(el(`i.dot-${p.id}`, { title: t(p.name), 'aria-label': t(p.name) }));
+    wrap.append(el(`i.dot.dot-${p.id}`, { title: t(p.name), 'aria-label': t(p.name) }));
   }
   return wrap;
 }
