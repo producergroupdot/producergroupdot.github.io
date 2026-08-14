@@ -71,6 +71,10 @@
 
 .cell:focus-visible{ outline:3px solid currentColor; outline-offset:-3px }
 
+/* Works 칸은 바깥이 링크가 아니다 — 제목과 두 개수가 각각 링크다. */
+.h2-link{ display:block }
+.h2-link:hover h2{ text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px }
+
 /* Works 칸의 공연/프로젝트 두 줄 */
 .sub.split{ display:inline-flex; gap:16px }
 .split b{ font-weight:400 }

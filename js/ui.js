@@ -163,6 +163,47 @@ export function logo(producers, exclude = []) {
   return wrap;
 }
 
+/* ---------- 사진 ---------- */
+
+/**
+ * 표지 사진. 파일이 아직 없으면 색면으로 조용히 떨어진다.
+ * 경로를 미리 적어두고 사진은 나중에 넣을 수 있게 하기 위한 것 —
+ * data/works.json 의 cover 는 파일이 없어도 그대로 두면 된다.
+ */
+export function coverImage(src, fallback) {
+  const img = el('img.cover', { src, alt: '', loading: 'lazy' });
+  img.addEventListener('error', () => img.replaceWith(fallback()), { once: true });
+  return img;
+}
+
+/* ---------- 상단 메뉴 (홈 말고 모든 페이지) ---------- */
+
+/** 메뉴는 Works · Artists · About 셋. 메뉴에는 프로듀서 색을 쓰지 않는다. */
+const NAV = [
+  ['works', 'Works'],
+  ['artists', 'Artists'],
+  ['about', 'About'],
+];
+
+export function topBar(producers, here) {
+  const nav = el('nav');
+  for (const [kind, label] of NAV) {
+    const url = pageUrl(kind);
+    const item = link(url, kind === here ? '.here' : '', null, label);
+    nav.append(item);
+  }
+
+  return el(
+    'div.bar',
+    null,
+    link(pageUrl('home'), '.logo-link', { 'aria-label': '홈' }, logo(producers)),
+    link(pageUrl('home'), '.wordmark', null, 'PRODUCER GROUP ', el('span.wordmark-light', { text: 'DOT' })),
+    nav,
+    el('span.spacer'),
+    el('span.meta.langswitch', { text: 'KO / EN' })
+  );
+}
+
 /* ---------- 푸터 ---------- */
 
 const ICONS = {

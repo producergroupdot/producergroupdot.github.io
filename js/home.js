@@ -2,21 +2,21 @@
 
 import { loadSite } from './data.js';
 import { t } from './i18n.js';
-import { el, injectProducerColors, dots, fieldClass, titleNodes, titleText, logo, footer } from './ui.js';
+import {
+  el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
+  logo, footer, pageUrl, link, coverImage,
+} from './ui.js';
 
-/* 모자이크에서 사진이 들어갈 자리. works.json 의 homeFeature 가 자리를 지정한다.
+/* 모자이크에서 사진이 들어갈 자리는 works.json 의 homeFeature 가 지정한다.
    그리드 위치는 CSS 클래스로만 준다 — 인라인 style 은 미디어 쿼리를 이긴다(함정 3). */
-const PHOTO_SLOTS = [
-  { key: 'mosaic-tall', cls: 'm-photo1' },
-  { key: 'mosaic-wide-a', cls: 'm-photo2' },
-  { key: 'mosaic-wide-b', cls: 'm-photo3' },
-];
 const BAND_SLOTS = ['band-1', 'band-2', 'band-3'];
 
 const PRODUCER_SLOTS = ['m-p1', 'm-p2', 'm-p3', 'm-p4'];
 
 const typeLabel = (w) => (w.type === 'performance' ? 'Production' : 'Project');
-const workHref = (w) => `#/works/${w.id}`;
+
+/* 아래 파노라마 두 칸은 5:2 로 미리 잘라둔 홈 전용 파일을 쓴다. 없으면 표지로 떨어진다. */
+const photoSrc = (w, wide) => (wide && w.homePhoto) || w.cover || '';
 
 const bySlot = (works, key) => works.find((w) => (w.homeFeature || []).includes(key));
 
@@ -42,9 +42,10 @@ function fmtRange(from, to) {
 /* ---------- 모자이크 ---------- */
 
 function cellLogo(producers) {
-  return el(
-    'a.cell.c-cream.m-logo',
-    { href: '#/', 'aria-label': 'Producer Group DOT — 홈' },
+  return link(
+    pageUrl('home'),
+    '.cell.c-cream.m-logo',
+    { 'aria-label': 'Producer Group DOT — 홈' },
     logo(producers),
     el(
       'span',
@@ -56,9 +57,10 @@ function cellLogo(producers) {
 }
 
 function cellProducer(p, slotClass) {
-  return el(
-    `a.cell.producer.field-${p.id}.${slotClass}${p.color.dark ? '.on-dark' : ''}`,
-    { href: `#/producers/${p.id}` },
+  return link(
+    pageUrl('producer', p.id),
+    `.cell.producer.field-${p.id}.${slotClass}${p.color.dark ? '.on-dark' : ''}`,
+    null,
     el('i.blob.blob-tr'),
     el('span.meta.num', { text: t(p.role) }),
     el('span', null, el('h3', { text: t(p.name, 'en') }), el('span.sub', { text: t(p.name, 'ko') }))
@@ -68,6 +70,8 @@ function cellProducer(p, slotClass) {
 function cellWorks(works) {
   const pf = works.filter((w) => w.type === 'performance').length;
   const pj = works.filter((w) => w.type === 'project').length;
+  /* 이 칸만 바깥이 링크가 아니다 — 안에 '공연'·'프로젝트' 두 링크가 있어서
+     <a> 안에 <a> 가 들어가면 안 되기 때문. 제목 자체가 Works 로 가는 링크다. */
   return el(
     'div.cell.c-cream.m-works',
     null,
@@ -76,12 +80,12 @@ function cellWorks(works) {
     el(
       'span',
       null,
-      el('h2', { text: 'Works' }),
+      link(pageUrl('works'), '.h2-link', null, el('h2', { text: 'Works' })),
       el(
         'span.sub.split',
         null,
-        el('a', { href: '#/works?type=performance' }, el('b', { text: '공연' }), ` ${pf}`),
-        el('a', { href: '#/works?type=project' }, el('b', { text: '프로젝트' }), ` ${pj}`)
+        link(pageUrl('works', '?type=performance'), '', null, el('b', { text: '공연' }), ` ${pf}`),
+        link(pageUrl('works', '?type=project'), '', null, el('b', { text: '프로젝트' }), ` ${pj}`)
       )
     )
   );
@@ -97,30 +101,32 @@ function cellArtists(works) {
   }
   const names = [...count.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([n]) => n);
 
-  return el(
-    'a.cell.c-lav.m-artists.on-dark',
-    { href: '#/artists' },
+  return link(
+    pageUrl('artists'),
+    '.cell.c-lav.m-artists.on-dark',
+    { 'aria-label': 'Artists' },
     el('span'),
     el('span', null, el('h2', { text: 'Artists' }), el('span.sub', { text: names.join(' · ') }))
   );
 }
 
 function cellAbout() {
-  return el(
-    'a.cell.c-ink.m-about.on-dark',
-    { href: '#/about' },
+  return link(
+    pageUrl('about'),
+    '.cell.c-ink.m-about.on-dark',
+    { 'aria-label': 'About' },
     el('span'),
     el('span', null, el('h2', { text: 'About' }), el('span.sub', { text: '프로듀서 콜렉티브' }))
   );
 }
 
-/** 사진 자리. 표지 이미지가 없으면 담당 프로듀서 색면으로 대체(미지정은 라벤더). */
-function cellPhoto(work, slotClass, producerById) {
+/** 사진 자리. 사진 파일이 아직 없으면 담당 프로듀서 색면으로 떨어진다(미지정은 라벤더). */
+function cellPhoto(work, slotClass, producerById, wide = false) {
   if (!work) return el(`div.cell.c-lav.${slotClass}.on-dark`);
 
   const p = producerById.get((work.producers || [])[0]);
   const dark = !p || p.color.dark; // 라벤더도 어두운 면
-  const cls = `a.cell.photo.${fieldClass(work.producers)}.${slotClass}${dark ? '.on-dark' : ''}`;
+  const cls = `.cell.photo.${fieldClass(work.producers)}.${slotClass}${dark ? '.on-dark' : ''}`;
 
   const cap = el(
     'span.cap',
@@ -129,12 +135,17 @@ function cellPhoto(work, slotClass, producerById) {
     el('span.cap-t', null, titleNodes(t(work.title)))
   );
 
-  /* 표지가 들어오면 색면 대신 사진. cover 는 data/works.json 한 곳에서만 바꾼다. */
-  const visual = work.cover
-    ? el('img.cover', { src: work.cover, alt: '', loading: 'lazy' })
-    : el('span.meta.pending', { text: '사진 준비 중' });
+  const pending = () => el('span.meta.pending', { text: '사진 준비 중' });
+  const src = photoSrc(work, wide);
+  const visual = src ? coverImage(src, pending) : pending();
 
-  return el(cls, { href: workHref(work), 'aria-label': titleText(t(work.title)) }, visual, cap);
+  return link(
+    pageUrl('work', work.id),
+    cls,
+    { 'aria-label': titleText(t(work.title)) },
+    visual,
+    cap
+  );
 }
 
 function renderMosaic(site) {
@@ -156,8 +167,8 @@ function renderMosaic(site) {
     ...producers.map((p, i) => cellProducer(p, slots[i])),
     cellArtists(works),
     cellAbout(),
-    cellPhoto(bySlot(works, 'mosaic-wide-a'), 'm-photo2', producerById),
-    cellPhoto(bySlot(works, 'mosaic-wide-b'), 'm-photo3', producerById)
+    cellPhoto(bySlot(works, 'mosaic-wide-a'), 'm-photo2', producerById, true),
+    cellPhoto(bySlot(works, 'mosaic-wide-b'), 'm-photo3', producerById, true)
   );
 }
 
@@ -201,9 +212,10 @@ function nowItems(site, today = new Date()) {
 }
 
 function nowRow(it, producerById) {
-  return el(
-    'a.row',
-    { href: workHref(it.work) },
+  return link(
+    pageUrl('work', it.work.id),
+    '.row',
+    null,
     dots(it.work.producers, producerById),
     el('span.t', null, titleNodes(t(it.work.title))),
     el('span.when', { text: it.when }),
@@ -234,11 +246,10 @@ function renderBand(site) {
     const p = site.producerById.get((w.producers || [])[0]);
     const dark = !p || p.color.dark;
     const fig = el(`figure.${fieldClass(w.producers)}${dark ? '.on-dark' : ''}`);
+    const pending = () => el('span.meta.pending', { text: '사진 준비 중' });
     fig.append(
-      el('a.band-a', { href: workHref(w), 'aria-label': titleText(t(w.title)) },
-        w.cover
-          ? el('img.cover', { src: w.cover, alt: '', loading: 'lazy' })
-          : el('span.meta.pending', { text: '사진 준비 중' })),
+      link(pageUrl('work', w.id), '.band-a', { 'aria-label': titleText(t(w.title)) },
+        w.cover ? coverImage(w.cover, pending) : pending()),
       el(
         'figcaption',
         null,

@@ -50,6 +50,23 @@ h1,h2,h3,h4{ font-family:var(--disp); font-weight:var(--w-disp); letter-spacing:
 }
 .wordmark-light{ font-weight:400 }
 
+/* ---------- 상단 메뉴 (홈 말고 모든 페이지) ---------- */
+/* 프로듀서 상세에서는 배경이 그 사람의 색으로 물든다 — background:inherit 유지. */
+.bar{
+  display:flex; align-items:center; gap:26px; flex-wrap:wrap;
+  padding:16px var(--pad);
+  border-bottom:.5px solid var(--line-s);
+  position:sticky; top:0; z-index:5;
+  background:inherit;
+}
+.bar .wordmark{ font-size:15px }
+.bar nav{ display:flex; gap:18px; font-family:var(--disp); font-size:14px; font-weight:var(--w-mid) }
+.bar nav > *{ opacity:.5 }
+.bar nav a:hover, .bar nav .here{ opacity:1 }
+
+/* 아직 만들지 않은 페이지로 가는 자리. 링크가 아니라 그냥 글자다. */
+.inert{ cursor:default }
+
 /* ---------- 색점 ---------- */
 .who{ display:flex; gap:5px; align-items:center }
 .who i{ width:9px; height:9px; border-radius:50%; display:block; flex:none }
