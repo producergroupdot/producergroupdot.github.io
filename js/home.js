@@ -239,7 +239,7 @@ function nowItems(site, today = new Date()) {
   /* 지난 것은 배열 차례와 상관없이 늘 맨 아래. 그 안에서는 배열 차례를 따른다. */
   items.sort((a, b) => a.past - b.past || a.order - b.order || (a.sort < b.sort ? -1 : 1));
 
-  return { items, range: `${fmt(A)} — ${fmt(Z)}` };
+  return { items };
 }
 
 /* 제목 · 날짜 · 장소 · 색점 순. 색점은 오른쪽 끝 고정폭 칸에 조용히 놓는다 —
@@ -263,9 +263,7 @@ function nowRow(it, producerById) {
 }
 
 function renderNow(site) {
-  const { items, range } = nowItems(site);
-  document.getElementById('now-range').textContent = range;
-
+  const { items } = nowItems(site);
   const list = document.getElementById('now-list');
   list.replaceChildren(
     ...(items.length

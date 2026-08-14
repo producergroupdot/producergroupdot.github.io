@@ -16,10 +16,16 @@ function head(artist, producerById) {
   if (artist.photo) circle.append(el('img', { src: artist.photo, alt: '' }));
   else circle.append(el('b', { text: titleText(t(artist.name)).slice(0, 2) }));
 
+  /* 사진에는 촬영자 크레딧이 따라붙는다. 사진이 없으면 크레딧도 없다. */
+  const credit =
+    artist.photo && t(artist.photoCredit)
+      ? el('p.credit.meta', { text: `촬영 ${t(artist.photoCredit)}` })
+      : null;
+
   return el(
     'header.ahead',
     null,
-    circle,
+    el('div.aface', null, circle, credit),
     el('div.ahead-t', null,
       dots(artist.producers, producerById),
       el('h1', { text: t(artist.name) }),

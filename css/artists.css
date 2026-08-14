@@ -11,7 +11,10 @@
   margin:0 var(--pad) 30px;
 }
 
-/* 자리와 크기는 JS 가 --x · --y · --d 로 넘긴다(값은 artists.json). */
+/* 자리와 크기는 JS 가 --x · --y · --d 로 넘긴다(값은 artists.json).
+   지름은 clamp(최소px, vh, 최대px) 라서 화면이 커져도 무한정 커지지 않는다.
+   z-index 를 여기(.artist)에 걸면 안 된다 — 쌓임 맥락이 생겨서
+   아래 .info 의 z-index 가 다른 항목의 원을 이기지 못한다. */
 #artists-list .artist{
   position:absolute;
   left:var(--x);
@@ -23,9 +26,12 @@
 .face{
   width:var(--d);
   height:var(--d);
+  aspect-ratio:1/1;          /* 세로가 눌려 타원이 되지 않게 못 박는다 */
+  flex:none;
   border-radius:50%;
   overflow:hidden;
   position:relative;
+  z-index:1;                 /* 라벨보다 아래 */
   display:flex;
   align-items:center;
   justify-content:center;
@@ -44,7 +50,7 @@
 /* 사진이 없으면 담당 프로듀서 색 원 + 이름 앞 두 글자 */
 .face b{
   font-family:var(--disp);
-  font-size:calc(var(--d) * .22);
+  font-size:calc(var(--dia) * .22);
   font-weight:var(--w-disp);
   opacity:.55;
   letter-spacing:-.02em;
@@ -93,7 +99,7 @@ a.artist:hover h3{
     padding:16px 0;
     border-bottom:.5px solid var(--line);
   }
-  .artist .face{ width:100px; height:100px }
+  .artist .face{ width:100px; height:100px }   /* 모바일은 자유 배치를 버리므로 상한도 무의미 */
   .artist .face b{ font-size:22px }
   .artist .info{ padding-top:0; min-width:0 }
   .artist h3{ font-size:18px }
@@ -104,7 +110,9 @@ a.artist:hover h3{
    =========================================================== */
 
 .ahead{ padding:48px var(--pad) 34px }
+.aface{ width:190px }
 .face.big{ width:190px; height:190px }
+.ahead .credit{ padding-top:10px; opacity:.55; line-height:1.4 }
 .ahead-t{ padding-top:22px }
 .ahead-t .who{ margin-bottom:10px }
 .ahead h1{
@@ -140,6 +148,7 @@ a.artist:hover h3{
 
 @media (max-width:900px){
   .ahead{ padding:28px var(--pad) 24px }
+  .aface{ width:140px }
   .face.big{ width:140px; height:140px }
   .abody{ grid-template-columns:1fr; gap:32px; padding:26px var(--pad) 0 }
   .abody .prose p{ font-size:15.5px }

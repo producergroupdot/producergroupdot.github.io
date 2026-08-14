@@ -19,13 +19,13 @@
         "url": "https://www.instagram.com/shh_works/"
       }
     ],
-    "photo": "img/artists/TEMP-hwang.jpg",
-    "photoTemp": true,
+    "photo": "img/artists/hwang.jpg",
     "pos": {
       "x": "2%",
       "y": "0%",
-      "d": "26vh"
-    }
+      "d": "clamp(150px, 22vh, 240px)"
+    },
+    "photoCredit": { "ko": "박지선", "en": "Park Jisun" }
   },
   {
     "id": "ambiguous",
@@ -36,12 +36,13 @@
     "bio": { "ko": "", "en": "" },
     "links": [],
     "photo": "img/artists/TEMP-ambiguous.jpg",
-    "photoTemp": true,
     "pos": {
       "x": "29%",
       "y": "40%",
-      "d": "17vh"
-    }
+      "d": "clamp(105px, 15vh, 165px)"
+    },
+    "photoTemp": true,
+    "photoCredit": { "ko": "박지선", "en": "Park Jisun" }
   },
   {
     "id": "kwon",
@@ -59,12 +60,13 @@
         "url": "https://byungjun.pe.kr/"
       }
     ],
-    "photo": "",
+    "photo": "img/artists/kwon.jpg",
     "pos": {
       "x": "70%",
       "y": "3%",
-      "d": "23vh"
-    }
+      "d": "clamp(130px, 19vh, 210px)"
+    },
+    "photoCredit": { "ko": "JD Woo / SPAF", "en": "JD Woo / SPAF" }
   },
   {
     "id": "untitledroad",
@@ -86,13 +88,13 @@
         "url": "https://www.instagram.com/borahmkim/"
       }
     ],
-    "photo": "img/artists/TEMP-untitledroad.jpg",
-    "photoTemp": true,
+    "photo": "img/artists/untitledroad.jpg",
     "pos": {
       "x": "9%",
       "y": "58%",
-      "d": "18vh"
-    }
+      "d": "clamp(110px, 16vh, 175px)"
+    },
+    "photoCredit": { "ko": "박지선", "en": "Park Jisun" }
   },
   {
     "id": "elephants",
@@ -106,23 +108,7 @@
     "pos": {
       "x": "65%",
       "y": "54%",
-      "d": "15vh"
+      "d": "clamp(95px, 13vh, 145px)"
     }
-  },
-  {
-    "id": "jiyeon-x-jeonhwan",
-    "name": { "ko": "지연X전환", "en": "" },
-    "field": { "ko": "", "en": "" },
-    "producers": [],
-    "since": "",
-    "bio": { "ko": "", "en": "" },
-    "links": [],
-    "photo": "",
-    "pos": {
-      "x": "44%",
-      "y": "6%",
-      "d": "15vh"
-    },
-    "note": { "ko": "좌표 임시 · 명단 유지 여부 확인 필요", "en": "" }
   }
 ]
