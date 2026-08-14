@@ -50,13 +50,16 @@
 /* 사진이 없으면 담당 프로듀서 색 원 + 이름 앞 두 글자 */
 .face b{
   font-family:var(--disp);
-  font-size:calc(var(--dia) * .22);
+  font-size:calc(var(--d) * .22);
   font-weight:var(--w-disp);
   opacity:.55;
   letter-spacing:-.02em;
 }
 
+/* 라벨은 늘 원보다 위. 다른 항목의 원에 가려 이름이 안 읽히던 문제. */
 .artist .info{
+  position:relative;
+  z-index:2;
   padding-top:14px;
   min-width:236px;
   display:block;
@@ -99,7 +102,7 @@ a.artist:hover h3{
     padding:16px 0;
     border-bottom:.5px solid var(--line);
   }
-  .artist .face{ width:100px; height:100px }   /* 모바일은 자유 배치를 버리므로 상한도 무의미 */
+  .artist .face{ width:100px; height:100px }
   .artist .face b{ font-size:22px }
   .artist .info{ padding-top:0; min-width:0 }
   .artist h3{ font-size:18px }
