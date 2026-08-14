@@ -1,0 +1,66 @@
+[
+  {
+    "id": "heejin",
+    "name": { "ko": "이희진", "en": "Heejin Lee" },
+    "color": {
+      "key": "blue",
+      "dark": true,
+      "field": "#2A5982",
+      "dot": "#004575",
+      "on": "var(--cream)"
+    },
+    "role": { "ko": "프로듀서", "en": "Producer" },
+    "bio": { "ko": "", "en": "" },
+    "email": "",
+    "links": [],
+    "photo": ""
+  },
+  {
+    "id": "bongmin",
+    "name": { "ko": "최봉민", "en": "Bongmin Choi" },
+    "color": {
+      "key": "green",
+      "dark": true,
+      "field": "#245E55",
+      "dot": "#014E45",
+      "on": "var(--cream)"
+    },
+    "role": { "ko": "프로듀서", "en": "Producer" },
+    "bio": { "ko": "", "en": "" },
+    "email": "",
+    "links": [],
+    "photo": ""
+  },
+  {
+    "id": "jisun",
+    "name": { "ko": "박지선", "en": "Jisun Park" },
+    "color": {
+      "key": "mustard",
+      "dark": false,
+      "field": "#EAC119",
+      "dot": "#776101",
+      "on": "var(--ink)"
+    },
+    "role": { "ko": "프로듀서", "en": "Producer" },
+    "bio": { "ko": "", "en": "" },
+    "email": "",
+    "links": [],
+    "photo": ""
+  },
+  {
+    "id": "miseon",
+    "name": { "ko": "송미선", "en": "Miseon Song" },
+    "color": {
+      "key": "red",
+      "dark": true,
+      "field": "#C63F3E",
+      "dot": "#9E0117",
+      "on": "var(--cream-hi)"
+    },
+    "role": { "ko": "프로듀서", "en": "Producer" },
+    "bio": { "ko": "", "en": "" },
+    "email": "",
+    "links": [],
+    "photo": ""
+  }
+]

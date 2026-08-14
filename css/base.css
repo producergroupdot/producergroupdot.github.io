@@ -1,0 +1,108 @@
+/* base.css — 리셋 · 타이포 기본 · 모든 화면이 함께 쓰는 조각 */
+
+*, *::before, *::after{ box-sizing:border-box; margin:0; padding:0 }
+html{ -webkit-text-size-adjust:100% }
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:var(--w-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  word-break:keep-all;          /* 한글이 단어 중간에서 끊기지 않게 */
+}
+
+a{ color:inherit; text-decoration:none }
+img{ display:block; max-width:100% }
+h1,h2,h3,h4{ font-family:var(--disp); font-weight:var(--w-disp); letter-spacing:-.02em; line-height:1.1 }
+
+.meta{
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:400;
+  letter-spacing:.02em;
+}
+
+.spacer{ flex:1 }
+
+/* ---------- 색면 ---------- */
+/* 프로듀서 색은 여기 없습니다. .field-<id> 는 js/ui.js 가 producers.json 에서 만듭니다. */
+.c-cream{ background:var(--cream) }
+.c-ink  { background:var(--ink);      color:var(--cream) }
+.c-lav  { background:var(--lavender); color:var(--cream) }
+
+/* ---------- 로고 ---------- */
+.logo{ display:flex; align-items:center; color:var(--ink) }
+.logo i{ display:block }
+/* 로고는 검정 + 액센트 점 하나. 액센트 점 색만 .dot-<id> 에서 오므로
+   여기서 currentColor 를 덮어쓰지 않도록 half·full 에만 색을 준다. */
+.logo .half, .logo .full{ background:currentColor }
+.logo .half  { width:7px;  height:13px; border-radius:0 7px 7px 0; margin-right:11px }
+.logo .full  { width:13px; height:13px; border-radius:50%;         margin-right:11px }
+.logo .accent{ width:13px; height:13px; border-radius:50% }   /* 색은 .dot-<id> 가 준다 */
+
+.wordmark{
+  font-family:var(--disp);
+  font-weight:var(--w-disp);
+  letter-spacing:-.02em;
+  line-height:1;
+}
+.wordmark-light{ font-weight:400 }
+
+/* ---------- 색점 ---------- */
+.who{ display:flex; gap:5px; align-items:center }
+.who i{ width:9px; height:9px; border-radius:50%; display:block; flex:none }
+.who i.none{ background:none; box-shadow:inset 0 0 0 1px var(--lavender) }
+
+/* ---------- 특수문자 SVG ---------- */
+.glyph-hex{
+  width:.72em; height:.79em;
+  display:inline-block;
+  vertical-align:-.04em;
+  margin-right:.02em;
+}
+
+/* ---------- 목록 행 ---------- */
+.group{ padding:0 var(--pad) }
+.row{
+  display:flex; align-items:center; gap:16px;
+  padding:13px 0;
+  border-bottom:.5px solid var(--line);
+}
+.row .who{ width:44px; flex:none }
+.row .t{ flex:1; font-size:15px }
+.row:hover .t{ text-decoration:underline; text-underline-offset:3px }
+.row .when { font-family:var(--mono); font-size:11px; width:150px; flex:none; opacity:.75 }
+.row .where{ font-family:var(--mono); font-size:11px; width:220px; flex:none; opacity:.5 }
+.row .tag  { font-family:var(--mono); font-size:10px; padding:2px 7px; flex:none;
+             border:.5px solid var(--line-s) }
+
+/* ---------- 푸터 ---------- */
+footer{
+  margin-top:26px;
+  padding:26px var(--pad) 36px;
+  display:flex; gap:20px; flex-wrap:wrap; align-items:center;
+  border-top:.5px solid var(--line-s);
+}
+.sico{ display:inline-flex; align-items:center; opacity:.55; transition:opacity .2s }
+.sico:hover{ opacity:1 }
+.langswitch{ opacity:.6 }
+
+.load-error{ padding:40px var(--pad); font-family:var(--mono); font-size:12px }
+
+/* ---------- 포커스 ---------- */
+a:focus-visible, button:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:2px;
+}
+
+@media (max-width:900px){
+  .row{ gap:12px; flex-wrap:wrap }
+  .row .when, .row .where{ width:auto }
+  .row .where{ flex:1 }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{ transition:none !important; animation:none !important }
+}

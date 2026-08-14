@@ -1,0 +1,54 @@
+/* ===========================================================
+   tokens.css — 색·서체·간격 토큰. 값은 여기 한 곳에만 둔다.
+   -----------------------------------------------------------
+   주의: 프로듀서 네 명의 색은 여기 없습니다.
+   사람–색 매핑은 아직 미확정이라 data/producers.json 에서만
+   정의하고, js/producers.js 가 부팅 시 아래 이름으로 주입합니다.
+
+     --p-<id>-field   면(field)에 쓰는 색
+     --p-<id>-dot     크림 바탕 위 점·글자에 쓰는 진한 짝
+     --p-<id>-on      그 면 위에 얹는 글자색
+
+   CSS 안에서 #2A5982 같은 프로듀서 색값을 직접 쓰지 마세요.
+   =========================================================== */
+
+:root{
+  /* --- 구조색 (사람 아님) --- */
+  --cream:    #EAE4DA;   /* 바탕 */
+  --cream-hi: #F7F3EC;   /* 빨강 면 위 본문 */
+  --panel:    #F3EEE5;   /* 상세 페이지 패널 */
+  --ink:      #1D1D1B;   /* 글자 */
+  --lavender: #808BC5;   /* 구조색 · 담당 미지정 표시 */
+
+  /* --- 선 --- */
+  /* 하드코딩 금지(함정 4). 선은 항상 전경색에서 파생시킨다.
+     어두운 면 위에서는 --fg-rgb 만 뒤집으면 선도 같이 따라온다. */
+  --fg-rgb: 29 29 27;                    /* = --ink */
+  --cream-rgb: 234 228 218;              /* = --cream */
+  --line:   rgb(var(--fg-rgb) / .22);    /* 옅은 구분선 */
+  --line-s: rgb(var(--fg-rgb) / .45);    /* 진한 구분선 */
+
+  /* --- 서체 --- */
+  --sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
+  --disp: "Archivo", "Pretendard Variable", Pretendard, sans-serif;   /* 제목·메뉴 600 */
+  --mono: "IBM Plex Mono", "Pretendard Variable", monospace;          /* 연도·색인코드·태그 */
+
+  --w-body: 300;
+  --w-mid:  500;
+  --w-disp: 600;
+
+  /* --- 간격 --- */
+  --pad: 22px;
+
+  /* --- 모션 --- */
+  --ease: cubic-bezier(.2,.7,.3,1);
+}
+
+/* 어두운 면 위. 글자색과 함께 선 색도 뒤집힌다. */
+.on-dark{
+  --fg-rgb: var(--cream-rgb);
+}
+
+@media (max-width: 900px){
+  :root{ --pad: 15px; }
+}
