@@ -111,7 +111,8 @@ function together(about) {
     strip.append(fig);
   }
 
-  return el('section.together', null, el('h2.sec', { text: '함께' }), strip);
+  /* 제목도 캡션도 없다. 사진만 놓인다. */
+  return el('section.together', { 'aria-label': '함께' }, strip);
 }
 
 /* ---------- 연결 ---------- */

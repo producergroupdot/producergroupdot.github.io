@@ -117,24 +117,28 @@ a.person:hover{ filter:brightness(1.06) }
 .dj-btn:hover{ background:var(--cream); color:var(--ink) }
 
 /* ---------- '함께' 가로 띠 ---------- */
-/* 캡션 없이 사진만. 사진이 하나도 없으면 제목만 남으므로 그때는 통째로 감춘다. */
+/* 제목도 캡션도 없다. 사진만 가로로 놓이고 나머지는 옆으로 밀려 있다.
+   높이를 정하고 비율(3:2)이 폭을 정하게 둔다 — 220px 높이면 한 장이 330px 이라
+   1440px 화면에서 네 장이 보인다. */
 .together{ padding:44px 0 0 }
-.together .sec{ padding:0 var(--pad) 0 }
-/* 한 줄에 네 장쯤 보이고 나머지는 옆으로 스크롤. 몇 장이든 규칙이 같다. */
 .together-strip{
   display:flex;
-  gap:0;
-  margin-top:22px;
+  gap:12px;
+  padding:0 var(--pad);
   overflow-x:auto;
   scroll-snap-type:x proximity;
   -webkit-overflow-scrolling:touch;
-  padding-left:var(--pad);
+
+  /* 스크롤바는 숨긴다. 사진 띠 아래 회색 막대가 보이면 지저분하다. */
+  scrollbar-width:none;             /* Firefox */
+  -ms-overflow-style:none;          /* 예전 Edge */
 }
-.together-strip::after{ content:''; flex:0 0 var(--pad) }   /* 마지막 장 뒤 여백 */
+.together-strip::-webkit-scrollbar{ display:none }   /* Safari · Chrome */
+
 .together-item{
   flex:0 0 auto;
-  width:calc((100vw - var(--pad) * 2) / 4);
-  aspect-ratio:3/2;
+  height:220px;
+  aspect-ratio:3/2;                 /* 높이가 정해져 있으니 폭은 여기서 나온다 */
   overflow:hidden;
   scroll-snap-align:start;
 }
@@ -143,6 +147,7 @@ a.person:hover{ filter:brightness(1.06) }
   object-fit:cover;
   display:block;
 }
+/* 사진이 한 장도 없으면 빈 자리만 남으므로 통째로 감춘다. */
 .together:has(.together-strip:empty){ display:none }
 
 /* ---------- Contact (페이지 맨 아래 블록) ---------- */
@@ -168,8 +173,8 @@ a.person:hover{ filter:brightness(1.06) }
   .about-cols{ columns:1 }
   .people{ grid-template-columns:repeat(2,1fr) }
 
-  /* 좁은 화면에서는 한 장을 크게 두고 옆으로 넘긴다. */
-  .together-item{ width:74vw }
+  /* 방식은 같고 높이만 낮춘다. */
+  .together-item{ height:160px }
   /* 모바일은 칸이 좁으므로 원도 조금 작게. 호버가 없는 화면이라 커지지도 않는다. */
   .person{ min-height:196px }
   .person .pblob{ --blob:88px; right:16px; top:16px }

@@ -182,27 +182,6 @@
     "homeFeature": ["mosaic-wide-a", "band-1"]
   },
   {
-    "id": "doongji",
-    "type": "project",
-    "category": { "ko": "", "en": "" },
-    "title": { "ko": "둥지230", "en": "Doongji 230" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "무제의 길 공동운영", "en": "Co-run with Untitled Road" },
-    "artists": ["untitledroad"],
-    "producers": [],
-    "year": "2025–",
-    "yearFrom": 2025,
-    "status": "ongoing",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "둥지230", "en": "Doongji 230" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
-    "cover": "",
-    "homeFeature": []
-  },
-  {
     "id": "tnn",
     "type": "project",
     "category": { "ko": "국제 네트워크", "en": "International Network" },
