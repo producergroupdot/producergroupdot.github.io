@@ -4,7 +4,7 @@ import { loadSite } from './data.js';
 import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
-  logo, footer, pageUrl, link, photo, coverCandidates,
+  logo, footer, pageUrl, link, photo, coverCandidates, isArchive, ARCHIVE_LABEL,
 } from './ui.js';
 
 /* 모자이크에서 사진이 들어갈 자리는 works.json 의 homeFeature 가 지정한다.
@@ -209,6 +209,7 @@ function nowItems(site, today = new Date()) {
   (nowOrder || []).forEach((id, order) => {
     const w = workById.get(id);
     if (!w) return; // 없는 id 는 조용히 건너뛴다
+    if (isArchive(w)) return; // 아카이브로 넘어간 작업은 Now 에 두지 않는다
 
     /* 회차는 이제 작품 안에 있다(works.json 의 runs). */
     const rs = (w.runs || [])
@@ -296,7 +297,9 @@ function renderNow(site) {
   list.replaceChildren(
     ...(items.length
       ? items.map((it) => nowRow(it, site.producerById))
-      : [el('p.empty.meta', { text: '앞뒤 3개월 안에 예정된 회차가 없습니다.' })])
+      : [el('p.empty.meta', { text: '앞뒤 3개월 안에 예정된 회차가 없습니다.' })]),
+    /* 목록 맨 아래 한 줄. NOW 항목보다 작고 옅게 — 지금 일이 아니라 지나온 일이다. */
+    link(pageUrl('archive'), '.now-archive.meta', null, `${ARCHIVE_LABEL} →`)
   );
 }
 

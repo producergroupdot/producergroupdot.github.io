@@ -270,6 +270,12 @@ footer{
   display:flex; gap:20px; flex-wrap:wrap; align-items:center;
   border-top:.5px solid var(--line-s);
 }
+/* 왼쪽 Contact · Archive  /  오른쪽 유튜브 · 인스타그램 · 페이스북 */
+.foot-l{ display:flex; align-items:center; gap:10px }
+.foot-l a{ text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:.5px }
+.foot-l a:hover{ text-decoration-thickness:1.5px }
+.foot-dot{ opacity:.4 }
+.foot-r{ display:flex; align-items:center; gap:18px }
 .sico{ display:inline-flex; align-items:center; opacity:.55; transition:opacity .2s }
 .sico:hover{ opacity:1 }
 .langswitch{ opacity:.6 }

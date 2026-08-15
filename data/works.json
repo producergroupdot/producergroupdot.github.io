@@ -333,7 +333,7 @@
     "id": "tnn",
     "order": 6,
     "type": "project",
-    "category": { "ko": "국제 네트워크", "en": "International Network" },
+    "category": { "ko": "네트워크·컨퍼런스", "en": "Network and Conference" },
     "title": { "ko": "TNN The Next Normal", "en": "TNN The Next Normal" },
     "subtitle": { "ko": "", "en": "" },
     "artist": { "ko": "아시아 네트워크", "en": "Asia Network" },
@@ -401,8 +401,9 @@
   {
     "id": "app",
     "order": 13,
+    "archive": false,
     "type": "project",
-    "category": { "ko": "국제 네트워크", "en": "International Network" },
+    "category": { "ko": "네트워크·컨퍼런스", "en": "Network and Conference" },
     "title": { "ko": "아시아 프로듀서 플랫폼 APP", "en": "Asia Producers' Platform" },
     "subtitle": { "ko": "", "en": "" },
     "artist": { "ko": "Asia Producers' Platform", "en": "Asia Producers' Platform" },
@@ -507,6 +508,93 @@
     "keywords": { "ko": "여성 노년, 신작 희곡, 낭독", "en": "" },
     "note": { "ko": "초안 — 확인 필요", "en": "" },
     "cover": "img/works/monthly-grandmothers/01.jpg",
+    "homeFeature": []
+  },
+  {
+    "id": "connected-city",
+    "order": 2000,
+    "archive": true,
+    "type": "project",
+    "category": { "ko": "축제", "en": "Festival" },
+    "title": { "ko": "커넥티드 시티", "en": "Connected City" },
+    "subtitle": { "ko": "한영 도시 예술 프로젝트", "en": "UK–Korea urban arts project" },
+    "artist": { "ko": "", "en": "" },
+    "artists": [],
+    "producers": ["jisun", "bongmin"],
+    "year": "2017",
+    "yearFrom": 2017,
+    "runs": [
+      {
+        "start": "2017-10-27",
+        "end": "2017-10-29",
+        "city": { "ko": "서울", "en": "Seoul" },
+        "venue": { "ko": "서울역 · 종로 일대", "en": "Seoul Station and Jongno area" },
+        "kind": { "ko": "", "en": "" },
+        "dotRole": { "ko": "기획", "en": "Organiser" },
+        "link": "",
+        "time": "",
+        "date": { "ko": "", "en": "" },
+        "note": { "ko": "프로그램에 따라 9월 2일 – 11월 5일에 걸쳐 진행", "en": "Individual programmes ran between 2 Sep and 5 Nov" }
+      }
+    ],
+    "status": "done",
+    "lead": { "ko": "", "en": "" },
+    "body": {
+      "ko": "〈커넥티드 시티〉는 우리가 사는 도시를 다시 바라보고 다시 상상하기 위한 플랫폼이다. 한국과 영국의 예술가·프로듀서·기획자와 지역 공동체가 함께, 빠르게 변하는 도시와 공공 공간을 여러 예술 형식과 기술로 다시 읽었다.\n\n2017년 가을 서울역과 종로 일대에서 여섯 개의 프로그램이 열렸다. 뮤직시티는 한국과 영국의 뮤지션 일곱 명이 서울의 일곱 장소에서 받은 영감으로 곡을 만들고, 그 장소에 가야만 들을 수 있게 했다. 퍼포밍 시티에서는 사운드 조각과 퍼포먼스가 도시의 공간을 바꿔놓았다.\n\n메이커 시티는 봉제와 제화 공장이 밀집한 서울역·동대문 일대를 도시 인프라의 변화와 젠트리피케이션 속에서 다시 읽었고, 플레이어블 시티는 청계천 일대를 시민 참여형 도시 게임의 무대로 삼았다. 스토리텔링 시티는 한국과 영국의 작가를 웹툰·그래픽노블 작가와 짝지어 새로운 작업을 만들었다.\n\n마지막 시티 컨퍼런스 〈예술과 도시〉에서는 두 나라의 예술가·기획자·정책 담당자가 모여, 빠르게 변하는 도시에서 예술과 기술이 무엇을 할 수 있는지 논의했다.",
+      "en": "Connected City set out to re-shape, re-explore and re-imagine the city we live in. Artists, producers, curators and communities from the UK and Korea worked together to read ever-changing cities and public spaces through a range of art forms and technologies.\n\nSix programmes ran across the Seoul Station and Jongno areas in autumn 2017. Musicity commissioned seven musicians from the UK and Korea to compose for seven locations, with the tracks geo-tagged so they could only be heard on site. Performing City brought sound sculpture and performance into the city's spaces.\n\nMaker City revisited the garment and shoe manufacturing districts around Seoul Station and Dongdaemun, areas under pressure from infrastructure change and gentrification. Playable City turned the Cheonggyecheon Stream into a stage for urban play, and Storytelling City paired writers with webtoon and graphic novel artists across the two countries.\n\nThe closing City Conference, Arts and the City, gathered artists, curators, producers and policy makers from both countries to ask what arts and technology can do for a rapidly changing city."
+    },
+    "venue": { "ko": "", "en": "" },
+    "produced": { "ko": "", "en": "" },
+    "dotRole": { "ko": "기획", "en": "Organiser" },
+    "commission": { "ko": "", "en": "" },
+    "keywords": { "ko": "", "en": "" },
+    "credits": [
+      {
+        "role": { "ko": "주최", "en": "Hosted by" },
+        "name": {
+          "ko": "British Council · 서울특별시 · 서울디자인재단",
+          "en": "British Council, Seoul Metropolitan Government, Seoul Design Foundation"
+        }
+      },
+      {
+        "role": { "ko": "주관", "en": "Organised by" },
+        "name": {
+          "ko": "프로듀서 그룹 도트 · 서울역일대 도시재생지원센터 · 서울산책 · 서울도시건축비엔날레",
+          "en": "Producer Group DOT, Urban Regeneration Centre of Seoul Metropolitan Government, Seoul Walk, Seoul Biennale of Architecture and Urbanism"
+        }
+      },
+      {
+        "role": { "ko": "프로그램", "en": "Programmes" },
+        "name": {
+          "ko": "뮤직시티 · 퍼포밍 시티 · 메이커 시티 · 플레이어블 시티 · 스토리텔링 시티 · 시티 컨퍼런스",
+          "en": "Musicity, Performing City, Maker City, Playable City, Storytelling City, City Conference"
+        }
+      },
+      {
+        "role": { "ko": "일환", "en": "Part of" },
+        "name": { "ko": "한영 상호교류의 해 2017–18", "en": "UK/Korea 2017-18" }
+      },
+      {
+        "role": { "ko": "그래픽 디자인", "en": "Graphic design" },
+        "name": { "ko": "시호 디자인", "en": "Siho Design" }
+      }
+    ],
+    "materials": [
+      {
+        "type": "영상",
+        "label": { "ko": "기록 영상", "en": "Documentation" },
+        "url": "https://youtu.be/xT6UPz-JlE8",
+        "public": "예"
+      },
+      {
+        "type": "자료집",
+        "label": { "ko": "포스터 · 전단", "en": "Poster and leaflet" },
+        "url": "",
+        "public": "확인 필요"
+      }
+    ],
+    "cover": "img/works/connected-city/connected-city-01.jpg",
+    "video": "https://www.youtube-nocookie.com/embed/xT6UPz-JlE8",
     "homeFeature": []
   }
 ]

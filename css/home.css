@@ -187,6 +187,15 @@
 
 #now-list .empty{ padding:18px 0; opacity:.55 }
 
+/* NOW 목록 맨 아래 한 줄. 위 항목들보다 작고 옅게 둔다. */
+.now-archive{
+  display:block;
+  padding:16px 0 0;
+  border-top:.5px solid var(--line-s);
+  opacity:.5;
+}
+a.now-archive:hover{ opacity:1; text-decoration:underline; text-underline-offset:3px }
+
 /* 모바일 — 제목과 날짜만 첫 줄에 두고 장소는 아래로 내린다. */
 @media (max-width:900px){
   #now-list .row{

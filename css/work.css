@@ -57,6 +57,16 @@
   width:47%;
 }
 .dimg .cover{ width:100%; height:auto; display:block }
+
+/* 세로 사진은 높이로 제한한다. 폭에 맞추면 2:3 포스터가 화면을 넘어간다.
+   가로 사진은 위 규칙(폭 100%) 그대로다 — .portrait 는 JS 가 재어 보고 붙인다. */
+.dimg.portrait .cover{
+  max-height:68vh;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+  margin-left:auto;        /* 오른쪽 끝에 붙여 패널과의 간격을 지킨다 */
+}
 .dimg .block{
   width:100%;
   aspect-ratio:3/2;
@@ -101,6 +111,21 @@
 .acc-rows li{ font-size:14px; line-height:1.7 }
 .acc-rows a{ text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:.5px }
 .acc-rows a:hover{ text-decoration-thickness:1.5px }
+
+/* ---------- 영상 ---------- */
+.dvideo{ padding:44px var(--pad) 0 }
+.dvideo-box{
+  position:relative;
+  aspect-ratio:16/9;        /* 반응형 16:9 */
+  max-width:960px;
+  background:var(--ink);
+}
+.dvideo-box iframe{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  border:0;
+  display:block;
+}
 
 /* ---------- 사진 4장 가로 띠 ---------- */
 .dstrip{
@@ -148,6 +173,7 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
     padding:0 var(--pad);
     margin-top:22px;
   }
+  .dvideo{ padding-top:32px }
   .dstrip{ grid-template-columns:repeat(2,1fr) }
   .more{ padding-top:36px; margin-top:32px }
   .mgrid{ grid-template-columns:repeat(2,1fr); gap:18px }

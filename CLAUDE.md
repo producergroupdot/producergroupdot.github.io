@@ -35,8 +35,15 @@
 /producers/:id        프로듀서 상세 (각자의 색이 페이지 배경)
 ```
 
-메뉴는 **Works · Artists · About** 셋. Now는 홈 하단에 있고 메뉴가 아닙니다.
-둥지230은 About 안에 있고 최상위 메뉴가 아닙니다.
+메뉴는 **About · Works · Artists · Archive · Contact** 다섯, 이 차례로.
+Contact 은 페이지가 아니라 About 맨 아래 블록(`about.html#contact`)으로 갑니다.
+Now는 홈 하단에 있고 메뉴가 아닙니다. 둥지230은 About 안에 있고 최상위 메뉴가 아닙니다.
+
+**Works 와 Archive 는 `works.json` 의 `archive` 필드로만 갈립니다.**
+`archive: true` 면 아카이브, 없거나 false 면 Works. 연도로 자동 판정하지 않습니다 —
+몇 해 쉬었다 다시 오르는 작업이 제멋대로 넘어가기 때문입니다.
+완전히 끝나 재공연·투어 가능성이 없는 것만 사람이 true 로 적습니다.
+판정은 `js/ui.js` 의 `isArchive()` 한 곳에 있고 Works·Archive·홈 Now 가 모두 그걸 씁니다.
 
 라우팅은 해시(`#/works/sync-de-sync`) 또는 정적 HTML 파일 중 하나로.
 GitHub Pages에 올리므로 서버 라우팅은 쓸 수 없습니다.
@@ -192,6 +199,12 @@ data/
   links.json       workId, label{ko,en}, url
   photos.json      file, subject, photographer{ko,en}, year, consent, isCover, caption{ko,en}
   now.json         홈 Now에 나올 작업 ID 배열. 적힌 차례대로 그린다.
+
+works.json 의 선택 필드 두 개 (없어도 됩니다)
+  archive     true 면 아카이브로. 없으면 Works.
+  materials[] type(프로그램북·영상·자료집·사진·기사/리뷰·웹사이트·기타),
+              label{ko,en}, url, public('예'·'아니오'·'확인 필요')
+              → public 이 '예' 인 것만 화면에 나옵니다.
 ```
 
 **회차(runs)는 작품 안에 있습니다.** `works.json` 의 각 항목이 `runs` 배열을 가집니다.

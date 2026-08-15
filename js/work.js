@@ -7,6 +7,7 @@ import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, isTempFile, categoryBadge,
+  latestRun, yearSpan,
 } from './ui.js';
 
 const PHOTO_TRIES = 6; //  img/works/<id>/01.jpg … 06.jpg
@@ -19,20 +20,7 @@ const typeName = (w) =>
     ? w.type === 'performance' ? 'Production' : 'Project'
     : w.type === 'performance' ? '공연' : '프로젝트';
 
-/* ---------- 회차에서 뽑는 것들 (works.html 과 같은 규칙) ---------- */
-
-const latestRun = (w) => {
-  const ends = (w.runs || []).map((r) => r.end || r.start).filter(Boolean);
-  return ends.length ? ends.sort().at(-1) : `${w.yearFrom || 0}-00-00`;
-};
-
-function yearSpan(w) {
-  const ys = (w.runs || []).flatMap((r) => [r.start, r.end]).filter(Boolean).map((d) => d.slice(0, 4));
-  if (!ys.length) return w.year || '';
-  const lo = ys.reduce((a, b) => (a < b ? a : b));
-  const hi = ys.reduce((a, b) => (a > b ? a : b));
-  return lo === hi ? lo : `${lo}–${hi.slice(2)}`;
-}
+/* 회차에서 뽑는 것들(latestRun · yearSpan)은 ui.js 에 있다. */
 
 const fmtDate = (s) => {
   const [y, m, d] = s.split('-');
@@ -99,6 +87,18 @@ function buildAccordions(work) {
     .map(([k, v]) => ({ ko: `${k} · ${v}` }));
   if (info.length) out.push({ title: '정보', rows: info });
 
+  /* credits 배열이 있으면 크레딧 항목으로. 데이터만 있고 화면에 없는 필드를 두지 않는다. */
+  const credits = (work.credits || [])
+    .map((c) => ({ ko: [t(c.role), t(c.name)].filter(Boolean).join(' · ') }))
+    .filter((r) => r.ko);
+  if (credits.length) out.push({ title: '크레딧', rows: credits });
+
+  /* 자료는 주소가 있는 공개 자료만. 아카이브와 같은 규칙. */
+  const mats = (work.materials || [])
+    .filter((m) => m.public === '예' && m.url)
+    .map((m) => ({ ko: [m.type, t(m.label)].filter(Boolean).join(' · '), url: m.url }));
+  if (mats.length) out.push({ title: '자료', rows: mats });
+
   return out;
 }
 
@@ -151,10 +151,11 @@ function panel(work) {
 
 /* ---------- 사진 ---------- */
 
-const stripCandidates = (w) => [
-  ...coverCandidates(w),
-  ...Array.from({ length: PHOTO_TRIES }, (_, i) => `img/works/${w.id}/${nn(i + 1)}.jpg`),
-];
+/* 띠에는 표지를 다시 넣지 않는다 — 위에 이미 크게 나와 있다. */
+const stripCandidates = (w) =>
+  Array.from({ length: PHOTO_TRIES }, (_, i) => `img/works/${w.id}/${nn(i + 1)}.jpg`).filter(
+    (f) => f !== w.cover
+  );
 
 /** 표지가 없으면 Works 카드와 같은 규칙 — 담당 프로듀서 색면(미지정은 라벤더). */
 const colourBlock = (work) =>
@@ -165,16 +166,25 @@ const colourBlock = (work) =>
 function sidePhoto(work) {
   const fig = el('figure.dimg');
   const tmp = el('span.tmp', { text: '임시 이미지' });
-  fig.append(
-    photo(
-      coverCandidates(work),
-      () => {
-        tmp.remove();
-        return colourBlock(work);
-      },
-      (src) => isTempFile(src) && !tmp.parentNode && fig.prepend(tmp)
-    )
+
+  const img = photo(
+    coverCandidates(work),
+    () => {
+      tmp.remove();
+      return colourBlock(work);
+    },
+    (src) => isTempFile(src) && !tmp.parentNode && fig.prepend(tmp)
   );
+
+  /* 세로 사진은 폭이 아니라 높이로 제한한다 — 2:3 포스터를 폭에 맞추면
+     화면을 한참 넘어간다. 가로 사진에는 이 규칙을 걸지 않는다.
+     비율은 CSS 로 알 수 없어서 실제로 뜬 뒤 재어 보고 표시한다. */
+  img.addEventListener('load', () => {
+    if (img.naturalHeight > img.naturalWidth) fig.classList.add('portrait');
+    else fig.classList.remove('portrait');
+  });
+
+  fig.append(img);
   return fig;
 }
 
@@ -193,6 +203,27 @@ function strip(work) {
     row.append(fig);
   }
   return row;
+}
+
+/* ---------- 영상 ---------- */
+
+/* privacy-enhanced 주소(youtube-nocookie)를 그대로 쓴다. 16:9 는 CSS 가 잡는다.
+   video 필드가 없으면 아무것도 그리지 않는다. */
+function video(work) {
+  if (!work.video) return null;
+  return el(
+    'section.dvideo',
+    null,
+    el('div.dvideo-box', null,
+      el('iframe', {
+        src: work.video,
+        title: `${titleText(t(work.title))} 기록 영상`,
+        loading: 'lazy',
+        allow: 'accelerometer; clipboard-write; encrypted-media; picture-in-picture',
+        referrerpolicy: 'strict-origin-when-cross-origin',
+        allowfullscreen: true,
+      }))
+  );
 }
 
 /* ---------- Explore more ---------- */
@@ -267,6 +298,7 @@ async function main() {
     document.getElementById('page').replaceChildren(
       head(work, site.producerById),
       wrap,
+      video(work),      //  본문 아래
       strip(work),
       more(work, site.works, site.producerById)
     );

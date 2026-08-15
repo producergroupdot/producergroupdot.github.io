@@ -37,7 +37,10 @@ const PAGES = {
   home: () => 'index.html',
   works: (query) => 'works.html' + (query || ''),
   artists: () => 'artists.html',
+  archive: () => 'archive.html',
   about: () => 'about.html',
+  /* Contact 은 페이지가 아니라 About 맨 아래 블록이다. */
+  contact: () => 'about.html#contact',
   work: (id) => `work.html?id=${id}`,
   producer: (id) => (PRODUCER_PAGES.has(id) ? `producers/${id}.html` : ''),
   artist: (id) => `artists/${id}.html`,
@@ -58,6 +61,50 @@ export function link(url, spec, attrs, ...children) {
   if (!url) node.classList.add('inert');
   return node;
 }
+
+/* ---------- 회차에서 뽑는 것들 ----------
+   Works · Archive · 홈 NOW · 작업 상세가 모두 이 함수들을 쓴다.
+   같은 계산을 여러 파일에 복사해 두면 한쪽만 고쳐져 화면끼리 어긋난다. */
+
+/** 가장 최근 회차의 끝 날짜. 회차가 없으면 시작 연도로 대신한다. */
+export function latestRun(w) {
+  const ends = (w.runs || []).map((r) => r.end || r.start).filter(Boolean);
+  return ends.length ? ends.sort().at(-1) : `${w.yearFrom || 0}-00-00`;
+}
+
+/** 마지막 회차의 연도(숫자). 회차가 없으면 yearFrom. */
+export const lastYear = (w) => Number(latestRun(w).slice(0, 4)) || 0;
+
+/** 회차의 최소~최대 연도. 회차가 없으면 works.json 에 적힌 year 를 그대로 쓴다. */
+export function yearSpan(w) {
+  const ys = (w.runs || []).flatMap((r) => [r.start, r.end]).filter(Boolean).map((d) => d.slice(0, 4));
+  if (!ys.length) return w.year || '';
+  const lo = ys.reduce((a, b) => (a < b ? a : b));
+  const hi = ys.reduce((a, b) => (a > b ? a : b));
+  return lo === hi ? lo : `${lo}–${hi.slice(2)}`;
+}
+
+/** 회차가 열린 도시들. 같은 도시는 한 번만. */
+export const runCities = (w) => [...new Set((w.runs || []).map((r) => t(r.city)).filter(Boolean))];
+
+/* ---------- Works 인가 Archive 인가 ----------
+   판정은 여기 한 곳에서만 한다. */
+
+/* 아카이브 표기는 어디서나 이 문자열을 쓴다 — 페이지 제목·메뉴·링크가 따로 놀지 않게.
+   연도 범위는 자동 계산하지 않는다. 데이터가 채워지는 동안 숫자가 들쭉날쭉해지기 때문. */
+export const ARCHIVE_LABEL = 'Archive 2014–';
+
+/**
+ * works.json 의 archive 필드로만 가른다. 연도로 자동 판정하지 않는다.
+ *   archive: true  → 아카이브
+ *   없거나 false   → Works
+ *
+ * 기준은 사람이 정한다 — 완전히 끝나 재공연·투어 가능성이 없는 것만 true.
+ * 연도로 자동 판정하면 몇 해 쉬었다 다시 오르는 작업이 제멋대로 넘어간다.
+ */
+export const isArchive = (work) => work.archive === true;
+
+export const isCurrent = (work) => !isArchive(work);
 
 /* ---------- 프로듀서 색 ---------- */
 
@@ -260,9 +307,11 @@ export function photo(candidates, fallback, onResolved) {
 
 /** 메뉴는 Works · Artists · About 셋. 메뉴에는 프로듀서 색을 쓰지 않는다. */
 const NAV = [
+  ['about', 'About'],
   ['works', 'Works'],
   ['artists', 'Artists'],
-  ['about', 'About'],
+  ['archive', 'Archive'],
+  ['contact', 'Contact'],
 ];
 
 export function topBar(producers, here, about) {
@@ -295,9 +344,11 @@ export function topBar(producers, here, about) {
 
 /* 라벤더는 구조색이라 메뉴에 쓸 수 있다. 프로듀서 네 색은 사람을 가리키므로 쓰지 않는다. */
 const MENU = [
+  ['about', 'About'],
   ['works', 'Works'],
   ['artists', 'Artists'],
-  ['about', 'About'],
+  ['archive', 'Archive'],
+  ['contact', 'Contact'],
 ];
 
 function openMenu(about, burger) {
@@ -316,11 +367,7 @@ function openMenu(about, burger) {
   );
 
   const socials = el('div.menu-social');
-  socials.append(
-    sico('https://www.instagram.com/producergroupdot/', 'Instagram', 'instagram'),
-    sico('https://www.youtube.com/channel/UCW_8rEDfkNiyIS9J8axn0LA', 'YouTube', 'youtube'),
-    sico('https://www.instagram.com/doongji230/', '둥지230 Instagram', 'instagram')
-  );
+  socials.append(...socialLinks());   // 푸터와 같은 세 개
 
   const overlay = el('div.menu-overlay', { role: 'dialog', 'aria-modal': 'true', 'aria-label': '메뉴' },
     close, list, socials,
@@ -351,6 +398,8 @@ const ICONS = {
     '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>',
   youtube:
     '<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.4 9.6l5 2.4-5 2.4z" fill="currentColor" stroke="none"/>',
+  facebook:
+    '<path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6A22 22 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V13h2.7v8z" fill="currentColor" stroke="none"/>',
 };
 
 function sico(href, label, key) {
@@ -359,17 +408,23 @@ function sico(href, label, key) {
   return a;
 }
 
+/** 모든 화면이 같은 SNS 세 개를 쓴다 — 푸터와 모바일 메뉴가 어긋나지 않게. */
+export function socialLinks() {
+  return [
+    sico('https://www.youtube.com/channel/UCW_8rEDfkNiyIS9J8axn0LA', 'YouTube', 'youtube'),
+    sico('https://www.instagram.com/producergroupdot/', 'Instagram', 'instagram'),
+    /* ?locale=ko_KR 은 붙이지 않는다 — 방문자 언어에 따라 페이스북이 알아서 잡는다. */
+    sico('https://www.facebook.com/producergroupdot/', 'Facebook', 'facebook'),
+  ];
+}
+
+/** 왼쪽 Contact · Archive / 오른쪽 유튜브 · 인스타그램 · 페이스북. 모든 페이지 공통. */
 export function footer() {
-  /* Contact 는 상단 메뉴에 없다. 여기와 모바일 메뉴, About 맨 아래 — 세 군데뿐이다. */
-  const about = pageUrl('about');
   return el(
     'footer',
     null,
-    el('span.meta', { text: '프로듀서그룹 도트 Producer Group DOT' }),
-    sico('https://www.instagram.com/producergroupdot/', 'Instagram', 'instagram'),
-    sico('https://www.youtube.com/channel/UCW_8rEDfkNiyIS9J8axn0LA', 'YouTube', 'youtube'),
-    link(about ? `${about}#contact` : '', '.meta.foot-contact', null, 'Contact'),
+    el('span.foot-l', null, link(pageUrl('contact'), '.meta', null, 'Contact')),
     el('span.spacer'),
-    el('span.meta.langswitch', { text: 'KO / EN' })
+    el('span.foot-r', null, ...socialLinks())
   );
 }
