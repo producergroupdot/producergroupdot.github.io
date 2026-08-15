@@ -32,32 +32,17 @@
   overflow:hidden;
   isolation:isolate;
   /* 원이 132px 로 커지면 아래 끝이 20+132=152px 이다.
-     이름 + 국문 + 이메일(≈63px)이 그 아래에서 시작하도록 칸 높이를 잡는다. */
-  min-height:252px;
+     이름 두 줄이 그 아래에서 시작하도록 칸 높이를 잡는다. */
+  min-height:236px;
   padding:20px var(--pad);
   display:flex;
   flex-direction:column;
   justify-content:space-between;
   transition:filter .2s;
 }
-.person:hover{ filter:brightness(1.06) }
-
-/* 이름은 프로듀서 페이지로, 이메일은 메일로. 칸 자체는 링크가 아니다. */
-.person-b{ display:block }
-.person-name{ display:block }
-a.person-name:hover h3{ text-decoration:underline; text-underline-offset:4px }
-.person-mail{
-  display:inline-block;
-  margin-top:7px;
-  font-family:var(--mono);
-  font-size:12px;
-  opacity:.8;
-  text-decoration:underline;
-  text-underline-offset:3px;
-  text-decoration-thickness:.5px;
-  word-break:break-all;      /* 좁은 칸에서 주소가 칸을 밀어내지 않게 */
-}
-.person-mail:hover{ opacity:1; text-decoration-thickness:1.5px }
+/* 칸 전체가 링크다. 이메일은 맨 아래 Contact 블록에만 있다. */
+a.person:hover{ filter:brightness(1.06) }
+a.person:hover h3{ text-decoration:underline; text-underline-offset:4px }
 
 /* 모서리에 반쯤 걸치는 원. 안에 얼굴 사진이 흑백으로 들어간다.
    마우스를 올리면 원이 커지면서 색면을 덮고 컬러로 바뀐다.
@@ -92,7 +77,7 @@ a.person-name:hover h3{ text-decoration:underline; text-underline-offset:4px }
   font-size:clamp(15px,1.5vw,19px);
   letter-spacing:-.01em;
 }
-.person .kr{ font-size:13px; opacity:.8; display:block; margin-top:3px }
+.person .sub{ font-size:13px; opacity:.8; display:block; margin-top:3px }
 
 /* ---------- 둥지230 ---------- */
 /* 페이지에서 유일한 어두운 면. 작게 만들지 않는다. */
@@ -177,6 +162,7 @@ a.person-name:hover h3{ text-decoration:underline; text-underline-offset:4px }
 }
 .clist{ list-style:none; margin-top:14px }
 .clist li{ padding:7px 0 }
+.clist .cname{ opacity:.55; margin-right:6px }
 .clist a{
   font-size:15px;
   text-decoration:underline;

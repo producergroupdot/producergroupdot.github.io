@@ -118,7 +118,6 @@ body.menu-open{ overflow:hidden }   /* 열려 있는 동안 뒤쪽 스크롤 잠
 .menu-item{
   display:flex;
   align-items:center;
-  justify-content:space-between;
   gap:16px;
   min-height:56px;              /* 손가락으로 누르기 좋은 높이 */
   padding:10px 0;
@@ -128,7 +127,6 @@ body.menu-open{ overflow:hidden }   /* 열려 있는 동안 뒤쪽 스크롤 잠
   letter-spacing:-.03em;
   border-bottom:.5px solid rgb(var(--fg-rgb) / .4);
 }
-.menu-item .arrow{ font-size:22px; opacity:.75 }
 .menu-item.inert{ opacity:.5 }
 
 .menu-social{

@@ -4,7 +4,7 @@ import { loadSite } from './data.js';
 import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
-  logo, footer, pageUrl, link, photo, coverCandidates, isArchive, ARCHIVE_LABEL,
+  logo, footer, pageUrl, link, photo, coverCandidates, isArchive, ARCHIVE_LABEL, producerTile,
 } from './ui.js';
 
 /* 모자이크에서 사진이 들어갈 자리는 works.json 의 homeFeature 가 지정한다.
@@ -77,16 +77,10 @@ function cellLogo(producers) {
   );
 }
 
-function cellProducer(p, slotClass) {
-  return link(
-    pageUrl('producer', p.id),
-    `.cell.producer.field-${p.id}.${slotClass}${p.color.dark ? '.on-dark' : ''}`,
-    null,
-    el('i.blob.blob-tr'),
-    el('span.meta.num', { text: t(p.role) }),
-    el('span', null, el('h3', { text: t(p.name, 'en') }), el('span.sub', { text: t(p.name, 'ko') }))
-  );
-}
+/* 색면 칸은 About 과 같은 컴포넌트(ui.js 의 producerTile)를 쓴다.
+   홈에서는 모서리 블롭을, About 에서는 얼굴 사진을 얹는다. */
+const cellProducer = (p, slotClass) =>
+  producerTile(p, { media: el('i.blob.blob-tr'), extraClass: `.cell.producer.${slotClass}` });
 
 function cellWorks(works) {
   const pf = works.filter((w) => w.type === 'performance').length;

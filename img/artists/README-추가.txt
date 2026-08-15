@@ -6,7 +6,7 @@ img/artists/ 에 덮어 넣으세요.
 untitledroad.jpg   900×900    무제의 길 · 김보람 Kim Borahm
 kwon.jpg          1200×1200   권병준 Kwon Byungjun
                               ※ 촬영 JD Woo / SPAF — 크레딧 표기 필요
-hwang.jpg         1200×1200   황수현 Hwang Soo-hyun (쓰기로 한 것)
+hwang.jpg         1200×1200   황수현 Hwang Soohyun (쓰기로 한 것)
 
 hwang-alt-01.jpg  1200×1200   황수현 다른 컷 (말하는 장면)
 hwang-alt-02.jpg  1200×1200   황수현 다른 컷 (옆모습, 웃는)

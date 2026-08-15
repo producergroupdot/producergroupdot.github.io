@@ -48,7 +48,9 @@ function head(person) {
       faceCircle,
       el('span.phead-role', null, el(`i.dot.dot-${person.id}`), el('span.meta', { text: t(person.role) })),
       el('h1', { text: t(person.name) }),
-      person.name.en ? el('p.roman', { text: person.name.en }) : null
+      person.name.en ? el('p.roman', { text: person.name.en }) : null,
+      /* 한 줄 소개. 없는 사람에게는 줄이 생기지 않는다. */
+      t(person.tagline) ? el('p.tagline', { text: t(person.tagline) }) : null
     ),
     frame
   );
@@ -57,9 +59,14 @@ function head(person) {
 /* ---------- 소개문 ---------- */
 
 function prose(person) {
-  /* 문단은 빈 줄로 나뉜다. 영문이 비어 있으면 t() 가 국문을 그대로 내보낸다. */
+  /* 문단은 빈 줄로 나뉜다. 영문이 비어 있으면 t() 가 국문을 그대로 내보낸다.
+     소개문이 아직 없는 사람도 페이지는 성립한다 — 이름과 색면이 이미 있다. */
   const text = t(person.bio);
   const box = el('div.prose');
+  if (!text) {
+    box.append(el('p.pending-bio', { text: '소개문 준비 중' }));
+    return box;
+  }
   for (const para of text.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean)) {
     box.append(el('p', { text: para }));
   }
@@ -100,16 +107,21 @@ function worksBlock(person, works) {
   );
 }
 
+/**
+ * 연결. 개인 이메일이 없으면 도트 계정을 쓴다 —
+ * 최소 화면(색면 + 이름 + '프로듀서' + 이메일)에는 이메일이 늘 있어야 한다.
+ */
 function linksBlock(person) {
+  const mail = person.email || person.dotEmail;
+  if (!person.links?.length && !mail) return null;
+
   const list = el('ul.llist');
   for (const l of person.links || []) {
     list.append(
       el('li', null, el('a', { href: l.url, target: '_blank', rel: 'noopener', text: t(l.label) }))
     );
   }
-  if (person.email) {
-    list.append(el('li', null, el('a', { href: `mailto:${person.email}`, text: person.email })));
-  }
+  if (mail) list.append(el('li', null, el('a', { href: `mailto:${mail}`, text: mail })));
   return sideBlock('연결', list);
 }
 

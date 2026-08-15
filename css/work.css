@@ -52,7 +52,9 @@
 
 .dimg{
   position:absolute;
-  right:0;
+  /* 오른쪽 끝은 뷰포트 가장자리가 아니라 사이트 공통 여백 선에 맞춘다 —
+     상단 메뉴의 Contact 오른쪽 끝, 매스트헤드 제목의 왼쪽 끝과 같은 선(--pad). */
+  right:var(--pad);
   top:70px;
   width:47%;
 }
@@ -67,6 +69,19 @@
   object-fit:contain;
   margin-left:auto;        /* 오른쪽 끝에 붙여 패널과의 간격을 지킨다 */
 }
+.dimg.pair{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  justify-content:flex-end;
+}
+.dimg.pair .cover{
+  width:auto;
+  max-height:60vh;          /* 세로 두 장을 나란히 */
+  max-width:calc(50% - 8px);
+  object-fit:contain;
+}
+
 .dimg .block{
   width:100%;
   aspect-ratio:3/2;
@@ -127,14 +142,59 @@
   display:block;
 }
 
-/* ---------- 사진 4장 가로 띠 ---------- */
-.dstrip{
+/* ---------- 본문 아래 배치 ----------
+   어느 패턴이든 자르지 않는다. 세로·가로가 섞여도 각자의 비율을 지킨다. */
+
+.dgal, .dgal-rest{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:0;
+  gap:22px;
+  padding:34px var(--pad) 0;
+  align-items:start;
 }
-.dstrip:empty{ display:none }   /* 한 장도 없으면 자리도 없다 */
-.dstrip .cover{ width:100%; aspect-ratio:3/2; object-fit:cover; display:block }
+.dgal-rest{ padding-top:22px }
+.dgal.c2, .dgal-rest.c2{ grid-template-columns:repeat(2,1fr) }
+.dgal.c3, .dgal-rest.c3{ grid-template-columns:repeat(3,1fr) }
+
+/* 반반이면 메이슨리 — 높이가 제각각인 사진을 억지로 맞추지 않는다. */
+.dgal.masonry, .dgal-rest.masonry{
+  display:block;
+  columns:3;
+  column-gap:22px;
+}
+.dgal.masonry figure, .dgal-rest.masonry figure{
+  break-inside:avoid;
+  margin-bottom:22px;
+}
+
+.dgal .cover, .dgal-rest .cover, .dhero .cover{
+  width:100%;
+  height:auto;
+  object-fit:contain;       /* 자르지 않는다 */
+  display:block;
+}
+
+/* 3장 — 첫 장 크게, 나머지 둘은 아래 작게 */
+.dhero{ padding:34px var(--pad) 0 }
+.dhero .hero-main{ max-width:820px; margin:0 auto }
+.dhero .hero-rest{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:22px;
+}
+
+.dgal-more{
+  display:block;
+  margin:20px var(--pad) 0;
+  padding:11px 20px;
+  background:none;
+  border:.5px solid var(--line-s);
+  font-family:var(--mono);
+  font-size:11px;
+  color:inherit;
+  cursor:pointer;
+}
+.dgal-more:hover{ background:var(--ink); color:var(--cream) }
 
 /* ---------- Explore more ---------- */
 .more{
@@ -174,7 +234,12 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
     margin-top:22px;
   }
   .dvideo{ padding-top:32px }
-  .dstrip{ grid-template-columns:repeat(2,1fr) }
+  /* 모바일은 어떤 패턴이든 1열 */
+  .dimg.pair{ flex-direction:column; align-items:stretch }
+  .dimg.pair .cover{ max-width:100%; max-height:none; width:100% }
+  .dgal, .dgal-rest{ grid-template-columns:1fr !important; gap:18px }
+  .dgal.masonry, .dgal-rest.masonry{ columns:1 }
+  .dhero .hero-rest{ grid-template-columns:1fr }
   .more{ padding-top:36px; margin-top:32px }
   .mgrid{ grid-template-columns:repeat(2,1fr); gap:18px }
 }

@@ -44,6 +44,14 @@
 .pface:hover{ transform:scale(1.045) }
 .pface:hover .cover{ filter:none }
 
+.phead .tagline{
+  font-size:clamp(15px,1.4vw,18px);
+  line-height:1.5;
+  max-width:34ch;
+  margin-top:16px;
+  opacity:.85;
+}
+
 .phead-role{ display:flex; align-items:center; gap:9px; margin-bottom:18px }
 .phead-role .dot{ width:11px; height:11px; border-radius:50%; display:block; flex:none }
 .phead h1{

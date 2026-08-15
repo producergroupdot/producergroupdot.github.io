@@ -30,9 +30,6 @@ export function el(spec, attrs, ...children) {
  * 아직 만들지 않은 페이지는 null 로 두면 링크가 걸리지 않고 그냥 글자로 나온다.
  * 페이지를 만들면 이 표에서 한 줄만 고치면 사이트 전체의 링크가 한꺼번에 살아난다.
  */
-/* 프로듀서 상세는 한 사람씩 만들고 있다. 여기 적힌 사람만 링크가 걸린다. */
-const PRODUCER_PAGES = new Set(['jisun']);
-
 const PAGES = {
   home: () => 'index.html',
   works: (query) => 'works.html' + (query || ''),
@@ -42,7 +39,9 @@ const PAGES = {
   /* Contact 은 페이지가 아니라 About 맨 아래 블록이다. */
   contact: () => 'about.html#contact',
   work: (id) => `work.html?id=${id}`,
-  producer: (id) => (PRODUCER_PAGES.has(id) ? `producers/${id}.html` : ''),
+  /* 네 사람 모두 페이지가 있다. 데이터가 비었는지로 링크를 막지 않는다 —
+     소개문이 없어도 색면·이름·이메일만으로 페이지가 성립한다. */
+  producer: (id) => `producers/${id}.html`,
   artist: (id) => `artists/${id}.html`,
 };
 
@@ -154,6 +153,28 @@ export function dots(producerIds, producerById) {
     wrap.append(el(`i.dot.dot-${p.id}`, { title: t(p.name), 'aria-label': t(p.name) }));
   }
   return wrap;
+}
+
+/* ---------- 프로듀서 색면 칸 ----------
+   홈 모자이크와 About 이 같은 것을 쓴다. 두 벌로 두면 한쪽만 고쳐져 어긋난다
+   (실제로 About 쪽만 링크가 아니어서 색면이 눌리지 않았다).
+
+   칸 전체가 링크다. 안에 다른 링크를 넣지 않는다 — <a> 안에 <a> 는 안 된다.
+   이메일은 About 맨 아래 Contact 블록에만 둔다. */
+export function producerTile(p, { media = null, extraClass = '', roleLang } = {}) {
+  return link(
+    pageUrl('producer', p.id),
+    `.ptile.field-${p.id}${p.color.dark ? '.on-dark' : ''}${extraClass}`,
+    { 'aria-label': t(p.name) },
+    media,
+    el('span.meta.num', { text: roleLang ? t(p.role, roleLang) : t(p.role) }),
+    el(
+      'span.ptile-name',
+      null,
+      el('h3', { text: t(p.name, 'en') }),
+      el('span.sub', { text: t(p.name, 'ko') })
+    )
+  );
 }
 
 /** 그 작업의 면 색 클래스. 담당 미지정이면 구조색인 라벤더. */
@@ -342,29 +363,17 @@ export function topBar(producers, here, about) {
 
 /* ---------- 모바일 전체화면 메뉴 ---------- */
 
-/* 라벤더는 구조색이라 메뉴에 쓸 수 있다. 프로듀서 네 색은 사람을 가리키므로 쓰지 않는다. */
-const MENU = [
-  ['about', 'About'],
-  ['works', 'Works'],
-  ['artists', 'Artists'],
-  ['archive', 'Archive'],
-  ['contact', 'Contact'],
-];
+/* 라벤더는 구조색이라 메뉴에 쓸 수 있다. 프로듀서 네 색은 사람을 가리키므로 쓰지 않는다.
+   항목은 위 NAV 하나만 쓴다 — 두 벌을 두면 한쪽만 고쳐져 어긋난다. */
 
 function openMenu(about, burger) {
   const close = el('button.menu-x', { type: 'button', 'aria-label': '메뉴 닫기' }, '✕');
 
+  /* 데스크톱 상단 메뉴와 같은 배열(NAV)을 쓴다. 항목 전체가 눌린다. */
   const list = el('nav.menu-list');
-  for (const [kind, label] of MENU) {
-    const url = pageUrl(kind);
-    list.append(link(url, '.menu-item', null, el('span', { text: label }), el('span.arrow', { text: '→' })));
+  for (const [kind, label] of NAV) {
+    list.append(link(pageUrl(kind), '.menu-item', null, el('span', { text: label })));
   }
-  /* Contact 는 페이지가 아니라 About 맨 아래 블록으로 간다. */
-  const contactUrl = pageUrl('about');
-  list.append(
-    link(contactUrl ? `${contactUrl}#contact` : '', '.menu-item', null,
-      el('span', { text: 'Contact' }), el('span.arrow', { text: '→' }))
-  );
 
   const socials = el('div.menu-social');
   socials.append(...socialLinks());   // 푸터와 같은 세 개

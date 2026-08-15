@@ -4,6 +4,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, topBar, footer, pageUrl, link, photo, faceCandidates, shuffle,
+  producerTile,
 } from './ui.js';
 
 /* 사진은 파일만 올리면 뜬다 — JSON 을 고칠 필요가 없다.
@@ -46,32 +47,12 @@ function people(producers) {
   const row = el('div.people');
 
   /* 네 칸의 차례는 새로고침할 때마다 섞는다 — 홈 모자이크와 같은 방식.
-     넷 사이에 앞뒤가 없다는 것이 도트의 수평성이다. */
+     넷 사이에 앞뒤가 없다는 것이 도트의 수평성이다.
+
+     칸은 홈과 같은 컴포넌트를 쓴다. 칸 전체가 프로듀서 페이지 링크이고,
+     이메일은 이 안에 두지 않는다 — 맨 아래 Contact 블록에 있다. */
   for (const p of shuffle(producers)) {
-    /* 칸 자체는 링크가 아니다. 안에 이름 링크와 mailto 링크 둘이 들어가는데
-       <a> 안에 <a> 를 넣을 수 없기 때문. */
-    row.append(
-      el(
-        `div.person.field-${p.id}${p.color.dark ? '.on-dark' : ''}`,
-        null,
-        faceBlob(p),
-        el('span.meta', { text: t(p.role, 'en') || 'Producer' }),
-        el(
-          'span.person-b',
-          null,
-          link(
-            pageUrl('producer', p.id),
-            '.person-name',
-            { 'aria-label': t(p.name) },
-            el('h3', { text: t(p.name, 'en') }),
-            el('span.kr', { text: t(p.name, 'ko') })
-          ),
-          p.dotEmail
-            ? el('a.person-mail', { href: `mailto:${p.dotEmail}`, text: p.dotEmail })
-            : null
-        )
-      )
-    );
+    row.append(producerTile(p, { media: faceBlob(p), extraClass: '.person', roleLang: 'en' }));
   }
   return row;
 }
@@ -131,13 +112,26 @@ function together(about) {
 
 /* Contact — 페이지 맨 아래 블록. 상단 메뉴에는 넣지 않는다.
    푸터와 모바일 메뉴의 Contact 가 이리로 온다(#contact). */
-function contact(about) {
+function contact(about, producers) {
   const list = el('ul.clist');
 
   /* 이메일이 먼저. 주소는 data/about.json 의 email 에만 적는다.
      비어 있으면 줄 자체를 내지 않는다 — 없는 주소를 지어내지 않기 위해서. */
   if (about.email) {
     list.append(el('li', null, el('a', { href: `mailto:${about.email}`, text: about.email })));
+  }
+
+  /* 프로듀서 네 사람의 도트 계정. 색면 칸에서 뺐으므로 여기 모아 둔다. */
+  for (const p of producers || []) {
+    if (!p.dotEmail) continue;
+    list.append(
+      el(
+        'li',
+        null,
+        el('span.cname', { text: `${t(p.name)} ` }),
+        el('a', { href: `mailto:${p.dotEmail}`, text: p.dotEmail })
+      )
+    );
   }
   for (const l of about.links || []) {
     list.append(
@@ -162,7 +156,7 @@ async function main() {
       people(site.producers),
       doongji(site.about.doongji),
       together(site.about),
-      contact(site.about)
+      contact(site.about, site.producers)
     );
     document.getElementById('page-footer').replaceChildren(footer());
   } catch (err) {

@@ -149,60 +149,114 @@ function panel(work) {
   return box;
 }
 
-/* ---------- 사진 ---------- */
+/* ---------- 사진 ----------
+   배치는 사진 수와 비율로 정한다. 패턴은 아래 다섯 가지뿐이고 새로 만들지 않는다.
 
-/* 띠에는 표지를 다시 넣지 않는다 — 위에 이미 크게 나와 있다. */
-const stripCandidates = (w) =>
-  Array.from({ length: PHOTO_TRIES }, (_, i) => `img/works/${w.id}/${nn(i + 1)}.jpg`).filter(
-    (f) => f !== w.cover
-  );
+     1장     가로 → 텍스트 오른쪽에 걸치기 / 세로 → 오른쪽, 최대 높이 68vh
+     2장     둘 다 세로 → 오른쪽에 나란히 2열(각 60vh) / 그 외 → 본문 아래 2열
+     3장     첫 장 크게 + 나머지 2장 아래 작게
+     4~6장   본문 아래 갤러리. 가로가 많으면 2열 / 세로가 많으면 3열 / 반반이면 메이슨리
+     7장 이상 6장까지 보이고 '사진 더 보기'로 펼침
 
-/** 표지가 없으면 Works 카드와 같은 규칙 — 담당 프로듀서 색면(미지정은 라벤더). */
+   어느 패턴이든 자르지 않는다(object-fit: contain). 모바일은 전부 1열. */
+
+const PHOTO_MAX = 12; //  img/works/<id>/01.jpg … 12.jpg 까지 찾아본다
+
+const photoCandidates = (w) => {
+  const list = [
+    w.cover,
+    ...Array.from({ length: PHOTO_MAX }, (_, i) => `img/works/${w.id}/${nn(i + 1)}.jpg`),
+    `img/works/${w.id}/poster.jpg`,
+  ].filter(Boolean);
+  return [...new Set(list)];
+};
+
+/** 가로 w/h > 1.2 · 세로 < 0.85 · 그 사이는 정사각 */
+const classify = (r) => (r > 1.2 ? 'landscape' : r < 0.85 ? 'portrait' : 'square');
+
+/** 실제로 뜨는 사진만 골라 크기까지 재어 온다. 없는 파일은 조용히 빠진다. */
+function probe(src) {
+  return new Promise((done) => {
+    const im = new Image();
+    im.onload = () =>
+      done({ src, w: im.naturalWidth, h: im.naturalHeight, kind: classify(im.naturalWidth / im.naturalHeight) });
+    im.onerror = () => done(null);
+    im.src = src;
+  });
+}
+
+const collectPhotos = async (work) =>
+  (await Promise.all(photoCandidates(work).map(probe))).filter(Boolean);
+
+/** 사진 수와 비율로 패턴 하나를 고른다. */
+function plan(photos) {
+  const n = photos.length;
+  const count = (k) => photos.filter((p) => p.kind === k).length;
+
+  if (!n) return { kind: 'none' };
+  if (n === 1) return { kind: 'side', tall: photos[0].kind === 'portrait' };
+  if (n === 2) return photos.every((p) => p.kind === 'portrait') ? { kind: 'side-pair' } : { kind: 'below-2' };
+  if (n === 3) return { kind: 'hero' };
+
+  /* 4장부터는 본문 아래 갤러리. 7장 이상이면 6장만 먼저 보인다. */
+  const land = count('landscape');
+  const port = count('portrait');
+  const cols = land > port ? 'c2' : port > land ? 'c3' : 'masonry';
+  return { kind: 'gallery', cols, more: n > 6 };
+}
+
+/** 자르지 않는 사진 한 장. */
+function shot(p, cls = '') {
+  const fig = el(`figure${cls}`);
+  fig.append(el('img.cover', { src: p.src, alt: '', loading: 'lazy' }));
+  return fig;
+}
+
+/** 표지가 하나도 없을 때의 색면. Works 카드와 같은 규칙. */
 const colourBlock = (work) =>
   el(`span.block.${fieldClass(work.producers)}`, null,
     el('i.blob-card'),
     el('span.block-t', { text: typeName(work) }));
 
-function sidePhoto(work) {
-  const fig = el('figure.dimg');
-  const tmp = el('span.tmp', { text: '임시 이미지' });
+/* ---------- 배치 그리기 ---------- */
 
-  const img = photo(
-    coverCandidates(work),
-    () => {
-      tmp.remove();
-      return colourBlock(work);
-    },
-    (src) => isTempFile(src) && !tmp.parentNode && fig.prepend(tmp)
-  );
-
-  /* 세로 사진은 폭이 아니라 높이로 제한한다 — 2:3 포스터를 폭에 맞추면
-     화면을 한참 넘어간다. 가로 사진에는 이 규칙을 걸지 않는다.
-     비율은 CSS 로 알 수 없어서 실제로 뜬 뒤 재어 보고 표시한다. */
-  img.addEventListener('load', () => {
-    if (img.naturalHeight > img.naturalWidth) fig.classList.add('portrait');
-    else fig.classList.remove('portrait');
-  });
-
-  fig.append(img);
-  return fig;
+/** 텍스트 오른쪽에 걸치는 자리(1장 · 세로 2장). */
+function sideArea(photos, p) {
+  const box = el(`figure.dimg${p.kind === 'side-pair' ? '.pair' : ''}${p.tall ? '.portrait' : ''}`);
+  for (const ph of photos) box.append(el('img.cover', { src: ph.src, alt: '' }));
+  return box;
 }
 
-/** 사진 4장 가로 띠. 있는 만큼만 놓고, 한 장도 없으면 띠를 만들지 않는다. */
-function strip(work) {
-  const seen = new Set();
-  const files = stripCandidates(work).filter((f) => !seen.has(f) && seen.add(f)).slice(0, STRIP_MAX + 2);
-
-  const row = el('div.dstrip');
-  for (const src of files.slice(0, STRIP_MAX)) {
-    const fig = el('figure');
-    fig.append(photo([src], () => {
-      fig.remove();
-      return el('span');
-    }));
-    row.append(fig);
+/** 본문 아래에 놓이는 자리(2장 · 3장 · 갤러리). */
+function belowArea(photos, p) {
+  if (p.kind === 'below-2') {
+    return el('section.dgal.c2', null, ...photos.map((x) => shot(x)));
   }
-  return row;
+
+  if (p.kind === 'hero') {
+    /* 첫 장 크게, 나머지 둘은 아래 작게. */
+    return el(
+      'section.dhero',
+      null,
+      shot(photos[0], '.hero-main'),
+      el('div.hero-rest', null, ...photos.slice(1).map((x) => shot(x)))
+    );
+  }
+
+  /* 갤러리. 7장 이상이면 6장만 먼저 보이고 나머지는 접어 둔다. */
+  const shown = p.more ? photos.slice(0, 6) : photos;
+  const rest = p.more ? photos.slice(6) : [];
+
+  const grid = el(`section.dgal.${p.cols}`, null, ...shown.map((x) => shot(x)));
+  if (!rest.length) return grid;
+
+  const hidden = el(`div.dgal-rest.${p.cols}`, { hidden: true }, ...rest.map((x) => shot(x)));
+  const btn = el('button.dgal-more', { type: 'button', text: `사진 더 보기 (${rest.length})` });
+  btn.addEventListener('click', () => {
+    hidden.hidden = false;
+    btn.remove();
+  });
+  return el('div.dgal-wrap', null, grid, hidden, btn);
 }
 
 /* ---------- 영상 ---------- */
@@ -292,17 +346,27 @@ async function main() {
 
     document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'works', site.about));
 
-    const body = panel(work);
-    const wrap = el('div.dwrap', null, body, sidePhoto(work));
-
-    document.getElementById('page').replaceChildren(
+    const wrap = el('div.dwrap', null, panel(work));
+    const page = document.getElementById('page');
+    page.replaceChildren(
       head(work, site.producerById),
       wrap,
-      video(work),      //  본문 아래
-      strip(work),
+      video(work),
       more(work, site.works, site.producerById)
     );
     document.getElementById('page-footer').replaceChildren(footer());
+
+    /* 사진은 비율을 재야 배치를 정할 수 있어서 먼저 다 불러온 뒤 끼워 넣는다. */
+    const photos = await collectPhotos(work);
+    const p = plan(photos);
+
+    if (p.kind === 'side' || p.kind === 'side-pair') {
+      wrap.append(sideArea(photos, p));
+    } else if (p.kind === 'none') {
+      wrap.append(el('figure.dimg', null, colourBlock(work)));
+    } else {
+      wrap.insertAdjacentElement('afterend', belowArea(photos, p));
+    }
 
     fitPanel(wrap);
   } catch (err) {
