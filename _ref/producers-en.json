@@ -1,9 +1,12 @@
 {
   "jisun": {
-    "name": { "ko": "박지선", "en": "Park Jisun" },
+    "name": {
+      "ko": "박지선",
+      "en": "Park Jisun"
+    },
     "tagline": {
-      "ko": "지금을 읽고 질문하는 프로듀서",
-      "en": "A producer who reads the present and asks questions."
+      "ko": "동시대를 읽고 질문을 던지며 길을 찾는 프로듀서",
+      "en": "A producer who reads the present and asks questions"
     },
     "bio": {
       "en": [
@@ -15,9 +18,11 @@
       ]
     }
   },
-
   "miseon": {
-    "name": { "ko": "송미선", "en": "Song Miseon" },
+    "name": {
+      "ko": "송미선",
+      "en": "Song Miseon"
+    },
     "tagline": {
       "ko": "새로운 것을 배우는 것에 항상 이끌리는 프로듀서",
       "en": "A producer always curious about learning something new."
