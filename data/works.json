@@ -448,23 +448,23 @@
   },
   {
     "id": "gwantong-18",
-    "order": 3,
+    "order": 300,
     "type": "performance",
     "category": {
       "ko": "공연",
       "en": "Production"
     },
     "title": {
-      "ko": "관통 18",
-      "en": ""
+      "ko": "관통시팔",
+      "en": "GWANTONG 18"
     },
     "subtitle": {
-      "ko": "",
-      "en": ""
+      "ko": "김보람 · 앰비규어스댄스컴퍼니",
+      "en": "Kim Boram · Ambiguous Dance Company"
     },
     "artist": {
-      "ko": "김보람 · 앰비규어스 댄스 컴퍼니",
-      "en": "Kim Boram · Ambiguous Dance Company"
+      "ko": "",
+      "en": ""
     },
     "artists": [
       "ambiguous"
@@ -491,8 +491,8 @@
           "en": ""
         },
         "dotRole": {
-          "ko": "",
-          "en": ""
+          "ko": "투어",
+          "en": "Touring"
         },
         "link": "",
         "time": "",
@@ -513,7 +513,7 @@
           "en": "London"
         },
         "venue": {
-          "ko": "The Coronet Theatre",
+          "ko": "코로넷 시어터",
           "en": "The Coronet Theatre"
         },
         "kind": {
@@ -521,8 +521,8 @@
           "en": ""
         },
         "dotRole": {
-          "ko": "",
-          "en": ""
+          "ko": "투어",
+          "en": "Touring"
         },
         "link": "",
         "time": "",
@@ -531,19 +531,19 @@
           "en": ""
         },
         "note": {
-          "ko": "",
-          "en": ""
+          "ko": "처음이자 마지막 해외 공연",
+          "en": "First and only performance abroad"
         }
       }
     ],
     "status": "upcoming",
     "lead": {
-      "ko": "",
-      "en": ""
+      "ko": "춤의 끝, 몸의 시작",
+      "en": "The end of dance. The beginning of the body."
     },
     "body": {
-      "ko": "",
-      "en": ""
+      "ko": "〈관통시팔〉은 안무가이자 무용수인 김보람이 자신의 몸과 춤, 그리고 무대 위에서 살아온 시간을 응축한 유일한 솔로 작품이다. 안무된 동작을 보여주는 데 머무르지 않고, '나는 누구인가', '퍼포머란 무엇인가'라는 질문을 한 사람의 몸으로 끝까지 밀고 나간다.\n\n공연은 춤과 예술, 패턴에서 시작해 함정과 탈출, 환상과 두려움, 후회와 확신에 이르는 열여덟 개의 상태로 이어진다. 이 장면들은 하나의 서사를 완성하기보다 서로 부딪히고 반복되며 몸의 리듬을 만들어낸다. 관객은 이야기를 따라가는 대신 움직임과 호흡, 소리와 침묵, 축적되는 피로를 함께 통과하게 된다.\n\n제목의 '관통'은 무언가를 꿰뚫고 지나가는 행위인 동시에, 춤으로 자신의 삶과 존재를 들여다보려는 태도를 뜻한다. 숫자 '18'에는 작품을 이루는 열여덟 개의 상태와 함께, 한국어의 발음에서 욕설을 연상시키는 거칠고 본능적인 감각이 겹쳐 있다. 숭고함과 우스움, 감동과 볼거리 사이를 오가는 퍼포머의 몸은 그 모순을 숨기지 않고 그대로 드러낸다.\n\n2018년 서울에서 처음 선보인 뒤 다시는 공연하지 않으려 했던 작품을 김보람은 8년 만에 다시 무대에 올린다. 지금이 아니면 더는 이 작품을 감당할 수 없을지 모른다는 감각에서 시작된 마지막 도전이다. 서울 공연에 이어 런던에서 처음이자 마지막 해외 공연을 갖는 〈관통시팔〉은, 한 무용수가 자신의 몸으로 어디까지 갈 수 있는지를 보여주는 치열한 기록이다.",
+      "en": "GWANTONG 18 is choreographer and dancer Kim Boram's only solo work, distilling a life lived through dance and on stage. More than a display of choreography, it uses the body to pursue two questions to their limits: who am I, and what does it mean to be a performer?\n\nThe work unfolds through eighteen states, moving from dance, art and pattern to entrapment and escape, illusion and fear, regret and conviction. Rather than forming a single narrative, these scenes collide and repeat, creating a rhythm of movement, breath, sound, silence and mounting exhaustion.\n\nThe title combines gwantong — to pierce or pass through — with the number 18. As well as referring to the work's eighteen states, the Korean pronunciation of the number echoes a powerful expletive, giving the title its raw, instinctive charge. At once sublime and absurd, moving and exposed, the performer's body holds these contradictions without attempting to resolve them.\n\nFirst performed in Seoul in 2018, GWANTONG 18 returns to the stage after eight years. Believing this may be his last chance to meet its physical demands, Kim takes on the work one final time. Following its Seoul performances, it travels to London for its first — and only — presentation abroad: a visceral record of how far one dancer can take the body."
     },
     "venue": {
       "ko": "",
@@ -553,6 +553,10 @@
       "ko": "",
       "en": ""
     },
+    "dotRole": {
+      "ko": "투어",
+      "en": "Touring"
+    },
     "commission": {
       "ko": "",
       "en": ""
@@ -561,7 +565,37 @@
       "ko": "",
       "en": ""
     },
-    "cover": "img/works/gwantong-18/TEMP-01.jpg",
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "제작·주최 · 앰비규어스댄스컴퍼니, 프로듀서그룹 도트",
+            "en": "Produced by Ambiguous Dance Company, Producer Group DOT"
+          },
+          {
+            "ko": "커미션 · 코로넷 시어터",
+            "en": "Commissioned by The Coronet Theatre"
+          },
+          {
+            "ko": "초연 · 2018, 서울",
+            "en": "Premiered in Seoul, 2018"
+          },
+          {
+            "ko": "키워드 · 솔로, 무용, 국제투어",
+            "en": "Keywords · solo, dance, international tour"
+          }
+        ]
+      }
+    ],
+    "cover": "img/works/gwantong-18/01.jpg",
+    "photoCredit": {
+      "ko": "ⓒSang Hoon OK",
+      "en": "ⓒSang Hoon OK"
+    },
     "homeFeature": [
       "band-3"
     ]
@@ -2318,17 +2352,17 @@
           {
             "ko": "2020 · 기후변화 2020 — 화천의 환경을 둘러싼 강연과 대화",
             "en": "2020 · Climate Change 2020 — Talks on environment in Hwacheon",
-            "url": "https://youtu.be/4JJyId1JZMY"
+            "url": "https://jisunarts.github.io/documents.html#climate-residency"
           },
           {
             "ko": "2021 · 관점의 전환, 세상을 보는 시선들",
             "en": "2021 · Change of perspective, points of view looking at the world",
-            "url": "https://youtu.be/oz65z1gxYbc"
+            "url": "https://jisunarts.github.io/documents.html#climate-residency"
           },
           {
             "ko": "2022 · 기후변화 2022 — 기후위기와 에너지",
             "en": "2022 · Climate Change 2022 — Climate Crisis and Energy",
-            "url": "https://youtu.be/RVg2Oe2gHPc"
+            "url": "https://jisunarts.github.io/documents.html#climate-residency"
           }
         ]
       },
@@ -2413,8 +2447,25 @@
         ]
       }
     ],
+    "videos": [
+      {
+        "year": "2020",
+        "embedId": "4JJyId1JZMY",
+        "url": "https://youtu.be/4JJyId1JZMY"
+      },
+      {
+        "year": "2021",
+        "embedId": "oz65z1gxYbc",
+        "url": "https://youtu.be/oz65z1gxYbc"
+      },
+      {
+        "year": "2022",
+        "embedId": "RVg2Oe2gHPc",
+        "url": "https://youtu.be/RVg2Oe2gHPc"
+      }
+    ],
     "gallery": "sequence",
-    "cover": "img/works/climate-residency/2020/01.jpg",
+    "cover": "img/works/climate-residency/01.jpg",
     "photoCredit": {
       "ko": "사진 제공 : 기후변화레지던시",
       "en": "Photos courtesy of the Climate Change Residency"

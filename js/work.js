@@ -103,6 +103,21 @@ const videoId = (work) => {
   return v.embedId || '';
 };
 
+/** 16:9 임베드 하나. 아래·위 라벨은 부르는 쪽이 붙인다. */
+function embed(id, title) {
+  return el('div.dvideo-box', null,
+    el('iframe', {
+      src: `https://www.youtube-nocookie.com/embed/${id}`,
+      title,
+      /* 유튜브 임베드는 한 개당 1MB 가까이 받는다 — 화면에 들어올 때까지 미룬다.
+         닫힌 아코디언 안에 있으면 열기 전에는 받지 않는다. */
+      loading: 'lazy',
+      allow: 'accelerometer; clipboard-write; encrypted-media; picture-in-picture',
+      referrerpolicy: 'strict-origin-when-cross-origin',
+      allowfullscreen: true,
+    }));
+}
+
 function video(work) {
   const id = videoId(work);
   if (!id) return null;
@@ -111,18 +126,29 @@ function video(work) {
   return el(
     'section.dvideo',
     null,
-    el('div.dvideo-box', null,
-      el('iframe', {
-        src: `https://www.youtube-nocookie.com/embed/${id}`,
-        title: `${titleText(t(work.title))} ${caption || '영상'}`,
-        /* 유튜브 임베드는 한 개당 1MB 가까이 받는다 — 화면에 들어올 때까지 미룬다. */
-        loading: 'lazy',
-        allow: 'accelerometer; clipboard-write; encrypted-media; picture-in-picture',
-        referrerpolicy: 'strict-origin-when-cross-origin',
-        allowfullscreen: true,
-      })),
+    embed(id, `${titleText(t(work.title))} ${caption || '영상'}`),
     caption ? el('p.dvideo-cap.meta', { text: caption }) : null
   );
+}
+
+/* 영상이 여럿인 작업(연도별 기록 영상 같은 것)은 아코디언 안에 세로로 쌓는다.
+   video(하나짜리)는 오른쪽 열 맨 위에 그대로 두고, 이쪽은 videos 배열이 정한다. */
+const RECORDINGS = { ko: '기록 영상', en: 'Recordings' };
+
+function videoStack(work) {
+  const list = (work.videos || []).filter((v) => v.embedId);
+  if (!list.length) return null;
+
+  const box = el('div.dvstack');
+  for (const v of list) {
+    const label = t(v.label) || v.year || '';
+    box.append(
+      el('figure.dvitem', null,
+        label ? el('figcaption.meta', { text: label }) : null,
+        embed(v.embedId, `${titleText(t(work.title))} ${label}`))
+    );
+  }
+  return box;
 }
 
 /* ---------- 아코디언 ---------- */
@@ -146,6 +172,19 @@ function today() {
 /* '초연'은 공연에만 쓰는 개념이다.
    리서치·네트워크·레지던시·축제에는 첫 회차라는 것이 따로 의미를 갖지 않는다. */
 const isProduction = (work) => work.type === 'performance';
+
+/**
+ * '기록 영상'을 목록에 끼워 넣는다. 링크 항목 바로 앞 — 링크는 늘 맨 마지막이다.
+ * videos 가 없으면 아무것도 하지 않는다.
+ */
+function addRecordings(list, work) {
+  const stack = videoStack(work);
+  if (!stack) return;
+  const item = { title: t(RECORDINGS), rows: [], node: stack };
+  const at = list.findIndex((a) => /^(링크|Links|자료|Materials)/.test(a.title));
+  if (at === -1) list.push(item);
+  else list.splice(at, 0, item);
+}
 
 /**
  * 아코디언 목록을 만든다.
@@ -220,11 +259,12 @@ function buildAccordions(work) {
         ),
         paragraphs: (t(a.paragraphs, lang.current) || a.paragraphs?.ko || []).filter?.(Boolean) ?? [],
       }))
-      .filter((a) => a.title && (a.rows.length || a.paragraphs.length));
+      .filter((a) => a.title && (a.rows.length || a.paragraphs.length || a.node));
 
     /* 직접 적은 목록에 일정이 없고 회차 데이터가 있으면 맨 앞에 넣어 준다.
        회차를 채웠는데 화면에 안 나오는 일을 막기 위한 것이다(함정 1). */
     if (!list.some((a) => SCHEDULE_TITLE.test(a.title))) list.unshift(...schedule());
+    addRecordings(list, work);
     return list;
   }
 
@@ -240,6 +280,7 @@ function buildAccordions(work) {
     .filter(([, v]) => v)
     .map(([k, v]) => ({ ko: `${k} · ${v}` }));
   if (info.length) out.push({ title: t(INFO), rows: info });
+  addRecordings(out, work);
 
   /* credits 배열이 있으면 크레딧 항목으로. 데이터만 있고 화면에 없는 필드를 두지 않는다. */
   const credits = (work.credits || [])
@@ -265,6 +306,9 @@ function accordions(work) {
   list.forEach((a, i) => {
     const det = el('details', i === 0 ? { open: true } : null); // 첫 항목만 열어 둔다
     det.append(el('summary', { text: a.title }));
+
+    /* 세 가지 모양을 받는다 — 산문(paragraphs) · 목록(rows) · 만들어 둔 조각(node). */
+    if (a.node) det.append(a.node);
 
     /* 산문은 문단으로, 목록은 줄로. ⬡ 는 SVG 로 그린다. */
     if (a.paragraphs?.length) {
@@ -341,7 +385,7 @@ function textCol(work) {
    gallery:"sequence" 는 장수·비율과 무관하게 늘 슬라이드다.
    어느 패턴이든 자르지 않는다(object-fit: contain). 모바일은 전부 1열. */
 
-const PHOTO_MAX = 12; //  img/works/<id>/01.jpg … 12.jpg 까지 찾아본다
+const PHOTO_MAX = 35; //  img/works/<id>/01.jpg … 35.jpg 까지 찾아본다 (없는 번호는 조용히 빠진다)
 const MANY_PORTRAITS = 5; //  세로가 이만큼 넘게 모이면 3열로 좁힌다
 
 /* 폴더에 파일만 넣으면 뜨는 것이 기본이다(01.jpg … 12.jpg).
@@ -445,6 +489,25 @@ function lightbox(src, alt) {
   document.body.classList.add('lb-open');
 }
 
+const THUMBS_FROM = 10; //  사진이 이보다 많을 때만 아래에 썸네일 줄을 만든다
+
+/* 누르고 있으면 계속 넘어간다. 30장을 한 번씩 눌러 넘기게 두지 않기 위한 것.
+   처음 한 번은 바로, 그 뒤로는 조금 뜸을 들였다가 이어서. */
+function holdToRepeat(btn, step) {
+  let first = null, tick = null;
+  const stop = () => { clearTimeout(first); clearInterval(tick); first = tick = null; };
+  btn.addEventListener('pointerdown', (e) => {
+    if (btn.disabled) return;
+    e.preventDefault();
+    btn.setPointerCapture?.(e.pointerId);
+    step();
+    first = setTimeout(() => { tick = setInterval(step, 170); }, 420);
+  });
+  for (const ev of ['pointerup', 'pointercancel', 'pointerleave']) btn.addEventListener(ev, stop);
+  /* pointerdown 에서 이미 한 칸 넘겼으므로 click 은 무시한다 — 두 칸 넘어가지 않게. */
+  btn.addEventListener('click', (e) => e.preventDefault());
+}
+
 function slideshow(files) {
   const list = [...new Set((files || []).filter(Boolean))];
   if (!list.length) return null;
@@ -458,12 +521,24 @@ function slideshow(files) {
     track.append(slide);
   });
 
-  const dots = el('div.seq-dots');
-  list.forEach((_, i) => dots.append(el('i', { 'data-i': String(i) })));
+  /* 점은 두지 않는다 — 서른 개가 늘어서면 지금 어디인지 알려주지 못한다.
+     자리는 '12 / 30' 숫자가 알려준다. */
   const counter = el('span.seq-count.meta');
 
   const prev = el('button.seq-btn.seq-prev', { type: 'button', 'aria-label': '이전 사진', text: '←' });
   const next = el('button.seq-btn.seq-next', { type: 'button', 'aria-label': '다음 사진', text: '→' });
+
+  /* 썸네일 줄. 장수가 많을 때만 만든다 — 적으면 화살표로 충분하다. */
+  const many = list.length > THUMBS_FROM;
+  const thumbs = many ? el('div.seq-thumbs', { role: 'tablist', 'aria-label': '사진 고르기' }) : null;
+  if (thumbs) {
+    list.forEach((src, i) => {
+      const b = el('button.seq-thumb', { type: 'button', 'aria-label': `${i + 1}번째 사진` });
+      b.append(el('img', { src, alt: '', loading: 'lazy' }));
+      b.addEventListener('click', () => show(i));
+      thumbs.append(b);
+    });
+  }
 
   let at = 0;
   const show = (i, smooth = true) => {
@@ -473,14 +548,20 @@ function slideshow(files) {
   };
   const sync = () => {
     counter.textContent = `${at + 1} / ${list.length}`;
-    [...dots.children].forEach((d, i) => d.classList.toggle('on', i === at));
     prev.disabled = at === 0;
     next.disabled = at === list.length - 1;
+    if (!thumbs) return;
+    [...thumbs.children].forEach((b, i) => {
+      const on = i === at;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-selected', String(on));
+      /* 고른 썸네일이 줄 밖으로 나가 있으면 끌어온다. */
+      if (on) b.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' });
+    });
   };
 
-  prev.addEventListener('click', () => show(at - 1));
-  next.addEventListener('click', () => show(at + 1));
-  [...dots.children].forEach((d, i) => d.addEventListener('click', () => show(i)));
+  holdToRepeat(prev, () => show(at - 1));
+  holdToRepeat(next, () => show(at + 1));
 
   /* 스와이프는 브라우저의 가로 스크롤에 맡긴다 — 스크롤이 멎으면 위치를 다시 읽는다. */
   let timer = null;
@@ -494,7 +575,8 @@ function slideshow(files) {
 
   const box = el('section.seq', { 'aria-roledescription': 'carousel' },
     el('div.seq-stage', null, track, prev, next),
-    el('div.seq-foot', null, dots, counter));
+    el('div.seq-foot', null, counter),
+    thumbs);
 
   /* 키보드 ← → 는 이 영역에 들어와 있을 때만 듣는다. */
   box.tabIndex = 0;
@@ -566,22 +648,33 @@ async function main() {
 
     /* gallery 값이 있으면 장수·비율을 보지 않고 슬라이드로 간다.
        표지도 슬라이드의 첫 장으로 들어간다 — 오른쪽 열에 사진 자리는 하나뿐이다. */
-    if (work.gallery === 'sequence') {
-      const files = [...new Set([work.cover, ...(work.galleryImages || [])].filter(Boolean))];
-      /* 넘길 것이 한 장뿐이면 슬라이드를 만들지 않는다 —
-         화살표가 둘 다 꺼진 채 '1 / 1' 만 남으면 고장으로 보인다. 그냥 사진 한 장으로 둔다. */
-      if (files.length > 1) {
-        media.append(slideshow(files));
-        return;
-      }
+    /* gallery:"sequence" — galleryImages 를 적었으면 그 목록만,
+       적지 않았으면 폴더에서 찾아낸 사진 전부를 순서대로 넘겨 본다. */
+    const listed = work.gallery === 'sequence'
+      ? [...new Set([work.cover, ...(work.galleryImages || [])].filter(Boolean))]
+      : [];
+    if (listed.length > 1) {
+      media.append(slideshow(listed));
+      return;
     }
 
     const photos = await collectPhotos(work);
+
+    /* 넘길 것이 한 장뿐이면 슬라이드를 만들지 않는다 —
+       화살표가 둘 다 꺼진 채 '1 / 1' 만 남으면 고장으로 보인다. */
+    if (work.gallery === 'sequence' && photos.length > 1) {
+      media.append(slideshow(photos.map((p) => p.src)));
+      return;
+    }
+
     media.append(
       photos.length ? photoArea(photos, plan(photos)) : el('figure.dshot', null, colourBlock(work))
     );
-    /* 사진 아래에 촬영자·제공자를 적는다. 예술가 사진과 같은 규칙(ui.js). */
-    if (photos.length) media.append(workCredit(work));
+    /* 사진 아래에 촬영자·제공자를 적는다. 예술가 사진과 같은 규칙(ui.js).
+       el() 과 달리 네이티브 append 는 null 을 걸러주지 않는다 —
+       그대로 넘기면 화면에 'null' 이라는 글자가 찍힌다. 있을 때만 붙인다. */
+    const credit = photos.length ? workCredit(work) : null;
+    if (credit) media.append(credit);
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(

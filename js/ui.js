@@ -306,7 +306,7 @@ function hexSvg() {
  */
 export function titleNodes(str) {
   const frag = document.createDocumentFragment();
-  const parts = String(str).split(HEX_TOKEN);
+  const parts = real(str).split(HEX_TOKEN);
   parts.forEach((part, i) => {
     if (part) frag.append(document.createTextNode(part));
     if (i < parts.length - 1) frag.append(hexSvg());
@@ -316,7 +316,7 @@ export function titleNodes(str) {
 
 /** 화면 밖(aria-label, title, alt)에서 쓸 평문. 여기서는 폰트가 관여하지 않는다. */
 export function titleText(str) {
-  return String(str).replace(HEX_TOKEN, '⬡');
+  return real(str).replace(HEX_TOKEN, '⬡');
 }
 
 /* ---------- 로고 ---------- */
@@ -380,13 +380,27 @@ const CREDIT_TYPE = {
 };
 
 /**
+ * 화면에 적을 값이 실제로 있는가.
+ * null·undefined·빈 문자열·공백뿐인 문자열, 그리고 문자열 'null'·'undefined' 를
+ * 모두 없는 것으로 본다 — JSON 을 손으로 고치다 보면 셋 다 실제로 들어온다.
+ */
+export function real(v) {
+  if (v == null) return '';
+  const s = String(v).trim();
+  return s === '' || s === 'null' || s === 'undefined' ? '' : s;
+}
+
+/**
  * 크레딧 한 줄. 없으면 null 이라 자리도 생기지 않는다.
  *   photoCreditShow: false  → 기록은 남기고 화면에만 내지 않는다
  *   note                    → 크레딧이 없을 때 그 자리에 사유를 적는다(교체 예정 임시 사진)
  */
 export function creditLine({ photoCredit, creditType, photoCreditShow, note } = {}) {
-  const who = t(photoCredit);
-  if (!who) return t(note) ? el('p.credit.meta', { text: t(note) }) : null;
+  const who = real(t(photoCredit));
+  if (!who) {
+    const why = real(t(note));
+    return why ? el('p.credit.meta', { text: why }) : null;
+  }
   if (photoCreditShow === false) return null;
 
   const kind = CREDIT_TYPE[creditType];

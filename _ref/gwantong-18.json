@@ -1,0 +1,60 @@
+{
+  "id": "gwantong-18",
+  "order": 300,
+  "type": "공연",
+  "dotRole": "투어",
+  "artist": "ambiguous",
+  "producers": ["heejin"],
+
+  "title": { "ko": "관통시팔", "en": "GWANTONG 18" },
+  "subtitle": { "ko": "김보람 · 앰비규어스댄스컴퍼니", "en": "Kim Boram · Ambiguous Dance Company" },
+  "lead": {
+    "ko": "춤의 끝, 몸의 시작",
+    "en": "The end of dance. The beginning of the body."
+  },
+
+  "body": {
+    "ko": [
+      "〈관통시팔〉은 안무가이자 무용수인 김보람이 자신의 몸과 춤, 그리고 무대 위에서 살아온 시간을 응축한 유일한 솔로 작품이다. 안무된 동작을 보여주는 데 머무르지 않고, '나는 누구인가', '퍼포머란 무엇인가'라는 질문을 한 사람의 몸으로 끝까지 밀고 나간다.",
+      "공연은 춤과 예술, 패턴에서 시작해 함정과 탈출, 환상과 두려움, 후회와 확신에 이르는 열여덟 개의 상태로 이어진다. 이 장면들은 하나의 서사를 완성하기보다 서로 부딪히고 반복되며 몸의 리듬을 만들어낸다. 관객은 이야기를 따라가는 대신 움직임과 호흡, 소리와 침묵, 축적되는 피로를 함께 통과하게 된다.",
+      "제목의 '관통'은 무언가를 꿰뚫고 지나가는 행위인 동시에, 춤으로 자신의 삶과 존재를 들여다보려는 태도를 뜻한다. 숫자 '18'에는 작품을 이루는 열여덟 개의 상태와 함께, 한국어의 발음에서 욕설을 연상시키는 거칠고 본능적인 감각이 겹쳐 있다. 숭고함과 우스움, 감동과 볼거리 사이를 오가는 퍼포머의 몸은 그 모순을 숨기지 않고 그대로 드러낸다.",
+      "2018년 서울에서 처음 선보인 뒤 다시는 공연하지 않으려 했던 작품을 김보람은 8년 만에 다시 무대에 올린다. 지금이 아니면 더는 이 작품을 감당할 수 없을지 모른다는 감각에서 시작된 마지막 도전이다. 서울 공연에 이어 런던에서 처음이자 마지막 해외 공연을 갖는 〈관통시팔〉은, 한 무용수가 자신의 몸으로 어디까지 갈 수 있는지를 보여주는 치열한 기록이다."
+    ],
+    "en": [
+      "GWANTONG 18 is choreographer and dancer Kim Boram's only solo work, distilling a life lived through dance and on stage. More than a display of choreography, it uses the body to pursue two questions to their limits: who am I, and what does it mean to be a performer?",
+      "The work unfolds through eighteen states, moving from dance, art and pattern to entrapment and escape, illusion and fear, regret and conviction. Rather than forming a single narrative, these scenes collide and repeat, creating a rhythm of movement, breath, sound, silence and mounting exhaustion.",
+      "The title combines gwantong \u2014 to pierce or pass through \u2014 with the number 18. As well as referring to the work's eighteen states, the Korean pronunciation of the number echoes a powerful expletive, giving the title its raw, instinctive charge. At once sublime and absurd, moving and exposed, the performer's body holds these contradictions without attempting to resolve them.",
+      "First performed in Seoul in 2018, GWANTONG 18 returns to the stage after eight years. Believing this may be his last chance to meet its physical demands, Kim takes on the work one final time. Following its Seoul performances, it travels to London for its first \u2014 and only \u2014 presentation abroad: a visceral record of how far one dancer can take the body."
+    ]
+  },
+
+  "premiere": {
+    "date": "2018",
+    "venue": { "ko": "서울", "en": "Seoul" }
+  },
+
+  "runs": [
+    { "start": "2026-09-11", "end": "2026-09-13",
+      "venue": { "ko": "성수아트홀", "en": "Seongsu Art Hall" },
+      "city": { "ko": "서울", "en": "Seoul" } },
+    { "start": "2026-10-22", "end": "2026-10-24",
+      "venue": { "ko": "코로넷 시어터", "en": "The Coronet Theatre" },
+      "city": { "ko": "런던", "en": "London" },
+      "note": { "ko": "처음이자 마지막 해외 공연", "en": "First and only performance abroad" } }
+  ],
+
+  "accordions": [
+    {
+      "title": { "ko": "정보", "en": "Info" },
+      "rows": [
+        { "ko": "제작·주최 · 앰비규어스댄스컴퍼니, 프로듀서그룹 도트",
+          "en": "Produced by Ambiguous Dance Company, Producer Group DOT" },
+        { "ko": "커미션 · 코로넷 시어터", "en": "Commissioned by The Coronet Theatre" },
+        { "ko": "초연 · 2018, 서울", "en": "Premiered in Seoul, 2018" },
+        { "ko": "키워드 · 솔로, 무용, 국제투어", "en": "Keywords · solo, dance, international tour" }
+      ]
+    }
+  ],
+
+  "photoCredit": { "ko": "ⓒSang Hoon OK", "en": "ⓒSang Hoon OK" }
+}

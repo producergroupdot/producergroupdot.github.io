@@ -1,0 +1,27 @@
+{
+  "id": "ambiguous",
+  "name": { "ko": "앰비규어스댄스컴퍼니", "en": "Ambiguous Dance Company" },
+  "field": { "ko": "현대무용", "en": "Contemporary dance" },
+  "producers": ["heejin"],
+  "since": 2014,
+  "photo": "img/artists/ambiguous.jpg",
+  "photoCredit": { "ko": "촬영 김근우", "en": "Photo by Gunu Kim" },
+
+  "bio": {
+    "ko": [
+      "앰비규어스댄스컴퍼니는 2008년 안무가 김보람과 무용수 장경민이 창단했다. 이름처럼 어느 한 장르로 묶이지 않는다. 스트리트댄스부터 현대무용, 발레, 전통춤까지 서로 다른 움직임의 어법을 자유롭게 뒤섞고, 음악의 리듬과 질감을 자신들만의 신체 언어로 바꾼다. 작품은 늘 음악을 듣는 일에서 시작된다. '음악 이전의 소리'와 '춤 이전의 몸'을 따라가며 정교함과 유희, 유머와 철학을 한 무대에 놓는다.",
+      "〈바디콘서트〉, 〈인간의 리듬〉, 〈더 벨트〉 등을 발표하며 세계 20여 개국의 극장과 축제를 누볐다. 이날치와 함께한 한국관광공사 〈Feel the Rhythm of Korea〉 캠페인과 콜드플레이와의 협업을 통해 무대 밖에서도 폭넓은 관객과 만났다. 현재는 브라이언 이노와 새로운 공연 프로젝트를 개발하고 있다.",
+      "무엇을 말할지 앞세우기보다 몸이 음악과 만날 때 드러나는 인간의 본능과 감각을 믿는다. 관객에게 춤의 의미를 설명하기보다 먼저 보고 듣고 반응하게 한다. 익숙한 경계를 가볍게 흔들며 춤의 언어를 넓히고 관객과의 거리를 좁혀가는 것이 앰비규어스의 방식이다."
+    ],
+    "en": [
+      "Ambiguous Dance Company is a South Korean contemporary dance company founded in 2008 by choreographer Kim Boram and dancer Jang KyeongMin. True to its name, the company resists being defined by any single genre. Drawing freely on movement vocabularies ranging from street and contemporary dance to ballet and traditional Korean dance, it transforms the rhythms and textures of music into a physical language entirely its own. Each work begins with the act of listening. Returning to \u201csound before music\u201d and \u201cthe body before dance\u201d, the company brings precision and playfulness, humour and philosophical inquiry together on stage.",
+      "With works including Body Concert, Rhythm of Human and The Belt, the company has toured theatres and festivals in more than twenty countries. Its collaboration with LEENALCHI for the Korea Tourism Organization's Feel the Rhythm of Korea campaign, along with its work with Coldplay, has introduced the company to audiences far beyond the stage. It is currently developing a new performance project with Brian Eno.",
+      "Rather than leading with a fixed message, Ambiguous trusts the instinctive sensations that emerge when body and music meet. It does not ask audiences to decode dance, but to see, hear and respond. By playfully disrupting familiar boundaries, the company continues to expand the language of dance while bringing it closer to its audiences."
+    ]
+  },
+
+  "links": [
+    { "label": { "ko": "유튜브", "en": "YouTube" }, "url": "https://www.youtube.com/c/AmbiguousDanceCompany" },
+    { "label": { "ko": "인스타그램", "en": "Instagram" }, "url": "https://www.instagram.com/amdaco" }
+  ]
+}
