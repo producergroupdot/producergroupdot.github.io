@@ -2967,16 +2967,6 @@
       "ko": "",
       "en": ""
     },
-    "video": {
-      "embedId": "xT6UPz-JlE8",
-      "label": {
-        "ko": "기록 영상",
-        "en": "Documentation"
-      },
-      "url": "https://youtu.be/xT6UPz-JlE8"
-    },
-    "cover": "img/works/connected-city/connected-city-01.jpg",
-    "homeFeature": [],
     "credits": [
       {
         "role": {
@@ -3047,7 +3037,45 @@
         },
         "url": "",
         "public": "확인 필요"
+      },
+      {
+        "type": "자료집",
+        "label": {
+          "ko": "메이커 시티 도록",
+          "en": "Maker City catalogue"
+        },
+        "url": "https://drive.google.com/file/d/1scatHzkI3_s_0H2gchyw9apol-QQpBqx/view",
+        "public": "예"
       }
-    ]
+    ],
+    "video": {
+      "embedId": "xT6UPz-JlE8",
+      "label": {
+        "ko": "기록 영상",
+        "en": "Documentation"
+      },
+      "url": "https://youtu.be/xT6UPz-JlE8"
+    },
+    "gallery": "sequence",
+    "cover": "img/works/connected-city/connected-city-01.jpg",
+    "photos": [
+      "img/works/connected-city/connected-city-01.jpg",
+      "img/works/connected-city/connected-city-02.jpg",
+      "img/works/connected-city/connected-city-03.jpg",
+      "img/works/connected-city/connected-city-04.jpg",
+      "img/works/connected-city/connected-city-05.jpg",
+      "img/works/connected-city/connected-city-06.jpg",
+      "img/works/connected-city/connected-city-07.jpg",
+      "img/works/connected-city/connected-city-08.jpg",
+      "img/works/connected-city/connected-city-09.jpg",
+      "img/works/connected-city/connected-city-10.jpg",
+      "img/works/connected-city/connected-city-11.jpg",
+      "img/works/connected-city/connected-city-12.jpg",
+      "img/works/connected-city/connected-city-13.jpg",
+      "img/works/connected-city/connected-city-14.jpg",
+      "img/works/connected-city/connected-city-15.jpg",
+      "img/works/connected-city/connected-city-16.jpg"
+    ],
+    "homeFeature": []
   }
 ]

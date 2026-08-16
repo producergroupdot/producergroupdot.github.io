@@ -8,7 +8,7 @@ import { t, lang, isFallback } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, categoryBadge,
-  latestRun, yearSpan, creditLine, visibleWorks,
+  latestRun, yearSpan, creditLine, visibleWorks, videoId, isEmbeddedVideo,
 } from './ui.js';
 
 const MORE = 4; //  Explore more 카드 수
@@ -95,13 +95,8 @@ function premiereLine(work) {
 /* ---------- 영상 ---------- */
 
 /* privacy-enhanced 주소(youtube-nocookie)로만 심는다. 자동재생은 없다.
-   { embedId, label } 형태를 쓰고, 예전 문자열 형태도 받아준다. */
-const videoId = (work) => {
-  const v = work.video;
-  if (!v) return '';
-  if (typeof v === 'string') return (v.match(/([A-Za-z0-9_-]{11})(?:[?&/]|$)/) || [])[1] || '';
-  return v.embedId || '';
-};
+   { embedId, label } 형태를 쓰고, 예전 문자열 형태도 받아준다.
+   videoId() 는 ui.js 에 있다 — 아카이브도 같은 판정을 쓴다. */
 
 /** 16:9 임베드 하나. 아래·위 라벨은 부르는 쪽이 붙인다. */
 function embed(id, title) {
@@ -195,8 +190,7 @@ function addRecordings(list, work) {
 function buildAccordions(work) {
   /* 위에 임베드된 영상과 같은 것은 링크 줄로 또 내보내지 않는다.
      데이터 쪽을 지우지 않고 여기서 거른다 — 주소는 자료 목록으로 남을 값이다. */
-  const vid = videoId(work);
-  const isSameVideo = (url) => Boolean(vid && url && url.includes(vid));
+  const isSameVideo = (url) => isEmbeddedVideo(work, url);
 
   /* '일정'은 늘 runs 에서 만든다 — 손으로 적은 목록과 회차 데이터를 둘 다 두면
      반드시 한쪽만 고쳐져 어긋난다. */

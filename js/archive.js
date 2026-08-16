@@ -5,7 +5,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
-  topBar, footer, pageUrl, link, isArchive, lastYear, ARCHIVE_LABEL, visibleWorks,
+  topBar, footer, pageUrl, link, isArchive, lastYear, ARCHIVE_LABEL, visibleWorks, isEmbeddedVideo,
 } from './ui.js';
 
 const state = { year: 'all', form: 'all', producer: null };
@@ -14,8 +14,11 @@ const state = { year: 'all', form: 'all', producer: null };
  * 공개로 표시되고 주소가 있는 자료만 화면에 낸다.
  * '확인 필요'는 아직 내보내지 않고, 주소가 없는 것은 누를 데가 없어 내지 않는다.
  */
+/* 공개된 자료만. 상세 페이지에 이미 임베드된 영상은 뺀다 —
+   '자세히 보기' 안에 같은 영상이 들어 있어 두 번 걸리게 된다.
+   판정은 ui.js 의 isEmbeddedVideo() 한 곳(상세 페이지도 같은 것을 쓴다). */
 const publicMaterials = (w) =>
-  (w.materials || []).filter((m) => m.public === '예' && m.url);
+  (w.materials || []).filter((m) => m.public === '예' && m.url && !isEmbeddedVideo(w, m.url));
 
 const formOf = (w) => t(w.category) || '기타';
 

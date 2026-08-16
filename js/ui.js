@@ -367,6 +367,23 @@ export const faceCandidates = (p, where) => {
   return shuffle(list);
 };
 
+/* ---------- 그 작업에 임베드된 영상 ----------
+   상세 페이지가 이미 심어 놓은 영상과 같은 주소는 자료·링크 줄로 또 내보내지 않는다.
+   판정이 두 곳에 있으면 한쪽만 고쳐져 어긋나므로 여기 한 곳에 둔다. */
+
+export const videoId = (work) => {
+  const v = work.video;
+  if (!v) return '';
+  if (typeof v === 'string') return (v.match(/([A-Za-z0-9_-]{11})(?:[?&/]|$)/) || [])[1] || '';
+  return v.embedId || '';
+};
+
+/** 그 작업의 임베드 영상과 같은 주소인가. */
+export const isEmbeddedVideo = (work, url) => {
+  const id = videoId(work);
+  return Boolean(id && url && url.includes(id));
+};
+
 /* ---------- 사진 크레딧 ----------
    예술가 사진과 작업 사진이 같은 규칙을 쓴다 — 두 벌을 두면 한쪽만 고쳐진다.
 
