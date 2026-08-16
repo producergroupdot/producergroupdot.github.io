@@ -5,6 +5,7 @@ import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   logo, footer, pageUrl, link, photo, coverCandidates, isArchive, ARCHIVE_LABEL, producerTile,
+  mergeRuns,
 } from './ui.js';
 
 /* 모자이크에서 사진이 들어갈 자리는 works.json 의 homeFeature 가 지정한다.
@@ -227,7 +228,9 @@ function nowItems(site, today = new Date()) {
         work: w,
         order,
         sort: rs[0].start,
-        when: joinDates(rs),
+        /* 하루씩 나눠 적은 회차는 한 범위로 묶어 짧게 적는다(2026.10.15–17).
+           나눠 적은 이유는 시간이 달라서인데, 그 시간은 상세의 '일정'에서 보여준다. */
+        when: joinDates(mergeRuns(rs)),
         where,
         /* 회차별 메모(낭독 작가·작품 같은 것)는 여러 줄이 되면 한 줄에 담기지 않는다.
            합쳐진 줄에서는 접고, 작업 상세의 일정에서 펼친다. */

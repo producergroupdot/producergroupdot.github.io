@@ -1,0 +1,60 @@
+{
+  "id": "hihihistory",
+  "order": 200,
+  "type": "공연",
+  "dotRole": "제작",
+  "artist": "hwang",
+  "producers": ["jisun"],
+
+  "title": { "ko": "히히히스토리", "en": "Hihihistory" },
+  "subtitle": {
+    "ko": "2026년 서울국제공연예술제 협력 아티스트 초청 공연",
+    "en": "SPAF 2026 Associate Artist"
+  },
+  "lead": {
+    "ko": "헛웃음처럼 새어 나오는 감각의 균열을 어긋난 몸으로 호출하는 1인 라이브 퍼포먼스",
+    "en": ""
+  },
+
+  "body": {
+    "ko": [
+      "〈히히히스토리〉는 움직임과 소리, 말을 다루는 1인 라이브 퍼포먼스다. 무대 위 '황수현'은 말하고, 춤추고, 노래하지만 결코 하나의 인물이나 완결된 서사로 고정되지 않는다. 말은 고백처럼 시작되지만 설명으로 닫히지 않고, 춤은 이미지로 완성되지 않으며, 노래는 안정된 리듬에 도달하지 않는다. 분명한 형태로 향하지 않고 서로 다른 방향으로 미끄러지는 이 행위들은 기존의 질서 안에서 매끄럽게 설명되지 않는 감각의 상태를 집요하게 따라간다.",
+      "제목의 '히히히'는 진지한 말이 완전히 믿어지지 않을 때 새어 나오는 헛웃음이자, 무언가 스며 나오는 스산한 기척의 소리다. 이 정체 모를 소리는 공연의 표면에 작은 균열을 내고 흐름을 예기치 못한 방향으로 비틀어버린다.",
+      "그 과정에서 뒤섞이는 질감과 리듬, 파동은 관객을 익숙하지 않은 감각의 서사로 이끈다. 작품은 그렇게 아직 이름 붙지 않은 감각의 자리를 탐색하며, 매끄러운 미래가 지워버린 감각을 어긋난 몸으로 다시 호출한다."
+    ],
+    "en": []
+  },
+
+  "runs": [
+    { "start": "2026-10-15", "end": "2026-10-17",
+      "venue": { "ko": "대학로예술극장 소극장", "en": "Daehakro Arts Theatre, Small Hall" },
+      "city": { "ko": "서울", "en": "Seoul" } }
+  ],
+
+  "accordions": [
+    {
+      "title": { "ko": "정보", "en": "Info" },
+      "rows": [
+        { "ko": "러닝타임 · 50분", "en": "Running time · 50 min" },
+        { "ko": "장소 · 대학로예술극장 소극장", "en": "Daehakro Arts Theatre, Small Hall" },
+        { "ko": "2026 서울국제공연예술제 협력 아티스트 초청 공연",
+          "en": "Invited as an Associate Artist of SPAF 2026" }
+      ]
+    },
+    {
+      "title": { "ko": "크레딧", "en": "Credits" },
+      "rows": [
+        { "ko": "컨셉·안무·출연 · 황수현",
+          "en": "Concept, Choreography & Performance · Hwang Soohyun" },
+        { "ko": "크리에이티브 프로듀서 · 박지선",
+          "en": "Creative Producer · Park Jisun" },
+        { "ko": "리허설 어시스턴트 · 강호정",
+          "en": "Rehearsal Assistant · Kang Hojung" },
+        { "ko": "음악 · 김현수", "en": "Music · Kim Hyunsoo" },
+        { "ko": "조명 · 공연화", "en": "Lighting · Gong Yeonhwa" },
+        { "ko": "음향 · 우경민, 천준하", "en": "Sound · Woo Kyungmin, Cheon Junha" },
+        { "ko": "무대감독 · 이율, 김민수", "en": "Stage Manager · Lee Yool, Kim Minsu" }
+      ]
+    }
+  ]
+}

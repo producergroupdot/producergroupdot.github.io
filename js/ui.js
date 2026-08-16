@@ -86,6 +86,41 @@ export function yearSpan(w) {
 /** 회차가 열린 도시들. 같은 도시는 한 번만. */
 export const runCities = (w) => [...new Set((w.runs || []).map((r) => t(r.city)).filter(Boolean))];
 
+/**
+ * 같은 장소에서 하루씩 이어지는 회차를 한 덩어리로 묶는다.
+ *   10.15 · 10.16 · 10.17  →  10.15–17
+ *
+ * 시간이 다르면 회차를 나눠 적어야 하는데(상세의 '일정'에 시간이 나와야 하므로),
+ * 그 세 줄이 Works 카드와 홈 NOW 에까지 그대로 나오면 목록이 같은 작업으로 길어진다.
+ * 묶는 것은 짧게 적는 화면뿐이고, 상세의 '일정'은 원래 회차를 그대로 쓴다.
+ *
+ * 날짜를 손으로 적어 둔 회차(date)는 건드리지 않는다 — 사람이 정한 표기다.
+ */
+export function mergeRuns(runs) {
+  const dayAfter = (iso) => {
+    const d = new Date(`${iso}T00:00:00Z`);
+    d.setUTCDate(d.getUTCDate() + 1);
+    return d.toISOString().slice(0, 10);
+  };
+  const last = (r) => r.end || r.start;
+
+  const out = [];
+  for (const r of [...(runs || [])].sort((a, b) => (a.start < b.start ? -1 : 1))) {
+    const prev = out.at(-1);
+    const joinable =
+      prev &&
+      !t(prev.date) && !t(r.date) &&
+      t(prev.venue) === t(r.venue) &&
+      r.start <= dayAfter(last(prev));      // 이어지거나 겹칠 때만
+    if (joinable) {
+      if (last(r) > last(prev)) prev.end = last(r);
+      continue;
+    }
+    out.push({ ...r });
+  }
+  return out;
+}
+
 /* ---------- Works 인가 Archive 인가 ----------
    판정은 여기 한 곳에서만 한다. */
 

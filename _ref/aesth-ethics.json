@@ -1,0 +1,59 @@
+{
+  "id": "aesth-ethics",
+  "order": 500,
+  "type": "리서치",
+  "dotRole": "공동제작",
+  "producers": [],
+
+  "title": { "ko": "Aesth:ethics", "en": "Aesth:ethics" },
+  "subtitle": {
+    "ko": "도르트문트 연극·디지털리티 아카데미 × 프로듀서그룹 도트",
+    "en": "Academy for Theatre and Digitality, Dortmund × Producer Group DOT"
+  },
+  "lead": {
+    "ko": "인공지능이 던지는 질문 앞에서, 미학과 윤리를 함께 놓는다.",
+    "en": ""
+  },
+
+  "body": {
+    "ko": [
+      "〈Aesth:ethics〉는 도르트문트 연극 및 디지털리티 아카데미와 프로듀서그룹 도트의 공동 협력 프로젝트다. 2026년은 리서치의 해로, 협력을 위한 로드맵을 설계하고 향후 선보일 공연 프로그램의 구체적인 컨셉을 개발한다.",
+      "이 프로그램은 글로벌 기술 혁신 영역, 특히 인공지능의 활용과 그에 따른 윤리적 시사점들이 던지는 시급한 사회적 질문들을 다룬다. 인공지능의 급격한 발전은 권력과 민주주의, 전쟁과 감시, 로봇 공학과 생명 공학에 대한 질문을 야기하며, 이는 오늘날 예술·사회·과학계 전반의 거대 담론으로 부상하고 있다. 이러한 질문들은 미학적 혁신, 예술적·기술적 연구개발, 그리고 사회적 책임감을 결합하는 예술 제작의 출발점이 된다.",
+      "공동의 로드맵과 프로젝트 컨셉은 두 차례의 대면 컨셉 워크숍을 통해 구체화된다. 각 도시에서는 크리에이티브 코딩 및 공연예술, 과학 및 시민사회, 연극 프로듀싱 및 지속가능성 분야의 지역·국가 전문가들을 초청해 자문을 구하고, 다른 문화적 배경을 가진 상대 국가의 같은 분야 전문가들을 온라인으로 연결해 다각도의 논의를 펼친다.",
+      "공연예술, 시민사회, 과학, 지속가능성 분야의 지역 전문가들을 컨셉 개발 단계부터 적극적으로 참여시킴으로써, 양측의 파트너십을 위한 단단한 기초를 다지는 동시에 예술적 탁월함과 지속 가능한 실천이 구체적인 사회적 영향력으로 이어질 수 있는 공명의 장을 마련하고자 한다."
+    ],
+    "en": []
+  },
+
+  "runs": [
+    { "start": "2026-05-03", "end": "2026-05-09",
+      "venue": { "ko": "도르트문트", "en": "Dortmund" },
+      "city": { "ko": "도르트문트", "en": "Dortmund" },
+      "note": { "ko": "1차 컨셉 워크숍", "en": "First concept workshop" } },
+    { "start": "2026-09-21", "end": "2026-09-30",
+      "venue": { "ko": "서울", "en": "Seoul" },
+      "city": { "ko": "서울", "en": "Seoul" },
+      "note": { "ko": "2차 컨셉 워크숍 (9월 말, 일정 미확정)", "en": "Second concept workshop, late September" } }
+  ],
+
+  "accordions": [
+    {
+      "title": { "ko": "정보", "en": "Info" },
+      "rows": [
+        { "ko": "2026년 · 리서치 단계", "en": "2026 · research phase" },
+        { "ko": "1차 워크숍 · 2026. 5. 3 – 9, 도르트문트", "en": "3–9 May 2026, Dortmund" },
+        { "ko": "2차 워크숍 · 2026년 9월 말, 서울", "en": "Late September 2026, Seoul" },
+        { "ko": "워크숍 외 실무 회의는 모두 온라인", "en": "All other working meetings online" },
+        { "ko": "자문 분야 · 크리에이티브 코딩·공연예술 / 과학·시민사회 / 연극 프로듀싱·지속가능성",
+          "en": "Advisory fields · creative coding and performing arts / science and civil society / theatre producing and sustainability" }
+      ]
+    },
+    {
+      "title": { "ko": "링크", "en": "Links" },
+      "rows": [
+        { "ko": "도르트문트 연극·디지털리티 아카데미", "en": "Academy for Theatre and Digitality",
+          "url": "https://theater.digital/en/" }
+      ]
+    }
+  ]
+}

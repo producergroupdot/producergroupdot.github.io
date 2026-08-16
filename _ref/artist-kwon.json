@@ -1,0 +1,54 @@
+{
+  "id": "kwon",
+  "name": { "ko": "권병준", "en": "Kwon Byungjun" },
+  "tagline": {
+    "ko": "예술과 기술의 최전선에서 세상의 소리를 담아내는 미디어 아티스트",
+    "en": "Media artist sharing the sound of the world at the forefront of art and technology"
+  },
+
+  "bio": {
+    "ko": [
+      "권병준은 예술과 기술을 접목한 하드웨어 연구자이자 사운드 기반 미디어 아티스트로, 다양한 문화 영역에서 음악적 장치와 퍼포먼스 툴을 활용한 공연을 선보인다. 2018년부터 전시 공연용 로봇을 개발하여 기계적 움직임을 탐구하고 빛과 소리, 행위와 서사가 결합한 작품을 선보이고 있다. 동시에 위치 인식 시스템을 이용한 장소 특정적 소리 전달, 무대조명 제어 등으로 관객에게 새로운 무대의 가능성을 제시한다.",
+      "주요 작품으로 〈춤추는 사다리들〉(2022), 〈유령극단 '심각한 밤을 보내리'〉(2021), 〈없는 극장〉(2020), 〈싸구려 인조인간의 노랫말2_로보트 야상곡〉(2020), 〈오묘한 진리의 숲 시리즈〉, 〈자명리 공명마을〉(2019), 〈클럽 골든 플라워〉(2018) 등이 있으며, 국립현대미술관 '올해의 작가상 2023'을 수상했다."
+    ],
+    "en": [
+      "Kwon Byungjun is a hardware researcher combining art with technology and a sound-based media artist. In different cultural fields, he presents performances using tools of music and the performing arts. Since 2018 he has developed robots for exhibition-type performances, exploring mechanical movements and offering works that combine light and sound, acts and narratives. In parallel, he suggests new possibilities on stage through site-specific sounds involving GPS and the control of stage lighting.",
+      "His major works include Dancing Ladders (2022), Ghost Theater 'We will Have a Serious Night' (2021), Bold Theater (2020), Lyrics of Cheap Android 2_Robot Nocturne (2020), the 'Forest of Subtle Truth' series, Self-sounding Town Resonant Village (2019) and Club Golden Flower (2018). He won the prize for the artist of the year 2023 awarded by Korea's National Museum of Modern and Contemporary Art."
+    ]
+  },
+
+  "company": {
+    "name": { "ko": "알오티씨", "en": "Robot Theater Company" },
+    "text": {
+      "ko": [
+        "알오티씨(Robot Theater Company)는 미디어 아티스트 권병준을 중심으로 예술가와 공학자들이 함께하는 아티스트 콜렉티브이다. 연극, 무용, 음악 등 경계를 넘나드는 다원 작업을 해 온 권병준은 이들과의 협업을 통해 현재 제작하고 있는 로봇과 인간 퍼포머가 공존하는 새로운 형식의 연극(음악극)을 선보이고자 하며, 이를 통해 '메카니컬 씨어터(Mechanical Theater)'의 가능성과 무대와 전시공간에서 기계와 인간의 공존방식을 탐구하고 발전시키고자 한다."
+      ],
+      "en": [
+        "Robot Theater Company is an artists' collective led by media artist Kwon Byungjun who collaborates with other artists and engineers. Having created multidisciplinary productions encompassing the theater, dance and music, Kwon Byungjun is willing to work with them in order to offer a new form of music theater where human performers coexist with the robots he currently produces. By doing so, he will explore and develop the possibilities of Mechanical Theater and the way machines and humans coexist on stage and in an exhibition space."
+      ]
+    }
+  },
+
+  "reviews": [
+    {
+      "quote": {
+        "ko": "권병준의 작업이 기술을 통해 인간성에 질문을 던지고, 이를 통해 감동을 전하며 사람들 간의 이해에 관한 날카로운 울림을 준다.",
+        "en": "Through technology, Kwon Byungjun's work asks questions about humanity. This touches all of us, along with a sharp resonance concerning people's mutual understanding."
+      },
+      "source": {
+        "ko": "국립현대미술관 '올해의 작가상 2023' 심사평",
+        "en": "Jury's commentary, Artist of the Year 2023, National Museum of Modern and Contemporary Art"
+      }
+    },
+    {
+      "quote": {
+        "ko": "권병준은 몰입적인 로봇 종합극을 이용하여 인간 공동체의 무한 확장의 가능성을 질문하고, 거침없이 직진하는 현대 문명의 흐름에 대한 다양한 갈래를 제시하는 아름다운 작품을 보여주었다.",
+        "en": "Using his immersive, multidisciplinary performance involving robots, Kwon Byungjun asks questions about how the human community has potential to expand unlimitedly. At the same time, he suggests different flows of reckless modern civilization in this beautiful work."
+      },
+      "source": {
+        "ko": "김성희, 국립현대미술관장",
+        "en": "Kim Sunghee, Director, National Museum of Modern and Contemporary Art"
+      }
+    }
+  ]
+}

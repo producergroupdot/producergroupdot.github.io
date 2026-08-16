@@ -21,16 +21,43 @@ const typeName = (w) =>
 
 /* 회차에서 뽑는 것들(latestRun · yearSpan)은 ui.js 에 있다. */
 
-const fmtDate = (s) => {
-  const [y, m, d] = s.split('-');
-  return `${y}. ${+m}. ${+d}`;
+const WEEKDAYS = {
+  ko: ['일', '월', '화', '수', '목', '금', '토'],
+  en: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 };
-const runWhen = (r) =>
-  t(r.date) || (r.end && r.end !== r.start ? `${fmtDate(r.start)} – ${+r.end.split('-')[2]}` : fmtDate(r.start));
+
+/* 요일은 날짜에서 계산한다 — 데이터에 따로 적지 않는다. 적어 두면 날짜만 고쳤을 때 어긋난다.
+   UTC 로 읽는다. 현지 시간대로 읽으면 자정 근처에서 하루가 밀린다. */
+const weekday = (iso, l) => (WEEKDAYS[l || lang.current] || WEEKDAYS.ko)[new Date(`${iso}T00:00:00Z`).getUTCDay()];
+
+const fmtDate = (s, withDay = false, l) => {
+  const [y, m, d] = s.split('-');
+  const base = `${y}. ${+m}. ${+d}`;
+  return withDay ? `${base} (${weekday(s, l)})` : base;
+};
+
+/* 끝 날짜는 앞과 겹치는 만큼만 줄여 적는다.
+   달을 넘기면 달까지, 해를 넘기면 날짜를 통째로 — 줄이지 않으면 9.29–10.3 이 9.29–3 이 된다. */
+const runRange = (r) => {
+  const [fy, fm] = r.start.split('-');
+  const [ty, tm, td] = r.end.split('-');
+  if (ty !== fy) return `${fmtDate(r.start)} – ${fmtDate(r.end)}`;
+  return `${fmtDate(r.start)} – ${tm === fm ? '' : `${+tm}. `}${+td}`;
+};
+
+/* 하루짜리 회차에만 요일을 붙인다. 범위에 붙이면 어느 날의 요일인지 알 수 없다. */
+const runWhen = (r, l) =>
+  t(r.date, l) || (r.end && r.end !== r.start ? runRange(r) : fmtDate(r.start, true, l));
 
 /* ---------- 제목 블록 ---------- */
 
 function head(work, producerById) {
+  /* 국문 제목 아래에 영문 제목을 작고 옅게. 영문이 비어 있거나 국문과 같으면
+     줄을 만들지 않는다 — TNN·Aesth:ethics 처럼 두 표기가 같은 작업이 있다.
+     Works 카드와 홈 NOW 는 지금처럼 국문만 쓴다. */
+  const main = t(work.title);
+  const en = work.title?.en && work.title.en !== main ? work.title.en : '';
+
   return el(
     'header.dhead',
     null,
@@ -42,10 +69,27 @@ function head(work, producerById) {
       el('span.meta.dtype', { text: typeName(work) }),
       el('span.meta.dyear', { text: yearSpan(work) })
     ),
-    el('h1', null, titleNodes(t(work.title))),
+    el('h1', null, titleNodes(main)),
+    en ? el('p.dtitle-en', null, titleNodes(en)) : null,
     t(work.subtitle) ? el('p.dsub', { text: t(work.subtitle) }) : null,
-    t(work.artist) ? el('p.dartist', { text: t(work.artist) }) : null
+    t(work.artist) ? el('p.dartist', { text: t(work.artist) }) : null,
+    premiereLine(work)
   );
+}
+
+/* ---------- 초연 한 줄 ----------
+   제목 아래, 본문 위. 공연에만 붙는다.
+   초연 회차는 5.일정 탭의 '초연' 열(runs[].premiere)이 정한다. */
+
+function premiereRun(work) {
+  return isProduction(work) ? (work.runs || []).find((r) => r.premiere === true) || null : null;
+}
+
+function premiereLine(work) {
+  const r = premiereRun(work);
+  if (!r) return null;
+  const text = [t(PREMIERE), runWhen(r), t(r.venue)].filter(Boolean).join(' · ');
+  return el('p.dpremiere.meta', { text });
 }
 
 /* ---------- 영상 ---------- */
@@ -83,6 +127,26 @@ function video(work) {
 
 /* ---------- 아코디언 ---------- */
 
+/* 아코디언 제목과 표시 문구. 국문·영문을 한 곳에 둔다. */
+const DATES = { ko: '일정', en: 'Dates' };            //  공연이 아닌 작업
+const SHOWS = { ko: '공연 일정', en: 'Dates' };
+const HISTORY = { ko: '공연 히스토리', en: 'History' };
+const INFO = { ko: '정보', en: 'Info' };
+const CREDITS = { ko: '크레딧', en: 'Credits' };
+const MATERIALS = { ko: '자료', en: 'Materials' };
+const PREMIERE = { ko: '초연', en: 'Premiere' };
+const SCHEDULE_TITLE = /^(일정|공연 일정|공연 히스토리|Dates|History|Schedule)/;
+
+/** 오늘(현지 시각 기준). 회차를 지난 것과 앞으로 있을 것으로 가르는 기준. */
+function today() {
+  const d = new Date();
+  return `${d.getFullYear()}-${nn(d.getMonth() + 1)}-${nn(d.getDate())}`;
+}
+
+/* '초연'은 공연에만 쓰는 개념이다.
+   리서치·네트워크·레지던시·축제에는 첫 회차라는 것이 따로 의미를 갖지 않는다. */
+const isProduction = (work) => work.type === 'performance';
+
 /**
  * 아코디언 목록을 만든다.
  * works.json 에 accordions 가 있으면 그대로 쓰고(적힌 순서 유지),
@@ -95,9 +159,60 @@ function buildAccordions(work) {
   const vid = videoId(work);
   const isSameVideo = (url) => Boolean(vid && url && url.includes(vid));
 
+  /* '일정'은 늘 runs 에서 만든다 — 손으로 적은 목록과 회차 데이터를 둘 다 두면
+     반드시 한쪽만 고쳐져 어긋난다. */
+  const runs = [...(work.runs || [])];
+  const first = premiereRun(work);
+
+  /* 한 줄: 날짜·시간 · 도시 · 장소 · 도트의 역할 · 초연
+     도트의 역할이 비어 있으면 그 자리가 통째로 빠진다 — 도트가 관여하지 않은 회차다.
+     도시와 장소가 같은 말이면 한 번만 적는다(도르트문트 · 도르트문트). */
+  const where = (r, l) => [...new Set([t(r.city, l), t(r.venue, l)].filter(Boolean))].join(' · ');
+  /* 회차 메모(축제 이름 같은 것)도 그린다 — 적어 두고 화면에 없으면 없는 값과 같다(함정 1). */
+  const line = (r, l, mark) =>
+    [
+      [runWhen(r, l), r.time].filter(Boolean).join(' '),
+      where(r, l),
+      t(r.note, l),
+      t(r.dotRole, l),
+      r === first ? mark : '',
+    ]
+      .filter(Boolean)
+      .join('  ·  ');
+
+  const runRow = (r) => ({ ko: line(r, 'ko', PREMIERE.ko), en: line(r, 'en', PREMIERE.en) });
+
+  /**
+   * 공연은 '앞으로 있을 회차가 있느냐'로 갈린다.
+   *
+   *   있으면  공연 일정(예정·진행 중, 가까운 것부터) + 공연 히스토리(지난 것, 최신이 위로)
+   *   없으면  공연 일정 하나에 전 회차를 최신순으로
+   *
+   * 지난 공연만 남은 작업에까지 '히스토리'라는 칸을 따로 두면,
+   * 앞으로 아무 일도 없다는 것이 두 번 말해진다.
+   * 공연이 아닌 작업(리서치·네트워크·레지던시·축제)은 '일정' 하나로 둔다.
+   */
+  const schedule = () => {
+    const asc = (a, b) => (a.start < b.start ? -1 : 1);
+    const desc = (a, b) => -asc(a, b);
+    const ended = (r) => (r.end || r.start) < today();
+
+    if (!runs.length) return [];
+    if (!isProduction(work)) return [{ title: t(DATES), rows: runs.sort(asc).map(runRow) }];
+
+    const upcoming = runs.filter((r) => !ended(r)).sort(asc);
+    if (!upcoming.length) return [{ title: t(SHOWS), rows: runs.sort(desc).map(runRow) }];
+
+    const past = runs.filter(ended).sort(desc);
+    return [
+      { title: t(SHOWS), rows: upcoming.map(runRow) },
+      ...(past.length ? [{ title: t(HISTORY), rows: past.map(runRow) }] : []),
+    ];
+  };
+
   if (work.accordions?.length) {
     /* 두 가지 모양을 받는다 — 목록(rows)과 산문(paragraphs). */
-    return work.accordions
+    const list = work.accordions
       .map((a) => ({
         title: t(a.title),
         rows: (a.rows || []).filter(
@@ -106,16 +221,14 @@ function buildAccordions(work) {
         paragraphs: (t(a.paragraphs, lang.current) || a.paragraphs?.ko || []).filter?.(Boolean) ?? [],
       }))
       .filter((a) => a.title && (a.rows.length || a.paragraphs.length));
+
+    /* 직접 적은 목록에 일정이 없고 회차 데이터가 있으면 맨 앞에 넣어 준다.
+       회차를 채웠는데 화면에 안 나오는 일을 막기 위한 것이다(함정 1). */
+    if (!list.some((a) => SCHEDULE_TITLE.test(a.title))) list.unshift(...schedule());
+    return list;
   }
 
-  const out = [];
-
-  const runRows = (work.runs || []).map((r) => ({
-    ko: [runWhen(r), [t(r.city), t(r.venue)].filter(Boolean).join(' · '), r.time]
-      .filter(Boolean)
-      .join('  ·  '),
-  }));
-  if (runRows.length) out.push({ title: '일정', rows: runRows });
+  const out = [...schedule()];
 
   const info = [
     ['장소', t(work.venue)],
@@ -126,20 +239,20 @@ function buildAccordions(work) {
   ]
     .filter(([, v]) => v)
     .map(([k, v]) => ({ ko: `${k} · ${v}` }));
-  if (info.length) out.push({ title: '정보', rows: info });
+  if (info.length) out.push({ title: t(INFO), rows: info });
 
   /* credits 배열이 있으면 크레딧 항목으로. 데이터만 있고 화면에 없는 필드를 두지 않는다. */
   const credits = (work.credits || [])
     .map((c) => ({ ko: [t(c.role), t(c.name)].filter(Boolean).join(' · ') }))
     .filter((r) => r.ko);
-  if (credits.length) out.push({ title: '크레딧', rows: credits });
+  if (credits.length) out.push({ title: t(CREDITS), rows: credits });
 
   /* 자료는 주소가 있는 공개 자료만. 아카이브와 같은 규칙.
      위에 임베드한 영상과 같은 주소면 뺀다. */
   const mats = (work.materials || [])
     .filter((m) => m.public === '예' && m.url && !isSameVideo(m.url))
     .map((m) => ({ ko: [m.type, t(m.label)].filter(Boolean).join(' · '), url: m.url }));
-  if (mats.length) out.push({ title: '자료', rows: mats });
+  if (mats.length) out.push({ title: t(MATERIALS), rows: mats });
 
   return out;
 }
@@ -198,6 +311,9 @@ function textCol(work) {
       box.append(el('p', null, titleNodes(para)));   // 본문의 {hex} 도 SVG 육각형으로
     }
   }
+  /* 본문 각주. 낱말 하나를 풀어 주는 짧은 글이라 본문보다 작게, 바로 아래에 둔다.
+     Works 카드의 '확인 필요' 표시(note)와는 다른 필드다(bodyNote). */
+  if (t(work.bodyNote)) box.append(el('p.dnote.meta', { text: t(work.bodyNote) }));
   if (acc) box.append(acc);
   return box;
 }

@@ -167,6 +167,50 @@ a.artist:hover h3{
 .abody .prose p:last-child{ margin-bottom:0 }
 .pending-bio{ opacity:.5 }
 
+/* 한 줄 소개 — 이름 아래. 프로듀서 페이지와 같은 자리, 같은 무게. */
+.ahead .tagline{
+  margin-top:16px;
+  max-width:44ch;
+  font-size:clamp(15px,1.5vw,19px);
+  line-height:1.5;
+  opacity:.85;
+}
+
+/* ---------- 컴퍼니 · 인용 (선택 필드) ---------- */
+/* 값이 없는 사람에게는 만들어지지 않는다(js/artist.js). */
+.acompany{
+  margin-top:40px;
+  padding-top:26px;
+  border-top:.5px solid var(--line);
+  max-width:60ch;
+}
+.acompany h2, .areviews h2{
+  font-size:15px;
+  letter-spacing:-.01em;
+  margin-bottom:12px;
+}
+.acompany h2 .h2-en{ font-weight:400; opacity:.5 }
+
+.areviews{
+  margin-top:40px;
+  padding-top:26px;
+  border-top:.5px solid var(--line);
+  max-width:60ch;
+}
+.areviews h2{ margin-bottom:18px }
+.areviews .quote{
+  padding-left:18px;
+  border-left:2px solid var(--line-s);
+  margin-bottom:24px;
+}
+.areviews .quote:last-child{ margin-bottom:0 }
+.areviews blockquote{
+  font-size:17px;
+  line-height:1.65;
+  letter-spacing:-.01em;
+}
+.areviews figcaption{ margin-top:9px; opacity:.55 }
+
 @media (max-width:900px){
   .ahead{ padding:28px var(--pad) 24px }
   .aface{ width:140px }

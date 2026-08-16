@@ -32,8 +32,51 @@ function head(artist, producerById) {
       /* 로마자는 t() 를 거치지 않는다 — en 이 비면 국문이 되풀이된다. */
       artist.name.en ? el('p.roman', { text: artist.name.en }) : null,
       t(artist.field) ? el('p.field.meta', { text: t(artist.field) }) : null,
-      artist.since ? el('p.since.meta', { text: `도트와 함께 ${artist.since}` }) : null)
+      artist.since ? el('p.since.meta', { text: `도트와 함께 ${artist.since}` }) : null,
+      /* 한 줄 소개. 없는 사람에게는 줄이 생기지 않는다 — 프로듀서 페이지와 같은 규칙. */
+      t(artist.tagline) ? el('p.tagline', { text: t(artist.tagline) }) : null)
   );
+}
+
+/** 문단을 나눠 담는다. 빈 줄이 문단을 가른다. */
+function paragraphs(text, box) {
+  for (const para of String(text).split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean)) {
+    box.append(el('p', { text: para }));
+  }
+  return box;
+}
+
+/* ---------- 컴퍼니 · 인용 ----------
+   둘 다 선택 필드다. 있는 사람에게만 그린다 — 없으면 빈 제목을 남기지 않는다. */
+
+function company(artist) {
+  const c = artist.company;
+  if (!c || !t(c.text)) return null;
+
+  /* 소제목은 '알오티씨 Robot Theater Company' — 국문 뒤에 영문을 옅게.
+     두 표기가 같으면 한 번만 적는다. */
+  const ko = t(c.name);
+  const en = c.name?.en && c.name.en !== ko ? c.name.en : '';
+  const box = el('section.acompany');
+  if (ko) box.append(el('h2', null, ko, en ? el('span.h2-en', { text: ` ${en}` }) : null));
+  return paragraphs(t(c.text), box);
+}
+
+const REVIEWS_TITLE = { ko: '공연 리뷰', en: 'Reviews' };
+
+function reviews(artist) {
+  const list = (artist.reviews || []).filter((r) => t(r.quote));
+  if (!list.length) return null;
+
+  const box = el('section.areviews', null, el('h2', { text: t(REVIEWS_TITLE) }));
+  for (const r of list) {
+    box.append(
+      el('figure.quote', null,
+        el('blockquote', { text: t(r.quote) }),
+        t(r.source) ? el('figcaption.meta', { text: t(r.source) }) : null)
+    );
+  }
+  return box;
 }
 
 function prose(artist) {
@@ -43,9 +86,9 @@ function prose(artist) {
     box.append(el('p.pending-bio', { text: '소개문 준비 중' }));
     return box;
   }
-  for (const para of text.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean)) {
-    box.append(el('p', { text: para }));
-  }
+  paragraphs(text, box);
+  /* null 을 그대로 append 하면 'null' 이라는 글자가 찍힌다. 있는 것만 붙인다. */
+  for (const block of [company(artist), reviews(artist)]) if (block) box.append(block);
   return box;
 }
 

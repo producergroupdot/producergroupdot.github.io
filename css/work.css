@@ -23,6 +23,17 @@
   letter-spacing:-.04em;
   line-height:1;
 }
+/* 국문 제목 바로 아래 영문 제목. 작고 옅게 — 부제보다 앞서 보이면 안 된다.
+   영문이 없거나 국문과 같으면 이 줄 자체가 만들어지지 않는다(js/work.js). */
+.dhead .dtitle-en{
+  font-family:var(--disp);
+  font-weight:400;
+  font-size:clamp(15px,1.6vw,22px);
+  letter-spacing:-.02em;
+  line-height:1.15;
+  opacity:.45;
+  margin-top:8px;
+}
 .dhead .dsub{
   font-size:clamp(16px,1.5vw,21px);
   font-weight:var(--w-body);
@@ -34,6 +45,16 @@
   font-size:11px;
   opacity:.55;
   margin-top:10px;
+}
+
+/* 초연 한 줄 — 제목 아래, 본문 위. 공연에만 붙는다.
+   선 하나를 위에 얹어 제목 블록의 마지막 줄이라는 것을 보인다. */
+.dhead .dpremiere{
+  margin-top:20px;
+  padding-top:14px;
+  border-top:.5px solid var(--line);
+  opacity:.7;
+  max-width:46ch;
 }
 
 /* ---------- 4 : 6 두 열 ---------- */
@@ -67,6 +88,15 @@
   margin:0 0 calc(var(--dlh) * 1em);      /* 문단 사이 = 한 줄 높이 */
 }
 .dcol-text p:last-of-type{ margin-bottom:0 }
+
+/* 본문 각주 — 낱말 하나를 풀어 주는 짧은 글. 본문보다 작고 옅게, 들여 놓는다. */
+.dcol-text .dnote{
+  margin-top:22px;
+  padding-left:14px;
+  border-left:.5px solid var(--line);
+  opacity:.6;
+  line-height:1.7;
+}
 
 /* 첫 줄 위쪽의 반행(half-leading)을 걷어낸다.
    이게 없으면 글자 윗선이 오른쪽 첫 이미지의 윗변보다 몇 px 내려가 보인다. */

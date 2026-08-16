@@ -73,7 +73,18 @@
 
 /* Works 칸은 바깥이 링크가 아니다 — 제목과 두 개수가 각각 링크다. */
 .h2-link{ display:block }
-.h2-link:hover h2{ text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px }
+
+/* 메뉴 칸 세 개(Works · Artists · About)의 제목은 같은 밑줄을 쓴다.
+   Works 만 안쪽 <a> 라 이 규칙이 그 칸에만 걸려 있었고, 그래서 Works 에만
+   밑줄이 생겼다. 바깥이 링크인 칸(a.cell)도 함께 적는다 — 값은 한 곳에만 둔다. */
+.h2-link:hover h2,
+.h2-link:focus-visible h2,
+a.cell:hover h2,
+a.cell:focus-visible h2{
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:1px;
+}
 
 /* Works 칸의 공연/프로젝트 두 줄 */
 .sub.split{ display:inline-flex; gap:16px }

@@ -3,94 +3,225 @@
     "id": "sync-de-sync",
     "order": 8,
     "type": "performance",
-    "category": { "ko": "공연", "en": "Production" },
-    "title": { "ko": "싱크 디 싱크", "en": "sync de sync" },
-    "subtitle": { "ko": "황수현 · 2년에 걸친 감각의 실험", "en": "Hwang Soohyun" },
-    "artist": { "ko": "황수현", "en": "Hwang Soohyun" },
-    "artists": ["hwang"],
-    "producers": ["jisun", "miseon"],
+    "category": {
+      "ko": "공연",
+      "en": "Production"
+    },
+    "title": {
+      "ko": "싱크 디 싱크",
+      "en": "sync de sync"
+    },
+    "subtitle": {
+      "ko": "2년에 걸친 감각의 실험",
+      "en": "A two-year experiment in perception"
+    },
+    "artist": {
+      "ko": "황수현",
+      "en": "Hwang Soohyun"
+    },
+    "artists": [
+      "hwang"
+    ],
+    "producers": [
+      "jisun",
+      "miseon"
+    ],
     "year": "2025–26",
     "yearFrom": 2025,
     "runs": [
       {
         "start": "2025-08-14",
         "end": "2025-08-16",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "TINC", "en": "TINC" },
-        "kind": { "ko": "초연", "en": "Premiere" },
-        "dotRole": { "ko": "크리에이티브 프로듀싱, 기획·행정", "en": "Creative producing, planning and administration" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "TINC",
+          "en": "TINC"
+        },
+        "kind": {
+          "ko": "초연",
+          "en": "Premiere"
+        },
+        "premiere": true,
+        "dotRole": {
+          "ko": "크리에이티브 프로듀싱, 기획·행정",
+          "en": "Creative producing, planning and administration"
+        },
         "link": "",
         "time": "19:00",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
       },
       {
         "start": "2026-07-16",
         "end": "2026-07-19",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "TINC", "en": "TINC" },
-        "kind": { "ko": "신작", "en": "New work" },
-        "dotRole": { "ko": "크리에이티브 프로듀싱, 기획·행정", "en": "Creative producing, planning and administration" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "TINC",
+          "en": "TINC"
+        },
+        "kind": {
+          "ko": "신작",
+          "en": "New work"
+        },
+        "dotRole": {
+          "ko": "크리에이티브 프로듀싱, 기획·행정",
+          "en": "Creative producing, planning and administration"
+        },
         "link": "",
         "time": "19:30",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
       }
     ],
     "status": "ongoing",
-    "lead": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
     "body": {
       "ko": "〈sync de sync〉는 조율되고 틀어지는 순간, 완전한 일치도 완전한 분리도 아닌 상태에서 작동하는 감각들을 따라간다. 말은 입술과 성대를 지나 소리와 진동으로 흩어지고, 움직임은 형태보다 몸을 통과한 파동과 질감으로 번진다.\n\n빛과 어둠, 온도와 공기, 무대 안팎의 보이는 것들과 보이지 않는 것들은 서로 겹치고 스며들며 감각의 얽힘을 만든다. 그 얽힘은 공간의 밀도, 온도와 습도, 기운의 변화를 몸에 닿게 한다.\n\n〈sync de sync〉는 고정되지 않는 주변 환경에 반응하며, 현재의 감각 안에 이미 도착한 변화를 더듬는다.",
       "en": ""
     },
-    "venue": { "ko": "TINC (This is Not A Church)", "en": "TINC (This is Not A Church)" },
-    "produced": { "ko": "", "en": "" },
-    "dotRole": { "ko": "크리에이티브 프로듀싱, 기획·행정", "en": "creative producing, planning and administration" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "venue": {
+      "ko": "TINC (This is Not A Church)",
+      "en": "TINC (This is Not A Church)"
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "크리에이티브 프로듀싱, 기획·행정",
+      "en": "creative producing, planning and administration"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
     "accordions": [
       {
-        "title": { "ko": "일정", "en": "Dates" },
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
         "rows": [
-          { "ko": "2025. 8. 14 – 16  오후 7시 · TINC", "en": "14–16 Aug 2025, 7:00pm · TINC" },
-          { "ko": "2026. 7. 16 – 19  오후 7시 30분 · TINC", "en": "16–19 Jul 2026, 7:30pm · TINC" }
+          {
+            "ko": "장소 · TINC (This is Not A Church)",
+            "en": "Venue · TINC (This is Not A Church)"
+          },
+          {
+            "ko": "러닝타임 · 60분",
+            "en": "Running time · 60 min"
+          },
+          {
+            "ko": "도트의 역할 · 크리에이티브 프로듀싱, 기획·행정",
+            "en": "DOT · creative producing, planning and administration"
+          }
         ]
       },
       {
-        "title": { "ko": "정보", "en": "Info" },
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
         "rows": [
-          { "ko": "장소 · TINC (This is Not A Church)", "en": "Venue · TINC (This is Not A Church)" },
-          { "ko": "러닝타임 · 60분", "en": "Running time · 60 min" },
-          { "ko": "도트의 역할 · 크리에이티브 프로듀싱, 기획·행정", "en": "DOT · creative producing, planning and administration" }
+          {
+            "ko": "컨셉·안무 · 황수현",
+            "en": "Concept & Choreography · Hwang Soohyun"
+          },
+          {
+            "ko": "리서치·출연 · 정나원, 최승윤, 황수현",
+            "en": ""
+          },
+          {
+            "ko": "사운드 · 홍초선",
+            "en": ""
+          },
+          {
+            "ko": "조명 디자인 · 공연화",
+            "en": ""
+          },
+          {
+            "ko": "조명팀 · 김인애, 오채은",
+            "en": ""
+          },
+          {
+            "ko": "영상 · 윤재민(2025), 백종관(2026)",
+            "en": ""
+          },
+          {
+            "ko": "리허설 어시스턴트 · 강호정",
+            "en": ""
+          },
+          {
+            "ko": "아웃사이드 아이 · 손나예",
+            "en": ""
+          },
+          {
+            "ko": "크리에이티브 프로듀서 · 박지선",
+            "en": "Creative Producer · Park Jisun"
+          },
+          {
+            "ko": "기획·행정 · 송미선",
+            "en": "Planning & Administration · Song Miseon"
+          },
+          {
+            "ko": "무대감독 · 최진아(2025), 김세현(2026)",
+            "en": ""
+          },
+          {
+            "ko": "셋업·진행 · 김지현, 김채민",
+            "en": ""
+          },
+          {
+            "ko": "그래픽 디자인 · 홍소이",
+            "en": ""
+          }
         ]
       },
       {
-        "title": { "ko": "크레딧", "en": "Credits" },
+        "title": {
+          "ko": "후원",
+          "en": "Support"
+        },
         "rows": [
-          { "ko": "컨셉·안무 · 황수현", "en": "Concept & Choreography · Hwang Soohyun" },
-          { "ko": "리서치·출연 · 정나원, 최승윤, 황수현", "en": "" },
-          { "ko": "사운드 · 홍초선", "en": "" },
-          { "ko": "조명 디자인 · 공연화", "en": "" },
-          { "ko": "조명팀 · 김인애, 오채은", "en": "" },
-          { "ko": "영상 · 윤재민(2025), 백종관(2026)", "en": "" },
-          { "ko": "리허설 어시스턴트 · 강호정", "en": "" },
-          { "ko": "아웃사이드 아이 · 손나예", "en": "" },
-          { "ko": "크리에이티브 프로듀서 · 박지선", "en": "Creative Producer · Park Jisun" },
-          { "ko": "기획·행정 · 송미선", "en": "Planning & Administration · Song Miseon" },
-          { "ko": "무대감독 · 최진아(2025), 김세현(2026)", "en": "" },
-          { "ko": "셋업·진행 · 김지현, 김채민", "en": "" },
-          { "ko": "그래픽 디자인 · 홍소이", "en": "" }
+          {
+            "ko": "서울특별시, 서울문화재단",
+            "en": "Seoul Metropolitan Government, Seoul Foundation for Arts and Culture"
+          },
+          {
+            "ko": "2026년 서울문화재단 예술창작활동지원(다년) 선정",
+            "en": ""
+          }
         ]
       },
       {
-        "title": { "ko": "후원", "en": "Support" },
-        "rows": [
-          { "ko": "서울특별시, 서울문화재단", "en": "Seoul Metropolitan Government, Seoul Foundation for Arts and Culture" },
-          { "ko": "2026년 서울문화재단 예술창작활동지원(다년) 선정", "en": "" }
-        ]
-      },
-      {
-        "title": { "ko": "링크", "en": "Links" },
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
         "rows": [
           {
             "ko": "프로그램북",
@@ -101,41 +232,217 @@
       }
     ],
     "cover": "img/works/sync-de-sync/01.jpg",
-    "homeFeature": ["band-2"]
+    "homeFeature": [
+      "band-2"
+    ]
   },
   {
     "id": "hihihistory",
-    "order": 2,
+    "order": 200,
     "type": "performance",
-    "category": { "ko": "공연", "en": "Production" },
-    "title": { "ko": "히히히스토리", "en": "Hihihistory" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "황수현", "en": "Hwang Soohyun" },
-    "artists": ["hwang"],
-    "producers": ["jisun"],
+    "category": {
+      "ko": "공연",
+      "en": "Production"
+    },
+    "title": {
+      "ko": "히히히스토리",
+      "en": "Hihihistory"
+    },
+    "subtitle": {
+      "ko": "2026년 서울국제공연예술제 협력 아티스트 초청 공연",
+      "en": "SPAF 2026 Associate Artist"
+    },
+    "artist": {
+      "ko": "황수현",
+      "en": "Hwang Soohyun"
+    },
+    "artists": [
+      "hwang"
+    ],
+    "producers": [
+      "jisun"
+    ],
     "year": "2026",
     "yearFrom": 2026,
     "runs": [
       {
         "start": "2026-10-15",
-        "end": "2026-10-17",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "대학로예술극장 소극장", "en": "Daehakro Arts Theater Small Hall" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "", "en": "" },
+        "end": "2026-10-15",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "대학로예술극장 소극장",
+          "en": "Daehakro Arts Theatre, Small Hall"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "",
+          "en": ""
+        },
         "link": "",
-        "time": "",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "", "en": "" }
+        "time": "19:30",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2026-10-16",
+        "end": "2026-10-16",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "대학로예술극장 소극장",
+          "en": "Daehakro Arts Theatre, Small Hall"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "",
+          "en": ""
+        },
+        "link": "",
+        "time": "19:30",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2026-10-17",
+        "end": "2026-10-17",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "대학로예술극장 소극장",
+          "en": "Daehakro Arts Theatre, Small Hall"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "",
+          "en": ""
+        },
+        "link": "",
+        "time": "15:00",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
       }
     ],
     "status": "upcoming",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "헛웃음처럼 새어 나오는 감각의 균열을 어긋난 몸으로 호출하는 1인 라이브 퍼포먼스",
+      "en": ""
+    },
+    "body": {
+      "ko": "〈히히히스토리〉는 움직임과 소리, 말을 다루는 1인 라이브 퍼포먼스다. 무대 위 '황수현'은 말하고, 춤추고, 노래하지만 결코 하나의 인물이나 완결된 서사로 고정되지 않는다. 말은 고백처럼 시작되지만 설명으로 닫히지 않고, 춤은 이미지로 완성되지 않으며, 노래는 안정된 리듬에 도달하지 않는다. 분명한 형태로 향하지 않고 서로 다른 방향으로 미끄러지는 이 행위들은 기존의 질서 안에서 매끄럽게 설명되지 않는 감각의 상태를 집요하게 따라간다.\n\n제목의 '히히히'는 진지한 말이 완전히 믿어지지 않을 때 새어 나오는 헛웃음이자, 무언가 스며 나오는 스산한 기척의 소리다. 이 정체 모를 소리는 공연의 표면에 작은 균열을 내고 흐름을 예기치 못한 방향으로 비틀어버린다.\n\n그 과정에서 뒤섞이는 질감과 리듬, 파동은 관객을 익숙하지 않은 감각의 서사로 이끈다. 작품은 그렇게 아직 이름 붙지 않은 감각의 자리를 탐색하며, 매끄러운 미래가 지워버린 감각을 어긋난 몸으로 다시 호출한다.",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "제작",
+      "en": "Production"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "러닝타임 · 50분",
+            "en": "Running time · 50 min"
+          },
+          {
+            "ko": "장소 · 대학로예술극장 소극장",
+            "en": "Daehakro Arts Theatre, Small Hall"
+          },
+          {
+            "ko": "2026 서울국제공연예술제 협력 아티스트 초청 공연",
+            "en": "Invited as an Associate Artist of SPAF 2026"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "컨셉·안무·출연 · 황수현",
+            "en": "Concept, Choreography & Performance · Hwang Soohyun"
+          },
+          {
+            "ko": "크리에이티브 프로듀서 · 박지선",
+            "en": "Creative Producer · Park Jisun"
+          },
+          {
+            "ko": "리허설 어시스턴트 · 강호정",
+            "en": "Rehearsal Assistant · Kang Hojung"
+          },
+          {
+            "ko": "음악 · 김현수",
+            "en": "Music · Kim Hyunsoo"
+          },
+          {
+            "ko": "조명 · 공연화",
+            "en": "Lighting · Gong Yeonhwa"
+          },
+          {
+            "ko": "음향 · 우경민, 천준하",
+            "en": "Sound · Woo Kyungmin, Cheon Junha"
+          },
+          {
+            "ko": "무대감독 · 이율, 김민수",
+            "en": "Stage Manager · Lee Yool, Kim Minsu"
+          }
+        ]
+      }
+    ],
     "cover": "img/works/hihihistory/poster.jpg",
     "homeFeature": []
   },
@@ -143,96 +450,538 @@
     "id": "gwantong-18",
     "order": 3,
     "type": "performance",
-    "category": { "ko": "공연", "en": "Production" },
-    "title": { "ko": "관통 18", "en": "" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "김보람 · 앰비규어스 댄스 컴퍼니", "en": "Kim Boram · Ambiguous Dance Company" },
-    "artists": ["ambiguous"],
-    "producers": ["heejin"],
+    "category": {
+      "ko": "공연",
+      "en": "Production"
+    },
+    "title": {
+      "ko": "관통 18",
+      "en": ""
+    },
+    "subtitle": {
+      "ko": "",
+      "en": ""
+    },
+    "artist": {
+      "ko": "김보람 · 앰비규어스 댄스 컴퍼니",
+      "en": "Kim Boram · Ambiguous Dance Company"
+    },
+    "artists": [
+      "ambiguous"
+    ],
+    "producers": [
+      "heejin"
+    ],
     "year": "2026",
     "yearFrom": 2026,
     "runs": [
       {
         "start": "2026-09-11",
         "end": "2026-09-13",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "성수아트홀", "en": "Seongsu Art Hall" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "", "en": "" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "성수아트홀",
+          "en": "Seongsu Art Hall"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "",
+          "en": ""
+        },
         "link": "",
         "time": "",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
       },
       {
         "start": "2026-10-22",
         "end": "2026-10-24",
-        "city": { "ko": "런던", "en": "London" },
-        "venue": { "ko": "The Coronet Theatre", "en": "The Coronet Theatre" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "", "en": "" },
+        "city": {
+          "ko": "런던",
+          "en": "London"
+        },
+        "venue": {
+          "ko": "The Coronet Theatre",
+          "en": "The Coronet Theatre"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "",
+          "en": ""
+        },
         "link": "",
         "time": "",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
       }
     ],
     "status": "upcoming",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
     "cover": "img/works/gwantong-18/TEMP-01.jpg",
-    "homeFeature": ["band-3"]
+    "homeFeature": [
+      "band-3"
+    ]
   },
   {
     "id": "on-the-birds-day",
-    "order": 10,
+    "order": 1000,
     "type": "performance",
-    "category": { "ko": "공연", "en": "Production" },
-    "title": { "ko": "새들의 날에", "en": "On the Birds' Day" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "권병준 · 로봇시어터컴퍼니", "en": "Kwon Byungjun · Robot Theatre Company" },
-    "artists": ["kwon"],
-    "producers": ["jisun", "bongmin"],
+    "category": {
+      "ko": "공연",
+      "en": "Production"
+    },
+    "title": {
+      "ko": "새들의 날에",
+      "en": "On the Bird's Day"
+    },
+    "subtitle": {
+      "ko": "첫 번째 이야기 — 13인의 아해의 불안",
+      "en": "First Episode — Fear of the 13 Ahae"
+    },
+    "artist": {
+      "ko": "권병준 · 알오티씨",
+      "en": "Kwon Byungjun · Robot Theater Company"
+    },
+    "artists": [
+      "kwon"
+    ],
+    "producers": [
+      "jisun",
+      "bongmin"
+    ],
     "year": "2024",
     "yearFrom": 2024,
-    "runs": [],
+    "runs": [
+      {
+        "start": "2024-11-02",
+        "end": "2024-11-03",
+        "city": {
+          "ko": "벨기에 리에주",
+          "en": "Liège, Belgium"
+        },
+        "venue": {
+          "ko": "리에주 극장",
+          "en": "Théâtre de Liège"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "제작",
+          "en": "Production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "IMPACT 2024",
+          "en": "IMPACT 2024"
+        }
+      },
+      {
+        "start": "2024-10-11",
+        "end": "2024-10-13",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "플랫폼엘 플랫폼 라이브",
+          "en": "Platform-L, Platform Live"
+        },
+        "kind": {
+          "ko": "초연",
+          "en": "Premiere"
+        },
+        "premiere": true,
+        "dotRole": {
+          "ko": "제작",
+          "en": "Production"
+        },
+        "link": "",
+        "time": "금 20:00 / 토 15:00 / 일 15:00",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "2024 서울국제공연예술제",
+          "en": "SPAF 2024"
+        }
+      }
+    ],
     "status": "done",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "자동화된 로봇, 빛과 소리가 만드는 실험적 서사.",
+      "en": "A newborn mechanical body learns to walk."
+    },
+    "body": {
+      "ko": "본 작품은 중력과 마찰 그리고 인간의 걷는 행위에 대한 탐구로, 이족 보행의 의미와 땅에 발을 붙이고 걷는 행위가 무엇을 의미하는지를 질문한다. 철판으로 만든 무대는 새로운 공간과 움직임의 가능성을 제시하며, 철판과 자석의 물성을 활용한 색다른 움직임의 실험을 보여준다.\n\n근대과학의 출범 이후 과학적 사고는 당대의 인식론과 방법을 지배하는 유일한 이데올로기가 되었다. 그에 따라 불확실, 모호함, 믿음, 초자연적인 것들은 금기의 항아리 속에 담겨졌다. 그리고 놀랍게도 과학은 스스로 유일한 신화의 생산자가 되었다. 빅뱅이라는 창세기와 원자라는 영웅들이 상대성이론과 양자역학의 성산(聖山)에서 인간과 자연을 규정한다. 〈새들의 날에〉는 금기의 항아리를 열어 이 새로운 신화에 내부(영혼)를 구성한다.\n\n본 작품은 〈새들의 날에〉 연작 시리즈의 첫 번째 공연으로 '13인의 아해의 불안'을 다룬다. 이상의 오감도(烏瞰圖)에 등장하는 13인의 아해가 20세기 초 근대의 혼란 속 불안을 상징한다면, 〈새들의 날에〉의 13인의 아해는 21세기 어디선가 나타난 지금의 불안이다. 이들은 샤먼이며 하늘과 땅을 연결하는 존재이자 신과 인간을 연결하는 존재이다.\n\n세상 속으로 여정을 떠나기 전, 이들은 이제 막 새로운 기계 생명체로 태어나 두 발을 땅에 붙이고 걷는 법을 배우기 시작한다. 한발 한발을 떼고 중력과 마찰을 느끼며 인간이 만들어낸 걷기의 방식을 따라 움직이며, 움직임은 춤이 되고, 13인의 아해는 철판 위 세상 속에서 그들만의 군무를 만들어 낸다.",
+      "en": "The performance explores gravity, friction and human walking. It asks us about the meaning of being bipedal and walking on the ground. The steel plate stage suggests a possibility of new spaces and movements. It also shows an experiment of unique movements using the materiality of the steel plate and magnet.\n\nThis first performance of the series On the Bird's Day deals with the fear of the thirteen Ahae. While the thirteen Ahae in Crow's Eye View, written by the Korean poet Yi Sang, symbolise people's anxiety during the tumultuous period of modernisation in the early 20th century, the thirteen Ahae in On the Bird's Day refer to today's fear, which appeared somewhere in the 21st century.\n\nThese are shamans who connect heaven and earth as well as divinity and humanity. Before starting their journey to this world, the thirteen Ahae are born with mechanical bodies and learn to walk on the ground. Walking step by step and feeling gravity and friction, they move in the human way of walking. Their movements become dances. The thirteen Ahae choreographed their own group dance in the world on a steel plate."
+    },
+    "bodyNote": {
+      "ko": "'아해'는 이상이 1934년에 쓴 시 〈오감도〉에 등장하는 열세 명의 아이를 가리키는 옛말이다.",
+      "en": "\"Ahae\" refers to the thirteen children in the 1934 poem \"Crow's Eye View\" by the Korean poet Yi Sang. It is an archaic Korean word for \"child\"."
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "제작",
+      "en": "Production"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "러닝타임 · 50분",
+            "en": "Running time · 50 min"
+          },
+          {
+            "ko": "제작 · 알오티씨, 프로듀서그룹 도트",
+            "en": "Produced by Robot Theater Company, Producer Group DOT"
+          },
+          {
+            "ko": "커미션 · 서울국제공연예술제, 아트코리아랩",
+            "en": "Commissioned by Seoul Performing Arts Festival, Arts Korea Lab"
+          },
+          {
+            "ko": "협력 · 플랫폼엘",
+            "en": "In cooperation with Platform-L"
+          },
+          {
+            "ko": "2023–2024 서울국제공연예술제와 아트코리아랩의 중장기 협력 프로젝트 〈예술×기술 프로젝트〉 일환으로 제작",
+            "en": "Produced as part of the Art × Technology Project, a long-term collaboration between SPAF and Arts Korea Lab, 2023–2024"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "콘셉트·연출·사운드·기술 총감독 · 권병준",
+            "en": "Concept, Direction, Sound & Technology Director · Kwon Byungjun"
+          },
+          {
+            "ko": "크리에이티브팀 · 김택민, 이주미, 이유진",
+            "en": "Creative Team · Kim Taekmin, Lee Jumi, Lee Yujin"
+          },
+          {
+            "ko": "드라마터그 · 함성호",
+            "en": "Dramaturg · Ham Seongho"
+          },
+          {
+            "ko": "조명 · 김현",
+            "en": "Lighting Designer · Kim Hyun"
+          },
+          {
+            "ko": "프로듀서 · 박지선, 최봉민",
+            "en": "Producers · Park Jisun, Choi Bongmin"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "SPAF 2024 프로그램",
+            "en": "SPAF 2024 programme",
+            "url": "http://spaf.or.kr/2024/program/program_view06.php"
+          },
+          {
+            "ko": "IMPACT 축제 페이지",
+            "en": "IMPACT festival page",
+            "url": "https://theatredeliege.be/evenement/on-the-birds-day/"
+          },
+          {
+            "ko": "IMPACT 프로그램북",
+            "en": "IMPACT programme",
+            "url": "https://drive.google.com/file/d/1FgAD6O0Twbt6nLFclULGGr0PRehGK17C/view"
+          }
+        ]
+      }
+    ],
     "cover": "img/works/on-the-birds-day/01.jpg",
     "homePhotos": {
       "mosaic-tall": "img/home/on-the-birds-day-vertical.jpg"
     },
-    "homeFeature": ["mosaic-tall"]
+    "homeFeature": [
+      "mosaic-tall"
+    ]
   },
   {
     "id": "energy",
-    "order": 11,
+    "order": 1100,
     "type": "performance",
-    "category": { "ko": "공연", "en": "Production" },
-    "title": { "ko": "에너지 — 보이지 않는 언어", "en": "Energy — The Invisible Language" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "지연X전환", "en": "" },
+    "category": {
+      "ko": "공연",
+      "en": "Production"
+    },
+    "title": {
+      "ko": "에너지 — 보이지 않는 언어",
+      "en": "Energy — The Invisible Language"
+    },
+    "subtitle": {
+      "ko": "",
+      "en": ""
+    },
+    "artist": {
+      "ko": "지연X전환",
+      "en": "Delay x Transition"
+    },
     "artists": [],
-    "producers": ["jisun", "bongmin"],
+    "producers": [
+      "jisun",
+      "bongmin"
+    ],
     "year": "2023",
     "yearFrom": 2023,
-    "runs": [],
+    "runs": [
+      {
+        "start": "2023-10-28",
+        "end": "2023-10-29",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "아르코예술극장 소극장",
+          "en": "Arko Arts Theatre, Small Hall"
+        },
+        "kind": {
+          "ko": "초연",
+          "en": "Premiere"
+        },
+        "premiere": true,
+        "dotRole": {
+          "ko": "제작",
+          "en": "Production"
+        },
+        "link": "",
+        "time": "토 15:00, 20:00 / 일 15:00",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "2023 서울국제공연예술제",
+          "en": "SPAF 2023"
+        }
+      }
+    ],
     "status": "done",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "무대에 흩뿌려진 단어들, 그 이면의 세상을 관객과 함께 찾아나가는 여정.",
+      "en": ""
+    },
+    "body": {
+      "ko": "〈에너지 — 보이지 않는 언어〉는 화석에너지 중심의 체제에서 탈탄소 에너지로의 전환을 시도하고 있는 지금 인류의 이야기다. 전환의 시기, 우리가 어떤 언어들을 놓치고 있는지, 우리가 획득하지 못한 언어는 무엇인지 함께 고민해 보고자 하는 작업이다.\n\n무대에는 화력 발전소, 원자력 발전소, 풍력 발전소, 태양열 발전소를 표현한 오브제와 단어들이 흩뿌려져 있다. 관객들은 무대 위 단어와 오브제를 재배열함으로써 각 발전소를 둘러싼 이면의 목소리를 듣게 되기도, 더 나은 에너지 구조를 함께 고민하게 되기도 한다.\n\n이 작품은 익명의 사람들이 극장 공간에 모여 '기후' 언어를 공동으로 만들어 나가는 과정을 담고 있다.",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "제작",
+      "en": "Production"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "시놉시스",
+          "en": "Synopsis"
+        },
+        "paragraphs": {
+          "ko": [
+            "기후위기를 자신의 언어로 만들 수 있을까?",
+            "김지연과 전윤환은 언어의 부재와 왜곡이 기후위기 시대의 상상력의 부재를 만들고 있는 것은 아닌가 하는 질문을 던지며, 예술가의 언어로 동시대의 보이지 않는 위기를 가시화하려 한다. 무대에는 기후 재판 투쟁 당사자와 기후위기 피해 당사자의 말, 그리고 에너지 개념을 재정의하기 위한 단어들이 씨앗처럼 흩뿌려져 있다.",
+            "관객은 창작자와 단어를 연결하고, 단어 속의 이면을 찾고, 문장을 조합해 가며 미래를 적극적으로 상상하고 해석한다. 그렇게 전환 사회를 향한 방향과 과제를 함께 모색한다."
+          ]
+        }
+      },
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "러닝타임 · 90분",
+            "en": "Running time · 90 min"
+          },
+          {
+            "ko": "장소 · 아르코예술극장 소극장",
+            "en": "Arko Arts Theatre, Small Hall"
+          },
+          {
+            "ko": "2023 서울국제공연예술제",
+            "en": "SPAF 2023"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "리서치·공동구성 · 김지연, 전윤환",
+            "en": "Research & Co-composition · Kim Jiyeon, Jeon Yunhwan"
+          },
+          {
+            "ko": "크리에이티브 프로듀서 · 박지선",
+            "en": "Creative Producer · Park Jisun"
+          },
+          {
+            "ko": "제작 프로듀서 · 최봉민",
+            "en": "Production Producer · Choi Bongmin"
+          },
+          {
+            "ko": "조연출 · 정찬동",
+            "en": "Assistant Director · Jung Chandong"
+          },
+          {
+            "ko": "사운드 · 카입",
+            "en": "Sound · Kayip"
+          },
+          {
+            "ko": "조명감독 · 탁형선",
+            "en": "Lighting · Tak Hyungsun"
+          },
+          {
+            "ko": "음향감독 · 정하윤",
+            "en": "Sound Engineer · Jung Hayoon"
+          },
+          {
+            "ko": "무대소품 · 김혜원",
+            "en": "Props · Kim Hyewon"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "참여 예술가",
+          "en": "Artists"
+        },
+        "rows": [
+          {
+            "ko": "지연X전환 · 기획자이자 연구자인 김지연과 연극 연출가 전윤환이 2022년 예술텃밭 기후변화 레지던시에서 만나 결성했다. 기후위기 시대를 '지연'시키고 정의로운 '전환'을 이루기 위해 필요한 새로운 상상력을 예술의 언어로 만들어가는 작업을 이어가고 있다."
+          },
+          {
+            "ko": "김지연 · 기후연구자이자 기획자. 2021년 강원도 화천을 시작으로 '기후위기 × 로컬'을 주제로 국내외 리서치를 진행하고 있으며, 인간 중심에서 벗어나는 예술 언어의 〈기후언어〉 프로젝트를 진행하고 있다."
+          },
+          {
+            "ko": "전윤환 · 다큐멘터리 연극의 동시대성을 인식하며 실재를 매개하기 위한 다양한 연극 방법론을 고민해왔다. 〈기후비상사태: 리허설〉(2022), 〈자연빵〉(2021), 〈강화도 산책: 평화도큐먼트〉(2021) 등."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "SPAF 2023 프로그램",
+            "en": "SPAF 2023 programme",
+            "url": "http://spaf.or.kr/2023/program/program_view16.php"
+          }
+        ]
+      }
+    ],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=arl9qntbhXc",
+      "embedId": "arl9qntbhXc",
+      "label": {
+        "ko": "공연 영상",
+        "en": "Performance video"
+      }
+    },
     "cover": "img/works/energy/01.jpg",
     "homeFeature": []
   },
@@ -240,66 +989,189 @@
     "id": "moving-a-forest",
     "order": 7,
     "type": "performance",
-    "category": { "ko": "공연", "en": "Production" },
-    "title": { "ko": "움직이는 숲", "en": "Moving a Forest" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "무제의 길", "en": "Untitled Road" },
-    "artists": ["untitledroad"],
-    "producers": ["jisun", "bongmin"],
+    "category": {
+      "ko": "공연",
+      "en": "Production"
+    },
+    "title": {
+      "ko": "움직이는 숲",
+      "en": "Moving a Forest"
+    },
+    "subtitle": {
+      "ko": "",
+      "en": ""
+    },
+    "artist": {
+      "ko": "무제의 길",
+      "en": "Untitled Road"
+    },
+    "artists": [
+      "untitledroad"
+    ],
+    "producers": [
+      "jisun",
+      "bongmin"
+    ],
     "year": "2022–",
     "yearFrom": 2022,
     "runs": [],
     "status": "done",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
     "cover": "img/works/moving-a-forest/01.jpg",
     "homePhotos": {
       "mosaic-wide-b": "img/home/moving-a-forest-panorama.jpg"
     },
-    "homeFeature": ["mosaic-wide-b"]
+    "homeFeature": [
+      "mosaic-wide-b"
+    ]
   },
   {
     "id": "mooljil",
     "order": 9,
     "type": "performance",
-    "category": { "ko": "공연", "en": "Production" },
-    "title": { "ko": "물질", "en": "Mooljil" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "코끼리들이 웃는다", "en": "Elephants Laugh" },
-    "artists": ["elephants"],
-    "producers": ["bongmin"],
+    "category": {
+      "ko": "공연",
+      "en": "Production"
+    },
+    "title": {
+      "ko": "물질",
+      "en": "Mooljil"
+    },
+    "subtitle": {
+      "ko": "",
+      "en": ""
+    },
+    "artist": {
+      "ko": "코끼리들이 웃는다",
+      "en": "Elephants Laugh"
+    },
+    "artists": [
+      "elephants"
+    ],
+    "producers": [
+      "bongmin"
+    ],
     "year": "2023–",
     "yearFrom": 2023,
     "runs": [
       {
-        "start": "2026-07-14",
-        "end": "2026-07-15",
-        "city": { "ko": "바르셀로나", "en": "Barcelona" },
-        "venue": { "ko": "Mercat de les Flors", "en": "Mercat de les Flors" },
-        "kind": { "ko": "투어", "en": "Tour" },
-        "dotRole": { "ko": "투어 기획·운영", "en": "Touring" },
+        "start": "2023-07-01",
+        "end": "2023-07-31",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "세종문화회관",
+          "en": "Sejong Center"
+        },
+        "kind": {
+          "ko": "초연",
+          "en": "Premiere"
+        },
+        "dotRole": {
+          "ko": "",
+          "en": ""
+        },
+        "premiere": true,
         "link": "",
         "time": "",
-        "date": { "ko": "2026.7.14–15", "en": "14–15 July 2026" },
-        "note": { "ko": "투어 · 확인 필요", "en": "Tour" }
+        "date": {
+          "ko": "2023.7",
+          "en": "Jul 2023"
+        },
+        "note": {
+          "ko": "싱크넥스트23",
+          "en": "SyncNext 23"
+        }
+      },
+      {
+        "start": "2026-07-14",
+        "end": "2026-07-15",
+        "city": {
+          "ko": "바르셀로나",
+          "en": "Barcelona"
+        },
+        "venue": {
+          "ko": "Mercat de les Flors",
+          "en": "Mercat de les Flors"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "Tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "Touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2026.7.14–15",
+          "en": "14–15 July 2026"
+        },
+        "note": {
+          "ko": "투어 · 확인 필요",
+          "en": "Tour"
+        }
       }
     ],
     "status": "ongoing",
-    "lead": { "ko": "물이 가득 찬 수조를 둘러싸고 앉아, 같은 물속에 몸을 담근다.", "en": "Seated around a tank of water, we find ourselves in the same water." },
+    "lead": {
+      "ko": "물이 가득 찬 수조를 둘러싸고 앉아, 같은 물속에 몸을 담근다.",
+      "en": "Seated around a tank of water, we find ourselves in the same water."
+    },
     "body": {
       "ko": "〈물질〉은 코끼리들이 웃는다(연출 이진엽)의 관객 참여형 공연입니다. 제주 해녀의 잠수 노동 '물질'을 모티브로 삼아, 산소 공급 장치 없이 삶과 죽음의 경계를 오가는 그 일을 현대 도시의 일상적인 인물들에게로 옮겨 놓습니다.\n\n공연장 한가운데 물이 가득 담긴 수조가 놓이고, 관객은 그 수조를 중심으로 사면에 둘러앉습니다. 각자가 마주한 물결 앞에서 하나로 연결되는 경험을 하고, 결국 우리 모두 같은 물속에 몸을 담그고 있다는 것이 드러납니다.\n\n야외 공연과 영상 전시로 이어져 왔고, 2023년 싱크넥스트23에서 첫 실내 공연을 선보였습니다. 도트는 이 작품의 국제 투어를 맡고 있습니다.",
       "en": ""
     },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "코끼리들이 웃는다", "en": "Elephants Laugh" },
-    "dotRole": { "ko": "투어 기획·운영 프로듀서그룹 도트", "en": "Tour production: Producer Group DOT" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "관객참여, 이머시브, 국제투어", "en": "" },
-    "note": { "ko": "초안 — 확인 필요", "en": "" },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "코끼리들이 웃는다",
+      "en": "Elephants Laugh"
+    },
+    "dotRole": {
+      "ko": "투어 기획·운영 프로듀서그룹 도트",
+      "en": "Tour production: Producer Group DOT"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "관객참여, 이머시브, 국제투어",
+      "en": ""
+    },
+    "note": {
+      "ko": "초안 — 확인 필요",
+      "en": ""
+    },
     "cover": "",
     "homeFeature": []
   },
@@ -307,34 +1179,73 @@
     "id": "ganghwa",
     "order": 400,
     "type": "project",
-    "category": { "ko": "리서치", "en": "Research" },
-    "title": { "ko": "{hex}{hex}의 섬 : 강화도", "en": "Hexagon Island : Ganghwa" },
-    "subtitle": { "ko": "앤드씨어터 × 프로듀서그룹도트 × 강화유니버스", "en": "A.N.D.Theatre × Producer Group DOT × Ganghwa Universe" },
-    "artist": { "ko": "앤드씨어터 · 강화유니버스", "en": "AND Theatre · Ganghwa Universe" },
+    "category": {
+      "ko": "리서치",
+      "en": "Research"
+    },
+    "title": {
+      "ko": "{hex}{hex}의 섬 : 강화도",
+      "en": "Hexagon Island : Ganghwa"
+    },
+    "subtitle": {
+      "ko": "앤드씨어터 × 프로듀서그룹도트 × 강화유니버스",
+      "en": "A.N.D.Theatre × Producer Group DOT × Ganghwa Universe"
+    },
+    "artist": {
+      "ko": "",
+      "en": ""
+    },
     "artists": [],
-    "producers": ["jisun", "miseon"],
+    "producers": [
+      "jisun",
+      "miseon"
+    ],
     "year": "2025–26",
     "yearFrom": 2025,
     "runs": [],
     "status": "ongoing",
-    "lead": { "ko": "사라짐의 자리에 시적인 공간을 만든다.", "en": "" },
+    "lead": {
+      "ko": "사라짐의 자리에 시적인 공간을 만든다.",
+      "en": ""
+    },
     "body": {
       "ko": "{hex}{hex}의 섬은 사라지는 것들에 대한 질문에서 시작한다. 예술가와 기획자, 시민들이 함께 '소멸'을 응시하고 그 자리에 시적인 공간을 만들어내는 프로젝트이다.\n\n{hex}{hex}의 섬의 두 개의 육각형은 프로젝트의 상징이다. 육각형은 서로 맞물리면서 새로운 공간과 구조를 만들어내는 형태로, 이는 개개인의 섬이 서로 연결되어 새로운 공동의 세계를 형성하는 과정을 의미한다. 즉, 각각의 육각형은 '나의 섬'이자 '우리의 섬'이며, 이들이 모여 만들어지는 새로운 공간은 예술을 통해 서로의 존재를 인식하고 확장하는 장이 된다.\n\n2025–2026 {hex}{hex}의 섬은 강화도이다. 2025년은 리서치 단계로 한국, 싱가포르, 이탈리아의 예술가·기획자가 강화도에 모였다. 강화도의 길을 걷고, 역사적·문화적 장소를 방문하고, 사람들을 만나는 과정에서 강화의 시간과 자연이 몸에 스며들었고, 각자의 방식으로 '여기서 무엇이 사라지고 있는가'를 감각하기 시작했다.\n\n'소멸'은 기후위기와 함께 '멸종'이라는 단어와 연결된다. 국가의 존속, 경제 성장과 연결해서는 '지역 소멸'로 이어진다. 生과 연결한다면 '소멸'은 '자연스러움'이 된다. 그러나 {hex}{hex}의 섬은 '소멸'을 두려움이 아니라 다시 관계 맺기 위한 시작의 순간으로 바라본다. 사라지는 것들의 자취를 따라가며 그 속에서 새로 태어나는 감각과 언어를 예술의 시각으로 포획하고 기록하고 공유하며, 사라짐의 공간에 예술적·시적 상상의 공간을 만들어내고자 한다.\n\n2026년 {hex}{hex}의 섬 프로젝트가 다시 시작된다. 2025년에 발견한 질문들을 가지고 강화도에 다시 모여, 사라짐의 자리에 시적 장소를 만들고, 그 상상의 공간이 섬 위에 천천히 쌓여가기를 바란다.",
       "en": ""
     },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
     "cover": "img/works/ganghwa/01.jpg",
     "homePhotos": {
       "mosaic-wide-a": "img/home/ganghwa-panorama.jpg"
     },
-    "homeFeature": ["mosaic-wide-a", "band-1"],
-    "dotRole": { "ko": "기획", "en": "Organiser" },
+    "homeFeature": [
+      "mosaic-wide-a",
+      "band-1"
+    ],
+    "dotRole": {
+      "ko": "기획",
+      "en": "Organiser"
+    },
     "accordions": [
       {
-        "title": { "ko": "2025 리서치 · 주제 '소멸'", "en": "2025 Research — Disappearance" },
+        "title": {
+          "ko": "2025 리서치 · 주제 '소멸'",
+          "en": "2025 Research — Disappearance"
+        },
         "paragraphs": {
           "ko": [
             "'소멸'은 단순히 사라짐이 아니라, 변화의 한 형태이자 다시 태어남의 가능성을 품은 개념으로, 강화도의 시간과 사람, 그리고 자연을 통해 탐구하고자 했다. 강화 안팎의 예술가·기획자·연구자, 그리고 강화에 거주하는 사람들이 모여 '소멸을 어떻게 해석할 수 있을까', '강화에서 우리는 소멸과 관련해 무엇을 발견할 수 있을까'라는 질문을 중심으로 대화를 이어갔다.",
@@ -345,29 +1256,62 @@
         }
       },
       {
-        "title": { "ko": "참가자 · 2025년 9월, 강화도", "en": "Participants — September 2025, Ganghwa" },
+        "title": {
+          "ko": "참가자 · 2025년 9월, 강화도",
+          "en": "Participants — September 2025, Ganghwa"
+        },
         "rows": [
-          { "ko": "프로듀서그룹 도트 · 박지선, 송미선", "en": "Producer Group DOT · Park Jisun, Song Miseon" },
+          {
+            "ko": "프로듀서그룹 도트 · 박지선, 송미선",
+            "en": "Producer Group DOT · Park Jisun, Song Miseon"
+          },
           {
             "ko": "앤드씨어터 · 강윤민지, 권근영, 민재원, 전윤환, 조냇물",
             "en": "A.N.D.Theatre · Kang Yunminji, Kwon Keunyoung, Min Jaewon, Jeon Yunhwan, Jo Naetmul"
           },
-          { "ko": "희와래 · 연리목 · 김나래, 이건희", "en": "Heewarae · Yonrimog · Kim Narae, Lee Gunhee" },
-          { "ko": "테아트린 게스타치오네(이탈리아) · 안나, 지오바니", "en": "Teatringestazione (Italy) · Anna, Giovanni" },
-          { "ko": "드라마박스(싱가포르) · 헝루운", "en": "Drama Box (Singapore) · Heng Leun" },
-          { "ko": "츄 쇼 엔(싱가포르)", "en": "Chew Shaw En (Singapore)" }
+          {
+            "ko": "희와래 · 연리목 · 김나래, 이건희",
+            "en": "Heewarae · Yonrimog · Kim Narae, Lee Gunhee"
+          },
+          {
+            "ko": "테아트린 게스타치오네(이탈리아) · 안나, 지오바니",
+            "en": "Teatringestazione (Italy) · Anna, Giovanni"
+          },
+          {
+            "ko": "드라마박스(싱가포르) · 헝루운",
+            "en": "Drama Box (Singapore) · Heng Leun"
+          },
+          {
+            "ko": "츄 쇼 엔(싱가포르)",
+            "en": "Chew Shaw En (Singapore)"
+          }
         ]
       },
       {
-        "title": { "ko": "정보", "en": "Info" },
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
         "rows": [
-          { "ko": "기획 · 앤드씨어터 × 프로듀서그룹도트 × 강화유니버스", "en": "Organised by A.N.D.Theatre × Producer Group DOT × Ganghwa Universe" },
-          { "ko": "장소 · 강화도", "en": "Ganghwa Island" },
-          { "ko": "기간 · 2025–2026", "en": "2025–2026" }
+          {
+            "ko": "기획 · 앤드씨어터 × 프로듀서그룹도트 × 강화유니버스",
+            "en": "Organised by A.N.D.Theatre × Producer Group DOT × Ganghwa Universe"
+          },
+          {
+            "ko": "장소 · 강화도",
+            "en": "Ganghwa Island"
+          },
+          {
+            "ko": "기간 · 2025–2026",
+            "en": "2025–2026"
+          }
         ]
       },
       {
-        "title": { "ko": "링크", "en": "Links" },
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
         "rows": [
           {
             "ko": "프로젝트 웹사이트",
@@ -384,7 +1328,10 @@
     ],
     "video": {
       "embedId": "fffQOEcYuRs",
-      "label": { "ko": "2025 리서치 트레일러", "en": "2025 Research trailer" },
+      "label": {
+        "ko": "2025 리서치 트레일러",
+        "en": "2025 Research trailer"
+      },
       "url": "https://www.youtube.com/watch?v=fffQOEcYuRs"
     }
   },
@@ -392,92 +1339,481 @@
     "id": "tnn",
     "order": 6,
     "type": "project",
-    "category": { "ko": "네트워크·컨퍼런스", "en": "Network and Conference" },
-    "title": { "ko": "TNN The Next Normal", "en": "TNN The Next Normal" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "아시아 네트워크", "en": "Asia Network" },
+    "category": {
+      "ko": "네트워크·컨퍼런스",
+      "en": "Network and Conference"
+    },
+    "title": {
+      "ko": "TNN The Next Normal",
+      "en": "TNN The Next Normal"
+    },
+    "subtitle": {
+      "ko": "",
+      "en": ""
+    },
+    "artist": {
+      "ko": "아시아 네트워크",
+      "en": "Asia Network"
+    },
     "artists": [],
-    "producers": ["jisun", "miseon", "bongmin"],
+    "producers": [
+      "jisun",
+      "miseon",
+      "bongmin"
+    ],
     "year": "2024–",
     "yearFrom": 2024,
     "runs": [],
     "status": "ongoing",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
     "cover": "img/works/tnn/01.jpg",
     "homeFeature": []
   },
   {
     "id": "aesthethics",
-    "order": 5,
+    "order": 500,
     "type": "project",
-    "category": { "ko": "리서치", "en": "Research" },
-    "title": { "ko": "Aesth:ethics", "en": "Aesth:ethics" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "Academy for Theatre and Digitality", "en": "Academy for Theatre and Digitality" },
+    "category": {
+      "ko": "리서치",
+      "en": "Research"
+    },
+    "title": {
+      "ko": "Aesth:ethics",
+      "en": "Aesth:ethics"
+    },
+    "subtitle": {
+      "ko": "도르트문트 연극·디지털리티 아카데미 × 프로듀서그룹 도트",
+      "en": "Academy for Theatre and Digitality, Dortmund × Producer Group DOT"
+    },
+    "artist": {
+      "ko": "",
+      "en": ""
+    },
     "artists": [],
-    "producers": ["jisun"],
+    "producers": [
+      "jisun"
+    ],
     "year": "2024–",
     "yearFrom": 2024,
-    "runs": [],
+    "runs": [
+      {
+        "start": "2026-05-03",
+        "end": "2026-05-09",
+        "city": {
+          "ko": "도르트문트",
+          "en": "Dortmund"
+        },
+        "venue": {
+          "ko": "도르트문트",
+          "en": "Dortmund"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "1차 컨셉 워크숍",
+          "en": "First concept workshop"
+        }
+      },
+      {
+        "start": "2026-09-29",
+        "end": "2026-10-03",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "2차 컨셉 워크숍",
+          "en": "Second concept workshop"
+        }
+      }
+    ],
     "status": "ongoing",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "인공지능이 던지는 질문 앞에서, 미학과 윤리를 함께 놓는다.",
+      "en": ""
+    },
+    "body": {
+      "ko": "〈Aesth:ethics〉는 도르트문트 연극 및 디지털리티 아카데미와 프로듀서그룹 도트의 공동 협력 프로젝트다. 2026년은 리서치의 해로, 협력을 위한 로드맵을 설계하고 향후 선보일 공연 프로그램의 구체적인 컨셉을 개발한다.\n\n이 프로그램은 글로벌 기술 혁신 영역, 특히 인공지능의 활용과 그에 따른 윤리적 시사점들이 던지는 시급한 사회적 질문들을 다룬다. 인공지능의 급격한 발전은 권력과 민주주의, 전쟁과 감시, 로봇 공학과 생명 공학에 대한 질문을 야기하며, 이는 오늘날 예술·사회·과학계 전반의 거대 담론으로 부상하고 있다. 이러한 질문들은 미학적 혁신, 예술적·기술적 연구개발, 그리고 사회적 책임감을 결합하는 예술 제작의 출발점이 된다.\n\n공동의 로드맵과 프로젝트 컨셉은 두 차례의 대면 컨셉 워크숍을 통해 구체화된다. 각 도시에서는 크리에이티브 코딩 및 공연예술, 과학 및 시민사회, 연극 프로듀싱 및 지속가능성 분야의 지역·국가 전문가들을 초청해 자문을 구하고, 다른 문화적 배경을 가진 상대 국가의 같은 분야 전문가들을 온라인으로 연결해 다각도의 논의를 펼친다.\n\n공연예술, 시민사회, 과학, 지속가능성 분야의 지역 전문가들을 컨셉 개발 단계부터 적극적으로 참여시킴으로써, 양측의 파트너십을 위한 단단한 기초를 다지는 동시에 예술적 탁월함과 지속 가능한 실천이 구체적인 사회적 영향력으로 이어질 수 있는 공명의 장을 마련하고자 한다.",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "공동제작",
+      "en": "Co-production"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "2026년 · 리서치 단계",
+            "en": "2026 · research phase"
+          },
+          {
+            "ko": "1차 워크숍 · 2026. 5. 3 – 9, 도르트문트",
+            "en": "3–9 May 2026, Dortmund"
+          },
+          {
+            "ko": "2차 워크숍 · 2026. 9. 29 – 10. 3, 서울",
+            "en": "29 Sep – 3 Oct 2026, Seoul"
+          },
+          {
+            "ko": "워크숍 외 실무 회의는 모두 온라인",
+            "en": "All other working meetings online"
+          },
+          {
+            "ko": "자문 분야 · 크리에이티브 코딩·공연예술 / 과학·시민사회 / 연극 프로듀싱·지속가능성",
+            "en": "Advisory fields · creative coding and performing arts / science and civil society / theatre producing and sustainability"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "도르트문트 연극·디지털리티 아카데미",
+            "en": "Academy for Theatre and Digitality",
+            "url": "https://theater.digital/en/"
+          }
+        ]
+      }
+    ],
     "cover": "img/works/aesthethics.jpg",
     "homeFeature": []
   },
   {
     "id": "climate-residency",
-    "order": 12,
+    "order": 1200,
     "type": "project",
-    "category": { "ko": "레지던시", "en": "Residency" },
-    "title": { "ko": "기후변화 예술가 레지던시", "en": "Climate Change Artist Residency" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "예술텃밭", "en": "Art Garden" },
+    "category": {
+      "ko": "레지던시",
+      "en": "Residency"
+    },
+    "title": {
+      "ko": "예술텃밭 예술가 레지던시 — 기후변화",
+      "en": "Climate Change Artist Residency"
+    },
+    "subtitle": {
+      "ko": "예술텃밭 Arts Farm Tutbat × 프로듀서그룹 도트",
+      "en": "Arts Farm Tutbat × Producer Group DOT"
+    },
+    "artist": {
+      "ko": "",
+      "en": ""
+    },
     "artists": [],
-    "producers": ["jisun", "bongmin"],
-    "year": "2020–22",
+    "producers": [
+      "jisun",
+      "bongmin"
+    ],
+    "year": "2020–2022",
     "yearFrom": 2020,
     "runs": [],
     "status": "done",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "기후변화라는 거대 담론을 삶 속에 구체화하고 예술적 실천으로 옮기는 레지던시.",
+      "en": ""
+    },
+    "body": {
+      "ko": "예술텃밭 예술가 레지던시는 2020년 시작된 예술가들의 기후변화 대응 프로젝트다. 연극, 다원예술, 시각예술, 영화, 영상, 책 등 다양한 분야의 예술가와 기획자, 리서처들이 함께 기후변화를 탐구하며, 막연한 거대 담론을 우리의 삶 속에 구체화하고 예술적 실천을 만들어내고자 한다.\n\n2020년 인류를 습격한 코로나 바이러스는 전 지구인의 삶을 변화시켰고, 우리는 여전히 불확실한 일상을 살아가고 있다. 많은 전문가들은 지구 온난화와 환경 문제가 신종 바이러스를 촉발시켰다고 이야기하며, 향후에도 또 다른 전염병 유행 확률이 높아질 것이라 예상한다. 기후변화는 지구와 인류의 지속가능성을 위한 시급한 문제이며, 자연과 동물, 먹거리, 노동, 인권의 문제와도 연관된 복잡한 체계 안에 놓여 있다.\n\n레지던시는 온라인과 오프라인에서 동시에 진행된다. 참여 작가는 개별 리서치와 개별 작업을 진행하지만, 공동 리서치와 공유 시간을 통해 서로 정보와 지식, 영감을 나누며 협업한다. 기후변화에 대한 지역적 관점과 전 지구적 관점을 동시에 갖는 것을 중요하게 여긴다.\n\n2020년부터 2022년까지 이 형식으로 진행했고, 이후에는 형식을 달리해 느슨한 프로그램으로 이어가고 있다. 매해 예술가들과 텃밭을 가꾸고 리서치를 하며 비정기적으로 모임을 지속하고, 현재 다음 단계의 국제 레지던시로 확장하기 위한 논의를 진행하고 있다.",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "공동제작",
+      "en": "Co-production"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "이어진 작업",
+          "en": "Works that grew from the residency"
+        },
+        "rows": [
+          {
+            "ko": "2022 · 무제의 길 〈움직이는 숲〉 — 서울국제공연예술제 초청작",
+            "en": "2022 · Untitled Road, Moving a Forest — invited to SPAF",
+            "url": "https://www.untitledroad.com/projects/moving-a-forest_theatre-game"
+          },
+          {
+            "ko": "2023 · 지연X전환 〈에너지 — 보이지 않는 언어〉 — 서울국제공연예술제 초청작",
+            "en": "2023 · Delay x Transition, Energy — The Invisible Language — invited to SPAF"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "시작 · 2020",
+            "en": "Since 2020"
+          },
+          {
+            "ko": "장소 · 화천 예술텃밭",
+            "en": "Arts Farm Tutbat, Hwacheon"
+          },
+          {
+            "ko": "진행 · 온라인과 오프라인 동시",
+            "en": "Online and on-site"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "프로젝트 웹사이트",
+            "en": "Project website",
+            "url": "http://artstutbatclimatechange.com/?page_id=669"
+          },
+          {
+            "ko": "자료집 3종",
+            "en": "Three publications",
+            "url": "https://jisunarts.github.io/documents.html#climate-residency"
+          },
+          {
+            "ko": "인스타그램",
+            "en": "Instagram",
+            "url": "https://www.instagram.com/tutbatclimatechange/"
+          }
+        ]
+      }
+    ],
     "cover": "img/works/climate-residency/2020/01.jpg",
     "homeFeature": []
   },
   {
     "id": "app",
-    "order": 13,
+    "order": 1300,
     "archive": false,
     "type": "project",
-    "category": { "ko": "네트워크·컨퍼런스", "en": "Network and Conference" },
-    "title": { "ko": "아시아 프로듀서 플랫폼 APP", "en": "Asia Producers' Platform" },
-    "subtitle": { "ko": "", "en": "" },
-    "artist": { "ko": "Asia Producers' Platform", "en": "Asia Producers' Platform" },
+    "category": {
+      "ko": "네트워크·컨퍼런스",
+      "en": "Network and Conference"
+    },
+    "title": {
+      "ko": "아시아 프로듀서 플랫폼",
+      "en": "Asian Producers' Platform"
+    },
+    "subtitle": {
+      "ko": "2014– · 공동 창립",
+      "en": "since 2014 · co-founder"
+    },
+    "artist": {
+      "ko": "",
+      "en": ""
+    },
     "artists": [],
-    "producers": ["jisun"],
+    "producers": [
+      "jisun"
+    ],
     "year": "2014–",
     "yearFrom": 2014,
     "runs": [],
     "status": "ongoing",
-    "lead": { "ko": "", "en": "" },
-    "body": { "ko": "", "en": "" },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "아시아에서 일하는 독립 프로듀서들이 동료로서 서로를 잇기 위해 만든 수평적 네트워크.",
+      "en": ""
+    },
+    "body": {
+      "ko": "아시아 프로듀서 플랫폼(APP)은 2014년, 아시아의 연대를 만들고 프로듀서의 창의성을 탐구하며 시장 중심을 벗어난 아시아의 예술적 담론을 만들어 낼 수 있는 플랫폼을 위해 아시아 각지에서 활동하는 소수의 독립 프로듀서들이 만든 동료 간 네트워크다. 우정과 유기적 멘토십, 수평적 구조를 가장 중요한 원칙으로 삼았고, 아시아 지역을 가로질러 협업할 수 있는 프로듀서들의 촘촘한 연결망을 만드는 것이 목표였다.\n\n2014년부터 APP는 대표 프로그램인 APP 캠프를 매년 열어오고 있다. APP 캠프는 참가자들이 공연예술계 네트워크를 만들고, 프로듀싱을 하나의 창작 실천으로 탐구하며, 문화를 가로지르는 프로듀싱 방법론을 공유하고, 기존과는 다른 예술 리더십의 관점과 방법론을 길러내는 장으로 기획되었다.\n\nAPP는 창립 이후 지금까지 느슨한 구조를 유지하고 있다. 아시아 각지의 APP 멤버들로 이루어진 기획팀이 자원활동으로 운영을 맡고, 어느 한 나라에 본부를 두지 않으며, 캠프는 매번 프로젝트 단위의 지원으로 꾸려진다.\n\n한국에서는 프로듀서그룹 도트의 박지선 프로듀서와 아시아나우의 최석규 프로듀서가 초기 창립멤버이자 기획위원으로 활동했으며, 도트가 1회 APP 캠프의 기획과 운영을 맡았다.",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "기획",
+      "en": "Organiser"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "APP 캠프",
+          "en": "APP Camp"
+        },
+        "paragraphs": {
+          "ko": [
+            "APP 캠프는 아시아·태평양에서 살고 일하는 공연예술 프로듀서들이 아시아의 여러 도시를 찾아가, 그곳의 문화적 맥락을 현지 실천가들에게 직접 배우는 프로그램이다. 2014년 이후 200명이 넘는 신진·중견 프로듀서가 말레이시아, 태국, 홍콩, 인도네시아, 호주, 대만, 일본, 한국에서 열린 집중 캠프를 거쳐 갔다.",
+            "현장 방문, 강연, 토론, 리서치, 공연 관람, 동료 간 교류로 짜인 프로그램을 통해 참가자들은 지역 예술 생태계를 이해하고, 예술가와 프로듀서가 놓인 사회적·정치적·문화적 지형을 함께 읽는다. 그리고 그 지역의 동료들과 만나고, 나누고, 먹는다."
+          ]
+        }
+      },
+      {
+        "title": {
+          "ko": "캠프 이력",
+          "en": "Camp history"
+        },
+        "rows": [
+          {
+            "ko": "2014 · 한국 서울",
+            "en": "2014 · Seoul, Korea"
+          },
+          {
+            "ko": "2015 · 대만 타이베이, 이란",
+            "en": "2015 · Taipei and Yilan, Taiwan"
+          },
+          {
+            "ko": "2016 · 일본 도쿄, 시즈오카",
+            "en": "2016 · Tokyo and Shizuoka, Japan"
+          },
+          {
+            "ko": "2017 · 호주 멜버른",
+            "en": "2017 · Melbourne, Australia"
+          },
+          {
+            "ko": "2018 · 인도네시아 자카르타, 족자카르타",
+            "en": "2018 · Jakarta and Yogyakarta, Indonesia"
+          },
+          {
+            "ko": "2019 · 홍콩, 마카오, 광저우",
+            "en": "2019 · Hong Kong, Macau, Guangzhou"
+          },
+          {
+            "ko": "2020–2022 · 팬데믹으로 대면 활동 중단, 온라인 프로그램 진행",
+            "en": "2020–2022 · online programmes during the pandemic"
+          },
+          {
+            "ko": "2023 · 태국 방콕, 치앙마이",
+            "en": "2023 · Bangkok and Chiang Mai, Thailand"
+          },
+          {
+            "ko": "2024 · 말레이시아 쿠알라룸푸르, 페낭",
+            "en": "2024 · Kuala Lumpur and Penang, Malaysia"
+          },
+          {
+            "ko": "2025 · 대만 타이둥, 일본 오키나와",
+            "en": "2025 · Taitung, Taiwan and Okinawa, Japan"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "APP 웹사이트",
+            "en": "APP website",
+            "url": "http://asianproducersplatform.com"
+          },
+          {
+            "ko": "인스타그램",
+            "en": "Instagram",
+            "url": "https://www.instagram.com/asianproducersplatform"
+          }
+        ]
+      }
+    ],
     "cover": "img/works/app/01.jpg",
     "homeFeature": []
   },
@@ -485,87 +1821,210 @@
     "id": "monthly-grandmothers",
     "order": 100,
     "type": "project",
-    "category": { "ko": "둥지230", "en": "Doongji 230" },
-    "title": { "ko": "월간 할머니들", "en": "" },
-    "subtitle": { "ko": "8월~12월 5명의 작가들의 릴레이 낭독", "en": "" },
-    "artist": { "ko": "극단 호랑이기운", "en": "Tiger Energy Theatre Company" },
+    "category": {
+      "ko": "둥지230",
+      "en": "Doongji 230"
+    },
+    "title": {
+      "ko": "월간 할머니들",
+      "en": ""
+    },
+    "subtitle": {
+      "ko": "8월~12월 5명의 작가들의 릴레이 낭독",
+      "en": ""
+    },
+    "artist": {
+      "ko": "극단 호랑이기운",
+      "en": "Tiger Energy Theatre Company"
+    },
     "artists": [],
-    "producers": ["miseon", "jisun"],
+    "producers": [
+      "miseon",
+      "jisun"
+    ],
     "year": "2026",
     "yearFrom": 2026,
     "runs": [
       {
         "start": "2026-08-31",
         "end": "2026-08-31",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "둥지230", "en": "Doongji 230" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "둥지230",
+          "en": "Doongji 230"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
         "link": "",
         "time": "19:30",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "이오진 〈계엄〉", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "이오진 〈계엄〉",
+          "en": ""
+        }
       },
       {
         "start": "2026-09-28",
         "end": "2026-09-28",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "둥지230", "en": "Doongji 230" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "둥지230",
+          "en": "Doongji 230"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
         "link": "",
         "time": "19:30",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "안정민 〈미얄의 귀환〉", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "안정민 〈미얄의 귀환〉",
+          "en": ""
+        }
       },
       {
         "start": "2026-10-19",
         "end": "2026-10-19",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "둥지230", "en": "Doongji 230" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "둥지230",
+          "en": "Doongji 230"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
         "link": "",
         "time": "19:30",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "나수민 〈사자밥〉", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "나수민 〈사자밥〉",
+          "en": ""
+        }
       },
       {
         "start": "2026-11-30",
         "end": "2026-11-30",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "둥지230", "en": "Doongji 230" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "둥지230",
+          "en": "Doongji 230"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
         "link": "",
         "time": "19:30",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "김연재 〈사냥꾼의 밤〉", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "김연재 〈사냥꾼의 밤〉",
+          "en": ""
+        }
       },
       {
         "start": "2026-12-28",
         "end": "2026-12-28",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "둥지230", "en": "Doongji 230" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "공동제작", "en": "Co-production" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "둥지230",
+          "en": "Doongji 230"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
         "link": "",
         "time": "19:30",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "신효진 〈복을 빕니다〉", "en": "" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "신효진 〈복을 빕니다〉",
+          "en": ""
+        }
       }
     ],
     "status": "ongoing",
-    "lead": { "ko": "우리는 무사히 할머니가 될 수 있을까.", "en": "" },
+    "lead": {
+      "ko": "우리는 무사히 할머니가 될 수 있을까.",
+      "en": ""
+    },
     "body": {
       "ko": "〈월간 할머니들〉은 여성 노년을 다룬 신작 희곡 다섯 편을 쓰기 위한 릴레이 낭독이다. 2026년 8월부터 12월까지 매달 한 번, 둥지230에서 작가가 자신의 초고 일부를 읽고 관객과 이야기를 나눈다.\n\n시작은 한 편의 공연이 남긴 돈이었다. 이오진 작가는 2025년 〈히스테리 앵자이어티 춤추는 할머니〉를 올린 뒤 남은 티켓 수익으로 할머니 이야기를 이어가려 했고, 무대에 올릴 만한 희곡을 찾아 나섰다. 그리스 비극에서는 당위를 찾지 못했고, 한국 근현대 희곡에는 어머니와 딸, 며느리와 술집 작부가 많았으며, 동시대 희곡은 손에 꼽혔다. 없으면 써야 했고, 혼자서는 안 될 일이었다.\n\n그렇게 30대 여성 극작가 다섯 명 — 이오진, 안정민, 나수민, 김연재, 신효진 — 과 도트가 모였다. 〈월간 할머니들〉은 노년에 대한 두려움도 낭만화도 덜어내고 나의 노년을 생각해보는 자리다. 할머니는 되는 것이 아니라, 할머니라는 상태에 진입하게 되는 것이 아닐까.\n\n다듬어지지 않은 초고를 그대로 만나는 초독회다.",
       "en": ""
     },
-    "venue": { "ko": "둥지230", "en": "Doongji 230" },
-    "produced": { "ko": "극단 호랑이기운 × 프로듀서그룹 도트", "en": "Tiger Energy Theatre Company × Producer Group DOT" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "여성 노년, 신작 희곡, 낭독", "en": "" },
-    "note": { "ko": "초안 — 확인 필요", "en": "" },
+    "venue": {
+      "ko": "둥지230",
+      "en": "Doongji 230"
+    },
+    "produced": {
+      "ko": "극단 호랑이기운 × 프로듀서그룹 도트",
+      "en": "Tiger Energy Theatre Company × Producer Group DOT"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "여성 노년, 신작 희곡, 낭독",
+      "en": ""
+    },
+    "note": {
+      "ko": "초안 — 확인 필요",
+      "en": ""
+    },
     "cover": "img/works/monthly-grandmothers/01.jpg",
     "gallery": "sequence",
     "galleryImages": [
@@ -578,19 +2037,40 @@
       "img/works/monthly-grandmothers/09.jpg"
     ],
     "homeFeature": [],
-    "dotRole": { "ko": "기획", "en": "Organiser" },
+    "dotRole": {
+      "ko": "기획",
+      "en": "Organiser"
+    },
     "credits": [
       {
-        "role": { "ko": "주최", "en": "" },
-        "name": { "ko": "극단 호랑이기운 × 프로듀서그룹 도트", "en": "" }
+        "role": {
+          "ko": "주최",
+          "en": ""
+        },
+        "name": {
+          "ko": "극단 호랑이기운 × 프로듀서그룹 도트",
+          "en": ""
+        }
       },
       {
-        "role": { "ko": "참여 작가", "en": "" },
-        "name": { "ko": "이오진 · 안정민 · 나수민 · 김연재 · 신효진", "en": "" }
+        "role": {
+          "ko": "참여 작가",
+          "en": ""
+        },
+        "name": {
+          "ko": "이오진 · 안정민 · 나수민 · 김연재 · 신효진",
+          "en": ""
+        }
       },
       {
-        "role": { "ko": "키워드", "en": "" },
-        "name": { "ko": "여성 노년 · 신작 희곡 · 낭독", "en": "" }
+        "role": {
+          "ko": "키워드",
+          "en": ""
+        },
+        "name": {
+          "ko": "여성 노년 · 신작 희곡 · 낭독",
+          "en": ""
+        }
       }
     ]
   },
@@ -599,80 +2079,158 @@
     "order": 2000,
     "archive": true,
     "type": "project",
-    "category": { "ko": "축제", "en": "Festival" },
-    "title": { "ko": "커넥티드 시티", "en": "Connected City" },
-    "subtitle": { "ko": "한영 도시 예술 프로젝트", "en": "UK–Korea urban arts project" },
-    "artist": { "ko": "", "en": "" },
+    "category": {
+      "ko": "축제",
+      "en": "Festival"
+    },
+    "title": {
+      "ko": "커넥티드 시티",
+      "en": "Connected City"
+    },
+    "subtitle": {
+      "ko": "한영 도시 예술 프로젝트",
+      "en": "UK–Korea urban arts project"
+    },
+    "artist": {
+      "ko": "",
+      "en": ""
+    },
     "artists": [],
-    "producers": ["jisun", "bongmin"],
+    "producers": [
+      "jisun",
+      "bongmin"
+    ],
     "year": "2017",
     "yearFrom": 2017,
     "runs": [
       {
         "start": "2017-10-27",
         "end": "2017-10-29",
-        "city": { "ko": "서울", "en": "Seoul" },
-        "venue": { "ko": "서울역 · 종로 일대", "en": "Seoul Station and Jongno area" },
-        "kind": { "ko": "", "en": "" },
-        "dotRole": { "ko": "기획", "en": "Organiser" },
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "서울역 · 종로 일대",
+          "en": "Seoul Station and Jongno area"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
         "link": "",
         "time": "",
-        "date": { "ko": "", "en": "" },
-        "note": { "ko": "프로그램에 따라 9월 2일 – 11월 5일에 걸쳐 진행", "en": "Individual programmes ran between 2 Sep and 5 Nov" }
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "프로그램에 따라 9월 2일 – 11월 5일에 걸쳐 진행",
+          "en": "Individual programmes ran between 2 Sep and 5 Nov"
+        }
       }
     ],
     "status": "done",
-    "lead": { "ko": "", "en": "" },
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
     "body": {
       "ko": "〈커넥티드 시티〉는 우리가 사는 도시를 다시 바라보고 다시 상상하기 위한 플랫폼이다. 한국과 영국의 예술가·프로듀서·기획자와 지역 공동체가 함께, 빠르게 변하는 도시와 공공 공간을 여러 예술 형식과 기술로 다시 읽었다.\n\n2017년 가을 서울역과 종로 일대에서 여섯 개의 프로그램이 열렸다. 뮤직시티는 한국과 영국의 뮤지션 일곱 명이 서울의 일곱 장소에서 받은 영감으로 곡을 만들고, 그 장소에 가야만 들을 수 있게 했다. 퍼포밍 시티에서는 사운드 조각과 퍼포먼스가 도시의 공간을 바꿔놓았다.\n\n메이커 시티는 봉제와 제화 공장이 밀집한 서울역·동대문 일대를 도시 인프라의 변화와 젠트리피케이션 속에서 다시 읽었고, 플레이어블 시티는 청계천 일대를 시민 참여형 도시 게임의 무대로 삼았다. 스토리텔링 시티는 한국과 영국의 작가를 웹툰·그래픽노블 작가와 짝지어 새로운 작업을 만들었다.\n\n마지막 시티 컨퍼런스 〈예술과 도시〉에서는 두 나라의 예술가·기획자·정책 담당자가 모여, 빠르게 변하는 도시에서 예술과 기술이 무엇을 할 수 있는지 논의했다.",
       "en": "Connected City set out to re-shape, re-explore and re-imagine the city we live in. Artists, producers, curators and communities from the UK and Korea worked together to read ever-changing cities and public spaces through a range of art forms and technologies.\n\nSix programmes ran across the Seoul Station and Jongno areas in autumn 2017. Musicity commissioned seven musicians from the UK and Korea to compose for seven locations, with the tracks geo-tagged so they could only be heard on site. Performing City brought sound sculpture and performance into the city's spaces.\n\nMaker City revisited the garment and shoe manufacturing districts around Seoul Station and Dongdaemun, areas under pressure from infrastructure change and gentrification. Playable City turned the Cheonggyecheon Stream into a stage for urban play, and Storytelling City paired writers with webtoon and graphic novel artists across the two countries.\n\nThe closing City Conference, Arts and the City, gathered artists, curators, producers and policy makers from both countries to ask what arts and technology can do for a rapidly changing city."
     },
-    "venue": { "ko": "", "en": "" },
-    "produced": { "ko": "", "en": "" },
-    "dotRole": { "ko": "기획", "en": "Organiser" },
-    "commission": { "ko": "", "en": "" },
-    "keywords": { "ko": "", "en": "" },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "기획",
+      "en": "Organiser"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
     "credits": [
       {
-        "role": { "ko": "주최", "en": "Hosted by" },
+        "role": {
+          "ko": "주최",
+          "en": "Hosted by"
+        },
         "name": {
           "ko": "British Council · 서울특별시 · 서울디자인재단",
           "en": "British Council, Seoul Metropolitan Government, Seoul Design Foundation"
         }
       },
       {
-        "role": { "ko": "주관", "en": "Organised by" },
+        "role": {
+          "ko": "주관",
+          "en": "Organised by"
+        },
         "name": {
           "ko": "프로듀서 그룹 도트 · 서울역일대 도시재생지원센터 · 서울산책 · 서울도시건축비엔날레",
           "en": "Producer Group DOT, Urban Regeneration Centre of Seoul Metropolitan Government, Seoul Walk, Seoul Biennale of Architecture and Urbanism"
         }
       },
       {
-        "role": { "ko": "프로그램", "en": "Programmes" },
+        "role": {
+          "ko": "프로그램",
+          "en": "Programmes"
+        },
         "name": {
           "ko": "뮤직시티 · 퍼포밍 시티 · 메이커 시티 · 플레이어블 시티 · 스토리텔링 시티 · 시티 컨퍼런스",
           "en": "Musicity, Performing City, Maker City, Playable City, Storytelling City, City Conference"
         }
       },
       {
-        "role": { "ko": "일환", "en": "Part of" },
-        "name": { "ko": "한영 상호교류의 해 2017–18", "en": "UK/Korea 2017-18" }
+        "role": {
+          "ko": "일환",
+          "en": "Part of"
+        },
+        "name": {
+          "ko": "한영 상호교류의 해 2017–18",
+          "en": "UK/Korea 2017-18"
+        }
       },
       {
-        "role": { "ko": "그래픽 디자인", "en": "Graphic design" },
-        "name": { "ko": "시호 디자인", "en": "Siho Design" }
+        "role": {
+          "ko": "그래픽 디자인",
+          "en": "Graphic design"
+        },
+        "name": {
+          "ko": "시호 디자인",
+          "en": "Siho Design"
+        }
       }
     ],
     "materials": [
       {
         "type": "영상",
-        "label": { "ko": "기록 영상", "en": "Documentation" },
+        "label": {
+          "ko": "기록 영상",
+          "en": "Documentation"
+        },
         "url": "https://youtu.be/xT6UPz-JlE8",
         "public": "예"
       },
       {
         "type": "자료집",
-        "label": { "ko": "포스터 · 전단", "en": "Poster and leaflet" },
+        "label": {
+          "ko": "포스터 · 전단",
+          "en": "Poster and leaflet"
+        },
         "url": "",
         "public": "확인 필요"
       }
@@ -680,7 +2238,10 @@
     "cover": "img/works/connected-city/connected-city-01.jpg",
     "video": {
       "embedId": "xT6UPz-JlE8",
-      "label": { "ko": "기록 영상", "en": "Documentation" },
+      "label": {
+        "ko": "기록 영상",
+        "en": "Documentation"
+      },
       "url": "https://youtu.be/xT6UPz-JlE8"
     },
     "homeFeature": []
