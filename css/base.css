@@ -61,8 +61,29 @@ h1,h2,h3,h4{ font-family:var(--disp); font-weight:var(--w-disp); letter-spacing:
 }
 .bar .wordmark{ font-size:15px }
 .bar nav{ display:flex; gap:18px; font-family:var(--disp); font-size:14px; font-weight:var(--w-mid) }
-.bar nav > *{ opacity:.5 }
-.bar nav a:hover, .bar nav .here{ opacity:1 }
+
+/* 다섯 항목이 같은 규칙을 쓴다. 현재 페이지 표시(.here)와 마우스 표시(:hover)를
+   서로 다른 수단으로 나눈다 — 활성은 글자가 진해지는 것으로, 마우스·키보드는 밑줄로.
+   한쪽 스타일이 다른 쪽을 겸하면 어느 항목이 눌리는지가 아니라
+   어느 항목이 현재 페이지인지를 알려주게 된다. */
+.bar nav > *{
+  opacity:.5;
+  text-decoration:none;
+  text-underline-offset:6px;
+  text-decoration-thickness:.5px;
+  transition:opacity .15s;
+}
+.bar nav .here{ opacity:1 }              /* 활성 — 진해지기만 한다 */
+
+.bar nav a:hover,
+.bar nav a:focus-visible{
+  opacity:1;
+  text-decoration:underline;             /* 다섯 항목 모두 같은 값 */
+  text-decoration-thickness:.5px;
+  text-underline-offset:6px;
+}
+/* 밑줄이 이미 눌 수 있음을 알리므로 테두리까지 겹쳐 그리지 않는다. */
+.bar nav a:focus-visible{ outline:none }
 
 /* 아직 만들지 않은 페이지로 가는 자리. 링크가 아니라 그냥 글자다. */
 .inert{ cursor:default }

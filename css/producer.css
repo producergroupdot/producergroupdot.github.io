@@ -6,7 +6,7 @@
   min-height:100vh;
 
   /* 얼굴 사진 원의 지름. 네 사람 페이지가 이 한 값을 함께 쓴다. */
-  --pface: 156px;
+  --pface: 195px;
 
   /* 선은 전경색에서 파생시킨다. 어두운 면(.on-dark)에서는 --fg-rgb 가 크림으로
      뒤집히므로 아래 두 줄이 그대로 따라온다 — 색값을 직접 쓰면 선이 사라진다(함정 4). */
@@ -116,7 +116,7 @@
   }
   .frame{ justify-self:start; max-width:150px }
   /* 좁은 화면에서는 원이 폭을 너무 차지하지 않게 한 단계 낮춘다. */
-  .producer-page{ --pface: 124px }
+  .producer-page{ --pface: 155px }
   .pface{ margin-bottom:24px }
   .phead-role{ margin-bottom:18px }
   .pbody{

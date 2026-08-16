@@ -1,6 +1,15 @@
 /* work.css — 작업 상세.
-   패널 78% 위에 오른쪽 사진이 걸쳐 나온다. 사진은 절대 위치라
-   패널 높이에 잡히지 않으므로 js/work.js 의 fitPanel() 이 높이를 맞춘다. */
+   두 열이다. 왼쪽 40% 가 글, 오른쪽 60% 가 영상과 사진.
+   두 열은 위쪽 기준선을 맞춘다 — 본문 첫 줄의 윗선과 첫 이미지의 윗변.
+   사진은 더 이상 절대 위치가 아니므로 높이를 JS 로 맞출 일이 없다. */
+
+/* ---------- 조판 값 ---------- */
+/* 글 열의 크기는 여기 한 곳에서 나온다. 리드는 본문의 1.5배다. */
+.dlayout{
+  --dbody: 15.5px;
+  --dlh:   1.75;                       /* 행간 */
+  --dlead: calc(var(--dbody) * 1.5);   /* 리드 = 본문의 1.5배 */
+}
 
 /* ---------- 제목 블록 ---------- */
 .dhead{ padding:52px var(--pad) 34px }
@@ -27,90 +36,58 @@
   margin-top:10px;
 }
 
-/* ---------- 패널 + 걸쳐 나오는 사진 ---------- */
-.dwrap{
-  position:relative;
+/* ---------- 4 : 6 두 열 ---------- */
+.dlayout{
+  display:grid;
+  grid-template-columns:4fr 6fr;
+  gap:clamp(38px,5vw,84px);          /* 사이는 넉넉히 */
+  align-items:start;
+
+  /* 오른쪽 이미지 열의 오른쪽 끝은 상단 메뉴와 같은 여백 선(--pad)에서 멈춘다. */
+  padding:36px var(--pad) 0;
   border-top:.5px solid var(--line-s);
 }
-.dpanel{
-  width:78%;
-  background:var(--panel);
-  padding:40px 46px 46px var(--pad);
+.dlayout.no-text{ grid-template-columns:1fr }   /* 글이 없으면 사진이 다 쓴다 */
+
+/* ---------- 왼쪽 글 열 ---------- */
+/* 열이 넓어져도 글줄은 34em 에서 멈춘다. 깔끔함은 폭이 아니라 조판에서 나온다. */
+.dcol-text{
+  max-width:34em;
+  font-size:var(--dbody);
 }
-.dpanel .lead{
-  font-size:clamp(18px,1.9vw,24px);
+.dcol-text .lead{
+  font-size:var(--dlead);
   line-height:1.5;
-  max-width:42ch;
-  margin-bottom:22px;
+  margin:0 0 calc(var(--dlead) * 1.6);   /* 리드 아래는 넉넉히 띄운다 */
 }
-.dpanel p{
-  font-size:15.5px;
-  line-height:1.75;
-  max-width:52ch;
-  margin:0 0 15px;
+.dcol-text p{
+  font-size:var(--dbody);
+  line-height:var(--dlh);
+  text-indent:0;                          /* 문단 첫 줄 들여쓰기 없음 */
+  margin:0 0 calc(var(--dlh) * 1em);      /* 문단 사이 = 한 줄 높이 */
 }
+.dcol-text p:last-of-type{ margin-bottom:0 }
 
-.dimg{
-  position:absolute;
-  /* 오른쪽 끝은 뷰포트 가장자리가 아니라 사이트 공통 여백 선에 맞춘다 —
-     상단 메뉴의 Contact 오른쪽 끝, 매스트헤드 제목의 왼쪽 끝과 같은 선(--pad). */
-  right:var(--pad);
-  top:70px;
-  width:47%;
+/* 첫 줄 위쪽의 반행(half-leading)을 걷어낸다.
+   이게 없으면 글자 윗선이 오른쪽 첫 이미지의 윗변보다 몇 px 내려가 보인다. */
+.dcol-text > :first-child::before{
+  content:'';
+  display:block;
+  width:0;
 }
-.dimg .cover{ width:100%; height:auto; display:block }
-
-/* 세로 사진은 높이로 제한한다. 폭에 맞추면 2:3 포스터가 화면을 넘어간다.
-   가로 사진은 위 규칙(폭 100%) 그대로다 — .portrait 는 JS 가 재어 보고 붙인다. */
-.dimg.portrait .cover{
-  max-height:68vh;
-  width:auto;
-  max-width:100%;
-  object-fit:contain;
-  margin-left:auto;        /* 오른쪽 끝에 붙여 패널과의 간격을 지킨다 */
-}
-.dimg.pair{
-  display:flex;
-  gap:16px;
-  align-items:flex-start;
-  justify-content:flex-end;
-}
-.dimg.pair .cover{
-  width:auto;
-  max-height:60vh;          /* 세로 두 장을 나란히 */
-  max-width:calc(50% - 8px);
-  object-fit:contain;
-}
-
-.dimg .block{
-  width:100%;
-  aspect-ratio:3/2;
-  display:flex; align-items:flex-end;
-  padding:16px;
-  position:relative; overflow:hidden; isolation:isolate;
-}
-.dimg .tmp{
-  position:absolute; left:8px; top:8px; z-index:1;
-  font-family:var(--mono); font-size:10px; letter-spacing:.02em;
-  background:rgb(29 29 27 / .62); color:var(--cream);
-  padding:2px 6px; border-radius:3px;
-}
-
-/* 색면 대체는 Works 카드와 같은 모양 */
-.blob-card{
-  position:absolute; width:130px; height:130px; border-radius:50%;
-  right:-34px; top:-40px; z-index:-1;
-  background:currentColor; opacity:.18;
-}
-.block-t{
-  font-family:var(--disp); font-weight:var(--w-disp);
-  font-size:17px; letter-spacing:-.02em; opacity:.5;
-}
+.dcol-text > p:first-child::before{ margin-top:-.375em }      /* (1 − 1.75) ÷ 2 */
+.dcol-text > .lead:first-child::before{ margin-top:-.25em }   /* (1 − 1.5) ÷ 2 — 리드가 먼저 오면 이쪽 */
 
 /* ---------- 아코디언 ---------- */
-/* 값이 없는 항목은 아예 만들지 않는다(js/work.js). 여기 규칙은 있는 것만 그린다. */
-.acc{ margin-top:30px; max-width:52ch }
+/* 값이 없는 항목은 아예 만들지 않는다(js/work.js). 여기 규칙은 있는 것만 그린다.
+   본문과 한 덩어리로 읽히지 않게 선 하나와 큰 여백으로 떼어 놓는다. */
+.acc{
+  margin-top:58px;
+  padding-top:34px;
+  border-top:.5px solid var(--line-s);
+}
 .acc details{ border-top:.5px solid var(--line) }
+.acc details:first-of-type{ border-top:none }
 .acc details:last-child{ border-bottom:.5px solid var(--line) }
 .acc summary{
   display:flex; gap:12px; align-items:baseline;
@@ -122,7 +99,7 @@
 .acc summary::-webkit-details-marker{ display:none }
 .acc summary::before{ content:'+'; font-family:var(--mono); font-size:17px; width:14px }
 .acc details[open] summary::before{ content:'−' }
-.acc-prose{ padding:2px 0 10px 26px; max-width:48ch }
+.acc-prose{ padding:2px 0 10px 26px }
 .acc-prose p{ font-size:14px; line-height:1.75; margin:0 0 12px }
 .acc-prose p:last-child{ margin-bottom:6px }
 .acc-rows{ list-style:none; padding:2px 0 16px 26px }
@@ -130,27 +107,77 @@
 .acc-rows a{ text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:.5px }
 .acc-rows a:hover{ text-decoration-thickness:1.5px }
 
-/* ---------- 영상 ---------- */
-.dvideo{ padding:44px var(--pad) 0 }
+/* ---------- 오른쪽 영상·사진 열 ---------- */
+.dcol-media{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  min-width:0;              /* 그리드 칸이 사진 폭에 밀려 넓어지지 않게 */
+}
+.dcol-media > *:first-child{ margin-top:0 }
+
+/* 영상 — 열 맨 위, 열 폭에 꽉 차게. 16:9 는 여기서 잡는다. */
 .dvideo-box{
   position:relative;
-  aspect-ratio:16/9;        /* 반응형 16:9 */
-  max-width:960px;
+  aspect-ratio:16/9;
   background:var(--ink);
 }
-.dvideo-cap{ padding-top:10px; opacity:.55 }
 .dvideo-box iframe{
   position:absolute; inset:0;
   width:100%; height:100%;
   border:0;
   display:block;
 }
+.dvideo-cap{ padding-top:9px; opacity:.55 }
 
-/* ---------- gallery: "sequence" ----------
-   한 장씩 넘겨 보는 갤러리. 글자가 든 이미지라 절대 자르지 않는다. */
-.seq{ padding:34px var(--pad) 0 }
+/* 사진은 어느 패턴이든 자르지 않는다. */
+.dcol-media img.cover{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+/* 1장 — 가로는 열 전체 폭, 세로는 높이로 제한하고 왼쪽에 붙인다. */
+.dshot.tall img.cover{
+  width:auto;
+  max-width:100%;
+  max-height:68vh;
+  margin-right:auto;        /* 왼쪽 정렬 */
+}
+
+/* 2장 가로 — 위아래로 쌓기 */
+.dstack{ display:flex; flex-direction:column; gap:22px }
+
+/* 2장 세로 — 나란히 2열 */
+.dpair{ display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start }
+
+/* 3장 이상 세로 위주 — 그리드 */
+.dgrid{ display:grid; gap:18px; align-items:start }
+.dgrid.c2{ grid-template-columns:repeat(2,1fr) }
+.dgrid.c3{ grid-template-columns:repeat(3,1fr) }
+
+/* 사진이 한 장도 없을 때의 색면 */
+.dshot .block{
+  width:100%;
+  aspect-ratio:3/2;
+  display:flex; align-items:flex-end;
+  padding:16px;
+  position:relative; overflow:hidden; isolation:isolate;
+}
+.blob-card{
+  position:absolute; width:130px; height:130px; border-radius:50%;
+  right:-34px; top:-40px; z-index:-1;
+  background:currentColor; opacity:.18;
+}
+.block-t{
+  font-family:var(--disp); font-weight:var(--w-disp);
+  font-size:17px; letter-spacing:-.02em; opacity:.5;
+}
+
+/* ---------- 슬라이드 ----------
+   '3장 이상 가로 위주' 와 gallery:"sequence" 가 같은 컴포넌트를 쓴다. */
 .seq:focus-visible{ outline:2px solid currentColor; outline-offset:6px }
-
 .seq-stage{ position:relative }
 
 .seq-track{
@@ -171,7 +198,7 @@
   align-items:flex-start;
 }
 .seq-slide img{
-  max-height:72vh;                  /* 세로 4:5 라 높이로 잡는다 */
+  max-height:72vh;
   max-width:100%;
   width:auto; height:auto;
   object-fit:contain;               /* 자르지 않는다 */
@@ -199,9 +226,9 @@
 
 .seq-foot{
   display:flex; align-items:center; gap:14px;
-  padding-top:16px;
+  padding-top:14px;
 }
-.seq-dots{ display:flex; gap:7px; align-items:center }
+.seq-dots{ display:flex; gap:7px; align-items:center; flex-wrap:wrap }
 .seq-dots i{
   width:7px; height:7px; border-radius:50%;
   background:currentColor; opacity:.25;
@@ -224,65 +251,11 @@
 .lb img{ max-width:100%; height:auto; display:block }
 body.lb-open{ overflow:hidden }
 
-/* ---------- 본문 아래 배치 ----------
-   어느 패턴이든 자르지 않는다. 세로·가로가 섞여도 각자의 비율을 지킨다. */
-
-.dgal, .dgal-rest{
-  display:grid;
-  gap:22px;
-  padding:34px var(--pad) 0;
-  align-items:start;
-}
-.dgal-rest{ padding-top:22px }
-.dgal.c2, .dgal-rest.c2{ grid-template-columns:repeat(2,1fr) }
-.dgal.c3, .dgal-rest.c3{ grid-template-columns:repeat(3,1fr) }
-
-/* 반반이면 메이슨리 — 높이가 제각각인 사진을 억지로 맞추지 않는다. */
-.dgal.masonry, .dgal-rest.masonry{
-  display:block;
-  columns:3;
-  column-gap:22px;
-}
-.dgal.masonry figure, .dgal-rest.masonry figure{
-  break-inside:avoid;
-  margin-bottom:22px;
-}
-
-.dgal .cover, .dgal-rest .cover, .dhero .cover{
-  width:100%;
-  height:auto;
-  object-fit:contain;       /* 자르지 않는다 */
-  display:block;
-}
-
-/* 3장 — 첫 장 크게, 나머지 둘은 아래 작게 */
-.dhero{ padding:34px var(--pad) 0 }
-.dhero .hero-main{ max-width:820px; margin:0 auto }
-.dhero .hero-rest{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:22px;
-  margin-top:22px;
-}
-
-.dgal-more{
-  display:block;
-  margin:20px var(--pad) 0;
-  padding:11px 20px;
-  background:none;
-  border:.5px solid var(--line-s);
-  font-family:var(--mono);
-  font-size:11px;
-  color:inherit;
-  cursor:pointer;
-}
-.dgal-more:hover{ background:var(--ink); color:var(--cream) }
-
 /* ---------- Explore more ---------- */
 .more{
   padding:52px var(--pad) 0;
   border-top:.5px solid var(--line-s);
-  margin-top:44px;
+  margin-top:56px;
 }
 .more h2{
   font-size:clamp(24px,2.8vw,38px);
@@ -305,25 +278,21 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
 .mcard .m .yr{ font-family:var(--mono); font-size:11px; opacity:.5; margin-left:4px }
 
 /* ---------- 모바일 ---------- */
+/* 한 열로 접고 차례는 글 → 사진. HTML 순서가 이미 그러하므로 뒤집지 않는다. */
 @media (max-width:900px){
   .dhead{ padding:30px var(--pad) 24px }
-  .dwrap{ min-height:0 !important }      /* JS 가 잡아둔 높이를 무르게 한다 */
-  .dpanel{ width:100%; padding:28px var(--pad) 30px }
-  .dimg{
-    position:static;
-    width:100%;
-    padding:0 var(--pad);
-    margin-top:22px;
+  .dlayout{
+    grid-template-columns:1fr;
+    gap:30px;
+    padding-top:26px;
   }
-  .dvideo{ padding-top:32px }
+  .dcol-text{ max-width:none }
+  .acc{ margin-top:40px; padding-top:26px }
+  .dcol-media{ gap:20px }
+  .dshot.tall img.cover{ max-height:none; width:100% }
+  .dpair, .dgrid{ grid-template-columns:1fr !important; gap:16px }
   .seq-btn{ display:none }          /* 모바일은 스와이프만 */
   .seq-slide img{ max-height:62vh }
-  /* 모바일은 어떤 패턴이든 1열 */
-  .dimg.pair{ flex-direction:column; align-items:stretch }
-  .dimg.pair .cover{ max-width:100%; max-height:none; width:100% }
-  .dgal, .dgal-rest{ grid-template-columns:1fr !important; gap:18px }
-  .dgal.masonry, .dgal-rest.masonry{ columns:1 }
-  .dhero .hero-rest{ grid-template-columns:1fr }
-  .more{ padding-top:36px; margin-top:32px }
+  .more{ padding-top:36px; margin-top:36px }
   .mgrid{ grid-template-columns:repeat(2,1fr); gap:18px }
 }
