@@ -59,12 +59,14 @@ function head(work, producerById) {
  */
 function buildAccordions(work) {
   if (work.accordions?.length) {
+    /* 두 가지 모양을 받는다 — 목록(rows)과 산문(paragraphs). */
     return work.accordions
       .map((a) => ({
         title: t(a.title),
         rows: (a.rows || []).filter((r) => t(r) && !('url' in r && !r.url)),
+        paragraphs: (t(a.paragraphs, lang.current) || a.paragraphs?.ko || []).filter?.(Boolean) ?? [],
       }))
-      .filter((a) => a.title && a.rows.length);
+      .filter((a) => a.title && (a.rows.length || a.paragraphs.length));
   }
 
   const out = [];
@@ -108,21 +110,30 @@ function accordions(work) {
 
   const box = el('div.acc');
   list.forEach((a, i) => {
-    const det = el('details', i === 0 ? { open: true } : null); // 첫 항목(보통 일정)만 열어 둔다
+    const det = el('details', i === 0 ? { open: true } : null); // 첫 항목만 열어 둔다
     det.append(el('summary', { text: a.title }));
-    const ul = el('ul.acc-rows');
-    for (const r of a.rows) {
-      ul.append(
-        el(
-          'li',
-          null,
-          r.url
-            ? el('a', { href: r.url, target: '_blank', rel: 'noopener', text: t(r) })
-            : el('span', { text: t(r) })
-        )
-      );
+
+    /* 산문은 문단으로, 목록은 줄로. ⬡ 는 SVG 로 그린다. */
+    if (a.paragraphs?.length) {
+      const prose = el('div.acc-prose');
+      for (const para of a.paragraphs) prose.append(el('p', null, titleNodes(para)));
+      det.append(prose);
     }
-    det.append(ul);
+    if (a.rows.length) {
+      const ul = el('ul.acc-rows');
+      for (const r of a.rows) {
+        ul.append(
+          el(
+            'li',
+            null,
+            r.url
+              ? el('a', { href: r.url, target: '_blank', rel: 'noopener' }, titleNodes(t(r)))
+              : el('span', null, titleNodes(t(r)))
+          )
+        );
+      }
+      det.append(ul);
+    }
     box.append(det);
   });
   return box;
@@ -142,7 +153,7 @@ function panel(work) {
   if (lead) box.append(el('p.lead', { text: lead }));
   if (body) {
     for (const para of body.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean)) {
-      box.append(el('p', { text: para }));
+      box.append(el('p', null, titleNodes(para)));   // 본문의 {hex} 도 SVG 육각형으로
     }
   }
   if (acc) box.append(acc);
@@ -259,24 +270,122 @@ function belowArea(photos, p) {
   return el('div.dgal-wrap', null, grid, hidden, btn);
 }
 
+/* ---------- gallery: "sequence" ----------
+   글자가 든 이미지(카드뉴스 등)를 한 장씩 넘겨 본다.
+   자동 배치 다섯 패턴과 별개의 모드다 — works.json 의 gallery 값이 없으면 그쪽으로 간다.
+   어떤 경우에도 자르지 않는다(contain). */
+
+function lightbox(src, alt) {
+  const box = el('div.lb', { role: 'dialog', 'aria-modal': 'true', 'aria-label': '원본 크기' });
+  box.append(el('img', { src, alt: alt || '' }));
+
+  const shut = () => {
+    box.remove();
+    document.body.classList.remove('lb-open');
+    document.removeEventListener('keydown', onKey);
+  };
+  const onKey = (e) => e.key === 'Escape' && shut();
+
+  box.addEventListener('click', shut);
+  document.addEventListener('keydown', onKey);
+  document.body.append(box);
+  document.body.classList.add('lb-open');
+}
+
+function sequence(work) {
+  const files = (work.galleryImages || []).filter(Boolean);
+  if (!files.length) return null;
+
+  const track = el('div.seq-track');
+  files.forEach((src, i) => {
+    const slide = el('figure.seq-slide');
+    const img = el('img', { src, alt: '', loading: i < 2 ? 'eager' : 'lazy' });
+    img.addEventListener('click', () => lightbox(src));
+    slide.append(img);
+    track.append(slide);
+  });
+
+  const dots = el('div.seq-dots');
+  files.forEach((_, i) => dots.append(el('i', { 'data-i': String(i) })));
+  const counter = el('span.seq-count.meta');
+
+  const prev = el('button.seq-btn.seq-prev', { type: 'button', 'aria-label': '이전 사진', text: '←' });
+  const next = el('button.seq-btn.seq-next', { type: 'button', 'aria-label': '다음 사진', text: '→' });
+
+  let at = 0;
+  const show = (i, smooth = true) => {
+    at = Math.max(0, Math.min(files.length - 1, i));
+    track.scrollTo({ left: at * track.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+    sync();
+  };
+  const sync = () => {
+    counter.textContent = `${at + 1} / ${files.length}`;
+    [...dots.children].forEach((d, i) => d.classList.toggle('on', i === at));
+    prev.disabled = at === 0;
+    next.disabled = at === files.length - 1;
+  };
+
+  prev.addEventListener('click', () => show(at - 1));
+  next.addEventListener('click', () => show(at + 1));
+  [...dots.children].forEach((d, i) => d.addEventListener('click', () => show(i)));
+
+  /* 스와이프는 브라우저의 가로 스크롤에 맡긴다 — 스크롤이 멎으면 위치를 다시 읽는다. */
+  let timer = null;
+  track.addEventListener('scroll', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      at = Math.round(track.scrollLeft / track.clientWidth);
+      sync();
+    }, 90);
+  });
+
+  const box = el('section.seq', { 'aria-roledescription': 'carousel' },
+    el('div.seq-stage', null, track, prev, next),
+    el('div.seq-foot', null, dots, counter));
+
+  /* 키보드 ← → 는 이 영역에 들어와 있을 때만 듣는다. */
+  box.tabIndex = 0;
+  box.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); show(at - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(at + 1); }
+  });
+
+  sync();
+  window.addEventListener('resize', () => show(at, false));
+  return box;
+}
+
 /* ---------- 영상 ---------- */
 
-/* privacy-enhanced 주소(youtube-nocookie)를 그대로 쓴다. 16:9 는 CSS 가 잡는다.
-   video 필드가 없으면 아무것도 그리지 않는다. */
+/* privacy-enhanced 주소(youtube-nocookie)로만 심는다. 16:9 는 CSS 가 잡는다.
+   video 가 없으면 아무것도 그리지 않는다.
+   { embedId, label } 형태를 쓰고, 예전 문자열 형태도 받아준다. */
 function video(work) {
-  if (!work.video) return null;
+  const v = work.video;
+  if (!v) return null;
+
+  const src =
+    typeof v === 'string'
+      ? v
+      : v.embedId
+        ? `https://www.youtube-nocookie.com/embed/${v.embedId}`
+        : '';
+  if (!src) return null;
+
+  const caption = typeof v === 'string' ? '' : t(v.label);
   return el(
     'section.dvideo',
     null,
     el('div.dvideo-box', null,
       el('iframe', {
-        src: work.video,
-        title: `${titleText(t(work.title))} 기록 영상`,
+        src,
+        title: `${titleText(t(work.title))} ${caption || '영상'}`,
         loading: 'lazy',
         allow: 'accelerometer; clipboard-write; encrypted-media; picture-in-picture',
         referrerpolicy: 'strict-origin-when-cross-origin',
         allowfullscreen: true,
-      }))
+      })),
+    caption ? el('p.dvideo-cap.meta', { text: caption }) : null
   );
 }
 
@@ -356,7 +465,17 @@ async function main() {
     );
     document.getElementById('page-footer').replaceChildren(footer());
 
-    /* 사진은 비율을 재야 배치를 정할 수 있어서 먼저 다 불러온 뒤 끼워 넣는다. */
+    /* gallery 값이 있으면 그 모드로. 없으면 비율을 재어 다섯 패턴 중 하나로 간다. */
+    if (work.gallery === 'sequence') {
+      /* 표지는 평소처럼 텍스트 오른쪽에 두고, 나머지는 넘겨 보는 갤러리로 내린다. */
+      const cover = work.cover ? await probe(work.cover) : null;
+      if (cover) wrap.append(sideArea([cover], { kind: 'side', tall: cover.kind === 'portrait' }));
+      const seq = sequence(work);
+      if (seq) wrap.insertAdjacentElement('afterend', seq);
+      fitPanel(wrap);
+      return;
+    }
+
     const photos = await collectPhotos(work);
     const p = plan(photos);
 

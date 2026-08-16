@@ -4,7 +4,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, topBar, footer, pageUrl, link, photo, faceCandidates, shuffle,
-  producerTile,
+  producerTile, titleNodes,
 } from './ui.js';
 
 /* 사진은 파일만 올리면 뜬다 — JSON 을 고칠 필요가 없다.
@@ -134,8 +134,9 @@ function contact(about, producers) {
     );
   }
   for (const l of about.links || []) {
+    if (!l.url) continue;
     list.append(
-      el('li', null, el('a', { href: l.url, target: '_blank', rel: 'noopener', text: t(l.label) }))
+      el('li', null, el('a', { href: l.url, target: '_blank', rel: 'noopener' }, titleNodes(t(l.label))))
     );
   }
 

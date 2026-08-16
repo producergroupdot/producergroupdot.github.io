@@ -5,6 +5,9 @@
 .producer-page{
   min-height:100vh;
 
+  /* 얼굴 사진 원의 지름. 네 사람 페이지가 이 한 값을 함께 쓴다. */
+  --pface: 156px;
+
   /* 선은 전경색에서 파생시킨다. 어두운 면(.on-dark)에서는 --fg-rgb 가 크림으로
      뒤집히므로 아래 두 줄이 그대로 따라온다 — 색값을 직접 쓰면 선이 사라진다(함정 4). */
   --line:   rgb(var(--fg-rgb) / .28);
@@ -24,14 +27,14 @@
   align-items:start;
   padding:56px var(--pad) 44px;
 }
-/* 얼굴 사진 원. 이 페이지의 주인공은 색면과 글이라 사진은 작게 둔다. */
+/* 얼굴 사진 원. 이 페이지의 주인공은 색면과 글이라 사진은 크게 두지 않는다. */
 .pface{
   display:block;
-  width:120px;
+  width:var(--pface);
   aspect-ratio:1/1;
   border-radius:50%;
   overflow:hidden;
-  margin-bottom:24px;
+  margin-bottom:30px;        /* 원이 커진 만큼 아래 간격도 함께 벌린다 */
   transition:transform .45s var(--ease);
 }
 .pface .cover{
@@ -52,7 +55,7 @@
   opacity:.85;
 }
 
-.phead-role{ display:flex; align-items:center; gap:9px; margin-bottom:18px }
+.phead-role{ display:flex; align-items:center; gap:9px; margin-bottom:22px }
 .phead-role .dot{ width:11px; height:11px; border-radius:50%; display:block; flex:none }
 .phead h1{
   font-size:clamp(40px,6vw,84px);
@@ -112,6 +115,10 @@
     padding:32px var(--pad) 28px;
   }
   .frame{ justify-self:start; max-width:150px }
+  /* 좁은 화면에서는 원이 폭을 너무 차지하지 않게 한 단계 낮춘다. */
+  .producer-page{ --pface: 124px }
+  .pface{ margin-bottom:24px }
+  .phead-role{ margin-bottom:18px }
   .pbody{
     grid-template-columns:1fr;
     gap:34px;

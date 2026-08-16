@@ -83,13 +83,13 @@
       {
         "label": { "ko": "인스타그램", "en": "Instagram" },
         "url": "https://www.instagram.com/jisun_park_092/"
+      },
+      {
+        "label": { "ko": "{hex}{hex}의 섬 : 강화도", "en": "Hexagon Island" },
+        "url": "http://hexagon-island.com/"
       }
     ],
     "photo": "",
-    "illustration": {
-      "file": "img/producers/jisun-illustration.png",
-      "caption": { "ko": "파타고니아", "en": "" }
-    },
     "photos": [
       "img/producers/jisun-01.jpg",
       "img/producers/jisun-02.jpg",
@@ -125,9 +125,27 @@
       "en": "Song Miseon is an independent producer who is drawn to artistic projects that allow her to learn something new and expand her world, and she thrives in horizontally structured collaborations.\n\nShe majored in Korean Dance and, after graduating, went on to study Arts Administration and Cultural Policy (MA) in the UK. She subsequently worked at public cultural organisations — Seoul Foundation for Arts and Culture, Mullae Arts Factory (2010–2011), and Arts Council Korea (2011–2018). During her time at Arts Council Korea, she oversaw the dance sector and managed the ARKO Selection programme within the Creation Support Division. She later moved to the International Exchange Division, where she developed Korea–UK, Korea–Germany, and Korea–Denmark joint cultural programmes, working to build new frameworks for international support initiatives.\n\nAfter leaving the public sector, she took on the challenge of new territory by planning and managing the Seoul International Book Fair (2020–2021) and the Korean Pavilion at the international book fair, where she developed a keen interest in work that breaks down the boundaries between genres.\n\nCurrently, she is interested in collaborating with specialists and artists across diverse fields, with a focus on pressing contemporary issues such as the climate crisis, gender, social conflict, and technological society."
     },
     "email": "producergroup.14@gmail.com",
-    "links": [],
+    "links": [
+      {
+        "label": { "ko": "인스타그램", "en": "Instagram" },
+        "url": "https://www.instagram.com/likecloud_/"
+      },
+      {
+        "label": { "ko": "둥지230", "en": "Doongji230" },
+        "url": "https://www.instagram.com/doongji230/"
+      },
+      {
+        "label": { "ko": "{hex}{hex}의 섬 : 강화도", "en": "Hexagon Island" },
+        "url": "http://hexagon-island.com/"
+      }
+    ],
     "photo": "",
     "photos": [
+      "img/producers/miseon-01.jpg",
+      "img/producers/miseon-02-portrait.jpg",
+      "img/producers/miseon-03.jpg"
+    ],
+    "aboutPhotos": [
       "img/producers/miseon-01.jpg",
       "img/producers/miseon-02.jpg",
       "img/producers/miseon-03.jpg"

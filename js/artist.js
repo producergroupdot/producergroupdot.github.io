@@ -68,8 +68,9 @@ function linksBlock(artist) {
   if (!artist.links?.length) return null;
   const list = el('ul.llist');
   for (const l of artist.links) {
+    if (!l.url) continue;
     list.append(el('li', null,
-      el('a', { href: l.url, target: '_blank', rel: 'noopener', text: t(l.label) })));
+      el('a', { href: l.url, target: '_blank', rel: 'noopener' }, titleNodes(t(l.label)))));
   }
   return sideBlock('링크', list);
 }

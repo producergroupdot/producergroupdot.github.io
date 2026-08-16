@@ -117,8 +117,15 @@ function linksBlock(person) {
 
   const list = el('ul.llist');
   for (const l of person.links || []) {
+    /* 주소가 아직 없는 줄은 그리지 않는다 — 누를 데가 없는 링크를 두지 않는다.
+       라벨의 {hex} 토큰은 SVG 육각형으로 그린다(함정 5). */
+    if (!l.url) continue;
     list.append(
-      el('li', null, el('a', { href: l.url, target: '_blank', rel: 'noopener', text: t(l.label) }))
+      el(
+        'li',
+        null,
+        el('a', { href: l.url, target: '_blank', rel: 'noopener' }, titleNodes(t(l.label)))
+      )
     );
   }
   if (mail) list.append(el('li', null, el('a', { href: `mailto:${mail}`, text: mail })));
