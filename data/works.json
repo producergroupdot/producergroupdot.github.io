@@ -847,11 +847,11 @@
     "status": "done",
     "lead": {
       "ko": "무대에 흩뿌려진 단어들, 그 이면의 세상을 관객과 함께 찾아나가는 여정.",
-      "en": ""
+      "en": "A journey with the audience to find the world behind the words scattered on stage."
     },
     "body": {
       "ko": "〈에너지 — 보이지 않는 언어〉는 화석에너지 중심의 체제에서 탈탄소 에너지로의 전환을 시도하고 있는 지금 인류의 이야기다. 전환의 시기, 우리가 어떤 언어들을 놓치고 있는지, 우리가 획득하지 못한 언어는 무엇인지 함께 고민해 보고자 하는 작업이다.\n\n무대에는 화력 발전소, 원자력 발전소, 풍력 발전소, 태양열 발전소를 표현한 오브제와 단어들이 흩뿌려져 있다. 관객들은 무대 위 단어와 오브제를 재배열함으로써 각 발전소를 둘러싼 이면의 목소리를 듣게 되기도, 더 나은 에너지 구조를 함께 고민하게 되기도 한다.\n\n이 작품은 익명의 사람들이 극장 공간에 모여 '기후' 언어를 공동으로 만들어 나가는 과정을 담고 있다.",
-      "en": ""
+      "en": "Energy_Invisible Words tells the story of humankind now trying to move from a fossil-fuel system to decarbonised energy. It invites the audience to explore what languages we are missing, and what languages we have not yet acquired, in this time of transition.\n\nOn the stage, objects and words representing thermal, nuclear, wind and solar power plants are scattered. The audience rearranges them to hear the voices behind each kind of power plant, and to think together about what a better energy structure might be.\n\nThis work is about the process of anonymous people gathering in a theatre space and creating the language of climate as a group."
     },
     "venue": {
       "ko": "",
@@ -884,6 +884,11 @@
             "기후위기를 자신의 언어로 만들 수 있을까?",
             "김지연과 전윤환은 언어의 부재와 왜곡이 기후위기 시대의 상상력의 부재를 만들고 있는 것은 아닌가 하는 질문을 던지며, 예술가의 언어로 동시대의 보이지 않는 위기를 가시화하려 한다. 무대에는 기후 재판 투쟁 당사자와 기후위기 피해 당사자의 말, 그리고 에너지 개념을 재정의하기 위한 단어들이 씨앗처럼 흩뿌려져 있다.",
             "관객은 창작자와 단어를 연결하고, 단어 속의 이면을 찾고, 문장을 조합해 가며 미래를 적극적으로 상상하고 해석한다. 그렇게 전환 사회를 향한 방향과 과제를 함께 모색한다."
+          ],
+          "en": [
+            "Can we put the climate crisis into our own language?",
+            "Kim Jeeyeon and Jeon Yoonhwan raise the question of whether the absence and distortion of language is creating an absence of imagination in the era of the climate crisis, and look for ways to make the invisible contemporary crisis visible through the language of artists. Words that redefine the concept of energy, together with the words of those fighting climate lawsuits and of those harmed by the climate crisis, are scattered across the stage as seeds.",
+            "The audience connects creators and words, finds what lies on the other side of each word, and puts sentences together — actively imagining and interpreting the future, and seeking directions and tasks for a society in transition."
           ]
         }
       },
@@ -915,7 +920,7 @@
         "rows": [
           {
             "ko": "리서치·공동구성 · 김지연, 전윤환",
-            "en": "Research & Co-composition · Kim Jiyeon, Jeon Yunhwan"
+            "en": "Research & Co-direction · Kim Jeeyeon, Jeon Yoonhwan"
           },
           {
             "ko": "크리에이티브 프로듀서 · 박지선",
@@ -923,11 +928,11 @@
           },
           {
             "ko": "제작 프로듀서 · 최봉민",
-            "en": "Production Producer · Choi Bongmin"
+            "en": "Producer · Choi Bongmin"
           },
           {
             "ko": "조연출 · 정찬동",
-            "en": "Assistant Director · Jung Chandong"
+            "en": "Assistant Director · Chung Chandong"
           },
           {
             "ko": "사운드 · 카입",
@@ -935,15 +940,27 @@
           },
           {
             "ko": "조명감독 · 탁형선",
-            "en": "Lighting · Tak Hyungsun"
+            "en": "Lighting Director · Tak Hyungsun"
           },
           {
             "ko": "음향감독 · 정하윤",
-            "en": "Sound Engineer · Jung Hayoon"
+            "en": "Sound Director · Jeong Hayoon"
           },
           {
             "ko": "무대소품 · 김혜원",
-            "en": "Props · Kim Hyewon"
+            "en": "Scenographer · Kim Hyewon"
+          },
+          {
+            "ko": "접근성 매니저 · 최봉민",
+            "en": "Accessibility Manager · Choi Bongmin"
+          },
+          {
+            "ko": "",
+            "en": "Korean Sign Language · Signlanguage Interpretation Cooperative (Koh Kounghee, Kim Soo-nyon, Chang JinSeok, Cho YeonJae)"
+          },
+          {
+            "ko": "",
+            "en": "Communication Access Real-time Translation · Cho Sungjin"
           }
         ]
       },
@@ -954,13 +971,16 @@
         },
         "rows": [
           {
-            "ko": "지연X전환 · 기획자이자 연구자인 김지연과 연극 연출가 전윤환이 2022년 예술텃밭 기후변화 레지던시에서 만나 결성했다. 기후위기 시대를 '지연'시키고 정의로운 '전환'을 이루기 위해 필요한 새로운 상상력을 예술의 언어로 만들어가는 작업을 이어가고 있다."
+            "ko": "지연X전환 · 기획자이자 연구자인 김지연과 연극 연출가 전윤환이 2022년 예술텃밭 기후변화 레지던시에서 만나 결성했다. 기후위기 시대를 '지연'시키고 정의로운 '전환'을 이루기 위해 필요한 새로운 상상력을 예술의 언어로 만들어가는 작업을 이어가고 있다.",
+            "en": "Delay X Transition · Producer and researcher Kim Jeeyeon and theatre director Jeon Yoonhwan met as participating artists in the 2022 Artists' Residency at Arts Farm Tutbat – Climate Change. In order to delay the era of the climate crisis and to achieve a just transition, the two artists work on creating the new imagination we need through the language of art."
           },
           {
-            "ko": "김지연 · 기후연구자이자 기획자. 2021년 강원도 화천을 시작으로 '기후위기 × 로컬'을 주제로 국내외 리서치를 진행하고 있으며, 인간 중심에서 벗어나는 예술 언어의 〈기후언어〉 프로젝트를 진행하고 있다."
+            "ko": "김지연 · 기후연구자이자 기획자. 2021년 강원도 화천을 시작으로 '기후위기 × 로컬'을 주제로 국내외 리서치를 진행하고 있으며, 인간 중심에서 벗어나는 예술 언어의 〈기후언어〉 프로젝트를 진행하고 있다.",
+            "en": "Kim Jeeyeon · Climate researcher and producer. Since 2021 she has been reading local regions through the lens of the climate crisis, and works on the Changing Climate Language project, which explores a post-anthropocentric artistic language. She interprets the possibilities of community broadly, as an urban and future-facing experiment, and continues experiments that let space work as a public forum where social relationships can form."
           },
           {
-            "ko": "전윤환 · 다큐멘터리 연극의 동시대성을 인식하며 실재를 매개하기 위한 다양한 연극 방법론을 고민해왔다. 〈기후비상사태: 리허설〉(2022), 〈자연빵〉(2021), 〈강화도 산책: 평화도큐먼트〉(2021) 등."
+            "ko": "전윤환 · 다큐멘터리 연극의 동시대성을 인식하며 실재를 매개하기 위한 다양한 연극 방법론을 고민해왔다. 〈기후비상사태: 리허설〉(2022), 〈자연빵〉(2021), 〈강화도 산책: 평화도큐먼트〉(2021) 등.",
+            "en": "Jeon Yoonhwan · Recognising the contemporaneity of documentary theatre, he has explored various theatrical methodologies to mediate reality. He thinks persistently about what it means to make theatre in contemporary capitalist society, and uses practical research rooted in everyday experience as a theatrical strategy. His major works include Climate Emergency: A Rehearsal (2022), Natural Bread (2021) and Ganghwa Island Walks: Peace Document (2021)."
           }
         ]
       },
@@ -1118,11 +1138,11 @@
     "status": "upcoming",
     "lead": {
       "ko": "무대에서 진행되는 기후위기 보드게임, 당신의 선택이 숲의 미래를 좌우한다.",
-      "en": ""
+      "en": "A climate change board game played on the stage — the future of the forest is in your hands."
     },
     "body": {
-      "ko": "미래의 숲을 위해 당신은 어디까지 할 수 있을까? 〈움직이는 숲〉은 기후변화로 미래를 위협받는 숲을 이동시키는 것이 가능한지를 알아보기 위해 만들어진 관객 참여형 씨어터게임 공연이다. 절멸에 놓인 숲을 살리기 위한 보드게임으로 2020년에 만들어졌고, 1년간의 베타 테스트를 거쳐 블랙박스에서 공연으로 진행된다.\n\n나무를 살려야 한다. 숲이 언제 없어질지 모르는 상황에 놓여 있기 때문이다. 스위스 취리히의 크라우더 연구소에 따르면 현재 나무가 자신의 환경을 유지하기 위해서는 일 년에 6.4km씩 북쪽으로 이동해야 한다고 한다. 하지만 지구에 나무가 살 수 있는 곳은 그리 많이 남아 있지 않다. 인간이 대부분의 땅을 차지하고 있기 때문이다.\n\n나무가 절멸하면 인류가 위험에 처한다고? 기후위기로 인해 발생하는 여러 재앙 앞에서도 인류는 여전히 발전이라는 사이클에 익숙해져 있고, 그것이 무너지면 세상이 무너질 것이라고 믿는 사람들로 가득하다. 관객은 이런 상황 속에서 숲을 살리기 위한 연구를 진행 중인 미래자원본부 소속 생태연구소를 방문하게 된다. 연구소의 초보 연구원으로 당신을 초대한다.\n\n어떤 미래가 진정 우리와 지구를 위한 미래일까? 관객에 의해 숲의 미래가 결정되고, 공연은 관객의 선택에 따라 매회 다른 결론을 맞이하게 될 것이다.",
-      "en": ""
+      "ko": "미래의 숲을 위해 당신은 어디까지 할 수 있을까? 〈움직이는 숲〉은 기후변화로 위협받는 숲을 구하는 것이 가능한지 알아보기 위해 만들어진 예술 프로젝트다. 2020년 절멸에 놓인 숲을 살리기 위한 보드게임으로 시작해, 이후 보드게임과 관객 참여형 씨어터게임이 결합된 형태로 발전하며 관객과 만나 왔다.\n\n나무를 살려야 한다. 숲이 언제 없어질지 모르는 상황에 놓여 있기 때문이다. 스위스 취리히의 크라우더 연구소에 따르면 지금 나무가 자신의 환경을 유지하기 위해서는 일 년에 6.4km씩 북쪽으로 이동해야 한다. 하지만 지구에 나무가 살 수 있는 곳은 그리 많이 남아 있지 않다. 인간이 대부분의 땅을 차지하고 있기 때문이다.\n\n관객은 미래숲환경연구소의 새 연구원으로 이 공연에 참여한다. 그리고 2050년까지 인간과 자연이 공존할 수 있는 도시를 만들어야 한다. 과연 성공할 수 있을까?\n\n기후변화의 심각성을 알면서도 왜 바꾸는 일은 이토록 어려울까? 이 공연은 바로 그 질문에서 출발했다. 게임과 연극이 결합된 이 경험 속에서 관객의 선택은 결과를 직접 바꾸고, 공연은 매회 다른 결말을 맞는다.",
+      "en": "How much can you do for the forest of the future? Moving a Forest is an artistic project created to explore the possibility of saving forests threatened by climate change. It began in 2020 as a board game designed to save forests on the brink of extinction, and has since evolved into a hybrid of board game and audience-participation theatre game.\n\nTrees have to be saved: the forest could disappear at any moment. According to the Crowther Lab in Zurich, a tree would now have to travel 6.4 km north each year to keep the environment it needs. But there is little land left on this planet where trees can live, because human beings occupy most of it.\n\nAs new researchers at the Future Forest Environmental Institute, the audience take part in the performance. Together they must build a city where humans and nature can coexist by the year 2050. Will they succeed?\n\nWhy is it so difficult to change, even when we know the severity of climate change? The performance was made to explore that question. Combining gameplay and theatre, it lets the audience's decisions shape the outcome directly — and the ending is different at every performance."
     },
     "venue": {
       "ko": "",
@@ -1153,7 +1173,15 @@
         "rows": [
           {
             "ko": "러닝타임 · 120분",
-            "en": "Running time · 120 min"
+            "en": "Playtime · 120 min"
+          },
+          {
+            "ko": "형식 · 협력형 보드게임, 관객 참여형 게임 씨어터, 휴대폰(웹앱) 참여",
+            "en": "Style · cooperative board game, participatory game theatre, participation with your phone (web app)"
+          },
+          {
+            "ko": "관람 연령 · 12세 이상(15세 이상 권장)",
+            "en": "Rating · 12 and over (15 and over recommended)"
           },
           {
             "ko": "제작 · 무제의 길, 프로듀서그룹 도트",
@@ -1161,7 +1189,11 @@
           },
           {
             "ko": "협력 · 예술텃밭 예술가 레지던시 – 기후변화",
-            "en": "In cooperation with Arts Farm Tutbat Artist Residency – Climate Change"
+            "en": "Associated with the Artists' Residency at Arts Farm Tutbat – Climate Change"
+          },
+          {
+            "ko": "후원 · 서울국제공연예술제",
+            "en": "Supported by SPAF (Seoul Performing Arts Festival)"
           }
         ]
       },
@@ -1173,6 +1205,9 @@
         "paragraphs": {
           "ko": [
             "초연에서는 LED 조명만을 사용했고, 전체 조명의 60%는 다른 공연을 위해 제작했던 조명을 재사용했다."
+          ],
+          "en": [
+            "For the premiere, only LED lighting was used, and sixty per cent of the lighting was reused from equipment built for other productions."
           ]
         },
         "rows": [
@@ -1194,16 +1229,16 @@
         },
         "rows": [
           {
-            "ko": "구성·작·연출 · 김보람",
-            "en": "Concept, Text & Direction · Kim Borahm"
+            "ko": "구성·작·연출·게임 디자인 · 김보람",
+            "en": "Concept, Direction, Writing & Game Design · Kim Borahm"
           },
           {
             "ko": "크리에이티브 프로듀서 · 박지선",
             "en": "Creative Producer · Park Jisun"
           },
           {
-            "ko": "제작 프로듀서 · 최봉민",
-            "en": "Production Producer · Choi Bongmin"
+            "ko": "프로듀서 · 최봉민",
+            "en": "Producer · Choi Bongmin"
           },
           {
             "ko": "조명감독 · 탁형선",
@@ -1215,7 +1250,7 @@
           },
           {
             "ko": "무대디자인 · 김혜원",
-            "en": "Set Designer · Kim Hyewon"
+            "en": "Scenographer · Kim Hyewon"
           },
           {
             "ko": "사운드디자인 · 지미세르",
@@ -1223,11 +1258,11 @@
           },
           {
             "ko": "음향 오퍼레이터 · 이윤경",
-            "en": "Sound Operator · Lee Yunkyung"
+            "en": "Sound Operator · Lee Yoon Kyung"
           },
           {
             "ko": "웹 · 임오성(Re-Look)",
-            "en": "Web · Lim Oseong (Re-Look)"
+            "en": "Web · Im Ohseong (AKA Re-Look)"
           },
           {
             "ko": "무대감독 · 정찬미",
@@ -1235,11 +1270,11 @@
           },
           {
             "ko": "배우 · 김준우, 박선희, 서지우, 서현성",
-            "en": "Performers · Kim Junwoo, Park Sunhee, Seo Jiwoo, Seo Hyunsung"
+            "en": "Actors · Kim Junwoo, Park Sunhee, Suh Jiwoo, Suh Hyunsung"
           },
           {
             "ko": "목소리 녹음 · 김유진",
-            "en": "Voice Recording · Kim Yujin"
+            "en": "Voice · Kim Yujin"
           }
         ]
       },
@@ -1253,6 +1288,11 @@
             "ko": "SPAF 2022 프로그램",
             "en": "SPAF 2022 programme",
             "url": "http://spaf.or.kr/2022/program/program_view16.php"
+          },
+          {
+            "ko": "무제의 길 작품 페이지",
+            "en": "Untitled Road project page",
+            "url": "https://www.untitledroad.com/projects/moving-a-forest_theatre-game"
           }
         ]
       }
@@ -1579,7 +1619,7 @@
     },
     "subtitle": {
       "ko": "더 넥스트 노멀 · 지금과 미래를 위한 예술가들의 질문과 실천",
-      "en": "The Next Normal"
+      "en": "The Next Normal — Rewriting What “Normal” Means"
     },
     "artist": {
       "ko": "아시아 네트워크",
@@ -1597,11 +1637,11 @@
     "status": "ongoing",
     "lead": {
       "ko": "예술은 어떻게 '정상'이라 여겨지는 것의 경계를 재설정할 수 있을까?",
-      "en": "How can art redraw the boundaries of what counts as normal?"
+      "en": "How can art reshape the boundaries of what is considered normal?"
     },
     "body": {
-      "ko": "'정상(Normal)'이란 무엇일까. 그 답은 결코 고정된 적이 없다. 19세기에는 오직 백인 남성의 투표권만이 '정상'이었다. 20세기와 21세기를 거치며 그 경계는 젠더, 인종, 신체적 능력을 넘어 인간과 비인간의 영역으로 끊임없이 확장되고 변화해 왔다.\n\n오늘날 우리는 이 질문을 다시 던져야 한다. 자원을 소비하고 접근하는 방식에서 당연하게 여겨온 '정상'이라는 가정들은 이제 전 지구적 위기의 원인이 되었다. 한때 인류가 가졌던 확신, 즉 지구의 자원을 마음껏 쓸 수 있다는 '당연한 권리(entitlement)'는 역설적으로 생존을 위협하고 변화에 대한 적응을 늦추는 족쇄가 되었다.\n\n더 넥스트 노멀은 익숙한 것들을 재검토하고 사회적·생태적·윤리적으로 새로운 형태의 정상성을 상상하자고 제안한다. 기후위기, 평등, 다양성, 창조적 마찰, 디아스포라, 포스트휴머니즘 같은 시급한 동시대 의제에 주목하며, 예술가들에게 현재에서 미래로 우리를 이끌어 줄 새로운 규범을 제안하고 상상할 것을 요청한다. 예술적 상상력으로 우리 시대의 조건을 재구성하는 공간을 만들고, 동시대 아시아 예술가들의 공명하는 네트워크를 구축하는 여정이다.\n\nTNN은 아시아가 당면한 시급한 의제들을 예술의 언어로 해석해 지역 내 담론을 활성화하는 것을 목표로 한다. 특히 아시아 각지의 레지던시를 발굴하고 연결하여, 예술가들이 그곳에 머물며 인간과 자연, 문화와 예술에 깊이 접속할 수 있도록 돕고자 한다. 이는 예술가의 이동성을 확장하는 것을 넘어, 관계의 밀도를 높이는 새로운 차원의 예술 협업 및 지식 공유 모델이 될 것이다.\n\n아시아의 일부 지역에서 시작하지만, 점차 그 범위를 이웃으로 확장하며 '더 넥스트 노멀'의 렌즈를 통해 아시아를 깊이 있게 탐구해 나갈 것이다.",
-      "en": ""
+      "ko": "'정상(Normal)'이란 무엇일까. 그 답은 결코 고정된 적이 없다. 19세기에는 오직 백인 남성의 투표권만이 '정상'이었다. 20세기와 21세기를 거치며 그 경계는 젠더, 인종, 신체적 능력을 넘어 인간과 비인간의 영역으로 끊임없이 확장되고 변화해 왔다.\n\n오늘날 우리는 이 질문을 다시 던져야 한다. 자원을 소비하고 접근하는 방식에서 당연하게 여겨온 '정상'이라는 가정들은 이제 전 지구적 위기의 원인이 되었다. 한때 인류가 가졌던 확신, 즉 지구의 자원을 마음껏 쓸 수 있다는 '당연한 권리(entitlement)'는 역설적으로 생존을 위협하고 변화에 대한 적응을 늦추는 족쇄가 되었다.\n\n더 넥스트 노멀은 익숙한 것들을 재검토하고 사회적·생태적·윤리적으로 새로운 형태의 정상성을 상상하자고 제안한다. 기후위기, 평등, 다양성, 창조적 마찰, 디아스포라, 포스트휴머니즘 같은 시급한 동시대 의제에 주목하며, 예술가들에게 현재에서 미래로 우리를 이끌어 줄 새로운 규범을 제안하고 상상할 것을 요청한다. 예술적 상상력으로 우리 시대의 조건을 재구성하는 공간을 만들고, 동시대 아시아 예술가들의 공명하는 네트워크를 구축하는 여정이다.\n\nTNN은 아시아가 당면한 시급한 의제들을 예술의 언어로 해석해 지역 내 담론을 활성화하는 것을 목표로 한다. 특히 아시아 각지의 레지던시를 발굴하고 연결하여, 예술가들이 그곳에 머물며 인간과 자연, 문화와 예술에 깊이 접속할 수 있도록 돕고자 한다. 이는 예술가의 이동성을 확장하는 것을 넘어, 관계의 밀도를 높이는 새로운 차원의 예술 협업 및 지식 공유 모델이 될 것이다.",
+      "en": "What does it mean to be “normal”? The answer has never been fixed. In the 19th century, voting rights were considered normal only for white men. As we moved through the 20th and 21st centuries, the boundaries of normality have continuously shifted and expanded — crossing gender, race and ability, and now extending beyond the human realm to include non-humans.\n\nToday, we must extend this question beyond human society. Our long-held assumptions about what is normal in our attitude toward nature — particularly in how we access and consume resources — now lie at the root of our planetary crisis. The sense of entitlement that once defined humanity's confidence in using the Earth's resources has, paradoxically, become a shackle that delays our adaptation and threatens our very survival.\n\nWe are now called to re-examine what we have taken for granted and to imagine new forms of normality — social, ecological and ethical. The Next Normal begins with this question. Focusing on urgent contemporary themes such as the climate crisis, war, discrimination and equality, diversity, creative friction, diaspora and posthumanism, we invite artists to imagine and propose new norms that will guide us from the present into the future. The project aims to create a space where artistic imagination can respond to and reconfigure the conditions of our time, while building a long-term, deeply resonant network among Asian artists.\n\nOver the past few years, performing arts producers across Asia have engaged in intense discussions on the contemporary issues we face, viewing them through an artistic lens. Through these exchanges we confronted a fundamental question about the concept of normal. In response, we propose The Next Normal, a project and network dedicated to rewriting the meaning of normal for our present and future.\n\nTNN aims to revitalise regional discourse by interpreting urgent Asian agendas through the language of art. By identifying and connecting residencies across diverse Asian regions, we seek to enable artists to stay and connect deeply with humanity, nature, culture and art. This goes beyond expanding artistic mobility; it is a new model for artistic collaboration and knowledge-sharing designed to increase the density of relationships."
     },
     "venue": {
       "ko": "",
@@ -1625,17 +1665,58 @@
     },
     "accordions": [
       {
+        "id": "objective",
+        "title": {
+          "ko": "목표",
+          "en": "Objective"
+        },
+        "rows": [
+          {
+            "ko": "아시아의 시급한 의제에 대한 동시대 예술적 관점을 교환하고 확장하여 지역 담론을 촉진한다",
+            "en": "To exchange and expand contemporary artistic perspectives on urgent Asian issues, fostering regional discourse."
+          },
+          {
+            "ko": "새로운 협업과 지식 공유의 모델을 시험하는 예술가·기관의 지속적인 네트워크를 구축한다",
+            "en": "To build a sustained network of artists and institutions that prototype new models of collaboration and knowledge-sharing."
+          }
+        ]
+      },
+      {
+        "id": "format",
+        "title": {
+          "ko": "운영 방식",
+          "en": "Format"
+        },
+        "paragraphs": {
+          "ko": [
+            "TNN은 이 질문을 장기적인 실천으로 옮기기 위해 서로 맞물린 두 개의 틀, 아시아 아티스트 리서치 랩(AARL)과 다이얼로그 인 아시아(DIA)로 전개된다. 두 틀은 아시아 전역에서 리서치와 교류, 성찰의 순환을 만든다.",
+            "아시아 아티스트 리서치 랩(AARL) — 매년 주제에 따라 선정된 예술가들이 아시아 여러 지역의 파트너 호스트(프로듀서·기관)가 운영하는 랩 프로그램에 참여한다. 예술가는 프로젝트 기간 동안 2~3개 지역의 랩에 참여할 수 있다. 각 랩은 공통 주제 아래 파트너가 개별적으로 기획하며 1주에서 3주간 운영된다.",
+            "다이얼로그 인 아시아(DIA) — 2~3년에 한 번, AARL에 참여한 예술가들이 아시아의 한 지역에 모이는 담론 중심 페스티벌이다. 리서치 발표와 토론, 강연, 워크숍, 쇼케이스를 통해 랩의 결과를 나누고 대화를 이어간다."
+          ],
+          "en": [
+            "To translate this question into long-term practice, The Next Normal unfolds through two interlinked frameworks — the Asia Artists Research Lab (AARL) and Dialogue in Asia (DIA) — creating cycles of research, exchange and reflection across the region.",
+            "Asia Artists Research Lab (AARL) — Each year, artists selected according to the theme take part in lab programmes run by partner hosts, producers and organisations, in different regions of Asia. Artists may join AARLs in two or three Asian regions over the course of the project. Each AARL is organised individually by its host under a common theme and runs from one to three weeks.",
+            "Dialogue in Asia (DIA) — Once every two or three years, artists who have taken part in the AARLs gather in one Asian region for Dialogue in Asia, a discourse-driven festival. They share the outcomes of the labs through research presentations, discussions, lectures, workshops and showcases."
+          ]
+        }
+      },
+      {
+        "id": "dia-forum",
         "title": {
           "ko": "다이얼로그 인 아시아(DIA) 포럼",
           "en": "Dialogue in Asia (DIA) Forum"
         },
         "paragraphs": {
           "ko": [
-            "2024년 시작된 TNN은 2026년 2월 서울에서 열린 '다이얼로그 인 아시아(DIA)' 포럼으로 그 여정의 시작을 알렸다. 한국을 비롯해 뉴질랜드, 대만, 말레이시아, 인도네시아, 일본, 태국, 호주, 홍콩 등 9개국 파트너가 함께한 포럼은 아시아의 다양한 담론과 새로운 협력 방식을 펼쳐내는 장이 되었다."
+            "2024년 시작된 TNN은 2026년 2월 서울에서 열린 '다이얼로그 인 아시아(DIA)' 포럼으로 그 여정의 시작을 알렸다. 한국을 비롯해 뉴질랜드, 대만, 말레이시아, 인도네시아, 일본, 태국, 호주, 홍콩 등 9개 지역의 파트너가 함께한 이 포럼은 아시아의 다양한 담론과 새로운 협력 방식을 펼쳐내는 장이 되었다. 아시아의 일부 거점에서 시작하지만, 점차 그 범위를 이웃으로 넓히며 '더 넥스트 노멀'의 렌즈로 아시아를 깊이 탐구해 나갈 것이다."
+          ],
+          "en": [
+            "The Dialogue in Asia (DIA) forum, held in Seoul in February 2026, marked the beginning of this journey. With partners from nine regions — Korea, New Zealand, Taiwan, Malaysia, Indonesia, Japan, Thailand, Australia and Hong Kong — the forum became a platform for unfolding diverse Asian discourses and new methods of cooperation. While we start from these hubs, we aim to expand gradually to neighbouring regions, exploring Asia in depth through the lens of The Next Normal."
           ]
         }
       },
       {
+        "id": "info",
         "title": {
           "ko": "정보",
           "en": "Info"
@@ -1650,12 +1731,13 @@
             "en": "DIA Forum · February 2026, Seoul"
           },
           {
-            "ko": "참여 · 9개국 파트너(한국·뉴질랜드·대만·말레이시아·인도네시아·일본·태국·호주·홍콩)",
-            "en": "Partners from nine countries"
+            "ko": "참여 · 9개 지역 파트너",
+            "en": "Partners from nine regions"
           }
         ]
       },
       {
+        "id": "links",
         "title": {
           "ko": "링크",
           "en": "Links"
@@ -1699,7 +1781,7 @@
     },
     "subtitle": {
       "ko": "도르트문트 연극·디지털리티 아카데미 × 프로듀서그룹 도트",
-      "en": "Academy for Theatre and Digitality, Dortmund × Producer Group DOT"
+      "en": "Exploring Global Codes, Artificial Intelligence, and Performing Arts"
     },
     "artist": {
       "ko": "",
@@ -1776,11 +1858,11 @@
     "status": "ongoing",
     "lead": {
       "ko": "인공지능이 던지는 질문 앞에서, 미학과 윤리를 함께 놓는다.",
-      "en": ""
+      "en": "Placing aesthetics and ethics side by side, before the questions artificial intelligence raises."
     },
     "body": {
       "ko": "〈Aesth:ethics〉는 도르트문트 연극 및 디지털리티 아카데미와 프로듀서그룹 도트의 공동 협력 프로젝트다. 2026년은 리서치의 해로, 협력을 위한 로드맵을 설계하고 향후 선보일 공연 프로그램의 구체적인 컨셉을 개발한다.\n\n이 프로그램은 글로벌 기술 혁신 영역, 특히 인공지능의 활용과 그에 따른 윤리적 시사점들이 던지는 시급한 사회적 질문들을 다룬다. 인공지능의 급격한 발전은 권력과 민주주의, 전쟁과 감시, 로봇 공학과 생명 공학에 대한 질문을 야기하며, 이는 오늘날 예술·사회·과학계 전반의 거대 담론으로 부상하고 있다. 이러한 질문들은 미학적 혁신, 예술적·기술적 연구개발, 그리고 사회적 책임감을 결합하는 예술 제작의 출발점이 된다.\n\n공동의 로드맵과 프로젝트 컨셉은 두 차례의 대면 컨셉 워크숍을 통해 구체화된다. 각 도시에서는 크리에이티브 코딩 및 공연예술, 과학 및 시민사회, 연극 프로듀싱 및 지속가능성 분야의 지역·국가 전문가들을 초청해 자문을 구하고, 다른 문화적 배경을 가진 상대 국가의 같은 분야 전문가들을 온라인으로 연결해 다각도의 논의를 펼친다.\n\n공연예술, 시민사회, 과학, 지속가능성 분야의 지역 전문가들을 컨셉 개발 단계부터 적극적으로 참여시킴으로써, 양측의 파트너십을 위한 단단한 기초를 다지는 동시에 예술적 탁월함과 지속 가능한 실천이 구체적인 사회적 영향력으로 이어질 수 있는 공명의 장을 마련하고자 한다.",
-      "en": ""
+      "en": "Aesth:ethics is a collaboration between the Academy for Theatre and Digitality in Dortmund and Producer Group DOT in Seoul. 2026 is a year of research, in which a roadmap of collaboration and a concise concept for a future programme of theatre performances are developed.\n\nThe programme addresses pressing social issues in the global field of technological innovation — in particular artificial intelligence, its use and its ethical implications. The rapid development of artificial intelligence raises questions about power and democracy, war and surveillance, robotics and biotechnology, which have become focal points of global discourse in the arts, society and the sciences. They form the starting point for artistic productions that combine aesthetic innovation with artistic and technical research and development, and with social responsibility.\n\nThe roadmap and the concept are developed primarily in two onsite concept workshops. In each city, regional and national experts are brought in as advisors from three fields — creative coding and performing arts; science and civil society; theatre producing and sustainability — while experts from the same fields in the other cultural context join online.\n\nBy actively involving regional experts from the performing arts, civil society, science and sustainability from the concept stage onward, the project builds a solid foundation for the partnership and, at the same time, a resonance space in which artistic excellence and sustainable action can have a concrete social impact."
     },
     "venue": {
       "ko": "",
@@ -1804,6 +1886,7 @@
     },
     "accordions": [
       {
+        "id": "info",
         "title": {
           "ko": "정보",
           "en": "Info"
@@ -1815,15 +1898,19 @@
           },
           {
             "ko": "1차 워크숍 · 2026. 5. 3 – 9, 도르트문트",
-            "en": "3–9 May 2026, Dortmund"
+            "en": "First workshop · 3–9 May 2026, Dortmund"
           },
           {
             "ko": "2차 워크숍 · 2026. 9. 29 – 10. 3, 서울",
-            "en": "29 Sep – 3 Oct 2026, Seoul"
+            "en": "Second workshop · 29 Sep – 3 Oct 2026, Seoul"
           },
           {
             "ko": "워크숍 외 실무 회의는 모두 온라인",
-            "en": "All other working meetings online"
+            "en": "All other working meetings take place online"
+          },
+          {
+            "ko": "코어 프로젝트팀 · 도트 3인 + 아카데미 3인",
+            "en": "Core project team · three members each from DOT and the Academy"
           },
           {
             "ko": "자문 분야 · 크리에이티브 코딩·공연예술 / 과학·시민사회 / 연극 프로듀싱·지속가능성",
@@ -1832,6 +1919,22 @@
         ]
       },
       {
+        "id": "sustainability",
+        "title": {
+          "ko": "지속가능한 협업",
+          "en": "Sustainable collaboration"
+        },
+        "paragraphs": {
+          "ko": [
+            "생태적 책임을 협업의 조건으로 둔다. 채식 케이터링, 이동과 숙박·워크숍에서 발생하는 탄소의 상쇄(Gold Standard), 에너지 효율이 높은 로컬 AI 모델의 사용을 원칙으로 한다. 두 차례의 대면 워크숍이 신뢰의 바탕을 만들고, 그 밖의 모든 회의는 온라인으로 진행한다."
+          ],
+          "en": [
+            "Ecological responsibility is treated as a condition of the collaboration: vegetarian catering, CO₂ compensation for travel, accommodation and workshops through Gold Standard projects, and the use of energy-efficient, local AI models. Two onsite workshops create the personal ground for trust; all further meetings take place online."
+          ]
+        }
+      },
+      {
+        "id": "links",
         "title": {
           "ko": "링크",
           "en": "Links"
@@ -2300,11 +2403,11 @@
     "status": "ongoing",
     "lead": {
       "ko": "아시아에서 일하는 독립 프로듀서들이 동료로서 서로를 잇기 위해 만든 수평적 네트워크.",
-      "en": ""
+      "en": "A peer-to-peer network built by independent producers working across Asia."
     },
     "body": {
       "ko": "아시아 프로듀서 플랫폼(APP)은 2014년, 아시아의 연대를 만들고 프로듀서의 창의성을 탐구하며 시장 중심을 벗어난 아시아의 예술적 담론을 만들어 낼 수 있는 플랫폼을 위해 아시아 각지에서 활동하는 소수의 독립 프로듀서들이 만든 동료 간 네트워크다. 우정과 유기적 멘토십, 수평적 구조를 가장 중요한 원칙으로 삼았고, 아시아 지역을 가로질러 협업할 수 있는 프로듀서들의 촘촘한 연결망을 만드는 것이 목표였다.\n\n2014년부터 APP는 대표 프로그램인 APP 캠프를 매년 열어오고 있다. APP 캠프는 참가자들이 공연예술계 네트워크를 만들고, 프로듀싱을 하나의 창작 실천으로 탐구하며, 문화를 가로지르는 프로듀싱 방법론을 공유하고, 기존과는 다른 예술 리더십의 관점과 방법론을 길러내는 장으로 기획되었다.\n\nAPP는 창립 이후 지금까지 느슨한 구조를 유지하고 있다. 아시아 각지의 APP 멤버들로 이루어진 기획팀이 자원활동으로 운영을 맡고, 어느 한 나라에 본부를 두지 않으며, 캠프는 매번 프로젝트 단위의 지원으로 꾸려진다.\n\n한국에서는 프로듀서그룹 도트의 박지선 프로듀서와 아시아나우의 최석규 프로듀서가 초기 창립멤버이자 기획위원으로 활동했으며, 도트가 1회 APP 캠프의 기획과 운영을 맡았다.",
-      "en": ""
+      "en": "The Asian Producers' Platform (APP) is a peer-to-peer network founded in 2014 by a small group of independent producers working across Asia, with the goal of creating a strongly linked network of producers who could collaborate across the region. It set out to build solidarity in Asia, to explore the creativity of the producer, and to open a space for artistic discourse beyond the logic of the market. Friendship, organic mentorship and horizontal structure were held as its most important principles.\n\nSince 2014 APP has run its flagship programme, APP Camp, every year. The camp was conceived as an opportunity for participants to develop industry networks, to explore producing as a creative practice, to build intercultural producing skills, and to foster alternative perspectives and methodologies of arts leadership.\n\nAPP has kept a loose structure since its founding. A planning team of APP members from across Asia runs it on a voluntary basis, it keeps no headquarters in any one country, and each camp is assembled through project-based funding. The first four camps, from 2014 to 2017, were supported as a public-private partnership between Korea, Taiwan, Japan and Australia; from 2018 APP moved toward a more responsive model, holding the camp in a wider range of countries across Asia.\n\nIn Korea, Park Jisun of Producer Group DOT and Choi Seokkyu of AsiaNow took part as founding members and members of the steering committee, and DOT planned and ran one edition of APP Camp."
     },
     "venue": {
       "ko": "",
@@ -2336,8 +2439,14 @@
           "ko": [
             "APP 캠프는 아시아·태평양에서 살고 일하는 공연예술 프로듀서들이 아시아의 여러 도시를 찾아가, 그곳의 문화적 맥락을 현지 실천가들에게 직접 배우는 프로그램이다. 2014년 이후 200명이 넘는 신진·중견 프로듀서가 말레이시아, 태국, 홍콩, 인도네시아, 호주, 대만, 일본, 한국에서 열린 집중 캠프를 거쳐 갔다.",
             "현장 방문, 강연, 토론, 리서치, 공연 관람, 동료 간 교류로 짜인 프로그램을 통해 참가자들은 지역 예술 생태계를 이해하고, 예술가와 프로듀서가 놓인 사회적·정치적·문화적 지형을 함께 읽는다. 그리고 그 지역의 동료들과 만나고, 나누고, 먹는다."
+          ],
+          "en": [
+            "APP Camp, the platform's annual flagship programme, offers performing arts producers living and working in the Asia-Pacific the opportunity to visit different cities in Asia and learn about specific cultural contexts directly from local practitioners.",
+            "Since 2014 it has brought together more than two hundred emerging and established producers through a series of intensive camps in Malaysia, Thailand, Hong Kong and the Greater Bay Area, Indonesia, Australia, Taiwan, Japan and Korea. A varied programme of site visits, lectures, discussions, research, performances and peer exchange lets participants build an understanding of local arts ecosystems.",
+            "Through peer-to-peer learning, participants come to read the social, political and cultural landscape in which artists and producers work — meeting, exchanging and eating with fellow producers from across the region."
           ]
-        }
+        },
+        "id": "app-camp"
       },
       {
         "title": {
@@ -2367,7 +2476,7 @@
           },
           {
             "ko": "2019 · 홍콩, 마카오, 광저우",
-            "en": "2019 · Hong Kong, Macau, Guangzhou"
+            "en": "2019 · Hong Kong and the Greater Bay Area"
           },
           {
             "ko": "2020–2022 · 팬데믹으로 대면 활동 중단, 온라인 프로그램 진행",
@@ -2385,7 +2494,8 @@
             "ko": "2025 · 대만 타이둥, 일본 오키나와",
             "en": "2025 · Taitung, Taiwan and Okinawa, Japan"
           }
-        ]
+        ],
+        "id": "camp-history"
       },
       {
         "title": {
@@ -2403,7 +2513,8 @@
             "en": "Instagram",
             "url": "https://www.instagram.com/asianproducersplatform"
           }
-        ]
+        ],
+        "id": "links"
       }
     ],
     "cover": "img/works/app/01.jpg",
