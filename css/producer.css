@@ -27,25 +27,66 @@
   align-items:start;
   padding:56px var(--pad) 44px;
 }
-/* 얼굴 사진 원. 이 페이지의 주인공은 색면과 글이라 사진은 크게 두지 않는다. */
-.pface{
+/* ---------- 두 개의 원 ----------
+   얼굴 원과 '좋아하는 것' 원. 작은 원은 오른쪽 아래로 걸쳐 나오므로
+   묶음의 레이아웃 상자는 얼굴 원 크기 그대로 두고, 삐져나오는 만큼만 아래 여백으로 갚는다.
+   마우스는 묶음이 받는다 — 두 원이 함께 커지고 함께 컬러로 풀린다. */
+.pfaces{
+  --pfav: calc(var(--pface) * .62);      /* 작은 원 지름 = 인물 원의 0.62배 */
+  --pfav-out: calc(var(--pface) * .273); /* 아래로 삐져나오는 길이 */
+  position:relative;
   display:block;
   width:var(--pface);
-  aspect-ratio:1/1;
-  border-radius:50%;
-  overflow:hidden;
-  margin-bottom:30px;        /* 원이 커진 만큼 아래 간격도 함께 벌린다 */
+  height:var(--pface);
+  margin-bottom:calc(var(--pfav-out) + 24px);
   transition:transform .45s var(--ease);
 }
-.pface .cover{
+.pfaces:hover{ transform:scale(1.045) }
+.pfaces:hover .cover{ filter:none }
+.pfaces:empty{ display:none }            /* 사진이 하나도 없으면 자리도 남기지 않는다 */
+
+/* 사진이 없어 작은 원만 남는 경우엔 아래 여백이 필요 없다. */
+.pfaces:not(:has(.pface)){ height:var(--pfav); margin-bottom:30px }
+
+.pface{
+  display:block;
+  width:100%; height:100%;
+  border-radius:50%;
+  overflow:hidden;
+}
+.pfaces .cover{
   width:100%; height:100%;
   object-fit:cover;
   display:block;
   filter:grayscale(1) contrast(1.04);
   transition:filter .45s;
 }
-.pface:hover{ transform:scale(1.045) }
-.pface:hover .cover{ filter:none }
+
+/* 작은 원 — 45° 아래 오른쪽. 두 원의 중심 거리를 반지름의 합보다
+   작은 원 지름의 25%만큼 짧게 두어 그만큼 겹치게 한다.
+   0.653 = (R + r − 0.25·2r) ÷ √2 를 인물 원 지름으로 환산한 값이다. */
+.pfav{
+  position:absolute;
+  left:calc(var(--pface) * .653);
+  top: calc(var(--pface) * .653);
+  width:var(--pfav); height:var(--pfav);
+  border-radius:50%;
+  overflow:hidden;
+  z-index:1;                              /* 작은 원이 위에 온다 */
+
+  /* 겹치는 경계에 페이지 바탕색 테두리. 색값을 여기 적지 않는다 —
+     --field-bg 는 js/ui.js 가 producers.json 의 면 색에서 만든다(함정 4). */
+  box-shadow:0 0 0 3px var(--field-bg, var(--cream));
+}
+
+/* 사진 크레딧 — 두 원 아래 한 줄. 원의 라벨이 아니라 사진의 출처다. */
+/* .pfaces 의 아래 여백이 이미 삐져나온 작은 원만큼 잡혀 있으므로
+   여기서는 자리를 옮기지 않는다 — 크레딧은 작은 원 바로 아래에 놓인다. */
+.phead .credit{
+  margin-bottom:20px;
+  opacity:.55;
+  line-height:1.4;
+}
 
 .phead .tagline{
   font-size:clamp(15px,1.4vw,18px);
@@ -117,7 +158,8 @@
   .frame{ justify-self:start; max-width:150px }
   /* 좁은 화면에서는 원이 폭을 너무 차지하지 않게 한 단계 낮춘다. */
   .producer-page{ --pface: 155px }
-  .pface{ margin-bottom:24px }
+  /* 비율은 --pface 에서 파생되므로 모바일에서도 그대로 따라온다. 여백만 줄인다. */
+  .pfaces{ margin-bottom:calc(var(--pfav-out) + 18px) }
   .phead-role{ margin-bottom:18px }
   .pbody{
     grid-template-columns:1fr;

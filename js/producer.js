@@ -6,13 +6,27 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
-  topBar, footer, pageUrl, link, categoryBadge, photo, faceCandidates,
+  topBar, footer, pageUrl, link, categoryBadge, photo, faceCandidates, creditLine,
 } from './ui.js';
 
 /** 최근 것이 위로. works.html 과 같은 기준. */
 const byRecency = (a, b) => (b.yearFrom || 0) - (a.yearFrom || 0);
 
 /* ---------- 머리 ---------- */
+
+/* '좋아하는 것' 원. 선택 필드다 — favorite 이 없는 사람에게는 원을 만들지 않는다.
+   화면에 글자는 두지 않고 alt 로만 남긴다(스크린리더가 읽는다). */
+function favoriteCircle(person) {
+  const f = person.favorite;
+  if (!f?.image) return null;
+
+  const box = el('span.pfav');
+  const img = el('img.cover', { src: f.image, alt: t(f.alt) || '', loading: 'lazy' });
+  /* 파일이 아직 없으면 빈 원을 남기지 않는다. */
+  img.addEventListener('error', () => box.remove());
+  box.append(img);
+  return box;
+}
 
 function head(person) {
   const ill = person.illustration;
@@ -39,13 +53,22 @@ function head(person) {
     return box;
   })();
 
+  /* 얼굴 원과 '좋아하는 것' 원을 한 덩어리로 묶는다 —
+     마우스를 올리면 두 원이 함께 컬러로 풀린다(CSS 가 이 묶음에 걸려 있다). */
+  const faces = el('span.pfaces', null, faceCircle, favoriteCircle(person));
+
+  /* 그 사진의 촬영자·제공자. 규칙은 예술가·작업 사진과 같은 것을 쓴다(ui.js).
+     크레딧이 없으면 줄도 생기지 않는다. */
+  const faceCredit = person.favorite?.image ? creditLine(person.favorite) : null;
+
   return el(
     'header.phead',
     null,
     el(
       'div.phead-l',
       null,
-      faceCircle,
+      faces,
+      faceCredit,
       el('span.phead-role', null, el(`i.dot.dot-${person.id}`), el('span.meta', { text: t(person.role) })),
       el('h1', { text: t(person.name) }),
       person.name.en ? el('p.roman', { text: person.name.en }) : null,

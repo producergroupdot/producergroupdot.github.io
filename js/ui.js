@@ -175,7 +175,9 @@ export function injectProducerColors(producers) {
       `--p-${p.id}-on:${c.on}`
     );
     rules.push(
-      `.field-${p.id}{background:var(--p-${p.id}-field);color:var(--p-${p.id}-on)}`,
+      /* --field-bg 는 그 면 위에 얹히는 조각이 '바탕색과 같은 테두리'를 그릴 때 쓴다
+         (프로듀서 페이지의 겹친 두 원). 배경값을 CSS 에 다시 적지 않기 위한 것. */
+      `.field-${p.id}{background:var(--p-${p.id}-field);color:var(--p-${p.id}-on);--field-bg:var(--p-${p.id}-field)}`,
       /* 점은 면 색을 그대로 쓰고 얇은 잉크 테두리로 크림 위에서도 보이게 한다.
          진한 짝(dot)은 글자에만 쓴다 — 점에 쓰면 노랑이 올리브로 보인다. */
       `.dot-${p.id}{background:var(--p-${p.id}-point);box-shadow:inset 0 0 0 .5px var(--dot-edge)}`,
