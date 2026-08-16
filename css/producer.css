@@ -79,15 +79,6 @@
   box-shadow:0 0 0 3px var(--field-bg, var(--cream));
 }
 
-/* 사진 크레딧 — 두 원 아래 한 줄. 원의 라벨이 아니라 사진의 출처다. */
-/* .pfaces 의 아래 여백이 이미 삐져나온 작은 원만큼 잡혀 있으므로
-   여기서는 자리를 옮기지 않는다 — 크레딧은 작은 원 바로 아래에 놓인다. */
-.phead .credit{
-  margin-bottom:20px;
-  opacity:.55;
-  line-height:1.4;
-}
-
 .phead .tagline{
   font-size:clamp(15px,1.4vw,18px);
   line-height:1.5;

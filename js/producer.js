@@ -6,7 +6,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
-  topBar, footer, pageUrl, link, categoryBadge, photo, faceCandidates, creditLine,
+  topBar, footer, pageUrl, link, categoryBadge, photo, faceCandidates,
 } from './ui.js';
 
 /** 최근 것이 위로. works.html 과 같은 기준. */
@@ -57,10 +57,6 @@ function head(person) {
      마우스를 올리면 두 원이 함께 컬러로 풀린다(CSS 가 이 묶음에 걸려 있다). */
   const faces = el('span.pfaces', null, faceCircle, favoriteCircle(person));
 
-  /* 그 사진의 촬영자·제공자. 규칙은 예술가·작업 사진과 같은 것을 쓴다(ui.js).
-     크레딧이 없으면 줄도 생기지 않는다. */
-  const faceCredit = person.favorite?.image ? creditLine(person.favorite) : null;
-
   return el(
     'header.phead',
     null,
@@ -68,7 +64,6 @@ function head(person) {
       'div.phead-l',
       null,
       faces,
-      faceCredit,
       el('span.phead-role', null, el(`i.dot.dot-${person.id}`), el('span.meta', { text: t(person.role) })),
       el('h1', { text: t(person.name) }),
       person.name.en ? el('p.roman', { text: person.name.en }) : null,

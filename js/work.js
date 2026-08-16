@@ -567,8 +567,13 @@ async function main() {
     /* gallery 값이 있으면 장수·비율을 보지 않고 슬라이드로 간다.
        표지도 슬라이드의 첫 장으로 들어간다 — 오른쪽 열에 사진 자리는 하나뿐이다. */
     if (work.gallery === 'sequence') {
-      media.append(slideshow([work.cover, ...(work.galleryImages || [])]));
-      return;
+      const files = [...new Set([work.cover, ...(work.galleryImages || [])].filter(Boolean))];
+      /* 넘길 것이 한 장뿐이면 슬라이드를 만들지 않는다 —
+         화살표가 둘 다 꺼진 채 '1 / 1' 만 남으면 고장으로 보인다. 그냥 사진 한 장으로 둔다. */
+      if (files.length > 1) {
+        media.append(slideshow(files));
+        return;
+      }
     }
 
     const photos = await collectPhotos(work);
