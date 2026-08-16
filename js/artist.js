@@ -16,9 +16,12 @@ function head(artist, producerById) {
   if (artist.photo) circle.append(el('img', { src: artist.photo, alt: '' }));
   else circle.append(el('b', { text: titleText(t(artist.name)).slice(0, 2) }));
 
-  /* 사진에는 촬영자 크레딧이 따라붙는다. 사진이 없으면 크레딧도 없다. */
+  /* 사진에는 촬영자 크레딧이 따라붙는다. 사진이 없으면 크레딧도 없다.
+     photoCreditShow 가 false 면 기록은 남기고 화면에만 내지 않는다 —
+     촬영자가 도트 프로듀서 본인일 때만 끈다. 없으면 표시가 기본이다. */
+  const showCredit = artist.photoCreditShow !== false;
   const credit =
-    artist.photo && t(artist.photoCredit)
+    artist.photo && showCredit && t(artist.photoCredit)
       ? el('p.credit.meta', { text: `촬영 ${t(artist.photoCredit)}` })
       : null;
 

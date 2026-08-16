@@ -151,8 +151,8 @@
   {
     "id": "untitledroad",
     "name": {
-      "ko": "무제의 길",
-      "en": "Untitled Road"
+      "ko": "무제의 길(김보람)",
+      "en": "Untitled Road (Kim Borahm)"
     },
     "field": {
       "ko": "연출 김보람",
@@ -163,8 +163,8 @@
     ],
     "since": "2014~",
     "bio": {
-      "ko": "김보람은 게임의 여러 요소를 끌어와 몰입형 게임 연극을 만듭니다. 관객이 하나의 이야기를 여러 방식으로 겪고 곱씹게 하는 작업입니다. 특히 게임이 유연하게 전환되는 성질, 그리고 그것이 연극이라는 경험을 어디까지 넓힐 수 있는지에 관심을 두고 있습니다.",
-      "en": ""
+      "ko": "김보람은 프로젝트 그룹 무제의 길의 디렉터로, 2015년부터 게임의 다양한 요소를 활용해 관객이 참여를 통해 몰입감 있는 서사를 경험하는 게임 씨어터 작품을 만들어왔다. 특히 게임이 지닌 유동적 전환의 성격과, 그것이 극장의 경험을 확장하고 풍부하게 만들 수 있는 잠재력에 깊은 관심을 두고 있다. 게임이 지닌 이러한 특성이야말로 관객을 작품에 참여시키는 강력한 힘이라고 믿는다.\n\n공간과 미디어를 아우르는 감각을 바탕으로, 보드게임과 다양한 디지털 미디어 기술을 접목해 물리적 오브제와 무대 환경이 융합된 시공간을 만든다. 관객은 이 안에서 플레이어로 직접 참여하며 작품을 경험하며, 특히 관객마다 서로 다른 의견이 드러나고 그것이 스토리를 진행시키는 방식의 작품을 만들고자 한다.\n\n코로나19 이후 생태적 공존에 대한 관심이 깊어지며 보드게임과 탐조 활동에 심취해 있고, 숲과 도시의 공존, 점차 사라져가는 환경에 대한 예술적 대응을 〈움직이는 숲〉, 〈끝의 섬 2150〉 등의 작품을 통해 모색하고 있다.",
+      "en": "Kim Borahm is the director of the project group Untitled Road, creating game theater works since 2015 that use diverse elements of games to let audiences experience immersive narratives through participation. She holds a deep interest in the fluid, transformative nature of games and their potential to expand and enrich the theatrical experience. She believes this very quality of games is what gives them their power to draw audiences into active participation.\n\nWorking with a sensibility that spans space and media, she incorporates board games and various digital media technologies to create a time-space in which physical objects and stage environments merge. Within this space, audiences participate directly as players — and she strives to create works in which each audience member's differing opinions surface and drive the story forward.\n\nSince the COVID-19 pandemic, her interest in ecological coexistence has deepened, and she has become immersed in board games and birdwatching. She continues to explore artistic responses to the coexistence of forests and cities and to environments that are gradually disappearing, pursuing this through works such as Moving a Forest and End Island 2150."
     },
     "links": [
       {
@@ -183,14 +183,15 @@
       }
     ],
     "photo": "img/artists/untitledroad.jpg",
+    "photoCredit": {
+      "ko": "박지선",
+      "en": "Park Jisun"
+    },
+    "photoCreditShow": false,
     "pos": {
       "x": "9%",
       "y": "58%",
       "d": "clamp(165px, 23vh, 220px)"
-    },
-    "photoCredit": {
-      "ko": "박지선",
-      "en": "Park Jisun"
     }
   },
   {

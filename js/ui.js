@@ -196,13 +196,14 @@ export function dots(producerIds, producerById) {
 
    칸 전체가 링크다. 안에 다른 링크를 넣지 않는다 — <a> 안에 <a> 는 안 된다.
    이메일은 About 맨 아래 Contact 블록에만 둔다. */
-export function producerTile(p, { media = null, extraClass = '', roleLang } = {}) {
+/* role: false 면 역할 라벨을 넣지 않는다 — 칸 밖에 이미 라벨이 있는 화면(홈)용. */
+export function producerTile(p, { media = null, extraClass = '', roleLang, role = true } = {}) {
   return link(
     pageUrl('producer', p.id),
     `.ptile.field-${p.id}${p.color.dark ? '.on-dark' : ''}${extraClass}`,
     { 'aria-label': t(p.name) },
     media,
-    el('span.meta.num', { text: roleLang ? t(p.role, roleLang) : t(p.role) }),
+    role ? el('span.meta.num', { text: roleLang ? t(p.role, roleLang) : t(p.role) }) : null,
     el(
       'span.ptile-name',
       null,

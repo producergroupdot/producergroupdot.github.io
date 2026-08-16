@@ -63,25 +63,34 @@ function fmtRange(from, to) {
 
 /* ---------- 모자이크 ---------- */
 
+/* 홈에서 이 칸은 어디로도 가지 않는다 — 링크가 아니라 그냥 칸이다.
+   메뉴 칸만 마우스에 반응하므로, 누를 수 있는 칸과 아닌 칸이 그 차이로 갈린다. */
 function cellLogo(producers) {
-  return link(
-    pageUrl('home'),
-    '.cell.c-cream.m-logo',
-    { 'aria-label': 'Producer Group DOT — 홈' },
-    logo(producers),
+  return el(
+    'div.cell.c-cream.m-logo',
+    null,
+    /* 점 다섯 · 워드마크 · since 2014 를 한 덩어리로 위에 붙인다. */
     el(
-      'span',
+      'div.m-brand',
       null,
-      el('span.wordmark', null, 'PRODUCER GROUP ', el('span.wordmark-light', { text: 'DOT' })),
-      el('span.sub', { text: 'since 2014' })
-    )
+      logo(producers),
+      el(
+        'span',
+        null,
+        el('span.wordmark', null, 'PRODUCER GROUP ', el('span.wordmark-light', { text: 'DOT' })),
+        el('span.sub', { text: 'since 2014' })
+      )
+    ),
+    /* 바로 아래 네 색면이 무엇인지 알리는 라벨. Works·Artists·About 과 같은 크기다. */
+    el('h2.m-plabel', { text: 'Producers' })
   );
 }
 
 /* 색면 칸은 About 과 같은 컴포넌트(ui.js 의 producerTile)를 쓴다.
    홈에서는 모서리 블롭을, About 에서는 얼굴 사진을 얹는다. */
+/* 역할 라벨('프로듀서')은 칸에 넣지 않는다 — 네 칸 위에 'Producers' 라벨이 이미 있다. */
 const cellProducer = (p, slotClass) =>
-  producerTile(p, { media: el('i.blob.blob-tr'), extraClass: `.cell.producer.${slotClass}` });
+  producerTile(p, { media: el('i.blob.blob-tr'), extraClass: `.cell.producer.${slotClass}`, role: false });
 
 function cellWorks(works) {
   const pf = works.filter((w) => w.type === 'performance').length;
