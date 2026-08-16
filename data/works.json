@@ -2412,6 +2412,7 @@
   {
     "id": "monthly-grandmothers",
     "order": 100,
+    "hideInEn": true,
     "type": "project",
     "category": {
       "ko": "둥지230",

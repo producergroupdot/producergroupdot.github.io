@@ -89,6 +89,15 @@
 }
 .dcol-text p:last-of-type{ margin-bottom:0 }
 
+/* 영문판인데 본문 번역이 아직 없을 때의 알림. 본문 맨 위. */
+.dcol-text .dtranslating{
+  margin-bottom:20px;
+  padding:8px 12px;
+  border:.5px solid var(--line);
+  opacity:.7;
+  line-height:1.5;
+}
+
 /* 작품 안의 노랫말 — 본문과 구별되게 들여쓰고 옅게.
    줄바꿈은 데이터에 적힌 그대로 살린다. 빈 줄이 연을 가른다. */
 .dcol-text .dquote{

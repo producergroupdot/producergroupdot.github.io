@@ -5,7 +5,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
-  topBar, footer, pageUrl, link, isArchive, lastYear, ARCHIVE_LABEL,
+  topBar, footer, pageUrl, link, isArchive, lastYear, ARCHIVE_LABEL, visibleWorks,
 } from './ui.js';
 
 const state = { year: 'all', form: 'all', producer: null };
@@ -197,7 +197,7 @@ async function main() {
     injectProducerColors(site.producers);
     document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'archive', site.about));
 
-    const archived = site.works.filter((w) => isArchive(w));
+    const archived = visibleWorks(site.works).filter((w) => isArchive(w));
 
     /* 표기는 고정이다. 데이터가 채워지는 동안 숫자가 들쭉날쭉하지 않게. */
     document.getElementById('a-title').textContent = ARCHIVE_LABEL;

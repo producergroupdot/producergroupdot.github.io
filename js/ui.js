@@ -1,7 +1,7 @@
 /* ui.js — 여러 화면이 함께 쓰는 조각들.
    프로듀서 색 주입 · 색점 · 로고 · 특수문자 SVG · 작은 DOM 헬퍼. */
 
-import { t } from './i18n.js';
+import { t, lang, isEn, setLang } from './i18n.js';
 
 /* ---------- DOM 헬퍼 ---------- */
 
@@ -48,7 +48,20 @@ const PAGES = {
 /** 있는 페이지면 주소를, 없으면 빈 문자열을 돌려준다. */
 export function pageUrl(kind, arg) {
   const make = PAGES[kind];
-  return make ? make(arg) : '';
+  if (!make) return '';
+  return withLang(make(arg));
+}
+
+/**
+ * 영문 화면에서는 사이트 안의 모든 링크에 ?lang=en 을 달고 다닌다.
+ * 링크 한 번에 국문으로 돌아가 버리면 토글이 있으나 마나다.
+ * 국문일 때는 아무것도 붙이지 않는다 — 국문이 기본이므로 주소가 깨끗하다.
+ */
+export function withLang(url) {
+  if (!isEn() || !url) return url;
+  const [path, hash = ''] = url.split('#');
+  const sep = path.includes('?') ? '&' : '?';
+  return `${path}${sep}lang=en${hash ? `#${hash}` : ''}`;
 }
 
 /**
@@ -230,9 +243,39 @@ export function fieldClass(producerIds) {
  * 카테고리가 아직 안 정해진 작업은 아무것도 그리지 않는다(빈 네모를 두지 않는다).
  */
 export function categoryBadge(work) {
-  const label = t(work.category);
+  const label = categoryLabel(work);
   return label ? el('span.cat.meta', { text: label }) : null;
 }
+
+/* ---------- 형식(카테고리) ----------
+   키는 데이터의 영문 이름에서 뽑는다 — 국문 표기가 바뀌어도 주소와 필터는 그대로다.
+   화면에 적는 영문 라벨만 여기서 정한다. 배지와 필터가 같은 말을 쓰게 하기 위한 것 —
+   한쪽은 'Production', 다른 쪽은 'Performance' 가 되면 같은 것인지 알 수 없다. */
+
+const CATEGORY_EN = {
+  production: 'Performance',
+  research: 'Research',
+  'network-and-conference': 'Network & Conference',
+  festival: 'Festival',
+  residency: 'Residency',
+  'doongji-230': 'Doongji230',
+};
+
+export const categoryKey = (work) =>
+  (t(work.category, 'en') || '').toLowerCase().replace(/\s+/g, '-');
+
+export const categoryLabel = (work) =>
+  isEn() ? CATEGORY_EN[categoryKey(work)] || t(work.category, 'en') : t(work.category);
+
+/** 키로 바로 영문 라벨을 얻는다(필터 버튼용). */
+export const categoryLabelByKey = (key) => CATEGORY_EN[key] || key;
+
+/* ---------- 영문판에서 감추는 작업 ----------
+   works.json 의 hideInEn 이 true 면 영문 목록 어디에도 나오지 않는다.
+   국문 목록에는 그대로 남는다. 목록을 만드는 곳은 모두 이 함수를 거친다 —
+   한 곳만 빠뜨리면 감췄다고 믿는 작업이 그 화면에만 남는다. */
+export const shownInLang = (work) => !(isEn() && work.hideInEn === true);
+export const visibleWorks = (works) => (works || []).filter(shownInLang);
 
 /* ---------- 특수문자는 폰트에 맡기지 않는다 (함정 5) ---------- */
 
@@ -397,6 +440,26 @@ const NAV = [
   ['contact', 'Contact'],
 ];
 
+/* ---------- KO / EN 토글 ----------
+   메뉴 오른쪽 끝, Contact 다음. 지금 보고 있는 쪽이 진하다.
+   버튼이지 링크가 아니다 — 어느 페이지에 있든 그 자리에 머문 채 언어만 바뀐다. */
+export function langToggle(extraClass = '') {
+  const box = el(`span.langswitch.meta${extraClass}`, { role: 'group', 'aria-label': '언어' });
+  const pick = (code, label) => {
+    const on = lang.current === code;
+    const b = el(`button.lang${on ? '.on' : ''}`, {
+      type: 'button',
+      text: label,
+      'aria-pressed': String(on),
+      lang: code,
+    });
+    if (!on) b.addEventListener('click', () => setLang(code));
+    return b;
+  };
+  box.append(pick('ko', 'KO'), el('span.lang-sep', { text: '/' }), pick('en', 'EN'));
+  return box;
+}
+
 export function topBar(producers, here, about) {
   const nav = el('nav');
   for (const [kind, label] of NAV) {
@@ -418,7 +481,7 @@ export function topBar(producers, here, about) {
     link(pageUrl('home'), '.wordmark', null, 'PRODUCER GROUP ', el('span.wordmark-light', { text: 'DOT' })),
     nav,
     el('span.spacer'),
-    el('span.meta.langswitch', { text: 'KO / EN' }),
+    langToggle(),
     burger
   );
 }
@@ -440,8 +503,11 @@ function openMenu(about, burger) {
   const socials = el('div.menu-social');
   socials.append(...socialLinks());   // 푸터와 같은 세 개
 
+  /* 모바일에서는 상단 메뉴가 햄버거 안으로 들어가므로 토글도 여기 둔다. */
+  const langs = langToggle('.menu-lang');
+
   const overlay = el('div.menu-overlay', { role: 'dialog', 'aria-modal': 'true', 'aria-label': '메뉴' },
-    close, list, socials,
+    close, list, langs, socials,
     about?.email ? el('a.menu-mail', { href: `mailto:${about.email}`, text: about.email }) : null);
 
   const shut = () => {
@@ -496,6 +562,8 @@ export function footer() {
     null,
     el('span.foot-l', null, link(pageUrl('contact'), '.meta', null, 'Contact')),
     el('span.spacer'),
+    /* 홈에는 상단 메뉴바가 없다. 푸터에 토글이 없으면 홈에서 영문으로 갈 길이 없다. */
+    langToggle('.foot-lang'),
     el('span.foot-r', null, ...socialLinks())
   );
 }

@@ -48,6 +48,16 @@ Now는 홈 하단에 있고 메뉴가 아닙니다. 둥지230은 About 안에 �
 라우팅은 해시(`#/works/sync-de-sync`) 또는 정적 HTML 파일 중 하나로.
 GitHub Pages에 올리므로 서버 라우팅은 쓸 수 없습니다.
 
+**국문이 기본, 영문은 `?lang=en`.** 주소는 국문 그대로 두고 뒤에 붙이기만 합니다
+(`works.html?lang=en`). 영문 화면에서는 사이트 안의 모든 링크에 자동으로 따라붙습니다 —
+`pageUrl()` 을 거치기 때문입니다. 링크를 직접 문자열로 쓰면 한 번에 국문으로 떨어집니다.
+
+토글은 상단 메뉴 오른쪽 끝, Contact 다음에 `KO / EN`. 홈에는 상단 메뉴가 없으므로
+푸터에, 모바일에서는 전체화면 메뉴 안에 같은 것을 둡니다(`langToggle()` 하나).
+고른 언어는 **sessionStorage** 에 남깁니다 — 탭을 닫으면 잊습니다.
+localStorage 로 남기면 몇 달 뒤 다시 온 사람이 왜 영문인지 모른 채 마주칩니다.
+첫 방문은 언제나 국문입니다.
+
 ---
 
 ## 3. 색
@@ -244,7 +254,11 @@ data/
   photos.json      file, subject, photographer{ko,en}, year, consent, isCover, caption{ko,en}
   now.json         홈 Now에 나올 작업 ID 배열. 적힌 차례대로 그린다.
 
-works.json 의 선택 필드 두 개 (없어도 됩니다)
+works.json 의 선택 필드 (없어도 됩니다)
+  hideInEn    true 면 영문판 목록 어디에도 나오지 않는다 — Works · 홈 NOW ·
+              Explore more · 아카이브. 국문 목록에는 그대로 남는다. 기본값 false.
+              (시트 '3.작업' 탭의 '영문 제외' 열 — 관리자 전용, 초록 헤더)
+              판정은 `js/ui.js` 의 shownInLang() 한 곳. 목록을 만드는 곳은 모두 그것을 거친다.
   archive     true 면 아카이브로. 없으면 Works.
   materials[] type(프로그램북·영상·자료집·사진·기사/리뷰·웹사이트·기타),
               label{ko,en}, url, public('예'·'아니오'·'확인 필요')
@@ -276,6 +290,17 @@ Works 카드와 홈 NOW 의 연도·날짜는 **전체 회차 기준**입니다(
 작품과 회차를 두 파일에 나눠 두면 한쪽만 고쳐져 반드시 어긋납니다.
 Works 카드의 연도 범위·도시, 정렬 기준(가장 최근 회차), 홈 Now 의 날짜·장소가
 모두 이 배열에서 나옵니다.
+
+**번역이 없어도 화면을 비우지 않습니다.** `en` 이 비면 `t()` 가 국문을 그대로 내보냅니다 —
+제목·부제·크레딧 모두 같은 규칙입니다. 본문이 그렇게 국문으로 떨어질 때만
+영문 화면 본문 맨 위에 한 줄 알립니다: `Korean text — English translation in progress`.
+
+**형식 라벨의 영문은 `js/ui.js` 의 CATEGORY_EN 한 곳에서 옵니다.**
+Performance · Research · Network & Conference · Festival · Residency · Doongji230.
+카드의 배지와 Works 의 필터 버튼이 그 하나를 함께 씁니다 — 한쪽은 Production,
+다른 쪽은 Performance 가 되면 같은 것인지 알 수 없습니다.
+필터는 **그 언어에 실제 항목이 있는 형식만** 보여줍니다. 눌러도 아무것도 안 나오는
+버튼은 고장으로 보입니다.
 
 **국문/영문은 처음부터 `{ko, en}` 객체로.** 나중에 붙이면 전부 다시 손대야 합니다.
 `en` 이 비면 `ko` 를 그대로 내보내는 헬퍼 하나(`t(field, lang)`)를 만들고 전부 그걸 거칩니다.

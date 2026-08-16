@@ -5,6 +5,7 @@ import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   logo, footer, pageUrl, link, photo, coverCandidates, isArchive, ARCHIVE_LABEL, producerTile,
+  shownInLang, visibleWorks,
   mergeRuns,
 } from './ui.js';
 
@@ -93,8 +94,9 @@ const cellProducer = (p, slotClass) =>
   producerTile(p, { media: el('i.blob.blob-tr'), extraClass: `.cell.producer.${slotClass}`, role: false });
 
 function cellWorks(works) {
-  const pf = works.filter((w) => w.type === 'performance').length;
-  const pj = works.filter((w) => w.type === 'project').length;
+  const shown = visibleWorks(works);
+  const pf = shown.filter((w) => w.type === 'performance').length;
+  const pj = shown.filter((w) => w.type === 'project').length;
   /* 이 칸만 바깥이 링크가 아니다 — 안에 '공연'·'프로젝트' 두 링크가 있어서
      <a> 안에 <a> 가 들어가면 안 되기 때문. 제목 자체가 Works 로 가는 링크다. */
   return el(
@@ -214,6 +216,7 @@ function nowItems(site, today = new Date()) {
     const w = workById.get(id);
     if (!w) return; // 없는 id 는 조용히 건너뛴다
     if (isArchive(w)) return; // 아카이브로 넘어간 작업은 Now 에 두지 않는다
+    if (!shownInLang(w)) return; // 영문판에서 감춘 작업(hideInEn)
 
     /* 회차는 이제 작품 안에 있다(works.json 의 runs). */
     const rs = (w.runs || [])

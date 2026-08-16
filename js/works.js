@@ -2,28 +2,39 @@
    전체/공연/프로젝트 토글과 프로듀서 색점 필터는 동시에 걸린다. */
 
 import { loadSite } from './data.js';
-import { t } from './i18n.js';
+import { t, isEn } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, isTempFile, categoryBadge,
   latestRun, yearSpan, runCities, isArchive, ARCHIVE_LABEL,
+  categoryKey, categoryLabelByKey, visibleWorks,
 } from './ui.js';
 
 /* 상단 필터. 카테고리(일의 종류)로 거른다.
    data 의 type(공연/프로젝트)은 홈의 개수 표시에 쓰이므로 그대로 남아 있다. */
 const CATEGORIES = [
-  { key: 'all', label: '전체', en: '' },
-  { key: 'production', label: '공연', en: 'Production' },
-  { key: 'research', label: '리서치', en: 'Research' },
-  { key: 'network-and-conference', label: '네트워크·컨퍼런스', en: 'Network and Conference' },
-  { key: 'festival', label: '축제', en: 'Festival' },
-  { key: 'residency', label: '레지던시', en: 'Residency' },
-  { key: 'doongji-230', label: '둥지230', en: 'Doongji 230' },
+  { key: 'all', label: '전체', en: 'All' },
+  { key: 'production', label: '공연' },
+  { key: 'research', label: '리서치' },
+  { key: 'network-and-conference', label: '네트워크·컨퍼런스' },
+  { key: 'festival', label: '축제' },
+  { key: 'residency', label: '레지던시' },
+  { key: 'doongji-230', label: '둥지230' },
 ];
 
-/** 영문 이름을 키로 삼는다 — 국문 표기가 바뀌어도 주소와 필터는 그대로다. */
-const categoryKey = (work) =>
-  (t(work.category, 'en') || '').toLowerCase().replace(/\s+/g, '-');
+/* 영문 라벨은 ui.js 한 곳에서 온다 — 카드의 배지와 같은 말을 쓰게 하기 위해서. */
+const catLabel = (cat) =>
+  isEn() ? (cat.key === 'all' ? 'All' : categoryLabelByKey(cat.key)) : cat.label;
+
+/**
+ * 그 언어에 실제로 항목이 있는 형식만 남긴다.
+ * 영문판에서 월간 할머니들이 빠지면 '둥지230' 에 남는 것이 없으므로 버튼도 사라진다 —
+ * 눌러도 아무것도 안 나오는 버튼은 고장으로 보인다.
+ */
+const usedCategories = (works) => {
+  const keys = new Set(works.filter((w) => !isArchive(w)).map(categoryKey));
+  return CATEGORIES.filter((c) => c.key === 'all' || keys.has(c.key));
+};
 
 const typeLabel = (w) => (w.type === 'performance' ? 'Production' : 'Project');
 
@@ -74,7 +85,7 @@ function writeQuery() {
 /* 카테고리 필터와 프로듀서 색점 필터는 동시에 걸린다.
    아카이브로 넘어간 작업은 여기 나오지 않는다(판정은 ui.js 의 isArchive 한 곳에서). */
 const filtered = (works) =>
-  works
+  visibleWorks(works)
     .filter((w) => !isArchive(w))
     .filter(
       (w) =>
@@ -147,8 +158,8 @@ function card(work, i, producerById) {
 
 function buildFilters(site, rerender) {
   const seg = el('span.seg', { role: 'group', 'aria-label': '카테고리' });
-  for (const cat of CATEGORIES) {
-    const b = el('button', { type: 'button', text: cat.label, 'data-category': cat.key });
+  for (const cat of usedCategories(visibleWorks(site.works))) {
+    const b = el('button', { type: 'button', text: catLabel(cat), 'data-category': cat.key });
     b.addEventListener('click', () => {
       state.category = cat.key;
       rerender();
@@ -193,7 +204,7 @@ function syncFilterUI({ seg, pdots }) {
 /* ---------- 그리기 ---------- */
 
 function render(site, ui) {
-  const current = site.works.filter((w) => !isArchive(w));
+  const current = visibleWorks(site.works).filter((w) => !isArchive(w));
   const list = filtered(site.works);
 
   syncFilterUI(ui);
@@ -221,6 +232,11 @@ async function main() {
     document.getElementById('works-footer').replaceChildren(footer());
 
     readQuery();
+    /* 국문에서 복사한 주소를 영문으로 열면 없는 형식이 걸려 목록이 비어 보인다.
+       그 언어에 없는 형식이면 전체로 되돌린다. */
+    if (!usedCategories(visibleWorks(site.works)).some((c) => c.key === state.category)) {
+      state.category = 'all';
+    }
     const ui = buildFilters(site, () => render(site, ui));
     render(site, ui);
 

@@ -4,11 +4,11 @@
    빈 껍데기를 남기지 않고 통째로 빠진다. */
 
 import { loadSite } from './data.js';
-import { t, lang } from './i18n.js';
+import { t, lang, isFallback } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, categoryBadge,
-  latestRun, yearSpan, creditLine,
+  latestRun, yearSpan, creditLine, visibleWorks,
 } from './ui.js';
 
 const MORE = 4; //  Explore more 카드 수
@@ -305,6 +305,13 @@ function textCol(work) {
   if (!lead && !body && !acc) return null;
 
   const box = el('div.dcol-text');
+
+  /* 영문을 청했는데 본문 영문이 없어 국문이 그대로 나오는 경우.
+     번역이 없다고 화면을 비우지 않는다 — 대신 무엇을 보고 있는지 한 줄로 알린다. */
+  if (isFallback(work.body)) {
+    box.append(el('p.dtranslating.meta', { text: 'Korean text — English translation in progress' }));
+  }
+
   if (lead) box.append(el('p.lead', { text: lead }));
   if (body) {
     for (const para of body.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean)) {
@@ -504,7 +511,8 @@ function slideshow(files) {
 /* ---------- Explore more ---------- */
 
 function more(work, works, producerById) {
-  const others = works.filter((w) => w.id !== work.id);
+  /* 영문판에서 감춘 작업은 Explore more 에도 나오지 않는다. */
+  const others = visibleWorks(works).filter((w) => w.id !== work.id);
   const byNew = [...others].sort((a, b) => latestRun(b).localeCompare(latestRun(a)));
   const same = byNew.filter((w) => t(w.category, 'en') === t(work.category, 'en') && t(work.category, 'en'));
 
