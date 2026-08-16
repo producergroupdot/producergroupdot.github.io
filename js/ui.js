@@ -322,6 +322,32 @@ export const faceCandidates = (p, where) => {
   return shuffle(list);
 };
 
+/* ---------- 사진 크레딧 ----------
+   예술가 사진과 작업 사진이 같은 규칙을 쓴다 — 두 벌을 두면 한쪽만 고쳐진다.
+
+   유형은 creditType 이 정한다: '촬영' · '제공'.
+   적혀 있지 않으면 앞말을 붙이지 않고 이름만 적는다 —
+   'ⓒJisun' 처럼 표기가 이미 문자열 안에 있는 경우다('촬영 ⓒJisun' 이 되면 안 된다). */
+
+const CREDIT_TYPE = {
+  촬영: { ko: '촬영', en: 'Photo' },
+  제공: { ko: '제공', en: 'Courtesy' },
+};
+
+/**
+ * 크레딧 한 줄. 없으면 null 이라 자리도 생기지 않는다.
+ *   photoCreditShow: false  → 기록은 남기고 화면에만 내지 않는다
+ *   note                    → 크레딧이 없을 때 그 자리에 사유를 적는다(교체 예정 임시 사진)
+ */
+export function creditLine({ photoCredit, creditType, photoCreditShow, note } = {}) {
+  const who = t(photoCredit);
+  if (!who) return t(note) ? el('p.credit.meta', { text: t(note) }) : null;
+  if (photoCreditShow === false) return null;
+
+  const kind = CREDIT_TYPE[creditType];
+  return el('p.credit.meta', { text: kind ? `${t(kind)} ${who}` : who });
+}
+
 /** 파일명이 TEMP- 로 시작하면 임시 이미지다. 폴더에 넣을 때 붙이는 표시. */
 export function isTempFile(src) {
   return /(^|\/)TEMP-/.test(src || '');

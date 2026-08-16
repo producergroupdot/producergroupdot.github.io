@@ -89,6 +89,18 @@
 }
 .dcol-text p:last-of-type{ margin-bottom:0 }
 
+/* 작품 안의 노랫말 — 본문과 구별되게 들여쓰고 옅게.
+   줄바꿈은 데이터에 적힌 그대로 살린다. 빈 줄이 연을 가른다. */
+.dcol-text .dquote{
+  white-space:pre-line;
+  margin:30px 0;
+  padding-left:20px;
+  border-left:.5px solid var(--line);
+  font-size:var(--dbody);
+  line-height:1.9;
+  opacity:.62;
+}
+
 /* 본문 각주 — 낱말 하나를 풀어 주는 짧은 글. 본문보다 작고 옅게, 들여 놓는다. */
 .dcol-text .dnote{
   margin-top:22px;
@@ -159,6 +171,13 @@
   display:block;
 }
 .dvideo-cap{ padding-top:9px; opacity:.55 }
+
+/* 사진 아래 촬영자·제공자 한 줄. 사진 띠에 붙여 놓는다. */
+.dcol-media .credit{
+  margin-top:-14px;          /* 열의 gap(26px) 을 줄여 바로 아래에 붙인다 */
+  opacity:.5;
+  line-height:1.4;
+}
 
 /* 사진은 어느 패턴이든 자르지 않는다. */
 .dcol-media img.cover{

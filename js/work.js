@@ -8,7 +8,7 @@ import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, categoryBadge,
-  latestRun, yearSpan,
+  latestRun, yearSpan, creditLine,
 } from './ui.js';
 
 const MORE = 4; //  Explore more 카드 수
@@ -311,6 +311,10 @@ function textCol(work) {
       box.append(el('p', null, titleNodes(para)));   // 본문의 {hex} 도 SVG 육각형으로
     }
   }
+  /* 작품 안의 노랫말·대사. 본문이 아니므로 들여쓰고 옅게, 줄바꿈을 그대로 살린다
+     (CSS 의 white-space:pre-line). 행을 다시 흘리면 노랫말이 아니게 된다. */
+  if (t(work.quote)) box.append(el('p.dquote', { text: t(work.quote) }));
+
   /* 본문 각주. 낱말 하나를 풀어 주는 짧은 글이라 본문보다 작게, 바로 아래에 둔다.
      Works 카드의 '확인 필요' 표시(note)와는 다른 필드다(bodyNote). */
   if (t(work.bodyNote)) box.append(el('p.dnote.meta', { text: t(work.bodyNote) }));
@@ -333,13 +337,18 @@ function textCol(work) {
 const PHOTO_MAX = 12; //  img/works/<id>/01.jpg … 12.jpg 까지 찾아본다
 const MANY_PORTRAITS = 5; //  세로가 이만큼 넘게 모이면 3열로 좁힌다
 
+/* 폴더에 파일만 넣으면 뜨는 것이 기본이다(01.jpg … 12.jpg).
+   photos 배열을 적으면 그 목록만 쓴다 — 파일 이름이 다른 형식이거나
+   폴더에 있는 것 중 일부만 걸고 싶을 때. 표지는 늘 맨 앞이다. */
 const photoCandidates = (w) => {
-  const list = [
-    w.cover,
-    ...Array.from({ length: PHOTO_MAX }, (_, i) => `img/works/${w.id}/${nn(i + 1)}.jpg`),
-    `img/works/${w.id}/poster.jpg`,
-  ].filter(Boolean);
-  return [...new Set(list)];
+  const list = w.photos?.length
+    ? [w.cover, ...w.photos]
+    : [
+        w.cover,
+        ...Array.from({ length: PHOTO_MAX }, (_, i) => `img/works/${w.id}/${nn(i + 1)}.jpg`),
+        `img/works/${w.id}/poster.jpg`,
+      ];
+  return [...new Set(list.filter(Boolean))];
 };
 
 /** 가로 w/h > 1.2 · 세로 < 0.85 · 그 사이는 정사각 */
@@ -382,6 +391,15 @@ function shot(p, cls = '', eager = false) {
   fig.append(el('img.cover', { src: p.src, alt: '', loading: eager ? 'eager' : 'lazy' }));
   return fig;
 }
+
+/* 작업 사진의 촬영자·제공자. works.json 의 note 는 '확인 필요' 표시라 여기 넘기지 않는다 —
+   넘기면 크레딧 자리에 그 글자가 찍힌다. */
+const workCredit = (work) =>
+  creditLine({
+    photoCredit: work.photoCredit,
+    creditType: work.creditType,
+    photoCreditShow: work.photoCreditShow,
+  });
 
 /** 표지가 하나도 없을 때의 색면. Works 카드와 같은 규칙. */
 const colourBlock = (work) =>
@@ -549,6 +567,8 @@ async function main() {
     media.append(
       photos.length ? photoArea(photos, plan(photos)) : el('figure.dshot', null, colourBlock(work))
     );
+    /* 사진 아래에 촬영자·제공자를 적는다. 예술가 사진과 같은 규칙(ui.js). */
+    if (photos.length) media.append(workCredit(work));
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(

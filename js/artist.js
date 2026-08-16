@@ -5,7 +5,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
-  topBar, footer, pageUrl, link, categoryBadge,
+  topBar, footer, pageUrl, link, categoryBadge, creditLine,
 } from './ui.js';
 
 const byRecency = (a, b) => (b.yearFrom || 0) - (a.yearFrom || 0);
@@ -16,14 +16,8 @@ function head(artist, producerById) {
   if (artist.photo) circle.append(el('img', { src: artist.photo, alt: '' }));
   else circle.append(el('b', { text: titleText(t(artist.name)).slice(0, 2) }));
 
-  /* 사진에는 촬영자 크레딧이 따라붙는다. 사진이 없으면 크레딧도 없다.
-     photoCreditShow 가 false 면 기록은 남기고 화면에만 내지 않는다 —
-     촬영자가 도트 프로듀서 본인일 때만 끈다. 없으면 표시가 기본이다. */
-  const showCredit = artist.photoCreditShow !== false;
-  const credit =
-    artist.photo && showCredit && t(artist.photoCredit)
-      ? el('p.credit.meta', { text: `촬영 ${t(artist.photoCredit)}` })
-      : null;
+  /* 크레딧 규칙은 ui.js 한 곳에 있다 — 작업 사진과 같은 규칙을 쓴다. */
+  const credit = artist.photo ? creditLine(artist) : null;
 
   return el(
     'header.ahead',

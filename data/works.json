@@ -773,6 +773,10 @@
       }
     ],
     "cover": "img/works/on-the-birds-day/01.jpg",
+    "photoCredit": {
+      "ko": "ⓒJisun",
+      "en": "ⓒJisun"
+    },
     "homePhotos": {
       "mosaic-tall": "img/home/on-the-birds-day-vertical.jpg"
     },
@@ -983,11 +987,15 @@
       }
     },
     "cover": "img/works/energy/01.jpg",
+    "photoCredit": {
+      "ko": "ⓒJisun",
+      "en": "ⓒJisun"
+    },
     "homeFeature": []
   },
   {
     "id": "moving-a-forest",
-    "order": 7,
+    "order": 700,
     "type": "performance",
     "category": {
       "ko": "공연",
@@ -998,8 +1006,8 @@
       "en": "Moving a Forest"
     },
     "subtitle": {
-      "ko": "",
-      "en": ""
+      "ko": "씨어터게임",
+      "en": "Theater Game"
     },
     "artist": {
       "ko": "무제의 길",
@@ -1014,14 +1022,106 @@
     ],
     "year": "2022–",
     "yearFrom": 2022,
-    "runs": [],
-    "status": "done",
+    "runs": [
+      {
+        "start": "2027-01-24",
+        "end": "2027-01-27",
+        "city": {
+          "ko": "캐나다 밴쿠버",
+          "en": "Vancouver, Canada"
+        },
+        "venue": {
+          "ko": "푸시 국제공연예술축제",
+          "en": "PuSh International Performing Arts Festival"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "",
+          "en": ""
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2024-10-01",
+        "end": "2024-10-01",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "서울국제공연예술제",
+          "en": "SPAF"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "제작",
+          "en": "Production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "움직이는 숲_보드게임 : 기후변화 워크숍",
+          "en": "Moving a Forest board game — climate change workshop"
+        }
+      },
+      {
+        "start": "2022-10-28",
+        "end": "2022-10-30",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "대학로예술극장 소극장",
+          "en": "Daehakro Arts Theatre, Small Hall"
+        },
+        "kind": {
+          "ko": "초연",
+          "en": "Premiere"
+        },
+        "premiere": true,
+        "dotRole": {
+          "ko": "제작",
+          "en": "Production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "2022 서울국제공연예술제",
+          "en": "SPAF 2022"
+        }
+      }
+    ],
+    "status": "upcoming",
     "lead": {
-      "ko": "",
+      "ko": "무대에서 진행되는 기후위기 보드게임, 당신의 선택이 숲의 미래를 좌우한다.",
       "en": ""
     },
     "body": {
-      "ko": "",
+      "ko": "미래의 숲을 위해 당신은 어디까지 할 수 있을까? 〈움직이는 숲〉은 기후변화로 미래를 위협받는 숲을 이동시키는 것이 가능한지를 알아보기 위해 만들어진 관객 참여형 씨어터게임 공연이다. 절멸에 놓인 숲을 살리기 위한 보드게임으로 2020년에 만들어졌고, 1년간의 베타 테스트를 거쳐 블랙박스에서 공연으로 진행된다.\n\n나무를 살려야 한다. 숲이 언제 없어질지 모르는 상황에 놓여 있기 때문이다. 스위스 취리히의 크라우더 연구소에 따르면 현재 나무가 자신의 환경을 유지하기 위해서는 일 년에 6.4km씩 북쪽으로 이동해야 한다고 한다. 하지만 지구에 나무가 살 수 있는 곳은 그리 많이 남아 있지 않다. 인간이 대부분의 땅을 차지하고 있기 때문이다.\n\n나무가 절멸하면 인류가 위험에 처한다고? 기후위기로 인해 발생하는 여러 재앙 앞에서도 인류는 여전히 발전이라는 사이클에 익숙해져 있고, 그것이 무너지면 세상이 무너질 것이라고 믿는 사람들로 가득하다. 관객은 이런 상황 속에서 숲을 살리기 위한 연구를 진행 중인 미래자원본부 소속 생태연구소를 방문하게 된다. 연구소의 초보 연구원으로 당신을 초대한다.\n\n어떤 미래가 진정 우리와 지구를 위한 미래일까? 관객에 의해 숲의 미래가 결정되고, 공연은 관객의 선택에 따라 매회 다른 결론을 맞이하게 될 것이다.",
       "en": ""
     },
     "venue": {
@@ -1032,6 +1132,10 @@
       "ko": "",
       "en": ""
     },
+    "dotRole": {
+      "ko": "제작",
+      "en": "Production"
+    },
     "commission": {
       "ko": "",
       "en": ""
@@ -1040,7 +1144,133 @@
       "ko": "",
       "en": ""
     },
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "러닝타임 · 120분",
+            "en": "Running time · 120 min"
+          },
+          {
+            "ko": "제작 · 무제의 길, 프로듀서그룹 도트",
+            "en": "Produced by Untitled Road, Producer Group DOT"
+          },
+          {
+            "ko": "협력 · 예술텃밭 예술가 레지던시 – 기후변화",
+            "en": "In cooperation with Arts Farm Tutbat Artist Residency – Climate Change"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "지속가능한 제작",
+          "en": "Sustainable production"
+        },
+        "paragraphs": {
+          "ko": [
+            "초연에서는 LED 조명만을 사용했고, 전체 조명의 60%는 다른 공연을 위해 제작했던 조명을 재사용했다."
+          ]
+        },
+        "rows": [
+          {
+            "ko": "봄작가겨울무대 〈향수〉 · 연출 신동인 · 대학로예술극장 소극장 · 2017. 11. 9 – 11"
+          },
+          {
+            "ko": "프로젝트 클라우드나인 〈당신의 이름은 무엇입니까?〉 · 안무 김성민 · 마포아트센터 아트홀맥 · 2018. 12. 12 – 13"
+          },
+          {
+            "ko": "NPB DANCE COMPANY 〈MAN TO MAN〉 · 안무 박상준, 김수한 · 대학로예술극장 소극장 · 2019. 7. 27 – 28"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "구성·작·연출 · 김보람",
+            "en": "Concept, Text & Direction · Kim Borahm"
+          },
+          {
+            "ko": "크리에이티브 프로듀서 · 박지선",
+            "en": "Creative Producer · Park Jisun"
+          },
+          {
+            "ko": "제작 프로듀서 · 최봉민",
+            "en": "Production Producer · Choi Bongmin"
+          },
+          {
+            "ko": "조명감독 · 탁형선",
+            "en": "Lighting Designer · Tak Hyungsun"
+          },
+          {
+            "ko": "조명크루 · 이상민",
+            "en": "Lighting Crew · Lee Sangmin"
+          },
+          {
+            "ko": "무대디자인 · 김혜원",
+            "en": "Set Designer · Kim Hyewon"
+          },
+          {
+            "ko": "사운드디자인 · 지미세르",
+            "en": "Sound Designer · Jimmy Sert"
+          },
+          {
+            "ko": "음향 오퍼레이터 · 이윤경",
+            "en": "Sound Operator · Lee Yunkyung"
+          },
+          {
+            "ko": "웹 · 임오성(Re-Look)",
+            "en": "Web · Lim Oseong (Re-Look)"
+          },
+          {
+            "ko": "무대감독 · 정찬미",
+            "en": "Stage Manager · Jung Chanmi"
+          },
+          {
+            "ko": "배우 · 김준우, 박선희, 서지우, 서현성",
+            "en": "Performers · Kim Junwoo, Park Sunhee, Seo Jiwoo, Seo Hyunsung"
+          },
+          {
+            "ko": "목소리 녹음 · 김유진",
+            "en": "Voice Recording · Kim Yujin"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "SPAF 2022 프로그램",
+            "en": "SPAF 2022 programme",
+            "url": "http://spaf.or.kr/2022/program/program_view16.php"
+          }
+        ]
+      }
+    ],
+    "video": {
+      "url": "https://youtu.be/V4MFIskJq4o",
+      "embedId": "V4MFIskJq4o",
+      "label": {
+        "ko": "공연 트레일러",
+        "en": "Trailer"
+      }
+    },
     "cover": "img/works/moving-a-forest/01.jpg",
+    "photoCredit": {
+      "ko": "2022 SPAF · ⓒSang Hoon Ok",
+      "en": "2022 SPAF · ⓒSang Hoon Ok"
+    },
+    "creditType": "촬영",
     "homePhotos": {
       "mosaic-wide-b": "img/home/moving-a-forest-panorama.jpg"
     },
@@ -1168,12 +1398,12 @@
       "ko": "관객참여, 이머시브, 국제투어",
       "en": ""
     },
+    "cover": "",
+    "homeFeature": [],
     "note": {
       "ko": "초안 — 확인 필요",
       "en": ""
-    },
-    "cover": "",
-    "homeFeature": []
+    }
   },
   {
     "id": "ganghwa",
@@ -1220,6 +1450,10 @@
       "ko": "",
       "en": ""
     },
+    "dotRole": {
+      "ko": "기획",
+      "en": "Organiser"
+    },
     "commission": {
       "ko": "",
       "en": ""
@@ -1227,18 +1461,6 @@
     "keywords": {
       "ko": "",
       "en": ""
-    },
-    "cover": "img/works/ganghwa/01.jpg",
-    "homePhotos": {
-      "mosaic-wide-a": "img/home/ganghwa-panorama.jpg"
-    },
-    "homeFeature": [
-      "mosaic-wide-a",
-      "band-1"
-    ],
-    "dotRole": {
-      "ko": "기획",
-      "en": "Organiser"
     },
     "accordions": [
       {
@@ -1333,7 +1555,15 @@
         "en": "2025 Research trailer"
       },
       "url": "https://www.youtube.com/watch?v=fffQOEcYuRs"
-    }
+    },
+    "cover": "img/works/ganghwa/01.jpg",
+    "homePhotos": {
+      "mosaic-wide-a": "img/home/ganghwa-panorama.jpg"
+    },
+    "homeFeature": [
+      "mosaic-wide-a",
+      "band-1"
+    ]
   },
   {
     "id": "tnn",
@@ -1619,6 +1849,301 @@
     "homeFeature": []
   },
   {
+    "id": "ghost-theater",
+    "order": 1150,
+    "type": "performance",
+    "category": {
+      "ko": "공연",
+      "en": "Production"
+    },
+    "title": {
+      "ko": "유령극단 ‘심각한 밤을 보내리’",
+      "en": "Ghost Theater ‘We will Have a Serious Night’"
+    },
+    "subtitle": {
+      "ko": "",
+      "en": ""
+    },
+    "artist": {
+      "ko": "권병준",
+      "en": "Kwon Byungjun"
+    },
+    "artists": [
+      "kwon"
+    ],
+    "producers": [
+      "jisun",
+      "bongmin"
+    ],
+    "year": "2021–22",
+    "yearFrom": 2021,
+    "runs": [
+      {
+        "start": "2022-10-01",
+        "end": "2022-10-03",
+        "city": {
+          "ko": "충남 홍성",
+          "en": "Hongseong, Chungnam"
+        },
+        "venue": {
+          "ko": "홍동저수지",
+          "en": "Hongdong Reservoir"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "협력",
+          "en": "In cooperation"
+        },
+        "link": "",
+        "time": "17:30 / 18:00",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "주최·주관 권병준",
+          "en": "Presented by Kwon Byungjun"
+        }
+      },
+      {
+        "start": "2021-10-21",
+        "end": "2021-10-24",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "남산골한옥마을",
+          "en": "Namsangol Hanok Village"
+        },
+        "kind": {
+          "ko": "초연",
+          "en": "Premiere"
+        },
+        "premiere": true,
+        "dotRole": {
+          "ko": "제작",
+          "en": "Production"
+        },
+        "link": "",
+        "time": "18:30 / 20:30",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "2021 서울국제공연예술제 초청공연",
+          "en": "SPAF 2021"
+        }
+      }
+    ],
+    "status": "done",
+    "lead": {
+      "ko": "위치인식 헤드폰을 끼고 어둠 속을 걸으며, 보이지 않는 존재들의 이야기를 듣는다.",
+      "en": ""
+    },
+    "body": {
+      "ko": "〈유령극단 '심각한 밤을 보내리'〉는 장소특정적 소리를 전달하는 위치인식 헤드폰을 이용하여 보이지 않는 존재들의 이야기를 찾아가는 관객 참여, 이동형 공연이다. 관객은 어둠이 짙어질 무렵 현실에서 과거 또는 미래의 시간으로 여정을 떠난다.\n\n존재했었던, 존재하게 될 것들과 사람들의 목소리는 은밀한 속삭임이 되어 관객을 이끈다. 어둠 속 시간의 길을 따라 밤의 산책을 한 관객은 오래된 한옥에 자리를 잡고 있는 유령인지, 미래의 환영인지 알 수 없는 로봇들과 마주하며 그들의 사연을 듣는다.\n\n작품은 ASMR과 바이노럴 기술을 이용해 몰입감 있는 청취가 가능한 헤드폰으로 소리를 통한 관객의 경험을 확장시키며, 인간 공연자가 아닌 로봇을 전면으로 등장시켜 메카니컬 씨어터의 경험을 제시한다.",
+      "en": ""
+    },
+    "quote": {
+      "ko": "달을 품어서 너는 희망을 말하지만\n허무한 바람뿐이야\n멀리 있어서 나는 니 맘을 모르지만\n그냥 바라볼 뿐이야\n\n밤의 끝에\n밤의 끝에\n이 밤의 끝에\n\n심각한 밤을 보내리"
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "제작",
+      "en": "Production"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "크레딧 · 2021 남산골한옥마을",
+          "en": "Credits · 2021 Namsangol"
+        },
+        "rows": [
+          {
+            "ko": "콘셉트·연출·사운드·기술 총감독 · 권병준",
+            "en": "Concept, Direction, Sound & Technology Director · Kwon Byungjun"
+          },
+          {
+            "ko": "작가 · 권병준 with AI",
+            "en": "Text · Kwon Byungjun with AI"
+          },
+          {
+            "ko": "기술감독 · 백주홍",
+            "en": "Technical Director · Baek Juhong"
+          },
+          {
+            "ko": "조연출 · 조웅철",
+            "en": "Assistant Director · Cho Woongchul"
+          },
+          {
+            "ko": "조명디자인 · 신동선",
+            "en": "Lighting Designer · Shin Dongsun"
+          },
+          {
+            "ko": "조명오퍼레이터 · 홍주희",
+            "en": "Lighting Operator · Hong Juhee"
+          },
+          {
+            "ko": "기술지원 · 오의진, 윤종선, 조수아",
+            "en": "Technical Support · Oh Uijin, Yoon Jongsun, Cho Sua"
+          },
+          {
+            "ko": "녹음 및 편집 · 김근채(펑크타이어 스튜디오)",
+            "en": "Recording & Editing · Kim Geunchae (Punk Tire Studio)"
+          },
+          {
+            "ko": "사진기록 · 전병철",
+            "en": "Photography · Jeon Byungchul"
+          },
+          {
+            "ko": "영상기록 · 장지남",
+            "en": "Video · Jang Jinam"
+          },
+          {
+            "ko": "프로듀서 · 박지선, 최봉민(프로듀서그룹 도트)",
+            "en": "Producers · Park Jisun, Choi Bongmin (Producer Group DOT)"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧 · 2022 홍동저수지",
+          "en": "Credits · 2022 Hongdong Reservoir"
+        },
+        "rows": [
+          {
+            "ko": "콘셉트·연출·사운드·기술 총감독 · 권병준",
+            "en": "Concept, Direction, Sound & Technology Director · Kwon Byungjun"
+          },
+          {
+            "ko": "작가 · 권병준 with AI",
+            "en": "Text · Kwon Byungjun with AI"
+          },
+          {
+            "ko": "기술제작감독 · 백주홍",
+            "en": "Technical Production Director · Baek Juhong"
+          },
+          {
+            "ko": "크리에이티브팀 · 곽소민, 김진석, 최한빈, 허효선",
+            "en": "Creative Team · Kwak Somin, Kim Jinseok, Choi Hanbin, Heo Hyoseon"
+          },
+          {
+            "ko": "현장진행 · 김세빈, 김수빈, 김영수, 김한결, 명다솔, 오선재, 장유리, 한의진",
+            "en": "Site Crew"
+          },
+          {
+            "ko": "영상기록·드론촬영 · 이성환(STUDIO AA)",
+            "en": "Video & Drone · Lee Sunghwan (STUDIO AA)"
+          },
+          {
+            "ko": "사진기록 · 박용선",
+            "en": "Photography · Park Yongsun"
+          },
+          {
+            "ko": "프로듀서 · 박지선, 최봉민(프로듀서그룹 도트)",
+            "en": "Producers · Park Jisun, Choi Bongmin (Producer Group DOT)"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "목소리 출연",
+          "en": "Voices"
+        },
+        "rows": [
+          {
+            "ko": "권병준, 박선희, 박현지, 성수연, 우범진, 이경구, 이성한, 조웅철"
+          },
+          {
+            "ko": "어린이 · 박준우, 박해빈"
+          },
+          {
+            "ko": "특별 출연 · 유진규"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "지원",
+          "en": "Support"
+        },
+        "rows": [
+          {
+            "ko": "2022 홍동저수지 · 한국문화예술위원회 2022년 문예진흥기금 예술과기술융합지원사업"
+          },
+          {
+            "ko": "후원 · 한국문화예술위원회, 오누이친환경마을협동조합, (사)홍동밝맑도서관 평민마을학교"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "트레일러 · 남산골한옥마을",
+            "en": "Trailer · Namsangol",
+            "url": "https://drive.google.com/file/d/17y0hALWwmj2jlmhYSpvDqe0vtlq3Z61_/view"
+          }
+        ]
+      }
+    ],
+    "video": {
+      "url": "https://youtu.be/2PyjYaCejlY",
+      "embedId": "2PyjYaCejlY",
+      "label": {
+        "ko": "2022 홍동저수지 기록 영상",
+        "en": "2022 Hongdong Reservoir"
+      }
+    },
+    "cover": "img/works/ghost-theater/ghost-theater-01.jpg",
+    "photos": [
+      "img/works/ghost-theater/ghost-theater-01.jpg",
+      "img/works/ghost-theater/ghost-theater-02.jpg",
+      "img/works/ghost-theater/ghost-theater-03.jpg",
+      "img/works/ghost-theater/ghost-theater-04.jpg",
+      "img/works/ghost-theater/ghost-theater-05.jpg",
+      "img/works/ghost-theater/ghost-theater-06.jpg",
+      "img/works/ghost-theater/ghost-theater-07.jpg",
+      "img/works/ghost-theater/ghost-theater-08.jpg",
+      "img/works/ghost-theater/ghost-theater-09.jpg",
+      "img/works/ghost-theater/ghost-theater-10.jpg",
+      "img/works/ghost-theater/ghost-theater-11.jpg",
+      "img/works/ghost-theater/ghost-theater-12.jpg",
+      "img/works/ghost-theater/ghost-theater-13.jpg",
+      "img/works/ghost-theater/ghost-theater-14.jpg",
+      "img/works/ghost-theater/ghost-theater-15.jpg",
+      "img/works/ghost-theater/ghost-theater-16.jpg"
+    ],
+    "photoCredit": {
+      "ko": "ⓒJisun",
+      "en": "ⓒJisun"
+    },
+    "homeFeature": []
+  },
+  {
     "id": "climate-residency",
     "order": 1200,
     "type": "project",
@@ -1738,7 +2263,11 @@
       }
     ],
     "cover": "img/works/climate-residency/2020/01.jpg",
-    "homeFeature": []
+    "homeFeature": [],
+    "photoCredit": {
+      "ko": "사진 제공 : 기후변화레지던시",
+      "en": "Courtesy of Climate Change Artist Residency"
+    }
   },
   {
     "id": "app",
@@ -2076,6 +2605,10 @@
       "ko": "극단 호랑이기운 × 프로듀서그룹 도트",
       "en": "Tiger Energy Theatre Company × Producer Group DOT"
     },
+    "dotRole": {
+      "ko": "기획",
+      "en": "Organiser"
+    },
     "commission": {
       "ko": "",
       "en": ""
@@ -2084,11 +2617,12 @@
       "ko": "여성 노년, 신작 희곡, 낭독",
       "en": ""
     },
+    "cover": "img/works/monthly-grandmothers/01.jpg",
+    "homeFeature": [],
     "note": {
       "ko": "초안 — 확인 필요",
       "en": ""
     },
-    "cover": "img/works/monthly-grandmothers/01.jpg",
     "gallery": "sequence",
     "galleryImages": [
       "img/works/monthly-grandmothers/03.jpg",
@@ -2099,11 +2633,6 @@
       "img/works/monthly-grandmothers/08.jpg",
       "img/works/monthly-grandmothers/09.jpg"
     ],
-    "homeFeature": [],
-    "dotRole": {
-      "ko": "기획",
-      "en": "Organiser"
-    },
     "credits": [
       {
         "role": {
@@ -2226,6 +2755,16 @@
       "ko": "",
       "en": ""
     },
+    "video": {
+      "embedId": "xT6UPz-JlE8",
+      "label": {
+        "ko": "기록 영상",
+        "en": "Documentation"
+      },
+      "url": "https://youtu.be/xT6UPz-JlE8"
+    },
+    "cover": "img/works/connected-city/connected-city-01.jpg",
+    "homeFeature": [],
     "credits": [
       {
         "role": {
@@ -2297,16 +2836,6 @@
         "url": "",
         "public": "확인 필요"
       }
-    ],
-    "cover": "img/works/connected-city/connected-city-01.jpg",
-    "video": {
-      "embedId": "xT6UPz-JlE8",
-      "label": {
-        "ko": "기록 영상",
-        "en": "Documentation"
-      },
-      "url": "https://youtu.be/xT6UPz-JlE8"
-    },
-    "homeFeature": []
+    ]
   }
 ]

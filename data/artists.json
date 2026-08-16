@@ -34,14 +34,15 @@
       }
     ],
     "photo": "img/artists/hwang.jpg",
+    "photoCredit": {
+      "ko": "박지선",
+      "en": "Park Jisun"
+    },
+    "creditType": "촬영",
     "pos": {
       "x": "2%",
       "y": "0%",
       "d": "clamp(150px, 20vh, 190px)"
-    },
-    "photoCredit": {
-      "ko": "박지선",
-      "en": "Park Jisun"
     }
   },
   {
@@ -62,16 +63,16 @@
     },
     "links": [],
     "photo": "img/artists/TEMP-ambiguous.jpg",
+    "note": {
+      "ko": "교체 예정 임시 사진 — 촬영자 미표기",
+      "en": "Temporary image, to be replaced"
+    },
     "pos": {
       "x": "29%",
       "y": "40%",
       "d": "clamp(160px, 22vh, 210px)"
     },
-    "photoTemp": true,
-    "photoCredit": {
-      "ko": "박지선",
-      "en": "Park Jisun"
-    }
+    "photoTemp": true
   },
   {
     "id": "kwon",
@@ -142,6 +143,7 @@
       "ko": "JD Woo / SPAF",
       "en": "JD Woo / SPAF"
     },
+    "creditType": "촬영",
     "pos": {
       "x": "70%",
       "y": "3%",
@@ -184,10 +186,10 @@
     ],
     "photo": "img/artists/untitledroad.jpg",
     "photoCredit": {
-      "ko": "박지선",
-      "en": "Park Jisun"
+      "ko": "김보람",
+      "en": "Kim Borahm"
     },
-    "photoCreditShow": false,
+    "creditType": "제공",
     "pos": {
       "x": "9%",
       "y": "58%",
