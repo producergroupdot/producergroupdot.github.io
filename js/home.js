@@ -5,6 +5,7 @@ import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   logo, footer, pageUrl, link, photo, coverCandidates, isArchive, ARCHIVE_LABEL, producerTile,
+  langToggle,
   shownInLang, visibleWorks,
   mergeRuns,
 } from './ui.js';
@@ -70,6 +71,10 @@ function cellLogo(producers) {
   return el(
     'div.cell.c-cream.m-logo',
     null,
+    /* 홈에는 상단 메뉴가 없다. 언어 전환은 이 칸의 오른쪽 위 모서리,
+       점 다섯과 같은 높이에 둔다 — 크림 색면 안이라 잘 읽힌다.
+       사진 칸 위에는 얹지 않는다(사진마다 밝기가 달라 글자가 묻힌다). */
+    langToggle('.m-lang'),
     /* 점 다섯 · 워드마크 · since 2014 를 한 덩어리로 위에 붙인다. */
     el(
       'div.m-brand',

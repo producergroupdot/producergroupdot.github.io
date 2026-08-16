@@ -469,7 +469,9 @@ export function langToggle(extraClass = '') {
       'aria-pressed': String(on),
       lang: code,
     });
-    if (!on) b.addEventListener('click', () => setLang(code));
+    /* 둘 다 누를 수 있다. 지금 언어를 눌러도 setLang 이 알아서 아무 일도 하지 않는다 —
+       한쪽만 눌리면 '이건 버튼이 아닌가' 하고 다른 곳을 찾게 된다. */
+    b.addEventListener('click', () => setLang(code));
     return b;
   };
   box.append(pick('ko', 'KO'), el('span.lang-sep', { text: '/' }), pick('en', 'EN'));
@@ -519,11 +521,11 @@ function openMenu(about, burger) {
   const socials = el('div.menu-social');
   socials.append(...socialLinks());   // 푸터와 같은 세 개
 
-  /* 모바일에서는 상단 메뉴가 햄버거 안으로 들어가므로 토글도 여기 둔다. */
+  /* 모바일에서는 상단 메뉴가 햄버거 안으로 들어가므로 토글도 여기 둔다 — 맨 위. */
   const langs = langToggle('.menu-lang');
 
   const overlay = el('div.menu-overlay', { role: 'dialog', 'aria-modal': 'true', 'aria-label': '메뉴' },
-    close, list, langs, socials,
+    close, langs, list, socials,
     about?.email ? el('a.menu-mail', { href: `mailto:${about.email}`, text: about.email }) : null);
 
   const shut = () => {
@@ -578,8 +580,6 @@ export function footer() {
     null,
     el('span.foot-l', null, link(pageUrl('contact'), '.meta', null, 'Contact')),
     el('span.spacer'),
-    /* 홈에는 상단 메뉴바가 없다. 푸터에 토글이 없으면 홈에서 영문으로 갈 길이 없다. */
-    langToggle('.foot-lang'),
     el('span.foot-r', null, ...socialLinks())
   );
 }

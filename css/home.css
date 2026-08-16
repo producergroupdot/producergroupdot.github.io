@@ -87,6 +87,14 @@
   flex-direction:column;
   gap:16px;                 /* 점과 워드마크 사이 — 한 덩어리로 읽히도록 좁게 */
 }
+/* 언어 전환 — 칸의 오른쪽 위 모서리. 점 다섯과 같은 높이에 오도록
+   칸 안쪽 여백(20px)에 맞춘다. 어느 화면에서든 스크롤 없이 보인다. */
+.m-lang{
+  position:absolute;
+  top:20px;
+  right:var(--pad);
+  z-index:2;
+}
 .m-logo .wordmark{ font-size:clamp(14.5px,1.45vw,21px) }   /* 메뉴 제목의 0.85배 */
 .m-logo .sub{ margin-top:5px }
 

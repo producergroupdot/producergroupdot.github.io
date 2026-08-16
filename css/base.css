@@ -304,8 +304,15 @@ footer{
 .sico{ display:inline-flex; align-items:center; opacity:.55; transition:opacity .2s }
 .sico:hover{ opacity:1 }
 /* ---------- KO / EN 토글 ---------- */
-/* 지금 보고 있는 쪽이 진하다. 다른 쪽만 누를 수 있다. */
-.langswitch{ display:inline-flex; align-items:center; gap:5px }
+/* 메뉴 오른쪽 끝. 메뉴 항목보다 조금 작고 옅게, 앞에 세로 구분선 하나 —
+   길을 고르는 메뉴가 아니라 화면의 설정이라는 것이 보이게. */
+.langswitch{ display:inline-flex; align-items:center; gap:5px; font-size:10.5px }
+.bar .langswitch{
+  padding-left:16px;
+  margin-left:2px;
+  border-left:.5px solid var(--line);
+  opacity:.85;
+}
 .langswitch .lang{
   background:none; border:none; padding:0;
   font:inherit; color:inherit;
@@ -313,8 +320,8 @@ footer{
   cursor:pointer;
   transition:opacity .15s;
 }
-.langswitch .lang.on{ opacity:1; cursor:default }
-.langswitch .lang:not(.on):hover,
+.langswitch .lang.on{ opacity:1 }          /* 지금 언어 — 진하게. 누르는 것은 둘 다 된다 */
+.langswitch .lang:hover,
 .langswitch .lang:focus-visible{
   opacity:1;
   text-decoration:underline;
@@ -324,10 +331,8 @@ footer{
 }
 .langswitch .lang-sep{ opacity:.28 }
 
-/* 모바일 전체화면 메뉴 안에서는 항목들과 같은 여백을 쓴다. */
-.menu-lang{ margin-top:22px; font-size:14px }
-/* 홈 푸터 — 상단 메뉴가 없는 화면에서 언어를 바꿀 유일한 자리다. */
-.foot-lang{ margin-right:18px }
+/* 모바일 전체화면 메뉴에서는 맨 위, 닫기 버튼 다음. */
+.menu-lang{ margin:0 0 20px; font-size:14px; opacity:1 }
 
 .load-error{ padding:40px var(--pad); font-family:var(--mono); font-size:12px }
 
