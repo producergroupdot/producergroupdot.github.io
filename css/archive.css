@@ -69,8 +69,44 @@
 .arow summary:hover .a-title{ text-decoration:underline; text-underline-offset:3px }
 .arow-plain{ cursor:default }
 
-.arow-body{ padding:2px 0 18px }
+/* 펼친 아코디언 — 왼쪽 글, 오른쪽 이미지 한 장.
+   이미지가 없으면 왼쪽이 폭을 다 쓴다(빈 칸을 남기지 않는다). */
+.arow-body{
+  padding:2px 0 20px;
+  display:flex;
+  gap:34px;
+  align-items:flex-start;
+}
+.arow-text{ flex:1; min-width:0; max-width:64ch }
+
+.a-img{ flex:none; margin-left:auto }
+.a-img .cover{
+  height:320px;              /* 세로 이미지가 기본이라 높이로 잡는다 */
+  width:auto;
+  max-width:280px;
+  object-fit:contain;        /* 자르지 않는다 */
+  display:block;
+  cursor:zoom-in;
+}
+
 .a-run{ opacity:.6; margin-bottom:10px }
+
+/* 소개 한 문단. 400자 안팎을 전제로 한 폭이다. */
+.a-summary{
+  font-size:14.5px;
+  line-height:1.75;
+  margin-bottom:14px;
+}
+/* 본문 안에서 다른 작업으로 가는 링크 */
+.worklink{
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:.5px;
+}
+.worklink:hover{ text-decoration-thickness:1.5px }
+
+.a-info{ list-style:none; margin-bottom:12px }
+.a-info li{ padding:3px 0; font-size:14px; opacity:.8 }
 .a-mats{ list-style:none }
 .a-mats li{ padding:4px 0; font-size:14px }
 .a-mats a{ text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:.5px }
@@ -86,6 +122,11 @@
 
 /* ---------- 모바일 ---------- */
 @media (max-width:900px){
+  /* 좁은 화면에서는 글 아래로 이미지를 내린다. */
+  .arow-body{ flex-direction:column; gap:18px }
+  .a-img{ margin-left:0 }
+  .a-img .cover{ height:auto; width:100%; max-width:320px }
+
   .a-group{
     grid-template-columns:1fr;
     gap:0;

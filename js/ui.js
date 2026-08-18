@@ -304,19 +304,68 @@ function hexSvg() {
  * 제목 문자열의 {hex} 토큰을 SVG 육각형으로 바꾼 조각을 돌려준다.
  * 〈⬡⬡의 섬〉은 환경에 따라 ○○ 로 보이므로 글리프에 기대지 않는다.
  */
-export function titleNodes(str) {
+/* ---------- 원본 크기 라이트박스 ----------
+   작업 상세의 슬라이드와 아카이브의 이미지가 같은 것을 쓴다. */
+export function lightbox(src, alt) {
+  const box = el('div.lb', { role: 'dialog', 'aria-modal': 'true', 'aria-label': '원본 크기' });
+  box.append(el('img', { src, alt: alt || '' }));
+
+  const shut = () => {
+    box.remove();
+    document.body.classList.remove('lb-open');
+    document.removeEventListener('keydown', onKey);
+  };
+  const onKey = (e) => e.key === 'Escape' && shut();
+
+  box.addEventListener('click', shut);
+  document.addEventListener('keydown', onKey);
+  document.body.append(box);
+  document.body.classList.add('lb-open');
+}
+
+/* ---------- 글 안의 토큰 ----------
+   두 가지를 쓴다. 데이터에는 토큰으로 적고, 화면에 그릴 때만 풀어낸다.
+
+     {hex}                      → SVG 육각형 (폰트에 맡기면 ○ 로 보인다 · 함정 5)
+     {work:<id>|보일 이름}       → 그 작업으로 가는 링크
+
+   작업 사이를 잇는 링크는 늘 이 토큰으로 적는다. 본문에 <a> 를 직접 쓰지 않는다 —
+   주소 규칙이 바뀌면(해시 라우팅 등) 본문을 전부 고쳐야 하고, 영문판에서
+   ?lang=en 이 붙지 않아 한 번에 국문으로 떨어진다.
+   아카이브 항목과 Works 항목 사이에도 그대로 쓴다 — 둘 다 work.html 이다. */
+
+const WORK_TOKEN = /\{work:([a-z0-9-]+)\|([^}]*)\}/g;
+const ANY_TOKEN = /\{hex\}|\{work:([a-z0-9-]+)\|([^}]*)\}/g;
+
+function inlineNodes(str, { links }) {
   const frag = document.createDocumentFragment();
-  const parts = real(str).split(HEX_TOKEN);
-  parts.forEach((part, i) => {
-    if (part) frag.append(document.createTextNode(part));
-    if (i < parts.length - 1) frag.append(hexSvg());
-  });
+  const s = real(str);
+  let at = 0;
+  for (const m of s.matchAll(ANY_TOKEN)) {
+    if (m.index > at) frag.append(document.createTextNode(s.slice(at, m.index)));
+    if (m[0] === '{hex}') frag.append(hexSvg());
+    else {
+      const [, id, label] = m;
+      frag.append(
+        links ? link(pageUrl('work', id), '.worklink', null, label) : document.createTextNode(label)
+      );
+    }
+    at = m.index + m[0].length;
+  }
+  if (at < s.length) frag.append(document.createTextNode(s.slice(at)));
   return frag;
 }
 
+/** 제목·라벨용. 육각형은 그리되 링크는 걸지 않는다(제목 안의 링크는 눌리는 곳이 겹친다). */
+export const titleNodes = (str) => inlineNodes(str, { links: false });
+
+/** 본문·소개용. 작업 이름에 링크가 걸린다. */
+export const richNodes = (str) => inlineNodes(str, { links: true });
+
 /** 화면 밖(aria-label, title, alt)에서 쓸 평문. 여기서는 폰트가 관여하지 않는다. */
+/** 글자만 남긴다 — aria-label·브라우저 탭 제목처럼 태그를 넣을 수 없는 자리. */
 export function titleText(str) {
-  return real(str).replace(HEX_TOKEN, '⬡');
+  return real(str).replace(HEX_TOKEN, '⬡').replace(WORK_TOKEN, '$2');
 }
 
 /* ---------- 로고 ---------- */

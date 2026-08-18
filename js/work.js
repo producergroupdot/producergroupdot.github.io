@@ -8,7 +8,7 @@ import { t, lang, isFallback } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, categoryBadge,
-  latestRun, yearSpan, creditLine, visibleWorks, videoId, isEmbeddedVideo,
+  latestRun, yearSpan, creditLine, visibleWorks, videoId, isEmbeddedVideo, lightbox, richNodes,
 } from './ui.js';
 
 const MORE = 4; //  Explore more 카드 수
@@ -307,7 +307,7 @@ function accordions(work) {
     /* 산문은 문단으로, 목록은 줄로. ⬡ 는 SVG 로 그린다. */
     if (a.paragraphs?.length) {
       const prose = el('div.acc-prose');
-      for (const para of a.paragraphs) prose.append(el('p', null, titleNodes(para)));
+      for (const para of a.paragraphs) prose.append(el('p', null, richNodes(para)));
       det.append(prose);
     }
     if (a.rows.length) {
@@ -319,7 +319,7 @@ function accordions(work) {
             null,
             r.url
               ? el('a', { href: r.url, target: '_blank', rel: 'noopener' }, titleNodes(t(r)))
-              : el('span', null, titleNodes(t(r)))
+              : el('span', null, richNodes(t(r)))
           )
         );
       }
@@ -353,7 +353,7 @@ function textCol(work) {
   if (lead) box.append(el('p.lead', { text: lead }));
   if (body) {
     for (const para of body.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean)) {
-      box.append(el('p', null, titleNodes(para)));   // 본문의 {hex} 도 SVG 육각형으로
+      box.append(el('p', null, richNodes(para)));   // {hex} 는 SVG, {work:…} 는 링크로
     }
   }
   /* 작품 안의 노랫말·대사. 본문이 아니므로 들여쓰고 옅게, 줄바꿈을 그대로 살린다
@@ -466,22 +466,6 @@ function photoArea(photos, p) {
    gallery:"sequence" 가 이 하나를 함께 쓴다 — 두 벌을 두면 한쪽만 고쳐진다.
    어떤 경우에도 자르지 않는다(contain). */
 
-function lightbox(src, alt) {
-  const box = el('div.lb', { role: 'dialog', 'aria-modal': 'true', 'aria-label': '원본 크기' });
-  box.append(el('img', { src, alt: alt || '' }));
-
-  const shut = () => {
-    box.remove();
-    document.body.classList.remove('lb-open');
-    document.removeEventListener('keydown', onKey);
-  };
-  const onKey = (e) => e.key === 'Escape' && shut();
-
-  box.addEventListener('click', shut);
-  document.addEventListener('keydown', onKey);
-  document.body.append(box);
-  document.body.classList.add('lb-open');
-}
 
 const THUMBS_FROM = 10; //  사진이 이보다 많을 때만 아래에 썸네일 줄을 만든다
 
