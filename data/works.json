@@ -4453,5 +4453,294 @@
     ],
     "cover": "",
     "homeFeature": []
+  },
+  {
+    "id": "play-on",
+    "order": 800,
+    "form": "video",
+    "title": {
+      "ko": "Play On",
+      "en": "Play On"
+    },
+    "subtitle": {
+      "ko": "뮤직비디오",
+      "en": "Music video"
+    },
+    "artist": {
+      "ko": "브라이언 이노 · 비티 울프 · 앰비규어스댄스컴퍼니",
+      "en": "Brian Eno · Beatie Wolfe · Ambiguous Dance Company"
+    },
+    "artists": [
+      "ambiguous"
+    ],
+    "producers": [
+      "heejin"
+    ],
+    "year": "2025",
+    "yearFrom": 2025,
+    "runs": [],
+    "status": "done",
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "〈Play On〉은 브라이언 이노와 비티 울프의 2025년 공동 앨범 〈Luminal〉 수록곡을 위해 제작한 뮤직비디오다. 김보람이 안무를 맡고 장경민과 함께 출연했다.\n\n영상은 별도의 이야기를 설정하지 않는다. 두 무용수는 음악의 리듬과 여백에 반응하며 함께 움직이고, 멈추고, 서로의 거리를 바꾼다. 반복되는 동작과 작은 변화, 두 몸 사이의 관계를 통해 음악의 결을 드러낸다. 카메라는 움직임을 과장하지 않고 따라가며 음악과 춤이 만나는 시간을 담는다.",
+      "en": "Play On is a music video for a track from Brian Eno and Beatie Wolfe's 2025 collaborative album Luminal. Choreographed by Kim Boram, the video features Kim alongside Jang KyeongMin.\n\nThe film does not impose a separate narrative on the music. The two dancers respond to its rhythm and open spaces, moving together, pausing and shifting the distance between them. Repetition, subtle variation and the relationship between the two bodies bring out the texture of the sound. The camera follows the movement without embellishment, allowing music and dance to meet directly."
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "협력",
+      "en": "In cooperation"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "글로벌 협업, 음악과 움직임, 크로스미디어",
+      "en": "global collaboration, music and movement, cross-media"
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "키워드 · 글로벌 협업, 음악과 움직임, 크로스미디어",
+            "en": "Keywords · global collaboration, music and movement, cross-media"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "안무 · 김보람",
+            "en": "Choreography · Kim Boram"
+          },
+          {
+            "ko": "프로듀서 · 이희진",
+            "en": "Producer · Lee HeeJin"
+          },
+          {
+            "ko": "제작 · 앰비규어스댄스컴퍼니, 프로듀서그룹 도트",
+            "en": "Production · Ambiguous Dance Company in association with Producer Group DOT"
+          }
+        ]
+      }
+    ],
+    "cover": "",
+    "homeFeature": []
+  },
+  {
+    "id": "a-film-for-the-future",
+    "order": 850,
+    "form": "video",
+    "title": {
+      "ko": "A Film For The Future",
+      "en": "A Film For The Future"
+    },
+    "subtitle": {
+      "ko": "비주얼 필름 · 뮤직비디오 · 360도 몰입형 상영",
+      "en": "Visual film · music video · 360° immersive screening"
+    },
+    "artist": {
+      "ko": "콜드플레이 · 앰비규어스댄스컴퍼니",
+      "en": "Coldplay · Ambiguous Dance Company"
+    },
+    "artists": [
+      "ambiguous"
+    ],
+    "producers": [
+      "heejin"
+    ],
+    "year": "2025",
+    "yearFrom": 2025,
+    "runs": [],
+    "status": "done",
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "〈A Film for the Future〉는 콜드플레이의 열 번째 정규 앨범 〈Moon Music〉을 위해 제작된 44분 길이의 비주얼 필름이다. 45개국에서 모인 150여 명의 아티스트가 앨범의 일부 음원을 받아 각자의 영상을 제작했다. 공통된 형식이나 구체적인 지침은 주어지지 않았으며, 서로의 작업을 알지 못한 채 완성한 장면들이 한 편의 영화로 이어졌다.\n\n앰비규어스댄스컴퍼니는 〈GOOD FEELiNGS〉 구간을 구성하는 독립적인 장면 가운데 하나를 제작했다. 김보람이 안무를 맡고 여덟 명의 무용수가 출연했다. 군무를 중심으로 구성된 영상은 음악의 박자와 흐름을 앰비규어스 특유의 움직임으로 옮기며, 애니메이션과 실사, 실험 영상이 교차하는 전체 작품의 한 장면을 이룬다.",
+      "en": "A Film for the Future is a 44-minute visual companion to Coldplay's tenth studio album, Moon Music. More than 150 artists from 45 countries were each given excerpts from the album and invited to create their own visual responses. With no shared format or detailed brief — and no knowledge of one another's work — the independently produced pieces were assembled into a single film.\n\nAmbiguous Dance Company created one of the independent visual segments featured during GOOD FEELiNGS. Choreographed by Kim Boram and performed by eight dancers, the segment translates the pulse and flow of the music through the company's distinctive ensemble movement. It forms part of a wider work in which animation, live action and experimental film intersect."
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "협력",
+      "en": "In cooperation"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "글로벌 협업, 음악과 움직임, 크로스미디어",
+      "en": "global collaboration, music and movement, cross-media"
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "키워드 · 글로벌 협업, 음악과 움직임, 크로스미디어",
+            "en": "Keywords · global collaboration, music and movement, cross-media"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "참여 구간 · GOOD FEELiNGS",
+            "en": "Featured track · GOOD FEELiNGS"
+          },
+          {
+            "ko": "안무 · 김보람",
+            "en": "Choreography · Kim Boram"
+          },
+          {
+            "ko": "프로듀서 · 이희진",
+            "en": "Producer · Lee HeeJin"
+          },
+          {
+            "ko": "협력 · 프로듀서그룹 도트",
+            "en": "In association with Producer Group DOT"
+          },
+          {
+            "ko": "프로듀서 · Sam Seager / 공동 프로듀서 · William Nichols, Danielle Barnes",
+            "en": "Producer · Sam Seager / Co-producers · William Nichols, Danielle Barnes"
+          }
+        ]
+      }
+    ],
+    "cover": "",
+    "homeFeature": []
+  },
+  {
+    "id": "higher-power",
+    "order": 1175,
+    "form": "video",
+    "title": {
+      "ko": "Higher Power",
+      "en": "Higher Power"
+    },
+    "subtitle": {
+      "ko": "뮤직비디오 · 댄스 비디오",
+      "en": "Music video · dance video"
+    },
+    "artist": {
+      "ko": "콜드플레이 · 앰비규어스댄스컴퍼니",
+      "en": "Coldplay · Ambiguous Dance Company"
+    },
+    "artists": [
+      "ambiguous"
+    ],
+    "producers": [
+      "heejin"
+    ],
+    "year": "2021",
+    "yearFrom": 2021,
+    "runs": [],
+    "status": "done",
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "콜드플레이의 2021년 싱글 〈Higher Power〉에 앰비규어스댄스컴퍼니가 안무와 퍼포먼스로 참여한 협업 프로젝트다. 김보람이 안무를 맡았으며, 싱글 발매 영상과 2021 BRIT Awards 공연, 데이브 마이어스가 연출한 공식 뮤직비디오, 서울에서 촬영한 공식 댄스 비디오로 이어졌다.\n\n하나의 안무는 매체에 따라 다른 모습으로 구현됐다. BRIT Awards 무대에서는 앰비규어스의 움직임이 네온빛 홀로그램으로 등장했고, 공식 뮤직비디오에서는 시각효과를 통해 외계의 존재로 변환됐다. 공식 댄스 비디오는 서울의 공간을 배경으로 안무와 무용수의 움직임을 보다 직접적으로 담았다.",
+      "en": "This collaboration brought Ambiguous Dance Company's choreography and performance to Coldplay's 2021 single Higher Power. Choreographed by Kim Boram, the project unfolded across the single's launch visual, Coldplay's performance at the 2021 BRIT Awards, the official music video directed by Dave Meyers, and an official dance video filmed in Seoul.\n\nThe same choreography took a different form in each medium. At the BRIT Awards, the dancers appeared as neon-coloured holograms; in the official music video, visual effects transformed them into extraterrestrial figures. The official dance video placed the focus more directly on the choreography and the dancers' movement against the backdrop of Seoul."
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "제작",
+      "en": "Production"
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "글로벌 협업, 음악과 움직임, 크로스미디어",
+      "en": "global collaboration, music and movement, cross-media"
+    },
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "키워드 · 글로벌 협업, 음악과 움직임, 크로스미디어",
+            "en": "Keywords · global collaboration, music and movement, cross-media"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "앨범 · Music of the Spheres",
+            "en": "Album · Music of the Spheres"
+          },
+          {
+            "ko": "공식 뮤직비디오 연출 · Dave Meyers / 제작 · Freenjoy",
+            "en": "Official music video directed by Dave Meyers / Production · Freenjoy"
+          },
+          {
+            "ko": "안무 · 김보람 / 출연 · 앰비규어스댄스컴퍼니",
+            "en": "Choreography · Kim Boram / Performed by Ambiguous Dance Company"
+          },
+          {
+            "ko": "아티스트 매니지먼트 · 프로듀서그룹 도트",
+            "en": "Artist management · Producer Group DOT"
+          },
+          {
+            "ko": "공식 댄스 비디오 프로듀서 · 이희진 / 제작 · 프로듀서그룹 도트",
+            "en": "Official dance video — Producer · Lee HeeJin / Produced by Producer Group DOT"
+          }
+        ]
+      }
+    ],
+    "cover": "",
+    "homeFeature": []
   }
 ]

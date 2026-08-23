@@ -34,8 +34,10 @@ function head(work, producerById) {
       'div.dmeta',
       null,
       dots(work.producers, producerById),
+      /* 형식 배지 하나만 둔다. 공연/프로젝트 이분법은 여기 적지 않는다 —
+         형식이 여섯으로 늘어난 뒤로는 배지와 겹쳐 읽힌다([영상] 프로젝트).
+         그 이분법은 홈의 개수 표시에만 쓴다. */
       formBadge(work),
-      el('span.meta.dtype', { text: kindName(work) }),
       el('span.meta.dyear', { text: yearSpan(work) })
     ),
     el('h1', null, titleNodes(main)),

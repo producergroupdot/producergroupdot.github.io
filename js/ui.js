@@ -340,7 +340,7 @@ export function formBadge(work) {
 }
 
 /* ---------- 형식(form) ----------
-   다섯 가지뿐이고 여기서 늘리지 않는다. 국·영문 라벨이 한 표에 나란히 있어야
+   여섯 가지뿐이고 여기서 늘리지 않는다. 국·영문 라벨이 한 표에 나란히 있어야
    카드의 배지와 Works 의 필터 버튼이 같은 말을 쓴다 — 한쪽은 'Production',
    다른 쪽은 'Performance' 가 되면 같은 것인지 알 수 없다.
 
@@ -352,6 +352,7 @@ export const FORMS = [
   { key: 'network', ko: '네트워크·컨퍼런스', en: 'Network & Conference' },
   { key: 'residency', ko: '레지던시', en: 'Residency' },
   { key: 'workshop', ko: '워크숍', en: 'Workshop' },
+  { key: 'video', ko: '영상', en: 'Video' },
 ];
 
 const FORM_BY_KEY = new Map(FORMS.map((f) => [f.key, f]));
