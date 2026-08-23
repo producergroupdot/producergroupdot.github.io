@@ -333,6 +333,38 @@ function syncFilterUI(ui) {
   }
 }
 
+/* ---------- 열에 번갈아 넣기 ----------
+   목록이 가로로 읽히게 한다 — 첫 줄 왼쪽부터 1·2·3, 둘째 줄에 4·5·6.
+   CSS columns 는 한 열을 끝까지 채우고 넘어가므로 세로로 읽힌다.
+
+   열 수는 css/works.css 의 --cols 가 정한다. 여기서 중단점을 다시 적지 않는다 —
+   두 곳에 적으면 화면 폭이 바뀔 때 한쪽만 고쳐져 어긋난다. */
+
+let shown = [];          // 지금 그려져 있는 카드들. 창 크기가 바뀌면 다시 나눠 담는다.
+
+const colCount = (host) =>
+  Math.max(1, parseInt(getComputedStyle(host).getPropertyValue('--cols'), 10) || 1);
+
+function columnise(host, list) {
+  const n = colCount(host);
+  const cols = Array.from({ length: n }, () => el('div.col'));
+  list.forEach((node, i) => cols[i % n].append(node));   // 1번 1열, 2번 2열, 3번 3열, 4번 다시 1열
+  host.replaceChildren(...cols);
+  host.dataset.cols = String(n);
+}
+
+/* 열 수가 바뀔 때만 다시 담는다. 카드는 만들어 둔 것을 옮기기만 한다 —
+   새로 만들면 사진을 처음부터 다시 찾아 화면이 깜빡인다. */
+function watchColumns(host) {
+  let timer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      if (shown.length && String(colCount(host)) !== host.dataset.cols) columnise(host, shown);
+    }, 120);
+  });
+}
+
 /* ---------- 그리기 ---------- */
 
 function render(site, ui) {
@@ -343,11 +375,13 @@ function render(site, ui) {
 
   /* 무엇이 선택됐는지는 위 필터에 이미 드러나 있다. 큰 소제목으로 되풀이하지 않는다. */
   const cards = document.getElementById('works-list');
-  cards.replaceChildren(
-    ...(list.length
-      ? list.map((w, i) => card(w, i, site.producerById))
-      : [el('p.empty', { text: t(L.empty) })])
-  );
+  if (!list.length) {
+    shown = [];
+    cards.replaceChildren(el('p.empty', { text: t(L.empty) }));
+  } else {
+    shown = list.map((w, i) => card(w, i, site.producerById));
+    columnise(cards, shown);
+  }
 
   document.getElementById('works-count').textContent =
     list.length === all.length ? `${list.length}개` : `${list.length} / ${all.length}개`;
@@ -371,6 +405,7 @@ async function main() {
     }
     const ui = buildFilters(site, () => render(site, ui));
     render(site, ui);
+    watchColumns(document.getElementById('works-list'));
   } catch (err) {
     console.error(err);
     document.getElementById('works-list').append(
