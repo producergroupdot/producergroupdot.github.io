@@ -2,11 +2,7 @@
   {
     "id": "sync-de-sync",
     "order": 8,
-    "type": "performance",
-    "category": {
-      "ko": "공연",
-      "en": "Production"
-    },
+    "form": "performance",
     "title": {
       "ko": "싱크 디 싱크",
       "en": "sync de sync"
@@ -239,11 +235,7 @@
   {
     "id": "hihihistory",
     "order": 200,
-    "type": "performance",
-    "category": {
-      "ko": "공연",
-      "en": "Production"
-    },
+    "form": "performance",
     "title": {
       "ko": "히히히스토리",
       "en": "hihihistory"
@@ -449,11 +441,7 @@
   {
     "id": "gwantong-18",
     "order": 300,
-    "type": "performance",
-    "category": {
-      "ko": "공연",
-      "en": "Production"
-    },
+    "form": "performance",
     "title": {
       "ko": "관통시팔",
       "en": "GWANTONG 18"
@@ -603,11 +591,7 @@
   {
     "id": "on-the-birds-day",
     "order": 1000,
-    "type": "performance",
-    "category": {
-      "ko": "공연",
-      "en": "Production"
-    },
+    "form": "performance",
     "title": {
       "ko": "새들의 날에",
       "en": "On the Bird's Day"
@@ -821,11 +805,7 @@
   {
     "id": "energy",
     "order": 1100,
-    "type": "performance",
-    "category": {
-      "ko": "공연",
-      "en": "Production"
-    },
+    "form": "performance",
     "title": {
       "ko": "에너지 — 보이지 않는 언어",
       "en": "Energy — The Invisible Language"
@@ -1050,11 +1030,7 @@
   {
     "id": "moving-a-forest",
     "order": 700,
-    "type": "performance",
-    "category": {
-      "ko": "공연",
-      "en": "Production"
-    },
+    "form": "performance",
     "title": {
       "ko": "움직이는 숲",
       "en": "Moving a Forest"
@@ -1355,11 +1331,7 @@
   {
     "id": "mooljil",
     "order": 9,
-    "type": "performance",
-    "category": {
-      "ko": "공연",
-      "en": "Production"
-    },
+    "form": "performance",
     "title": {
       "ko": "물질",
       "en": "Mooljil"
@@ -1482,11 +1454,7 @@
   {
     "id": "ganghwa",
     "order": 400,
-    "type": "project",
-    "category": {
-      "ko": "리서치",
-      "en": "Research"
-    },
+    "form": "research",
     "title": {
       "ko": "{hex}{hex}의 섬 : 강화도",
       "en": "{hex}{hex}Island : Ganghwado"
@@ -1506,7 +1474,68 @@
     ],
     "year": "2025–26",
     "yearFrom": 2025,
-    "runs": [],
+    "runs": [
+      {
+        "start": "2025-09-01",
+        "end": "2025-09-30",
+        "city": {
+          "ko": "강화도",
+          "en": "Ganghwado"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2025.9",
+          "en": "September 2025"
+        },
+        "note": {
+          "ko": "리서치",
+          "en": "Research"
+        }
+      },
+      {
+        "start": "2026-10-25",
+        "end": "2026-11-08",
+        "city": {
+          "ko": "강화도",
+          "en": "Ganghwado"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "status": "ongoing",
     "lead": {
       "ko": "사라짐의 자리에 시적인 공간을 만든다.",
@@ -1646,11 +1675,7 @@
   {
     "id": "tnn",
     "order": 600,
-    "type": "project",
-    "category": {
-      "ko": "네트워크·컨퍼런스",
-      "en": "Network and Conference"
-    },
+    "form": "network",
     "title": {
       "ko": "TNN",
       "en": "TNN"
@@ -1671,7 +1696,38 @@
     ],
     "year": "2024–",
     "yearFrom": 2024,
-    "runs": [],
+    "runs": [
+      {
+        "start": "2026-02-01",
+        "end": "2026-02-28",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "DIA 포럼",
+          "en": "DIA Forum"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2026.2",
+          "en": "February 2026"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "status": "ongoing",
     "lead": {
       "ko": "예술은 어떻게 '정상'이라 여겨지는 것의 경계를 재설정할 수 있을까?",
@@ -1808,11 +1864,7 @@
   {
     "id": "aesthethics",
     "order": 500,
-    "type": "project",
-    "category": {
-      "ko": "리서치",
-      "en": "Research"
-    },
+    "form": "research",
     "title": {
       "ko": "Aesth:ethics",
       "en": "Aesth:ethics"
@@ -1992,11 +2044,7 @@
   {
     "id": "ghost-theater",
     "order": 1150,
-    "type": "performance",
-    "category": {
-      "ko": "공연",
-      "en": "Production"
-    },
+    "form": "performance",
     "title": {
       "ko": "유령극단 ‘심각한 밤을 보내리’",
       "en": "Ghost Theater ‘We will Have a Serious Night’"
@@ -2287,11 +2335,7 @@
   {
     "id": "climate-residency",
     "order": 1200,
-    "type": "project",
-    "category": {
-      "ko": "레지던시",
-      "en": "Residency"
-    },
+    "form": "residency",
     "title": {
       "ko": "예술텃밭 예술가 레지던시 — 기후변화",
       "en": "Artists' Residency at Arts Farm Tutbat – Climate Change"
@@ -2311,7 +2355,98 @@
     ],
     "year": "2020–2022",
     "yearFrom": 2020,
-    "runs": [],
+    "runs": [
+      {
+        "start": "2020-01-01",
+        "end": "2020-12-31",
+        "city": {
+          "ko": "화천",
+          "en": "Hwacheon"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2020",
+          "en": "2020"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "city": {
+          "ko": "화천",
+          "en": "Hwacheon"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2021",
+          "en": "2021"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "city": {
+          "ko": "화천",
+          "en": "Hwacheon"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "공동제작",
+          "en": "Co-production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2022",
+          "en": "2022"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "status": "done",
     "lead": {
       "ko": "기후변화라는 거대 담론을 삶 속에 구체화하고 예술적 실천으로 옮기는 레지던시.",
@@ -2475,12 +2610,7 @@
   {
     "id": "app",
     "order": 1300,
-    "archive": false,
-    "type": "project",
-    "category": {
-      "ko": "네트워크·컨퍼런스",
-      "en": "Network and Conference"
-    },
+    "form": "network",
     "title": {
       "ko": "아시아 프로듀서 플랫폼",
       "en": "Asian Producers' Platform"
@@ -2499,7 +2629,308 @@
     ],
     "year": "2014–",
     "yearFrom": 2014,
-    "runs": [],
+    "runs": [
+      {
+        "start": "2014-01-01",
+        "end": "2014-12-31",
+        "city": {
+          "ko": "한국 서울",
+          "en": "Seoul, Korea"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2014",
+          "en": "2014"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2015-01-01",
+        "end": "2015-12-31",
+        "city": {
+          "ko": "대만 타이베이, 이란",
+          "en": "Taipei and Yilan, Taiwan"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2015",
+          "en": "2015"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2016-01-01",
+        "end": "2016-12-31",
+        "city": {
+          "ko": "일본 도쿄, 시즈오카",
+          "en": "Tokyo and Shizuoka, Japan"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2016",
+          "en": "2016"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2017-01-01",
+        "end": "2017-12-31",
+        "city": {
+          "ko": "호주 멜버른",
+          "en": "Melbourne, Australia"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2017",
+          "en": "2017"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2018-01-01",
+        "end": "2018-12-31",
+        "city": {
+          "ko": "인도네시아 자카르타, 족자카르타",
+          "en": "Jakarta and Yogyakarta, Indonesia"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2018",
+          "en": "2018"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2019-01-01",
+        "end": "2019-12-31",
+        "city": {
+          "ko": "홍콩, 마카오, 광저우",
+          "en": "Hong Kong and the Greater Bay Area"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2019",
+          "en": "2019"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2020-01-01",
+        "end": "2022-12-31",
+        "city": {
+          "ko": "",
+          "en": ""
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2020–2022",
+          "en": "2020–2022"
+        },
+        "note": {
+          "ko": "팬데믹으로 대면 활동 중단, 온라인 프로그램 진행",
+          "en": "online programmes during the pandemic"
+        }
+      },
+      {
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "city": {
+          "ko": "태국 방콕, 치앙마이",
+          "en": "Bangkok and Chiang Mai, Thailand"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2023",
+          "en": "2023"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "city": {
+          "ko": "말레이시아 쿠알라룸푸르, 페낭",
+          "en": "Kuala Lumpur and Penang, Malaysia"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2024",
+          "en": "2024"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "city": {
+          "ko": "대만 타이둥, 일본 오키나와",
+          "en": "Taitung, Taiwan and Okinawa, Japan"
+        },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2025",
+          "en": "2025"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "status": "ongoing",
     "lead": {
       "ko": "아시아에서 일하는 독립 프로듀서들이 동료로서 서로를 잇기 위해 만든 수평적 네트워크.",
@@ -2550,55 +2981,6 @@
       },
       {
         "title": {
-          "ko": "캠프 이력",
-          "en": "Camp history"
-        },
-        "rows": [
-          {
-            "ko": "2014 · 한국 서울",
-            "en": "2014 · Seoul, Korea"
-          },
-          {
-            "ko": "2015 · 대만 타이베이, 이란",
-            "en": "2015 · Taipei and Yilan, Taiwan"
-          },
-          {
-            "ko": "2016 · 일본 도쿄, 시즈오카",
-            "en": "2016 · Tokyo and Shizuoka, Japan"
-          },
-          {
-            "ko": "2017 · 호주 멜버른",
-            "en": "2017 · Melbourne, Australia"
-          },
-          {
-            "ko": "2018 · 인도네시아 자카르타, 족자카르타",
-            "en": "2018 · Jakarta and Yogyakarta, Indonesia"
-          },
-          {
-            "ko": "2019 · 홍콩, 마카오, 광저우",
-            "en": "2019 · Hong Kong and the Greater Bay Area"
-          },
-          {
-            "ko": "2020–2022 · 팬데믹으로 대면 활동 중단, 온라인 프로그램 진행",
-            "en": "2020–2022 · online programmes during the pandemic"
-          },
-          {
-            "ko": "2023 · 태국 방콕, 치앙마이",
-            "en": "2023 · Bangkok and Chiang Mai, Thailand"
-          },
-          {
-            "ko": "2024 · 말레이시아 쿠알라룸푸르, 페낭",
-            "en": "2024 · Kuala Lumpur and Penang, Malaysia"
-          },
-          {
-            "ko": "2025 · 대만 타이둥, 일본 오키나와",
-            "en": "2025 · Taitung, Taiwan and Okinawa, Japan"
-          }
-        ],
-        "id": "camp-history"
-      },
-      {
-        "title": {
           "ko": "링크",
           "en": "Links"
         },
@@ -2624,11 +3006,7 @@
     "id": "monthly-grandmothers",
     "order": 100,
     "hideInEn": true,
-    "type": "project",
-    "category": {
-      "ko": "둥지230",
-      "en": "Doongji 230"
-    },
+    "form": "performance",
     "title": {
       "ko": "월간 할머니들",
       "en": ""
@@ -2639,7 +3017,7 @@
     },
     "artist": {
       "ko": "극단 호랑이기운",
-      "en": "Tiger Energy Theatre Company"
+      "en": "Tiger Power Theater"
     },
     "artists": [],
     "producers": [
@@ -2815,7 +3193,7 @@
     },
     "produced": {
       "ko": "극단 호랑이기운 × 프로듀서그룹 도트",
-      "en": "Tiger Energy Theatre Company × Producer Group DOT"
+      "en": "Tiger Power Theater × Producer Group DOT"
     },
     "dotRole": {
       "ko": "기획",
@@ -2881,12 +3259,7 @@
   {
     "id": "connected-city",
     "order": 2000,
-    "archive": true,
-    "type": "project",
-    "category": {
-      "ko": "축제",
-      "en": "Festival"
-    },
+    "form": "research",
     "title": {
       "ko": "커넥티드 시티",
       "en": "Connected City"
@@ -3081,12 +3454,7 @@
   {
     "id": "digital-dramaturgy",
     "order": 2100,
-    "archive": true,
-    "type": "project",
-    "category": {
-      "ko": "네트워크·컨퍼런스",
-      "en": "Network and Conference"
-    },
+    "form": "workshop",
     "title": {
       "ko": "공연예술과 디지털리티",
       "en": "Performing Arts and Digitality"
@@ -3217,6 +3585,48 @@
       }
     ],
     "cover": "img/works/digital-dramaturgy/01.jpg",
-    "homeFeature": []
+    "homeFeature": [],
+    "info": [
+      {
+        "role": {
+          "ko": "주관",
+          "en": "Hosted by"
+        },
+        "name": {
+          "ko": "예술경영지원센터 아트코리아랩",
+          "en": "Arts Korea Lab, Korea Arts Management Service (KAMS)"
+        }
+      },
+      {
+        "role": {
+          "ko": "기획·운영",
+          "en": "Planned and managed by"
+        },
+        "name": {
+          "ko": "프로듀서그룹 도트",
+          "en": "Producer Group DOT"
+        }
+      },
+      {
+        "role": {
+          "ko": "워크숍 리더",
+          "en": "Workshop leaders"
+        },
+        "name": {
+          "ko": "미하엘 아이크호프, 칼라 멜러, 박지선 외",
+          "en": "Michael Eickhoff, Carla Meller, Park Jisun and others"
+        }
+      },
+      {
+        "role": {
+          "ko": "협력",
+          "en": "In cooperation with"
+        },
+        "name": {
+          "ko": "서울국제공연예술제, 주한독일문화원, 연극과 디지털리티 아카데미",
+          "en": "SPAF, Goethe-Institut Korea, Academy for Theatre and Digitality"
+        }
+      }
+    ]
   }
 ]

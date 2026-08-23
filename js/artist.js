@@ -5,7 +5,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
-  topBar, footer, pageUrl, link, categoryBadge, creditLine,
+  topBar, footer, pageUrl, link, formBadge, creditLine,
 } from './ui.js';
 
 const byRecency = (a, b) => (b.yearFrom || 0) - (a.yearFrom || 0);
@@ -99,7 +99,7 @@ function worksBlock(artist, works) {
       link(pageUrl('work', w.id), '.wrow', { 'aria-label': titleText(t(w.title)) },
         el('span.yr.meta', { text: w.year }),
         el('span.wt', null, titleNodes(t(w.title))),
-        categoryBadge(w))));
+        formBadge(w))));
   }
   return sideBlock('함께한 작업', mine.length ? list : el('p.meta.empty', { text: '아직 없습니다.' }));
 }

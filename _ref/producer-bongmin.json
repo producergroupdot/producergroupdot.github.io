@@ -1,0 +1,34 @@
+{
+  "bongmin": {
+    "name": { "ko": "최봉민", "en": "Choi Bongmin" },
+    "role": { "ko": "프로듀서", "en": "Producer" },
+    "color": "초록",
+    "email": "producergroup.17@gmail.com",
+    "instagram": "@b.wudung",
+    "tagline": {
+      "ko": "복잡한 건 하나씩 풀고, 될 방법은 끝까지 찾는 프로듀서",
+      "en": "A producer who untangles complexity one step at a time and keeps going until things work."
+    },
+    "bio": {
+      "ko": [
+        "최봉민은 거리예술, 컨템포러리 서커스, 다원예술을 중심으로 작품 제작과 프로그램 기획, 국내외 투어를 이어온 프로듀서입니다. 작품이 만들어지고 새로운 공간과 관객을 만나기까지 필요한 사람과 제작 환경을 연결하며, 그 과정에서 생겨나는 관계가 지속될 수 있는 구조를 만듭니다.",
+        "공연예술축제를 기반으로 거리예술과 야외공연의 기획, 제작, 프로그램 운영 전반에서 전문성을 쌓아왔습니다. 춘천마임축제와 서울댄스프로젝트에서 도시와 일상의 공간을 무대로 예술가와 시민이 만나는 다양한 프로젝트를 이끌었습니다. 이후 서울거리예술창작센터에서는 서커스 프로그램을 기획하고 운영하며 국내 컨템포러리 서커스의 창작 기반을 함께 만들어갔습니다.",
+        "프로듀서그룹 도트에서는 코끼리들이 웃는다와 협업하며 작품 제작과 국내외 투어를 함께하고 있습니다. 작품의 맥락과 방향을 예술가와 함께 살피며 다양한 관객과 공간, 제작과 유통에 필요한 조건을 연결하는 일을 중요하게 생각합니다.",
+        "최근에는 서로 다른 몸과 감각, 경험을 가진 사람들이 예술 안에서 만나고 참여하는 방식을 탐구하고 있습니다. 장애예술을 통해 다양한 관객을 만나며 각자가 자신의 방식으로 작품을 경험할 수 있는 공연과 접근성 환경을 만들어가고 있습니다. 예술텃밭 기후위기 예술가 레지던시와 예술·기술 프로젝트를 통해 동시대의 질문을 구체적인 삶과 감각에 연결하고 있습니다."
+      ],
+      "en": [
+        "Choi Bongmin is a producer working across street arts, contemporary circus, and multidisciplinary arts, with a focus on producing works, developing programmes, and managing national and international tours. She connects the people and production environments that enable a work to develop and reach new spaces and audiences, creating structures that allow the relationships formed along the way to continue.",
+        "Building on her extensive experience in performing arts festivals, she has developed expertise across the planning, production, and programming of street arts and outdoor performance. Through the Chuncheon Mime Festival and Seoul Dance Project, she led projects that brought artists and citizens together in urban and everyday spaces. At the Seoul Street Arts Creation Center, she planned and managed circus programmes, contributing to the development of contemporary circus in Korea.",
+        "At Producer Group DOT, she works in collaboration with Elephants Laugh on producing works and organising tours in Korea and internationally. She values understanding each work's context and direction together with the artists, while connecting it with diverse audiences, spaces, and the conditions needed for its production and presentation.",
+        "Her recent work explores how people with different bodies, senses, and lived experiences can encounter and participate in art. Through disability arts, she develops performances and accessible environments that allow audiences to experience works in their own ways. She also connects contemporary questions with lived and sensory experience through the Climate Change Artist Residency with Arts Farm Tutbat and projects engaging with art and technology."
+      ]
+    }
+  },
+
+  "_roles_for_all_four": {
+    "jisun":  { "ko": "크리에이티브 프로듀서", "en": "Creative Producer" },
+    "heejin": { "ko": "크리에이티브 프로듀서", "en": "Creative Producer" },
+    "bongmin":{ "ko": "프로듀서", "en": "Producer" },
+    "miseon": { "ko": "프로듀서", "en": "Producer" }
+  }
+}

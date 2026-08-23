@@ -6,7 +6,7 @@ import { loadSite } from './data.js';
 import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
-  topBar, footer, pageUrl, link, categoryBadge, photo, faceCandidates,
+  topBar, footer, pageUrl, link, formBadge, photo, faceCandidates,
 } from './ui.js';
 
 /** 최근 것이 위로. works.html 과 같은 기준. */
@@ -64,9 +64,14 @@ function head(person) {
       'div.phead-l',
       null,
       faces,
-      el('span.phead-role', null, el(`i.dot.dot-${person.id}`), el('span.meta', { text: t(person.role) })),
       el('h1', { text: t(person.name) }),
       person.name.en ? el('p.roman', { text: person.name.en }) : null,
+      /* 직함은 이름 아래. 비어 있는 사람에게는 줄이 생기지 않는다. */
+      t(person.role)
+        ? el('span.phead-role', null,
+            el(`i.dot.dot-${person.id}`),
+            el('span.meta', { text: t(person.role) }))
+        : null,
       /* 한 줄 소개. 없는 사람에게는 줄이 생기지 않는다. */
       t(person.tagline) ? el('p.tagline', { text: t(person.tagline) }) : null
     ),
@@ -113,7 +118,7 @@ function worksBlock(person, works) {
           { 'aria-label': titleText(t(w.title)) },
           el('span.yr.meta', { text: w.year }),
           el('span.wt', null, titleNodes(t(w.title))),
-          categoryBadge(w)
+          formBadge(w)
         )
       )
     );

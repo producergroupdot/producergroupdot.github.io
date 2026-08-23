@@ -7,47 +7,16 @@ import { loadSite } from './data.js';
 import { t, lang, isFallback } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
-  topBar, footer, pageUrl, link, photo, coverCandidates, categoryBadge,
+  topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance,
   latestRun, yearSpan, creditLine, visibleWorks, videoId, isEmbeddedVideo, lightbox, richNodes,
+  runWhen,
 } from './ui.js';
 
 const MORE = 4; //  Explore more 카드 수
 
 const nn = (n) => String(n).padStart(2, '0');
-const typeName = (w) =>
-  lang.current === 'en'
-    ? w.type === 'performance' ? 'Production' : 'Project'
-    : w.type === 'performance' ? '공연' : '프로젝트';
-
-/* 회차에서 뽑는 것들(latestRun · yearSpan)은 ui.js 에 있다. */
-
-const WEEKDAYS = {
-  ko: ['일', '월', '화', '수', '목', '금', '토'],
-  en: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-};
-
-/* 요일은 날짜에서 계산한다 — 데이터에 따로 적지 않는다. 적어 두면 날짜만 고쳤을 때 어긋난다.
-   UTC 로 읽는다. 현지 시간대로 읽으면 자정 근처에서 하루가 밀린다. */
-const weekday = (iso, l) => (WEEKDAYS[l || lang.current] || WEEKDAYS.ko)[new Date(`${iso}T00:00:00Z`).getUTCDay()];
-
-const fmtDate = (s, withDay = false, l) => {
-  const [y, m, d] = s.split('-');
-  const base = `${y}. ${+m}. ${+d}`;
-  return withDay ? `${base} (${weekday(s, l)})` : base;
-};
-
-/* 끝 날짜는 앞과 겹치는 만큼만 줄여 적는다.
-   달을 넘기면 달까지, 해를 넘기면 날짜를 통째로 — 줄이지 않으면 9.29–10.3 이 9.29–3 이 된다. */
-const runRange = (r) => {
-  const [fy, fm] = r.start.split('-');
-  const [ty, tm, td] = r.end.split('-');
-  if (ty !== fy) return `${fmtDate(r.start)} – ${fmtDate(r.end)}`;
-  return `${fmtDate(r.start)} – ${tm === fm ? '' : `${+tm}. `}${+td}`;
-};
-
-/* 하루짜리 회차에만 요일을 붙인다. 범위에 붙이면 어느 날의 요일인지 알 수 없다. */
-const runWhen = (r, l) =>
-  t(r.date, l) || (r.end && r.end !== r.start ? runRange(r) : fmtDate(r.start, true, l));
+/* 회차에서 뽑는 것들(latestRun · yearSpan)과 날짜 표기(runWhen)는 ui.js 에 있다.
+   Archive 의 '일시'가 같은 함수를 쓴다. */
 
 /* ---------- 제목 블록 ---------- */
 
@@ -65,8 +34,8 @@ function head(work, producerById) {
       'div.dmeta',
       null,
       dots(work.producers, producerById),
-      categoryBadge(work),
-      el('span.meta.dtype', { text: typeName(work) }),
+      formBadge(work),
+      el('span.meta.dtype', { text: kindName(work) }),
       el('span.meta.dyear', { text: yearSpan(work) })
     ),
     el('h1', null, titleNodes(main)),
@@ -82,7 +51,7 @@ function head(work, producerById) {
    초연 회차는 5.일정 탭의 '초연' 열(runs[].premiere)이 정한다. */
 
 function premiereRun(work) {
-  return isProduction(work) ? (work.runs || []).find((r) => r.premiere === true) || null : null;
+  return isPerformance(work) ? (work.runs || []).find((r) => r.premiere === true) || null : null;
 }
 
 function premiereLine(work) {
@@ -166,7 +135,6 @@ function today() {
 
 /* '초연'은 공연에만 쓰는 개념이다.
    리서치·네트워크·레지던시·축제에는 첫 회차라는 것이 따로 의미를 갖지 않는다. */
-const isProduction = (work) => work.type === 'performance';
 
 /**
  * '기록 영상'을 목록에 끼워 넣는다. 링크 항목 바로 앞 — 링크는 늘 맨 마지막이다.
@@ -201,13 +169,20 @@ function buildAccordions(work) {
      도트의 역할이 비어 있으면 그 자리가 통째로 빠진다 — 도트가 관여하지 않은 회차다.
      도시와 장소가 같은 말이면 한 번만 적는다(도르트문트 · 도르트문트). */
   const where = (r, l) => [...new Set([t(r.city, l), t(r.venue, l)].filter(Boolean))].join(' · ');
+
+  /* 회차의 역할이 작업 전체의 역할과 같으면 회차 줄에는 적지 않는다 —
+     APP 의 열 회차에 '기획'이 열 번 되풀이되면 다른 것과 구별되지 않는다.
+     데이터는 그대로 둔다. 비워 두면 '도트가 관여하지 않은 회차'라는 뜻이 되어 버린다.
+     같은지는 국문으로 견준다 — 화면 언어에 따라 나왔다 사라졌다 하면 안 된다. */
+  const roleOf = (r, l) =>
+    t(r.dotRole, 'ko') === t(work.dotRole, 'ko') ? '' : t(r.dotRole, l);
   /* 회차 메모(축제 이름 같은 것)도 그린다 — 적어 두고 화면에 없으면 없는 값과 같다(함정 1). */
   const line = (r, l, mark) =>
     [
       [runWhen(r, l), r.time].filter(Boolean).join(' '),
       where(r, l),
       t(r.note, l),
-      t(r.dotRole, l),
+      roleOf(r, l),
       r === first ? mark : '',
     ]
       .filter(Boolean)
@@ -231,7 +206,7 @@ function buildAccordions(work) {
     const ended = (r) => (r.end || r.start) < today();
 
     if (!runs.length) return [];
-    if (!isProduction(work)) return [{ title: t(DATES), rows: runs.sort(asc).map(runRow) }];
+    if (!isPerformance(work)) return [{ title: t(DATES), rows: runs.sort(asc).map(runRow) }];
 
     const upcoming = runs.filter((r) => !ended(r)).sort(asc);
     if (!upcoming.length) return [{ title: t(SHOWS), rows: runs.sort(desc).map(runRow) }];
@@ -264,16 +239,29 @@ function buildAccordions(work) {
 
   const out = [...schedule()];
 
+  /* '도트의 역할'은 여기 두지 않는다 — 아카이브의 닫힌 행에 이미 나와 있다.
+     같은 말을 목록과 상세에 두 번 적으면 한쪽만 고쳐진다. */
   const info = [
     ['장소', t(work.venue)],
     ['제작·주최', t(work.produced)],
-    ['도트의 역할', t(work.dotRole)],
     ['커미션', t(work.commission)],
     ['키워드', t(work.keywords)],
   ]
     .filter(([, v]) => v)
     .map(([k, v]) => ({ ko: `${k} · ${v}` }));
-  if (info.length) out.push({ title: t(INFO), rows: info });
+
+  /* works.json 의 info[] — 라벨과 값이 짝으로 들어 있다(role · name).
+     라벨을 필드 이름에서 만들지 않으므로 한 작업에 주체를 여럿 적을 수 있고,
+     둘 다 {ko,en} 이라 영문 화면에서는 라벨까지 함께 바뀐다.
+     아카이브의 아코디언도 같은 배열을 쓴다 — 두 화면이 어긋나지 않는다. */
+  const roles = (work.info || [])
+    .filter((x) => t(x.name))
+    .map((x) => ({
+      ko: [t(x.role, 'ko'), t(x.name, 'ko')].filter(Boolean).join(' · '),
+      en: [t(x.role, 'en'), t(x.name, 'en')].filter(Boolean).join(' · '),
+    }));
+
+  if (info.length || roles.length) out.push({ title: t(INFO), rows: [...info, ...roles] });
   addRecordings(out, work);
 
   /* credits 배열이 있으면 크레딧 항목으로. 데이터만 있고 화면에 없는 필드를 두지 않는다. */
@@ -450,7 +438,7 @@ const workCredit = (work) =>
 const colourBlock = (work) =>
   el(`span.block.${fieldClass(work.producers)}`, null,
     el('i.blob-card'),
-    el('span.block-t', { text: typeName(work) }));
+    el('span.block-t', { text: kindName(work) }));
 
 /** 고른 패턴대로 그린다. 슬라이드는 sequence 모드와 같은 컴포넌트를 쓴다. */
 function photoArea(photos, p) {
@@ -574,9 +562,9 @@ function more(work, works, producerById) {
   /* 영문판에서 감춘 작업은 Explore more 에도 나오지 않는다. */
   const others = visibleWorks(works).filter((w) => w.id !== work.id);
   const byNew = [...others].sort((a, b) => latestRun(b).localeCompare(latestRun(a)));
-  const same = byNew.filter((w) => t(w.category, 'en') === t(work.category, 'en') && t(work.category, 'en'));
+  const same = byNew.filter((w) => formKey(w) === formKey(work) && formKey(work));
 
-  /* 같은 카테고리를 먼저 채우고, 모자라면 최신순으로 이어 붙인다. */
+  /* 같은 형식을 먼저 채우고, 모자라면 최신순으로 이어 붙인다. */
   const picked = [];
   for (const w of [...same, ...byNew]) {
     if (picked.length >= MORE) break;
@@ -589,7 +577,7 @@ function more(work, works, producerById) {
     const card = link(pageUrl('work', w.id), '.mcard', { 'aria-label': titleText(t(w.title)) });
     const vis = el('span.wrapimg');
     vis.append(photo(coverCandidates(w), () => colourBlock(w)));
-    card.append(vis, categoryBadge(w), el('span.t', null, titleNodes(t(w.title))),
+    card.append(vis, formBadge(w), el('span.t', null, titleNodes(t(w.title))),
       el('span.m', null, dots(w.producers, producerById), el('span.yr', { text: yearSpan(w) })));
     grid.append(card);
   }

@@ -4,7 +4,7 @@ import { loadSite } from './data.js';
 import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
-  logo, footer, pageUrl, link, photo, coverCandidates, isArchive, ARCHIVE_LABEL, producerTile,
+  logo, footer, pageUrl, link, photo, coverCandidates, producerTile, kindLabel, kindName, isPerformance,
   langToggle,
   shownInLang, visibleWorks,
   mergeRuns,
@@ -15,8 +15,6 @@ import {
 const BAND_SLOTS = ['band-1', 'band-2', 'band-3'];
 
 const PRODUCER_SLOTS = ['m-p1', 'm-p2', 'm-p3', 'm-p4'];
-
-const typeLabel = (w) => (w.type === 'performance' ? 'Production' : 'Project');
 
 /**
  * 홈의 사진 자리는 칸 비율이 정해져 있어서 미리 잘라둔 홈 전용 파일을 먼저 쓴다
@@ -100,8 +98,9 @@ const cellProducer = (p, slotClass) =>
 
 function cellWorks(works) {
   const shown = visibleWorks(works);
-  const pf = shown.filter((w) => w.type === 'performance').length;
-  const pj = shown.filter((w) => w.type === 'project').length;
+  /* 개수는 형식(form)으로 센다 — '공연'과 그 나머지(프로젝트). */
+  const pf = shown.filter(isPerformance).length;
+  const pj = shown.length - pf;
   /* 이 칸만 바깥이 링크가 아니다 — 안에 '공연'·'프로젝트' 두 링크가 있어서
      <a> 안에 <a> 가 들어가면 안 되기 때문. 제목 자체가 Works 로 가는 링크다. */
   return el(
@@ -117,9 +116,9 @@ function cellWorks(works) {
         'span.sub.split',
         null,
         /* 개수는 데이터의 type(공연/프로젝트)으로 센다.
-           Works 페이지의 필터는 카테고리라, '공연'만 그대로 대응하는 필터가 있다.
-           '프로젝트'는 국제 네트워크·레지던시·리서치에 걸쳐 있어 전체 목록으로 보낸다. */
-        link(pageUrl('works', '?category=production'), '', null, el('b', { text: '공연' }), ` ${pf}`),
+           Works 페이지의 필터는 형식이라, '공연'만 그대로 대응하는 필터가 있다.
+           '프로젝트'는 리서치·네트워크·레지던시·워크숍에 걸쳐 있어 전체 목록으로 보낸다. */
+        link(pageUrl('works', '?form=performance'), '', null, el('b', { text: '공연' }), ` ${pf}`),
         link(pageUrl('works'), '', null, el('b', { text: '프로젝트' }), ` ${pj}`)
       )
     )
@@ -161,7 +160,7 @@ function cellPhoto(work, slot, slotClass, producerById) {
   const cap = el(
     'span.cap',
     null,
-    el('span.meta', { text: typeLabel(work) }),
+    el('span.meta', { text: kindLabel(work) }),
     el('span.cap-t', null, titleNodes(t(work.title)))
   );
 
@@ -220,7 +219,6 @@ function nowItems(site, today = new Date()) {
   (nowOrder || []).forEach((id, order) => {
     const w = workById.get(id);
     if (!w) return; // 없는 id 는 조용히 건너뛴다
-    if (isArchive(w)) return; // 아카이브로 넘어간 작업은 Now 에 두지 않는다
     if (!shownInLang(w)) return; // 영문판에서 감춘 작업(hideInEn)
 
     /* 회차는 이제 작품 안에 있다(works.json 의 runs). */
@@ -275,22 +273,12 @@ function nowItems(site, today = new Date()) {
 /* 제목 · 날짜 · 장소 · 색점 순. 색점은 오른쪽 끝 고정폭 칸에 조용히 놓는다 —
    맨 앞에 두면 제목보다 먼저 눈에 들어온다.
    지난 것은 배지 대신 줄 전체를 흐리게 해서 구분한다. */
-/** 공연 / 프로젝트. 영문 화면에서는 Production / Project. */
-const typeName = (w) =>
-  lang.current === 'en'
-    ? w.type === 'performance'
-      ? 'Production'
-      : 'Project'
-    : w.type === 'performance'
-      ? '공연'
-      : '프로젝트';
-
 function nowRow(it, producerById) {
   return link(
     pageUrl('work', it.work.id),
     `.row${it.past ? '.past' : ''}`,
     null,
-    el('span.kind.meta', { text: typeName(it.work) }),
+    el('span.kind.meta', { text: kindName(it.work) }),
     /* 제목은 한 덩어리로 감싼다. .t 가 flex 라서 감싸지 않으면
        SVG 육각형이 각각 별개의 flex 항목이 되어 제목이 벌어진다. */
     el(
@@ -311,9 +299,7 @@ function renderNow(site) {
   list.replaceChildren(
     ...(items.length
       ? items.map((it) => nowRow(it, site.producerById))
-      : [el('p.empty.meta', { text: '앞뒤 3개월 안에 예정된 회차가 없습니다.' })]),
-    /* 목록 맨 아래 한 줄. NOW 항목보다 작고 옅게 — 지금 일이 아니라 지나온 일이다. */
-    link(pageUrl('archive'), '.now-archive.meta', null, `${ARCHIVE_LABEL} →`)
+      : [el('p.empty.meta', { text: '앞뒤 3개월 안에 예정된 회차가 없습니다.' })])
   );
 }
 
@@ -334,7 +320,7 @@ function renderBand(site) {
       el(
         'figcaption',
         null,
-        el('span.meta', { text: typeLabel(w) }),
+        el('span.meta', { text: kindLabel(w) }),
         el('span.cap-t', null, titleNodes(t(w.title)), ` · ${w.year}`)
       )
     );

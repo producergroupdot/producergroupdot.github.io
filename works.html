@@ -26,17 +26,17 @@
   <h1>Works</h1>
 </header>
 
-<!-- 카테고리 필터와 색점 필터는 js/works.js 가 채웁니다. 둘은 동시에 걸립니다. -->
+<!-- 필터는 js/works.js 가 채웁니다. 형식만 늘 보이고
+     시간·장소·프로듀서는 '더 보기' 안에 접혀 있습니다. 넷은 동시에 걸립니다. -->
 <div class="secbar">
   <span id="seg"></span>
   <span class="spacer"></span>
-  <span class="meta label">프로듀서</span>
-  <span id="pdots"></span>
+  <span class="secbar-tail" id="secbar-tail"></span>
 </div>
+<div class="morefilters" id="more-filters" hidden></div>
 
 <div class="cards" id="works-list"></div>
 <div class="count meta" id="works-count"></div>
-<div class="works-archive" id="works-archive"></div>
 
 <div id="works-footer"></div>
 

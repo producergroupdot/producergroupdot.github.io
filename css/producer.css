@@ -87,7 +87,8 @@
   opacity:.85;
 }
 
-.phead-role{ display:flex; align-items:center; gap:9px; margin-bottom:22px }
+/* 직함 — 이름 아래. 색점이 함께 붙어 그 사람의 색을 한 번 더 짚는다. */
+.phead-role{ display:flex; align-items:center; gap:9px; margin-top:14px }
 .phead-role .dot{ width:11px; height:11px; border-radius:50%; display:block; flex:none }
 .phead h1{
   font-size:clamp(40px,6vw,84px);
@@ -151,7 +152,7 @@
   .producer-page{ --pface: 155px }
   /* 비율은 --pface 에서 파생되므로 모바일에서도 그대로 따라온다. 여백만 줄인다. */
   .pfaces{ margin-bottom:calc(var(--pfav-out) + 18px) }
-  .phead-role{ margin-bottom:18px }
+  .phead-role{ margin-top:12px }
   .pbody{
     grid-template-columns:1fr;
     gap:34px;
