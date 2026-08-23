@@ -595,10 +595,10 @@
         ]
       }
     ],
-    "cover": "img/works/gwantong-18/01.jpg",
+    "cover": "img/works/gwantong-18/gwantong-18-01.jpg",
     "photoCredit": {
-      "ko": "ⓒSang Hoon OK",
-      "en": "ⓒSang Hoon OK"
+      "ko": "ⓒSang Hoon Ok",
+      "en": "ⓒSang Hoon Ok"
     },
     "homeFeature": [
       "band-3"
@@ -1490,11 +1490,26 @@
       "ko": "관객참여, 이머시브, 국제투어",
       "en": ""
     },
-    "cover": "",
+    "cover": "img/works/MULJIL/MULJIL-01.jpg",
     "homeFeature": [],
     "note": {
       "ko": "초안 — 확인 필요",
       "en": ""
+    },
+    "gallery": "sequence",
+    "galleryImages": [
+      "img/works/MULJIL/MULJIL-01.jpg",
+      "img/works/MULJIL/MULJIL-02.jpg",
+      "img/works/MULJIL/MULJIL-03.jpg",
+      "img/works/MULJIL/MULJIL-04.jpg",
+      "img/works/MULJIL/MULJIL-05.jpg"
+    ],
+    "photoCredits": {
+      "MULJIL-01.jpg": "ⓒShinjoong Kim",
+      "MULJIL-02.jpg": "ⓒShinjoong Kim",
+      "MULJIL-03.jpg": "ⓒJang Seok-hyun",
+      "MULJIL-04.jpg": "ⓒmarcosGpunto",
+      "MULJIL-05.jpg": "ⓒmarcosGpunto"
     }
   },
   {
@@ -3790,10 +3805,9 @@
     ],
     "cover": "img/works/the-belt/the-belt-01.jpg",
     "photoCredit": {
-      "ko": "Tristram Kenton",
-      "en": "Tristram Kenton"
+      "ko": "ⓒTristram Kenton",
+      "en": "ⓒTristram Kenton"
     },
-    "creditType": "촬영",
     "homeFeature": []
   },
   {
@@ -3884,10 +3898,9 @@
     },
     "cover": "img/works/body-concert/body-concert-01.jpg",
     "photoCredit": {
-      "ko": "Sebastian Marcovici",
-      "en": "Sebastian Marcovici"
+      "ko": "ⓒSebastian Marcovici",
+      "en": "ⓒSebastian Marcovici"
     },
-    "creditType": "촬영",
     "homeFeature": []
   },
   {
@@ -4821,6 +4834,57 @@
         ]
       }
     ],
+    "cover": "",
+    "homeFeature": []
+  },
+  {
+    "id": "contemporary-art-curator",
+    "form": "workshop",
+    "title": {
+      "ko": "동시대 예술을 질문하는 기획자",
+      "en": ""
+    },
+    "subtitle": {
+      "ko": "",
+      "en": ""
+    },
+    "artist": {
+      "ko": "",
+      "en": ""
+    },
+    "artists": [],
+    "producers": [],
+    "year": "",
+    "runs": [],
+    "status": "",
+    "lead": {
+      "ko": "",
+      "en": ""
+    },
+    "body": {
+      "ko": "〈동시대 예술을 질문하는 기획자〉는 2023년 춘천시공연예술창업지원센터의 'Be FOUNDERS' 과정으로 기획한 공연예술 기획자 역량 강화 프로그램이다. 기획서 작성이나 행정 실무를 익히는 데 머무르지 않고, 동시대 예술이 사회와 지역, 관객과 어떤 관계를 맺을 수 있는지 살피며 각자의 기획 관점과 방향을 찾도록 구성했다.\n\n참여자들은 서로 다른 현장에서 활동하는 예술가와 기획자들의 경험을 듣고, 강의와 대화, 사례 연구와 현장 방문을 통해 공연예술을 둘러싼 여러 질문을 구체화했다. 이미 정해진 방법을 배우기보다 자신이 무엇을, 왜 기획하려 하는지 돌아보고, 막연한 관심과 문제의식을 하나의 기획 언어로 발전시키는 과정에 초점을 맞췄다.\n\n프로그램은 기획자를 예술가의 작업을 지원하는 실무자에 한정하지 않는다. 예술의 의미를 발견하고 새로운 맥락과 관계를 만드는 창작의 주체로 바라보며, 각자가 앞으로 이어갈 활동의 좌표를 스스로 그려보도록 했다.",
+      "en": ""
+    },
+    "venue": {
+      "ko": "",
+      "en": ""
+    },
+    "produced": {
+      "ko": "",
+      "en": ""
+    },
+    "dotRole": {
+      "ko": "",
+      "en": ""
+    },
+    "commission": {
+      "ko": "",
+      "en": ""
+    },
+    "keywords": {
+      "ko": "",
+      "en": ""
+    },
     "cover": "",
     "homeFeature": []
   }

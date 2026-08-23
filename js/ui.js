@@ -587,6 +587,20 @@ export function creditLine({ photoCredit, creditType, photoCreditShow, note } = 
   return el('p.credit.meta', { text: kind ? `${t(kind)} ${who}` : who });
 }
 
+/* ---------- 사진 한 장의 크레딧 ----------
+   촬영자가 사진마다 다른 작업이 있다. works.json 의 photoCredits 가 파일명을 키로 잡는다.
+
+     photoCredits: { "MULJIL-01.jpg": "ⓒShinjoong Kim" }
+
+   그 파일에 값이 없으면 작업 단위 photoCredit 으로 떨어지고, 그것도 없으면 빈 문자열이다
+   — 빈 문자열이면 크레딧 줄 자체를 만들지 않는다.
+   키는 경로가 아니라 파일명이다. 폴더를 옮겨도 따라오게 하기 위한 것. */
+export function photoCreditFor(item, src) {
+  const file = String(src || '').split('/').pop();
+  const per = item?.photoCredits?.[file];
+  return real(t(per)) || real(t(item?.photoCredit)) || '';
+}
+
 /** 파일명이 TEMP- 로 시작하면 임시 이미지다. 폴더에 넣을 때 붙이는 표시. */
 export function isTempFile(src) {
   return /(^|\/)TEMP-/.test(src || '');

@@ -8,7 +8,7 @@ import { t, lang, isFallback } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance,
-  latestRun, yearSpan, creditLine, visibleWorks, videoId, isEmbeddedVideo, lightbox, richNodes,
+  latestRun, yearSpan, photoCreditFor, visibleWorks, videoId, isEmbeddedVideo, lightbox, richNodes,
   runWhen,
 } from './ui.js';
 
@@ -427,14 +427,21 @@ function shot(p, cls = '', eager = false) {
   return fig;
 }
 
-/* 작업 사진의 촬영자·제공자. works.json 의 note 는 '확인 필요' 표시라 여기 넘기지 않는다 —
-   넘기면 크레딧 자리에 그 글자가 찍힌다. */
-const workCredit = (work) =>
-  creditLine({
-    photoCredit: work.photoCredit,
-    creditType: work.creditType,
-    photoCreditShow: work.photoCreditShow,
-  });
+/* 사진 아래 촬영자·제공자 한 줄. 슬라이드에서는 넘길 때마다 이 줄이 함께 바뀐다.
+   한 화면에 여러 장이 함께 보이는 배치에서는 서로 다른 크레딧을 모아 적는다.
+   works.json 의 note 는 '확인 필요' 표시라 여기 넘기지 않는다 —
+   넘기면 크레딧 자리에 그 글자가 찍힌다.
+   creditType 은 쓰지 않는다 — 파일별 크레딧은 'ⓒ…' 처럼 표기가 문자열 안에 이미 있다. */
+function creditBar(work) {
+  const node = el('p.credit.meta');
+  const set = (srcs) => {
+    if (work.photoCreditShow === false) { node.hidden = true; return; }
+    const seen = [...new Set([].concat(srcs).map((x) => photoCreditFor(work, x)).filter(Boolean))];
+    node.textContent = seen.join('  ·  ');
+    node.hidden = !seen.length;      // 적을 것이 없으면 줄을 만들지 않는다
+  };
+  return { node, set };
+}
 
 /** 표지가 하나도 없을 때의 색면. Works 카드와 같은 규칙. */
 const colourBlock = (work) =>
@@ -443,11 +450,11 @@ const colourBlock = (work) =>
     el('span.block-t', { text: kindName(work) }));
 
 /** 고른 패턴대로 그린다. 슬라이드는 sequence 모드와 같은 컴포넌트를 쓴다. */
-function photoArea(photos, p) {
+function photoArea(photos, p, onSlide) {
   if (p.kind === 'one') return shot(photos[0], `.dshot${p.tall ? '.tall' : ''}`, true);
   if (p.kind === 'stack') return el('div.dstack', null, ...photos.map((x, i) => shot(x, '', i === 0)));
   if (p.kind === 'pair') return el('div.dpair', null, ...photos.map((x, i) => shot(x, '', i === 0)));
-  if (p.kind === 'slides') return slideshow(photos.map((x) => x.src));
+  if (p.kind === 'slides') return slideshow(photos.map((x) => x.src), onSlide);
   return el(`div.dgrid.${p.cols}`, null, ...photos.map((x, i) => shot(x, '', i < 2)));
 }
 
@@ -476,7 +483,7 @@ function holdToRepeat(btn, step) {
   btn.addEventListener('click', (e) => e.preventDefault());
 }
 
-function slideshow(files) {
+function slideshow(files, onSlide) {
   const list = [...new Set((files || []).filter(Boolean))];
   if (!list.length) return null;
 
@@ -515,6 +522,7 @@ function slideshow(files) {
     sync();
   };
   const sync = () => {
+    onSlide?.(list[at]);            // 크레딧 줄이 이 사진을 따라온다
     counter.textContent = `${at + 1} / ${list.length}`;
     prev.disabled = at === 0;
     next.disabled = at === list.length - 1;
@@ -621,8 +629,11 @@ async function main() {
     const listed = work.gallery === 'sequence'
       ? [...new Set([work.cover, ...(work.galleryImages || [])].filter(Boolean))]
       : [];
+    /* 크레딧 줄은 어느 배치에서든 하나뿐이다. 슬라이드면 넘길 때마다 갈아 끼운다. */
+    const bar = creditBar(work);
+
     if (listed.length > 1) {
-      media.append(slideshow(listed));
+      media.append(slideshow(listed, bar.set), bar.node);
       return;
     }
 
@@ -631,18 +642,19 @@ async function main() {
     /* 넘길 것이 한 장뿐이면 슬라이드를 만들지 않는다 —
        화살표가 둘 다 꺼진 채 '1 / 1' 만 남으면 고장으로 보인다. */
     if (work.gallery === 'sequence' && photos.length > 1) {
-      media.append(slideshow(photos.map((p) => p.src)));
+      media.append(slideshow(photos.map((p) => p.src), bar.set), bar.node);
       return;
     }
 
     media.append(
-      photos.length ? photoArea(photos, plan(photos)) : el('figure.dshot', null, colourBlock(work))
+      photos.length ? photoArea(photos, plan(photos), bar.set) : el('figure.dshot', null, colourBlock(work))
     );
     /* 사진 아래에 촬영자·제공자를 적는다. 예술가 사진과 같은 규칙(ui.js).
-       el() 과 달리 네이티브 append 는 null 을 걸러주지 않는다 —
-       그대로 넘기면 화면에 'null' 이라는 글자가 찍힌다. 있을 때만 붙인다. */
-    const credit = photos.length ? workCredit(work) : null;
-    if (credit) media.append(credit);
+       슬라이드가 아닌 배치는 보이는 사진 전부의 크레딧을 한 번에 모은다. */
+    if (photos.length) {
+      bar.set(photos.map((x) => x.src));
+      media.append(bar.node);
+    }
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(
