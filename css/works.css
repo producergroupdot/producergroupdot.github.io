@@ -11,14 +11,29 @@
 .secbar .label{ opacity:.5 }
 .secbar-tail{ display:flex; align-items:center; gap:14px }
 
-/* '더 보기' 와 '초기화'. 형식 버튼과 같은 무게가 되지 않게 테두리 없이 글자만 둔다. */
-.morebtn, .resetbtn{
-  background:none; border:none; padding:0; cursor:pointer;
-  color:inherit; opacity:.55;
+/* '더 보기' 는 형식 버튼 줄 안에 같은 크기로 앉는다 — .seg button 의 조판을 그대로 물려받고
+   앞의 세로 선으로만 갈라 둔다. 오른쪽 끝으로 밀면 필터와 무관해 보여 아무도 누르지 않는다. */
+.seg-sep{
+  width:.5px; align-self:stretch; flex:none;
+  background:var(--line-s);
 }
-.morebtn:hover, .resetbtn:hover{ opacity:1; text-decoration:underline; text-underline-offset:3px }
+.seg .morebtn{
+  padding:5px 13px;
+  font-family:var(--mono); font-size:11px;
+  background:none; border:none; cursor:pointer;
+  color:inherit; opacity:.6;
+  white-space:nowrap;
+}
+.seg .morebtn:hover{ opacity:1 }
+/* 펼쳐져 있는 동안은 눌린 상태로 보인다 — 아래 칸이 열려 있다는 표시. */
+.seg .morebtn[aria-expanded='true']{ opacity:1; background:var(--line-s) }
+
 /* 초기화는 걸린 것이 있을 때만 나타난다(js 가 hidden 을 건다). */
-.resetbtn{ text-decoration:underline; text-underline-offset:3px; opacity:.45 }
+.resetbtn{
+  background:none; border:none; padding:0; cursor:pointer; color:inherit;
+  text-decoration:underline; text-underline-offset:3px; opacity:.45;
+}
+.resetbtn:hover{ opacity:1 }
 
 /* ---------- 접히는 필터 칸 — 시간 · 장소 · 프로듀서 ----------
    형식 줄 아래에 한 덩어리로. 위아래 선으로 본문과 떼어 놓는다. */

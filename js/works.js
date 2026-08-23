@@ -9,7 +9,7 @@ import { t, isEn } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, isTempFile, formBadge,
-  latestRun, yearSpan, citiesLine, visibleWorks, kindLabel,
+  yearSpan, citiesLine, visibleWorks, kindLabel,
   FORMS, formKey, formLabelByKey, isRunningNow, placesOf,
 } from './ui.js';
 
@@ -17,8 +17,10 @@ import {
    여기저기 isEn() 삼항식을 흩어 두면 한쪽 언어만 고쳐진다. */
 const L = {
   all: { ko: '전체', en: 'All' },
-  more: { ko: '더 보기', en: 'More filters' },
-  less: { ko: '접기', en: 'Fewer filters' },
+  /* '더 보기' 라고만 두면 무엇이 더 있는지 알 수 없어 아무도 누르지 않는다.
+     접혀 있는 세 가지를 그대로 이름으로 적는다. */
+  more: { ko: '시간·장소·프로듀서', en: 'When · Where · Producers' },
+  less: { ko: '접기', en: 'Close' },
   reset: { ko: '초기화', en: 'Reset' },
   when: { ko: '시간', en: 'When' },
   ongoing: { ko: '현재 진행 중', en: 'Currently running' },
@@ -68,20 +70,41 @@ const anyFilter = () =>
 
 /* ---------- 차례 ---------- */
 
-/* 회차에서 뽑는 것들(latestRun · yearSpan · citiesLine)과
+/* 회차에서 뽑는 것들(yearSpan · citiesLine)과
    진행 중 판정(isRunningNow)은 ui.js 에 있다. 여기서 다시 만들지 않는다. */
 
-/**
- * 차례는 works.json 의 order 가 정한다. 날짜로 자동 정렬하지 않는다 —
- * 무엇을 앞세울지는 사람이 정할 일이다.
- * order 가 없는 작업은 맨 뒤로 가고, 그 안에서만 최신 회차 순으로 늘어선다.
- * 필터는 걸러내기만 하고 차례는 건드리지 않는다.
- */
-function byOrder(a, b) {
-  const ao = a.order ?? Infinity;
-  const bo = b.order ?? Infinity;
-  if (ao !== bo) return ao - bo;
-  return latestRun(b).localeCompare(latestRun(a)) || isRunningNow(b) - isRunningNow(a);
+/* ---------- 차례는 연도가 정한다 ----------
+   손으로 매긴 order 로는 스물여덟 건을 감당할 수 없다. 한 건을 끼워 넣을 때마다
+   앞뒤 번호를 다시 손봐야 하고, 결국 아무도 고치지 않아 차례가 굳는다.
+
+     1) 가장 최근 회차의 연도 — 내림차순
+     2) 시작 연도 — 내림차순
+     3) 그래도 같으면 기존 order (사람이 정한 것을 마지막에 존중한다)
+
+   회차가 없으면 yearTo · yearFrom 을 쓰고, 그것도 없으면 0 이라 맨 뒤로 간다.
+   필터는 걸러내기만 하고 차례는 건드리지 않는다. */
+
+const runYears = (w) =>
+  (w.runs || []).flatMap((r) => [r.start, r.end]).filter(Boolean).map((d) => Number(d.slice(0, 4)));
+
+/** 가장 최근 연도. 회차가 없으면 yearTo, 그것도 없으면 yearFrom. */
+function lastYearOf(w) {
+  const ys = runYears(w);
+  return ys.length ? Math.max(...ys) : Number(w.yearTo) || Number(w.yearFrom) || 0;
+}
+
+/** 시작 연도. 회차가 없으면 yearFrom. */
+function firstYearOf(w) {
+  const ys = runYears(w);
+  return ys.length ? Math.min(...ys) : Number(w.yearFrom) || 0;
+}
+
+function byYear(a, b) {
+  const la = lastYearOf(a), lb = lastYearOf(b);
+  if (la !== lb) return lb - la;
+  const fa = firstYearOf(a), fb = firstYearOf(b);
+  if (fa !== fb) return fb - fa;
+  return (a.order ?? Infinity) - (b.order ?? Infinity);
 }
 
 /* ---------- 주소와 상태 ---------- */
@@ -128,7 +151,7 @@ const filtered = (works) =>
       return [...state.places].some((k) => has.has(k));
     })
     .filter((w) => !state.producer || (w.producers || []).includes(state.producer))
-    .sort(byOrder);
+    .sort(byYear);
 
 /* ---------- 카드 ---------- */
 
@@ -215,8 +238,10 @@ function buildFilters(site, rerender) {
     seg.append(b);
   }
 
-  /* '더 보기' 와 '초기화'. 초기화는 걸린 것이 있을 때만 나타난다. */
-  const moreBtn = el('button.morebtn.meta', { type: 'button', 'aria-expanded': 'false', 'aria-controls': 'more-filters' });
+  /* '더 보기' 는 형식 버튼 바로 오른쪽에 같은 크기로 붙인다(오른쪽 끝으로 밀지 않는다).
+     같은 테두리 안에 들어가야 필터 줄의 일부로 읽힌다. */
+  const moreBtn = el('button.morebtn', { type: 'button', 'aria-expanded': 'false', 'aria-controls': 'more-filters' });
+  seg.append(el('span.seg-sep', { 'aria-hidden': 'true' }), moreBtn);
   moreBtn.addEventListener('click', () => {
     state.open = !state.open;
     rerender();
@@ -232,7 +257,7 @@ function buildFilters(site, rerender) {
   });
 
   document.getElementById('seg').replaceWith(seg);
-  document.getElementById('secbar-tail').replaceChildren(moreBtn, resetBtn);
+  document.getElementById('secbar-tail').replaceChildren(resetBtn);
 
   /* ---- 접히는 칸: 시간 · 장소 · 프로듀서 ---- */
 
@@ -286,12 +311,13 @@ function buildFilters(site, rerender) {
 
 function syncFilterUI(ui) {
   for (const b of ui.seg.children) {
+    if (!b.dataset?.form) continue;          // 구분선과 '더 보기' 는 형식 버튼이 아니다
     const on = b.dataset.form === state.form;
     b.classList.toggle('on', on);
     b.setAttribute('aria-pressed', String(on));
   }
 
-  ui.moreBtn.textContent = `${state.open ? t(L.less) : t(L.more)} ${state.open ? '−' : '+'}`;
+  ui.moreBtn.textContent = state.open ? `－ ${t(L.less)}` : `＋ ${t(L.more)}`;
   ui.moreBtn.setAttribute('aria-expanded', String(state.open));
   ui.panel.hidden = !state.open;
 

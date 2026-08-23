@@ -452,7 +452,7 @@ Archive 페이지와 `archive` 필드를 없앴습니다. 지나온 작업도 Wo
 16건의 배정: 공연 9 · 리서치 3 · 네트워크·컨퍼런스 2 · 레지던시 1 · 워크숍 1.
 
 **확정 (2026-08-16) — 로마자 표기**
-사람 이름은 **성 + 이름** 순으로 씁니다. `Park Jisun` · `Song Miseon` · `Lee Heejin` · `Choi Bongmin`.
+사람 이름은 **성 + 이름** 순으로 씁니다. `Park Jisun` · `Song Miseon` · `Lee HeeJin` · `Choi Bongmin`.
 황수현은 **`Hwang Soohyun`** 입니다(`Hwang Soo-hyun`·`Hwang Soohyeon`·`Soohyeon Hwang` 아님).
 표기는 `data/*.json` 의 `name.en` 에만 있습니다 — 코드에서 성과 이름을 조합하거나
 순서를 바꾸지 마세요. 화면은 그 값을 그대로 씁니다.
