@@ -8,8 +8,8 @@
       "en": "sync de sync"
     },
     "subtitle": {
-      "ko": "2년에 걸친 감각의 실험",
-      "en": "A two-year experiment in perception"
+      "ko": "황수현",
+      "en": "Hwang Soohyun"
     },
     "artist": {
       "ko": "황수현",
@@ -96,10 +96,6 @@
       "ko": "〈sync de sync〉는 조율되고 틀어지는 순간, 완전한 일치도 완전한 분리도 아닌 상태에서 작동하는 감각들을 따라간다. 말은 입술과 성대를 지나 소리와 진동으로 흩어지고, 움직임은 형태보다 몸을 통과한 파동과 질감으로 번진다.\n\n빛과 어둠, 온도와 공기, 무대 안팎의 보이는 것들과 보이지 않는 것들은 서로 겹치고 스며들며 감각의 얽힘을 만든다. 그 얽힘은 공간의 밀도, 온도와 습도, 기운의 변화를 몸에 닿게 한다.\n\n〈sync de sync〉는 고정되지 않는 주변 환경에 반응하며, 현재의 감각 안에 이미 도착한 변화를 더듬는다.",
       "en": "sync de sync follows the senses at work in the moment of tuning and slipping, in a state that is neither complete unison nor complete separation. Speech passes the lips and vocal cords and scatters into sound and vibration; movement spreads less as shape than as wave and texture passing through the body.\n\nLight and dark, temperature and air, the visible and invisible on and off stage overlap and seep into one another, making an entanglement of the senses. That entanglement brings the density of a space, its heat and humidity, its shifting energy into contact with the body.\n\nsync de sync responds to surroundings that never hold still, feeling for the change that has already arrived within present sensation."
     },
-    "venue": {
-      "ko": "TINC (This is Not A Church)",
-      "en": "TINC (This is Not A Church)"
-    },
     "produced": {
       "ko": "",
       "en": ""
@@ -123,6 +119,10 @@
           "en": "Info"
         },
         "rows": [
+          {
+            "ko": "장소 · TINC (This is Not A Church)",
+            "en": "Venue · TINC (This is Not A Church)"
+          },
           {
             "ko": "러닝타임 · 60분",
             "en": "Running time · 60 minutes"
@@ -824,7 +824,7 @@
     "form": "performance",
     "title": {
       "ko": "에너지 — 보이지 않는 언어",
-      "en": "Energy — The Invisible Language"
+      "en": "Energy_Invisible Words"
     },
     "subtitle": {
       "ko": "",
@@ -1350,7 +1350,7 @@
     "form": "performance",
     "title": {
       "ko": "물질",
-      "en": "Mooljil"
+      "en": "MULJIL"
     },
     "subtitle": {
       "ko": "",
@@ -1490,7 +1490,7 @@
       "ko": "관객참여, 이머시브, 국제투어",
       "en": ""
     },
-    "cover": "img/works/MULJIL/MULJIL-01.jpg",
+    "cover": "img/works/mooljil/mooljil-01.jpg",
     "homeFeature": [],
     "note": {
       "ko": "초안 — 확인 필요",
@@ -1498,18 +1498,18 @@
     },
     "gallery": "sequence",
     "galleryImages": [
-      "img/works/MULJIL/MULJIL-01.jpg",
-      "img/works/MULJIL/MULJIL-02.jpg",
-      "img/works/MULJIL/MULJIL-03.jpg",
-      "img/works/MULJIL/MULJIL-04.jpg",
-      "img/works/MULJIL/MULJIL-05.jpg"
+      "img/works/mooljil/mooljil-01.jpg",
+      "img/works/mooljil/mooljil-02.jpg",
+      "img/works/mooljil/mooljil-03.jpg",
+      "img/works/mooljil/mooljil-04.jpg",
+      "img/works/mooljil/mooljil-05.jpg"
     ],
     "photoCredits": {
-      "MULJIL-01.jpg": "ⓒShinjoong Kim",
-      "MULJIL-02.jpg": "ⓒShinjoong Kim",
-      "MULJIL-03.jpg": "ⓒJang Seok-hyun",
-      "MULJIL-04.jpg": "ⓒmarcosGpunto",
-      "MULJIL-05.jpg": "ⓒmarcosGpunto"
+      "mooljil-01.jpg": "ⓒShinjoong Kim",
+      "mooljil-02.jpg": "ⓒShinjoong Kim",
+      "mooljil-03.jpg": "ⓒJang Seok-hyun",
+      "mooljil-04.jpg": "ⓒmarcosGpunto",
+      "mooljil-05.jpg": "ⓒmarcosGpunto"
     }
   },
   {
@@ -3507,7 +3507,7 @@
     },
     "subtitle": {
       "ko": "디지털 드라마터지 워크숍 : 개념과 실천을 중심으로",
-      "en": "Digital Dramaturgy: Focusing on concept and practice"
+      "en": "Digital Dramaturgy Workshop — focusing on concept and practice"
     },
     "artist": {
       "ko": "",
@@ -3631,49 +3631,7 @@
       }
     ],
     "cover": "img/works/digital-dramaturgy/01.jpg",
-    "homeFeature": [],
-    "info": [
-      {
-        "role": {
-          "ko": "주관",
-          "en": "Hosted by"
-        },
-        "name": {
-          "ko": "예술경영지원센터 아트코리아랩",
-          "en": "Arts Korea Lab, Korea Arts Management Service (KAMS)"
-        }
-      },
-      {
-        "role": {
-          "ko": "기획·운영",
-          "en": "Planned and managed by"
-        },
-        "name": {
-          "ko": "프로듀서그룹 도트",
-          "en": "Producer Group DOT"
-        }
-      },
-      {
-        "role": {
-          "ko": "워크숍 리더",
-          "en": "Workshop leaders"
-        },
-        "name": {
-          "ko": "미하엘 아이크호프, 칼라 멜러, 박지선 외",
-          "en": "Michael Eickhoff, Carla Meller, Park Jisun and others"
-        }
-      },
-      {
-        "role": {
-          "ko": "협력",
-          "en": "In cooperation with"
-        },
-        "name": {
-          "ko": "서울국제공연예술제, 주한독일문화원, 연극과 디지털리티 아카데미",
-          "en": "SPAF, Goethe-Institut Korea, Academy for Theatre and Digitality"
-        }
-      }
-    ]
+    "homeFeature": []
   },
   {
     "id": "the-belt",
@@ -4459,10 +4417,6 @@
       "ko": "",
       "en": ""
     },
-    "keywords": {
-      "ko": "스트리트댄스, 국제교류",
-      "en": "street dance, international exchange"
-    },
     "cover": "",
     "homeFeature": [],
     "accordions": [
@@ -4598,10 +4552,6 @@
       "ko": "",
       "en": ""
     },
-    "keywords": {
-      "ko": "글로벌 협업, 음악과 움직임, 크로스미디어",
-      "en": "global collaboration, music and movement, cross-media"
-    },
     "accordions": [
       {
         "title": {
@@ -4688,10 +4638,6 @@
     "commission": {
       "ko": "",
       "en": ""
-    },
-    "keywords": {
-      "ko": "글로벌 협업, 음악과 움직임, 크로스미디어",
-      "en": "global collaboration, music and movement, cross-media"
     },
     "accordions": [
       {
@@ -4787,10 +4733,6 @@
     "commission": {
       "ko": "",
       "en": ""
-    },
-    "keywords": {
-      "ko": "글로벌 협업, 음악과 움직임, 크로스미디어",
-      "en": "global collaboration, music and movement, cross-media"
     },
     "accordions": [
       {

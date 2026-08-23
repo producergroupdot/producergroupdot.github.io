@@ -96,7 +96,10 @@ export const lastYear = (w) => Number(latestRun(w).slice(0, 4)) || 0;
  */
 export function yearSpan(w) {
   const ys = (w.runs || []).flatMap((r) => [r.start, r.end]).filter(Boolean).map((d) => d.slice(0, 4));
-  if (!ys.length) return w.year || '';
+  /* 회차가 없으면 적어 둔 year 를 그대로 쓰고, 그것도 없으면 yearFrom → yearTo 로 떨어진다.
+     연도를 아는데 카드에 아무것도 안 나오는 일을 막는다 — 정렬은 yearFrom 을 보는데
+     표시만 year 를 봐서 자리는 맞고 연도 칸만 비는 경우가 있었다. */
+  if (!ys.length) return w.year || String(w.yearFrom || w.yearTo || '');
   let lo = ys.reduce((a, b) => (a < b ? a : b));
   const hi = ys.reduce((a, b) => (a > b ? a : b));
   if (w.yearFrom && String(w.yearFrom) < lo) lo = String(w.yearFrom);
@@ -590,7 +593,7 @@ export function creditLine({ photoCredit, creditType, photoCreditShow, note } = 
 /* ---------- 사진 한 장의 크레딧 ----------
    촬영자가 사진마다 다른 작업이 있다. works.json 의 photoCredits 가 파일명을 키로 잡는다.
 
-     photoCredits: { "MULJIL-01.jpg": "ⓒShinjoong Kim" }
+     photoCredits: { "mooljil-01.jpg": "ⓒShinjoong Kim" }
 
    그 파일에 값이 없으면 작업 단위 photoCredit 으로 떨어지고, 그것도 없으면 빈 문자열이다
    — 빈 문자열이면 크레딧 줄 자체를 만들지 않는다.

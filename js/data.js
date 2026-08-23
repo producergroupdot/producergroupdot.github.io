@@ -12,6 +12,32 @@ async function json(name) {
   return res.json();
 }
 
+/* ---------- 화면에 안 나오는 필드 잡아내기 ----------
+   works.json 에 accordions 를 직접 쓰면 js/work.js 가 그 목록만 그린다.
+   자동 '정보' 칸을 만들지 않으므로 아래 필드는 값이 있어도 어디에도 안 나온다.
+   데이터만 고치고 화면은 그대로라 한참 헤매게 되는 자리다(CLAUDE.md 함정 1).
+
+   개발 중에만 알린다 — 방문자 콘솔에 찍을 말이 아니다. */
+const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || location.protocol === 'file:';
+const DEAD_WITH_ACCORDIONS = ['produced', 'keywords', 'venue', 'commission', 'info'];
+
+function warnDeadFields(works) {
+  if (!LOCAL) return;
+  for (const w of works || []) {
+    if (!w.accordions?.length) continue;
+    const dead = DEAD_WITH_ACCORDIONS.filter((k) => {
+      const v = w[k];
+      return Array.isArray(v) ? v.length : v && (typeof v === 'string' ? v : v.ko || v.en);
+    });
+    if (dead.length) {
+      console.warn(
+        `[dot] '${w.id}' 는 accordions 를 직접 쓰므로 ${dead.join(' · ')} 이(가) 화면에 나오지 않습니다.` +
+          ' 정보 아코디언으로 옮기고 그 필드는 지우세요.'
+      );
+    }
+  }
+}
+
 export async function loadSite() {
   const [producers, works, artists, nowOrder, about] = await Promise.all([
     json('producers.json'),
@@ -20,6 +46,8 @@ export async function loadSite() {
     json('now.json'),
     json('about.json'),
   ]);
+
+  warnDeadFields(works);
 
   const producerById = new Map(producers.map((p) => [p.id, p]));
 
