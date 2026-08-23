@@ -561,6 +561,38 @@
             "en": "Keywords · solo, dance, international tour"
           }
         ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "안무·출연 · 김보람",
+            "en": "Choreography, Performance · Kim Boram"
+          },
+          {
+            "ko": "조안무 · 장경민",
+            "en": "Assistant Choreographer · Jang KyeongMin"
+          },
+          {
+            "ko": "투어 프로듀서 · 이희진",
+            "en": "Tour Producer · Lee HeeJin"
+          },
+          {
+            "ko": "무대감독 · 박재민",
+            "en": "Stage Manager · Park Jaemin"
+          },
+          {
+            "ko": "조명감독 · 배대두",
+            "en": "Lighting Manager · Bae DaeDoo"
+          },
+          {
+            "ko": "사진 · 옥상훈",
+            "en": "Photography · Ok Sang Hoon"
+          }
+        ]
       }
     ],
     "cover": "img/works/gwantong-18/01.jpg",
@@ -1369,33 +1401,63 @@
         }
       },
       {
-        "start": "2026-07-14",
-        "end": "2026-07-15",
+        "start": "2026-07-04",
+        "end": "2026-07-07",
         "city": {
-          "ko": "바르셀로나",
-          "en": "Barcelona"
+          "ko": "아비뇽",
+          "en": "Avignon"
         },
         "venue": {
-          "ko": "Mercat de les Flors",
-          "en": "Mercat de les Flors"
+          "ko": "클루아트르 데 카름",
+          "en": "Cloître des Carmes"
         },
         "kind": {
           "ko": "투어",
           "en": "Tour"
         },
         "dotRole": {
-          "ko": "투어 기획·운영",
-          "en": "Touring"
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
         },
         "link": "",
-        "time": "",
+        "time": "22:00",
         "date": {
-          "ko": "2026.7.14–15",
-          "en": "14–15 July 2026"
+          "ko": "",
+          "en": ""
         },
         "note": {
-          "ko": "투어 · 확인 필요",
+          "ko": "아비뇽 페스티벌 초청",
+          "en": "Avignon Festival"
+        }
+      },
+      {
+        "start": "2026-07-15",
+        "end": "2026-07-16",
+        "city": {
+          "ko": "바르셀로나",
+          "en": "Barcelona"
+        },
+        "venue": {
+          "ko": "테아트레 리우레",
+          "en": "Teatre Lliure"
+        },
+        "kind": {
+          "ko": "투어",
           "en": "Tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        },
+        "link": "",
+        "time": "20:30",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "그렉 페스티벌 초청",
+          "en": "Grec Festival"
         }
       }
     ],
@@ -3205,32 +3267,22 @@
     "credits": [
       {
         "role": {
-          "ko": "주최",
-          "en": ""
+          "ko": "기획",
+          "en": "Curated by"
         },
         "name": {
-          "ko": "극단 호랑이기운 × 프로듀서그룹 도트",
-          "en": ""
+          "ko": "송미선, 박지선",
+          "en": "Song Miseon, Park Jisun"
         }
       },
       {
         "role": {
           "ko": "참여 작가",
-          "en": ""
+          "en": "Writers"
         },
         "name": {
           "ko": "이오진 · 안정민 · 나수민 · 김연재 · 신효진",
-          "en": ""
-        }
-      },
-      {
-        "role": {
-          "ko": "키워드",
-          "en": ""
-        },
-        "name": {
-          "ko": "여성 노년 · 신작 희곡 · 낭독",
-          "en": ""
+          "en": "Lee Ojin, Ahn Jeongmin, Na Sumin, Kim Yeonjae, Shin Hyojin"
         }
       }
     ]
@@ -4398,40 +4450,90 @@
       "ko": "스트리트댄스, 국제교류",
       "en": "street dance, international exchange"
     },
-    "info": [
-      {
-        "role": {
-          "ko": "주최",
-          "en": "Hosted by"
-        },
-        "name": {
-          "ko": "문화체육관광부",
-          "en": "Ministry of Culture, Sports and Tourism"
-        }
-      },
-      {
-        "role": {
-          "ko": "주관",
-          "en": "Organised by"
-        },
-        "name": {
-          "ko": "한국국제문화교류진흥원(KOFICE) · 주프랑스한국문화원",
-          "en": "KOFICE · Korean Cultural Center in France"
-        }
-      },
-      {
-        "role": {
-          "ko": "기획",
-          "en": "Produced by"
-        },
-        "name": {
-          "ko": "프로듀서그룹 도트 · 배틀 프로",
-          "en": "Producer Group DOT · Battle Pro"
-        }
-      }
-    ],
     "cover": "",
-    "homeFeature": []
+    "homeFeature": [],
+    "accordions": [
+      {
+        "title": {
+          "ko": "정보",
+          "en": "Info"
+        },
+        "rows": [
+          {
+            "ko": "키워드 · 스트리트댄스, 국제교류",
+            "en": "Keywords · street dance, international exchange"
+          },
+          {
+            "ko": "주최 · 문화체육관광부",
+            "en": "Hosted by · Ministry of Culture, Sports and Tourism"
+          },
+          {
+            "ko": "주관 · 한국국제문화교류진흥원(KOFICE) · 주프랑스한국문화원",
+            "en": "Organised by · KOFICE · Korean Cultural Center in France"
+          },
+          {
+            "ko": "기획 · 프로듀서그룹 도트 · 배틀 프로",
+            "en": "Produced by · Producer Group DOT · Battle Pro"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "크리에이티브 프로듀서 · 이희진, 송미선",
+            "en": "Creative Producers · Lee HeeJin, Song Miseon"
+          },
+          {
+            "ko": "프로젝트 매니저 · 박다솔",
+            "en": "Project Manager · Park Dasol"
+          },
+          {
+            "ko": "무대감독 · 김상훈",
+            "en": "Stage Manager · Kim SangHoon"
+          },
+          {
+            "ko": "조명감독 · 배대두, 스테판 아베나스",
+            "en": "Lighting Directors · Bae DaeDoo, Stéphane Avenas"
+          },
+          {
+            "ko": "음향감독 · 안형록",
+            "en": "Sound Director · An HyungRok"
+          },
+          {
+            "ko": "음악 디자이너 · 앨리스 오르페우스",
+            "en": "Music Designer · Alice Orpheus"
+          },
+          {
+            "ko": "스페셜 DJ · 센카",
+            "en": "Special DJ · Senka"
+          },
+          {
+            "ko": "스페셜 MC · 나스티 & 레아",
+            "en": "Special MC · Nasty & Léa"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "출연",
+          "en": "Performers"
+        },
+        "rows": [
+          {
+            "ko": "원밀리언 (한국) · 옐, 포켓, 리아킴, 하리무, 에이미 박, 레디, 데비, 도희, 백구영, 니노, 예찬, 케이찬",
+            "en": "1MILLION (Korea) · YELL, POCKET, LIA KIM, HARIMU, AMY PARK, REDY, DEBBY, DOHEE, KOOYOUNG BACK, NINO, YECHAN, KCHAN"
+          },
+          {
+            "ko": "포켓몬 크루 (프랑스) · 예술감독 리야드 프가니 / 니나 아펠, 카림 베다우디아, 케빈 베리슈, 에릭손 드 파울라, 딜란 에세브, 카림 플루키, 앙투안 르비그르, 와드리아코 몰레, 아비가일 노엘, 오세안 팔리, 제라르 족자메",
+            "en": "Pockemon Crew (France) · Artistic Director Riyad Fghani / Nina Appel, Karim Beddaoudia, Kévin Berriche, Erycksson De Paula, Dylan Eucebe, Karim Felouki, Antoine Lebigre, Wadriako Mole, Abygail Noel, Océanne Palie, Gerard Xozame"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "play-on",
