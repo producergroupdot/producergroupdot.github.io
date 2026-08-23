@@ -203,14 +203,15 @@ function buildAccordions(work) {
    * 공연이 아닌 작업(리서치·네트워크·레지던시·축제)은 '일정' 하나로 둔다.
    */
   const schedule = () => {
-    const asc = (a, b) => (a.start < b.start ? -1 : 1);
-    const desc = (a, b) => -asc(a, b);
+    /* 어느 칸이든 최신이 위로. 한 작업 안에서 칸마다 차례가 뒤집히면
+       두 칸을 이어 읽을 때 시간이 거꾸로 흐른다. */
+    const desc = (a, b) => (a.start < b.start ? 1 : -1);
     const ended = (r) => (r.end || r.start) < today();
 
     if (!runs.length) return [];
-    if (!isPerformance(work)) return [{ title: t(DATES), rows: runs.sort(asc).map(runRow) }];
+    if (!isPerformance(work)) return [{ title: t(DATES), rows: runs.sort(desc).map(runRow) }];
 
-    const upcoming = runs.filter((r) => !ended(r)).sort(asc);
+    const upcoming = runs.filter((r) => !ended(r)).sort(desc);
     if (!upcoming.length) return [{ title: t(SHOWS), rows: runs.sort(desc).map(runRow) }];
 
     const past = runs.filter(ended).sort(desc);
