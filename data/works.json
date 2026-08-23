@@ -34,7 +34,7 @@
         },
         "venue": {
           "ko": "TINC",
-          "en": "TINC"
+          "en": "TINC (This is Not A Church)"
         },
         "kind": {
           "ko": "초연",
@@ -65,7 +65,7 @@
         },
         "venue": {
           "ko": "TINC",
-          "en": "TINC"
+          "en": "TINC (This is Not A Church)"
         },
         "kind": {
           "ko": "신작",
@@ -89,12 +89,12 @@
     ],
     "status": "ongoing",
     "lead": {
-      "ko": "",
-      "en": ""
+      "ko": "조율되고 틀어지는 순간, 그 사이에서 작동하는 감각들을 따라간다.",
+      "en": "Following the senses as they work in the moment of tuning and slipping — neither wholly in unison nor wholly apart."
     },
     "body": {
       "ko": "〈sync de sync〉는 조율되고 틀어지는 순간, 완전한 일치도 완전한 분리도 아닌 상태에서 작동하는 감각들을 따라간다. 말은 입술과 성대를 지나 소리와 진동으로 흩어지고, 움직임은 형태보다 몸을 통과한 파동과 질감으로 번진다.\n\n빛과 어둠, 온도와 공기, 무대 안팎의 보이는 것들과 보이지 않는 것들은 서로 겹치고 스며들며 감각의 얽힘을 만든다. 그 얽힘은 공간의 밀도, 온도와 습도, 기운의 변화를 몸에 닿게 한다.\n\n〈sync de sync〉는 고정되지 않는 주변 환경에 반응하며, 현재의 감각 안에 이미 도착한 변화를 더듬는다.",
-      "en": ""
+      "en": "sync de sync follows the senses at work in the moment of tuning and slipping, in a state that is neither complete unison nor complete separation. Speech passes the lips and vocal cords and scatters into sound and vibration; movement spreads less as shape than as wave and texture passing through the body.\n\nLight and dark, temperature and air, the visible and invisible on and off stage overlap and seep into one another, making an entanglement of the senses. That entanglement brings the density of a space, its heat and humidity, its shifting energy into contact with the body.\n\nsync de sync responds to surroundings that never hold still, feeling for the change that has already arrived within present sensation."
     },
     "venue": {
       "ko": "TINC (This is Not A Church)",
@@ -124,16 +124,16 @@
         },
         "rows": [
           {
-            "ko": "장소 · TINC (This is Not A Church)",
-            "en": "Venue · TINC (This is Not A Church)"
-          },
-          {
             "ko": "러닝타임 · 60분",
-            "en": "Running time · 60 min"
+            "en": "Running time · 60 minutes"
           },
           {
-            "ko": "도트의 역할 · 크리에이티브 프로듀싱, 기획·행정",
-            "en": "DOT · creative producing, planning and administration"
+            "ko": "지원 · 서울특별시, 서울문화재단 · 2026 서울예술창작지원 다년 선정",
+            "en": "Support · Seoul Metropolitan Government, Seoul Foundation for Arts and Culture · Selected for the SFAC Multi-Year Arts Creation Grant, 2026"
+          },
+          {
+            "ko": "키워드 · 감각, 무용, 과정 중심",
+            "en": "Keywords · senses, dance, process"
           }
         ]
       },
@@ -145,71 +145,55 @@
         "rows": [
           {
             "ko": "컨셉·안무 · 황수현",
-            "en": "Concept & Choreography · Hwang Soohyun"
+            "en": "Concept, Choreography · Hwang Soohyun"
           },
           {
             "ko": "리서치·출연 · 정나원, 최승윤, 황수현",
-            "en": ""
+            "en": "Research, Performance · Jeong Nawon, Choi Seungyun, Hwang Soohyun"
           },
           {
-            "ko": "사운드 · 홍초선",
-            "en": ""
+            "ko": "사운드 디자인 · 홍초선",
+            "en": "Sound Design · Hong Choseon"
           },
           {
             "ko": "조명 디자인 · 공연화",
-            "en": ""
+            "en": "Lighting Design · Gong Yeonhwa"
           },
           {
-            "ko": "조명팀 · 김인애, 오채은",
-            "en": ""
+            "ko": "조명 · 김인애, 오채은",
+            "en": "Lighting · Kim Inae, Oh Chaeeun"
           },
           {
             "ko": "영상 · 윤재민(2025), 백종관(2026)",
-            "en": ""
+            "en": "Video · Yoon Jaemin (2025), Paik Jongkwan (2026)"
           },
           {
             "ko": "리허설 어시스턴트 · 강호정",
-            "en": ""
+            "en": "Rehearsal Assistant · Kang Hojung"
           },
           {
             "ko": "아웃사이드 아이 · 손나예",
-            "en": ""
+            "en": "Outside Eye · Son Naye"
           },
           {
             "ko": "크리에이티브 프로듀서 · 박지선",
             "en": "Creative Producer · Park Jisun"
           },
           {
-            "ko": "기획·행정 · 송미선",
-            "en": "Planning & Administration · Song Miseon"
+            "ko": "기획·제작 · 송미선",
+            "en": "Planning & Producing · Song Miseon"
           },
           {
-            "ko": "무대감독 · 최진아(2025), 김세현(2026)",
-            "en": ""
+            "ko": "무대감독 · 최지나(2025), 김세현(2026)",
+            "en": "Stage Manager · Choi Jina (2025), Kim Sehyun (2026)"
           },
           {
-            "ko": "셋업·진행 · 김지현, 김채민",
-            "en": ""
+            "ko": "셋업·러닝 크루 · 김지현, 김채민",
+            "en": "Setup & Running Crew · Kim Jihyun, Kim Chaemin"
           },
           {
             "ko": "그래픽 디자인 · 홍소이",
-            "en": ""
-          }
-        ]
-      },
-      {
-        "title": {
-          "ko": "후원",
-          "en": "Support"
-        },
-        "rows": [
-          {
-            "ko": "서울특별시, 서울문화재단",
-            "en": "Seoul Metropolitan Government, Seoul Foundation for Arts and Culture"
-          },
-          {
-            "ko": "2026년 서울문화재단 예술창작활동지원(다년) 선정",
-            "en": ""
+            "en": "Graphic Design · Hong Soi"
           }
         ]
       },
@@ -758,7 +742,7 @@
           },
           {
             "ko": "조명 · 김현",
-            "en": "Lighting Designer · Kim Hyun"
+            "en": "Lighting · Kim Hyun"
           },
           {
             "ko": "프로듀서 · 박지선, 최봉민",
@@ -2487,17 +2471,17 @@
           {
             "ko": "2020 · 기후변화 2020 — 화천의 환경을 둘러싼 강연과 대화",
             "en": "2020 · Climate Change 2020 — Talks on environment in Hwacheon",
-            "url": "https://jisunarts.github.io/documents.html#climate-residency"
+            "url": "https://drive.google.com/file/d/1DmxXEHWL5f9hKsCQWXnqQfIkfxADlIRu/view"
           },
           {
             "ko": "2021 · 관점의 전환, 세상을 보는 시선들",
             "en": "2021 · Change of perspective, points of view looking at the world",
-            "url": "https://jisunarts.github.io/documents.html#climate-residency"
+            "url": "https://drive.google.com/file/d/1OWR8YlYKW4O-CUJB0u_DQgYAODi4Vf5-/view"
           },
           {
             "ko": "2022 · 기후변화 2022 — 기후위기와 에너지",
             "en": "2022 · Climate Change 2022 — Climate Crisis and Energy",
-            "url": "https://jisunarts.github.io/documents.html#climate-residency"
+            "url": "https://drive.google.com/file/d/1w33vC6cEAug6U_JeyGTLAVKb5kThDXr2/view"
           }
         ]
       },
@@ -2568,11 +2552,6 @@
             "ko": "프로젝트 웹사이트",
             "en": "Project website",
             "url": "http://artstutbatclimatechange.com/?page_id=669"
-          },
-          {
-            "ko": "자료집 3종",
-            "en": "Three publications",
-            "url": "https://jisunarts.github.io/documents.html#climate-residency"
           },
           {
             "ko": "인스타그램",
