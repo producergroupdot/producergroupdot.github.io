@@ -10,7 +10,7 @@ import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, isTempFile, formBadge,
   yearSpan, citiesLine, visibleWorks, kindLabel,
-  FORMS, formKey, formLabelByKey, isRunningNow, placesOf,
+  FORMS, formKey, formLabelByKey, isRunningNow, placesOf, byYear,
 } from './ui.js';
 
 /* 화면 글자. 데이터와 같은 {ko,en} 모양으로 두고 t() 로 꺼낸다 —
@@ -73,39 +73,8 @@ const anyFilter = () =>
 /* 회차에서 뽑는 것들(yearSpan · citiesLine)과
    진행 중 판정(isRunningNow)은 ui.js 에 있다. 여기서 다시 만들지 않는다. */
 
-/* ---------- 차례는 연도가 정한다 ----------
-   손으로 매긴 order 로는 스물여덟 건을 감당할 수 없다. 한 건을 끼워 넣을 때마다
-   앞뒤 번호를 다시 손봐야 하고, 결국 아무도 고치지 않아 차례가 굳는다.
-
-     1) 가장 최근 회차의 연도 — 내림차순
-     2) 시작 연도 — 내림차순
-     3) 그래도 같으면 기존 order (사람이 정한 것을 마지막에 존중한다)
-
-   회차가 없으면 yearTo · yearFrom 을 쓰고, 그것도 없으면 0 이라 맨 뒤로 간다.
-   필터는 걸러내기만 하고 차례는 건드리지 않는다. */
-
-const runYears = (w) =>
-  (w.runs || []).flatMap((r) => [r.start, r.end]).filter(Boolean).map((d) => Number(d.slice(0, 4)));
-
-/** 가장 최근 연도. 회차가 없으면 yearTo, 그것도 없으면 yearFrom. */
-function lastYearOf(w) {
-  const ys = runYears(w);
-  return ys.length ? Math.max(...ys) : Number(w.yearTo) || Number(w.yearFrom) || 0;
-}
-
-/** 시작 연도. 회차가 없으면 yearFrom. */
-function firstYearOf(w) {
-  const ys = runYears(w);
-  return ys.length ? Math.min(...ys) : Number(w.yearFrom) || 0;
-}
-
-function byYear(a, b) {
-  const la = lastYearOf(a), lb = lastYearOf(b);
-  if (la !== lb) return lb - la;
-  const fa = firstYearOf(a), fb = firstYearOf(b);
-  if (fa !== fb) return fb - fa;
-  return (a.order ?? Infinity) - (b.order ?? Infinity);
-}
+/* 차례는 ui.js 의 byYear 하나가 정한다 — 홈의 밴드도 같은 것을 쓴다.
+   두 곳에 두면 홈과 Works 의 '최신 3건' 이 서로 달라진다. */
 
 /* ---------- 주소와 상태 ---------- */
 

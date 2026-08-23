@@ -289,6 +289,13 @@ works.json 의 선택 필드 (없어도 됩니다)
               Explore more. 국문 목록에는 그대로 남는다. 기본값 false.
               (시트 '3.작업' 탭의 '영문 제외' 열 — 관리자 전용, 초록 헤더)
               판정은 `js/ui.js` 의 shownInLang() 한 곳. 목록을 만드는 곳은 모두 그것을 거친다.
+  hideFromBand true 면 홈 Now 아래 사진 띠에 뽑히지 않는다. 모자이크와는 무관하다.
+              띠는 Works 와 같은 차례(최신순)의 앞 세 건을 자동으로 쓰므로,
+              빼고 싶은 작업은 이 칸으로만 뺀다. 기본값 false.
+  coverPosition  top · center · bottom. 사진을 자를 때 어디를 남길지. 기본은 center.
+              파일명에 poster 가 들어가면 코드가 알아서 top 으로 잡는다 —
+              파일명이 01.jpg 인 포스터를 위해 이 칸으로 덮어쓴다.
+              판정은 `js/ui.js` 의 coverPosition() 한 곳. 지금은 홈 밴드가 쓴다.
   materials[] type(프로그램북·영상·자료집·사진·기사/리뷰·웹사이트·기타),
               label{ko,en}, url, public('예'·'아니오'·'확인 필요')
               → public 이 '예' 인 것만 화면에 나옵니다.

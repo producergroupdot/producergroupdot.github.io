@@ -5,14 +5,21 @@ import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   logo, footer, pageUrl, link, photo, coverCandidates, producerTile, kindLabel, kindName, isPerformance,
+  byYear, coverPosition,
   langToggle,
   shownInLang, visibleWorks,
   mergeRuns,
 } from './ui.js';
 
-/* 모자이크에서 사진이 들어갈 자리는 works.json 의 homeFeature 가 지정한다.
+/* 모자이크 세 칸은 works.json 의 homeFeature 가 지정한다 — 그 자리의 비율에 맞는
+   사진을 사람이 골라야 하기 때문이다.
    그리드 위치는 CSS 클래스로만 준다 — 인라인 style 은 미디어 쿼리를 이긴다(함정 3). */
-const BAND_SLOTS = ['band-1', 'band-2', 'band-3'];
+
+/* Now 아래 띠 세 칸은 손으로 지정하지 않는다. Works 목록과 같은 차례(최신순)의
+   앞 세 건을 그대로 쓴다 — 새 작업이 들어오면 홈이 알아서 따라온다.
+   단 모자이크에 이미 쓰인 작업은 건너뛴다. 한 화면에 같은 작업이 두 번 나오면 안 된다. */
+const BAND_COUNT = 3;
+const MOSAIC_SLOTS = ['mosaic-tall', 'mosaic-wide-a', 'mosaic-wide-b'];
 
 const PRODUCER_SLOTS = ['m-p1', 'm-p2', 'm-p3', 'm-p4'];
 
@@ -305,18 +312,36 @@ function renderNow(site) {
 
 /* ---------- Now 아래 사진 3장 ---------- */
 
+/** 모자이크가 이미 데려간 작업들. 띠에서는 건너뛴다. */
+const mosaicWorks = (works) =>
+  new Set(MOSAIC_SLOTS.map((k) => bySlot(works, k)?.id).filter(Boolean));
+
+/** 띠에 올릴 세 건 — Works 와 같은 차례에서 모자이크와 겹치지 않는 앞쪽부터. */
+function bandWorks(works) {
+  const taken = mosaicWorks(works);
+  return works
+    .filter(shownInLang)                 // 영문판에서 감춘 작업은 홈에도 두지 않는다
+    .filter((w) => !taken.has(w.id))
+    .filter((w) => w.hideFromBand !== true)   // 사람이 띠에서 뺀 작업
+    .sort(byYear)
+    .slice(0, BAND_COUNT);
+}
+
 function renderBand(site) {
   const band = document.getElementById('home-band');
-  const figures = BAND_SLOTS.map((key) => {
-    const w = bySlot(site.works, key);
-    if (!w) return null;
+  const figures = bandWorks(site.works).map((w, i) => {
+    const key = `band-${i + 1}`;         // homePhotos 를 이 이름으로 찾는다
     const p = site.producerById.get((w.producers || [])[0]);
     const dark = !p || p.color.dark;
     const fig = el(`figure.${fieldClass(w.producers)}${dark ? '.on-dark' : ''}`);
     const pending = () => el('span.meta.pending', { text: '사진 준비 중' });
+    /* 어디를 남기고 자를지는 실제로 뜬 파일이 정해진 뒤에 붙인다 —
+       후보를 차례로 시도하다 표지로 떨어질 수 있어서다. */
     fig.append(
       link(pageUrl('work', w.id), '.band-a', { 'aria-label': titleText(t(w.title)) },
-        photo(homeCandidates(w, key), pending)),
+        photo(homeCandidates(w, key), pending, (src) => {
+          fig.dataset.pos = coverPosition(w, src);
+        })),
       el(
         'figcaption',
         null,

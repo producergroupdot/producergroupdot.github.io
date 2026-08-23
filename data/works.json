@@ -212,9 +212,7 @@
       }
     ],
     "cover": "img/works/sync-de-sync/01.jpg",
-    "homeFeature": [
-      "band-2"
-    ]
+    "homeFeature": []
   },
   {
     "id": "hihihistory",
@@ -601,7 +599,7 @@
       "en": "ⓒSang Hoon Ok"
     },
     "homeFeature": [
-      "band-3"
+      "mosaic-tall"
     ]
   },
   {
@@ -815,7 +813,7 @@
       "mosaic-tall": "img/home/on-the-birds-day-vertical.jpg"
     },
     "homeFeature": [
-      "mosaic-tall"
+      "mosaic-wide-a"
     ]
   },
   {
@@ -1340,9 +1338,7 @@
     "homePhotos": {
       "mosaic-wide-b": "img/home/moving-a-forest-panorama.jpg"
     },
-    "homeFeature": [
-      "mosaic-wide-b"
-    ]
+    "homeFeature": []
   },
   {
     "id": "mooljil",
@@ -1726,11 +1722,10 @@
     },
     "cover": "img/works/ganghwa/01.jpg",
     "homePhotos": {
-      "mosaic-wide-a": "img/home/ganghwa-panorama.jpg"
+      "mosaic-wide-b": "img/home/ganghwa-panorama.jpg"
     },
     "homeFeature": [
-      "mosaic-wide-a",
-      "band-1"
+      "mosaic-wide-b"
     ]
   },
   {
@@ -3264,7 +3259,9 @@
       "en": ""
     },
     "cover": "img/works/monthly-grandmothers/01.jpg",
+    "coverPosition": "top",
     "homeFeature": [],
+    "hideFromBand": true,
     "note": {
       "ko": "초안 — 확인 필요",
       "en": ""

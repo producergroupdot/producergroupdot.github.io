@@ -191,6 +191,40 @@ export function mergeRuns(runs) {
   return out;
 }
 
+/* ---------- 차례는 연도가 정한다 ----------
+   손으로 매긴 order 로는 스물여덟 건을 감당할 수 없다. 한 건을 끼워 넣을 때마다
+   앞뒤 번호를 다시 손봐야 하고, 결국 아무도 고치지 않아 차례가 굳는다.
+
+     1) 가장 최근 회차의 연도 — 내림차순
+     2) 시작 연도 — 내림차순
+     3) 그래도 같으면 기존 order (사람이 정한 것을 마지막에 존중한다)
+
+   회차가 없으면 yearTo · yearFrom 을 쓰고, 그것도 없으면 0 이라 맨 뒤로 간다.
+   필터는 걸러내기만 하고 차례는 건드리지 않는다. */
+
+const runYears = (w) =>
+  (w.runs || []).flatMap((r) => [r.start, r.end]).filter(Boolean).map((d) => Number(d.slice(0, 4)));
+
+/** 가장 최근 연도. 회차가 없으면 yearTo, 그것도 없으면 yearFrom. */
+function lastYearOf(w) {
+  const ys = runYears(w);
+  return ys.length ? Math.max(...ys) : Number(w.yearTo) || Number(w.yearFrom) || 0;
+}
+
+/** 시작 연도. 회차가 없으면 yearFrom. */
+function firstYearOf(w) {
+  const ys = runYears(w);
+  return ys.length ? Math.min(...ys) : Number(w.yearFrom) || 0;
+}
+
+export function byYear(a, b) {
+  const la = lastYearOf(a), lb = lastYearOf(b);
+  if (la !== lb) return lb - la;
+  const fa = firstYearOf(a), fb = firstYearOf(b);
+  if (fa !== fb) return fb - fa;
+  return (a.order ?? Infinity) - (b.order ?? Infinity);
+}
+
 /* ---------- 시간 ----------
    아카이브는 없어졌다. 지나온 작업도 Works 에 그대로 남고,
    '현재 진행 중' 은 목록을 가르는 것이 아니라 걸었다 풀었다 하는 필터 하나다. */
@@ -588,6 +622,20 @@ export function creditLine({ photoCredit, creditType, photoCreditShow, note } = 
 
   const kind = CREDIT_TYPE[creditType];
   return el('p.credit.meta', { text: kind ? `${t(kind)} ${who}` : who });
+}
+
+/* ---------- 사진을 어디를 남기고 자를 것인가 ----------
+   포스터는 위쪽에 제목이 있다. 가운데를 기준으로 자르면 제목부터 잘려 나간다.
+   파일명에 poster 가 들어가면 위를 남긴다.
+
+   works.json 의 coverPosition(top · center · bottom)이 있으면 그것이 이긴다 —
+   파일명이 01.jpg 인 포스터도 있어서 규칙만으로는 다 잡지 못한다.
+   기본은 center. 값은 클래스가 아니라 data 속성으로 넘긴다(인라인 style 금지, 함정 3). */
+const COVER_POSITIONS = ['top', 'center', 'bottom'];
+
+export function coverPosition(work, src) {
+  if (COVER_POSITIONS.includes(work?.coverPosition)) return work.coverPosition;
+  return /poster/i.test(String(src || '').split('/').pop()) ? 'top' : 'center';
 }
 
 /* ---------- 사진 한 장의 크레딧 ----------

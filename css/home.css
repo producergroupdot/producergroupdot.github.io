@@ -262,7 +262,10 @@ a.cell:focus-visible h2{
 }
 .band figure{ position:relative; overflow:hidden; aspect-ratio:4/3 }
 .band .band-a{ position:absolute; inset:0; display:block }
-.band .cover{ width:100%; height:100%; object-fit:cover }
+.band .cover{ width:100%; height:100%; object-fit:cover; object-position:50% 50% }
+/* 포스터처럼 위쪽에 제목이 있는 사진은 위를 남긴다. 값은 js/ui.js 의 coverPosition 이 정한다. */
+.band figure[data-pos='top'] .cover{ object-position:50% 0 }
+.band figure[data-pos='bottom'] .cover{ object-position:50% 100% }
 .band .pending{ position:absolute; left:18px; top:16px; opacity:.55 }
 .band figcaption{
   position:absolute; left:0; right:0; bottom:0;
