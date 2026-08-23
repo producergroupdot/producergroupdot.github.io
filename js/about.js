@@ -71,6 +71,10 @@ function doongji(d) {
       el('span.meta', { text: t(d.label) }),
       el('h2', { text: t(d.title) }),
       el('p', { text: t(d.body) }),
+      /* 주소. 영문 표기가 아직 없어 영문 화면에서는 t() 가 국문을 그대로 내보낸다 —
+         길을 찾는 데 쓰는 값이라 비우는 것보다 국문이라도 보이는 편이 낫다.
+         값이 없으면 줄 자체를 만들지 않는다. */
+      t(d.address) ? el('p.dj-addr.meta', { text: t(d.address) }) : null,
       d.link?.url
         ? el('a.dj-btn', {
             href: d.link.url,

@@ -108,6 +108,15 @@ a.person:hover h3{ text-decoration:underline; text-underline-offset:4px }
   margin:10px 0 16px;
 }
 .doongji p{ font-size:16px; line-height:1.65; opacity:.85 }
+/* 주소는 본문보다 한 단 작고 옅게. 어두운 면 위라 opacity 로만 눌러도 읽힌다.
+   `.doongji p` 와 `.meta` 를 둘 다 이겨야 해서 선택자를 한 단 올린다 — !important 는 쓰지 않는다. */
+.doongji .dj-addr{
+  margin-top:14px;
+  font-size:13px;
+  line-height:1.6;
+  letter-spacing:.01em;
+  opacity:.62;
+}
 .dj-btn{
   display:inline-block;
   margin-top:22px;
