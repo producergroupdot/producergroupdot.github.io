@@ -149,7 +149,7 @@ async function main() {
   try {
     const site = await loadSite();
     injectProducerColors(site.producers);
-    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'artists', site.about));
+    document.getElementById('top-bar').replaceChildren(topBar(site, 'artists'));
     canvas(site);
     document.getElementById('page-footer').replaceChildren(footer());
   } catch (err) {

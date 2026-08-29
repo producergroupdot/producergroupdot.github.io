@@ -154,7 +154,7 @@ async function main() {
     const site = await loadSite();
     injectProducerColors(site.producers);
 
-    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'about', site.about));
+    document.getElementById('top-bar').replaceChildren(topBar(site, 'about'));
     document.getElementById('page').replaceChildren(
       intro(site.about),
       el('h2.sec', { text: 'Producers' }),

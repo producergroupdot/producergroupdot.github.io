@@ -191,7 +191,7 @@ async function main() {
     if (person.color.dark) document.body.classList.add('on-dark');
     document.title = `${t(person.name)} · 프로듀서그룹 도트`;
 
-    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'about', site.about));
+    document.getElementById('top-bar').replaceChildren(topBar(site, 'about'));
     document.getElementById('page').replaceChildren(
       head(person),
       el(

@@ -639,7 +639,7 @@ async function main() {
     if (!work) throw new Error(`works.json 에 '${id}' 가 없습니다.`);
     document.title = `${titleText(t(work.title))} · 프로듀서그룹 도트`;
 
-    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'works', site.about));
+    document.getElementById('top-bar').replaceChildren(topBar(site, 'works'));
 
     /* 두 열. 사진은 아직 재는 중이라 영상만 먼저 들어간다 —
        열 자체를 미리 만들어 두어야 글이 두 번 자리를 옮기지 않는다. */

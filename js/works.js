@@ -363,7 +363,7 @@ async function main() {
     const site = await loadSite();
     injectProducerColors(site.producers);
 
-    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'works', site.about));
+    document.getElementById('top-bar').replaceChildren(topBar(site, 'works'));
     document.getElementById('works-footer').replaceChildren(footer());
 
     readQuery();

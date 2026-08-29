@@ -144,7 +144,7 @@ async function main() {
     if (!artist) throw new Error(`artists.json 에 '${id}' 가 없습니다.`);
     document.title = `${t(artist.name)} · 프로듀서그룹 도트`;
 
-    document.getElementById('top-bar').replaceChildren(topBar(site.producers, 'artists', site.about));
+    document.getElementById('top-bar').replaceChildren(topBar(site, 'artists'));
     document.getElementById('page').replaceChildren(
       head(artist, site.producerById),
       el('div.abody', null,

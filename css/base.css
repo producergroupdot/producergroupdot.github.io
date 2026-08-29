@@ -110,6 +110,91 @@ h1,h2,h3,h4{ font-family:var(--disp); font-weight:var(--w-disp); letter-spacing:
 .burger-i::before{ position:absolute; top:-7px }
 .burger-i::after { position:absolute; top:7px }
 
+/* ---------- 전체 찾기 ---------- */
+/* 돋보기는 Contact 다음, 언어 토글 앞. 모바일에서도 상단 바에 남는다 —
+   햄버거 안으로 넣으면 찾기까지 두 번 눌러야 한다. */
+.sr-open{
+  display:flex; align-items:center; justify-content:center;
+  width:34px; height:34px;
+  background:none; border:none; padding:0; cursor:pointer;
+  color:inherit; opacity:.75;
+}
+.sr-open:hover{ opacity:1 }
+
+/* 층. 배경을 누르면 닫히므로 판(.sr-panel)은 그 안에 따로 둔다. */
+.sr-overlay{
+  position:fixed; inset:0; z-index:120;
+  background:rgb(29 29 27 / .5);
+  display:flex; justify-content:center;
+  padding:0 var(--pad);
+  overflow-y:auto;
+}
+.sr-panel{
+  width:100%; max-width:720px;
+  margin:clamp(24px, 9vh, 96px) 0 40px;
+  height:max-content;
+  background:var(--panel);
+  color:var(--ink);
+  --fg-rgb: 29 29 27;                     /* 어두운 층 위의 밝은 판 — 선도 되돌린다 */
+  padding:20px 22px 26px;
+}
+.sr-head-row{ display:flex; align-items:center; gap:12px }
+.sr-input{
+  flex:1; min-width:0;
+  background:none; border:none; outline:none;
+  color:inherit;
+  font-family:var(--disp);
+  font-size:24px;
+  font-weight:var(--w-disp);
+  letter-spacing:-.02em;
+  border-bottom:1px solid rgb(var(--fg-rgb) / .3);
+  padding:6px 0;
+}
+.sr-input::placeholder{ opacity:.35; font-weight:var(--w-body) }
+.sr-input::-webkit-search-cancel-button{ -webkit-appearance:none }
+.sr-x{
+  width:36px; height:36px; flex:none;
+  background:none; border:none; cursor:pointer;
+  color:inherit; font-size:18px; line-height:1; opacity:.6;
+}
+.sr-x:hover{ opacity:1 }
+
+.sr-count{ margin:12px 0 0; opacity:.5 }
+.sr-body{ margin-top:8px }
+.sr-empty{ padding:28px 0; opacity:.55 }
+
+.sr-group + .sr-group{ margin-top:22px }
+.sr-gtitle{
+  padding:14px 0 8px;
+  opacity:.5;
+  border-bottom:.5px solid rgb(var(--fg-rgb) / .22);
+}
+.sr-row{
+  display:block;
+  padding:12px 0;
+  border-bottom:.5px solid rgb(var(--fg-rgb) / .14);
+}
+.sr-row:hover .sr-title{ text-decoration:underline; text-underline-offset:3px }
+.sr-head{ display:flex; align-items:baseline; gap:10px }
+.sr-title{ font-family:var(--disp); font-weight:var(--w-disp); font-size:16px; letter-spacing:-.02em }
+.sr-where{ opacity:.45; flex:none }
+.sr-ex{
+  margin-top:4px;
+  font-size:13px; line-height:1.6;
+  opacity:.7;
+}
+/* 걸린 부분만 굵게. 형광펜처럼 칠하지 않는다 — 크림 바탕에 노란 면은 읽기 어렵다. */
+.sr-ex mark{
+  background:none;
+  color:inherit;
+  font-weight:var(--w-disp);
+}
+
+@media (max-width:640px){
+  .sr-panel{ padding:16px 16px 22px }
+  .sr-input{ font-size:19px }
+}
+
 /* ---------- 모바일 전체화면 메뉴 ---------- */
 /* 라벤더는 구조색이라 메뉴에 쓴다. 프로듀서 네 색은 사람을 가리키므로 쓰지 않는다. */
 .menu-overlay{

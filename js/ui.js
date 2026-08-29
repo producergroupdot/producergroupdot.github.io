@@ -2,6 +2,9 @@
    프로듀서 색 주입 · 색점 · 로고 · 특수문자 SVG · 작은 DOM 헬퍼. */
 
 import { t, lang, isEn, setLang } from './i18n.js';
+/* 돋보기 버튼. search.js 도 ui.js 를 부르므로 순환이지만, 양쪽 다 함수 안에서만
+   쓰기 때문에 모듈이 다 올라온 뒤에 이름이 잡힌다. */
+import { searchButton } from './search.js';
 
 /* ---------- DOM 헬퍼 ---------- */
 
@@ -775,7 +778,8 @@ export function langToggle(extraClass = '') {
   return box;
 }
 
-export function topBar(producers, here, about) {
+export function topBar(site, here) {
+  const { producers, about } = site;
   const nav = el('nav');
   for (const [kind, label] of NAV) {
     const url = pageUrl(kind);
@@ -795,6 +799,9 @@ export function topBar(producers, here, about) {
     link(pageUrl('home'), '.logo-link', { 'aria-label': '홈' }, logo(producers)),
     link(pageUrl('home'), '.wordmark', null, 'PRODUCER GROUP ', el('span.wordmark-light', { text: 'DOT' })),
     nav,
+    /* 돋보기는 Contact 다음, 언어 토글 앞. 모바일에서는 메뉴가 햄버거로 접히지만
+       찾기는 상단 바에 그대로 남는다 — 한 번 더 열지 않고 바로 칠 수 있게. */
+    searchButton(site),
     el('span.spacer'),
     langToggle(),
     burger
