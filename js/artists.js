@@ -18,19 +18,15 @@ function face(artist) {
   return box;
 }
 
-function label(artist, works, producerById) {
-  const mine = works
-    .filter((w) => (w.artists || []).includes(artist.id))
-    .map((w) => titleText(t(w.title)));
-
+/* 카드에는 사진 · 색점 · 이름만 둔다.
+   다른 언어 이름과 연관 작품명은 상세 페이지에 있다 — 목록에서는 훑는 것이 목적이라
+   작은 글씨 두 줄이 붙으면 원 사이가 멀어지고 이름이 눈에 덜 들어온다. */
+function label(artist, producerById) {
   return el(
     'span.info',
     null,
     dots(artist.producers, producerById),
-    el('h3', { text: t(artist.name) }),
-    /* 로마자는 t() 를 거치지 않는다 — en 이 비면 t() 가 국문을 돌려주어 이름이 두 번 나온다. */
-    artist.name.en ? el('span.kr', { text: artist.name.en }) : null,
-    mine.length ? el('span.wl.meta', { text: mine.join(' · ') }) : null
+    el('h3', { text: t(artist.name) })
   );
 }
 
@@ -41,7 +37,10 @@ function label(artist, works, producerById) {
 const RANGE = { x: [2, 70], y: [0, 70] }; //  %
 const PER_ITEM = 200; //  항목 하나를 놓을 때의 재시도
 const LABEL_W = 236; //  라벨 최소 폭
-const LABEL_H = 92; //  원 아래 라벨이 차지하는 높이
+/* 원 아래 라벨 높이. 패딩 14 + 색점 줄 16 + 이름 두 줄 50 = 80.
+   이름이 길면 두 줄이 된다(Elephants Laugh (Lee Jinyeob) · 코끼리들이 웃는다(이진엽)).
+   모자라게 잡으면 라벨이 옆 원을 덮는다 — 이 값은 겹침 검사가 그대로 쓴다. */
+const LABEL_H = 80;
 const FLOAT = 6; //  플로팅이 위아래로 움직이는 폭
 const GAP = 28 + FLOAT; //  사각형 사이 최소 간격. 흔들리는 폭까지 더해 34px
 
@@ -118,7 +117,7 @@ function canvas(site) {
     /* 좌표는 커스텀 프로퍼티로 넘긴다. 자리를 인라인 style 로 박으면
        모바일에서 자유 배치를 걷어내는 미디어 쿼리를 이겨버린다(함정 3). */
     const item = link(pageUrl('artist', a.id), '.artist', { 'aria-label': t(a.name) },
-      face(a), label(a, site.works, site.producerById));
+      face(a), label(a, site.producerById));
     item.style.setProperty('--x', a.pos?.x || '0%');
     item.style.setProperty('--y', a.pos?.y || '0%');
     item.style.setProperty('--d', a.pos?.d || '18vh');
