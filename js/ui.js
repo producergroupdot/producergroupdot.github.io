@@ -385,7 +385,7 @@ export function formBadge(work) {
 
 export const FORMS = [
   { key: 'performance', ko: '공연', en: 'Performance' },
-  { key: 'research', ko: '리서치 & 국제 예술 프로젝트 (축제 등)', en: 'Research & International Art Projects' },
+  { key: 'research', ko: '국제 예술 프로젝트', en: 'International Art Projects' },
   { key: 'network', ko: '네트워크·컨퍼런스', en: 'Network & Conference' },
   { key: 'residency', ko: '레지던시', en: 'Residency' },
   { key: 'workshop', ko: '워크숍', en: 'Workshop' },
