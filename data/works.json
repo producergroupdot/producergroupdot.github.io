@@ -1933,28 +1933,32 @@
         },
         "rows": [
           {
-            "ko": "2026년 10월 25일(일) – 11월 8일(일), 강화도",
-            "en": "25 October – 8 November 2026, Ganghwado"
+            "ko": "[2026년 10월 25일(일) – 11월 8일(일), 강화도]",
+            "en": "[25 October – 8 November 2026, Ganghwado]"
           },
           {
-            "ko": "프로듀서 : 박지선, 송미선, 권근영 (한국)",
-            "en": "Producers : Park Jisun, Song Miseon, Kwon Keunyoung (Korea)"
+            "ko": "프로듀서 : 박지선 · 송미선 · 권근영 (한국)",
+            "en": "Producers : Park Jisun · Song Miseon · Kwon Keunyoung (Korea)"
           },
           {
-            "ko": "앤드씨어터 : 강윤민지, 민재원, 전윤환, 조냇물 (한국)",
-            "en": "A.N.D.Theatre : Kang Yunminji, Min Jaewon, Jeon Yunhwan, Jo Naetmul (Korea)"
+            "ko": "《참여 예술가》",
+            "en": "《Artists》"
           },
           {
-            "ko": "희와래 : 김나래, 이건희 (한국)",
-            "en": "Heewarae : Kim Narae, Lee Gunhee (Korea)"
+            "ko": "앤드씨어터 : 강윤민지 · 민재원 · 전윤환 · 조냇물 (한국)",
+            "en": "A.N.D.Theatre : Kang Yunminji · Min Jaewon · Jeon Yunhwan · Jo Naetmul (Korea)"
+          },
+          {
+            "ko": "희와래 : 김나래 · 이건희 (한국)",
+            "en": "Heewarae : Kim Narae · Lee Gunhee (Korea)"
           },
           {
             "ko": "연리목 (한국)",
             "en": "Yonrimog (Korea)"
           },
           {
-            "ko": "테아트린 게스타치오네 : 안나 게수알디, 지오바니 트로노 (이탈리아)",
-            "en": "Teatringestazione : Anna Gesualdi, Giovanni Trono (Italy)"
+            "ko": "테아트린 게스타치오네 : 안나 게수알디 · 지오바니 트로노 (이탈리아)",
+            "en": "Teatringestazione : Anna Gesualdi · Giovanni Trono (Italy)"
           },
           {
             "ko": "드라마박스 : 고 헝 루운 (싱가포르)",
@@ -1965,40 +1969,44 @@
             "en": "Chew Shaw En : independent artist (Singapore)"
           },
           {
-            "ko": "오랑오랑 드럼 시어터 : 리아우 후이 민, 츄 순 헝, 리아우 스지 이 (말레이시아)",
-            "en": "Orang Orang Drum Theatre : Leow Hui Min, Chew Soon Heng, Leow Sze Yee (Malaysia)"
+            "ko": "오랑오랑 드럼 시어터 : 리아우 후이 민 · 츄 순 헝 · 리아우 스지 이 (말레이시아)",
+            "en": "Orang Orang Drum Theatre : Leow Hui Min · Chew Soon Heng · Leow Sze Yee (Malaysia)"
           },
           {
-            "ko": "소노노치 : 나카타니 카즈요, 나가사와 모에, 아시야 코스케 (일본)",
-            "en": "Sononochi : Kazuyo Nakatani, Moe Nagasawa, Kosuke Ashiya (Japan)"
+            "ko": "소노노치 : 나카타니 카즈요 · 나가사와 모에 · 아시야 코스케 (일본)",
+            "en": "Sononochi : Kazuyo Nakatani · Moe Nagasawa · Kosuke Ashiya (Japan)"
           },
           {
             "ko": "통역 : 박형준",
             "en": "Interpreter : Park Hyungjun"
           },
           {
-            "ko": "2025년 9월 15일(월) – 28일(일)",
-            "en": "15–28 September 2025"
+            "ko": "[2025년 9월 15일(월) – 28일(일), 강화도]",
+            "en": "[15–28 September 2025, Ganghwado]"
           },
           {
-            "ko": "프로듀서 그룹 도트 : 박지선, 송미선 (한국)",
-            "en": "Producer Group DOT : Park Jisun, Song Miseon (Korea)"
+            "ko": "프로듀서 그룹 도트 : 박지선 · 송미선 (한국)",
+            "en": "Producer Group DOT : Park Jisun · Song Miseon (Korea)"
           },
           {
-            "ko": "앤드씨어터 : 강윤민지, 권근영, 민재원, 전윤환, 조냇물 (한국)",
-            "en": "A.N.D.Theatre : Kang Yunminji, Kwon Keunyoung, Min Jaewon, Jeon Yunhwan, Jo Naetmul (Korea)"
+            "ko": "《참여 예술가》",
+            "en": "《Artists》"
           },
           {
-            "ko": "희와래 : 김나래, 이건희 (한국)",
-            "en": "Heewarae : Kim Narae, Lee Gunhee (Korea)"
+            "ko": "앤드씨어터 : 강윤민지 · 권근영 · 민재원 · 전윤환 · 조냇물 (한국)",
+            "en": "A.N.D.Theatre : Kang Yunminji · Kwon Keunyoung · Min Jaewon · Jeon Yunhwan · Jo Naetmul (Korea)"
+          },
+          {
+            "ko": "희와래 : 김나래 · 이건희 (한국)",
+            "en": "Heewarae : Kim Narae · Lee Gunhee (Korea)"
           },
           {
             "ko": "연리목 (한국)",
             "en": "Yonrimog (Korea)"
           },
           {
-            "ko": "테아트린 게스타치오네 : 안나, 지오바니 (이탈리아)",
-            "en": "Teatringestazione : Anna, Giovanni (Italy)"
+            "ko": "테아트린 게스타치오네 : 안나 · 지오바니 (이탈리아)",
+            "en": "Teatringestazione : Anna · Giovanni (Italy)"
           },
           {
             "ko": "드라마박스 : 고 헝 루운 (싱가포르)",
@@ -2007,6 +2015,10 @@
           {
             "ko": "츄 쇼 엔 (싱가포르)",
             "en": "Chew Shaw En (Singapore)"
+          },
+          {
+            "ko": "통역 : 박형준",
+            "en": "Interpreter : Park Hyungjun"
           }
         ]
       },
@@ -4172,8 +4184,8 @@
     "yearFrom": 2017,
     "runs": [
       {
-        "start": "2017-10-27",
-        "end": "2017-10-29",
+        "start": "2017-09-02",
+        "end": "2017-11-05",
         "city": {
           "ko": "서울",
           "en": "Seoul"
@@ -4193,23 +4205,53 @@
         "link": "",
         "time": "",
         "date": {
+          "ko": "2017.9.2–11.5",
+          "en": "2 September – 5 November 2017"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2016-01-01",
+        "end": "2017-12-31",
+        "city": {
           "ko": "",
           "en": ""
         },
+        "venue": {
+          "ko": "",
+          "en": ""
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "기획",
+          "en": "Organiser"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2016–2017",
+          "en": "2016–2017"
+        },
         "note": {
-          "ko": "프로그램에 따라 9월 2일 – 11월 5일에 걸쳐 진행",
-          "en": "Individual programmes ran between 2 Sep and 5 Nov"
+          "ko": "예술가 리서치",
+          "en": "Artist research"
         }
       }
     ],
     "status": "done",
     "lead": {
-      "ko": "",
-      "en": ""
+      "ko": "우리가 사는 도시를 다시 짓고, 다시 탐색하고, 다시 상상하는 플랫폼.",
+      "en": "A platform to re-shape, re-explore and re-imagine the city we live in."
     },
     "body": {
-      "ko": "〈커넥티드 시티〉는 우리가 사는 도시를 다시 바라보고 다시 상상하기 위한 플랫폼이다. 한국과 영국의 예술가·프로듀서·기획자와 지역 공동체가 함께, 빠르게 변하는 도시와 공공 공간을 여러 예술 형식과 기술로 다시 읽었다.\n\n2017년 가을 서울역과 종로 일대에서 여섯 개의 프로그램이 열렸다. 뮤직시티는 한국과 영국의 뮤지션 일곱 명이 서울의 일곱 장소에서 받은 영감으로 곡을 만들고, 그 장소에 가야만 들을 수 있게 했다. 퍼포밍 시티에서는 사운드 조각과 퍼포먼스가 도시의 공간을 바꿔놓았다.\n\n메이커 시티는 봉제와 제화 공장이 밀집한 서울역·동대문 일대를 도시 인프라의 변화와 젠트리피케이션 속에서 다시 읽었고, 플레이어블 시티는 청계천 일대를 시민 참여형 도시 게임의 무대로 삼았다. 스토리텔링 시티는 한국과 영국의 작가를 웹툰·그래픽노블 작가와 짝지어 새로운 작업을 만들었다.\n\n마지막 시티 컨퍼런스 〈예술과 도시〉에서는 두 나라의 예술가·기획자·정책 담당자가 모여, 빠르게 변하는 도시에서 예술과 기술이 무엇을 할 수 있는지 논의했다.",
-      "en": "Connected City set out to re-shape, re-explore and re-imagine the city we live in. Artists, producers, curators and communities from the UK and Korea worked together to read ever-changing cities and public spaces through a range of art forms and technologies.\n\nSix programmes ran across the Seoul Station and Jongno areas in autumn 2017. Musicity commissioned seven musicians from the UK and Korea to compose for seven locations, with the tracks geo-tagged so they could only be heard on site. Performing City brought sound sculpture and performance into the city's spaces.\n\nMaker City revisited the garment and shoe manufacturing districts around Seoul Station and Dongdaemun, areas under pressure from infrastructure change and gentrification. Playable City turned the Cheonggyecheon Stream into a stage for urban play, and Storytelling City paired writers with webtoon and graphic novel artists across the two countries.\n\nThe closing City Conference, Arts and the City, gathered artists, curators, producers and policy makers from both countries to ask what arts and technology can do for a rapidly changing city."
+      "ko": "커넥티드 시티는 우리가 사는 도시를 다시 짓고, 다시 탐색하고, 다시 상상하는 플랫폼을 만드는 것을 목표로 한다. 영국과 한국의 예술가·프로듀서·큐레이터·커뮤니티와의 협업을 통해, 끊임없이 변화하는 사회와 공공의 장소를 다양한 예술 형식과 기술로 다루는 새로운 실천들을 소개한다.",
+      "en": "Connected City set out to re-shape, re-explore and re-imagine the city we live in. Artists, producers, curators and communities from the UK and Korea worked together to read ever-changing cities and public spaces through a range of art forms and technologies."
     },
     "venue": {
       "ko": "",
@@ -4231,87 +4273,6 @@
       "ko": "",
       "en": ""
     },
-    "credits": [
-      {
-        "role": {
-          "ko": "주최",
-          "en": "Hosted by"
-        },
-        "name": {
-          "ko": "British Council · 서울특별시 · 서울디자인재단",
-          "en": "British Council, Seoul Metropolitan Government, Seoul Design Foundation"
-        }
-      },
-      {
-        "role": {
-          "ko": "주관",
-          "en": "Organised by"
-        },
-        "name": {
-          "ko": "프로듀서 그룹 도트 · 서울역일대 도시재생지원센터 · 서울산책 · 서울도시건축비엔날레",
-          "en": "Producer Group DOT, Urban Regeneration Centre of Seoul Metropolitan Government, Seoul Walk, Seoul Biennale of Architecture and Urbanism"
-        }
-      },
-      {
-        "role": {
-          "ko": "프로그램",
-          "en": "Programmes"
-        },
-        "name": {
-          "ko": "뮤직시티 · 퍼포밍 시티 · 메이커 시티 · 플레이어블 시티 · 스토리텔링 시티 · 시티 컨퍼런스",
-          "en": "Musicity, Performing City, Maker City, Playable City, Storytelling City, City Conference"
-        }
-      },
-      {
-        "role": {
-          "ko": "일환",
-          "en": "Part of"
-        },
-        "name": {
-          "ko": "한영 상호교류의 해 2017–18",
-          "en": "UK/Korea 2017-18"
-        }
-      },
-      {
-        "role": {
-          "ko": "그래픽 디자인",
-          "en": "Graphic design"
-        },
-        "name": {
-          "ko": "시호 디자인",
-          "en": "Siho Design"
-        }
-      }
-    ],
-    "materials": [
-      {
-        "type": "영상",
-        "label": {
-          "ko": "기록 영상",
-          "en": "Documentation"
-        },
-        "url": "https://youtu.be/xT6UPz-JlE8",
-        "public": "예"
-      },
-      {
-        "type": "자료집",
-        "label": {
-          "ko": "포스터 · 전단",
-          "en": "Poster and leaflet"
-        },
-        "url": "",
-        "public": "확인 필요"
-      },
-      {
-        "type": "자료집",
-        "label": {
-          "ko": "메이커 시티 도록",
-          "en": "Maker City catalogue"
-        },
-        "url": "https://drive.google.com/file/d/1scatHzkI3_s_0H2gchyw9apol-QQpBqx/view",
-        "public": "예"
-      }
-    ],
     "video": {
       "embedId": "xT6UPz-JlE8",
       "label": {
@@ -4321,13 +4282,13 @@
       "url": "https://youtu.be/xT6UPz-JlE8"
     },
     "gallery": "sequence",
-    "cover": "img/works/connected-city/connected-city-01.jpg",
+    "cover": "img/works/connected-city/connected-city-poster.jpg",
     "photos": [
       {
-        "src": "connected-city-01.jpg",
+        "src": "connected-city-poster.jpg",
         "credit": {
-          "ko": "",
-          "en": ""
+          "ko": "그래픽 디자인 : 시호 디자인",
+          "en": "Graphic design : Siho Design"
         }
       },
       {
@@ -4436,7 +4397,159 @@
         }
       }
     ],
-    "homeFeature": []
+    "homeFeature": [],
+    "accordions": [
+      {
+        "title": {
+          "ko": "프로그램",
+          "en": "Programmes"
+        },
+        "rows": [
+          {
+            "ko": "뮤직시티 : 예술가에게 도시의 특정한 면을 소재로 새 음악을 위촉하는 프로그램이다. 영국과 한국에서 일곱 명의 음악가가 선정되어 일곱 장소를 위한 곡을 썼다. 각 트랙은 장소에 지오태깅되어, 뮤직시티 웹앱으로 그 자리에 가야만 들을 수 있다.",
+            "en": "Musicity : commissioned seven musicians from the UK and Korea to compose for seven locations, with the tracks geo-tagged so they could only be heard on site."
+          },
+          {
+            "ko": "퍼포밍 시티 : 사운드 아티스트 레이 리의 기념비적인 사운드 조각 연작 〈Chorus〉, 영국 음악가 스티브 헬리어와 한국 안무가 송주원의 협업 공연, 리처드 스탬프가 안내하는 미시 세계 투어 〈Small Wonder Tour〉, 브렌던 워커의 몰입형 설치 〈VR Playground〉를 선보였다.",
+            "en": "Performing City : brought sound sculpture and performance into the city's spaces."
+          },
+          {
+            "ko": "메이커 시티 : 서울역과 동대문 일대는 의류 제조와 수제화 생산의 오랜 유산을 품은 곳이다. 도시 기반시설의 변화와 젠트리피케이션으로 지금 그 기반이 위협받고 있다. 메이커 시티는 이 제조 지역을 다시 읽고, 메이커와 예술가 사이의 협업과 교류를 만들며 그 일대를 탐색했다.",
+            "en": "Maker City : revisited the garment and shoe manufacturing districts around Seoul Station and Dongdaemun, areas under pressure from infrastructure change and gentrification."
+          },
+          {
+            "ko": "플레이어블 시티 : 이 프로그램을 위해 만들어진 도시 놀이의 작은 축제다. 청계천과 그 주변의 공공 공간을 시민이 직접 탐색하고 다시 상상하도록 초대했다. 커넥티드 시티의 주제 아래 위촉된 프로젝트들이 시민에게 자기 환경을 새로운 방식으로 경험할 기회를 열었다.",
+            "en": "Playable City : turned the Cheonggyecheon Stream into a stage for urban play."
+          },
+          {
+            "ko": "스토리텔링 시티 : 영국과 한국의 작가, 웹툰 작가·그래픽 노블 작가를 짝지어 새로운 글과 웹툰·그래픽 노블을 함께 만들었다. 협업은 양국을 오가는 여러 차례의 방문을 통해 이루어졌고, 그 과정과 결과물은 와우북페스티벌에서 공개되었다. 이후 브래드퍼드 문학축제와 양국 온라인에서 소개될 예정이었다.",
+            "en": "Storytelling City : paired writers with webtoon and graphic novel artists across the two countries."
+          },
+          {
+            "ko": "시티 컨퍼런스 : 예술과 도시, 건축과 환경, 경제 구조, 공공 공간, 공동체를 통해 빠르게 변하는 도시는 사람들의 일상을 크게 바꿔놓았다. 예술은 이 변화를 어떻게 끌어안아야 하는가. 예술과 기술은 도시의 발전과 문화에서 어떤 역할을 하는가. 그리고 예술과 기술은 도시의 사람들에게 도시를 더 다양하고 다르게, 더 포용적으로 사유할 기회를 어떻게 줄 수 있는가. 영국과 한국의 예술가·큐레이터·프로듀서·정책 담당자가 각자의 관점을 나누고, 미래의 지속가능한 도시에서 예술과 문화가 맡을 자리를 물었다.",
+            "en": "City Conference : the closing conference, Arts and the City, gathered artists, curators, producers and policy makers from both countries to ask what arts and technology can do for a rapidly changing city."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "크레딧",
+          "en": "Credits"
+        },
+        "rows": [
+          {
+            "ko": "주최 : British Council · 서울특별시 · 서울디자인재단",
+            "en": "Hosted by : British Council · Seoul Metropolitan Government · Seoul Design Foundation"
+          },
+          {
+            "ko": "주관 : 프로듀서 그룹 도트 · 서울역일대 도시재생지원센터 · 서울산책 · 서울도시건축비엔날레",
+            "en": "Organised by : Producer Group DOT · Urban Regeneration Centre of Seoul Metropolitan Government · Seoul Walk · Seoul Biennale of Architecture and Urbanism"
+          },
+          {
+            "ko": "일환 : 한영 상호교류의 해",
+            "en": "Part of : UK/Korea Season"
+          },
+          {
+            "ko": "그래픽 디자인 : 시호 디자인",
+            "en": "Graphic design : Siho Design"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "참여 인력",
+          "en": "People"
+        },
+        "rows": [
+          {
+            "ko": "[협력 기관]",
+            "en": "[Partners]"
+          },
+          {
+            "ko": "영국문화원 : 최석규 · 이은실 · 김민하",
+            "en": "British Council : Choi Seokkyu · Lee Eunsil · Kim Minha"
+          },
+          {
+            "ko": "서울도시건축비엔날레 : 박혜성 · 김그린 · 김선재",
+            "en": "Seoul Biennale of Architecture and Urbanism : Park Hyesung · Kim Green · Kim Seonjae"
+          },
+          {
+            "ko": "서울역일대도시재생지원센터 : 최성욱",
+            "en": "Urban Regeneration Centre of Seoul Metropolitan Government : Choi Seonguk"
+          },
+          {
+            "ko": "[커넥티드 시티 사무국]",
+            "en": "[Connected City office]"
+          },
+          {
+            "ko": "총괄 프로듀서 : 박지선",
+            "en": "Executive Producer : Park Jisun"
+          },
+          {
+            "ko": "프로듀서 : 최순화 · 유병진 · 최봉민 · 정성진",
+            "en": "Producers : Choi Sunhwa · Yoo Byungjin · Choi Bongmin · Jung Sungjin"
+          },
+          {
+            "ko": "뮤직시티 프로듀서 : 닉 루스콤",
+            "en": "Musicity Producer : Nick Luscombe"
+          },
+          {
+            "ko": "플레이어블 시티 프로듀서 : 클레어 레딩턴 · 힐러리 오셔그네시 · 빅토리아 틸롯슨",
+            "en": "Playable City Producers : Clare Reddington · Hilary O’Shaughnessy · Victoria Tillotson"
+          },
+          {
+            "ko": "운영 스태프 : 김민경 · 김혜연 · 여승호 · 정예람 · 장아람 · 한기장 · 정은정 · 김승미",
+            "en": ""
+          },
+          {
+            "ko": "플레이어블 시티 Fishy City 게임진행 : 김종원 · 박신혜 · 변재신 · 유혜연 · 이유진 · 임성호 · 조유토",
+            "en": ""
+          },
+          {
+            "ko": "홍보 : 김서희 · 설주원",
+            "en": "Communications : Kim Seohee · Seol Juwon"
+          },
+          {
+            "ko": "[커넥티스트 · 자원활동가]",
+            "en": "[Connectists · volunteers]"
+          },
+          {
+            "ko": "뮤직시티 : 강시내 · 오창훈",
+            "en": ""
+          },
+          {
+            "ko": "퍼포밍 시티 : 문지원 · 백지민 · 성윤경 · 송인창 · 신은혜 · 유나실 · 이다연 · 이은정 · 조진희 · 홍아인",
+            "en": ""
+          },
+          {
+            "ko": "메이커 시티 : 이동주 · 이보영",
+            "en": ""
+          },
+          {
+            "ko": "플레이어블 시티 : 도재인 · 박윤서 · 이주연 · 정수현 · 조은별 · 조혜수 · 최영선 · 현종영 · 허영범",
+            "en": ""
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "메이커 시티 도록",
+            "en": "Maker City catalogue",
+            "url": "https://drive.google.com/file/d/1scatHzkI3_s_0H2gchyw9apol-QQpBqx/view"
+          },
+          {
+            "ko": "전단 (PDF)",
+            "en": "Leaflet (PDF)",
+            "url": "https://drive.google.com/file/d/1QboeLxtcBCYzv4IR5daka--59QZsBBhS/view"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "digital-dramaturgy",

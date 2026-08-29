@@ -154,6 +154,24 @@
 .acc-prose p{ font-size:14px; line-height:1.75; margin:0 0 12px }
 .acc-prose p:last-child{ margin-bottom:6px }
 .acc-rows{ list-style:none; padding:2px 0 16px 26px }
+/* 아코디언 안의 구조 두 층 — 데이터에서 [머리줄] 과 《소제목》 으로 표시한다.
+   목록이 길어질 때 어디서부터 어디까지가 한 묶음인지 보이게 한다. */
+.acc-rows .acc-head{
+  margin-top:20px;
+  padding-top:14px;
+  border-top:.5px solid var(--line-s);
+}
+.acc-rows .acc-head:first-child{ margin-top:0; padding-top:0; border-top:none }
+.acc-rows .acc-head b{ font-weight:var(--w-mid) }
+
+.acc-rows .acc-sub{
+  margin-top:9px;
+  font-size:12px;
+  opacity:.5;
+  letter-spacing:.01em;
+}
+/* 소제목 아래 줄은 한 단 들여쓴다. 다음 머리줄이 나오면 풀린다. */
+.acc-rows .acc-in{ padding-left:14px }
 .acc-rows li{ font-size:14px; line-height:1.7 }
 .acc-rows a{ text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:.5px }
 .acc-rows a:hover{ text-decoration-thickness:1.5px }

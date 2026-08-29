@@ -314,10 +314,27 @@ function accordions(work) {
     }
     if (a.rows.length) {
       const ul = el('ul.acc-rows');
+      /* 아코디언 안의 두 층. 괄호는 표시에서 걷어낸다.
+           [머리줄]   회차·구간의 머리. 굵게, 위에 선을 긋는다.
+           《소제목》  묶음 이름. 연하고 작게. 그 아래 줄들은 한 단 들여쓴다.
+         머리줄이 나오면 들여쓰기를 푼다 — 다음 구간이 시작된 것이다. */
+      let indent = false;
       for (const r of a.rows) {
+        const head = t(r).match(/^\[(.+)\]$/);
+        if (head) {
+          indent = false;
+          ul.append(el('li.acc-head', null, el('b', { text: head[1] })));
+          continue;
+        }
+        const sub = t(r).match(/^《(.+)》$/);
+        if (sub) {
+          indent = true;
+          ul.append(el('li.acc-sub', { text: sub[1] }));
+          continue;
+        }
         ul.append(
           el(
-            'li',
+            `li${indent ? '.acc-in' : ''}`,
             null,
             r.url
               ? el('a', { href: r.url, target: '_blank', rel: 'noopener' }, titleNodes(t(r)))
