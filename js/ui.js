@@ -848,8 +848,13 @@ function openMenu(about, burger) {
 const ICONS = {
   instagram:
     '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>',
+  /* 유튜브만 채운 형태다. 테두리만 그리면 인스타그램(둥근 사각 테두리)과
+     작은 크기에서 실루엣이 겹친다. 삼각형은 색을 칠하지 않고 evenodd 로 뚫는다 —
+     메뉴는 라벤더, 푸터는 크림이라 배경색을 아이콘에 적어 둘 수 없다. */
   youtube:
-    '<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.4 9.6l5 2.4-5 2.4z" fill="currentColor" stroke="none"/>',
+    '<path fill="currentColor" stroke="none" fill-rule="evenodd" clip-rule="evenodd" ' +
+    'd="M6.5 5.5H17.5A4 4 0 0 1 21.5 9.5V14.5A4 4 0 0 1 17.5 18.5H6.5A4 4 0 0 1 2.5 14.5V9.5A4 4 0 0 1 6.5 5.5Z' +
+    'M10.1 9.2 15.9 12 10.1 14.8Z"/>',
   facebook:
     '<path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6A22 22 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V13h2.7v8z" fill="currentColor" stroke="none"/>',
 };

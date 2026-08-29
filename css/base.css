@@ -135,29 +135,31 @@ body.menu-open{ overflow:hidden }   /* 열려 있는 동안 뒤쪽 스크롤 잠
   color:inherit;
 }
 
-.menu-list{ display:flex; flex-direction:column }
+/* 글씨를 줄인 만큼 목록이 짧아져 화면 위쪽에 몰린다. 그만큼 아래로 내린다.
+   화면 높이에 따라 붙으므로 작은 기기에서는 16px 까지만 준다. */
+.menu-list{ display:flex; flex-direction:column; margin-top:clamp(16px, 6vh, 56px) }
 .menu-item{
   display:flex;
   align-items:center;
-  gap:16px;
-  min-height:56px;              /* 손가락으로 누르기 좋은 높이 */
-  padding:10px 0;
+  gap:12px;
+  min-height:48px;              /* 손가락으로 누르기 좋은 높이 — 44px 아래로 내리지 말 것 */
+  padding:8px 0;
   font-family:var(--disp);
-  font-size:28px;
+  font-size:19px;               /* 본문(16px)보다 조금 큰 정도. 28px 은 데스크톱 메뉴의 두 배였다 */
   font-weight:var(--w-disp);
-  letter-spacing:-.03em;
+  letter-spacing:-.02em;        /* 19px 에서는 -.03em 이 과하게 조인다 */
   border-bottom:.5px solid rgb(var(--fg-rgb) / .4);
 }
 .menu-item.inert{ opacity:.5 }
 
 .menu-social{
   display:flex;
-  gap:28px;
+  gap:24px;
   align-items:center;
-  padding:32px 0 0;
+  padding:26px 0 0;
 }
 .menu-social .sico{ opacity:.85 }
-.menu-social .sico svg{ width:24px; height:24px }
+.menu-social .sico svg{ width:22px; height:22px }
 
 .menu-mail{
   margin-top:auto;
