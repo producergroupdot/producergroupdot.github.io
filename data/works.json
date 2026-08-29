@@ -204,14 +204,49 @@
         },
         "rows": [
           {
-            "ko": "프로그램북",
-            "en": "Programme book",
-            "url": "https://soohyunhwang.com/syncdesync/"
+            "ko": "2026 프로그램북",
+            "en": "2026 Programme Book",
+            "url": "http://soohyunhwang.com/syncdesync/"
+          },
+          {
+            "ko": "웹 포토북",
+            "en": "Web Photobook",
+            "url": "https://jisunarts.github.io/syncdesync_photo"
           }
         ]
       }
     ],
     "cover": "img/works/sync-de-sync/01.jpg",
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -418,6 +453,15 @@
       }
     ],
     "cover": "img/works/hihihistory/poster.jpg",
+    "photos": [
+      {
+        "src": "poster.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -594,10 +638,15 @@
       }
     ],
     "cover": "img/works/gwantong-18/gwantong-18-01.jpg",
-    "photoCredit": {
-      "ko": "ⓒSang Hoon Ok",
-      "en": "ⓒSang Hoon Ok"
-    },
+    "photos": [
+      {
+        "src": "gwantong-18-01.jpg",
+        "credit": {
+          "ko": "ⓒSang Hoon Ok",
+          "en": "ⓒSang Hoon Ok"
+        }
+      }
+    ],
     "homeFeature": [
       "mosaic-tall"
     ]
@@ -805,10 +854,64 @@
       }
     ],
     "cover": "img/works/on-the-birds-day/01.jpg",
-    "photoCredit": {
-      "ko": "ⓒJisun",
-      "en": "ⓒJisun"
-    },
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "05.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "06.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "07.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "08.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      }
+    ],
     "homePhotos": {
       "mosaic-tall": "img/home/on-the-birds-day-vertical.jpg"
     },
@@ -1035,10 +1138,64 @@
       }
     },
     "cover": "img/works/energy/01.jpg",
-    "photoCredit": {
-      "ko": "ⓒJisun",
-      "en": "ⓒJisun"
-    },
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "05.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "06.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "07.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "08.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -1330,11 +1487,43 @@
       }
     },
     "cover": "img/works/moving-a-forest/01.jpg",
-    "photoCredit": {
-      "ko": "2022 SPAF · ⓒSang Hoon Ok",
-      "en": "2022 SPAF · ⓒSang Hoon Ok"
-    },
-    "creditType": "촬영",
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "2022 SPAF · ⓒSang Hoon Ok",
+          "en": "2022 SPAF · ⓒSang Hoon Ok"
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "2022 SPAF · ⓒSang Hoon Ok",
+          "en": "2022 SPAF · ⓒSang Hoon Ok"
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "2022 SPAF · ⓒSang Hoon Ok",
+          "en": "2022 SPAF · ⓒSang Hoon Ok"
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "2022 SPAF · ⓒSang Hoon Ok",
+          "en": "2022 SPAF · ⓒSang Hoon Ok"
+        }
+      },
+      {
+        "src": "05.jpg",
+        "credit": {
+          "ko": "2022 SPAF · ⓒSang Hoon Ok",
+          "en": "2022 SPAF · ⓒSang Hoon Ok"
+        }
+      }
+    ],
     "homePhotos": {
       "mosaic-wide-b": "img/home/moving-a-forest-panorama.jpg"
     },
@@ -1487,26 +1676,49 @@
       "en": ""
     },
     "cover": "img/works/mooljil/mooljil-01.jpg",
+    "photos": [
+      {
+        "src": "mooljil-01.jpg",
+        "credit": {
+          "ko": "ⓒ김신중",
+          "en": "ⓒShinjoong Kim"
+        }
+      },
+      {
+        "src": "mooljil-02.jpg",
+        "credit": {
+          "ko": "ⓒ김신중",
+          "en": "ⓒShinjoong Kim"
+        }
+      },
+      {
+        "src": "mooljil-03.jpg",
+        "credit": {
+          "ko": "ⓒ장석현",
+          "en": "ⓒJang Seok-hyun"
+        }
+      },
+      {
+        "src": "mooljil-04.jpg",
+        "credit": {
+          "ko": "ⓒmarcosGpunto",
+          "en": ""
+        }
+      },
+      {
+        "src": "mooljil-05.jpg",
+        "credit": {
+          "ko": "ⓒmarcosGpunto",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": [],
     "note": {
       "ko": "초안 — 확인 필요",
       "en": ""
     },
-    "gallery": "sequence",
-    "galleryImages": [
-      "img/works/mooljil/mooljil-01.jpg",
-      "img/works/mooljil/mooljil-02.jpg",
-      "img/works/mooljil/mooljil-03.jpg",
-      "img/works/mooljil/mooljil-04.jpg",
-      "img/works/mooljil/mooljil-05.jpg"
-    ],
-    "photoCredits": {
-      "mooljil-01.jpg": "ⓒShinjoong Kim",
-      "mooljil-02.jpg": "ⓒShinjoong Kim",
-      "mooljil-03.jpg": "ⓒJang Seok-hyun",
-      "mooljil-04.jpg": "ⓒmarcosGpunto",
-      "mooljil-05.jpg": "ⓒmarcosGpunto"
-    }
+    "gallery": "sequence"
   },
   {
     "id": "ganghwa",
@@ -1570,8 +1782,8 @@
           "en": "Ganghwado"
         },
         "venue": {
-          "ko": "",
-          "en": ""
+          "ko": "강화도 내",
+          "en": "Ganghwado"
         },
         "kind": {
           "ko": "",
@@ -1584,8 +1796,8 @@
         "link": "",
         "time": "",
         "date": {
-          "ko": "",
-          "en": ""
+          "ko": "2026.10.25–11.8",
+          "en": "25 October – 8 November 2026"
         },
         "note": {
           "ko": "",
@@ -1721,6 +1933,57 @@
       "url": "https://www.youtube.com/watch?v=fffQOEcYuRs"
     },
     "cover": "img/works/ganghwa/01.jpg",
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "05.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "06.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "07.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "homePhotos": {
       "mosaic-wide-b": "img/home/ganghwa-panorama.jpg"
     },
@@ -1915,6 +2178,50 @@
       }
     },
     "cover": "img/works/tnn/02.jpg",
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "07.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "09.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -2095,6 +2402,15 @@
       }
     ],
     "cover": "img/works/aesthethics.jpg",
+    "photos": [
+      {
+        "src": "img/works/aesthethics.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -2365,27 +2681,119 @@
     },
     "cover": "img/works/ghost-theater/ghost-theater-01.jpg",
     "photos": [
-      "img/works/ghost-theater/ghost-theater-01.jpg",
-      "img/works/ghost-theater/ghost-theater-02.jpg",
-      "img/works/ghost-theater/ghost-theater-03.jpg",
-      "img/works/ghost-theater/ghost-theater-04.jpg",
-      "img/works/ghost-theater/ghost-theater-05.jpg",
-      "img/works/ghost-theater/ghost-theater-06.jpg",
-      "img/works/ghost-theater/ghost-theater-07.jpg",
-      "img/works/ghost-theater/ghost-theater-08.jpg",
-      "img/works/ghost-theater/ghost-theater-09.jpg",
-      "img/works/ghost-theater/ghost-theater-10.jpg",
-      "img/works/ghost-theater/ghost-theater-11.jpg",
-      "img/works/ghost-theater/ghost-theater-12.jpg",
-      "img/works/ghost-theater/ghost-theater-13.jpg",
-      "img/works/ghost-theater/ghost-theater-14.jpg",
-      "img/works/ghost-theater/ghost-theater-15.jpg",
-      "img/works/ghost-theater/ghost-theater-16.jpg"
+      {
+        "src": "ghost-theater-01.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-02.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-03.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-04.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-05.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-06.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-07.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-08.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-09.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-10.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-11.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-12.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-13.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-14.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-15.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      },
+      {
+        "src": "ghost-theater-16.jpg",
+        "credit": {
+          "ko": "ⓒJisun",
+          "en": "ⓒJisun"
+        }
+      }
     ],
-    "photoCredit": {
-      "ko": "ⓒJisun",
-      "en": "ⓒJisun"
-    },
     "homeFeature": []
   },
   {
@@ -2652,10 +3060,211 @@
     ],
     "gallery": "sequence",
     "cover": "img/works/climate-residency/01.jpg",
-    "photoCredit": {
-      "ko": "사진 제공 : 기후변화레지던시",
-      "en": "Photos courtesy of the Climate Change Residency"
-    },
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "05.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "06.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "07.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "08.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "09.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "10.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "11.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "12.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "13.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "14.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "15.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "16.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "17.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "18.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "19.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "20.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "21.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "22.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "23.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "24.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "25.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "26.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "28.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "29.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      },
+      {
+        "src": "30.jpg",
+        "credit": {
+          "ko": "사진 제공 : 기후변화레지던시",
+          "en": "Photos courtesy of the Climate Change Residency"
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -3051,6 +3660,36 @@
       }
     ],
     "cover": "img/works/app/01.jpg",
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -3094,18 +3733,18 @@
           "en": ""
         },
         "dotRole": {
-          "ko": "공동제작",
-          "en": "Co-production"
+          "ko": "공동기획",
+          "en": "co-production"
         },
         "link": "",
         "time": "19:30",
         "date": {
-          "ko": "",
-          "en": ""
+          "ko": "2026.8.31",
+          "en": "31 August 2026"
         },
         "note": {
           "ko": "이오진 〈계엄〉",
-          "en": ""
+          "en": "Lee Ojin, Martial Law"
         }
       },
       {
@@ -3124,18 +3763,18 @@
           "en": ""
         },
         "dotRole": {
-          "ko": "공동제작",
-          "en": "Co-production"
+          "ko": "공동기획",
+          "en": "co-production"
         },
         "link": "",
         "time": "19:30",
         "date": {
-          "ko": "",
-          "en": ""
+          "ko": "2026.9.28",
+          "en": "28 September 2026"
         },
         "note": {
           "ko": "안정민 〈미얄의 귀환〉",
-          "en": ""
+          "en": "Ahn Jeongmin, The Return of Miyal"
         }
       },
       {
@@ -3154,18 +3793,18 @@
           "en": ""
         },
         "dotRole": {
-          "ko": "공동제작",
-          "en": "Co-production"
+          "ko": "공동기획",
+          "en": "co-production"
         },
         "link": "",
         "time": "19:30",
         "date": {
-          "ko": "",
-          "en": ""
+          "ko": "2026.10.19",
+          "en": "19 October 2026"
         },
         "note": {
           "ko": "나수민 〈사자밥〉",
-          "en": ""
+          "en": "Na Sumin, Sajabap"
         }
       },
       {
@@ -3184,18 +3823,18 @@
           "en": ""
         },
         "dotRole": {
-          "ko": "공동제작",
-          "en": "Co-production"
+          "ko": "공동기획",
+          "en": "co-production"
         },
         "link": "",
         "time": "19:30",
         "date": {
-          "ko": "",
-          "en": ""
+          "ko": "2026.11.30",
+          "en": "30 November 2026"
         },
         "note": {
           "ko": "김연재 〈사냥꾼의 밤〉",
-          "en": ""
+          "en": "Kim Yeonjae, Night of the Hunter"
         }
       },
       {
@@ -3214,18 +3853,18 @@
           "en": ""
         },
         "dotRole": {
-          "ko": "공동제작",
-          "en": "Co-production"
+          "ko": "공동기획",
+          "en": "co-production"
         },
         "link": "",
         "time": "19:30",
         "date": {
-          "ko": "",
-          "en": ""
+          "ko": "2026.12.28",
+          "en": "28 December 2026"
         },
         "note": {
           "ko": "신효진 〈복을 빕니다〉",
-          "en": ""
+          "en": "Shin Hyojin, Wishing You Blessings"
         }
       }
     ],
@@ -3259,6 +3898,99 @@
       "en": ""
     },
     "cover": "img/works/monthly-grandmothers/01.jpg",
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "02.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "03.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "04.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "05.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "06.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "07.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "08.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "09.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "10.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "11.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "12.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "13.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "coverPosition": "top",
     "homeFeature": [],
     "hideFromBand": true,
@@ -3267,15 +3999,6 @@
       "en": ""
     },
     "gallery": "sequence",
-    "galleryImages": [
-      "img/works/monthly-grandmothers/03.jpg",
-      "img/works/monthly-grandmothers/04.jpg",
-      "img/works/monthly-grandmothers/05.jpg",
-      "img/works/monthly-grandmothers/06.jpg",
-      "img/works/monthly-grandmothers/07.jpg",
-      "img/works/monthly-grandmothers/08.jpg",
-      "img/works/monthly-grandmothers/09.jpg"
-    ],
     "credits": [
       {
         "role": {
@@ -3475,22 +4198,118 @@
     "gallery": "sequence",
     "cover": "img/works/connected-city/connected-city-01.jpg",
     "photos": [
-      "img/works/connected-city/connected-city-01.jpg",
-      "img/works/connected-city/connected-city-02.jpg",
-      "img/works/connected-city/connected-city-03.jpg",
-      "img/works/connected-city/connected-city-04.jpg",
-      "img/works/connected-city/connected-city-05.jpg",
-      "img/works/connected-city/connected-city-06.jpg",
-      "img/works/connected-city/connected-city-07.jpg",
-      "img/works/connected-city/connected-city-08.jpg",
-      "img/works/connected-city/connected-city-09.jpg",
-      "img/works/connected-city/connected-city-10.jpg",
-      "img/works/connected-city/connected-city-11.jpg",
-      "img/works/connected-city/connected-city-12.jpg",
-      "img/works/connected-city/connected-city-13.jpg",
-      "img/works/connected-city/connected-city-14.jpg",
-      "img/works/connected-city/connected-city-15.jpg",
-      "img/works/connected-city/connected-city-16.jpg"
+      {
+        "src": "connected-city-01.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-02.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-03.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-04.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-05.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-06.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-07.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-08.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-09.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-10.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-11.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-12.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-13.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-14.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-15.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "connected-city-16.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
     ],
     "homeFeature": []
   },
@@ -3628,6 +4447,15 @@
       }
     ],
     "cover": "img/works/digital-dramaturgy/01.jpg",
+    "photos": [
+      {
+        "src": "01.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -3746,6 +4574,88 @@
       "ko": "무용, 국제공동제작",
       "en": "dance, international co-production"
     },
+    "credits": [
+      {
+        "role": {
+          "ko": "안무",
+          "en": "Choreographer"
+        },
+        "name": {
+          "ko": "김보람",
+          "en": "Kim Boram"
+        }
+      },
+      {
+        "role": {
+          "ko": "프로듀서",
+          "en": "Producer"
+        },
+        "name": {
+          "ko": "이희진",
+          "en": "Lee HeeJin"
+        }
+      },
+      {
+        "role": {
+          "ko": "음악감독",
+          "en": "Music Director"
+        },
+        "name": {
+          "ko": "최혜원",
+          "en": "Choi Hyewon"
+        }
+      },
+      {
+        "role": {
+          "ko": "의상 디자인",
+          "en": "Costume Design"
+        },
+        "name": {
+          "ko": "정호진(PAUS artisanal)",
+          "en": "Jeong HoJin (PAUS artisanal)"
+        }
+      },
+      {
+        "role": {
+          "ko": "무대감독",
+          "en": "Stage Manager"
+        },
+        "name": {
+          "ko": "김상훈",
+          "en": "Kim SangHoon"
+        }
+      },
+      {
+        "role": {
+          "ko": "조명감독",
+          "en": "Lighting Director"
+        },
+        "name": {
+          "ko": "황규연",
+          "en": "Hwang KyuYeon"
+        }
+      },
+      {
+        "role": {
+          "ko": "음향감독",
+          "en": "Sound Director"
+        },
+        "name": {
+          "ko": "안형록",
+          "en": "An HyungRok"
+        }
+      },
+      {
+        "role": {
+          "ko": "프로덕션 매니저",
+          "en": "Production Manager"
+        },
+        "name": {
+          "ko": "한지현",
+          "en": "Han JiHyun"
+        }
+      }
+    ],
     "info": [
       {
         "role": {
@@ -3759,10 +4669,57 @@
       }
     ],
     "cover": "img/works/the-belt/the-belt-01.jpg",
-    "photoCredit": {
-      "ko": "ⓒTristram Kenton",
-      "en": "ⓒTristram Kenton"
-    },
+    "photos": [
+      {
+        "src": "the-belt-01.jpg",
+        "credit": {
+          "ko": "ⓒTristram Kenton",
+          "en": ""
+        }
+      },
+      {
+        "src": "the-belt-02.jpg",
+        "credit": {
+          "ko": "ⓒTristram Kenton",
+          "en": ""
+        }
+      },
+      {
+        "src": "the-belt-03.jpg",
+        "credit": {
+          "ko": "ⓒTristram Kenton",
+          "en": ""
+        }
+      },
+      {
+        "src": "the-belt-04.jpg",
+        "credit": {
+          "ko": "ⓒTristram Kenton",
+          "en": ""
+        }
+      },
+      {
+        "src": "the-belt-05.jpg",
+        "credit": {
+          "ko": "ⓒFrank Balbi Hansen",
+          "en": ""
+        }
+      },
+      {
+        "src": "the-belt-06.jpg",
+        "credit": {
+          "ko": "ⓒFrank Balbi Hansen",
+          "en": ""
+        }
+      },
+      {
+        "src": "the-belt-07.jpg",
+        "credit": {
+          "ko": "ⓒ김근우",
+          "en": "ⓒKim Gunu"
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -3791,6 +4748,606 @@
     "yearFrom": 2010,
     "runs": [
       {
+        "start": "2025-11-22",
+        "end": "2025-11-23",
+        "city": {
+          "ko": "타이난",
+          "en": "Tainan"
+        },
+        "venue": {
+          "ko": "타이난예술제",
+          "en": "Tainan Arts Festival"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2025.11.22–23",
+          "en": "22–23 November 2025"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2025-04-01",
+        "end": "2025-04-01",
+        "city": {
+          "ko": "콜롱브",
+          "en": "Colombes"
+        },
+        "venue": {
+          "ko": "라방센",
+          "en": "L'Avant-Seine"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2025.4.1",
+          "en": "1 April 2025"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2025-03-29",
+        "end": "2025-03-29",
+        "city": {
+          "ko": "생루이",
+          "en": "Saint-Louis"
+        },
+        "venue": {
+          "ko": "테아트르 라 쿠폴",
+          "en": "Théâtre La Coupole"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2025.3.29",
+          "en": "29 March 2025"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2025-03-27",
+        "end": "2025-03-27",
+        "city": {
+          "ko": "뇌샤텔",
+          "en": "Neuchâtel"
+        },
+        "venue": {
+          "ko": "테아트르 뒤 파사주",
+          "en": "Théâtre du Passage"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2025.3.27",
+          "en": "27 March 2025"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2025-03-21",
+        "end": "2025-03-21",
+        "city": {
+          "ko": "몽벨리아르",
+          "en": "Montbéliard"
+        },
+        "venue": {
+          "ko": "테아트르 라 말스",
+          "en": "Théâtre La MALS"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2025.3.21",
+          "en": "21 March 2025"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2025-03-19",
+        "end": "2025-03-19",
+        "city": {
+          "ko": "아르카숑",
+          "en": "Arcachon"
+        },
+        "venue": {
+          "ko": "테아트르 올랭피아",
+          "en": "Théâtre Olympia"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2025.3.19",
+          "en": "19 March 2025"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2024-12-03",
+        "end": "2024-12-03",
+        "city": {
+          "ko": "로망쉬르이제르",
+          "en": "Romans-sur-Isère"
+        },
+        "venue": {
+          "ko": "로망 센",
+          "en": "Romans Scènes"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2024.12.3",
+          "en": "3 December 2024"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2024-11-29",
+        "end": "2024-11-29",
+        "city": {
+          "ko": "뤼에유말메종",
+          "en": "Rueil-Malmaison"
+        },
+        "venue": {
+          "ko": "테아트르 앙드레 말로",
+          "en": "Théâtre André Malraux"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2024.11.29",
+          "en": "29 November 2024"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2024-11-20",
+        "end": "2024-11-23",
+        "city": {
+          "ko": "파리",
+          "en": "Paris"
+        },
+        "venue": {
+          "ko": "테아트르 뒤 롱푸앵",
+          "en": "Théâtre du Rond-Point"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2024.11.20–23",
+          "en": "20–23 November 2024"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2023-04-14",
+        "end": "2023-04-14",
+        "city": {
+          "ko": "베종",
+          "en": "Bezons"
+        },
+        "venue": {
+          "ko": "테아트르 폴 엘뤼아르",
+          "en": "Théâtre Paul Éluard"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2023.4.14",
+          "en": "14 April 2023"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2023-04-12",
+        "end": "2023-04-12",
+        "city": {
+          "ko": "생제르맹앙레",
+          "en": "Saint-Germain-en-Laye"
+        },
+        "venue": {
+          "ko": "테아트르 알렉상드르 뒤마",
+          "en": "Théâtre Alexandre Dumas"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2023.4.12",
+          "en": "12 April 2023"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2023-04-03",
+        "end": "2023-04-04",
+        "city": {
+          "ko": "리옹",
+          "en": "Lyon"
+        },
+        "venue": {
+          "ko": "메종 드 라 당스",
+          "en": "Maison de la Danse"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2023.4.3–4",
+          "en": "3–4 April 2023"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2023-03-29",
+        "end": "2023-03-31",
+        "city": {
+          "ko": "세르지",
+          "en": "Cergy-Pontoise"
+        },
+        "venue": {
+          "ko": "푸앵 코뮌",
+          "en": "Points communs"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2023.3.29–31",
+          "en": "29–31 March 2023"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2023-03-07",
+        "end": "2023-03-09",
+        "city": {
+          "ko": "파리",
+          "en": "Paris"
+        },
+        "venue": {
+          "ko": "라 빌레트",
+          "en": "La Villette"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2023.3.7–9",
+          "en": "7–9 March 2023"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2022-09-22",
+        "end": "2022-09-22",
+        "city": {
+          "ko": "라테스트드뷔크",
+          "en": "La Teste-de-Buch"
+        },
+        "venue": {
+          "ko": "카당스 페스티벌",
+          "en": "Festival Cadences"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2022.9.22",
+          "en": "22 September 2022"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2022-09-16",
+        "end": "2022-09-18",
+        "city": {
+          "ko": "런던",
+          "en": "London"
+        },
+        "venue": {
+          "ko": "코로넷 극장",
+          "en": "The Coronet Theatre"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2022.9.16–18",
+          "en": "16–18 September 2022"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2019-08-22",
+        "end": "2019-08-25",
+        "city": {
+          "ko": "베를린",
+          "en": "Berlin"
+        },
+        "venue": {
+          "ko": "탄츠 임 아우구스트",
+          "en": "Tanz im August"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2019.8.22–25",
+          "en": "22–25 August 2019"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2019-01-01",
+        "end": "2019-12-31",
+        "city": {
+          "ko": "캐슬메인",
+          "en": "Castlemaine"
+        },
+        "venue": {
+          "ko": "캐슬메인 스테이트 페스티벌",
+          "en": "Castlemaine State Festival"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2019",
+          "en": "2019"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2017-11-25",
+        "end": "2017-11-25",
+        "city": {
+          "ko": "홍콩",
+          "en": "Hong Kong"
+        },
+        "venue": {
+          "ko": "시티 컨템퍼러리 댄스 페스티벌",
+          "en": "City Contemporary Dance Festival"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2017.11.25",
+          "en": "25 November 2017"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "start": "2017-06-13",
+        "end": "2017-06-13",
+        "city": {
+          "ko": "시비우",
+          "en": "Sibiu"
+        },
+        "venue": {
+          "ko": "시비우 국제연극제",
+          "en": "Sibiu International Theatre Festival"
+        },
+        "kind": {
+          "ko": "투어",
+          "en": "tour"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영",
+          "en": "touring"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2017.6.13",
+          "en": "13 June 2017"
+        },
+        "note": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
         "start": "2010-01-01",
         "end": "2010-12-31",
         "city": {
@@ -3803,7 +5360,7 @@
         },
         "kind": {
           "ko": "초연",
-          "en": "Premiere"
+          "en": "premiere"
         },
         "premiere": true,
         "dotRole": {
@@ -3851,11 +5408,96 @@
       "ko": "무용, 국제투어",
       "en": "dance, international tour"
     },
+    "credits": [
+      {
+        "role": {
+          "ko": "안무",
+          "en": "Choreographer"
+        },
+        "name": {
+          "ko": "김보람",
+          "en": "Kim Boram"
+        }
+      },
+      {
+        "role": {
+          "ko": "투어 프로듀서",
+          "en": "Tour Producer"
+        },
+        "name": {
+          "ko": "이희진",
+          "en": "Lee HeeJin"
+        }
+      },
+      {
+        "role": {
+          "ko": "무대감독",
+          "en": "Stage Manager"
+        },
+        "name": {
+          "ko": "김상훈",
+          "en": "Kim SangHoon"
+        }
+      },
+      {
+        "role": {
+          "ko": "조명감독",
+          "en": "Lighting Director"
+        },
+        "name": {
+          "ko": "배대두",
+          "en": "Bae DaeDoo"
+        }
+      },
+      {
+        "role": {
+          "ko": "음향감독",
+          "en": "Sound Director"
+        },
+        "name": {
+          "ko": "안형록",
+          "en": "An HyungRok"
+        }
+      }
+    ],
     "cover": "img/works/body-concert/body-concert-01.jpg",
-    "photoCredit": {
-      "ko": "ⓒSebastian Marcovici",
-      "en": "ⓒSebastian Marcovici"
-    },
+    "photos": [
+      {
+        "src": "body-concert-01.jpg",
+        "credit": {
+          "ko": "ⓒSebastian Marcovici",
+          "en": ""
+        }
+      },
+      {
+        "src": "body-concert-02.jpg",
+        "credit": {
+          "ko": "ⓒDajana Lothert",
+          "en": ""
+        }
+      },
+      {
+        "src": "body-concert-03.jpg",
+        "credit": {
+          "ko": "ⓒDajana Lothert",
+          "en": ""
+        }
+      },
+      {
+        "src": "body-concert-04.jpg",
+        "credit": {
+          "ko": "ⓒDajana Lothert",
+          "en": ""
+        }
+      },
+      {
+        "src": "body-concert-05.jpg",
+        "credit": {
+          "ko": "ⓒDajana Lothert",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -3954,7 +5596,51 @@
         }
       }
     ],
-    "cover": "",
+    "cover": "img/works/borderline/borderline-01.jpg",
+    "photos": [
+      {
+        "src": "borderline-01.jpg",
+        "credit": {
+          "ko": "ⓒJudith Buss",
+          "en": ""
+        }
+      },
+      {
+        "src": "borderline-02.jpg",
+        "credit": {
+          "ko": "ⓒ이강물",
+          "en": "ⓒLee Gangmul"
+        }
+      },
+      {
+        "src": "borderline-03.jpg",
+        "credit": {
+          "ko": "ⓒ이강물",
+          "en": "ⓒLee Gangmul"
+        }
+      },
+      {
+        "src": "borderline-04.jpg",
+        "credit": {
+          "ko": "ⓒ이강물",
+          "en": "ⓒLee Gangmul"
+        }
+      },
+      {
+        "src": "borderline-05.jpg",
+        "credit": {
+          "ko": "ⓒ김근우",
+          "en": "ⓒGunu Kim"
+        }
+      },
+      {
+        "src": "borderline-06.jpg",
+        "credit": {
+          "ko": "ⓒ김근우",
+          "en": "ⓒGunu Kim"
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -4084,6 +5770,43 @@
       }
     ],
     "cover": "",
+    "photos": [
+      {
+        "src": "unknown-neighbours-01.jpg",
+        "credit": {
+          "ko": "ⓒ안산거리극축제",
+          "en": "ⓒAnsan Street Arts Festival"
+        }
+      },
+      {
+        "src": "unknown-neighbours-02.jpg",
+        "credit": {
+          "ko": "ⓒ안산거리극축제",
+          "en": "ⓒAnsan Street Arts Festival"
+        }
+      },
+      {
+        "src": "unknown-neighbours-03.jpg",
+        "credit": {
+          "ko": "ⓒ이희진",
+          "en": "ⓒLee HeeJin"
+        }
+      },
+      {
+        "src": "unknown-neighbours-04.jpg",
+        "credit": {
+          "ko": "ⓒRanters Theatre Company",
+          "en": ""
+        }
+      },
+      {
+        "src": "unknown-neighbours-05.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -4183,6 +5906,43 @@
       }
     ],
     "cover": "",
+    "photos": [
+      {
+        "src": "miin-01.jpg",
+        "credit": {
+          "ko": "ⓒDarren Johnston",
+          "en": ""
+        }
+      },
+      {
+        "src": "miin-02.jpg",
+        "credit": {
+          "ko": "ⓒDarren Johnston",
+          "en": ""
+        }
+      },
+      {
+        "src": "miin-03.jpg",
+        "credit": {
+          "ko": "ⓒKIMWOLF",
+          "en": ""
+        }
+      },
+      {
+        "src": "miin-04.jpg",
+        "credit": {
+          "ko": "ⓒKIMWOLF",
+          "en": ""
+        }
+      },
+      {
+        "src": "miin-05.jpg",
+        "credit": {
+          "ko": "ⓒKIMWOLF",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": []
   },
   {
@@ -4415,6 +6175,57 @@
       "en": ""
     },
     "cover": "",
+    "photos": [
+      {
+        "src": "urban-pulse-uprising-01.jpg",
+        "credit": {
+          "ko": "ⓒKOFICE",
+          "en": ""
+        }
+      },
+      {
+        "src": "urban-pulse-uprising-02.jpg",
+        "credit": {
+          "ko": "ⓒKOFICE",
+          "en": ""
+        }
+      },
+      {
+        "src": "urban-pulse-uprising-03.jpg",
+        "credit": {
+          "ko": "ⓒKOFICE",
+          "en": ""
+        }
+      },
+      {
+        "src": "urban-pulse-uprising-04.jpg",
+        "credit": {
+          "ko": "ⓒKOFICE",
+          "en": ""
+        }
+      },
+      {
+        "src": "urban-pulse-uprising-05.jpg",
+        "credit": {
+          "ko": "ⓒKOFICE",
+          "en": ""
+        }
+      },
+      {
+        "src": "urban-pulse-uprising-06.jpg",
+        "credit": {
+          "ko": "ⓒKOFICE",
+          "en": ""
+        }
+      },
+      {
+        "src": "urban-pulse-uprising-07.jpg",
+        "credit": {
+          "ko": "ⓒKOFICE",
+          "en": ""
+        }
+      }
+    ],
     "homeFeature": [],
     "accordions": [
       {
@@ -4584,7 +6395,15 @@
       }
     ],
     "cover": "",
-    "homeFeature": []
+    "homeFeature": [],
+    "video": {
+      "url": "https://youtu.be/qdsxPOC-SXI",
+      "embedId": "qdsxPOC-SXI",
+      "label": {
+        "ko": "영상",
+        "en": "Video"
+      }
+    }
   },
   {
     "id": "a-film-for-the-future",
@@ -4679,7 +6498,15 @@
       }
     ],
     "cover": "",
-    "homeFeature": []
+    "homeFeature": [],
+    "video": {
+      "url": "https://youtu.be/2sdxKXfH84w",
+      "embedId": "2sdxKXfH84w",
+      "label": {
+        "ko": "영상",
+        "en": "Video"
+      }
+    }
   },
   {
     "id": "higher-power",
@@ -4771,10 +6598,31 @@
             "en": "Official dance video — Producer · Lee HeeJin / Produced by Producer Group DOT"
           }
         ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "영상 2",
+            "en": "Video 2",
+            "url": "https://www.youtube.com/watch?v=3WOwa0lWEz4"
+          }
+        ]
       }
     ],
     "cover": "",
-    "homeFeature": []
+    "homeFeature": [],
+    "video": {
+      "url": "https://www.youtube.com/watch?v=3lfnR7OhZY8",
+      "embedId": "3lfnR7OhZY8",
+      "label": {
+        "ko": "영상",
+        "en": "Video"
+      }
+    }
   },
   {
     "id": "contemporary-art-curator",

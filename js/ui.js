@@ -638,18 +638,30 @@ export function coverPosition(work, src) {
   return /poster/i.test(String(src || '').split('/').pop()) ? 'top' : 'center';
 }
 
-/* ---------- 사진 한 장의 크레딧 ----------
-   촬영자가 사진마다 다른 작업이 있다. works.json 의 photoCredits 가 파일명을 키로 잡는다.
+/* ---------- 작업 사진 ----------
+   촬영자가 사진마다 다르다. 그래서 크레딧은 사진에 붙는다.
 
-     photoCredits: { "mooljil-01.jpg": "ⓒShinjoong Kim" }
+     photos: [ { src: "mooljil-01.jpg", credit: { ko: "ⓒ김신중", en: "ⓒShinjoong Kim" } } ]
 
-   그 파일에 값이 없으면 작업 단위 photoCredit 으로 떨어지고, 그것도 없으면 빈 문자열이다
-   — 빈 문자열이면 크레딧 줄 자체를 만들지 않는다.
-   키는 경로가 아니라 파일명이다. 폴더를 옮겨도 따라오게 하기 위한 것. */
-export function photoCreditFor(item, src) {
+   src 는 파일명만 적으면 img/works/<id>/ 아래로 푼다. '/' 가 들어 있으면 그 경로를 그대로 쓴다
+   (img/works/aesthethics.jpg 처럼 폴더 밖에 있는 것도 있다).
+   credit 의 en 이 비면 t() 가 ko 를 그대로 내보낸다 — 로마자 촬영자는 ko 만 적으면 된다.
+   credit 은 적힌 그대로 찍는다. '촬영'·'제공' 같은 앞말을 코드가 붙이지 않는다. */
+
+export const photoSrc = (work, src) =>
+  String(src || '').includes('/') ? src : `img/works/${work.id}/${src}`;
+
+/** 그 작업의 사진 경로들. photos 를 적지 않았으면 빈 배열. */
+export const workPhotos = (work) =>
+  (work.photos || []).map((p) => photoSrc(work, typeof p === 'string' ? p : p.src)).filter(Boolean);
+
+/** 사진 한 장의 크레딧. 없으면 빈 문자열 — 그 사진만 크레딧 없이 나온다. */
+export function photoCreditFor(work, src) {
   const file = String(src || '').split('/').pop();
-  const per = item?.photoCredits?.[file];
-  return real(t(per)) || real(t(item?.photoCredit)) || '';
+  const hit = (work?.photos || []).find(
+    (p) => typeof p !== 'string' && String(p.src || '').split('/').pop() === file
+  );
+  return hit ? real(t(hit.credit)) : '';
 }
 
 /** 파일명이 TEMP- 로 시작하면 임시 이미지다. 폴더에 넣을 때 붙이는 표시. */
@@ -659,9 +671,8 @@ export function isTempFile(src) {
 
 /** 작업 표지로 시도할 경로들 — cover 먼저, 없으면 01.jpg, 그 다음 poster.jpg. */
 export function coverCandidates(work) {
-  return [work.cover, `img/works/${work.id}/01.jpg`, `img/works/${work.id}/poster.jpg`].filter(
-    (v, i, all) => v && all.indexOf(v) === i
-  );
+  return [work.cover, workPhotos(work)[0], `img/works/${work.id}/01.jpg`, `img/works/${work.id}/poster.jpg`]
+    .filter((v, i, all) => v && all.indexOf(v) === i);
 }
 
 /**

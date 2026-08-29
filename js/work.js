@@ -7,7 +7,7 @@ import { loadSite } from './data.js';
 import { t, lang, isFallback } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
-  topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance,
+  topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance, workPhotos,
   latestRun, yearSpan, photoCreditFor, visibleWorks, videoId, isEmbeddedVideo, lightbox, richNodes,
   runWhen,
 } from './ui.js';
@@ -377,8 +377,10 @@ const MANY_PORTRAITS = 5; //  세로가 이만큼 넘게 모이면 3열로 좁�
    photos 배열을 적으면 그 목록만 쓴다 — 파일 이름이 다른 형식이거나
    폴더에 있는 것 중 일부만 걸고 싶을 때. 표지는 늘 맨 앞이다. */
 const photoCandidates = (w) => {
+  /* photos 를 적었으면 그 목록이 전부다 — 적힌 차례대로 나간다.
+     안 적었으면 예전처럼 폴더에서 번호 순으로 찾아본다. */
   const list = w.photos?.length
-    ? [w.cover, ...w.photos]
+    ? workPhotos(w)
     : [
         w.cover,
         ...Array.from({ length: PHOTO_MAX }, (_, i) => `img/works/${w.id}/${nn(i + 1)}.jpg`),
@@ -627,8 +629,10 @@ async function main() {
        표지도 슬라이드의 첫 장으로 들어간다 — 오른쪽 열에 사진 자리는 하나뿐이다. */
     /* gallery:"sequence" — galleryImages 를 적었으면 그 목록만,
        적지 않았으면 폴더에서 찾아낸 사진 전부를 순서대로 넘겨 본다. */
+    /* gallery:"sequence" — photos 에 적은 차례대로 넘겨 본다.
+       예전 galleryImages 도 아직 받아준다. */
     const listed = work.gallery === 'sequence'
-      ? [...new Set([work.cover, ...(work.galleryImages || [])].filter(Boolean))]
+      ? [...new Set([...workPhotos(work), ...(work.galleryImages || []), work.cover].filter(Boolean))]
       : [];
     /* 크레딧 줄은 어느 배치에서든 하나뿐이다. 슬라이드면 넘길 때마다 갈아 끼운다. */
     const bar = creditBar(work);
@@ -647,13 +651,16 @@ async function main() {
       return;
     }
 
+    const shape = plan(photos);
     media.append(
-      photos.length ? photoArea(photos, plan(photos), bar.set) : el('figure.dshot', null, colourBlock(work))
+      photos.length ? photoArea(photos, shape, bar.set) : el('figure.dshot', null, colourBlock(work))
     );
     /* 사진 아래에 촬영자·제공자를 적는다. 예술가 사진과 같은 규칙(ui.js).
-       슬라이드가 아닌 배치는 보이는 사진 전부의 크레딧을 한 번에 모은다. */
+       슬라이드는 넘길 때마다 slideshow 가 이 줄을 갈아 끼우므로 건드리지 않는다 —
+       여기서 다시 채우면 첫 장의 크레딧이 전체 목록으로 덮여 버린다.
+       한 화면에 여러 장이 함께 보이는 배치에서만 보이는 것을 모아 적는다. */
     if (photos.length) {
-      bar.set(photos.map((x) => x.src));
+      if (shape.kind !== 'slides') bar.set(photos.map((x) => x.src));
       media.append(bar.node);
     }
   } catch (err) {

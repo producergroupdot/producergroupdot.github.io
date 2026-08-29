@@ -246,11 +246,15 @@
         "url": "https://www.instagram.com/elephants__laugh"
       }
     ],
-    "photo": "",
+    "photo": "img/artists/elephants.jpg",
     "pos": {
       "x": "72%",
       "y": "58%",
       "d": "clamp(155px, 21vh, 200px)"
+    },
+    "photoCredit": {
+      "ko": "촬영 박영균",
+      "en": "Photo by Park Younggyun"
     }
   }
 ]
