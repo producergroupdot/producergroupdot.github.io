@@ -46,7 +46,10 @@
           "en": "Creative producing, planning and administration"
         },
         "link": "",
-        "time": "19:00",
+        "time": {
+          "ko": "19:00",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -76,7 +79,10 @@
           "en": "Creative producing, planning and administration"
         },
         "link": "",
-        "time": "19:30",
+        "time": {
+          "ko": "19:30",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -294,7 +300,10 @@
           "en": ""
         },
         "link": "",
-        "time": "19:30",
+        "time": {
+          "ko": "19:30",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -324,7 +333,10 @@
           "en": ""
         },
         "link": "",
-        "time": "19:30",
+        "time": {
+          "ko": "19:30",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -354,7 +366,10 @@
           "en": ""
         },
         "link": "",
-        "time": "15:00",
+        "time": {
+          "ko": "15:00",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -741,7 +756,10 @@
           "en": "Production"
         },
         "link": "",
-        "time": "금 20:00 / 토 15:00 / 일 15:00",
+        "time": {
+          "ko": "금 20:00 / 토 15:00 / 일 15:00",
+          "en": "Fri 20:00 / Sat 15:00 / Sun 15:00"
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -977,7 +995,10 @@
           "en": "Production"
         },
         "link": "",
-        "time": "토 15:00, 20:00 / 일 15:00",
+        "time": {
+          "ko": "토 15:00, 20:00 / 일 15:00",
+          "en": "Sat 15:00, 20:00 / Sun 15:00"
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -1678,7 +1699,10 @@
           "en": "Tour production: Producer Group DOT"
         },
         "link": "",
-        "time": "22:00",
+        "time": {
+          "ko": "22:00",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -1708,7 +1732,10 @@
           "en": "Tour production: Producer Group DOT"
         },
         "link": "",
-        "time": "20:30",
+        "time": {
+          "ko": "20:30",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -2596,7 +2623,10 @@
           "en": "In cooperation"
         },
         "link": "",
-        "time": "17:30 / 18:00",
+        "time": {
+          "ko": "17:30 / 18:00",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -2627,7 +2657,10 @@
           "en": "Production"
         },
         "link": "",
-        "time": "18:30 / 20:30",
+        "time": {
+          "ko": "18:30 / 20:30",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -3874,7 +3907,10 @@
           "en": "co-production"
         },
         "link": "",
-        "time": "19:30",
+        "time": {
+          "ko": "19:30",
+          "en": ""
+        },
         "date": {
           "ko": "2026.8.31",
           "en": "31 August 2026"
@@ -3904,7 +3940,10 @@
           "en": "co-production"
         },
         "link": "",
-        "time": "19:30",
+        "time": {
+          "ko": "19:30",
+          "en": ""
+        },
         "date": {
           "ko": "2026.9.28",
           "en": "28 September 2026"
@@ -3934,7 +3973,10 @@
           "en": "co-production"
         },
         "link": "",
-        "time": "19:30",
+        "time": {
+          "ko": "19:30",
+          "en": ""
+        },
         "date": {
           "ko": "2026.10.19",
           "en": "19 October 2026"
@@ -3964,7 +4006,10 @@
           "en": "co-production"
         },
         "link": "",
-        "time": "19:30",
+        "time": {
+          "ko": "19:30",
+          "en": ""
+        },
         "date": {
           "ko": "2026.11.30",
           "en": "30 November 2026"
@@ -3994,7 +4039,10 @@
           "en": "co-production"
         },
         "link": "",
-        "time": "19:30",
+        "time": {
+          "ko": "19:30",
+          "en": ""
+        },
         "date": {
           "ko": "2026.12.28",
           "en": "28 December 2026"
@@ -4785,7 +4833,10 @@
           "en": "Co-production"
         },
         "link": "",
-        "time": "목·금 19:30 / 토·일 15:00, 19:00",
+        "time": {
+          "ko": "목·금 19:30 / 토·일 15:00, 19:00",
+          "en": "Thu–Fri 19:30 / Sat–Sun 15:00, 19:00"
+        },
         "date": {
           "ko": "",
           "en": ""
@@ -4816,7 +4867,10 @@
           "en": "Co-production"
         },
         "link": "",
-        "time": "16:30",
+        "time": {
+          "ko": "16:30",
+          "en": ""
+        },
         "date": {
           "ko": "",
           "en": ""

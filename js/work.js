@@ -183,7 +183,7 @@ function buildAccordions(work) {
   /* 회차 메모(축제 이름 같은 것)도 그린다 — 적어 두고 화면에 없으면 없는 값과 같다(함정 1). */
   const line = (r, l, mark) =>
     [
-      [runWhen(r, l), r.time].filter(Boolean).join(' '),
+      [runWhen(r, l), t(r.time, l)].filter(Boolean).join(' '),
       where(r, l),
       t(r.note, l),
       roleOf(r, l),

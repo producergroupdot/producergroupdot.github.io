@@ -237,7 +237,7 @@ function nowItems(site, today = new Date()) {
       /* 한 작업의 여러 회차는 한 줄로 합친다. 같은 작업이 줄만 늘리지 않게. */
       const unique = (xs) => [...new Set(xs.filter(Boolean))];
       const venues = unique(rs.map((r) => t(r.venue)));
-      const times = unique(rs.map((r) => r.time));
+      const times = unique(rs.map((r) => t(r.time)));
 
       /* 장소가 하나면 도시·장소를 그대로 쓰고, 여럿이면 도시만 모은다.
          회차마다 시간이 같으면 그 시간도 한 번 보여준다. */

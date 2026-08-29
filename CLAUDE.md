@@ -343,7 +343,7 @@ video         영상                              Video
 
 ```
 runs[]  start, end, city{ko,en}, venue{ko,en}, kind{ko,en}, premiere, dotRole{ko,en}, link
-        (+ time, date{ko,en}, note{ko,en})
+        (+ time{ko,en}, date{ko,en}, note{ko,en})
 kind     초연 · 재연 · 투어 · 공동제작
 premiere true 면 초연. 없거나 false 면 아니다. (시트 '5.일정' 탭의 '초연' 열 — 예/아니오)
 dotRole  도트가 그 회차에서 맡은 역할. 화면의 일정 줄 끝에 그대로 나온다.
