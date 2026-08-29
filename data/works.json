@@ -4322,8 +4322,8 @@
       "en": "Performing Arts and Digitality"
     },
     "subtitle": {
-      "ko": "디지털 드라마터지 워크숍 : 개념과 실천을 중심으로",
-      "en": "Digital Dramaturgy Workshop — focusing on concept and practice"
+      "ko": "디지털 드라마터지 워크숍 — 개념과 실천을 중심으로",
+      "en": "Digital Dramaturgy Workshop — On Concepts and Practice"
     },
     "artist": {
       "ko": "",
@@ -4369,12 +4369,12 @@
     ],
     "status": "done",
     "lead": {
-      "ko": "",
-      "en": ""
+      "ko": "기술이 창작의 도구에 머무는 자리에서, 매개자들이 디지털리티를 다시 묻다.",
+      "en": "Where technology stays a tool, mediators asked what digitality means again."
     },
     "body": {
-      "ko": "동시대 사회는 기술과 분리해 생각할 수 없으며, 알고리즘은 우리의 삶을 지배하고 있다. 그러나 창작에서 기술은 여전히 단순한 도구로 머무는 경우가 많다. 디지털 드라마터지 워크숍은 기술사회에 대한 이해를 바탕으로, 전통적 사고를 넘어서는 새로운 창작 방법론을 모색하고자 기획되었다.\n\n프로듀서와 드라마터그 등 매개자들은 예술과 기술의 언어를 번역하고 조율하며, 예술가와 함께 질문을 만들고 관객과 사회로 확장하는 역할을 탐구한다. 경험을 가진 매개자들이 고민을 공유하고 새로운 창작 구조를 실험하는 시간을 가졌다.\n\n이 워크숍에서 시작된 논의는 2026년 {work:aesthethics|Aesth:ethics}로 이어진다.",
-      "en": "Contemporary society cannot be conceived apart from technology, and algorithms increasingly govern our lives. Yet in creative practice, technology often remains a mere tool. The Digital Dramaturgy Workshop was conceived to seek new methodologies of creation that move beyond traditional ways of thinking, grounded in an understanding of our technological society.\n\nProducers, dramaturgs and other mediators explore how to translate and align the languages of art and technology, co-formulate questions with artists, and extend them to audiences and society. The workshop gave experienced mediators time to share their concerns and to experiment with new structures of creation.\n\nThe conversations begun in this workshop continue into {work:aesthethics|Aesth:ethics} in 2026."
+      "ko": "지난 몇 년간 한국 공연예술계에서 예술과 기술의 융합을 둘러싼 논의와 지원은 활발했다. 그러나 기술을 이미 창작의 언어로 삼아온 시각예술에 비해, 공연예술에서 눈에 띄는 작업을 찾기는 여전히 어렵다. 기술 기반과 알고리즘이 삶을 지배하는 사회에서도 공연예술의 기술은 작품을 만드는 하나의 도구에 머무는 경우가 많다. 이 워크숍은 기술사회에 대한 이해를 바탕으로, 전통적인 창작 사고와 방식을 벗어난 디지털 드라마터지적 관점과 새로운 창작 방법론을 찾기 위해 기획되었다.\n\n대상은 프로듀서와 드라마터그 등 매개자였다. 예술과 기술이 만나는 공연은 새로운 분야와의 협업이 전제되고, 매개자는 서로 다른 두 언어를 번역하고 통역하며 협업을 구상한다. 창작 과정 안에서 예술가와 함께 질문을 만들고, 창작 이후에는 관객과의 관계 속에서 사회로의 확장을 고민한다. 예술-기술 프로젝트를 이미 여러 차례 거친 매개자들이 각자의 고민과 질문을 꺼내 놓고, 새로운 창제작 방법론을 함께 실험하는 자리였다.\n\n이 워크숍에서 시작된 논의는 〈다시보기, 미리보기@둥지230〉으로 이어졌다. 워크숍 참여자들이 서로의 창작 과정 안에서의 시도와 실패를 가감 없이 공유하고, 다음 단계를 향한 질문을 함께 던지는 프로그램이다.",
+      "en": "Over the past few years, the Korean performing arts field has seen active discussion of and support for the convergence of art and technology. Yet compared with the visual arts, which have long held technology as a language of creation, striking work remains hard to find in the performing arts. Even in a society governed by technological infrastructures and algorithms, technology in the performing arts often stays a tool for making a piece. This workshop was organised to look, from an understanding of technological society, for a digital-dramaturgical perspective and creative methodologies that depart from conventional ways of thinking and making.\n\nIt was addressed to mediators — producers, dramaturgs and others. Performances where art meets technology presuppose collaboration with unfamiliar fields, and the mediator conceives that collaboration while translating and interpreting between two languages. Within the creative process they form questions alongside the artists; afterwards, in the relationship with audiences, they consider how the work extends into society. Mediators who had already been through several art-technology projects brought out their own questions and difficulties and experimented together with new methodologies for creation and production.\n\nThe discussion begun in this workshop continued into 〈Review, Preview @Dungji230〉, a programme in which participants shared their attempts and failures within their own creative processes without reservation, and posed questions toward the next step together."
     },
     "venue": {
       "ko": "",
@@ -4400,24 +4400,68 @@
       {
         "title": {
           "ko": "정보",
-          "en": "Info"
+          "en": "Information"
         },
         "rows": [
           {
-            "ko": "주관 · 예술경영지원센터 아트코리아랩",
-            "en": "Hosted by Arts Korea Lab, KAMS"
+            "ko": "일정 · 11월 3–5일",
+            "en": "Dates · 3–5 November"
           },
           {
-            "ko": "기획·운영 · 프로듀서그룹 도트",
-            "en": "Planning by Producer Group DOT"
+            "ko": "장소 · 아트코리아랩",
+            "en": "Venue · Art Korea Lab"
           },
           {
-            "ko": "워크숍 리더 · 미하엘 아이크호프, 칼라 멜러, 박지선 외",
-            "en": "Workshop leaders · Michael Eickhoff, Carla Meller, Park Jisun and others"
+            "ko": "대상 · 예술-기술, 예술-과학 프로젝트를 2회 이상 진행한 공연예술 매개자 10인 내",
+            "en": "Participants · Up to 10 performing arts mediators with experience of two or more art-technology or art-science projects"
           },
           {
-            "ko": "협력 · 서울국제공연예술제, 주한독일문화원, 연극과 디지털리티 아카데미",
-            "en": "In cooperation with SPAF, Goethe-Institut Korea, Academy for Theatre and Digitality"
+            "ko": "협력 · 아트코리아랩, 서울국제공연예술제, 프로듀서 그룹 도트, 주한독일문화원",
+            "en": "In cooperation with · Art Korea Lab, Seoul Performing Arts Festival, Producer Group DOT, Goethe-Institut Korea"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "다룬 것",
+          "en": "What we covered"
+        },
+        "rows": [
+          {
+            "ko": "디지털리티 — 예술에 기술을 접목하는 방식이 아니라 기술 시대를 이해하고 표상하는 방식. 기술적 연결이 아닌 사회적 연결을 위한 방법론",
+            "en": "Digitality — Not a way of attaching technology to art, but a way of understanding and representing the technological age. A methodology for social, not merely technical, connection"
+          },
+          {
+            "ko": "소통 — 서로 다른 언어와 문법과 관행을 가진 분야 사이의 통역과 번역. 구심점이 될 공동의 언어와 정의를 찾는 일. 개념이 아닌 실제 과정에서의 경험 공유",
+            "en": "Communication — Interpreting and translating between fields with different languages, grammars and conventions. Finding a shared language and shared definitions to gather around. Sharing experience from actual processes rather than concepts"
+          },
+          {
+            "ko": "창작 방법론 — 아티스트 리서치에 머물지 않는 기술 R&D, 기존 매체와 기술 특성에 매몰되지 않는 시도. 희곡 중심 연극과 장소 특정형 공연의 방법론이 다르듯, 예술과 기술이 결합하는 공연에 필요한 방법론과 프로세스",
+            "en": "Creative methodology — Technological R&D that does not stop at artist research; attempts not confined to existing media and the properties of a given technology. Just as text-based theatre and site-specific performance call for different methodologies, the methodology and process that performance combining art and technology requires"
+          },
+          {
+            "ko": "역할 — 예술과 기술이 결합된 공연에서 매개자가 맡는 자리",
+            "en": "Role — The place the mediator holds in a performance where art and technology meet"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "리딩 기관과 멘토",
+          "en": "Leading institution and mentors"
+        },
+        "rows": [
+          {
+            "ko": "디지털 연극 아카데미 (The Academy for Theatre and Digitality) — 2019년 독일 도르트문트 극장의 여섯 번째 부서로 설립되어, 디지털 기술이 연극 공간에서 어떻게 쓰일 수 있는지를 탐구한다. 예술적 연구개발, 전문 교육, 문화정책 자문, 국내외 협력의 네 축으로 활동하며 PlayOn!, ACuTe, EXCENTRIC 등 유럽·국제 프로젝트에 참여한다. 연구실과 워크숍 공간, 오디오·비디오 스튜디오, 모션 캡처 그린스크린 스튜디오를 갖춘 약 2,000㎡ 규모다.",
+            "en": "The Academy for Theatre and Digitality — Founded in 2019 as the sixth department of Theater Dortmund in Germany, the Academy explores how digital technology can be used in theatrical space. Its work spans four areas — artistic research and development, professional education, cultural policy advice, and national and international cooperation — and it takes part in European and international projects including PlayOn!, ACuTe and EXCENTRIC. Its roughly 2,000㎡ premises hold laboratories and workshop spaces, audio and video studios, and a green-screen studio with motion capture."
+          },
+          {
+            "ko": "미하엘 아이크호프 Michael Eickhoff — 드라마투르기 및 국제 네트워킹. 비엘레펠트와 파리에서 역사·독어독문학·사회학을 공부하고 2000년부터 프로덕션 매니저·드라마투르그·큐레이터로 일했다. 2010–2020년 카이 포게스 예술감독 체제의 도르트문트 슈필하우스 예술경영 팀에서 담론 시리즈와 페스티벌, 국제 초청 공연을 기획했다. 2017–2019년 디지털 연극 아카데미의 개념 구상과 재원 조성에 참여했고, 2020년부터 아카데미에서 예술·연극·과학·비즈니스를 잇는 협업과 국제 네트워킹을 맡고 있다.",
+            "en": "Michael Eickhoff — Dramaturgy and international networking. He studied history, German language and literature, and sociology in Bielefeld and Paris, and has worked since 2000 as a production manager, dramaturg and curator. From 2010 to 2020 he was part of the artistic management team at Schauspiel Dortmund under artistic director Kay Voges, where he programmed discourse series, festivals and international guest performances. He took part in conceiving and funding the Academy for Theatre and Digitality between 2017 and 2019, and since 2020 has been responsible there for collaboration and international networking across art, theatre, science and business."
+          },
+          {
+            "ko": "칼라 멜러 Carla Meller — 레지덴츠극장에서 열 시즌을 일한 뒤 2023년 디지털 연극 아카데미에 합류해 국제 협력을 담당하고 있다. 파리 정치대학과 맥길대학교에서 정치·경제·사회과학을 공부했고 문화경영 석사를 마쳤다.",
+            "en": "Carla Meller — After ten seasons at the Residenztheater, she joined the Academy for Theatre and Digitality in 2023 and is responsible for international cooperation. She studied political, economic and social sciences at Sciences Po Paris and McGill University, and holds a master's degree in cultural management."
           }
         ]
       },
