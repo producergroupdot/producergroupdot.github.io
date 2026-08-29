@@ -6726,6 +6726,7 @@
   {
     "id": "contemporary-art-curator",
     "form": "workshop",
+    "hidden": true,
     "title": {
       "ko": "동시대 예술을 질문하는 기획자",
       "en": ""

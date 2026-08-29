@@ -7,6 +7,7 @@ import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
   topBar, footer, pageUrl, link, formBadge, photo, faceCandidates,
+  visibleWorks,
 } from './ui.js';
 
 /** 최근 것이 위로. works.html 과 같은 기준. */
@@ -200,7 +201,7 @@ async function main() {
         el(
           'aside.pside',
           null,
-          worksBlock(person, site.works),
+          worksBlock(person, visibleWorks(site.works)),
           linksBlock(person),
           othersBlock(person, site.producers)
         )

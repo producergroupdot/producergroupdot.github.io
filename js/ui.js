@@ -427,7 +427,14 @@ export const kindName = (work) =>
    works.json 의 hideInEn 이 true 면 영문 목록 어디에도 나오지 않는다.
    국문 목록에는 그대로 남는다. 목록을 만드는 곳은 모두 이 함수를 거친다 —
    한 곳만 빠뜨리면 감췄다고 믿는 작업이 그 화면에만 남는다. */
-export const shownInLang = (work) => !(isEn() && work.hideInEn === true);
+/* ---------- 감춘 작업 ----------
+   hidden: true 면 사이트 어디에도 내보내지 않는다 — 목록·필터·홈 개수·정렬·
+   Explore more·예술가/프로듀서의 작업 목록, 그리고 상세 페이지까지.
+   데이터와 사진은 그대로 둔다. 다시 공개할 때 이 한 칸만 지우면 된다.
+   hideInEn 은 영문판에서만 감추는 것이고, 이쪽은 언어와 무관하다. */
+export const isPublic = (work) => work?.hidden !== true;
+
+export const shownInLang = (work) => isPublic(work) && !(isEn() && work.hideInEn === true);
 export const visibleWorks = (works) => (works || []).filter(shownInLang);
 
 /* ---------- 특수문자는 폰트에 맡기지 않는다 (함정 5) ---------- */

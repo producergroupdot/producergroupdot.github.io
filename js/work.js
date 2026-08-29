@@ -7,7 +7,7 @@ import { loadSite } from './data.js';
 import { t, lang, isFallback } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
-  topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance, workPhotos,
+  topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance, workPhotos, isPublic,
   latestRun, yearSpan, photoCreditFor, visibleWorks, videoId, isEmbeddedVideo, lightbox, richNodes,
   runWhen,
 } from './ui.js';
@@ -606,7 +606,8 @@ async function main() {
     const site = await loadSite();
     injectProducerColors(site.producers);
 
-    const work = site.works.find((w) => w.id === id);
+    /* 감춘 작업은 없는 것으로 다룬다 — 주소를 직접 쳐도 열리지 않게. */
+    const work = site.works.filter(isPublic).find((w) => w.id === id);
     if (!work) throw new Error(`works.json 에 '${id}' 가 없습니다.`);
     document.title = `${titleText(t(work.title))} · 프로듀서그룹 도트`;
 

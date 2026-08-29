@@ -6,6 +6,7 @@ import { t } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
   topBar, footer, pageUrl, link, formBadge, creditLine,
+  visibleWorks,
 } from './ui.js';
 
 const byRecency = (a, b) => (b.yearFrom || 0) - (a.yearFrom || 0);
@@ -149,7 +150,7 @@ async function main() {
       el('div.abody', null,
         prose(artist),
         el('aside.pside', null,
-          worksBlock(artist, site.works),
+          worksBlock(artist, visibleWorks(site.works)),
           linksBlock(artist),
           producersBlock(artist, site.producerById, site.producers)))
     );

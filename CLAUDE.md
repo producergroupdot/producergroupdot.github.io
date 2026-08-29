@@ -285,6 +285,11 @@ data/
   now.json         홈 Now에 나올 작업 ID 배열. 적힌 차례대로 그린다.
 
 works.json 의 선택 필드 (없어도 됩니다)
+  hidden      true 면 사이트 어디에도 내보내지 않는다 — Works 목록·필터·홈 개수·정렬·
+              Explore more·예술가와 프로듀서의 작업 목록, 그리고 상세 페이지까지.
+              주소를 직접 쳐도 열리지 않는다. 데이터와 사진은 지우지 않는다 —
+              다시 공개할 때 이 한 칸만 지우면 된다. 기본값 false.
+              판정은 `js/ui.js` 의 isPublic() 한 곳. hideInEn 과 달리 언어와 무관하다.
   hideInEn    true 면 영문판 목록 어디에도 나오지 않는다 — Works · 홈 NOW ·
               Explore more. 국문 목록에는 그대로 남는다. 기본값 false.
               (시트 '3.작업' 탭의 '영문 제외' 열 — 관리자 전용, 초록 헤더)
