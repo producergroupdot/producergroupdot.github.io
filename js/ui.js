@@ -233,12 +233,20 @@ export const todayIso = (d = new Date()) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 
 /**
- * 앞으로 있을 회차가 있거나 status 가 ongoing 이면 진행 중으로 본다.
+ * 회차 하나가 아직 살아 있는가 — 오늘 진행 중이거나 앞으로 시작한다.
  * 오늘 끝나는 회차도 아직 진행 중이다(end >= 오늘).
+ * 끝난 날짜가 없으면 시작한 날로 견준다(하루짜리 회차).
+ *
+ * Works 의 '현재 진행 중' 필터와 홈 Now 가 같은 이것을 쓴다 — 한쪽만 고쳐질 일이 없게.
+ */
+export const isRunLive = (run, today = todayIso()) => (run.end || run.start || '') >= today;
+
+/**
+ * 앞으로 있을 회차가 있거나 status 가 ongoing 이면 진행 중으로 본다.
  */
 export function isRunningNow(work, today = todayIso()) {
   if (work.status === 'ongoing') return true;
-  return (work.runs || []).some((r) => (r.end || r.start) >= today);
+  return (work.runs || []).some((r) => isRunLive(r, today));
 }
 
 /* ---------- 장소 ----------

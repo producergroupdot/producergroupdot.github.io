@@ -5,6 +5,7 @@ import { t, lang } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   logo, footer, pageUrl, link, photo, coverCandidates, producerTile, kindLabel, kindName, isPerformance,
+  isRunLive,
   byYear, coverPosition,
   langToggle,
   shownInLang, visibleWorks,
@@ -209,14 +210,15 @@ function renderMosaic(site) {
 
 /* ---------- Now ---------- */
 
-/** 오늘 기준 앞뒤 3개월 안에 회차가 있는 공연 + 진행 중인 프로젝트. */
+/**
+ * Now 에 나오는 것은 '지금 하고 있거나 앞으로 할 것'뿐이다.
+ * 오늘이 회차의 시작–종료 사이에 있거나, 오늘 이후에 시작하는 회차가 있으면 남는다.
+ * 끝난 회차는 뺀다 — 지난 것은 Works 에 그대로 있다.
+ * 판정은 ui.js 의 isRunLive() 한 곳이고 Works 의 '현재 진행 중' 필터도 그것을 쓴다.
+ */
 function nowItems(site, today = new Date()) {
   const { works, nowOrder } = site;
-  const from = new Date(today);
-  from.setMonth(from.getMonth() - 3);
-  const to = new Date(today);
-  to.setMonth(to.getMonth() + 3);
-  const [A, Z, T] = [iso(from), iso(to), iso(today)];
+  const T = iso(today);
 
   const workById = new Map(works.map((w) => [w.id, w]));
   const items = [];
@@ -230,7 +232,7 @@ function nowItems(site, today = new Date()) {
 
     /* 회차는 이제 작품 안에 있다(works.json 의 runs). */
     const rs = (w.runs || [])
-      .filter((r) => r.end >= A && r.start <= Z)
+      .filter((r) => isRunLive(r, T))
       .sort((x, y) => (x.start < y.start ? -1 : 1));
 
     if (rs.length) {
@@ -257,21 +259,20 @@ function nowItems(site, today = new Date()) {
         /* 회차별 메모(낭독 작가·작품 같은 것)는 여러 줄이 되면 한 줄에 담기지 않는다.
            합쳐진 줄에서는 접고, 작업 상세의 일정에서 펼친다. */
         note: rs.length === 1 ? t(rs[0].note) : '',
-        past: rs.every((r) => r.end < T), // 모든 회차가 끝났을 때만 지난 것
       });
-    } else if (w.status === 'ongoing') {
-      /* 회차가 따로 없는 진행 중 프로젝트는 한 줄로. */
-      items.push({ work: w, order, sort: '', when: w.year, where: t(w.artist), past: false });
+    } else if (!(w.runs || []).length && w.status === 'ongoing') {
+      /* 회차를 따로 적지 않는 진행 중 프로젝트(네트워크 같은 것)는 한 줄로.
+         회차가 있는데 다 끝난 작업은 여기로 내려오지 않는다 — status 가 ongoing 이라도
+         Now 에서는 빠진다. 살아 있는 회차가 없으면 지금 하고 있는 것이 아니다. */
+      items.push({ work: w, order, sort: '', when: w.year, where: t(w.artist) });
     }
   });
 
   /* 차례는 works.json 의 order 가 정한다(Works 페이지와 같은 기준).
-     지난 것만 예외로 늘 맨 아래에 둔다. */
+     지난 것을 맨 아래로 내리던 예외는 없앴다 — 이제 지난 것은 여기 오지 않는다. */
   items.sort(
     (a, b) =>
-      a.past - b.past ||
-      (a.work.order ?? Infinity) - (b.work.order ?? Infinity) ||
-      (a.sort < b.sort ? -1 : 1)
+      (a.work.order ?? Infinity) - (b.work.order ?? Infinity) || (a.sort < b.sort ? -1 : 1)
   );
 
   return { items };
@@ -283,7 +284,7 @@ function nowItems(site, today = new Date()) {
 function nowRow(it, producerById) {
   return link(
     pageUrl('work', it.work.id),
-    `.row${it.past ? '.past' : ''}`,
+    '.row',
     null,
     el('span.kind.meta', { text: kindName(it.work) }),
     /* 제목은 한 덩어리로 감싼다. .t 가 flex 라서 감싸지 않으면

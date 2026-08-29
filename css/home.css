@@ -185,10 +185,6 @@ a.cell:focus-visible h2{
 }
 /* 지난 것은 제목은 그대로 두고 날짜·장소·색점만 흐리게 한다.
    줄 전체에 opacity 를 걸면 제목까지 흐려지고, 자식에서 되돌릴 수 없다. */
-#now-list .row.past .when { opacity:calc(.75 * .62) }
-#now-list .row.past .where{ opacity:calc(.5  * .62) }
-#now-list .row.past .who  { opacity:.62 }
-#now-list .row.past .kind { opacity:calc(.55 * .62) }
 
 #now-list .kind{
   width:64px; flex:none;
