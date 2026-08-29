@@ -1314,6 +1314,36 @@
           "ko": "2022 서울국제공연예술제",
           "en": "SPAF 2022"
         }
+      },
+      {
+        "start": "2026-09-16",
+        "end": "2026-09-16",
+        "city": {
+          "ko": "서울",
+          "en": "Seoul"
+        },
+        "venue": {
+          "ko": "주한독일문화원 Lucky Supper Club",
+          "en": "Goethe-Institut Korea, Lucky Supper Club"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "제작",
+          "en": "Production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "",
+          "en": ""
+        },
+        "note": {
+          "ko": "워크숍",
+          "en": "Workshop"
+        }
       }
     ],
     "status": "upcoming",
