@@ -172,20 +172,21 @@ a.artist:hover h3{
   border-top:.5px solid var(--line);
   max-width:60ch;
 }
-.acompany h2, .areviews h2{
+.acompany h2{
   font-size:15px;
   letter-spacing:-.01em;
   margin-bottom:12px;
 }
 .acompany h2 .h2-en{ font-weight:400; opacity:.5 }
 
+/* 제목 줄이 없다. 그 자리가 비면 인용이 선에 붙어 앞 문단에 딸린 것처럼
+   읽히므로 제목이 차지하던 높이(26 + 18)를 여백으로 남긴다. */
 .areviews{
   margin-top:40px;
-  padding-top:26px;
+  padding-top:40px;
   border-top:.5px solid var(--line);
   max-width:60ch;
 }
-.areviews h2{ margin-bottom:18px }
 .areviews .quote{
   padding-left:18px;
   border-left:2px solid var(--line-s);

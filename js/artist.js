@@ -60,13 +60,14 @@ function company(artist) {
   return paragraphs(t(c.text), box);
 }
 
-const REVIEWS_TITLE = { ko: '공연 리뷰', en: 'Reviews' };
-
+/* 제목 줄은 두지 않는다. 위쪽 선과 여백이 이미 구역을 가르고, 인용부호가 붙은
+   블록이라 '리뷰'라고 다시 적지 않아도 무엇인지 읽힌다.
+   제목이 차지하던 높이는 css 의 padding-top 이 대신한다(.areviews). */
 function reviews(artist) {
   const list = (artist.reviews || []).filter((r) => t(r.quote));
   if (!list.length) return null;
 
-  const box = el('section.areviews', null, el('h2', { text: t(REVIEWS_TITLE) }));
+  const box = el('section.areviews');
   for (const r of list) {
     box.append(
       el('figure.quote', null,
