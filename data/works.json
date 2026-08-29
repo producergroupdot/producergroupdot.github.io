@@ -2856,6 +2856,7 @@
       }
     },
     "cover": "img/works/ghost-theater/ghost-theater-01.jpg",
+    "gallery": "sequence",
     "photos": [
       {
         "src": "ghost-theater-01.jpg",
