@@ -986,6 +986,36 @@
           "ko": "2023 서울국제공연예술제",
           "en": "SPAF 2023"
         }
+      },
+      {
+        "start": "2022-06-01",
+        "end": "2022-12-31",
+        "city": {
+          "ko": "화천",
+          "en": "Hwacheon"
+        },
+        "venue": {
+          "ko": "예술텃밭 기후변화 예술가 레지던시",
+          "en": "Arts Farm Tutbat, Climate Change Artist Residency"
+        },
+        "kind": {
+          "ko": "",
+          "en": ""
+        },
+        "dotRole": {
+          "ko": "제작",
+          "en": "Production"
+        },
+        "link": "",
+        "time": "",
+        "date": {
+          "ko": "2022.6–12",
+          "en": "June–December 2022"
+        },
+        "note": {
+          "ko": "쇼케이스",
+          "en": "Showcase"
+        }
       }
     ],
     "status": "done",

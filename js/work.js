@@ -120,14 +120,15 @@ function videoStack(work) {
 /* ---------- 아코디언 ---------- */
 
 /* 아코디언 제목과 표시 문구. 국문·영문을 한 곳에 둔다. */
-const DATES = { ko: '일정', en: 'Dates' };            //  공연이 아닌 작업
-const SHOWS = { ko: '공연 일정', en: 'Dates' };
-const HISTORY = { ko: '공연 히스토리', en: 'History' };
+/* 회차 칸은 두 개뿐이고 모든 작업이 같은 이름을 쓴다.
+   '공연 일정'이라 부르지 않는다 — 움직이는 숲처럼 워크숍 회차가 절반인 작업이 있다. */
+const UPCOMING = { ko: '일정', en: 'Upcoming' };
+const PAST = { ko: '지난 일정', en: 'Past' };
 const INFO = { ko: '정보', en: 'Info' };
 const CREDITS = { ko: '크레딧', en: 'Credits' };
 const MATERIALS = { ko: '자료', en: 'Materials' };
 const PREMIERE = { ko: '초연', en: 'Premiere' };
-const SCHEDULE_TITLE = /^(일정|공연 일정|공연 히스토리|Dates|History|Schedule)/;
+const SCHEDULE_TITLE = /^(일정|지난 일정|공연 일정|공연 히스토리|Upcoming|Past|Dates|History|Schedule)/;
 
 /** 오늘(현지 시각 기준). 회차를 지난 것과 앞으로 있을 것으로 가르는 기준. */
 function today() {
@@ -185,7 +186,9 @@ function buildAccordions(work) {
       where(r, l),
       t(r.note, l),
       roleOf(r, l),
-      r === first ? mark : '',
+      /* 메모에 이미 '초연' 이 적혀 있으면 표시를 또 붙이지 않는다 —
+         '런던 초연 · 국제공동제작 · 초연' 처럼 같은 말이 두 번 남는다. */
+      r === first && !t(r.note, l).includes(mark) ? mark : '',
     ]
       .filter(Boolean)
       .join('  ·  ');
@@ -202,22 +205,26 @@ function buildAccordions(work) {
    * 앞으로 아무 일도 없다는 것이 두 번 말해진다.
    * 공연이 아닌 작업(리서치·네트워크·레지던시·축제)은 '일정' 하나로 둔다.
    */
+  /* '일정' 은 앞으로 있을 회차 전부에, 지난 것 중 가장 최근 한 건을 더한 것이다.
+     방금 끝난 회차가 '지난 일정' 으로 떨어져 버리면 지금 무엇을 하고 있는지가 안 보인다.
+     나머지 지난 회차는 '지난 일정' 으로 간다. 날짜로만 가르고 사람이 옮기지 않는다.
+
+     일정  — 오름차순. 가까운 것이 위. (막 끝난 한 건이 맨 위, 그 다음이 다음 회차)
+     지난 일정 — 내림차순. 최신이 위.
+     지난 일정이 비면 그 칸을 만들지 않는다. */
   const schedule = () => {
-    /* 어느 칸이든 최신이 위로. 한 작업 안에서 칸마다 차례가 뒤집히면
-       두 칸을 이어 읽을 때 시간이 거꾸로 흐른다. */
-    const desc = (a, b) => (a.start < b.start ? 1 : -1);
+    if (!runs.length) return [];
+    const asc = (a, b) => (a.start < b.start ? -1 : 1);
+    const desc = (a, b) => -asc(a, b);
     const ended = (r) => (r.end || r.start) < today();
 
-    if (!runs.length) return [];
-    if (!isPerformance(work)) return [{ title: t(DATES), rows: runs.sort(desc).map(runRow) }];
+    const past = runs.filter(ended).sort(desc);      // 최신이 앞
+    const upcoming = runs.filter((r) => !ended(r));
+    if (past.length) upcoming.push(past.shift());    // 가장 최근 지난 것 한 건을 일정으로
 
-    const upcoming = runs.filter((r) => !ended(r)).sort(desc);
-    if (!upcoming.length) return [{ title: t(SHOWS), rows: runs.sort(desc).map(runRow) }];
-
-    const past = runs.filter(ended).sort(desc);
     return [
-      { title: t(SHOWS), rows: upcoming.map(runRow) },
-      ...(past.length ? [{ title: t(HISTORY), rows: past.map(runRow) }] : []),
+      { title: t(UPCOMING), rows: upcoming.sort(asc).map(runRow) },
+      ...(past.length ? [{ title: t(PAST), rows: past.map(runRow) }] : []),
     ];
   };
 
