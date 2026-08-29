@@ -59,7 +59,8 @@ function premiereRun(work) {
 function premiereLine(work) {
   const r = premiereRun(work);
   if (!r) return null;
-  const text = [t(PREMIERE), runWhen(r), t(r.venue)].filter(Boolean).join(' · ');
+  /* '초연' 은 라벨이다 — 라벨과 값 사이는 콜론, 값과 값 사이는 가운뎃점. */
+  const text = t(PREMIERE) + ' : ' + [runWhen(r), t(r.venue)].filter(Boolean).join(' · ');
   return el('p.dpremiere.meta', { text });
 }
 
@@ -191,7 +192,7 @@ function buildAccordions(work) {
       r === first && !t(r.note, l).includes(mark) ? mark : '',
     ]
       .filter(Boolean)
-      .join('  ·  ');
+      .join(' · ');
 
   const runRow = (r) => ({ ko: line(r, 'ko', PREMIERE.ko), en: line(r, 'en', PREMIERE.en) });
 
@@ -258,7 +259,7 @@ function buildAccordions(work) {
     ['키워드', t(work.keywords)],
   ]
     .filter(([, v]) => v)
-    .map(([k, v]) => ({ ko: `${k} · ${v}` }));
+    .map(([k, v]) => ({ ko: `${k} : ${v}` }));
 
   /* works.json 의 info[] — 라벨과 값이 짝으로 들어 있다(role · name).
      라벨을 필드 이름에서 만들지 않으므로 한 작업에 주체를 여럿 적을 수 있고,
@@ -267,8 +268,8 @@ function buildAccordions(work) {
   const roles = (work.info || [])
     .filter((x) => t(x.name))
     .map((x) => ({
-      ko: [t(x.role, 'ko'), t(x.name, 'ko')].filter(Boolean).join(' · '),
-      en: [t(x.role, 'en'), t(x.name, 'en')].filter(Boolean).join(' · '),
+      ko: [t(x.role, 'ko'), t(x.name, 'ko')].filter(Boolean).join(' : '),
+      en: [t(x.role, 'en'), t(x.name, 'en')].filter(Boolean).join(' : '),
     }));
 
   if (info.length || roles.length) out.push({ title: t(INFO), rows: [...info, ...roles] });
@@ -276,7 +277,10 @@ function buildAccordions(work) {
 
   /* credits 배열이 있으면 크레딧 항목으로. 데이터만 있고 화면에 없는 필드를 두지 않는다. */
   const credits = (work.credits || [])
-    .map((c) => ({ ko: [t(c.role), t(c.name)].filter(Boolean).join(' · ') }))
+    .map((c) => ({
+      ko: [t(c.role, 'ko'), t(c.name, 'ko')].filter(Boolean).join(' : '),
+      en: [t(c.role, 'en'), t(c.name, 'en')].filter(Boolean).join(' : '),
+    }))
     .filter((r) => r.ko);
   if (credits.length) out.push({ title: t(CREDITS), rows: credits });
 
@@ -284,7 +288,7 @@ function buildAccordions(work) {
      위에 임베드한 영상과 같은 주소면 뺀다. */
   const mats = (work.materials || [])
     .filter((m) => m.public === '예' && m.url && !isSameVideo(m.url))
-    .map((m) => ({ ko: [m.type, t(m.label)].filter(Boolean).join(' · '), url: m.url }));
+    .map((m) => ({ ko: [m.type, t(m.label)].filter(Boolean).join(' : '), url: m.url }));
   if (mats.length) out.push({ title: t(MATERIALS), rows: mats });
 
   return out;
@@ -448,7 +452,7 @@ function creditBar(work) {
   const set = (srcs) => {
     if (work.photoCreditShow === false) { node.hidden = true; return; }
     const seen = [...new Set([].concat(srcs).map((x) => photoCreditFor(work, x)).filter(Boolean))];
-    node.textContent = seen.join('  ·  ');
+    node.textContent = seen.join(' · ');
     node.hidden = !seen.length;      // 적을 것이 없으면 줄을 만들지 않는다
   };
   return { node, set };

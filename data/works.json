@@ -120,20 +120,20 @@
         },
         "rows": [
           {
-            "ko": "장소 · TINC (This is Not A Church)",
-            "en": "Venue · TINC (This is Not A Church)"
+            "ko": "장소 : TINC (This is Not A Church)",
+            "en": "Venue : TINC (This is Not A Church)"
           },
           {
-            "ko": "러닝타임 · 60분",
-            "en": "Running time · 60 minutes"
+            "ko": "러닝타임 : 60분",
+            "en": "Running time : 60 minutes"
           },
           {
-            "ko": "지원 · 서울특별시, 서울문화재단 · 2026 서울예술창작지원 다년 선정",
-            "en": "Support · Seoul Metropolitan Government, Seoul Foundation for Arts and Culture · Selected for the SFAC Multi-Year Arts Creation Grant, 2026"
+            "ko": "지원 : 서울특별시, 서울문화재단 · 2026 서울예술창작지원 다년 선정",
+            "en": "Support : Seoul Metropolitan Government, Seoul Foundation for Arts and Culture · Selected for the SFAC Multi-Year Arts Creation Grant, 2026"
           },
           {
-            "ko": "키워드 · 감각, 무용, 과정 중심",
-            "en": "Keywords · senses, dance, process"
+            "ko": "키워드 : 감각, 무용, 과정 중심",
+            "en": "Keywords : senses, dance, process"
           }
         ]
       },
@@ -144,56 +144,56 @@
         },
         "rows": [
           {
-            "ko": "컨셉·안무 · 황수현",
-            "en": "Concept, Choreography · Hwang Soohyun"
+            "ko": "컨셉·안무 : 황수현",
+            "en": "Concept, Choreography : Hwang Soohyun"
           },
           {
-            "ko": "리서치·출연 · 정나원, 최승윤, 황수현",
-            "en": "Research, Performance · Jeong Nawon, Choi Seungyun, Hwang Soohyun"
+            "ko": "리서치·출연 : 정나원, 최승윤, 황수현",
+            "en": "Research, Performance : Jeong Nawon, Choi Seungyun, Hwang Soohyun"
           },
           {
-            "ko": "사운드 디자인 · 홍초선",
-            "en": "Sound Design · Hong Choseon"
+            "ko": "사운드 디자인 : 홍초선",
+            "en": "Sound Design : Hong Choseon"
           },
           {
-            "ko": "조명 디자인 · 공연화",
-            "en": "Lighting Design · Gong Yeonhwa"
+            "ko": "조명 디자인 : 공연화",
+            "en": "Lighting Design : Gong Yeonhwa"
           },
           {
-            "ko": "조명 · 김인애, 오채은",
-            "en": "Lighting · Kim Inae, Oh Chaeeun"
+            "ko": "조명 : 김인애, 오채은",
+            "en": "Lighting : Kim Inae, Oh Chaeeun"
           },
           {
-            "ko": "영상 · 윤재민(2025), 백종관(2026)",
-            "en": "Video · Yoon Jaemin (2025), Paik Jongkwan (2026)"
+            "ko": "영상 : 윤재민(2025), 백종관(2026)",
+            "en": "Video : Yoon Jaemin (2025), Paik Jongkwan (2026)"
           },
           {
-            "ko": "리허설 어시스턴트 · 강호정",
-            "en": "Rehearsal Assistant · Kang Hojung"
+            "ko": "리허설 어시스턴트 : 강호정",
+            "en": "Rehearsal Assistant : Kang Hojung"
           },
           {
-            "ko": "아웃사이드 아이 · 손나예",
-            "en": "Outside Eye · Son Naye"
+            "ko": "아웃사이드 아이 : 손나예",
+            "en": "Outside Eye : Son Naye"
           },
           {
-            "ko": "크리에이티브 프로듀서 · 박지선",
-            "en": "Creative Producer · Park Jisun"
+            "ko": "크리에이티브 프로듀서 : 박지선",
+            "en": "Creative Producer : Park Jisun"
           },
           {
-            "ko": "기획·제작 · 송미선",
-            "en": "Planning & Producing · Song Miseon"
+            "ko": "기획·제작 : 송미선",
+            "en": "Planning & Producing : Song Miseon"
           },
           {
-            "ko": "무대감독 · 최지나(2025), 김세현(2026)",
-            "en": "Stage Manager · Choi Jina (2025), Kim Sehyun (2026)"
+            "ko": "무대감독 : 최지나(2025), 김세현(2026)",
+            "en": "Stage Manager : Choi Jina (2025), Kim Sehyun (2026)"
           },
           {
-            "ko": "셋업·러닝 크루 · 김지현, 김채민",
-            "en": "Setup & Running Crew · Kim Jihyun, Kim Chaemin"
+            "ko": "셋업·러닝 크루 : 김지현, 김채민",
+            "en": "Setup & Running Crew : Kim Jihyun, Kim Chaemin"
           },
           {
-            "ko": "그래픽 디자인 · 홍소이",
-            "en": "Graphic Design · Hong Soi"
+            "ko": "그래픽 디자인 : 홍소이",
+            "en": "Graphic Design : Hong Soi"
           }
         ]
       },
@@ -402,11 +402,11 @@
         },
         "rows": [
           {
-            "ko": "러닝타임 · 50분",
-            "en": "Running time · 50 min"
+            "ko": "러닝타임 : 50분",
+            "en": "Running time : 50 min"
           },
           {
-            "ko": "장소 · 대학로예술극장 소극장",
+            "ko": "장소 : 대학로예술극장 소극장",
             "en": "Daehakro Arts Theatre, Small Hall"
           },
           {
@@ -422,32 +422,32 @@
         },
         "rows": [
           {
-            "ko": "컨셉·안무·출연 · 황수현",
-            "en": "Concept, Choreography & Performance · Hwang Soohyun"
+            "ko": "컨셉·안무·출연 : 황수현",
+            "en": "Concept, Choreography & Performance : Hwang Soohyun"
           },
           {
-            "ko": "크리에이티브 프로듀서 · 박지선",
-            "en": "Creative Producer · Park Jisun"
+            "ko": "크리에이티브 프로듀서 : 박지선",
+            "en": "Creative Producer : Park Jisun"
           },
           {
-            "ko": "조안무 · 강호정",
-            "en": "Associate Choreographer · Kang Hojung"
+            "ko": "조안무 : 강호정",
+            "en": "Associate Choreographer : Kang Hojung"
           },
           {
-            "ko": "음악 · 김현수",
-            "en": "Music · Kim Hyunsoo"
+            "ko": "음악 : 김현수",
+            "en": "Music : Kim Hyunsoo"
           },
           {
-            "ko": "조명 · 공연화",
-            "en": "Lighting · Gong Yeonhwa"
+            "ko": "조명 : 공연화",
+            "en": "Lighting : Gong Yeonhwa"
           },
           {
-            "ko": "음향 · 우경민, 천준하",
-            "en": "Sound · Woo Kyungmin, Cheon Junha"
+            "ko": "음향 : 우경민, 천준하",
+            "en": "Sound : Woo Kyungmin, Cheon Junha"
           },
           {
-            "ko": "무대감독 · 이율, 김민수",
-            "en": "Stage Manager · Lee Yool, Kim Minsu"
+            "ko": "무대감독 : 이율, 김민수",
+            "en": "Stage Manager : Lee Yool, Kim Minsu"
           }
         ]
       },
@@ -600,20 +600,20 @@
         },
         "rows": [
           {
-            "ko": "제작·주최 · 앰비규어스댄스컴퍼니, 프로듀서그룹 도트",
+            "ko": "제작·주최 : 앰비규어스댄스컴퍼니, 프로듀서그룹 도트",
             "en": "Produced by Ambiguous Dance Company, Producer Group DOT"
           },
           {
-            "ko": "커미션 · 코로넷 시어터",
+            "ko": "커미션 : 코로넷 시어터",
             "en": "Commissioned by The Coronet Theatre"
           },
           {
-            "ko": "초연 · 2018, 서울",
+            "ko": "초연 : 2018, 서울",
             "en": "Premiered in Seoul, 2018"
           },
           {
-            "ko": "키워드 · 솔로, 무용, 국제투어",
-            "en": "Keywords · solo, dance, international tour"
+            "ko": "키워드 : 솔로, 무용, 국제투어",
+            "en": "Keywords : solo, dance, international tour"
           }
         ]
       },
@@ -624,28 +624,28 @@
         },
         "rows": [
           {
-            "ko": "안무·출연 · 김보람",
-            "en": "Choreography, Performance · Kim Boram"
+            "ko": "안무·출연 : 김보람",
+            "en": "Choreography, Performance : Kim Boram"
           },
           {
-            "ko": "조안무 · 장경민",
-            "en": "Assistant Choreographer · Jang KyeongMin"
+            "ko": "조안무 : 장경민",
+            "en": "Assistant Choreographer : Jang KyeongMin"
           },
           {
-            "ko": "투어 프로듀서 · 이희진",
-            "en": "Tour Producer · Lee HeeJin"
+            "ko": "투어 프로듀서 : 이희진",
+            "en": "Tour Producer : Lee HeeJin"
           },
           {
-            "ko": "무대감독 · 박재민",
-            "en": "Stage Manager · Park Jaemin"
+            "ko": "무대감독 : 박재민",
+            "en": "Stage Manager : Park Jaemin"
           },
           {
-            "ko": "조명감독 · 배대두",
-            "en": "Lighting Manager · Bae DaeDoo"
+            "ko": "조명감독 : 배대두",
+            "en": "Lighting Manager : Bae DaeDoo"
           },
           {
-            "ko": "사진 · 옥상훈",
-            "en": "Photography · Ok Sang Hoon"
+            "ko": "사진 : 옥상훈",
+            "en": "Photography : Ok Sang Hoon"
           }
         ]
       }
@@ -793,19 +793,19 @@
         },
         "rows": [
           {
-            "ko": "러닝타임 · 50분",
-            "en": "Running time · 50 min"
+            "ko": "러닝타임 : 50분",
+            "en": "Running time : 50 min"
           },
           {
-            "ko": "제작 · 알오티씨, 프로듀서그룹 도트",
+            "ko": "제작 : 알오티씨, 프로듀서그룹 도트",
             "en": "Produced by Robot Theater Company, Producer Group DOT"
           },
           {
-            "ko": "커미션 · 서울국제공연예술제, 아트코리아랩",
+            "ko": "커미션 : 서울국제공연예술제, 아트코리아랩",
             "en": "Commissioned by Seoul Performing Arts Festival, Arts Korea Lab"
           },
           {
-            "ko": "협력 · 플랫폼엘",
+            "ko": "협력 : 플랫폼엘",
             "en": "In cooperation with Platform-L"
           },
           {
@@ -821,24 +821,24 @@
         },
         "rows": [
           {
-            "ko": "콘셉트·연출·사운드·기술 총감독 · 권병준",
-            "en": "Concept, Direction, Sound & Technology Director · Kwon Byungjun"
+            "ko": "콘셉트·연출·사운드·기술 총감독 : 권병준",
+            "en": "Concept, Direction, Sound & Technology Director : Kwon Byungjun"
           },
           {
-            "ko": "크리에이티브팀 · 김택민, 이주미, 이유진",
-            "en": "Creative Team · Kim Taekmin, Lee Jumi, Lee Yujin"
+            "ko": "크리에이티브팀 : 김택민, 이주미, 이유진",
+            "en": "Creative Team : Kim Taekmin, Lee Jumi, Lee Yujin"
           },
           {
-            "ko": "드라마터그 · 함성호",
-            "en": "Dramaturg · Ham Seongho"
+            "ko": "드라마터그 : 함성호",
+            "en": "Dramaturg : Ham Seongho"
           },
           {
-            "ko": "조명 · 김현",
-            "en": "Lighting · Kim Hyun"
+            "ko": "조명 : 김현",
+            "en": "Lighting : Kim Hyun"
           },
           {
-            "ko": "프로듀서 · 박지선, 최봉민",
-            "en": "Producers · Park Jisun, Choi Bongmin"
+            "ko": "프로듀서 : 박지선, 최봉민",
+            "en": "Producers : Park Jisun, Choi Bongmin"
           }
         ]
       },
@@ -1073,11 +1073,11 @@
         },
         "rows": [
           {
-            "ko": "러닝타임 · 90분",
-            "en": "Running time · 90 min"
+            "ko": "러닝타임 : 90분",
+            "en": "Running time : 90 min"
           },
           {
-            "ko": "장소 · 아르코예술극장 소극장",
+            "ko": "장소 : 아르코예술극장 소극장",
             "en": "Arko Arts Theatre, Small Hall"
           },
           {
@@ -1093,48 +1093,48 @@
         },
         "rows": [
           {
-            "ko": "리서치·공동구성 · 김지연, 전윤환",
-            "en": "Research & Co-direction · Kim Jeeyeon, Jeon Yoonhwan"
+            "ko": "리서치·공동구성 : 김지연, 전윤환",
+            "en": "Research & Co-direction : Kim Jeeyeon, Jeon Yoonhwan"
           },
           {
-            "ko": "크리에이티브 프로듀서 · 박지선",
-            "en": "Creative Producer · Park Jisun"
+            "ko": "크리에이티브 프로듀서 : 박지선",
+            "en": "Creative Producer : Park Jisun"
           },
           {
-            "ko": "제작 프로듀서 · 최봉민",
-            "en": "Producer · Choi Bongmin"
+            "ko": "제작 프로듀서 : 최봉민",
+            "en": "Producer : Choi Bongmin"
           },
           {
-            "ko": "조연출 · 정찬동",
-            "en": "Assistant Director · Chung Chandong"
+            "ko": "조연출 : 정찬동",
+            "en": "Assistant Director : Chung Chandong"
           },
           {
-            "ko": "사운드 · 카입",
-            "en": "Sound · Kayip"
+            "ko": "사운드 : 카입",
+            "en": "Sound : Kayip"
           },
           {
-            "ko": "조명감독 · 탁형선",
-            "en": "Lighting Director · Tak Hyungsun"
+            "ko": "조명감독 : 탁형선",
+            "en": "Lighting Director : Tak Hyungsun"
           },
           {
-            "ko": "음향감독 · 정하윤",
-            "en": "Sound Director · Jeong Hayoon"
+            "ko": "음향감독 : 정하윤",
+            "en": "Sound Director : Jeong Hayoon"
           },
           {
-            "ko": "무대소품 · 김혜원",
-            "en": "Scenographer · Kim Hyewon"
+            "ko": "무대소품 : 김혜원",
+            "en": "Scenographer : Kim Hyewon"
           },
           {
-            "ko": "접근성 매니저 · 최봉민",
-            "en": "Accessibility Manager · Choi Bongmin"
-          },
-          {
-            "ko": "",
-            "en": "Korean Sign Language · Signlanguage Interpretation Cooperative (Koh Kounghee, Kim Soo-nyon, Chang JinSeok, Cho YeonJae)"
+            "ko": "접근성 매니저 : 최봉민",
+            "en": "Accessibility Manager : Choi Bongmin"
           },
           {
             "ko": "",
-            "en": "Communication Access Real-time Translation · Cho Sungjin"
+            "en": "Korean Sign Language : Signlanguage Interpretation Cooperative (Koh Kounghee, Kim Soo-nyon, Chang JinSeok, Cho YeonJae)"
+          },
+          {
+            "ko": "",
+            "en": "Communication Access Real-time Translation : Cho Sungjin"
           }
         ]
       },
@@ -1145,16 +1145,16 @@
         },
         "rows": [
           {
-            "ko": "지연X전환 · 기획자이자 연구자인 김지연과 연극 연출가 전윤환이 2022년 예술텃밭 기후변화 레지던시에서 만나 결성했다. 기후위기 시대를 '지연'시키고 정의로운 '전환'을 이루기 위해 필요한 새로운 상상력을 예술의 언어로 만들어가는 작업을 이어가고 있다.",
-            "en": "Delay X Transition · Producer and researcher Kim Jeeyeon and theatre director Jeon Yoonhwan met as participating artists in the 2022 Artists' Residency at Arts Farm Tutbat – Climate Change. In order to delay the era of the climate crisis and to achieve a just transition, the two artists work on creating the new imagination we need through the language of art."
+            "ko": "지연X전환 : 기획자이자 연구자인 김지연과 연극 연출가 전윤환이 2022년 예술텃밭 기후변화 레지던시에서 만나 결성했다. 기후위기 시대를 '지연'시키고 정의로운 '전환'을 이루기 위해 필요한 새로운 상상력을 예술의 언어로 만들어가는 작업을 이어가고 있다.",
+            "en": "Delay X Transition : Producer and researcher Kim Jeeyeon and theatre director Jeon Yoonhwan met as participating artists in the 2022 Artists' Residency at Arts Farm Tutbat – Climate Change. In order to delay the era of the climate crisis and to achieve a just transition, the two artists work on creating the new imagination we need through the language of art."
           },
           {
-            "ko": "김지연 · 기후연구자이자 기획자. 2021년 강원도 화천을 시작으로 '기후위기 × 로컬'을 주제로 국내외 리서치를 진행하고 있으며, 인간 중심에서 벗어나는 예술 언어의 〈기후언어〉 프로젝트를 진행하고 있다.",
-            "en": "Kim Jeeyeon · Climate researcher and producer. Since 2021 she has been reading local regions through the lens of the climate crisis, and works on the Changing Climate Language project, which explores a post-anthropocentric artistic language. She interprets the possibilities of community broadly, as an urban and future-facing experiment, and continues experiments that let space work as a public forum where social relationships can form."
+            "ko": "김지연 : 기후연구자이자 기획자. 2021년 강원도 화천을 시작으로 '기후위기 × 로컬'을 주제로 국내외 리서치를 진행하고 있으며, 인간 중심에서 벗어나는 예술 언어의 〈기후언어〉 프로젝트를 진행하고 있다.",
+            "en": "Kim Jeeyeon : Climate researcher and producer. Since 2021 she has been reading local regions through the lens of the climate crisis, and works on the Changing Climate Language project, which explores a post-anthropocentric artistic language. She interprets the possibilities of community broadly, as an urban and future-facing experiment, and continues experiments that let space work as a public forum where social relationships can form."
           },
           {
-            "ko": "전윤환 · 다큐멘터리 연극의 동시대성을 인식하며 실재를 매개하기 위한 다양한 연극 방법론을 고민해왔다. 〈기후비상사태: 리허설〉(2022), 〈자연빵〉(2021), 〈강화도 산책: 평화도큐먼트〉(2021) 등.",
-            "en": "Jeon Yoonhwan · Recognising the contemporaneity of documentary theatre, he has explored various theatrical methodologies to mediate reality. He thinks persistently about what it means to make theatre in contemporary capitalist society, and uses practical research rooted in everyday experience as a theatrical strategy. His major works include Climate Emergency: A Rehearsal (2022), Natural Bread (2021) and Ganghwa Island Walks: Peace Document (2021)."
+            "ko": "전윤환 : 다큐멘터리 연극의 동시대성을 인식하며 실재를 매개하기 위한 다양한 연극 방법론을 고민해왔다. 〈기후비상사태: 리허설〉(2022), 〈자연빵〉(2021), 〈강화도 산책: 평화도큐먼트〉(2021) 등.",
+            "en": "Jeon Yoonhwan : Recognising the contemporaneity of documentary theatre, he has explored various theatrical methodologies to mediate reality. He thinks persistently about what it means to make theatre in contemporary capitalist society, and uses practical research rooted in everyday experience as a theatrical strategy. His major works include Climate Emergency: A Rehearsal (2022), Natural Bread (2021) and Ganghwa Island Walks: Peace Document (2021)."
           }
         ]
       },
@@ -1426,27 +1426,27 @@
         },
         "rows": [
           {
-            "ko": "러닝타임 · 120분",
-            "en": "Playtime · 120 min"
+            "ko": "러닝타임 : 120분",
+            "en": "Playtime : 120 min"
           },
           {
-            "ko": "형식 · 협력형 보드게임, 관객 참여형 게임 씨어터, 휴대폰(웹앱) 참여",
-            "en": "Style · cooperative board game, participatory game theatre, participation with your phone (web app)"
+            "ko": "형식 : 협력형 보드게임, 관객 참여형 게임 씨어터, 휴대폰(웹앱) 참여",
+            "en": "Style : cooperative board game, participatory game theatre, participation with your phone (web app)"
           },
           {
-            "ko": "관람 연령 · 12세 이상(15세 이상 권장)",
-            "en": "Rating · 12 and over (15 and over recommended)"
+            "ko": "관람 연령 : 12세 이상(15세 이상 권장)",
+            "en": "Rating : 12 and over (15 and over recommended)"
           },
           {
-            "ko": "제작 · 무제의 길, 프로듀서그룹 도트",
+            "ko": "제작 : 무제의 길, 프로듀서그룹 도트",
             "en": "Produced by Untitled Road, Producer Group DOT"
           },
           {
-            "ko": "협력 · 예술텃밭 예술가 레지던시 – 기후변화",
+            "ko": "협력 : 예술텃밭 예술가 레지던시 – 기후변화",
             "en": "Associated with the Artists' Residency at Arts Farm Tutbat – Climate Change"
           },
           {
-            "ko": "후원 · 서울국제공연예술제",
+            "ko": "후원 : 서울국제공연예술제",
             "en": "Supported by SPAF (Seoul Performing Arts Festival)"
           }
         ]
@@ -1483,52 +1483,52 @@
         },
         "rows": [
           {
-            "ko": "구성·작·연출·게임 디자인 · 김보람",
-            "en": "Concept, Direction, Writing & Game Design · Kim Borahm"
+            "ko": "구성·작·연출·게임 디자인 : 김보람",
+            "en": "Concept, Direction, Writing & Game Design : Kim Borahm"
           },
           {
-            "ko": "크리에이티브 프로듀서 · 박지선",
-            "en": "Creative Producer · Park Jisun"
+            "ko": "크리에이티브 프로듀서 : 박지선",
+            "en": "Creative Producer : Park Jisun"
           },
           {
-            "ko": "프로듀서 · 최봉민",
-            "en": "Producer · Choi Bongmin"
+            "ko": "프로듀서 : 최봉민",
+            "en": "Producer : Choi Bongmin"
           },
           {
-            "ko": "조명감독 · 탁형선",
-            "en": "Lighting Designer · Tak Hyungsun"
+            "ko": "조명감독 : 탁형선",
+            "en": "Lighting Designer : Tak Hyungsun"
           },
           {
-            "ko": "조명크루 · 이상민",
-            "en": "Lighting Crew · Lee Sangmin"
+            "ko": "조명크루 : 이상민",
+            "en": "Lighting Crew : Lee Sangmin"
           },
           {
-            "ko": "무대디자인 · 김혜원",
-            "en": "Scenographer · Kim Hyewon"
+            "ko": "무대디자인 : 김혜원",
+            "en": "Scenographer : Kim Hyewon"
           },
           {
-            "ko": "사운드디자인 · 지미세르",
-            "en": "Sound Designer · Jimmy Sert"
+            "ko": "사운드디자인 : 지미세르",
+            "en": "Sound Designer : Jimmy Sert"
           },
           {
-            "ko": "음향 오퍼레이터 · 이윤경",
-            "en": "Sound Operator · Lee Yoon Kyung"
+            "ko": "음향 오퍼레이터 : 이윤경",
+            "en": "Sound Operator : Lee Yoon Kyung"
           },
           {
-            "ko": "웹 · 임오성(Re-Look)",
-            "en": "Web · Im Ohseong (AKA Re-Look)"
+            "ko": "웹 : 임오성(Re-Look)",
+            "en": "Web : Im Ohseong (AKA Re-Look)"
           },
           {
-            "ko": "무대감독 · 정찬미",
-            "en": "Stage Manager · Jung Chanmi"
+            "ko": "무대감독 : 정찬미",
+            "en": "Stage Manager : Jung Chanmi"
           },
           {
-            "ko": "배우 · 김준우, 박선희, 서지우, 서현성",
-            "en": "Actors · Kim Junwoo, Park Sunhee, Suh Jiwoo, Suh Hyunsung"
+            "ko": "배우 : 김준우, 박선희, 서지우, 서현성",
+            "en": "Actors : Kim Junwoo, Park Sunhee, Suh Jiwoo, Suh Hyunsung"
           },
           {
-            "ko": "목소리 녹음 · 김유진",
-            "en": "Voice · Kim Yujin"
+            "ko": "목소리 녹음 : 김유진",
+            "en": "Voice : Kim Yujin"
           }
         ]
       },
@@ -1937,72 +1937,72 @@
             "en": "25 October – 8 November 2026, Ganghwado"
           },
           {
-            "ko": "프로듀서 · 박지선, 송미선, 권근영 (한국)",
-            "en": "Producers · Park Jisun, Song Miseon, Kwon Keunyoung (Korea)"
+            "ko": "프로듀서 : 박지선, 송미선, 권근영 (한국)",
+            "en": "Producers : Park Jisun, Song Miseon, Kwon Keunyoung (Korea)"
           },
           {
-            "ko": "앤드씨어터 · 강윤민지, 민재원, 전윤환, 조냇물 (한국)",
-            "en": "A.N.D.Theatre · Kang Yunminji, Min Jaewon, Jeon Yunhwan, Jo Naetmul (Korea)"
+            "ko": "앤드씨어터 : 강윤민지, 민재원, 전윤환, 조냇물 (한국)",
+            "en": "A.N.D.Theatre : Kang Yunminji, Min Jaewon, Jeon Yunhwan, Jo Naetmul (Korea)"
           },
           {
-            "ko": "희와래 · 김나래, 이건희 (한국)",
-            "en": "Heewarae · Kim Narae, Lee Gunhee (Korea)"
+            "ko": "희와래 : 김나래, 이건희 (한국)",
+            "en": "Heewarae : Kim Narae, Lee Gunhee (Korea)"
           },
           {
             "ko": "연리목 (한국)",
             "en": "Yonrimog (Korea)"
           },
           {
-            "ko": "테아트린 게스타치오네 · 안나 게수알디, 지오바니 트로노 (이탈리아)",
-            "en": "Teatringestazione · Anna Gesualdi, Giovanni Trono (Italy)"
+            "ko": "테아트린 게스타치오네 : 안나 게수알디, 지오바니 트로노 (이탈리아)",
+            "en": "Teatringestazione : Anna Gesualdi, Giovanni Trono (Italy)"
           },
           {
-            "ko": "드라마박스 · 고 헝 루운 (싱가포르)",
-            "en": "Drama Box · Koh Heng Leun (Singapore)"
+            "ko": "드라마박스 : 고 헝 루운 (싱가포르)",
+            "en": "Drama Box : Koh Heng Leun (Singapore)"
           },
           {
-            "ko": "츄 쇼 엔 · 독립 예술가 (싱가포르)",
-            "en": "Chew Shaw En · independent artist (Singapore)"
+            "ko": "츄 쇼 엔 : 독립 예술가 (싱가포르)",
+            "en": "Chew Shaw En : independent artist (Singapore)"
           },
           {
-            "ko": "오랑오랑 드럼 시어터 · 리아우 후이 민, 츄 순 헝, 리아우 스지 이 (말레이시아)",
-            "en": "Orang Orang Drum Theatre · Leow Hui Min, Chew Soon Heng, Leow Sze Yee (Malaysia)"
+            "ko": "오랑오랑 드럼 시어터 : 리아우 후이 민, 츄 순 헝, 리아우 스지 이 (말레이시아)",
+            "en": "Orang Orang Drum Theatre : Leow Hui Min, Chew Soon Heng, Leow Sze Yee (Malaysia)"
           },
           {
-            "ko": "소노노치 · 나카타니 카즈요, 나가사와 모에, 아시야 코스케 (일본)",
-            "en": "Sononochi · Kazuyo Nakatani, Moe Nagasawa, Kosuke Ashiya (Japan)"
+            "ko": "소노노치 : 나카타니 카즈요, 나가사와 모에, 아시야 코스케 (일본)",
+            "en": "Sononochi : Kazuyo Nakatani, Moe Nagasawa, Kosuke Ashiya (Japan)"
           },
           {
-            "ko": "통역 · 박형준",
-            "en": "Interpreter · Park Hyungjun"
+            "ko": "통역 : 박형준",
+            "en": "Interpreter : Park Hyungjun"
           },
           {
             "ko": "2025년 9월 15일(월) – 28일(일)",
             "en": "15–28 September 2025"
           },
           {
-            "ko": "프로듀서 그룹 도트 · 박지선, 송미선 (한국)",
-            "en": "Producer Group DOT · Park Jisun, Song Miseon (Korea)"
+            "ko": "프로듀서 그룹 도트 : 박지선, 송미선 (한국)",
+            "en": "Producer Group DOT : Park Jisun, Song Miseon (Korea)"
           },
           {
-            "ko": "앤드씨어터 · 강윤민지, 권근영, 민재원, 전윤환, 조냇물 (한국)",
-            "en": "A.N.D.Theatre · Kang Yunminji, Kwon Keunyoung, Min Jaewon, Jeon Yunhwan, Jo Naetmul (Korea)"
+            "ko": "앤드씨어터 : 강윤민지, 권근영, 민재원, 전윤환, 조냇물 (한국)",
+            "en": "A.N.D.Theatre : Kang Yunminji, Kwon Keunyoung, Min Jaewon, Jeon Yunhwan, Jo Naetmul (Korea)"
           },
           {
-            "ko": "희와래 · 김나래, 이건희 (한국)",
-            "en": "Heewarae · Kim Narae, Lee Gunhee (Korea)"
+            "ko": "희와래 : 김나래, 이건희 (한국)",
+            "en": "Heewarae : Kim Narae, Lee Gunhee (Korea)"
           },
           {
             "ko": "연리목 (한국)",
             "en": "Yonrimog (Korea)"
           },
           {
-            "ko": "테아트린 게스타치오네 · 안나, 지오바니 (이탈리아)",
-            "en": "Teatringestazione · Anna, Giovanni (Italy)"
+            "ko": "테아트린 게스타치오네 : 안나, 지오바니 (이탈리아)",
+            "en": "Teatringestazione : Anna, Giovanni (Italy)"
           },
           {
-            "ko": "드라마박스 · 고 헝 루운 (싱가포르)",
-            "en": "Drama Box · Koh Heng Leun (Singapore)"
+            "ko": "드라마박스 : 고 헝 루운 (싱가포르)",
+            "en": "Drama Box : Koh Heng Leun (Singapore)"
           },
           {
             "ko": "츄 쇼 엔 (싱가포르)",
@@ -2017,16 +2017,16 @@
         },
         "rows": [
           {
-            "ko": "공동기획 (2025) · 앤드씨어터 × 프로듀서 그룹 도트 × 강화 유니버스",
-            "en": "Co-organised (2025) · A.N.D.Theatre × Producer Group DOT × Ganghwa Universe"
+            "ko": "공동기획 (2025) : 앤드씨어터 × 프로듀서 그룹 도트 × 강화 유니버스",
+            "en": "Co-organised (2025) : A.N.D.Theatre × Producer Group DOT × Ganghwa Universe"
           },
           {
-            "ko": "공동기획 (2026) · 앤드씨어터 × 프로듀서 그룹 도트",
-            "en": "Co-organised (2026) · A.N.D.Theatre × Producer Group DOT"
+            "ko": "공동기획 (2026) : 앤드씨어터 × 프로듀서 그룹 도트",
+            "en": "Co-organised (2026) : A.N.D.Theatre × Producer Group DOT"
           },
           {
-            "ko": "후원 · 한국문화예술위원회",
-            "en": "Supported by · Arts Council Korea"
+            "ko": "후원 : 한국문화예술위원회",
+            "en": "Supported by : Arts Council Korea"
           }
         ]
       },
@@ -2261,15 +2261,15 @@
         },
         "rows": [
           {
-            "ko": "시작 · 2024",
+            "ko": "시작 : 2024",
             "en": "Since 2024"
           },
           {
-            "ko": "DIA 포럼 · 2026년 2월, 서울",
-            "en": "DIA Forum · February 2026, Seoul"
+            "ko": "DIA 포럼 : 2026년 2월, 서울",
+            "en": "DIA Forum : February 2026, Seoul"
           },
           {
-            "ko": "참여 · 9개 지역 파트너",
+            "ko": "참여 : 9개 지역 파트너",
             "en": "Partners from nine regions"
           }
         ]
@@ -2471,28 +2471,28 @@
         },
         "rows": [
           {
-            "ko": "2026년 · 리서치 단계",
-            "en": "2026 · research phase"
+            "ko": "2026년 : 리서치 단계",
+            "en": "2026 : research phase"
           },
           {
-            "ko": "1차 워크숍 · 2026. 5. 3 – 9, 도르트문트",
-            "en": "First workshop · 3–9 May 2026, Dortmund"
+            "ko": "1차 워크숍 : 2026. 5. 3 – 9, 도르트문트",
+            "en": "First workshop : 3–9 May 2026, Dortmund"
           },
           {
-            "ko": "2차 워크숍 · 2026. 9. 29 – 10. 3, 서울",
-            "en": "Second workshop · 29 Sep – 3 Oct 2026, Seoul"
+            "ko": "2차 워크숍 : 2026. 9. 29 – 10. 3, 서울",
+            "en": "Second workshop : 29 Sep – 3 Oct 2026, Seoul"
           },
           {
             "ko": "워크숍 외 실무 회의는 모두 온라인",
             "en": "All other working meetings take place online"
           },
           {
-            "ko": "코어 프로젝트팀 · 도트 3인 + 아카데미 3인",
-            "en": "Core project team · three members each from DOT and the Academy"
+            "ko": "코어 프로젝트팀 : 도트 3인 + 아카데미 3인",
+            "en": "Core project team : three members each from DOT and the Academy"
           },
           {
-            "ko": "자문 분야 · 크리에이티브 코딩·공연예술 / 과학·시민사회 / 연극 프로듀싱·지속가능성",
-            "en": "Advisory fields · creative coding and performing arts / science and civil society / theatre producing and sustainability"
+            "ko": "자문 분야 : 크리에이티브 코딩·공연예술 / 과학·시민사회 / 연극 프로듀싱·지속가능성",
+            "en": "Advisory fields : creative coding and performing arts / science and civil society / theatre producing and sustainability"
           }
         ]
       },
@@ -2666,48 +2666,48 @@
         },
         "rows": [
           {
-            "ko": "콘셉트·연출·사운드·기술 총감독 · 권병준",
-            "en": "Concept, Direction, Sound & Technology Director · Kwon Byungjun"
+            "ko": "콘셉트·연출·사운드·기술 총감독 : 권병준",
+            "en": "Concept, Direction, Sound & Technology Director : Kwon Byungjun"
           },
           {
-            "ko": "작가 · 권병준 with AI",
-            "en": "Text · Kwon Byungjun with AI"
+            "ko": "작가 : 권병준 with AI",
+            "en": "Text : Kwon Byungjun with AI"
           },
           {
-            "ko": "기술감독 · 백주홍",
-            "en": "Technical Director · Baek Juhong"
+            "ko": "기술감독 : 백주홍",
+            "en": "Technical Director : Baek Juhong"
           },
           {
-            "ko": "조연출 · 조웅철",
-            "en": "Assistant Director · Cho Woongchul"
+            "ko": "조연출 : 조웅철",
+            "en": "Assistant Director : Cho Woongchul"
           },
           {
-            "ko": "조명디자인 · 신동선",
-            "en": "Lighting Designer · Shin Dongsun"
+            "ko": "조명디자인 : 신동선",
+            "en": "Lighting Designer : Shin Dongsun"
           },
           {
-            "ko": "조명오퍼레이터 · 홍주희",
-            "en": "Lighting Operator · Hong Juhee"
+            "ko": "조명오퍼레이터 : 홍주희",
+            "en": "Lighting Operator : Hong Juhee"
           },
           {
-            "ko": "기술지원 · 오의진, 윤종선, 조수아",
-            "en": "Technical Support · Oh Uijin, Yoon Jongsun, Cho Sua"
+            "ko": "기술지원 : 오의진, 윤종선, 조수아",
+            "en": "Technical Support : Oh Uijin, Yoon Jongsun, Cho Sua"
           },
           {
-            "ko": "녹음 및 편집 · 김근채(펑크타이어 스튜디오)",
-            "en": "Recording & Editing · Kim Geunchae (Punk Tire Studio)"
+            "ko": "녹음 및 편집 : 김근채(펑크타이어 스튜디오)",
+            "en": "Recording & Editing : Kim Geunchae (Punk Tire Studio)"
           },
           {
-            "ko": "사진기록 · 전병철",
-            "en": "Photography · Jeon Byungchul"
+            "ko": "사진기록 : 전병철",
+            "en": "Photography : Jeon Byungchul"
           },
           {
-            "ko": "영상기록 · 장지남",
-            "en": "Video · Jang Jinam"
+            "ko": "영상기록 : 장지남",
+            "en": "Video : Jang Jinam"
           },
           {
-            "ko": "프로듀서 · 박지선, 최봉민(프로듀서그룹 도트)",
-            "en": "Producers · Park Jisun, Choi Bongmin (Producer Group DOT)"
+            "ko": "프로듀서 : 박지선, 최봉민(프로듀서그룹 도트)",
+            "en": "Producers : Park Jisun, Choi Bongmin (Producer Group DOT)"
           }
         ]
       },
@@ -2718,36 +2718,36 @@
         },
         "rows": [
           {
-            "ko": "콘셉트·연출·사운드·기술 총감독 · 권병준",
-            "en": "Concept, Direction, Sound & Technology Director · Kwon Byungjun"
+            "ko": "콘셉트·연출·사운드·기술 총감독 : 권병준",
+            "en": "Concept, Direction, Sound & Technology Director : Kwon Byungjun"
           },
           {
-            "ko": "작가 · 권병준 with AI",
-            "en": "Text · Kwon Byungjun with AI"
+            "ko": "작가 : 권병준 with AI",
+            "en": "Text : Kwon Byungjun with AI"
           },
           {
-            "ko": "기술제작감독 · 백주홍",
-            "en": "Technical Production Director · Baek Juhong"
+            "ko": "기술제작감독 : 백주홍",
+            "en": "Technical Production Director : Baek Juhong"
           },
           {
-            "ko": "크리에이티브팀 · 곽소민, 김진석, 최한빈, 허효선",
-            "en": "Creative Team · Kwak Somin, Kim Jinseok, Choi Hanbin, Heo Hyoseon"
+            "ko": "크리에이티브팀 : 곽소민, 김진석, 최한빈, 허효선",
+            "en": "Creative Team : Kwak Somin, Kim Jinseok, Choi Hanbin, Heo Hyoseon"
           },
           {
-            "ko": "현장진행 · 김세빈, 김수빈, 김영수, 김한결, 명다솔, 오선재, 장유리, 한의진",
+            "ko": "현장진행 : 김세빈, 김수빈, 김영수, 김한결, 명다솔, 오선재, 장유리, 한의진",
             "en": "Site Crew"
           },
           {
-            "ko": "영상기록·드론촬영 · 이성환(STUDIO AA)",
-            "en": "Video & Drone · Lee Sunghwan (STUDIO AA)"
+            "ko": "영상기록·드론촬영 : 이성환(STUDIO AA)",
+            "en": "Video & Drone : Lee Sunghwan (STUDIO AA)"
           },
           {
-            "ko": "사진기록 · 박용선",
-            "en": "Photography · Park Yongsun"
+            "ko": "사진기록 : 박용선",
+            "en": "Photography : Park Yongsun"
           },
           {
-            "ko": "프로듀서 · 박지선, 최봉민(프로듀서그룹 도트)",
-            "en": "Producers · Park Jisun, Choi Bongmin (Producer Group DOT)"
+            "ko": "프로듀서 : 박지선, 최봉민(프로듀서그룹 도트)",
+            "en": "Producers : Park Jisun, Choi Bongmin (Producer Group DOT)"
           }
         ]
       },
@@ -2761,10 +2761,10 @@
             "ko": "권병준, 박선희, 박현지, 성수연, 우범진, 이경구, 이성한, 조웅철"
           },
           {
-            "ko": "어린이 · 박준우, 박해빈"
+            "ko": "어린이 : 박준우, 박해빈"
           },
           {
-            "ko": "특별 출연 · 유진규"
+            "ko": "특별 출연 : 유진규"
           }
         ]
       },
@@ -2775,10 +2775,10 @@
         },
         "rows": [
           {
-            "ko": "2022 홍동저수지 · 한국문화예술위원회 2022년 문예진흥기금 예술과기술융합지원사업"
+            "ko": "2022 홍동저수지 : 한국문화예술위원회 2022년 문예진흥기금 예술과기술융합지원사업"
           },
           {
-            "ko": "후원 · 한국문화예술위원회, 오누이친환경마을협동조합, (사)홍동밝맑도서관 평민마을학교"
+            "ko": "후원 : 한국문화예술위원회, 오누이친환경마을협동조합, (사)홍동밝맑도서관 평민마을학교"
           }
         ]
       },
@@ -2789,8 +2789,8 @@
         },
         "rows": [
           {
-            "ko": "트레일러 · 남산골한옥마을",
-            "en": "Trailer · Namsangol",
+            "ko": "트레일러 : 남산골한옥마을",
+            "en": "Trailer : Namsangol",
             "url": "https://drive.google.com/file/d/17y0hALWwmj2jlmhYSpvDqe0vtlq3Z61_/view"
           }
         ]
@@ -3074,18 +3074,18 @@
         },
         "rows": [
           {
-            "ko": "2020 · 기후변화 2020 — 화천의 환경을 둘러싼 강연과 대화",
-            "en": "2020 · Climate Change 2020 — Talks on environment in Hwacheon",
+            "ko": "2020 : 기후변화 2020 — 화천의 환경을 둘러싼 강연과 대화",
+            "en": "2020 : Climate Change 2020 — Talks on environment in Hwacheon",
             "url": "https://drive.google.com/file/d/1DmxXEHWL5f9hKsCQWXnqQfIkfxADlIRu/view"
           },
           {
-            "ko": "2021 · 관점의 전환, 세상을 보는 시선들",
-            "en": "2021 · Change of perspective, points of view looking at the world",
+            "ko": "2021 : 관점의 전환, 세상을 보는 시선들",
+            "en": "2021 : Change of perspective, points of view looking at the world",
             "url": "https://drive.google.com/file/d/1OWR8YlYKW4O-CUJB0u_DQgYAODi4Vf5-/view"
           },
           {
-            "ko": "2022 · 기후변화 2022 — 기후위기와 에너지",
-            "en": "2022 · Climate Change 2022 — Climate Crisis and Energy",
+            "ko": "2022 : 기후변화 2022 — 기후위기와 에너지",
+            "en": "2022 : Climate Change 2022 — Climate Crisis and Energy",
             "url": "https://drive.google.com/file/d/1w33vC6cEAug6U_JeyGTLAVKb5kThDXr2/view"
           }
         ]
@@ -3097,13 +3097,13 @@
         },
         "rows": [
           {
-            "ko": "2022 · 무제의 길 〈움직이는 숲〉 — 서울국제공연예술제 초청작",
-            "en": "2022 · Untitled Road, Moving a Forest — invited to SPAF",
+            "ko": "2022 : 무제의 길 〈움직이는 숲〉 — 서울국제공연예술제 초청작",
+            "en": "2022 : Untitled Road, Moving a Forest — invited to SPAF",
             "url": "https://www.untitledroad.com/projects/moving-a-forest_theatre-game"
           },
           {
-            "ko": "2023 · 지연X전환 〈에너지 — 보이지 않는 언어〉 — 서울국제공연예술제 초청작",
-            "en": "2023 · Delay x Transition, Energy — The Invisible Language — invited to SPAF"
+            "ko": "2023 : 지연X전환 〈에너지 — 보이지 않는 언어〉 — 서울국제공연예술제 초청작",
+            "en": "2023 : Delay x Transition, Energy — The Invisible Language — invited to SPAF"
           }
         ]
       },
@@ -3114,36 +3114,36 @@
         },
         "rows": [
           {
-            "ko": "시작 · 2020",
+            "ko": "시작 : 2020",
             "en": "Since 2020"
           },
           {
-            "ko": "이 형식으로 진행 · 2020–2022",
-            "en": "In this form · 2020–2022"
+            "ko": "이 형식으로 진행 : 2020–2022",
+            "en": "In this form : 2020–2022"
           },
           {
-            "ko": "장소 · 화천 예술텃밭",
+            "ko": "장소 : 화천 예술텃밭",
             "en": "Arts Farm Tutbat, Hwacheon"
           },
           {
-            "ko": "진행 · 온라인과 오프라인 동시",
+            "ko": "진행 : 온라인과 오프라인 동시",
             "en": "Online and on-site"
           },
           {
-            "ko": "주최 · 예술텃밭",
+            "ko": "주최 : 예술텃밭",
             "en": "Hosted by Arts Farm Tutbat"
           },
           {
-            "ko": "주관 · 예술텃밭, 프로듀서그룹 도트",
+            "ko": "주관 : 예술텃밭, 프로듀서그룹 도트",
             "en": "Organised by Arts Farm Tutbat and Producer Group DOT"
           },
           {
-            "ko": "후원 · 강원도, 강원문화재단",
+            "ko": "후원 : 강원도, 강원문화재단",
             "en": "Sponsored by Gangwon Province, Gangwon Art & Culture Foundation"
           },
           {
-            "ko": "프로듀서 · 박지선, 최봉민(도트) / 배요섭, 이주야(예술텃밭)",
-            "en": "Producers · Park Jisun, Choi Bongmin (DOT) / Bae Yosup, Lee Juya (Arts Farm Tutbat)"
+            "ko": "프로듀서 : 박지선, 최봉민(도트) / 배요섭, 이주야(예술텃밭)",
+            "en": "Producers : Park Jisun, Choi Bongmin (DOT) / Bae Yosup, Lee Juya (Arts Farm Tutbat)"
           }
         ]
       },
@@ -4529,20 +4529,20 @@
         },
         "rows": [
           {
-            "ko": "일정 · 11월 3–5일",
-            "en": "Dates · 3–5 November"
+            "ko": "일정 : 11월 3–5일",
+            "en": "Dates : 3–5 November"
           },
           {
-            "ko": "장소 · 아트코리아랩",
-            "en": "Venue · Art Korea Lab"
+            "ko": "장소 : 아트코리아랩",
+            "en": "Venue : Art Korea Lab"
           },
           {
-            "ko": "대상 · 예술-기술, 예술-과학 프로젝트를 2회 이상 진행한 공연예술 매개자 10인 내",
-            "en": "Participants · Up to 10 performing arts mediators with experience of two or more art-technology or art-science projects"
+            "ko": "대상 : 예술-기술, 예술-과학 프로젝트를 2회 이상 진행한 공연예술 매개자 10인 내",
+            "en": "Participants : Up to 10 performing arts mediators with experience of two or more art-technology or art-science projects"
           },
           {
-            "ko": "협력 · 아트코리아랩, 서울국제공연예술제, 프로듀서 그룹 도트, 주한독일문화원",
-            "en": "In cooperation with · Art Korea Lab, Seoul Performing Arts Festival, Producer Group DOT, Goethe-Institut Korea"
+            "ko": "협력 : 아트코리아랩, 서울국제공연예술제, 프로듀서 그룹 도트, 주한독일문화원",
+            "en": "In cooperation with : Art Korea Lab, Seoul Performing Arts Festival, Producer Group DOT, Goethe-Institut Korea"
           }
         ]
       },
@@ -6404,20 +6404,20 @@
         },
         "rows": [
           {
-            "ko": "키워드 · 스트리트댄스, 국제교류",
-            "en": "Keywords · street dance, international exchange"
+            "ko": "키워드 : 스트리트댄스, 국제교류",
+            "en": "Keywords : street dance, international exchange"
           },
           {
-            "ko": "주최 · 문화체육관광부",
-            "en": "Hosted by · Ministry of Culture, Sports and Tourism"
+            "ko": "주최 : 문화체육관광부",
+            "en": "Hosted by : Ministry of Culture, Sports and Tourism"
           },
           {
-            "ko": "주관 · 한국국제문화교류진흥원(KOFICE) · 주프랑스한국문화원",
-            "en": "Organised by · KOFICE · Korean Cultural Center in France"
+            "ko": "주관 : 한국국제문화교류진흥원(KOFICE) · 주프랑스한국문화원",
+            "en": "Organised by : KOFICE · Korean Cultural Center in France"
           },
           {
-            "ko": "기획 · 프로듀서그룹 도트 · 배틀 프로",
-            "en": "Produced by · Producer Group DOT · Battle Pro"
+            "ko": "기획 : 프로듀서그룹 도트 · 배틀 프로",
+            "en": "Produced by : Producer Group DOT · Battle Pro"
           }
         ]
       },
@@ -6428,36 +6428,36 @@
         },
         "rows": [
           {
-            "ko": "크리에이티브 프로듀서 · 이희진, 송미선",
-            "en": "Creative Producers · Lee HeeJin, Song Miseon"
+            "ko": "크리에이티브 프로듀서 : 이희진, 송미선",
+            "en": "Creative Producers : Lee HeeJin, Song Miseon"
           },
           {
-            "ko": "프로젝트 매니저 · 박다솔",
-            "en": "Project Manager · Park Dasol"
+            "ko": "프로젝트 매니저 : 박다솔",
+            "en": "Project Manager : Park Dasol"
           },
           {
-            "ko": "무대감독 · 김상훈",
-            "en": "Stage Manager · Kim SangHoon"
+            "ko": "무대감독 : 김상훈",
+            "en": "Stage Manager : Kim SangHoon"
           },
           {
-            "ko": "조명감독 · 배대두, 스테판 아베나스",
-            "en": "Lighting Directors · Bae DaeDoo, Stéphane Avenas"
+            "ko": "조명감독 : 배대두, 스테판 아베나스",
+            "en": "Lighting Directors : Bae DaeDoo, Stéphane Avenas"
           },
           {
-            "ko": "음향감독 · 안형록",
-            "en": "Sound Director · An HyungRok"
+            "ko": "음향감독 : 안형록",
+            "en": "Sound Director : An HyungRok"
           },
           {
-            "ko": "음악 디자이너 · 앨리스 오르페우스",
-            "en": "Music Designer · Alice Orpheus"
+            "ko": "음악 디자이너 : 앨리스 오르페우스",
+            "en": "Music Designer : Alice Orpheus"
           },
           {
-            "ko": "스페셜 DJ · 센카",
-            "en": "Special DJ · Senka"
+            "ko": "스페셜 DJ : 센카",
+            "en": "Special DJ : Senka"
           },
           {
-            "ko": "스페셜 MC · 나스티 & 레아",
-            "en": "Special MC · Nasty & Léa"
+            "ko": "스페셜 MC : 나스티 & 레아",
+            "en": "Special MC : Nasty & Léa"
           }
         ]
       },
@@ -6468,12 +6468,12 @@
         },
         "rows": [
           {
-            "ko": "원밀리언 (한국) · 옐, 포켓, 리아킴, 하리무, 에이미 박, 레디, 데비, 도희, 백구영, 니노, 예찬, 케이찬",
-            "en": "1MILLION (Korea) · YELL, POCKET, LIA KIM, HARIMU, AMY PARK, REDY, DEBBY, DOHEE, KOOYOUNG BACK, NINO, YECHAN, KCHAN"
+            "ko": "원밀리언 (한국) : 옐, 포켓, 리아킴, 하리무, 에이미 박, 레디, 데비, 도희, 백구영, 니노, 예찬, 케이찬",
+            "en": "1MILLION (Korea) : YELL, POCKET, LIA KIM, HARIMU, AMY PARK, REDY, DEBBY, DOHEE, KOOYOUNG BACK, NINO, YECHAN, KCHAN"
           },
           {
-            "ko": "포켓몬 크루 (프랑스) · 예술감독 리야드 프가니 / 니나 아펠, 카림 베다우디아, 케빈 베리슈, 에릭손 드 파울라, 딜란 에세브, 카림 플루키, 앙투안 르비그르, 와드리아코 몰레, 아비가일 노엘, 오세안 팔리, 제라르 족자메",
-            "en": "Pockemon Crew (France) · Artistic Director Riyad Fghani / Nina Appel, Karim Beddaoudia, Kévin Berriche, Erycksson De Paula, Dylan Eucebe, Karim Felouki, Antoine Lebigre, Wadriako Mole, Abygail Noel, Océanne Palie, Gerard Xozame"
+            "ko": "포켓몬 크루 (프랑스) : 예술감독 리야드 프가니 / 니나 아펠, 카림 베다우디아, 케빈 베리슈, 에릭손 드 파울라, 딜란 에세브, 카림 플루키, 앙투안 르비그르, 와드리아코 몰레, 아비가일 노엘, 오세안 팔리, 제라르 족자메",
+            "en": "Pockemon Crew (France) : Artistic Director Riyad Fghani / Nina Appel, Karim Beddaoudia, Kévin Berriche, Erycksson De Paula, Dylan Eucebe, Karim Felouki, Antoine Lebigre, Wadriako Mole, Abygail Noel, Océanne Palie, Gerard Xozame"
           }
         ]
       }
@@ -6537,8 +6537,8 @@
         },
         "rows": [
           {
-            "ko": "키워드 · 글로벌 협업, 음악과 움직임, 크로스미디어",
-            "en": "Keywords · global collaboration, music and movement, cross-media"
+            "ko": "키워드 : 글로벌 협업, 음악과 움직임, 크로스미디어",
+            "en": "Keywords : global collaboration, music and movement, cross-media"
           }
         ]
       },
@@ -6549,16 +6549,16 @@
         },
         "rows": [
           {
-            "ko": "안무 · 김보람",
-            "en": "Choreography · Kim Boram"
+            "ko": "안무 : 김보람",
+            "en": "Choreography : Kim Boram"
           },
           {
-            "ko": "프로듀서 · 이희진",
-            "en": "Producer · Lee HeeJin"
+            "ko": "프로듀서 : 이희진",
+            "en": "Producer : Lee HeeJin"
           },
           {
-            "ko": "제작 · 앰비규어스댄스컴퍼니, 프로듀서그룹 도트",
-            "en": "Production · Ambiguous Dance Company in association with Producer Group DOT"
+            "ko": "제작 : 앰비규어스댄스컴퍼니, 프로듀서그룹 도트",
+            "en": "Production : Ambiguous Dance Company in association with Producer Group DOT"
           }
         ]
       }
@@ -6634,8 +6634,8 @@
         },
         "rows": [
           {
-            "ko": "키워드 · 글로벌 협업, 음악과 움직임, 크로스미디어",
-            "en": "Keywords · global collaboration, music and movement, cross-media"
+            "ko": "키워드 : 글로벌 협업, 음악과 움직임, 크로스미디어",
+            "en": "Keywords : global collaboration, music and movement, cross-media"
           }
         ]
       },
@@ -6646,24 +6646,24 @@
         },
         "rows": [
           {
-            "ko": "참여 구간 · GOOD FEELiNGS",
-            "en": "Featured track · GOOD FEELiNGS"
+            "ko": "참여 구간 : GOOD FEELiNGS",
+            "en": "Featured track : GOOD FEELiNGS"
           },
           {
-            "ko": "안무 · 김보람",
-            "en": "Choreography · Kim Boram"
+            "ko": "안무 : 김보람",
+            "en": "Choreography : Kim Boram"
           },
           {
-            "ko": "프로듀서 · 이희진",
-            "en": "Producer · Lee HeeJin"
+            "ko": "프로듀서 : 이희진",
+            "en": "Producer : Lee HeeJin"
           },
           {
-            "ko": "협력 · 프로듀서그룹 도트",
+            "ko": "협력 : 프로듀서그룹 도트",
             "en": "In association with Producer Group DOT"
           },
           {
-            "ko": "프로듀서 · Sam Seager / 공동 프로듀서 · William Nichols, Danielle Barnes",
-            "en": "Producer · Sam Seager / Co-producers · William Nichols, Danielle Barnes"
+            "ko": "프로듀서 : Sam Seager / 공동 프로듀서 : William Nichols, Danielle Barnes",
+            "en": "Producer : Sam Seager / Co-producers : William Nichols, Danielle Barnes"
           }
         ]
       }
@@ -6739,8 +6739,8 @@
         },
         "rows": [
           {
-            "ko": "키워드 · 글로벌 협업, 음악과 움직임, 크로스미디어",
-            "en": "Keywords · global collaboration, music and movement, cross-media"
+            "ko": "키워드 : 글로벌 협업, 음악과 움직임, 크로스미디어",
+            "en": "Keywords : global collaboration, music and movement, cross-media"
           }
         ]
       },
@@ -6751,24 +6751,24 @@
         },
         "rows": [
           {
-            "ko": "앨범 · Music of the Spheres",
-            "en": "Album · Music of the Spheres"
+            "ko": "앨범 : Music of the Spheres",
+            "en": "Album : Music of the Spheres"
           },
           {
-            "ko": "공식 뮤직비디오 연출 · Dave Meyers / 제작 · Freenjoy",
-            "en": "Official music video directed by Dave Meyers / Production · Freenjoy"
+            "ko": "공식 뮤직비디오 연출 : Dave Meyers / 제작 : Freenjoy",
+            "en": "Official music video directed by Dave Meyers / Production : Freenjoy"
           },
           {
-            "ko": "안무 · 김보람 / 출연 · 앰비규어스댄스컴퍼니",
-            "en": "Choreography · Kim Boram / Performed by Ambiguous Dance Company"
+            "ko": "안무 : 김보람 / 출연 : 앰비규어스댄스컴퍼니",
+            "en": "Choreography : Kim Boram / Performed by Ambiguous Dance Company"
           },
           {
-            "ko": "아티스트 매니지먼트 · 프로듀서그룹 도트",
-            "en": "Artist management · Producer Group DOT"
+            "ko": "아티스트 매니지먼트 : 프로듀서그룹 도트",
+            "en": "Artist management : Producer Group DOT"
           },
           {
-            "ko": "공식 댄스 비디오 프로듀서 · 이희진 / 제작 · 프로듀서그룹 도트",
-            "en": "Official dance video — Producer · Lee HeeJin / Produced by Producer Group DOT"
+            "ko": "공식 댄스 비디오 프로듀서 : 이희진 / 제작 : 프로듀서그룹 도트",
+            "en": "Official dance video — Producer : Lee HeeJin / Produced by Producer Group DOT"
           }
         ]
       },
