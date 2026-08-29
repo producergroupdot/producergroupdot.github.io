@@ -1,7 +1,7 @@
 /* ui.js — 여러 화면이 함께 쓰는 조각들.
    프로듀서 색 주입 · 색점 · 로고 · 특수문자 SVG · 작은 DOM 헬퍼. */
 
-import { t, lang, isEn, setLang, UI } from './i18n.js';
+import { t, lang, isEn, setLang } from './i18n.js';
 /* 돋보기 버튼. search.js 도 ui.js 를 부르므로 순환이지만, 양쪽 다 함수 안에서만
    쓰기 때문에 모듈이 다 올라온 뒤에 이름이 잡힌다. */
 import { searchButton } from './search.js';
