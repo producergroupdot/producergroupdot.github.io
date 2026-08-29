@@ -670,8 +670,8 @@
       {
         "src": "gwantong-18-01.jpg",
         "credit": {
-          "ko": "ⓒSang Hoon Ok",
-          "en": "ⓒSang Hoon Ok"
+          "ko": "ⓒ옥상훈",
+          "en": "ⓒOk Sanghoon"
         }
       }
     ],
@@ -1585,36 +1585,36 @@
       {
         "src": "01.jpg",
         "credit": {
-          "ko": "2022 SPAF · ⓒSang Hoon Ok",
-          "en": "2022 SPAF · ⓒSang Hoon Ok"
+          "ko": "2022 SPAF · ⓒ옥상훈",
+          "en": "2022 SPAF · ⓒOk Sanghoon"
         }
       },
       {
         "src": "02.jpg",
         "credit": {
-          "ko": "2022 SPAF · ⓒSang Hoon Ok",
-          "en": "2022 SPAF · ⓒSang Hoon Ok"
+          "ko": "2022 SPAF · ⓒ옥상훈",
+          "en": "2022 SPAF · ⓒOk Sanghoon"
         }
       },
       {
         "src": "03.jpg",
         "credit": {
-          "ko": "2022 SPAF · ⓒSang Hoon Ok",
-          "en": "2022 SPAF · ⓒSang Hoon Ok"
+          "ko": "2022 SPAF · ⓒ옥상훈",
+          "en": "2022 SPAF · ⓒOk Sanghoon"
         }
       },
       {
         "src": "04.jpg",
         "credit": {
-          "ko": "2022 SPAF · ⓒSang Hoon Ok",
-          "en": "2022 SPAF · ⓒSang Hoon Ok"
+          "ko": "2022 SPAF · ⓒ옥상훈",
+          "en": "2022 SPAF · ⓒOk Sanghoon"
         }
       },
       {
         "src": "05.jpg",
         "credit": {
-          "ko": "2022 SPAF · ⓒSang Hoon Ok",
-          "en": "2022 SPAF · ⓒSang Hoon Ok"
+          "ko": "2022 SPAF · ⓒ옥상훈",
+          "en": "2022 SPAF · ⓒOk Sanghoon"
         }
       }
     ],
@@ -6428,8 +6428,59 @@
         }
       }
     ],
-    "cover": "",
-    "homeFeature": []
+    "cover": "img/works/iphigenia-in-exile/iphigenia-in-exile-01.jpg",
+    "homeFeature": [],
+    "photos": [
+      {
+        "src": "iphigenia-in-exile-01.jpg",
+        "credit": {
+          "ko": "ⓒICK HEO",
+          "en": "ⓒICK HEO"
+        }
+      },
+      {
+        "src": "iphigenia-in-exile-02.jpg",
+        "credit": {
+          "ko": "ⓒICK HEO",
+          "en": "ⓒICK HEO"
+        }
+      },
+      {
+        "src": "iphigenia-in-exile-03.jpg",
+        "credit": {
+          "ko": "ⓒICK HEO",
+          "en": "ⓒICK HEO"
+        }
+      },
+      {
+        "src": "iphigenia-in-exile-04.jpg",
+        "credit": {
+          "ko": "ⓒICK HEO",
+          "en": "ⓒICK HEO"
+        }
+      },
+      {
+        "src": "iphigenia-in-exile-05.jpg",
+        "credit": {
+          "ko": "ⓒArno Declair",
+          "en": "ⓒArno Declair"
+        }
+      },
+      {
+        "src": "iphigenia-in-exile-06.jpg",
+        "credit": {
+          "ko": "ⓒICK HEO",
+          "en": "ⓒICK HEO"
+        }
+      },
+      {
+        "src": "iphigenia-in-exile-07.jpg",
+        "credit": {
+          "ko": "ⓒArno Declair",
+          "en": "ⓒArno Declair"
+        }
+      }
+    ]
   },
   {
     "id": "urban-pulse-uprising",
@@ -6636,12 +6687,12 @@
         },
         "rows": [
           {
-            "ko": "원밀리언 (한국) : 옐, 포켓, 리아킴, 하리무, 에이미 박, 레디, 데비, 도희, 백구영, 니노, 예찬, 케이찬",
-            "en": "1MILLION (Korea) : YELL, POCKET, LIA KIM, HARIMU, AMY PARK, REDY, DEBBY, DOHEE, KOOYOUNG BACK, NINO, YECHAN, KCHAN"
+            "ko": "원밀리언 (한국) : 옐 · 포켓 · 리아킴 · 하리무 · 에이미 박 · 레디 · 데비 · 도희 · 백구영 · 니노 · 예찬 · 케이찬",
+            "en": "1MILLION (Korea) : YELL · POCKET · LIA KIM · HARIMU · AMY PARK · REDY · DEBBY · DOHEE · KOOYOUNG BACK · NINO · YECHAN · KCHAN"
           },
           {
-            "ko": "포켓몬 크루 (프랑스) : 예술감독 리야드 프가니 / 니나 아펠, 카림 베다우디아, 케빈 베리슈, 에릭손 드 파울라, 딜란 에세브, 카림 플루키, 앙투안 르비그르, 와드리아코 몰레, 아비가일 노엘, 오세안 팔리, 제라르 족자메",
-            "en": "Pockemon Crew (France) : Artistic Director Riyad Fghani / Nina Appel, Karim Beddaoudia, Kévin Berriche, Erycksson De Paula, Dylan Eucebe, Karim Felouki, Antoine Lebigre, Wadriako Mole, Abygail Noel, Océanne Palie, Gerard Xozame"
+            "ko": "포켓몬 크루 (프랑스) : 예술감독 리야드 프가니 / 니나 아펠 · 카림 베다우디아 · 케빈 베리슈 · 에릭손 드 파울라 · 딜란 에세브 · 카림 플루키 · 앙투안 르비그르 · 와드리아코 몰레 · 아비가일 노엘 · 오세안 팔리 · 제라르 족자메",
+            "en": "Pockemon Crew (France) : Artistic Director Riyad Fghani / Nina Appel · Karim Beddaoudia · Kévin Berriche · Erycksson De Paula · Dylan Eucebe · Karim Felouki · Antoine Lebigre · Wadriako Mole · Abygail Noel · Océanne Palie · Gerard Xozame"
           }
         ]
       }
