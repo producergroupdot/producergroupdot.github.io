@@ -2,8 +2,25 @@
    그리드 위치는 전부 여기 클래스로만 준다. 인라인 style 금지(함정 3). */
 
 /* ===========================================================
-   모자이크 — 4열 × 4행, gap 0, 모서리 각짐
+   모자이크 — 4열 × 4행, 모서리 각짐
    =========================================================== */
+
+/* 홈의 간격(2026-08-29 시험). 값 셋 다 여기 있고, 되돌리려면 전부 0 으로 둔다.
+   가장자리는 붙인 채로 둔다 — 모자이크에 바깥 여백을 주지 않으므로
+   간격은 타일과 타일 사이에만 생기고, 그 틈으로 body 의 크림이 비친다.
+   데스크톱과 모바일이 같은 값을 쓴다.
+
+   상단 블록(색면 넷 · 메뉴 셋 · 세로 사진)은 붙인다 — 색면이 맞닿아야
+   네 색이 한 덩어리로 읽힌다. 벌어지는 것은 사진이 걸린 자리뿐이다. */
+:root{
+  /* 0 에도 단위를 붙인다. calc() 는 길이에서 단위 없는 수를 뺄 수 없어
+     calc(16px - 0) 처럼 되면 선언 전체가 무효가 되고 간격이 조용히 사라진다.
+     아래 .m-photo2 의 margin-top 이 이 값들을 빼서 쓴다. */
+  --home-gap-x: 0px;      /* 상단 블록의 가로 — 붙임 */
+  --home-gap-y: 0px;      /* 상단 블록의 세로 — 붙임 */
+  --home-gap-band: 16px;  /* 상단 블록 ↔ 파노라마 두 장 */
+  --home-gap-photo: 16px; /* Now 아래 사진 셋 — 사이와 좌우 바깥 */
+}
 
 .mosaic{
   display:grid;
@@ -11,8 +28,15 @@
   grid-template-rows:1fr 1fr 1fr 1.45fr;
   height:96vh;
   min-height:620px;
-  gap:0;
+  column-gap:var(--home-gap-x);
+  row-gap:var(--home-gap-y);
 }
+
+/* 그리드는 줄마다 간격을 달리 줄 수 없다. 파노라마 줄 위의 자리는 그 칸의
+   margin 으로 만든다 — 이미 있는 세로 간격 위에 그 차이만큼만 얹는다.
+   좌우는 화면 끝에 붙인 채로 둔다(Now 아래 사진과 달리 사방 여백이 아니다).
+   파노라마 두 장끼리는 붙는다 — 모자이크의 가로 간격이 0 이라 따로 할 일이 없다. */
+.m-photo2, .m-photo3{ margin-top:calc(var(--home-gap-band) - var(--home-gap-y)) }
 
 .cell{
   position:relative;
@@ -24,6 +48,15 @@
   isolation:isolate;
   border-radius:0;
 }
+/* 비운 색면(2026-08-29 시험 2단계). 면은 크림, 글자는 잉크.
+   다만 이름만은 그 사람의 진한 짝으로 칠한다 — 면이 빠져도 색이 남아야
+   귀속 표시가 끊기지 않는다. 색은 ui.js 가 붙인 .text-<id> 가 준다.
+   직접 걸린 규칙이 상속을 이기므로 .cell.blank 의 잉크를 덮는다.
+   블롭은 면 색(currentColor)에서 파생되므로 크림 위에서는 보이지 않는다 — 지운다.
+   어느 자리가 비는지는 매 방문마다 달라진다(js/home.js 의 blankAt). */
+.cell.blank{ color:var(--ink) }
+.cell.blank .blob{ display:none }
+
 .cell h2{ font-size:clamp(20px,2.1vw,30px) }
 .cell h3{ font-size:clamp(15px,1.35vw,19px); font-weight:var(--w-mid); letter-spacing:-.01em }
 .cell .num{ opacity:.6 }
@@ -258,10 +291,14 @@ a.cell:focus-visible h2{
    Now 아래 사진 3장
    =========================================================== */
 
+/* Now 아래 사진 세 장만 크림 여백에 둘러싸인다. 사이도 좌우 바깥도 같은 값이라
+   세 장이 하나의 묶음으로 뜬다 — 모자이크는 반대로 화면 끝까지 붙어 있다.
+   위쪽은 Now 목록과의 사이라 다른 값(30px)을 그대로 둔다. */
 .band{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:0;
+  gap:var(--home-gap-photo);
+  padding:0 var(--home-gap-photo) var(--home-gap-photo);
   margin-top:30px;
 }
 .band figure{ position:relative; overflow:hidden; aspect-ratio:4/3 }
@@ -333,6 +370,9 @@ a.cell:focus-visible h2{
   /* 5 파노라마 두 장 (전체폭, 위아래로) */
   .m-photo2 { grid-column:1/7; grid-row:6/7 }
   .m-photo3 { grid-column:1/7; grid-row:7/8 }
+  /* 여기서는 두 장이 위아래로 쌓인다. 띠 간격은 상단 블록 바로 아래인
+     첫 장에만 붙고, 두 장 사이는 붙인다. */
+  .m-photo3{ margin-top:0 }
   .m-photo2, .m-photo3{ aspect-ratio:5/2 }
 
   /* 파노라마는 5:2 로 미리 잘라둔 파일을 쓴다. 칸 비율도 5:2 라 사진이 그대로 들어간다. */
