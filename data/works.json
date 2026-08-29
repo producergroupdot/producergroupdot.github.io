@@ -430,8 +430,8 @@
             "en": "Creative Producer · Park Jisun"
           },
           {
-            "ko": "리허설 어시스턴트 · 강호정",
-            "en": "Rehearsal Assistant · Kang Hojung"
+            "ko": "조안무 · 강호정",
+            "en": "Associate Choreographer · Kang Hojung"
           },
           {
             "ko": "음악 · 김현수",
@@ -448,6 +448,19 @@
           {
             "ko": "무대감독 · 이율, 김민수",
             "en": "Stage Manager · Lee Yool, Kim Minsu"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ko": "링크",
+          "en": "Links"
+        },
+        "rows": [
+          {
+            "ko": "서울국제공연예술제 프로그램 페이지",
+            "en": "Seoul Performing Arts Festival programme page",
+            "url": "http://spaf.or.kr/2026/program/program_view10.php"
           }
         ]
       }
