@@ -146,7 +146,7 @@
       {
         "label": {
           "ko": "{hex}{hex}의 섬 : 강화도",
-          "en": "Hexagon Island"
+          "en": "Island of {hex}{hex}"
         },
         "url": "http://hexagon-island.com/"
       }
@@ -222,7 +222,7 @@
       {
         "label": {
           "ko": "{hex}{hex}의 섬 : 강화도",
-          "en": "Hexagon Island"
+          "en": "Island of {hex}{hex}"
         },
         "url": "http://hexagon-island.com/"
       }
