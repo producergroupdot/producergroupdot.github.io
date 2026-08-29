@@ -2583,7 +2583,7 @@
     "form": "performance",
     "title": {
       "ko": "유령극단 ‘심각한 밤을 보내리’",
-      "en": "Ghost Theater ‘We will Have a Serious Night’"
+      "en": "\"We Will Have a Serious Night\" by Ghost Theatre"
     },
     "subtitle": {
       "ko": "",
@@ -2674,14 +2674,15 @@
     "status": "done",
     "lead": {
       "ko": "위치인식 헤드폰을 끼고 어둠 속을 걸으며, 보이지 않는 존재들의 이야기를 듣는다.",
-      "en": ""
+      "en": "Walking through the dark in location-aware headphones, listening to what cannot be seen."
     },
     "body": {
       "ko": "〈유령극단 '심각한 밤을 보내리'〉는 장소특정적 소리를 전달하는 위치인식 헤드폰을 이용하여 보이지 않는 존재들의 이야기를 찾아가는 관객 참여, 이동형 공연이다. 관객은 어둠이 짙어질 무렵 현실에서 과거 또는 미래의 시간으로 여정을 떠난다.\n\n존재했었던, 존재하게 될 것들과 사람들의 목소리는 은밀한 속삭임이 되어 관객을 이끈다. 어둠 속 시간의 길을 따라 밤의 산책을 한 관객은 오래된 한옥에 자리를 잡고 있는 유령인지, 미래의 환영인지 알 수 없는 로봇들과 마주하며 그들의 사연을 듣는다.\n\n작품은 ASMR과 바이노럴 기술을 이용해 몰입감 있는 청취가 가능한 헤드폰으로 소리를 통한 관객의 경험을 확장시키며, 인간 공연자가 아닌 로봇을 전면으로 등장시켜 메카니컬 씨어터의 경험을 제시한다.",
-      "en": ""
+      "en": "\"We Will Have a Serious Night\" by Ghost Theatre is a participatory, promenade performance in which audiences follow the stories of unseen presences through location-aware headphones that deliver site-specific sound. As darkness gathers, they set out from the present into a past or a future time.\n\nThe voices of those who once existed, and those yet to exist, become faint whispers that draw the audience onward. Walking the paths of time through the dark, they arrive at an old hanok and come face to face with robots — ghosts settled into the house, or apparitions of a future, it is impossible to say — and listen to what each of them has to tell.\n\nUsing ASMR and binaural techniques, the headphones open an immersive field of listening that extends what an audience can experience through sound alone. In place of human performers, robots take the stage, offering an encounter with mechanical theatre."
     },
     "quote": {
-      "ko": "달을 품어서 너는 희망을 말하지만\n허무한 바람뿐이야\n멀리 있어서 나는 니 맘을 모르지만\n그냥 바라볼 뿐이야\n\n밤의 끝에\n밤의 끝에\n이 밤의 끝에\n\n심각한 밤을 보내리"
+      "ko": "달을 품어서 너는 희망을 말하지만\n허무한 바람뿐이야\n멀리 있어서 나는 니 맘을 모르지만\n그냥 바라볼 뿐이야\n\n밤의 끝에\n밤의 끝에\n이 밤의 끝에\n\n심각한 밤을 보내리",
+      "en": "You hold the moon and speak of hope, but it is only an empty wind.\nI am too far to know your heart, and can only watch.\nAt the end of the night, at the end of the night, at the end of this night —\nwe will have a serious night."
     },
     "venue": {
       "ko": "",
@@ -2701,7 +2702,7 @@
     },
     "keywords": {
       "ko": "",
-      "en": ""
+      "en": "robots, sound, promenade performance"
     },
     "accordions": [
       {
