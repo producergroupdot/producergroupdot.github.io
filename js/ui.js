@@ -550,19 +550,7 @@ export function logo(producers, exclude = []) {
   const pool = producers.filter((p) => !exclude.includes(p.id));
   const pick = (pool.length ? pool : producers)[Math.floor(Math.random() * (pool.length || producers.length))];
   wrap.append(el(`i.accent.dot-${pick.id}`));
-  setFavicon(pick.id);
   return wrap;
-}
-
-/* 브라우저 탭의 점도 로고의 액센트 점과 같은 색으로 돈다.
-   <head> 에 적어 둔 것은 이 함수가 못 돌 때의 기본값이다 — 지우지 말 것.
-   애플 터치 아이콘은 건드리지 않는다. 홈 화면에 저장된 뒤에는 바뀌지 않으므로
-   색이 돌면 저장한 시점에 따라 사람마다 다른 아이콘이 남는다. */
-function setFavicon(id) {
-  for (const [elId, size] of [['favicon', 32], ['favicon-lg', 512]]) {
-    const link = document.getElementById(elId);
-    if (link) link.href = `/img/brand/favicon-${id}-${size}.png`;
-  }
 }
 
 /* ---------- 사진 ---------- */
