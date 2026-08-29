@@ -33,6 +33,17 @@ export const isEn = () => lang.current === 'en';
 /* <html lang> 을 맞춘다 — 글꼴·줄바꿈·스크린리더가 이 값을 본다. */
 document.documentElement.lang = lang.current;
 
+/* 영문 화면이면 data-en 을 가진 메타 태그를 그 값으로 갈아 끼운다.
+   국문이 기본이라 HTML 에 적힌 content 는 국문이고, 영문은 같은 태그에 data-en 으로 붙어 있다.
+   ?lang=en 은 같은 주소의 질의 문자열이라 정적 태그를 언어별로 둘 수 없다.
+   주의: 페이스북·트위터 크롤러는 JS 를 돌리지 않으므로 공유 미리보기는 언제나 국문이다.
+   영문 미리보기가 필요해지면 주소를 따로 내야 한다(/en/…). */
+if (lang.current === 'en') {
+  for (const m of document.querySelectorAll('meta[data-en]')) {
+    if (m.dataset.en) m.setAttribute('content', m.dataset.en);
+  }
+}
+
 /** 언어를 바꾸고 같은 페이지를 다시 연다. 주소에도 남겨 링크를 공유할 수 있게 한다. */
 export function setLang(next) {
   if (next === lang.current) return;
