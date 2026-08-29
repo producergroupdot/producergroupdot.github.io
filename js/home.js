@@ -11,6 +11,8 @@ import {
   shownInLang, visibleWorks,
   mergeRuns,
 } from './ui.js';
+/* 돋보기는 상단 메뉴와 같은 것을 쓴다. */
+import { searchButton } from './search.js';
 
 /* 모자이크 세 칸은 works.json 의 homeFeature 가 지정한다 — 그 자리의 비율에 맞는
    사진을 사람이 골라야 하기 때문이다.
@@ -73,19 +75,21 @@ function fmtRange(from, to) {
 
 /* 홈에서 이 칸은 어디로도 가지 않는다 — 링크가 아니라 그냥 칸이다.
    메뉴 칸만 마우스에 반응하므로, 누를 수 있는 칸과 아닌 칸이 그 차이로 갈린다. */
-function cellLogo(producers) {
+function cellLogo(site) {
   return el(
     'div.cell.c-cream.m-logo',
     null,
-    /* 홈에는 상단 메뉴가 없다. 언어 전환은 이 칸의 오른쪽 위 모서리,
+    /* 홈에는 상단 메뉴가 없다. 찾기와 언어 전환은 이 칸의 오른쪽 위 모서리,
        점 다섯과 같은 높이에 둔다 — 크림 색면 안이라 잘 읽힌다.
-       사진 칸 위에는 얹지 않는다(사진마다 밝기가 달라 글자가 묻힌다). */
-    langToggle('.m-lang'),
+       사진 칸 위에는 얹지 않는다(사진마다 밝기가 달라 글자가 묻힌다).
+       돋보기는 내부 페이지의 상단 메뉴와 같은 것을 쓴다(search.js 의 searchButton) —
+       여기에 따로 만들면 두 곳이 어긋난다. */
+    el('div.m-top', null, searchButton(site), langToggle('.m-lang')),
     /* 점 다섯 · 워드마크 · since 2014 를 한 덩어리로 위에 붙인다. */
     el(
       'div.m-brand',
       null,
-      logo(producers),
+      logo(site.producers),
       el(
         'span',
         null,
@@ -197,7 +201,7 @@ function renderMosaic(site) {
   }
 
   mosaic.append(
-    cellLogo(producers),
+    cellLogo(site),
     cellPhoto(bySlot(works, 'mosaic-tall'), 'mosaic-tall', 'm-photo1', producerById),
     cellWorks(works),
     ...producers.map((p, i) => cellProducer(p, slots[i])),
