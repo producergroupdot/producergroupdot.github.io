@@ -3,7 +3,7 @@
 
 import { loadSite } from './data.js';
 import { t } from './i18n.js';
-import { el, injectProducerColors, dots, titleText, topBar, footer, pageUrl, link } from './ui.js';
+import { el, injectProducerColors, dots, titleText, topBar, footer, pageUrl, link, shuffle } from './ui.js';
 
 /** 사진이 없으면 담당 프로듀서 색 원 + 이름 앞 두 글자. 담당이 없으면 라벤더. */
 const faceClass = (a) => (a.producers?.length ? `field-${a.producers[0]}` : 'c-lav');
@@ -113,7 +113,14 @@ function canvas(site) {
   const host = document.getElementById('artists-list');
   host.replaceChildren();
 
-  const items = site.artists.map((a) => {
+  /* 차례는 화면 크기와 상관없이 여기서 한 번 섞는다.
+     노트북은 좌표를 무작위로 뽑으므로 그것만으로도 배치가 달라 보였지만,
+     모바일은 자유 배치를 걷어내고 이 차례 그대로 세로로 쌓기 때문에
+     섞지 않으면 늘 artists.json 순서로 고정된다.
+     섞는 방식은 About 의 프로듀서 네 칸과 같은 ui.js 의 shuffle() 하나다. */
+  const artists = shuffle(site.artists);
+
+  const items = artists.map((a) => {
     /* 좌표는 커스텀 프로퍼티로 넘긴다. 자리를 인라인 style 로 박으면
        모바일에서 자유 배치를 걷어내는 미디어 쿼리를 이겨버린다(함정 3). */
     const item = link(pageUrl('artist', a.id), '.artist', { 'aria-label': t(a.name) },
@@ -131,7 +138,7 @@ function canvas(site) {
   const boxW = host.clientWidth;
   const boxH = host.clientHeight;
   const sizes = items.map((it) => it.querySelector('.face').getBoundingClientRect().width);
-  const fixed = site.artists.map((a) => a.pos || { x: '0%', y: '0%' });
+  const fixed = artists.map((a) => a.pos || { x: '0%', y: '0%' });
 
   const spots = scatter(sizes, fixed, boxW, boxH);
   items.forEach((item, i) => {
