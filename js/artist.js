@@ -2,11 +2,11 @@
    어느 사람인지는 <body data-artist="…"> 가 정한다. 새 예술가는 HTML 을 복사해 값만 바꾸면 된다. */
 
 import { loadSite } from './data.js';
-import { t } from './i18n.js';
+import { t, UI } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
   topBar, footer, pageUrl, link, formBadge, creditLine,
-  visibleWorks,
+  visibleWorks, photo, withThumb,
 } from './ui.js';
 
 const byRecency = (a, b) => (b.yearFrom || 0) - (a.yearFrom || 0);
@@ -14,8 +14,9 @@ const faceClass = (a) => (a.producers?.length ? `field-${a.producers[0]}` : 'c-l
 
 function head(artist, producerById) {
   const circle = el(`span.face.big.${faceClass(artist)}`);
-  if (artist.photo) circle.append(el('img', { src: artist.photo, alt: '' }));
-  else circle.append(el('b', { text: titleText(t(artist.name)).slice(0, 2) }));
+  const initials = () => el('b', { text: titleText(t(artist.name)).slice(0, 2) });
+  /* 이 원도 190px 이라 목록과 같은 축소본을 쓴다. */
+  circle.append(artist.photo ? photo(withThumb(artist.photo), initials) : initials());
 
   /* 크레딧 규칙은 ui.js 한 곳에 있다 — 작업 사진과 같은 규칙을 쓴다. */
   const credit = artist.photo ? creditLine(artist) : null;
@@ -30,7 +31,7 @@ function head(artist, producerById) {
       /* 로마자는 t() 를 거치지 않는다 — en 이 비면 국문이 되풀이된다. */
       artist.name.en ? el('p.roman', { text: artist.name.en }) : null,
       t(artist.field) ? el('p.field.meta', { text: t(artist.field) }) : null,
-      artist.since ? el('p.since.meta', { text: `도트와 함께 ${artist.since}` }) : null,
+      artist.since ? el('p.since.meta', { text: `${t(UI.since)} ${artist.since}` }) : null,
       /* 한 줄 소개. 없는 사람에게는 줄이 생기지 않는다 — 프로듀서 페이지와 같은 규칙. */
       t(artist.tagline) ? el('p.tagline', { text: t(artist.tagline) }) : null)
   );
@@ -82,7 +83,7 @@ function prose(artist) {
   const text = t(artist.bio);
   const box = el('div.prose');
   if (!text) {
-    box.append(el('p.pending-bio', { text: '소개문 준비 중' }));
+    box.append(el('p.pending-bio', { text: t(UI.bioPending) }));
     return box;
   }
   paragraphs(text, box);
@@ -103,7 +104,7 @@ function worksBlock(artist, works) {
         el('span.wt', null, titleNodes(t(w.title))),
         formBadge(w))));
   }
-  return sideBlock('함께한 작업', mine.length ? list : el('p.meta.empty', { text: '아직 없습니다.' }));
+  return sideBlock(t(UI.worksTogether), mine.length ? list : el('p.meta.empty', { text: t(UI.noneYet) }));
 }
 
 function linksBlock(artist) {
@@ -114,14 +115,14 @@ function linksBlock(artist) {
     list.append(el('li', null,
       el('a', { href: l.url, target: '_blank', rel: 'noopener' }, titleNodes(t(l.label)))));
   }
-  return sideBlock('링크', list);
+  return sideBlock(t(UI.links), list);
 }
 
 function producersBlock(artist, producerById, producers) {
   const list = el('ul.plist');
   const ids = artist.producers?.length ? artist.producers : [];
   if (!ids.length) {
-    return sideBlock('담당 프로듀서', el('p.meta.empty', { text: '아직 정해지지 않았습니다.' }));
+    return sideBlock(t(UI.producerInCharge), el('p.meta.empty', { text: t(UI.notDecided) }));
   }
   for (const id of ids) {
     const p = producerById.get(id);
@@ -132,7 +133,7 @@ function producersBlock(artist, producerById, producers) {
         el('span', { text: t(p.name) }),
         el('span.roman-s.meta', { text: t(p.name, 'en') }))));
   }
-  return sideBlock('담당 프로듀서', list);
+  return sideBlock(t(UI.producerInCharge), list);
 }
 
 async function main() {
@@ -159,7 +160,7 @@ async function main() {
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(
-      el('p.load-error', { text: `데이터를 읽지 못했습니다. ${err.message}` })
+      el('p.load-error', { text: `${t(UI.loadError)} ${err.message}` })
     );
   }
 }

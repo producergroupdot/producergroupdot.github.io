@@ -1,10 +1,10 @@
 /* about.js — 도트 소개 · 프로듀서 4인 · 둥지230 · 연결 */
 
 import { loadSite } from './data.js';
-import { t } from './i18n.js';
+import { t, UI } from './i18n.js';
 import {
   el, injectProducerColors, topBar, footer, pageUrl, link, photo, faceCandidates, shuffle,
-  producerTile, titleNodes,
+  producerTile, titleNodes, withThumb,
 } from './ui.js';
 
 /* 사진은 파일만 올리면 뜬다 — JSON 을 고칠 필요가 없다.
@@ -35,7 +35,8 @@ function intro(about) {
 function faceBlob(p) {
   const blob = el('i.pblob');
   blob.append(
-    photo(faceCandidates(p, 'about'), () => {
+    /* 원 지름이 104~132px 이라 축소본으로 충분하다. 없으면 원본으로 떨어진다. */
+    photo(withThumb(faceCandidates(p, 'about')), () => {
       blob.classList.add('no-photo'); // 사진이 하나도 없을 때는 커지지 않는다
       return el('span.pblob-empty');
     })
@@ -167,7 +168,7 @@ async function main() {
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(
-      el('p.load-error', { text: `데이터를 읽지 못했습니다. ${err.message}` })
+      el('p.load-error', { text: `${t(UI.loadError)} ${err.message}` })
     );
   }
 }

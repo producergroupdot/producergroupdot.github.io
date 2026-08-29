@@ -1,14 +1,15 @@
 /* ui.js — 여러 화면이 함께 쓰는 조각들.
    프로듀서 색 주입 · 색점 · 로고 · 특수문자 SVG · 작은 DOM 헬퍼. */
 
-import { t, lang, isEn, setLang } from './i18n.js';
+import { t, lang, isEn, setLang, UI } from './i18n.js';
 /* 돋보기 버튼. search.js 도 ui.js 를 부르므로 순환이지만, 양쪽 다 함수 안에서만
    쓰기 때문에 모듈이 다 올라온 뒤에 이름이 잡힌다. */
 import { searchButton } from './search.js';
 
 /* ---------- DOM 헬퍼 ---------- */
 
-/** el('a.cell.c-cream', {href:'#/works'}, child, child…) */
+/** el('a.cell.c-cream', {href: pageUrl('works')}, child, child…)
+    주소는 손으로 적지 말고 pageUrl() 을 거친다 — 영문 화면의 ?lang=en 이 거기서 붙는다. */
 export function el(spec, attrs, ...children) {
   const [tag, ...classes] = spec.split('.');
   const node = document.createElement(tag || 'div');
@@ -428,11 +429,21 @@ export const formLabelByKey = (key) => {
 export const isPerformance = (work) => formKey(work) === 'performance';
 
 /** 색면·캡션에 얹는 장식 라벨. 화면 언어와 무관하게 늘 영문이다. */
-export const kindLabel = (work) => (isPerformance(work) ? 'Production' : 'Project');
+/* 공연이냐 프로젝트냐의 이름은 이 표 하나에서만 나온다 — FORMS 와 같은 방식이다.
+   홈의 개수 라벨과 카드 배지가 각각 글자를 들고 있으면 한쪽만 고쳐진다. */
+export const KIND_NAMES = {
+  performance: { ko: '공연', en: 'Production' },
+  project: { ko: '프로젝트', en: 'Project' },
+};
+
+/** 'performance' · 'project' 키로 바로 이름을 얻는다(홈의 개수 라벨용). */
+export const kindNameOf = (kind) => t(KIND_NAMES[kind] || '');
+
+/** 카드·배지에 적는 이름. 메타 줄이라 화면 언어와 무관하게 늘 영문이다. */
+export const kindLabel = (work) => KIND_NAMES[isPerformance(work) ? 'performance' : 'project'].en;
 
 /** 화면 언어를 따르는 이름 — 홈 NOW 와 작업 상세가 쓴다. */
-export const kindName = (work) =>
-  isEn() ? kindLabel(work) : isPerformance(work) ? '공연' : '프로젝트';
+export const kindName = (work) => kindNameOf(isPerformance(work) ? 'performance' : 'project');
 
 /* ---------- 영문판에서 감추는 작업 ----------
    works.json 의 hideInEn 이 true 면 영문 목록 어디에도 나오지 않는다.
@@ -577,6 +588,19 @@ export const shuffle = (xs) => {
  * where='about' 이면 aboutPhotos 를 먼저 본다 — About 의 원은 작아서
  * 얼굴이 크게 나온 사진만 골라 써야 하기 때문. 없으면 photos 전체를 쓴다.
  */
+/* ---------- 원 안에 들어가는 사진 ----------
+   Artists 캔버스의 원은 지름이 235px 을 넘지 않고 About 의 프로듀서 원은 132px 인데
+   원본은 900~1600px 짜리다. 그래서 원에서만 480×480 축소본을 쓴다.
+   원본은 지우지 않는다 — 프로듀서 상세의 큰 원과 상세 페이지가 계속 쓴다(함정 2).
+   축소본이 아직 없는 파일은 원본으로 조용히 떨어진다. */
+
+/** img/artists/kwon.jpg → img/artists/kwon-thumb.jpg */
+export const thumbSrc = (src) => String(src || '').replace(/\.(jpe?g|png)$/i, '-thumb.jpg');
+
+/** 후보 목록을 축소본 → 원본 차례로 편다. photo() 에 그대로 넘긴다. */
+export const withThumb = (list) =>
+  [].concat(list || []).filter(Boolean).flatMap((s) => [thumbSrc(s), s]);
+
 export const faceCandidates = (p, where) => {
   const list =
     (where === 'about' && p.aboutPhotos?.length ? p.aboutPhotos : null) ||
@@ -714,10 +738,14 @@ export function coverCandidates(work) {
  * onResolved 에는 실제로 뜬 경로가 들어온다(TEMP- 판정용).
  *
  * 폴더에 파일만 넣으면 JSON 을 고치지 않아도 사진이 뜨게 하기 위한 것.
+ *
+ * loading 은 기본이 'lazy' 다. 첫 화면에 이미 보이는 사진에만 'eager' 를 넘긴다 —
+ * 보이는 사진에 lazy 를 걸면 브라우저가 레이아웃을 끝낸 뒤에야 받으러 가서 오히려 늦다.
+ * 지금 eager 를 쓰는 곳은 홈 모자이크 세 칸뿐이다(js/home.js 의 cellPhoto).
  */
-export function photo(candidates, fallback, onResolved) {
+export function photo(candidates, fallback, onResolved, { loading = 'lazy' } = {}) {
   const list = (candidates || []).filter(Boolean);
-  const img = el('img.cover', { alt: '', loading: 'lazy' });
+  const img = el('img.cover', { alt: '', loading });
   let next = 0;
 
   const advance = () => {

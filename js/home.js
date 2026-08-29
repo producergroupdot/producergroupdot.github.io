@@ -1,10 +1,11 @@
 /* home.js — 홈 화면. data/*.json 을 읽어 모자이크와 Now 를 그린다. */
 
 import { loadSite } from './data.js';
-import { t, lang } from './i18n.js';
+import { t, lang, UI } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
-  logo, footer, pageUrl, link, photo, coverCandidates, producerTile, kindLabel, kindName, isPerformance,
+  logo, footer, pageUrl, link, photo, coverCandidates, producerTile,
+  kindLabel, kindName, kindNameOf, isPerformance,
   isRunLive,
   byYear, coverPosition,
   langToggle,
@@ -127,11 +128,16 @@ function cellWorks(works) {
       el(
         'span.sub.split',
         null,
-        /* 개수는 데이터의 type(공연/프로젝트)으로 센다.
-           Works 페이지의 필터는 형식이라, '공연'만 그대로 대응하는 필터가 있다.
-           '프로젝트'는 리서치·네트워크·레지던시·워크숍에 걸쳐 있어 전체 목록으로 보낸다. */
-        link(pageUrl('works', '?form=performance'), '', null, el('b', { text: '공연' }), ` ${pf}`),
-        link(pageUrl('works'), '', null, el('b', { text: '프로젝트' }), ` ${pj}`)
+        /* 이름은 ui.js 의 KIND_NAMES 한 곳에서 가져온다 — 카드 배지(kindLabel)와
+           홈 NOW(kindName)가 쓰는 바로 그 표다. 여기에 글자를 따로 적으면
+           배지는 Production 인데 개수는 Performances 가 되는 식으로 갈라진다.
+           Works 페이지의 필터는 형식이라 '공연'만 그대로 대응하는 필터가 있다.
+           '프로젝트'는 국제 예술 프로젝트·네트워크·레지던시·워크숍·영상에 걸쳐 있어
+           전체 목록으로 보낸다. */
+        link(pageUrl('works', '?form=performance'), '', null,
+          el('b', { text: kindNameOf('performance') }), ` ${pf}`),
+        link(pageUrl('works'), '', null,
+          el('b', { text: kindNameOf('project') }), ` ${pj}`)
       )
     )
   );
@@ -157,7 +163,7 @@ function cellAbout() {
     '.cell.c-ink.m-about.on-dark',
     { 'aria-label': 'About' },
     el('span'),
-    el('span', null, el('h2', { text: 'About' }), el('span.sub', { text: '프로듀서 콜렉티브' }))
+    el('span', null, el('h2', { text: 'About' }), el('span.sub', { text: t(UI.producersSub) }))
   );
 }
 
@@ -176,8 +182,10 @@ function cellPhoto(work, slot, slotClass, producerById) {
     el('span.cap-t', null, titleNodes(t(work.title)))
   );
 
-  const pending = () => el('span.meta.pending', { text: '사진 준비 중' });
-  const visual = photo(homeCandidates(work, slot), pending);
+  const pending = () => el('span.meta.pending', { text: t(UI.photoPending) });
+  /* 모자이크는 96vh 안에 다 들어간다 — 세 칸 모두 첫 화면이다. 그래서 eager.
+     Now 아래 띠와 다른 화면의 사진은 그대로 lazy 다. */
+  const visual = photo(homeCandidates(work, slot), pending, null, { loading: 'eager' });
 
   return link(
     pageUrl('work', work.id),
@@ -213,6 +221,14 @@ function renderMosaic(site) {
 }
 
 /* ---------- Now ---------- */
+
+/* 화면 글자는 데이터가 아니라 코드에 있으므로 여기 모아 둔다 —
+   work.js 의 UPCOMING·INFO 와 같은 방식이다. i18n.js 는 문(門)일 뿐 사전이 아니다. */
+const ALL_WORKS = { ko: '전체 작업 보기', en: 'View all works' };
+const NOW_EMPTY = {
+  ko: '지금 진행 중이거나 예정된 회차가 없습니다.',
+  en: 'Nothing running or scheduled right now.',
+};
 
 /**
  * Now 에 나오는 것은 '지금 하고 있거나 앞으로 할 것'뿐이다.
@@ -305,13 +321,28 @@ function nowRow(it, producerById) {
   );
 }
 
+/* Now 머리의 '전체 작업 보기 →'. 주소는 pageUrl 을 거친다 —
+   영문 화면에서 ?lang=en 이 따라붙지 않으면 한 번에 국문으로 떨어진다.
+   화살표는 라벨 밖에 따로 둔다. 'View all works →' 처럼 낱말에 붙여 쓰면 어색하고,
+   aria-hidden 이라 스크린리더는 라벨만 읽는다. */
+function renderNowAll() {
+  const slot = document.getElementById('now-all');
+  if (!slot) return;
+  slot.replaceWith(
+    link(pageUrl('works'), '.meta.all', null,
+      t(ALL_WORKS),
+      el('span.arrow', { 'aria-hidden': 'true', text: '→' }))
+  );
+}
+
 function renderNow(site) {
+  renderNowAll();
   const { items } = nowItems(site);
   const list = document.getElementById('now-list');
   list.replaceChildren(
     ...(items.length
       ? items.map((it) => nowRow(it, site.producerById))
-      : [el('p.empty.meta', { text: '앞뒤 3개월 안에 예정된 회차가 없습니다.' })])
+      : [el('p.empty.meta', { text: t(NOW_EMPTY) })])
   );
 }
 
@@ -339,7 +370,7 @@ function renderBand(site) {
     const p = site.producerById.get((w.producers || [])[0]);
     const dark = !p || p.color.dark;
     const fig = el(`figure.${fieldClass(w.producers)}${dark ? '.on-dark' : ''}`);
-    const pending = () => el('span.meta.pending', { text: '사진 준비 중' });
+    const pending = () => el('span.meta.pending', { text: t(UI.photoPending) });
     /* 어디를 남기고 자를지는 실제로 뜬 파일이 정해진 뒤에 붙인다 —
        후보를 차례로 시도하다 표지로 떨어질 수 있어서다. */
     fig.append(
@@ -373,7 +404,7 @@ async function main() {
   } catch (err) {
     console.error(err);
     document.getElementById('mosaic').append(
-      el('p.load-error', { text: `데이터를 읽지 못했습니다. ${err.message}` })
+      el('p.load-error', { text: `${t(UI.loadError)} ${err.message}` })
     );
   }
 }

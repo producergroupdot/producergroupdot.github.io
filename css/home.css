@@ -213,6 +213,9 @@ a.cell:focus-visible h2{
 .nowhead h2{ font-size:clamp(28px,3.4vw,46px); letter-spacing:-.035em }
 .nowhead .all{ opacity:.6 }
 .nowhead .all:hover{ opacity:1; text-decoration:underline; text-underline-offset:3px }
+/* 화살표는 라벨 밖에 있다. 국문은 글자에 바짝, 영문은 낱말과 떨어뜨린다. */
+.nowhead .all .arrow{ margin-left:.4em }
+.nowhead .all:hover .arrow{ text-decoration:none }
 
 /* 열을 고정폭으로 잡아 줄이 흐트러지지 않게 한다.
    [유형 64] [제목 flex] [날짜 190] [장소 260] [색점 56] */

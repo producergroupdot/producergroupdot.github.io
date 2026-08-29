@@ -2,19 +2,21 @@
    좌표와 지름은 data/artists.json 의 pos 가 정한다. */
 
 import { loadSite } from './data.js';
-import { t } from './i18n.js';
-import { el, injectProducerColors, dots, titleText, topBar, footer, pageUrl, link, shuffle } from './ui.js';
+import { t, UI } from './i18n.js';
+import {
+  el, injectProducerColors, dots, titleText, topBar, footer, pageUrl, link, shuffle,
+  photo, withThumb,
+} from './ui.js';
 
 /** 사진이 없으면 담당 프로듀서 색 원 + 이름 앞 두 글자. 담당이 없으면 라벤더. */
 const faceClass = (a) => (a.producers?.length ? `field-${a.producers[0]}` : 'c-lav');
 
 function face(artist) {
   const box = el(`span.face.${faceClass(artist)}`);
-  if (artist.photo) {
-    box.append(el('img', { src: artist.photo, alt: '', loading: 'lazy' }));
-  } else {
-    box.append(el('b', { text: titleText(t(artist.name)).slice(0, 2) }));
-  }
+  const initials = () => el('b', { text: titleText(t(artist.name)).slice(0, 2) });
+  /* 원 지름은 235px 을 넘지 않으므로 축소본을 쓴다. 축소본이 없으면 원본,
+     원본까지 못 뜨면 이름 앞 두 글자로 떨어진다. */
+  box.append(artist.photo ? photo(withThumb(artist.photo), initials) : initials());
   return box;
 }
 
@@ -162,7 +164,7 @@ async function main() {
   } catch (err) {
     console.error(err);
     document.getElementById('artists-list').append(
-      el('p.load-error', { text: `데이터를 읽지 못했습니다. ${err.message}` })
+      el('p.load-error', { text: `${t(UI.loadError)} ${err.message}` })
     );
   }
 }

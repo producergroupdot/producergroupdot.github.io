@@ -74,6 +74,42 @@ export function t(field, l = lang.current) {
   return field.ko ?? '';
 }
 
+/* ---------- 화면 글자 사전 ----------
+ * 데이터가 아니라 코드에 있는 문장들. 여기 한 곳에 모은다.
+ * 같은 문구를 파일마다 적어 두면 한쪽만 고쳐지고, 국문이 영문 화면에 그대로 샌다 —
+ * '데이터를 읽지 못했습니다'가 일곱 파일에 복사돼 있었던 것이 그 예다.
+ *
+ * 쓸 때는 반드시 t() 를 거친다:  el('p', { text: t(UI.noneYet) })
+ *
+ * 여기 두는 것은 '어느 화면에나 나올 수 있는 말'이다. 한 화면에서만 쓰는 말은
+ * 그 모듈에 두어도 된다(works.js 의 FILTER, search.js 의 LABELS 처럼).
+ * 형식 이름(FORMS)과 공연/프로젝트 이름(KIND_NAMES)은 글자가 아니라 자료의 분류라
+ * 판정 함수 옆인 ui.js 에 있다.
+ */
+export const UI = {
+  /* 데이터를 못 읽었을 때. 뒤에 err.message 가 붙는다. */
+  loadError: { ko: '데이터를 읽지 못했습니다.', en: 'Could not load the data.' },
+
+  /* 아직 채워지지 않은 자리 */
+  photoPending: { ko: '사진 준비 중', en: 'Photo coming soon' },
+  tempImage: { ko: '임시 이미지', en: 'Placeholder image' },
+  bioPending: { ko: '소개문 준비 중', en: 'Text coming soon' },
+  noneYet: { ko: '아직 없습니다.', en: 'None yet.' },
+  notDecided: { ko: '아직 정해지지 않았습니다.', en: 'Not yet decided.' },
+
+  /* 홈 */
+  producersSub: { ko: '프로듀서 콜렉티브', en: "Producers' collective" },
+
+  /* 예술가·프로듀서 상세의 곁블록 제목 */
+  since: { ko: '도트와 함께', en: 'With DOT since' },
+  links: { ko: '링크', en: 'Links' },
+  worksTogether: { ko: '함께한 작업', en: 'Works together' },
+  producerInCharge: { ko: '담당 프로듀서', en: 'Producer' },
+  worksAtDot: { ko: '도트에서 맡은 작업', en: 'Works at DOT' },
+  connections: { ko: '연결', en: 'Connections' },
+  otherProducers: { ko: '다른 프로듀서', en: 'Other producers' },
+};
+
 /** 영문을 청했는데 영문이 없어 국문이 나오는가. '번역 준비 중' 알림의 판정. */
 export function isFallback(field) {
   if (!isEn() || field == null || typeof field === 'string') return false;

@@ -5,7 +5,7 @@
    형식만 늘 보이고, 나머지 셋은 '더 보기' 안에 접어 둔다. */
 
 import { loadSite } from './data.js';
-import { t, isEn } from './i18n.js';
+import { t, isEn, UI } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, isTempFile, formBadge,
@@ -136,7 +136,7 @@ function coverBlock(work, i) {
 
 function cardVisual(work, i) {
   const wrap = el('span.wrapimg');
-  const tmp = el('span.tmp', { text: '임시 이미지' });
+  const tmp = el('span.tmp', { text: t(UI.tempImage) });
 
   const markTemp = () => {
     if (!tmp.parentNode) wrap.prepend(tmp);
@@ -378,7 +378,7 @@ async function main() {
   } catch (err) {
     console.error(err);
     document.getElementById('works-list').append(
-      el('p.load-error', { text: `데이터를 읽지 못했습니다. ${err.message}` })
+      el('p.load-error', { text: `${t(UI.loadError)} ${err.message}` })
     );
   }
 }

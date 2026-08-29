@@ -4,7 +4,7 @@
    빈 껍데기를 남기지 않고 통째로 빠진다. */
 
 import { loadSite } from './data.js';
-import { t, lang, isFallback } from './i18n.js';
+import { t, lang, isFallback, UI } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance, workPhotos, isPublic,
@@ -701,7 +701,7 @@ async function main() {
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(
-      el('p.load-error', { text: `데이터를 읽지 못했습니다. ${err.message}` })
+      el('p.load-error', { text: `${t(UI.loadError)} ${err.message}` })
     );
   }
 }

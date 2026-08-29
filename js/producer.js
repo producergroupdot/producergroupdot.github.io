@@ -3,7 +3,7 @@
    다른 세 명의 페이지는 HTML 을 복사해 그 값만 바꾸면 된다. */
 
 import { loadSite } from './data.js';
-import { t } from './i18n.js';
+import { t, UI } from './i18n.js';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
   topBar, footer, pageUrl, link, formBadge, photo, faceCandidates,
@@ -88,7 +88,7 @@ function prose(person) {
   const text = t(person.bio);
   const box = el('div.prose');
   if (!text) {
-    box.append(el('p.pending-bio', { text: '소개문 준비 중' }));
+    box.append(el('p.pending-bio', { text: t(UI.bioPending) }));
     return box;
   }
   for (const para of text.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean)) {
@@ -126,8 +126,8 @@ function worksBlock(person, works) {
   }
 
   return sideBlock(
-    '도트에서 맡은 작업',
-    mine.length ? list : el('p.meta.empty', { text: '아직 없습니다.' })
+    t(UI.worksAtDot),
+    mine.length ? list : el('p.meta.empty', { text: t(UI.noneYet) })
   );
 }
 
@@ -153,7 +153,7 @@ function linksBlock(person) {
     );
   }
   if (mail) list.append(el('li', null, el('a', { href: `mailto:${mail}`, text: mail })));
-  return sideBlock('연결', list);
+  return sideBlock(t(UI.connections), list);
 }
 
 /** 다른 프로듀서. 아직 페이지가 없는 사람은 링크 없이 글자로만 둔다. */
@@ -172,7 +172,7 @@ function othersBlock(person, producers) {
       )
     );
   }
-  return sideBlock('다른 프로듀서', list);
+  return sideBlock(t(UI.otherProducers), list);
 }
 
 /* ---------- 부팅 ---------- */
@@ -211,7 +211,7 @@ async function main() {
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(
-      el('p.load-error', { text: `데이터를 읽지 못했습니다. ${err.message}` })
+      el('p.load-error', { text: `${t(UI.loadError)} ${err.message}` })
     );
   }
 }
