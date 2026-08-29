@@ -670,9 +670,24 @@ export function isTempFile(src) {
 }
 
 /** 작업 표지로 시도할 경로들 — cover 먼저, 없으면 01.jpg, 그 다음 poster.jpg. */
+/* 목록·카드에 쓰는 사진. 상세의 사진과 갈라 둔다 —
+   상세에서 넘겨 보는 사진과 목록에서 한 장으로 알아보는 사진은 고르는 기준이 다르다.
+   cardImage 가 있으면 그것, 없으면 photos 의 첫 장. 비워 두면 지금까지와 똑같이 움직인다. */
+/** cardImage 는 파일명만 적어도 되고 { src, credit } 로 적어도 된다. */
+export const cardImageSrc = (work) => {
+  const c = work?.cardImage;
+  if (!c) return '';
+  return photoSrc(work, typeof c === 'string' ? c : c.src);
+};
+
 export function coverCandidates(work) {
-  return [work.cover, workPhotos(work)[0], `img/works/${work.id}/01.jpg`, `img/works/${work.id}/poster.jpg`]
-    .filter((v, i, all) => v && all.indexOf(v) === i);
+  return [
+    cardImageSrc(work),
+    work.cover,
+    workPhotos(work)[0],
+    `img/works/${work.id}/01.jpg`,
+    `img/works/${work.id}/poster.jpg`,
+  ].filter((v, i, all) => v && all.indexOf(v) === i);
 }
 
 /**

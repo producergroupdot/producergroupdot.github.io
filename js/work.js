@@ -378,8 +378,9 @@ const MANY_PORTRAITS = 5; //  세로가 이만큼 넘게 모이면 3열로 좁�
    폴더에 있는 것 중 일부만 걸고 싶을 때. 표지는 늘 맨 앞이다. */
 const photoCandidates = (w) => {
   /* photos 를 적었으면 그 목록이 전부다 — 적힌 차례대로 나간다.
-     안 적었으면 예전처럼 폴더에서 번호 순으로 찾아본다. */
-  const list = w.photos?.length
+     빈 배열도 뜻이 있다: '상세에 실을 사진이 없다'. 그때는 폴더를 뒤지지 않는다.
+     아예 안 적었으면 예전처럼 폴더에서 번호 순으로 찾아본다. */
+  const list = Array.isArray(w.photos)
     ? workPhotos(w)
     : [
         w.cover,
@@ -650,6 +651,11 @@ async function main() {
       media.append(slideshow(photos.map((p) => p.src), bar.set), bar.node);
       return;
     }
+
+    /* photos: [] 라고 적어 둔 작업은 사진 자리를 아예 만들지 않는다 —
+       영상만 있는 작업에 빈 틀이나 색면이 남지 않게. 사진 칸을 적지 않은 작업은
+       종전처럼 색면으로 자리를 채운다(오른쪽 열이 통째로 비면 조판이 무너진다). */
+    if (!photos.length && Array.isArray(work.photos)) return;
 
     const shape = plan(photos);
     media.append(

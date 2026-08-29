@@ -6395,6 +6395,8 @@
       }
     ],
     "cover": "",
+    "cardImage": "play-on-01.jpg",
+    "photos": [],
     "homeFeature": [],
     "video": {
       "url": "https://youtu.be/qdsxPOC-SXI",
@@ -6498,6 +6500,8 @@
       }
     ],
     "cover": "",
+    "cardImage": "a-film-for-the-future-01.jpg",
+    "photos": [],
     "homeFeature": [],
     "video": {
       "url": "https://youtu.be/2sdxKXfH84w",
@@ -6614,6 +6618,14 @@
       }
     ],
     "cover": "",
+    "cardImage": {
+      "src": "higher-power-01.jpg",
+      "credit": {
+        "ko": "영상 스틸",
+        "en": "Video still"
+      }
+    },
+    "photos": [],
     "homeFeature": [],
     "video": {
       "url": "https://www.youtube.com/watch?v=3lfnR7OhZY8",
