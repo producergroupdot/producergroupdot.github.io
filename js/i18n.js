@@ -42,6 +42,9 @@ if (lang.current === 'en') {
   for (const m of document.querySelectorAll('meta[data-en]')) {
     if (m.dataset.en) m.setAttribute('content', m.dataset.en);
   }
+  /* <title> 도 같은 자리에서 바꾼다. 상세 페이지는 뒤에 작업·사람 이름으로 다시 쓴다. */
+  const ttl = document.querySelector('title[data-en]');
+  if (ttl?.dataset.en) document.title = ttl.dataset.en;
 }
 
 /** 언어를 바꾸고 같은 페이지를 다시 연다. 주소에도 남겨 링크를 공유할 수 있게 한다. */
