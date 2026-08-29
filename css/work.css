@@ -402,4 +402,17 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
   .seq-slide img{ max-height:62vh }
   .more{ padding-top:36px; margin-top:36px }
   .mgrid{ grid-template-columns:repeat(2,1fr); gap:18px }
+
+  /* 리드는 좁은 화면에서 크기로 강조하지 않는다 — 본문의 1.5배(23px)짜리 문장이
+     네 줄, 다섯 줄로 늘어지면 강조가 아니라 읽기 부담이 된다.
+     크기를 본문의 1.15배로 줄이고 굵기(600)로 세운다.
+     아래 여백은 --dlead 가 줄어든 만큼 배수를 키워 데스크톱과 같은 자리(약 36px)에
+     둔다 — 600 굵기는 가벼운 큰 글씨보다 아래 문단에 더 붙어 보인다. */
+  .dlayout{ --dlead: calc(var(--dbody) * 1.15) }
+  .dcol-text .lead{
+    font-weight:600;
+    line-height:1.45;
+    margin-bottom:calc(var(--dlead) * 2);
+  }
+  .dcol-text > .lead:first-child::before{ margin-top:-.225em }   /* (1 − 1.45) ÷ 2 */
 }
