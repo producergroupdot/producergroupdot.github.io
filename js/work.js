@@ -219,12 +219,15 @@ function buildAccordions(work) {
     const desc = (a, b) => -asc(a, b);
     const ended = (r) => (r.end || r.start) < today();
 
-    const past = runs.filter(ended).sort(desc);      // 최신이 앞
-    const upcoming = runs.filter((r) => !ended(r));
-    if (past.length) upcoming.push(past.shift());    // 가장 최근 지난 것 한 건을 일정으로
+    const past = runs.filter(ended).sort(desc);          // 최신이 앞
+    const upcoming = runs.filter((r) => !ended(r)).sort(asc);
 
+    /* 예정이 없으면 '일정' 칸을 아예 만들지 않는다.
+       막 끝난 한 건을 끌어올려 칸을 채우던 방식은 없앴다 — 지난 회차가
+       '일정' 이라는 이름 아래 놓이면 앞으로 볼 수 있는 것으로 읽힌다.
+       지난 것은 '지난 일정' 에 전부 그대로 있다. */
     return [
-      { title: t(UPCOMING), rows: upcoming.sort(asc).map(runRow) },
+      ...(upcoming.length ? [{ title: t(UPCOMING), rows: upcoming.map(runRow) }] : []),
       ...(past.length ? [{ title: t(PAST), rows: past.map(runRow) }] : []),
     ];
   };
