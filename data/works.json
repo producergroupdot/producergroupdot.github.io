@@ -1649,100 +1649,236 @@
     "yearFrom": 2023,
     "runs": [
       {
-        "start": "2023-07-01",
-        "end": "2023-07-31",
+        "start": "2018-05-05",
+        "end": "2018-05-07",
+        "city": {
+          "ko": "안산",
+          "en": "Ansan"
+        },
+        "venue": {
+          "ko": "안산국제거리극축제",
+          "en": "Ansan Street Arts Festival"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        },
+        "premiere": true
+      },
+      {
+        "start": "2018-10-06",
+        "end": "2018-10-07",
         "city": {
           "ko": "서울",
           "en": "Seoul"
         },
         "venue": {
-          "ko": "세종문화회관",
-          "en": "Sejong Center"
-        },
-        "kind": {
-          "ko": "초연",
-          "en": "Premiere"
+          "ko": "서울거리예술축제",
+          "en": "Seoul Street Arts Festival"
         },
         "dotRole": {
-          "ko": "",
-          "en": ""
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        }
+      },
+      {
+        "start": "2019-08-02",
+        "end": "2019-08-03",
+        "time": {
+          "ko": "22:00",
+          "en": "22:00"
         },
-        "premiere": true,
-        "link": "",
-        "time": "",
-        "date": {
-          "ko": "2023.7",
-          "en": "Jul 2023"
+        "city": {
+          "ko": "스톡턴온티스",
+          "en": "Stockton-on-Tees"
         },
-        "note": {
-          "ko": "싱크넥스트23",
-          "en": "SyncNext 23"
+        "venue": {
+          "ko": "스톡턴 국제 리버사이드 페스티벌",
+          "en": "Stockton International Riverside Festival"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        }
+      },
+      {
+        "start": "2019-08-08",
+        "end": "2019-08-09",
+        "time": {
+          "ko": "22:15",
+          "en": "22:15"
+        },
+        "city": {
+          "ko": "부다페스트",
+          "en": "Budapest"
+        },
+        "venue": {
+          "ko": "시게트 페스티벌",
+          "en": "Sziget Festival"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        }
+      },
+      {
+        "start": "2019-08-17",
+        "end": "2019-08-17",
+        "time": {
+          "ko": "21:00",
+          "en": "21:00"
+        },
+        "city": {
+          "ko": "바사노델그라파",
+          "en": "Bassano del Grappa"
+        },
+        "venue": {
+          "ko": "오페라에스타테 페스티벌",
+          "en": "Operaestate Festival"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        }
+      },
+      {
+        "start": "2019-08-30",
+        "end": "2019-08-30",
+        "time": {
+          "ko": "21:00",
+          "en": "21:00"
+        },
+        "city": {
+          "ko": "보르딩보르",
+          "en": "Vordingborg"
+        },
+        "venue": {
+          "ko": "웨이브스 페스티벌",
+          "en": "Waves Festival"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        }
+      },
+      {
+        "start": "2020-02-28",
+        "end": "2020-03-01",
+        "time": {
+          "ko": "20:45",
+          "en": "20:45"
+        },
+        "city": {
+          "ko": "웰링턴",
+          "en": "Wellington"
+        },
+        "venue": {
+          "ko": "퍼포먼스 아케이드",
+          "en": "The Performance Arcade"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        }
+      },
+      {
+        "start": "2022-08-10",
+        "end": "2022-08-12",
+        "time": {
+          "ko": "22:00",
+          "en": "22:00"
+        },
+        "city": {
+          "ko": "마드리드",
+          "en": "Madrid"
+        },
+        "venue": {
+          "ko": "베라노스 데 라 비야",
+          "en": "Veranos de la Villa"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        }
+      },
+      {
+        "start": "2024-03-08",
+        "end": "2024-03-11",
+        "time": {
+          "ko": "21:00",
+          "en": "21:00"
+        },
+        "city": {
+          "ko": "아들레이드",
+          "en": "Adelaide"
+        },
+        "venue": {
+          "ko": "워매들레이드",
+          "en": "WOMADelaide"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
+        }
+      },
+      {
+        "start": "2024-08-14",
+        "end": "2024-08-17",
+        "time": {
+          "ko": "21:15",
+          "en": "21:15"
+        },
+        "city": {
+          "ko": "오리악",
+          "en": "Aurillac"
+        },
+        "venue": {
+          "ko": "오리악 축제",
+          "en": "Festival d'Aurillac"
+        },
+        "dotRole": {
+          "ko": "투어 기획·운영 프로듀서그룹 도트",
+          "en": "Tour production: Producer Group DOT"
         }
       },
       {
         "start": "2026-07-04",
         "end": "2026-07-07",
+        "time": {
+          "ko": "22:00",
+          "en": "22:00"
+        },
         "city": {
           "ko": "아비뇽",
           "en": "Avignon"
         },
         "venue": {
-          "ko": "클루아트르 데 카름",
-          "en": "Cloître des Carmes"
-        },
-        "kind": {
-          "ko": "투어",
-          "en": "Tour"
+          "ko": "아비뇽 페스티벌",
+          "en": "Festival d'Avignon"
         },
         "dotRole": {
           "ko": "투어 기획·운영 프로듀서그룹 도트",
           "en": "Tour production: Producer Group DOT"
-        },
-        "link": "",
-        "time": {
-          "ko": "22:00",
-          "en": ""
-        },
-        "date": {
-          "ko": "",
-          "en": ""
-        },
-        "note": {
-          "ko": "아비뇽 페스티벌 초청",
-          "en": "Avignon Festival"
         }
       },
       {
         "start": "2026-07-15",
         "end": "2026-07-16",
+        "time": {
+          "ko": "20:30",
+          "en": "20:30"
+        },
         "city": {
           "ko": "바르셀로나",
           "en": "Barcelona"
         },
         "venue": {
-          "ko": "테아트레 리우레",
-          "en": "Teatre Lliure"
-        },
-        "kind": {
-          "ko": "투어",
-          "en": "Tour"
+          "ko": "그렉 페스티벌",
+          "en": "Grec Festival de Barcelona"
         },
         "dotRole": {
           "ko": "투어 기획·운영 프로듀서그룹 도트",
           "en": "Tour production: Producer Group DOT"
-        },
-        "link": "",
-        "time": {
-          "ko": "20:30",
-          "en": ""
-        },
-        "date": {
-          "ko": "",
-          "en": ""
-        },
-        "note": {
-          "ko": "그렉 페스티벌 초청",
-          "en": "Grec Festival"
         }
       }
     ],
