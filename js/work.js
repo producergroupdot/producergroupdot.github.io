@@ -8,7 +8,8 @@ import { t, lang, isFallback, UI } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance, workPhotos, isPublic,
-  latestRun, yearSpan, photoCreditFor, visibleWorks, videoId, isEmbeddedVideo, lightbox, richNodes,
+  latestRun, yearSpan, photoCreditFor, visibleWorks, videoId, videoIdOf, videoProvider,
+  isEmbeddedVideo, lightbox, richNodes,
   runWhen,
 } from './ui.js';
 
@@ -66,15 +67,23 @@ function premiereLine(work) {
 
 /* ---------- 영상 ---------- */
 
-/* privacy-enhanced 주소(youtube-nocookie)로만 심는다. 자동재생은 없다.
+/* 추적을 끈 주소로만 심는다. 자동재생은 없다.
    { embedId, label } 형태를 쓰고, 예전 문자열 형태도 받아준다.
-   videoId() 는 ui.js 에 있다 — 아카이브도 같은 판정을 쓴다. */
+   videoId() · videoProvider() 는 ui.js 에 있다 — 판정을 한 곳에 둔다. */
+
+/* 서비스마다 플레이어 주소가 다르다. 새 서비스가 생기면 여기 한 줄만 더한다.
+   유튜브는 privacy-enhanced 주소, 비메오는 dnt=1 로 추적을 끈다. */
+const EMBED_SRC = {
+  youtube: (id) => `https://www.youtube-nocookie.com/embed/${id}`,
+  vimeo: (id) => `https://player.vimeo.com/video/${id}?dnt=1`,
+};
 
 /** 16:9 임베드 하나. 아래·위 라벨은 부르는 쪽이 붙인다. */
-function embed(id, title) {
+function embed(id, title, provider = 'youtube') {
+  const src = (EMBED_SRC[provider] || EMBED_SRC.youtube)(id);
   return el('div.dvideo-box', null,
     el('iframe', {
-      src: `https://www.youtube-nocookie.com/embed/${id}`,
+      src,
       title,
       /* 유튜브 임베드는 한 개당 1MB 가까이 받는다 — 화면에 들어올 때까지 미룬다.
          닫힌 아코디언 안에 있으면 열기 전에는 받지 않는다. */
@@ -93,7 +102,7 @@ function video(work) {
   return el(
     'section.dvideo',
     null,
-    embed(id, `${titleText(t(work.title))} ${caption || '영상'}`),
+    embed(id, `${titleText(t(work.title))} ${caption || '영상'}`, videoProvider(work.video)),
     caption ? el('p.dvideo-cap.meta', { text: caption }) : null
   );
 }
@@ -103,7 +112,7 @@ function video(work) {
 const RECORDINGS = { ko: '기록 영상', en: 'Recordings' };
 
 function videoStack(work) {
-  const list = (work.videos || []).filter((v) => v.embedId);
+  const list = (work.videos || []).filter((v) => v.embedId || videoIdOf(v));
   if (!list.length) return null;
 
   const box = el('div.dvstack');
@@ -112,7 +121,7 @@ function videoStack(work) {
     box.append(
       el('figure.dvitem', null,
         label ? el('figcaption.meta', { text: label }) : null,
-        embed(v.embedId, `${titleText(t(work.title))} ${label}`))
+        embed(videoIdOf(v), `${titleText(t(work.title))} ${label}`, videoProvider(v)))
     );
   }
   return box;
@@ -197,22 +206,15 @@ function buildAccordions(work) {
   const runRow = (r) => ({ ko: line(r, 'ko', PREMIERE.ko), en: line(r, 'en', PREMIERE.en) });
 
   /**
-   * 공연은 '앞으로 있을 회차가 있느냐'로 갈린다.
+   * 회차 칸은 둘뿐이고 형식과 무관하게 모든 작업이 같은 이름을 쓴다.
+   * 가르는 것은 날짜뿐이다 — 사람이 회차를 옮기지 않는다.
    *
-   *   있으면  공연 일정(예정·진행 중, 가까운 것부터) + 공연 히스토리(지난 것, 최신이 위로)
-   *   없으면  공연 일정 하나에 전 회차를 최신순으로
+   *   일정      오늘 이후의 회차만      오름차순, 가까운 것이 위
+   *   지난 일정  오늘 이전의 모든 회차   내림차순, 최신이 위
    *
-   * 지난 공연만 남은 작업에까지 '히스토리'라는 칸을 따로 두면,
-   * 앞으로 아무 일도 없다는 것이 두 번 말해진다.
-   * 공연이 아닌 작업(리서치·네트워크·레지던시·축제)은 '일정' 하나로 둔다.
+   * 비면 그 칸을 그리지 않는다. 오늘 끝나는 회차는 아직 진행 중이라 '일정' 에 남는다 —
+   * 홈 NOW 와 Works 의 '현재 진행 중' 이 쓰는 ui.js 의 isRunLive() 와 같은 기준이다.
    */
-  /* '일정' 은 앞으로 있을 회차 전부에, 지난 것 중 가장 최근 한 건을 더한 것이다.
-     방금 끝난 회차가 '지난 일정' 으로 떨어져 버리면 지금 무엇을 하고 있는지가 안 보인다.
-     나머지 지난 회차는 '지난 일정' 으로 간다. 날짜로만 가르고 사람이 옮기지 않는다.
-
-     일정  — 오름차순. 가까운 것이 위. (막 끝난 한 건이 맨 위, 그 다음이 다음 회차)
-     지난 일정 — 내림차순. 최신이 위.
-     지난 일정이 비면 그 칸을 만들지 않는다. */
   const schedule = () => {
     if (!runs.length) return [];
     const asc = (a, b) => (a.start < b.start ? -1 : 1);

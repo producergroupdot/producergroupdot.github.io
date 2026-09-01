@@ -616,9 +616,30 @@ export const faceCandidates = (p, where) => {
 export const videoId = (work) => {
   const v = work.video;
   if (!v) return '';
-  if (typeof v === 'string') return (v.match(/([A-Za-z0-9_-]{11})(?:[?&/]|$)/) || [])[1] || '';
-  return v.embedId || '';
+  if (typeof v === 'string') return videoIdOf({ url: v });
+  return v.embedId || videoIdOf(v);
 };
+
+/* ---------- 어느 서비스의 영상인가 ----------
+   유튜브가 대부분이지만 비메오도 있다(물질). 플레이어 주소가 달라서
+   판정을 한 곳에 둔다 — 두 곳에 두면 한쪽만 고쳐져 빈 상자가 남는다.
+   provider 를 데이터에 적어 두면 그것을 먼저 따르고, 없으면 주소로 알아본다. */
+
+export const videoProvider = (v) => {
+  if (!v) return 'youtube';
+  if (typeof v !== 'string' && v.provider) return v.provider;
+  const url = typeof v === 'string' ? v : v.url || '';
+  return /vimeo\.com/i.test(url) ? 'vimeo' : 'youtube';
+};
+
+/** 주소에서 id 를 뽑는다. embedId 를 적어 두었으면 그쪽이 먼저다. */
+export function videoIdOf(v) {
+  if (!v) return '';
+  if (typeof v !== 'string' && v.embedId) return v.embedId;
+  const url = typeof v === 'string' ? v : v.url || '';
+  if (videoProvider(v) === 'vimeo') return (url.match(/vimeo\.com\/(?:video\/)?(\d+)/i) || [])[1] || '';
+  return (url.match(/([A-Za-z0-9_-]{11})(?:[?&/]|$)/) || [])[1] || '';
+}
 
 /** 그 작업의 임베드 영상과 같은 주소인가. */
 export const isEmbeddedVideo = (work, url) => {

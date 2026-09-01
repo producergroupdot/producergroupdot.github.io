@@ -1818,7 +1818,16 @@
       "ko": "",
       "en": ""
     },
-    "gallery": "sequence"
+    "gallery": "sequence",
+    "video": {
+      "url": "https://vimeo.com/407479394",
+      "provider": "vimeo",
+      "embedId": "407479394",
+      "label": {
+        "ko": "영상",
+        "en": "Video"
+      }
+    }
   },
   {
     "id": "ganghwa",
