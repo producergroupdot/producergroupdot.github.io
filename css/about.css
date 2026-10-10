@@ -162,7 +162,7 @@ a.person:hover h3{ text-decoration:underline; text-underline-offset:4px }
 .together:has(.together-strip:empty){ display:none }
 
 /* ---------- Contact (페이지 맨 아래 블록) ---------- */
-.contact{ padding:44px var(--pad) 0; scroll-margin-top:80px }
+.contact{ padding:44px var(--pad) 0; scroll-margin-top:var(--topbar-h) }   /* 붙어 있는 상단 바 뒤로 숨지 않게 */
 .contact h2{
   font-size:14px;
   letter-spacing:.02em;

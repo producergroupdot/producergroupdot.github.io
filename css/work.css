@@ -85,7 +85,7 @@
 /* ---------- 왼쪽 글 열 ---------- */
 /* 열이 넓어져도 글줄은 34em 에서 멈춘다. 깔끔함은 폭이 아니라 조판에서 나온다.
 
-   화면에 고정한다 — 상단 메뉴(--bar-h, js 가 잰다) 바로 아래 36px.
+   화면에 고정한다 — 상단 바(--topbar-h, tokens.css) 바로 아래 36px.
    글이 화면보다 길면 이 칸 안에서 스크롤된다. 칸 높이는 화면에서 메뉴와 위아래 여백을 뺀 만큼.
    overscroll-behavior 는 건드리지 않는다 — 칸 끝에 닿으면 페이지 스크롤로 넘어간다.
    오른쪽 패딩은 스크롤바 자리 — 글자가 막대에 붙지 않게. */
@@ -93,8 +93,8 @@
   max-width:34em;
   font-size:var(--dbody);
   position:sticky;
-  top:calc(var(--bar-h, 0px) + 36px);
-  max-height:calc(100vh - var(--bar-h, 0px) - 36px - 24px);
+  top:calc(var(--topbar-h) + 36px);
+  max-height:calc(100vh - var(--topbar-h) - 36px - 24px);
   overflow-y:auto;
   padding-right:14px;
 }

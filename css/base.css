@@ -51,12 +51,26 @@ h1,h2,h3,h4{ font-family:var(--disp); font-weight:var(--w-disp); letter-spacing:
 .wordmark-light{ font-weight:400 }
 
 /* ---------- 상단 메뉴 (홈 말고 모든 페이지) ---------- */
-/* 프로듀서 상세에서는 배경이 그 사람의 색으로 물든다 — background:inherit 유지. */
+/* 화면 위에 붙는다. 붙는 것은 바깥 상자 #top-bar 다 — sticky 는 부모 안에서만 붙으므로
+   바(.bar)에 걸면 높이가 같은 #top-bar 안에서 움직일 데가 없어 실제로는 붙지 않는다.
+
+   배경은 불투명하게. 비치면 아래로 지나가는 글자와 겹쳐 읽힌다.
+   프로듀서 상세에서는 body 가 그 사람의 색이므로 그 색을 그대로 물려받는다 —
+   크림을 깔면 색면을 가로질러 띠가 생긴다.
+
+   쌓임: 본문 위, 모바일 메뉴(100) · 검색 층(120) · 라이트박스(200) 아래. */
+#top-bar{
+  position:sticky; top:0; z-index:50;
+  background:var(--cream);
+}
+.producer-page #top-bar{ background:inherit }
+
+/* 높이는 --topbar-h 하나가 정한다(tokens.css). 줄바꿈하지 않는다 — 두 줄이 되면 그 값이 틀린다. */
 .bar{
-  display:flex; align-items:center; gap:26px; flex-wrap:wrap;
-  padding:16px var(--pad);
+  display:flex; align-items:center; gap:26px; flex-wrap:nowrap;
+  height:var(--topbar-h);
+  padding:0 var(--pad);
   border-bottom:.5px solid var(--line-s);
-  position:sticky; top:0; z-index:5;
   background:inherit;
 }
 .bar .wordmark{ font-size:15px }

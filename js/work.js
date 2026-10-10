@@ -528,18 +528,6 @@ function more(work, works, producerById) {
   return el('section.more', null, el('h2', { text: 'Explore more' }), grid);
 }
 
-/* ---------- 글 열 고정 ----------
-   왼쪽 열은 상단 메뉴 바로 아래에 고정되고, 글이 길면 그 칸 안에서 스크롤된다
-   (css/work.css 의 .dcol-text). 메뉴 높이는 줄바꿈에 따라 달라지므로
-   재어서 --bar-h 로 넘긴다 — 고정 위치와 칸 높이가 둘 다 이 값에서 나온다. */
-function pin() {
-  const bar = document.querySelector('.bar');
-  const fit = () =>
-    document.documentElement.style.setProperty('--bar-h', `${bar ? bar.offsetHeight : 0}px`);
-  fit();
-  window.addEventListener('resize', fit);
-}
-
 /* ---------- 부팅 ---------- */
 
 async function main() {
@@ -580,7 +568,6 @@ async function main() {
       more(work, site.works, site.producerById)
     );
     document.getElementById('page-footer').replaceChildren(footer());
-    pin();
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(
