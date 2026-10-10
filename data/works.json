@@ -222,61 +222,61 @@
         ]
       }
     ],
-    "cover": "img/works/sync-de-sync/01.jpg",
+    "cover": "img/works/sync-de-sync/sync-6.jpg",
     "photos": [
       {
-        "src": "01.jpg",
+        "src": "sync-1.jpg",
         "credit": {
           "ko": "",
           "en": ""
         }
       },
       {
-        "src": "02.jpg",
+        "src": "sync-2.jpg",
         "credit": {
           "ko": "",
           "en": ""
         }
       },
       {
-        "src": "03.jpg",
+        "src": "sync-3.jpg",
         "credit": {
           "ko": "",
           "en": ""
         }
       },
       {
-        "src": "04.jpg",
+        "src": "sync-4.jpg",
         "credit": {
           "ko": "",
           "en": ""
         }
       },
       {
-        "src": "05.jpg",
+        "src": "sync-05.jpg",
         "credit": {
-          "ko": "ⓒ박지선",
+          "ko": "",
           "en": ""
         }
       },
       {
-        "src": "06.jpg",
+        "src": "sync-6.jpg",
         "credit": {
-          "ko": "ⓒ박지선",
+          "ko": "",
           "en": ""
         }
       },
       {
-        "src": "07.jpg",
+        "src": "sync-7.jpg",
         "credit": {
-          "ko": "ⓒ박지선",
+          "ko": "",
           "en": ""
         }
       },
       {
-        "src": "08.jpg",
+        "src": "sync-8.jpg",
         "credit": {
-          "ko": "ⓒ박지선",
+          "ko": "",
           "en": ""
         }
       }
