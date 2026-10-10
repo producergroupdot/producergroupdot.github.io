@@ -529,7 +529,7 @@
     },
     "subtitle": {
       "ko": "잠의 공동 감각 함께 잠자기",
-      "en": ""
+      "en": "A Shared Sense of Sleep — Sleeping Together"
     },
     "artist": {
       "ko": "황수현",
@@ -553,7 +553,7 @@
         },
         "venue": {
           "ko": "서울문화재단 대학로극장 쿼드",
-          "en": ""
+          "en": "SFAC Theater QUAD"
         },
         "kind": {
           "ko": "초연",
@@ -582,11 +582,11 @@
     "status": "done",
     "lead": {
       "ko": "흐릿한 의식의 경계에서 미끄러지듯이 유영하다.",
-      "en": ""
+      "en": "Drifting, as if gliding, along the blurred edge of consciousness."
     },
     "body": {
       "ko": "대학로극장 쿼드 제작인 〈Zzz〉는 잠의 성질을 가지고 '감각'과 '공동'에 대해 이야기하는 황수현 안무가의 신작이다. 잠은 인간뿐 아니라 비인간 개체들이 생명을 유지하기 위해 수행하는 필수적인 활동이며, 인간은 잠을 자는 동안 신체를 재구성하고, 경험했던 세계의 기억을 저장하며 세계와의 연결성을 구축해 나간다. 안무가는 잠자는 행위의 취약성, 무방향성, 비선형적, 비가시적 특성에 주목하며, 약해진 의식 안에서 몸의 경직성을 풀고 타인의 몸을 만나는 경험을 만들어 낸다. 지극히 사적 영역의 행위인 잠은 '함께 잠자기'의 공동 경험을 통해 사회적 행위로 확장된다.\n\n또한, 보는 행위와 감각의 수용을 연습하는 장소로서 극장의 가능성을 탐구해 왔던 안무가는 〈Zzz〉에서 관객의 보는 행위를 무화(無化)시키고, 적극적으로 잠의 세계로 이끌며, 대안의 감각을 넘어 공동의 감각을 구축해 나간다.",
-      "en": ""
+      "en": "〈Zzz〉, produced by Daehakro Theater Quad, is a new work by choreographer Hwang Soohyun that takes up the properties of sleep to speak about 'sense' and 'the common'. Sleep is an activity essential to sustaining life, carried out by non-human beings as much as by humans. While asleep, the human body reconstitutes itself, stores the memory of the world it has experienced, and builds its connection to that world. The choreographer attends to the vulnerability, the directionlessness, the non-linear and invisible character of the act of sleeping, and makes an experience in which the body loosens its rigidity within a weakened consciousness and meets the bodies of others. Sleep, an act of the most private domain, expands into a social act through the shared experience of 'sleeping together'.\n\nThe choreographer has long explored the theatre as a place for practising the act of seeing and the reception of the senses. In 〈Zzz〉 she nullifies the audience's act of seeing, draws them actively into the world of sleep, and builds — beyond an alternative sense — a sense held in common."
     },
     "venue": {
       "ko": "",
@@ -617,7 +617,7 @@
         "rows": [
           {
             "ko": "장소 : 서울문화재단 대학로극장 쿼드",
-            "en": ""
+            "en": "Venue : SFAC Theater QUAD"
           }
         ]
       },
@@ -629,79 +629,79 @@
         "rows": [
           {
             "ko": "컨셉·안무 : 황수현",
-            "en": ""
+            "en": "Concept & Choreography : Hwang Soohyun"
           },
           {
             "ko": "공동 리서치·퍼포먼스 : 강호정 · 김주영 · 김현우 · 문형수 · 정한별 · 황다솜 · 황수현",
-            "en": ""
+            "en": "Collaborative Research & Performance : Kang Hojeong · Kim Juyoung · Kim Hyunwoo · Moon Hyungsoo · Jung Hanbyul · Hwang Dasom · Hwang Soohyun"
           },
           {
             "ko": "크리에이티브 프로듀서 : 박지선",
-            "en": ""
+            "en": "Creative Producer : Park Jisun"
           },
           {
             "ko": "사운드 : 카입",
-            "en": ""
+            "en": "Sound : Kayip"
           },
           {
             "ko": "무대 디자인 : 김종석",
-            "en": ""
+            "en": "Set Design : Kim Jongseok"
           },
           {
             "ko": "조명 디자인 : 공연화",
-            "en": ""
+            "en": "Lighting Design : Gong Yeonhwa"
           },
           {
             "ko": "의상 디자인 : 임선열",
-            "en": ""
+            "en": "Costume Design : Lim Seonyeol"
           },
           {
             "ko": "음향 감독 : 안창용",
-            "en": ""
+            "en": "Sound Supervisor : Ahn Changyong"
           },
           {
             "ko": "무대 감독 : 정찬홍",
-            "en": ""
+            "en": "Stage Manager : Jung Chanhong"
           },
           {
             "ko": "무대 조감독 : 전재윤",
-            "en": ""
+            "en": "Assistant Stage Manager : Jeon Jaeyun"
           },
           {
             "ko": "조명 프로그래머 : 김해빈",
-            "en": ""
+            "en": "Lighting Programmer : Kim Haebin"
           },
           {
             "ko": "조명 오퍼레이터 : 김현",
-            "en": ""
+            "en": "Lighting Operator : Kim Hyun"
           },
           {
             "ko": "음향 엔지니어 : 김여운",
-            "en": ""
+            "en": "Sound Engineer : Kim Yeoun"
           },
           {
             "ko": "음향 오퍼레이터 : 김우람",
-            "en": ""
+            "en": "Sound Operator : Kim Uram"
           },
           {
             "ko": "조명팀 : 강주연 · 김대현 · 김아연 · 이한융 · 정채림",
-            "en": ""
+            "en": "Lighting Crew : Kang Juyeon · Kim Daehyun · Kim Ayeon · Lee Hanyung · Jung Chaerim"
           },
           {
             "ko": "무대팀 : 김학준 · 정지훈",
-            "en": ""
+            "en": "Stage Crew : Kim Hakjun · Jung Jihoon"
           },
           {
             "ko": "리허설 보조 : 정나원",
-            "en": ""
+            "en": "Rehearsal Assistant : Jung Nawon"
           },
           {
             "ko": "사진 : 오석근",
-            "en": ""
+            "en": "Photography : Oh Suk Kuhn"
           },
           {
             "ko": "제작 : 서울문화재단 대학로극장 쿼드",
-            "en": ""
+            "en": "Produced by : SFAC Theater QUAD"
           }
         ]
       },
@@ -713,7 +713,7 @@
         "rows": [
           {
             "ko": "프로그램북",
-            "en": "",
+            "en": "Programme Book",
             "url": "https://drive.google.com/file/d/1jnvAx-6orAjmRmtFUk9plWyuh_VRFCOF/view"
           }
         ]
@@ -725,70 +725,70 @@
         "src": "zzz1.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz2.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz3.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz4.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz5.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz6.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz7.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz8.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz9.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       },
       {
         "src": "zzz10.webp",
         "credit": {
           "ko": "오석근 · 서울문화재단",
-          "en": ""
+          "en": "ⓒOh Suk Kuhn · Seoul Foundation for Arts and Culture"
         }
       }
     ],
