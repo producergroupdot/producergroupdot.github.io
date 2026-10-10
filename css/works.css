@@ -118,9 +118,17 @@
   margin:0 0 38px;
 }
 
-/* 표지 사진 */
-.card .wrapimg{ position:relative; display:block }
-.card .cover{ width:100%; height:auto; display:block }
+/* 표지 사진 — 모든 카드가 4:5 한 틀. 사진이 카드의 주인공이라 세로로 길게 준다.
+   비율이 같아야 세로·가로 사진이 섞인 줄에서도 사진 높이가 맞는다.
+   틀은 .wrapimg 가 갖고 사진은 그 안을 채운다(가로 사진은 양옆이 잘린다).
+   어디를 남길지는 js 가 data-pos 로 건다 — coverPosition() 한 곳의 판정. */
+.card .wrapimg{ position:relative; display:block; aspect-ratio:4/5; overflow:hidden }
+.card .cover{ width:100%; height:100%; display:block; object-fit:cover }
+.card .wrapimg[data-pos='top'] .cover{ object-position:50% 0 }
+.card .wrapimg[data-pos='bottom'] .cover{ object-position:50% 100% }
+/* 포스터는 자르지 않는다 — 원본 비율 그대로 크림 바탕 위에. */
+.card .wrapimg.poster{ background:var(--panel) }
+.card .wrapimg.poster .cover{ object-fit:contain }
 .card .tmp{
   position:absolute; left:8px; top:8px; z-index:1;
   font-family:var(--mono); font-size:10px; letter-spacing:.02em;
@@ -130,7 +138,7 @@
 
 /* 표지가 없을 때의 색면 */
 .card .block{
-  width:100%;
+  width:100%; height:100%;
   display:flex; align-items:flex-end;
   padding:16px;
   position:relative; overflow:hidden; isolation:isolate;
@@ -144,34 +152,24 @@
   font-family:var(--disp); font-weight:var(--w-disp);
   font-size:17px; letter-spacing:-.02em; opacity:.5;
 }
-/* 비율은 클래스로. 색면이 전부 같은 비율이면 메이슨리가 격자처럼 보인다. */
-.ar-1{ aspect-ratio:4/3 }
-.ar-2{ aspect-ratio:1/1 }
-.ar-3{ aspect-ratio:3/4 }
-.ar-4{ aspect-ratio:4/3 }
-.ar-5{ aspect-ratio:5/4 }
-.ar-6{ aspect-ratio:3/4 }
-
-/* 카드 글자 */
-.card .cat{ margin-top:11px }
-.card .cat + .t{ margin-top:6px }   /* 배지가 있으면 제목 위 여백을 줄인다 */
+/* 카드 글자 — 사진 바로 밑에 붙여 한 덩어리로 읽히게 한다.
+   제목만 키우고 나머지는 한 단계 작게: 사진 · 제목 · 그 밖의 세 층. */
+.card .cat{ margin-top:7px; font-size:9.5px }
+.card .cat + .t{ margin-top:4px }   /* 배지가 있으면 제목 위 여백을 줄인다 */
 .card .t{
   display:block;
-  margin-top:11px;
-  font-size:16px;
+  margin-top:7px;
+  font-size:19px;
+  line-height:1.35;
   text-decoration:underline;
   text-underline-offset:4px;
   text-decoration-thickness:.5px;
 }
 a.card:hover .t{ text-decoration-thickness:1.5px }
-.card .a{ display:block; font-size:14px; opacity:.62; margin-top:2px }
-.card .m{ display:flex; gap:5px; align-items:center; margin-top:7px }
+.card .a{ display:block; font-size:13px; opacity:.62; margin-top:3px }
+.card .m{ display:flex; gap:5px; align-items:center; margin-top:5px }
 .card .m .who i{ width:8px; height:8px }
-.card .m .yr{ font-family:var(--mono); font-size:11px; opacity:.5; margin-left:4px }
-
-.card .cities{ display:block; margin-top:4px; opacity:.5 }
-.card .drole{ display:block; margin-top:3px; opacity:.45 }
-.card .note-flag{ margin-top:8px }
+.card .m .yr{ font-family:var(--mono); font-size:10px; opacity:.5; margin-left:4px }
 
 .cards .empty{ padding:20px 0 40px; opacity:.6 }
 .count{ padding:14px var(--pad) 0; opacity:.55 }
@@ -188,7 +186,6 @@ a.card:hover .t{ text-decoration-thickness:1.5px }
 }
 @media (max-width:700px){
   .masthead{ padding:30px var(--pad) 22px }
-  .cards{ --cols:1 }
   .card{ margin-bottom:30px }
   .secbar{ gap:12px }
   /* 여섯 칸 → 세 칸씩 두 줄. 한 줄에 다 넣으면 글자가 뭉개진다. */
@@ -201,4 +198,10 @@ a.card:hover .t{ text-decoration-thickness:1.5px }
   }
   /* 접힌 두 줄 사이 구분선 */
   .secbar .seg button:nth-child(n+4){ border-top:.5px solid var(--line-s) }
+}
+/* 사진이 4:5 라 한 열로 펼치면 700px 폭에서 사진 하나가 화면을 넘는다.
+   두 열을 휴대폰 폭 가까이까지 끌고 내려온다. */
+@media (max-width:540px){
+  .cards{ --cols:1 }
+  .card .t{ font-size:18px }
 }
