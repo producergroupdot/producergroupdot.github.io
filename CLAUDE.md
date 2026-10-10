@@ -662,14 +662,18 @@ img/
    - 한 번에 바꾸는 명령 (저장소 루트에서, macOS):
 
      ```
-     sed -i '' -E "s/\?v=[0-9]{8}/?v=$(date +%Y%m%d)/g" *.html js/*.js
+     sed -i '' -E "s/\?v=[0-9]{8}/?v=$(date +%Y%m%d)/g" *.html producers/*.html artists/*.html js/*.js
      ```
+
+     **HTML 은 루트에만 있지 않습니다** — `producers/`·`artists/` 아래에도 있습니다.
+     처음에 루트만 고쳐 아홉 쪽이 꼬리표 없이 남았습니다. 새 폴더에 페이지를 두면 이 명령에 더하세요.
 
    새 HTML 페이지나 새 JS 파일을 만들 때도 링크와 `import` 에 같은 꼬리표를 붙이세요.
 
    **커밋 전 체크리스트**
    - [ ] `css/` · `js/` 를 고쳤으면 꼬리표 숫자를 오늘 날짜로 바꿨다 (위 명령)
    - [ ] `grep -rn "from '\./" js | grep -v '?v='` 가 아무것도 내지 않는다
+   - [ ] `grep -rnE '(href|src)="(css|js)/[^"?]+"' --include='*.html' . | grep -v _design` 가 아무것도 내지 않는다
 
 ---
 
