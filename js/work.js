@@ -491,24 +491,17 @@ function more(work, works, producerById) {
   return el('section.more', null, el('h2', { text: 'Explore more' }), grid);
 }
 
-/* ---------- 글 열 붙박이 ----------
-   왼쪽 열은 position:sticky 로 붙는다. 붙는 자리는 상단 메뉴 바로 아래 —
-   메뉴 높이는 줄바꿈에 따라 달라지므로 재어서 --bar-h 로 넘긴다.
-   글이 화면보다 길면 붙박이를 푼다(.free). 그대로 두면 아랫부분이 화면 밖에 갇혀
-   오른쪽 사진이 다 지나갈 때까지 읽을 수 없다. 칸 안에 스크롤을 따로 만들지 않는다. */
-function pin(col) {
+/* ---------- 글 열 고정 ----------
+   왼쪽 열은 상단 메뉴 바로 아래에 고정되고, 글이 길면 그 칸 안에서 스크롤된다
+   (css/work.css 의 .dcol-text). 메뉴 높이는 줄바꿈에 따라 달라지므로
+   재어서 --bar-h 로 넘긴다 — 고정 위치와 칸 높이가 둘 다 이 값에서 나온다. */
+function pin() {
   const bar = document.querySelector('.bar');
-  const fit = () => {
-    const barH = bar ? bar.offsetHeight : 0;
-    document.documentElement.style.setProperty('--bar-h', `${barH}px`);
-    col.classList.toggle('free', col.offsetHeight > window.innerHeight - barH - PIN_GAP);
-  };
+  const fit = () =>
+    document.documentElement.style.setProperty('--bar-h', `${bar ? bar.offsetHeight : 0}px`);
   fit();
   window.addEventListener('resize', fit);
-  /* 아코디언을 열고 닫으면 글 열의 높이가 바뀐다. */
-  if ('ResizeObserver' in window) new ResizeObserver(fit).observe(col);
 }
-const PIN_GAP = 36; //  메뉴 아래 띄우는 만큼. css 의 .dlayout 위 여백과 같다
 
 /* ---------- 부팅 ---------- */
 
@@ -545,7 +538,7 @@ async function main() {
       more(work, site.works, site.producerById)
     );
     document.getElementById('page-footer').replaceChildren(footer());
-    pin(text);
+    pin();
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(

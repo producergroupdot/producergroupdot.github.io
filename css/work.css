@@ -68,7 +68,7 @@
   align-items:start;
 
   /* 오른쪽 이미지 열의 오른쪽 끝은 상단 메뉴와 같은 여백 선(--pad)에서 멈춘다.
-     위 여백 36px 은 js/work.js 의 PIN_GAP 과 같다 — 붙박인 글 열이 같은 자리에 머문다. */
+     위 여백 36px 은 .dcol-text 의 고정 위치(top)와 같다 — 고정된 글 열이 처음 자리에 머문다. */
   padding:36px var(--pad) 0;
 }
 /* 영상도 사진도 없으면 오른쪽 열 없이 글만 한 열. 글줄 폭은 .dcol-text 가 막는다. */
@@ -77,16 +77,28 @@
 /* ---------- 왼쪽 글 열 ---------- */
 /* 열이 넓어져도 글줄은 34em 에서 멈춘다. 깔끔함은 폭이 아니라 조판에서 나온다.
 
-   스크롤에 붙박는다 — 상단 메뉴(--bar-h, js 가 잰다) 바로 아래 36px.
-   칸 안에 스크롤을 만들지 않는다(overflow 금지). 글이 화면보다 길면
-   js 가 .free 를 걸어 붙박이를 풀고, 글이 사진과 함께 흘러간다. */
+   화면에 고정한다 — 상단 메뉴(--bar-h, js 가 잰다) 바로 아래 36px.
+   글이 화면보다 길면 이 칸 안에서 스크롤된다. 칸 높이는 화면에서 메뉴와 위아래 여백을 뺀 만큼.
+   overscroll-behavior 는 건드리지 않는다 — 칸 끝에 닿으면 페이지 스크롤로 넘어간다.
+   오른쪽 패딩은 스크롤바 자리 — 글자가 막대에 붙지 않게. */
 .dcol-text{
   max-width:34em;
   font-size:var(--dbody);
   position:sticky;
   top:calc(var(--bar-h, 0px) + 36px);
+  max-height:calc(100vh - var(--bar-h, 0px) - 36px - 24px);
+  overflow-y:auto;
+  padding-right:14px;
 }
-.dcol-text.free{ position:static }
+/* 스크롤바는 가늘게, 그러나 늘 보이게 — 안 보이면 아래에 글이 더 있는 줄 모른다.
+   크롬·사파리는 ::-webkit-scrollbar 로 6px. 크롬은 scrollbar-width 를 함께 걸면
+   이쪽을 무시하므로, 그 속성은 파이어폭스에만 건다. */
+.dcol-text::-webkit-scrollbar{ width:6px }
+.dcol-text::-webkit-scrollbar-track{ background:transparent }
+.dcol-text::-webkit-scrollbar-thumb{ background:var(--line); border-radius:3px }
+@supports (-moz-appearance:none){
+  .dcol-text{ scrollbar-width:thin; scrollbar-color:var(--line) transparent }
+}
 .dcol-text .lead{
   font-size:var(--dlead);
   line-height:1.5;
@@ -184,11 +196,12 @@
 
 /* ---------- 오른쪽 영상·사진 열 ----------
    사진을 세로로 한 장씩 흘린다. 슬라이드·격자는 없다(js/work.js 의 머리말).
-   사진 사이 26px. */
+   사진 사이 12px. 크레딧은 사진 바로 아래 4px — 위 사진에 속한다는 것이 간격으로 보인다.
+   크레딧은 figure 안에 있으므로 크레딧에서 다음 사진까지도 이 12px 이다. */
 .dcol-media{
   display:flex;
   flex-direction:column;
-  gap:26px;
+  gap:12px;
   min-width:0;              /* 그리드 칸이 사진 폭에 밀려 넓어지지 않게 */
 }
 
@@ -223,7 +236,7 @@
 
 /* 그 사진의 촬영자·제공자 — 바로 아래 작은 글씨. */
 .dshot .credit{
-  padding-top:7px;
+  padding-top:4px;
   opacity:.5;
   line-height:1.4;
 }
@@ -280,7 +293,7 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
 /* 한 열로 쌓고 붙박이를 푼다. 두 열의 껍데기를 걷어내고(display:contents)
    덩어리마다 차례를 다시 준다 — 첫 사진 한 장을 본문 앞으로 올리는 것이 요점이다.
      제목 블록 → 리드 → 첫 사진 → 본문 → 영상·나머지 사진 → 아코디언
-   붙박이는 position:static 으로 풀리고, 칸 안의 스크롤은 처음부터 없다. */
+   고정과 칸 안 스크롤은 둘 다 푼다. */
 @media (max-width:860px){
   .dlayout{
     display:flex;
@@ -288,14 +301,17 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
     gap:0;                           /* 간격은 아래 덩어리마다 margin 으로 준다 */
     padding-top:26px;
   }
+  /* 고정과 칸 안 스크롤을 모두 푼다. display:contents 라 상자 자체가 없어지지만
+     속성이 남아 다시 살아나지 않게 명시해 둔다. */
+  .dcol-text{ position:static; max-height:none; overflow:visible; padding-right:0 }
   .dcol-text, .dcol-media{ display:contents }
   .dhead{ order:1; margin-bottom:0 }
   .dcol-text .lead{ order:2; margin-top:26px; margin-bottom:0 }
   .dshot.first{ order:3; margin-top:30px }
   .dbody{ order:4; margin-top:30px }
-  .dcol-media > *{ order:5; margin-top:20px }
+  .dcol-media > *{ order:5; margin-top:12px }
   .dcol-media > .dshot.first{ order:3; margin-top:30px }
-  .dcol-media > .dmore-photos{ order:5; margin-top:20px }
+  .dcol-media > .dmore-photos{ order:5; margin-top:12px }
   .acc{ order:6; margin-top:40px; padding-top:26px }
   .dshot.tall img.cover{ max-height:none; width:100% }
   .more{ padding-top:36px; margin-top:36px }
