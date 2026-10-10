@@ -569,6 +569,23 @@ Works 카드의 연도 범위·도시, 정렬 기준(가장 최근 회차), 홈 
 (`js/work.js`). 아코디언 `rows` 는 문자열 하나라 데이터에 직접 적습니다 — 새 줄을 적을 때
 `역할 : 이름` 으로 쓰세요.
 
+**영문은 영국식 철자입니다**(2026-10-10).
+
+```
+-re      theatre · centre · metre
+-our     colour · honour · behaviour · labour · neighbour
+-ise     organise · organisation · realise · recognise · civilisation
+-lling   travelling · labelled · modelling · cancelled
+programme (공연·행사) / program (컴퓨터 프로그램)
+practise (동사) / practice (명사)
+catalogue · dialogue · analogue · towards
+```
+
+**고유명사는 소유자 표기를 그대로 둡니다 — 사이트 규칙보다 우선합니다.**
+`SFAC Theater QUAD` · `Tiger Power Theater` · `Arko Arts Theater` · `National Theater of Korea` ·
+`Deutsches Theater` · `Asia Culture Center` · `Korea Tourism Organization` 처럼
+기관·단체·작품의 공식 영문명은 미국식이어도 고치지 않습니다. URL · id · 파일명도 해당 없습니다.
+
 **번역이 없어도 화면을 비우지 않습니다.** `en` 이 비면 `t()` 가 국문을 그대로 내보냅니다 —
 제목·부제·크레딧 모두 같은 규칙입니다. 본문이 그렇게 국문으로 떨어질 때만
 영문 화면 본문 맨 위에 한 줄 알립니다: `Korean text — English translation in progress`.
