@@ -9,7 +9,7 @@ import { t, isEn, UI } from './i18n.js';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, isTempFile, formBadge,
-  yearSpan, visibleWorks, kindLabel, coverPosition,
+  yearSpan, citiesLine, visibleWorks, kindLabel,
   FORMS, formKey, formLabelByKey, isRunningNow, placesOf, byYear,
 } from './ui.js';
 
@@ -52,6 +52,10 @@ const usedPlaces = (works) => {
   const keys = new Set(works.flatMap((w) => [...placesOf(w)]));
   return PLACES.filter((p) => keys.has(p.key));
 };
+
+/* 표지가 없는 카드의 색면 비율. 메이슨리가 밋밋해지지 않게 돌려 쓴다.
+   비율은 CSS 클래스로만 준다 — 인라인 style 금지. */
+const AR_COUNT = 6;
 
 const state = {
   form: 'all',
@@ -120,18 +124,17 @@ const filtered = (works) =>
 
 /* ---------- 카드 ---------- */
 
-function coverBlock(work) {
-  /* 표지가 없으면 담당 프로듀서 색면. 담당 미지정이면 라벤더.
-     비율은 사진과 같은 4:5 — 색면만 다른 높이면 줄이 어긋난다. */
+function coverBlock(work, i) {
+  /* 표지가 없으면 담당 프로듀서 색면. 담당 미지정이면 라벤더. */
   return el(
-    `span.block.${fieldClass(work.producers)}`,
+    `span.block.${fieldClass(work.producers)}.ar-${(i % AR_COUNT) + 1}`,
     null,
     el('i.blob-card'),
     el('span.block-t', { text: kindLabel(work) })
   );
 }
 
-function cardVisual(work) {
+function cardVisual(work, i) {
   const wrap = el('span.wrapimg');
   const tmp = el('span.tmp', { text: t(UI.tempImage) });
 
@@ -145,29 +148,22 @@ function cardVisual(work) {
       coverCandidates(work),
       () => {
         tmp.remove(); // 색면으로 떨어졌으면 임시 라벨도 같이 걷는다
-        return coverBlock(work);
+        return coverBlock(work, i);
       },
-      (src) => {
-        if (isTempFile(src)) markTemp();
-        /* 4:5 틀에 맞춰 자른다. 어디를 남길지는 coverPosition() 이 정하고(포스터는 위),
-           포스터는 자르지 않고 크림 바탕 위에 통째로 앉힌다. */
-        wrap.dataset.pos = coverPosition(work, src);
-        if (/poster/i.test(src.split('/').pop())) wrap.classList.add('poster');
-      }
+      (src) => isTempFile(src) && markTemp()
     )
   );
   return wrap;
 }
 
-function card(work, producerById) {
+function card(work, i, producerById) {
   return link(
     pageUrl('work', work.id),
     '.card',
     { 'aria-label': titleText(t(work.title)) },
     /* 값이 없는 줄은 아예 만들지 않는다 — 빈 span 은 빈 줄로 보인다.
-       카드는 사진이 주인공이다. 글은 배지 · 제목 · 예술가 · 색점 · 연도까지만 —
-       도시·도트의 역할·리드는 상세에 있다. */
-    cardVisual(work),
+       카드에는 리드를 쓰지 않는다(제목·예술가·연도까지만). */
+    cardVisual(work, i),
     formBadge(work),
     el('span.t', null, titleNodes(t(work.title))),
     t(work.artist) ? el('span.a', { text: t(work.artist) }) : null,
@@ -176,7 +172,13 @@ function card(work, producerById) {
       null,
       dots(work.producers, producerById),
       yearSpan(work) ? el('span.yr', { text: yearSpan(work) }) : null
-    )
+    ),
+    /* 회차가 열린 도시. 회차가 없는 작업에는 줄이 생기지 않는다. */
+    citiesLine(work) ? el('span.cities.meta', { text: citiesLine(work) }) : null,
+    /* 도트의 역할은 필터가 아니라 글자로만 보여준다 — 제작·공동제작·투어·기획. */
+    t(work.dotRole) ? el('span.drole.meta', { text: t(work.dotRole) }) : null,
+    /* 확인이 필요한 항목은 화면에 드러나 있어야 넷이 같이 볼 수 있다. */
+    t(work.note) ? el('span.note-flag.meta', { text: t(work.note) }) : null
   );
 }
 
@@ -346,7 +348,7 @@ function render(site, ui) {
     shown = [];
     cards.replaceChildren(el('p.empty', { text: t(L.empty) }));
   } else {
-    shown = list.map((w) => card(w, site.producerById));
+    shown = list.map((w, i) => card(w, i, site.producerById));
     columnise(cards, shown);
   }
 
