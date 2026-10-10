@@ -8,8 +8,8 @@
       "en": "sync de sync"
     },
     "subtitle": {
-      "ko": "황수현",
-      "en": "Hwang Soohyun"
+      "ko": "",
+      "en": ""
     },
     "artist": {
       "ko": "황수현",
@@ -529,12 +529,12 @@
       "en": "GWANTONG 18"
     },
     "subtitle": {
-      "ko": "김보람 · 앰비규어스댄스컴퍼니",
-      "en": "Kim Boram · Ambiguous Dance Company"
-    },
-    "artist": {
       "ko": "",
       "en": ""
+    },
+    "artist": {
+      "ko": "김보람 · 앰비규어스댄스컴퍼니",
+      "en": "Kim Boram · Ambiguous Dance Company"
     },
     "artists": [
       "ambiguous"

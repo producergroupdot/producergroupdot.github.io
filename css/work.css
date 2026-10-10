@@ -29,7 +29,13 @@
   letter-spacing:-.04em;
   line-height:1;
 }
-/* 국문 제목 바로 아래 영문 제목. 작고 옅게 — 부제보다 앞서 보이면 안 된다.
+/* 제목 덩어리 — 제목 → 영문 제목(4px) → 부제(8px). 붙여서 한 덩어리로 읽힌다.
+   덩어리와 예술가 줄 사이는 20px. 부제나 영문 제목이 없어도 같은 20px —
+   덩어리가 짧아질 뿐 간격은 같다(예술가 줄의 margin-top 하나가 정하므로).
+
+   두 층으로 읽힌다 — 제목·예술가가 진한 층, 영문 제목·부제가 흐린 층.
+
+   영문 제목은 작고 옅게 — 부제보다 앞서 보이면 안 된다.
    영문이 없거나 국문과 같으면 이 줄 자체가 만들어지지 않는다(js/work.js). */
 .dhead .dtitle-en{
   font-family:var(--disp);
@@ -38,19 +44,21 @@
   letter-spacing:-.02em;
   line-height:1.15;
   opacity:.45;
-  margin-top:8px;
+  margin-top:4px;
 }
 .dhead .dsub{
   font-size:clamp(16px,1.5vw,21px);
   font-weight:var(--w-body);
-  margin-top:14px;
+  color:var(--mute);
+  margin-top:8px;
   max-width:46ch;
 }
+/* 예술가 — 진한 층. 부제와 같은 크기에 한 단계 굵게, 글자색 그대로(--ink). */
 .dhead .dartist{
-  font-family:var(--mono);
-  font-size:11px;
-  opacity:.55;
-  margin-top:10px;
+  font-size:clamp(16px,1.5vw,21px);
+  font-weight:var(--w-mid);
+  line-height:1.35;
+  margin-top:20px;
 }
 
 /* 초연 한 줄 — 제목 아래, 본문 위. 공연에만 붙는다.
