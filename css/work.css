@@ -1,7 +1,7 @@
 /* work.css — 작업 상세.
-   두 열이다. 왼쪽 40% 가 글, 오른쪽 60% 가 영상과 사진.
-   두 열은 위쪽 기준선을 맞춘다 — 본문 첫 줄의 윗선과 첫 이미지의 윗변.
-   사진은 더 이상 절대 위치가 아니므로 높이를 JS 로 맞출 일이 없다. */
+   두 열이다. 왼쪽 36% 가 제목부터 아코디언까지의 글, 오른쪽 64% 가 영상과 사진.
+   왼쪽은 스크롤에 붙박이고 오른쪽 사진이 세로로 한 장씩 지나간다.
+   두 열은 위쪽 기준선을 맞춘다 — 제목 블록의 윗선과 첫 이미지의 윗변. */
 
 /* ---------- 조판 값 ---------- */
 /* 글 열의 크기는 여기 한 곳에서 나온다. 리드는 본문의 1.5배다. */
@@ -11,15 +11,21 @@
   --dlead: calc(var(--dbody) * 1.5);   /* 리드 = 본문의 1.5배 */
 }
 
-/* ---------- 제목 블록 ---------- */
-.dhead{ padding:52px var(--pad) 34px }
+/* ---------- 제목 블록 ----------
+   왼쪽 열 맨 위. 열이 좁으므로 제목 크기를 열 폭에 맞춰 둔다.
+   아래에 선 하나를 그어 리드·본문과 가른다. */
+.dhead{
+  padding-bottom:26px;
+  margin-bottom:30px;
+  border-bottom:.5px solid var(--line-s);
+}
 .dmeta{
   display:flex; align-items:center; gap:12px; flex-wrap:wrap;
   margin-bottom:18px;
 }
 .dmeta .dyear{ opacity:.55 }
 .dhead h1{
-  font-size:clamp(34px,5vw,68px);
+  font-size:clamp(32px,3.6vw,54px);
   letter-spacing:-.04em;
   line-height:1;
 }
@@ -48,34 +54,39 @@
 }
 
 /* 초연 한 줄 — 제목 아래, 본문 위. 공연에만 붙는다.
-   선 하나를 위에 얹어 제목 블록의 마지막 줄이라는 것을 보인다. */
+   바로 아래의 구분선이 제목 블록의 끝을 알린다. */
 .dhead .dpremiere{
-  margin-top:20px;
-  padding-top:14px;
-  border-top:.5px solid var(--line);
+  margin-top:16px;
   opacity:.7;
-  max-width:46ch;
 }
 
-/* ---------- 4 : 6 두 열 ---------- */
+/* ---------- 36 : 64 두 열 ---------- */
 .dlayout{
   display:grid;
-  grid-template-columns:4fr 6fr;
+  grid-template-columns:36fr 64fr;
   gap:clamp(38px,5vw,84px);          /* 사이는 넉넉히 */
   align-items:start;
 
-  /* 오른쪽 이미지 열의 오른쪽 끝은 상단 메뉴와 같은 여백 선(--pad)에서 멈춘다. */
+  /* 오른쪽 이미지 열의 오른쪽 끝은 상단 메뉴와 같은 여백 선(--pad)에서 멈춘다.
+     위 여백 36px 은 js/work.js 의 PIN_GAP 과 같다 — 붙박인 글 열이 같은 자리에 머문다. */
   padding:36px var(--pad) 0;
-  border-top:.5px solid var(--line-s);
 }
-.dlayout.no-text{ grid-template-columns:1fr }   /* 글이 없으면 사진이 다 쓴다 */
+/* 영상도 사진도 없으면 오른쪽 열 없이 글만 한 열. 글줄 폭은 .dcol-text 가 막는다. */
+.dlayout.solo{ grid-template-columns:minmax(0,1fr) }
 
 /* ---------- 왼쪽 글 열 ---------- */
-/* 열이 넓어져도 글줄은 34em 에서 멈춘다. 깔끔함은 폭이 아니라 조판에서 나온다. */
+/* 열이 넓어져도 글줄은 34em 에서 멈춘다. 깔끔함은 폭이 아니라 조판에서 나온다.
+
+   스크롤에 붙박는다 — 상단 메뉴(--bar-h, js 가 잰다) 바로 아래 36px.
+   칸 안에 스크롤을 만들지 않는다(overflow 금지). 글이 화면보다 길면
+   js 가 .free 를 걸어 붙박이를 풀고, 글이 사진과 함께 흘러간다. */
 .dcol-text{
   max-width:34em;
   font-size:var(--dbody);
+  position:sticky;
+  top:calc(var(--bar-h, 0px) + 36px);
 }
+.dcol-text.free{ position:static }
 .dcol-text .lead{
   font-size:var(--dlead);
   line-height:1.5;
@@ -118,16 +129,6 @@
   opacity:.6;
   line-height:1.7;
 }
-
-/* 첫 줄 위쪽의 반행(half-leading)을 걷어낸다.
-   이게 없으면 글자 윗선이 오른쪽 첫 이미지의 윗변보다 몇 px 내려가 보인다. */
-.dcol-text > :first-child::before{
-  content:'';
-  display:block;
-  width:0;
-}
-.dcol-text > p:first-child::before{ margin-top:-.375em }      /* (1 − 1.75) ÷ 2 */
-.dcol-text > .lead:first-child::before{ margin-top:-.25em }   /* (1 − 1.5) ÷ 2 — 리드가 먼저 오면 이쪽 */
 
 /* ---------- 아코디언 ---------- */
 /* 값이 없는 항목은 아예 만들지 않는다(js/work.js). 여기 규칙은 있는 것만 그린다.
@@ -181,14 +182,15 @@
 .dvstack .dvitem figcaption{ margin-bottom:7px; opacity:.6 }
 .dvstack .dvideo-box{ max-width:520px }
 
-/* ---------- 오른쪽 영상·사진 열 ---------- */
+/* ---------- 오른쪽 영상·사진 열 ----------
+   사진을 세로로 한 장씩 흘린다. 슬라이드·격자는 없다(js/work.js 의 머리말).
+   사진 사이 26px. */
 .dcol-media{
   display:flex;
   flex-direction:column;
   gap:26px;
   min-width:0;              /* 그리드 칸이 사진 폭에 밀려 넓어지지 않게 */
 }
-.dcol-media > *:first-child{ margin-top:0 }
 
 /* 영상 — 열 맨 위, 열 폭에 꽉 차게. 16:9 는 여기서 잡는다. */
 .dvideo-box{
@@ -204,147 +206,37 @@
 }
 .dvideo-cap{ padding-top:9px; opacity:.55 }
 
-/* 사진 아래 촬영자·제공자 한 줄. 사진 띠에 붙여 놓는다. */
-.dcol-media .credit{
-  margin-top:-14px;          /* 열의 gap(26px) 을 줄여 바로 아래에 붙인다 */
-  opacity:.5;
-  line-height:1.4;
-}
-
-/* 사진은 어느 패턴이든 자르지 않는다. */
-.dcol-media img.cover{
+/* 사진 한 장. 자르지 않는다. 가로는 열 전체 폭. */
+.dshot img.cover{
   width:100%;
   height:auto;
   object-fit:contain;
   display:block;
+  cursor:zoom-in;
 }
-
-/* 1장 — 가로는 열 전체 폭, 세로는 높이로 제한하고 왼쪽에 붙인다. */
+/* 세로 사진은 높이 68vh 에서 멈추고 왼쪽에 붙는다. .tall 은 사진이 뜬 뒤 js 가 건다. */
 .dshot.tall img.cover{
   width:auto;
   max-width:100%;
   max-height:68vh;
-  margin-right:auto;        /* 왼쪽 정렬 */
 }
 
-/* 2장 가로 — 위아래로 쌓기 */
-.dstack{ display:flex; flex-direction:column; gap:22px }
-
-/* 2장 세로 — 나란히 2열 */
-.dpair{ display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start }
-
-/* 3장 이상 세로 위주 — 그리드 */
-.dgrid{ display:grid; gap:18px; align-items:start }
-.dgrid.c2{ grid-template-columns:repeat(2,1fr) }
-.dgrid.c3{ grid-template-columns:repeat(3,1fr) }
-
-/* 사진이 한 장도 없을 때의 색면 */
-.dshot .block{
-  width:100%;
-  aspect-ratio:3/2;
-  display:flex; align-items:flex-end;
-  padding:16px;
-  position:relative; overflow:hidden; isolation:isolate;
-}
-.blob-card{
-  position:absolute; width:130px; height:130px; border-radius:50%;
-  right:-34px; top:-40px; z-index:-1;
-  background:currentColor; opacity:.18;
-}
-.block-t{
-  font-family:var(--disp); font-weight:var(--w-disp);
-  font-size:17px; letter-spacing:-.02em; opacity:.5;
+/* 그 사진의 촬영자·제공자 — 바로 아래 작은 글씨. */
+.dshot .credit{
+  padding-top:7px;
+  opacity:.5;
+  line-height:1.4;
 }
 
-/* ---------- 슬라이드 ----------
-   '3장 이상 가로 위주' 와 gallery:"sequence" 가 같은 컴포넌트를 쓴다. */
-.seq:focus-visible{ outline:2px solid currentColor; outline-offset:6px }
-.seq-stage{ position:relative }
-
-.seq-track{
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;     /* 스와이프하면 한 장씩 딱 멈춘다 */
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-  -ms-overflow-style:none;
-}
-.seq-track::-webkit-scrollbar{ display:none }
-
-.seq-slide{
-  flex:0 0 100%;
-  scroll-snap-align:center;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-}
-.seq-slide img{
-  max-height:72vh;
-  max-width:100%;
-  width:auto; height:auto;
-  object-fit:contain;               /* 자르지 않는다 */
-  display:block;
-  cursor:zoom-in;
-}
-
-/* 좌우 버튼 — 모바일에서는 감추고 스와이프만 */
-/* 서른 장을 넘겨야 하므로 크게. 누르고 있으면 계속 넘어간다(js/work.js). */
-.seq-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:58px; height:58px;
+/* 11번째부터 접힌 사진을 펼치는 버튼. 사진 열 맨 아래, 왼쪽에 붙는다. */
+.dshot[hidden]{ display:none }
+.dmore-photos{
+  align-self:flex-start;
+  padding:9px 16px;
+  background:none; color:inherit; cursor:pointer;
   border:.5px solid var(--line-s);
-  background:var(--cream);
-  color:inherit;
-  font-family:var(--mono); font-size:21px;
-  line-height:1;
-  cursor:pointer;
-  touch-action:none;                    /* 길게 누를 때 스크롤로 새지 않게 */
-  transition:background .2s, color .2s, opacity .2s;
 }
-.seq-btn:hover:not(:disabled){ background:var(--ink); color:var(--cream) }
-.seq-btn:disabled{ opacity:.25; cursor:default }
-.seq-prev{ left:0 }
-.seq-next{ right:0 }
-
-.seq-foot{
-  display:flex; align-items:center; gap:14px;
-  padding-top:14px;
-}
-.seq-count{ opacity:.55; font-variant-numeric:tabular-nums }
-
-/* 썸네일 줄 — 사진이 10장을 넘을 때만 만든다(js/work.js).
-   높이만 정하고 폭은 비율이 정하게 둔다. 옆으로 밀어서 본다. */
-.seq-thumbs{
-  display:flex;
-  gap:6px;
-  margin-top:12px;
-  overflow-x:auto;
-  scrollbar-width:none;
-  -ms-overflow-style:none;
-  padding-bottom:2px;
-}
-.seq-thumbs::-webkit-scrollbar{ display:none }
-.seq-thumb{
-  flex:0 0 auto;
-  height:56px;
-  padding:0; border:none; background:none;
-  cursor:pointer;
-  opacity:.45;
-  transition:opacity .18s, box-shadow .18s;
-}
-.seq-thumb img{
-  height:100%; width:auto;
-  object-fit:cover;
-  display:block;
-}
-.seq-thumb:hover{ opacity:.8 }
-.seq-thumb.on{
-  opacity:1;
-  box-shadow:0 0 0 2px currentColor;   /* 지금 보고 있는 장 */
-}
-.seq-thumb:focus-visible{ outline:2px solid currentColor; outline-offset:2px }
+.dmore-photos:hover{ background:var(--ink); color:var(--cream) }
 
 /* 원본 크기 라이트박스 */
 .lb{
@@ -385,34 +277,37 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
 .mcard .m .yr{ font-family:var(--mono); font-size:11px; opacity:.5; margin-left:4px }
 
 /* ---------- 모바일 ---------- */
-/* 한 열로 접고 차례는 글 → 사진. HTML 순서가 이미 그러하므로 뒤집지 않는다. */
-@media (max-width:900px){
-  .dhead{ padding:30px var(--pad) 24px }
+/* 한 열로 쌓고 붙박이를 푼다. 두 열의 껍데기를 걷어내고(display:contents)
+   덩어리마다 차례를 다시 준다 — 첫 사진 한 장을 본문 앞으로 올리는 것이 요점이다.
+     제목 블록 → 리드 → 첫 사진 → 본문 → 영상·나머지 사진 → 아코디언
+   붙박이는 position:static 으로 풀리고, 칸 안의 스크롤은 처음부터 없다. */
+@media (max-width:860px){
   .dlayout{
-    grid-template-columns:1fr;
-    gap:30px;
+    display:flex;
+    flex-direction:column;
+    gap:0;                           /* 간격은 아래 덩어리마다 margin 으로 준다 */
     padding-top:26px;
   }
-  .dcol-text{ max-width:none }
-  .acc{ margin-top:40px; padding-top:26px }
-  .dcol-media{ gap:20px }
+  .dcol-text, .dcol-media{ display:contents }
+  .dhead{ order:1; margin-bottom:0 }
+  .dcol-text .lead{ order:2; margin-top:26px; margin-bottom:0 }
+  .dshot.first{ order:3; margin-top:30px }
+  .dbody{ order:4; margin-top:30px }
+  .dcol-media > *{ order:5; margin-top:20px }
+  .dcol-media > .dshot.first{ order:3; margin-top:30px }
+  .dcol-media > .dmore-photos{ order:5; margin-top:20px }
+  .acc{ order:6; margin-top:40px; padding-top:26px }
   .dshot.tall img.cover{ max-height:none; width:100% }
-  .dpair, .dgrid{ grid-template-columns:1fr !important; gap:16px }
-  .seq-btn{ display:none }          /* 모바일은 스와이프만 */
-  .seq-slide img{ max-height:62vh }
   .more{ padding-top:36px; margin-top:36px }
   .mgrid{ grid-template-columns:repeat(2,1fr); gap:18px }
 
   /* 리드는 좁은 화면에서 크기로 강조하지 않는다 — 본문의 1.5배(23px)짜리 문장이
      네 줄, 다섯 줄로 늘어지면 강조가 아니라 읽기 부담이 된다.
      크기를 본문의 1.15배로 줄이고 굵기(600)로 세운다.
-     아래 여백은 --dlead 가 줄어든 만큼 배수를 키워 데스크톱과 같은 자리(약 36px)에
-     둔다 — 600 굵기는 가벼운 큰 글씨보다 아래 문단에 더 붙어 보인다. */
+     리드 아래는 첫 사진이 오므로 여백은 위 order 블록이 정한다. */
   .dlayout{ --dlead: calc(var(--dbody) * 1.15) }
   .dcol-text .lead{
     font-weight:600;
     line-height:1.45;
-    margin-bottom:calc(var(--dlead) * 2);
   }
-  .dcol-text > .lead:first-child::before{ margin-top:-.225em }   /* (1 − 1.45) ÷ 2 */
 }

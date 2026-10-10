@@ -108,6 +108,9 @@ export const UI = {
   worksAtDot: { ko: '도트에서 맡은 작업', en: 'Works at DOT' },
   connections: { ko: '연결', en: 'Connections' },
   otherProducers: { ko: '다른 프로듀서', en: 'Other producers' },
+
+  /* 작업 상세 — 사진이 많을 때 나머지를 펼치는 버튼. {n} 자리에 남은 장수가 들어간다. */
+  morePhotos: { ko: '사진 {n}장 더 보기', en: 'Show {n} more photos' },
 };
 
 /** 영문을 청했는데 영문이 없어 국문이 나오는가. '번역 준비 중' 알림의 판정. */

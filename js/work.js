@@ -1,5 +1,5 @@
-/* work.js — 작업 상세. 14건이 같은 템플릿을 쓴다.
-   화면은 두 열이다. 왼쪽 40% 가 글, 오른쪽 60% 가 영상과 사진.
+/* work.js — 작업 상세. 모든 작업이 같은 템플릿을 쓴다.
+   화면은 두 열이다. 왼쪽 36% 가 제목·글(붙박이), 오른쪽 64% 가 영상과 세로로 흐르는 사진.
    대부분의 작업은 본문·크레딧·회차가 비어 있으므로, 값이 없는 부분은
    빈 껍데기를 남기지 않고 통째로 빠진다. */
 
@@ -356,254 +356,114 @@ function accordions(work) {
 
 /* ---------- 왼쪽 글 열 ---------- */
 
-/* 폭이 아니라 조판으로 읽히게 한다 — 글줄은 34em 에서 멈추고,
+/* 제목 블록부터 아코디언까지 전부 이 열에 든다. 노트북에서는 스크롤에 붙박이고
+   (css/work.css), 모바일에서는 이 열이 풀려 사진과 한 줄로 섞인다.
+   그래서 덩어리마다 따로 감싸 둔다 — 제목 · 리드 · 본문 · 아코디언.
+   폭이 아니라 조판으로 읽히게 한다 — 글줄은 34em 에서 멈추고,
    문단 사이는 한 줄 높이만큼 벌리고, 아코디언은 선 하나와 큰 여백으로 떼어 놓는다. */
-function textCol(work) {
+function textCol(work, producerById) {
   const lead = t(work.lead);
   const body = t(work.body);
   const acc = accordions(work);
 
-  /* 리드도 본문도 아코디언도 없으면 글 열 자체를 만들지 않는다. */
-  if (!lead && !body && !acc) return null;
+  const box = el('div.dcol-text', null, head(work, producerById));
+  if (lead) box.append(el('p.lead', { text: lead }));
 
-  const box = el('div.dcol-text');
-
+  const main = el('div.dbody');
   /* 영문을 청했는데 본문 영문이 없어 국문이 그대로 나오는 경우.
      번역이 없다고 화면을 비우지 않는다 — 대신 무엇을 보고 있는지 한 줄로 알린다. */
-  if (isFallback(work.body)) {
-    box.append(el('p.dtranslating.meta', { text: 'Korean text — English translation in progress' }));
+  if (body && isFallback(work.body)) {
+    main.append(el('p.dtranslating.meta', { text: 'Korean text — English translation in progress' }));
   }
-
-  if (lead) box.append(el('p.lead', { text: lead }));
   if (body) {
-    for (const para of body.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean)) {
-      box.append(el('p', null, richNodes(para)));   // {hex} 는 SVG, {work:…} 는 링크로
+    for (const para of body.split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean)) {
+      main.append(el('p', null, richNodes(para)));   // {hex} 는 SVG, {work:…} 는 링크로
     }
   }
   /* 작품 안의 노랫말·대사. 본문이 아니므로 들여쓰고 옅게, 줄바꿈을 그대로 살린다
      (CSS 의 white-space:pre-line). 행을 다시 흘리면 노랫말이 아니게 된다. */
-  if (t(work.quote)) box.append(el('p.dquote', { text: t(work.quote) }));
+  if (t(work.quote)) main.append(el('p.dquote', { text: t(work.quote) }));
 
   /* 본문 각주. 낱말 하나를 풀어 주는 짧은 글이라 본문보다 작게, 바로 아래에 둔다.
      Works 카드의 '확인 필요' 표시(note)와는 다른 필드다(bodyNote). */
-  if (t(work.bodyNote)) box.append(el('p.dnote.meta', { text: t(work.bodyNote) }));
+  if (t(work.bodyNote)) main.append(el('p.dnote.meta', { text: t(work.bodyNote) }));
+  if (main.children.length) box.append(main);
   if (acc) box.append(acc);
   return box;
 }
 
 /* ---------- 오른쪽 사진 ----------
-   배치는 사진 수와 비율로 정한다. 패턴은 아래 다섯 가지뿐이고 새로 만들지 않는다.
+   사진을 세로로 한 장씩, 열 폭 그대로 흘린다. 슬라이드도 격자도 쓰지 않는다 —
+   넘겨야 보이는 사진은 대부분 보지 않고 지나간다.
+   흘려 두면 글을 읽는 동안 옆에서 사진이 지나간다.
 
-     1장            가로 → 열 전체 폭 / 세로 → 최대 높이 68vh, 왼쪽 정렬
-     2장 가로       위아래로 쌓기
-     2장 세로       나란히 2열
-     3장 이상 가로 위주   슬라이드
-     3장 이상 세로 위주   2열 그리드(세로가 아주 많으면 3열)
+   가로 사진은 열 전체 폭, 세로 사진은 높이 68vh 에서 멈추고 왼쪽에 붙는다.
+   어느 쪽이든 자르지 않는다. 크레딧은 그 사진 바로 아래에 붙는다. */
 
-   gallery:"sequence" 는 장수·비율과 무관하게 늘 슬라이드다.
-   어느 패턴이든 자르지 않는다(object-fit: contain). 모바일은 전부 1열. */
+const SHOW_FIRST = 10; //  처음에 펼쳐 두는 장수. 나머지는 '더 보기' 뒤에 접힌다
+const PHOTO_MAX = 35; //  img/works/<id>/01.jpg … 35.jpg 까지 찾아본다 (photos 를 적지 않은 작업만)
 
-const PHOTO_MAX = 35; //  img/works/<id>/01.jpg … 35.jpg 까지 찾아본다 (없는 번호는 조용히 빠진다)
-const MANY_PORTRAITS = 5; //  세로가 이만큼 넘게 모이면 3열로 좁힌다
+/* photos 를 적었으면 그 목록이 전부다 — 적힌 차례대로 나간다.
+   빈 배열도 뜻이 있다: '상세에 실을 사진이 없다'. 그때는 폴더를 뒤지지 않는다.
+   아예 안 적었으면 예전처럼 폴더에서 번호 순으로 찾아본다(그때만 실제로 떠 보아 거른다). */
+async function photoList(work) {
+  if (Array.isArray(work.photos)) return [...new Set(workPhotos(work))];
+  const tries = [
+    work.cover,
+    ...Array.from({ length: PHOTO_MAX }, (_, i) => `img/works/${work.id}/${nn(i + 1)}.jpg`),
+    `img/works/${work.id}/poster.jpg`,
+  ];
+  const found = await Promise.all([...new Set(tries.filter(Boolean))].map((src) =>
+    new Promise((done) => {
+      const im = new Image();
+      im.onload = () => done(src);
+      im.onerror = () => done(null);
+      im.src = src;
+    })));
+  return found.filter(Boolean);
+}
 
-/* 폴더에 파일만 넣으면 뜨는 것이 기본이다(01.jpg … 12.jpg).
-   photos 배열을 적으면 그 목록만 쓴다 — 파일 이름이 다른 형식이거나
-   폴더에 있는 것 중 일부만 걸고 싶을 때. 표지는 늘 맨 앞이다. */
-const photoCandidates = (w) => {
-  /* photos 를 적었으면 그 목록이 전부다 — 적힌 차례대로 나간다.
-     빈 배열도 뜻이 있다: '상세에 실을 사진이 없다'. 그때는 폴더를 뒤지지 않는다.
-     아예 안 적었으면 예전처럼 폴더에서 번호 순으로 찾아본다. */
-  const list = Array.isArray(w.photos)
-    ? workPhotos(w)
-    : [
-        w.cover,
-        ...Array.from({ length: PHOTO_MAX }, (_, i) => `img/works/${w.id}/${nn(i + 1)}.jpg`),
-        `img/works/${w.id}/poster.jpg`,
-      ];
-  return [...new Set(list.filter(Boolean))];
-};
-
-/** 가로 w/h > 1.2 · 세로 < 0.85 · 그 사이는 정사각 */
-const classify = (r) => (r > 1.2 ? 'landscape' : r < 0.85 ? 'portrait' : 'square');
-
-/** 실제로 뜨는 사진만 골라 크기까지 재어 온다. 없는 파일은 조용히 빠진다. */
-function probe(src) {
-  return new Promise((done) => {
-    const im = new Image();
-    im.onload = () =>
-      done({ src, w: im.naturalWidth, h: im.naturalHeight, kind: classify(im.naturalWidth / im.naturalHeight) });
-    im.onerror = () => done(null);
-    im.src = src;
+/** 사진 한 장 + 그 사진의 크레딧. 세로인지는 뜬 뒤에 재어 .tall 을 건다. */
+function shot(work, src, i) {
+  const fig = el('figure.dshot');
+  const img = el('img.cover', { src, alt: '', loading: i < 2 ? 'eager' : 'lazy' });
+  img.addEventListener('load', () => {
+    if (img.naturalWidth / img.naturalHeight < 0.85) fig.classList.add('tall');
   });
-}
-
-const collectPhotos = async (work) =>
-  (await Promise.all(photoCandidates(work).map(probe))).filter(Boolean);
-
-/** 사진 수와 비율로 패턴 하나를 고른다. */
-function plan(photos) {
-  const n = photos.length;
-  if (!n) return { kind: 'none' };
-
-  const land = photos.filter((p) => p.kind === 'landscape').length;
-  const port = photos.filter((p) => p.kind === 'portrait').length;
-
-  if (n === 1) return { kind: 'one', tall: photos[0].kind === 'portrait' };
-  if (n === 2) return port === 2 ? { kind: 'pair' } : { kind: 'stack' };
-
-  /* 가로가 더 많으면 넘겨 보고, 아니면 늘어놓는다.
-     반반일 때는 그리드로 간다 — 세로가 섞인 슬라이드는 높이가 널뛴다. */
-  if (land > port) return { kind: 'slides' };
-  return { kind: 'grid', cols: port > MANY_PORTRAITS ? 'c3' : 'c2' };
-}
-
-/** 자르지 않는 사진 한 장. */
-function shot(p, cls = '', eager = false) {
-  const fig = el(`figure${cls}`);
-  fig.append(el('img.cover', { src: p.src, alt: '', loading: eager ? 'eager' : 'lazy' }));
+  img.addEventListener('error', () => fig.remove());   // 없는 파일은 조용히 빠진다
+  img.addEventListener('click', () => lightbox(src));
+  fig.append(img);
+  /* credit 은 적힌 그대로 찍는다. 비어 있으면 그 사진만 크레딧 없이 나온다. */
+  const credit = work.photoCreditShow === false ? '' : photoCreditFor(work, src);
+  if (credit) fig.append(el('figcaption.credit.meta', { text: credit }));
   return fig;
 }
 
-/* 사진 아래 촬영자·제공자 한 줄. 슬라이드에서는 넘길 때마다 이 줄이 함께 바뀐다.
-   한 화면에 여러 장이 함께 보이는 배치에서는 서로 다른 크레딧을 모아 적는다.
-   works.json 의 note 는 '확인 필요' 표시라 여기 넘기지 않는다 —
-   넘기면 크레딧 자리에 그 글자가 찍힌다.
-   creditType 은 쓰지 않는다 — 파일별 크레딧은 'ⓒ…' 처럼 표기가 문자열 안에 이미 있다. */
-function creditBar(work) {
-  const node = el('p.credit.meta');
-  const set = (srcs) => {
-    if (work.photoCreditShow === false) { node.hidden = true; return; }
-    const seen = [...new Set([].concat(srcs).map((x) => photoCreditFor(work, x)).filter(Boolean))];
-    node.textContent = seen.join(' · ');
-    node.hidden = !seen.length;      // 적을 것이 없으면 줄을 만들지 않는다
-  };
-  return { node, set };
+/* SHOW_FIRST 장을 넘는 사진은 hidden 으로 접고 버튼 하나를 둔다.
+   누르면 전부 펼치고 버튼은 사라진다 — 접기는 두지 않는다.
+   접힌 사진도 loading="lazy" 이므로 펼치기 전에는 받지 않는다(display:none 은 받지 않는다). */
+function foldPhotos(shots) {
+  const rest = shots.slice(SHOW_FIRST);
+  if (!rest.length) return null;
+  rest.forEach((f) => { f.hidden = true; });
+  const btn = el('button.dmore-photos.meta', {
+    type: 'button',
+    text: t(UI.morePhotos).replace('{n}', rest.length),
+  });
+  btn.addEventListener('click', () => {
+    rest.forEach((f) => { f.hidden = false; });
+    btn.remove();
+  });
+  return btn;
 }
+
+/* ---------- Explore more ---------- */
 
 /** 표지가 하나도 없을 때의 색면. Works 카드와 같은 규칙. */
 const colourBlock = (work) =>
   el(`span.block.${fieldClass(work.producers)}`, null,
     el('i.blob-card'),
     el('span.block-t', { text: kindName(work) }));
-
-/** 고른 패턴대로 그린다. 슬라이드는 sequence 모드와 같은 컴포넌트를 쓴다. */
-function photoArea(photos, p, onSlide) {
-  if (p.kind === 'one') return shot(photos[0], `.dshot${p.tall ? '.tall' : ''}`, true);
-  if (p.kind === 'stack') return el('div.dstack', null, ...photos.map((x, i) => shot(x, '', i === 0)));
-  if (p.kind === 'pair') return el('div.dpair', null, ...photos.map((x, i) => shot(x, '', i === 0)));
-  if (p.kind === 'slides') return slideshow(photos.map((x) => x.src), onSlide);
-  return el(`div.dgrid.${p.cols}`, null, ...photos.map((x, i) => shot(x, '', i < 2)));
-}
-
-/* ---------- 슬라이드 ----------
-   한 장씩 넘겨 본다. 자동 배치의 '3장 이상 가로 위주' 와
-   gallery:"sequence" 가 이 하나를 함께 쓴다 — 두 벌을 두면 한쪽만 고쳐진다.
-   어떤 경우에도 자르지 않는다(contain). */
-
-
-const THUMBS_FROM = 10; //  사진이 이보다 많을 때만 아래에 썸네일 줄을 만든다
-
-/* 누르고 있으면 계속 넘어간다. 30장을 한 번씩 눌러 넘기게 두지 않기 위한 것.
-   처음 한 번은 바로, 그 뒤로는 조금 뜸을 들였다가 이어서. */
-function holdToRepeat(btn, step) {
-  let first = null, tick = null;
-  const stop = () => { clearTimeout(first); clearInterval(tick); first = tick = null; };
-  btn.addEventListener('pointerdown', (e) => {
-    if (btn.disabled) return;
-    e.preventDefault();
-    btn.setPointerCapture?.(e.pointerId);
-    step();
-    first = setTimeout(() => { tick = setInterval(step, 170); }, 420);
-  });
-  for (const ev of ['pointerup', 'pointercancel', 'pointerleave']) btn.addEventListener(ev, stop);
-  /* pointerdown 에서 이미 한 칸 넘겼으므로 click 은 무시한다 — 두 칸 넘어가지 않게. */
-  btn.addEventListener('click', (e) => e.preventDefault());
-}
-
-function slideshow(files, onSlide) {
-  const list = [...new Set((files || []).filter(Boolean))];
-  if (!list.length) return null;
-
-  const track = el('div.seq-track');
-  list.forEach((src, i) => {
-    const slide = el('figure.seq-slide');
-    const img = el('img', { src, alt: '', loading: i < 2 ? 'eager' : 'lazy' });
-    img.addEventListener('click', () => lightbox(src));
-    slide.append(img);
-    track.append(slide);
-  });
-
-  /* 점은 두지 않는다 — 서른 개가 늘어서면 지금 어디인지 알려주지 못한다.
-     자리는 '12 / 30' 숫자가 알려준다. */
-  const counter = el('span.seq-count.meta');
-
-  const prev = el('button.seq-btn.seq-prev', { type: 'button', 'aria-label': '이전 사진', text: '←' });
-  const next = el('button.seq-btn.seq-next', { type: 'button', 'aria-label': '다음 사진', text: '→' });
-
-  /* 썸네일 줄. 장수가 많을 때만 만든다 — 적으면 화살표로 충분하다. */
-  const many = list.length > THUMBS_FROM;
-  const thumbs = many ? el('div.seq-thumbs', { role: 'tablist', 'aria-label': '사진 고르기' }) : null;
-  if (thumbs) {
-    list.forEach((src, i) => {
-      const b = el('button.seq-thumb', { type: 'button', 'aria-label': `${i + 1}번째 사진` });
-      b.append(el('img', { src, alt: '', loading: 'lazy' }));
-      b.addEventListener('click', () => show(i));
-      thumbs.append(b);
-    });
-  }
-
-  let at = 0;
-  const show = (i, smooth = true) => {
-    at = Math.max(0, Math.min(list.length - 1, i));
-    track.scrollTo({ left: at * track.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
-    sync();
-  };
-  const sync = () => {
-    onSlide?.(list[at]);            // 크레딧 줄이 이 사진을 따라온다
-    counter.textContent = `${at + 1} / ${list.length}`;
-    prev.disabled = at === 0;
-    next.disabled = at === list.length - 1;
-    if (!thumbs) return;
-    [...thumbs.children].forEach((b, i) => {
-      const on = i === at;
-      b.classList.toggle('on', on);
-      b.setAttribute('aria-selected', String(on));
-      /* 고른 썸네일이 줄 밖으로 나가 있으면 끌어온다. */
-      if (on) b.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' });
-    });
-  };
-
-  holdToRepeat(prev, () => show(at - 1));
-  holdToRepeat(next, () => show(at + 1));
-
-  /* 스와이프는 브라우저의 가로 스크롤에 맡긴다 — 스크롤이 멎으면 위치를 다시 읽는다. */
-  let timer = null;
-  track.addEventListener('scroll', () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      at = Math.round(track.scrollLeft / track.clientWidth);
-      sync();
-    }, 90);
-  });
-
-  const box = el('section.seq', { 'aria-roledescription': 'carousel' },
-    el('div.seq-stage', null, track, prev, next),
-    el('div.seq-foot', null, counter),
-    thumbs);
-
-  /* 키보드 ← → 는 이 영역에 들어와 있을 때만 듣는다. */
-  box.tabIndex = 0;
-  box.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') { e.preventDefault(); show(at - 1); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); show(at + 1); }
-  });
-
-  sync();
-  window.addEventListener('resize', () => show(at, false));
-  return box;
-}
-
-/* ---------- Explore more ---------- */
 
 function more(work, works, producerById) {
   /* 영문판에서 감춘 작업은 Explore more 에도 나오지 않는다. */
@@ -631,6 +491,25 @@ function more(work, works, producerById) {
   return el('section.more', null, el('h2', { text: 'Explore more' }), grid);
 }
 
+/* ---------- 글 열 붙박이 ----------
+   왼쪽 열은 position:sticky 로 붙는다. 붙는 자리는 상단 메뉴 바로 아래 —
+   메뉴 높이는 줄바꿈에 따라 달라지므로 재어서 --bar-h 로 넘긴다.
+   글이 화면보다 길면 붙박이를 푼다(.free). 그대로 두면 아랫부분이 화면 밖에 갇혀
+   오른쪽 사진이 다 지나갈 때까지 읽을 수 없다. 칸 안에 스크롤을 따로 만들지 않는다. */
+function pin(col) {
+  const bar = document.querySelector('.bar');
+  const fit = () => {
+    const barH = bar ? bar.offsetHeight : 0;
+    document.documentElement.style.setProperty('--bar-h', `${barH}px`);
+    col.classList.toggle('free', col.offsetHeight > window.innerHeight - barH - PIN_GAP);
+  };
+  fit();
+  window.addEventListener('resize', fit);
+  /* 아코디언을 열고 닫으면 글 열의 높이가 바뀐다. */
+  if ('ResizeObserver' in window) new ResizeObserver(fit).observe(col);
+}
+const PIN_GAP = 36; //  메뉴 아래 띄우는 만큼. css 의 .dlayout 위 여백과 같다
+
 /* ---------- 부팅 ---------- */
 
 async function main() {
@@ -646,63 +525,27 @@ async function main() {
 
     document.getElementById('top-bar').replaceChildren(topBar(site, 'works'));
 
-    /* 두 열. 사진은 아직 재는 중이라 영상만 먼저 들어간다 —
-       열 자체를 미리 만들어 두어야 글이 두 번 자리를 옮기지 않는다. */
-    const media = el('div.dcol-media', null, video(work));
-    const text = textCol(work);
-    /* 글이 아직 없는 작업은 사진이 두 열을 다 쓴다 — 빈 왼쪽 칸을 남기지 않는다. */
-    const layout = el(`section.dlayout${text ? '' : '.no-text'}`, null, text, media);
+    /* 사진 목록을 먼저 정한다 — 사진이 없으면 두 열을 만들지 않기 때문이다.
+       photos 를 적은 작업은 기다릴 것이 없다. */
+    const photos = await photoList(work);
+    const shots = photos.map((src, i) => shot(work, src, i));
+    /* 모바일에서는 첫 사진 한 장만 본문 앞으로 올라간다(css/work.css 의 order). */
+    shots[0]?.classList.add('first');
+
+    /* 영상은 오른쪽 열 맨 위. 영상도 사진도 없으면 오른쪽 열 없이 글만 한 열로 둔다. */
+    const vid = video(work);
+    const media = vid || shots.length
+      ? el('div.dcol-media', null, vid, ...shots, foldPhotos(shots))
+      : null;
+    const text = textCol(work, site.producerById);
+    const layout = el(`section.dlayout${media ? '' : '.solo'}`, null, text, media);
 
     document.getElementById('page').replaceChildren(
-      head(work, site.producerById),
       layout,
       more(work, site.works, site.producerById)
     );
     document.getElementById('page-footer').replaceChildren(footer());
-
-    /* gallery 값이 있으면 장수·비율을 보지 않고 슬라이드로 간다.
-       표지도 슬라이드의 첫 장으로 들어간다 — 오른쪽 열에 사진 자리는 하나뿐이다. */
-    /* gallery:"sequence" — galleryImages 를 적었으면 그 목록만,
-       적지 않았으면 폴더에서 찾아낸 사진 전부를 순서대로 넘겨 본다. */
-    /* gallery:"sequence" — photos 에 적은 차례대로 넘겨 본다.
-       예전 galleryImages 도 아직 받아준다. */
-    const listed = work.gallery === 'sequence'
-      ? [...new Set([...workPhotos(work), ...(work.galleryImages || []), work.cover].filter(Boolean))]
-      : [];
-    /* 크레딧 줄은 어느 배치에서든 하나뿐이다. 슬라이드면 넘길 때마다 갈아 끼운다. */
-    const bar = creditBar(work);
-
-    if (listed.length > 1) {
-      media.append(slideshow(listed, bar.set), bar.node);
-      return;
-    }
-
-    const photos = await collectPhotos(work);
-
-    /* 넘길 것이 한 장뿐이면 슬라이드를 만들지 않는다 —
-       화살표가 둘 다 꺼진 채 '1 / 1' 만 남으면 고장으로 보인다. */
-    if (work.gallery === 'sequence' && photos.length > 1) {
-      media.append(slideshow(photos.map((p) => p.src), bar.set), bar.node);
-      return;
-    }
-
-    /* photos: [] 라고 적어 둔 작업은 사진 자리를 아예 만들지 않는다 —
-       영상만 있는 작업에 빈 틀이나 색면이 남지 않게. 사진 칸을 적지 않은 작업은
-       종전처럼 색면으로 자리를 채운다(오른쪽 열이 통째로 비면 조판이 무너진다). */
-    if (!photos.length && Array.isArray(work.photos)) return;
-
-    const shape = plan(photos);
-    media.append(
-      photos.length ? photoArea(photos, shape, bar.set) : el('figure.dshot', null, colourBlock(work))
-    );
-    /* 사진 아래에 촬영자·제공자를 적는다. 예술가 사진과 같은 규칙(ui.js).
-       슬라이드는 넘길 때마다 slideshow 가 이 줄을 갈아 끼우므로 건드리지 않는다 —
-       여기서 다시 채우면 첫 장의 크레딧이 전체 목록으로 덮여 버린다.
-       한 화면에 여러 장이 함께 보이는 배치에서만 보이는 것을 모아 적는다. */
-    if (photos.length) {
-      if (shape.kind !== 'slides') bar.set(photos.map((x) => x.src));
-      media.append(bar.node);
-    }
+    pin(text);
   } catch (err) {
     console.error(err);
     document.getElementById('page').append(
