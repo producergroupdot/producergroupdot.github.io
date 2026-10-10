@@ -398,7 +398,7 @@ function textCol(work, producerById) {
    흘려 두면 글을 읽는 동안 옆에서 사진이 지나간다.
 
    가로든 세로든 열 폭을 꽉 채운다(높이 상한은 열 폭의 2배 — css/work.css).
-   어느 쪽이든 자르지 않는다. 크레딧은 그 사진 바로 아래에 붙는다. */
+   어느 쪽이든 자르지 않는다. 크레딧이 같은 사진은 한 덩어리로 붙고, 크레딧은 덩어리 맨 아래에 한 번. */
 
 const SHOW_FIRST = 10; //  처음에 펼쳐 두는 장수. 나머지는 '더 보기' 뒤에 접힌다
 const PHOTO_MAX = 35; //  img/works/<id>/01.jpg … 35.jpg 까지 찾아본다 (photos 를 적지 않은 작업만)
@@ -423,29 +423,69 @@ async function photoList(work) {
   return found.filter(Boolean);
 }
 
-/** 사진 한 장 + 그 사진의 크레딧. */
-function shot(work, src, i) {
-  const fig = el('figure.dshot');
+/** 사진 한 장. 누르면 원본 크기로 연다. 없는 파일은 조용히 빠진다 —
+    덩어리에 남은 사진이 없으면 덩어리도 함께 빠진다. */
+function photoImg(src, i) {
   const img = el('img.cover', { src, alt: '', loading: i < 2 ? 'eager' : 'lazy' });
-  img.addEventListener('error', () => fig.remove());   // 없는 파일은 조용히 빠진다
+  img.addEventListener('error', () => {
+    const box = img.parentElement;
+    img.remove();
+    if (box && !box.querySelector('img')) box.remove();
+  });
   img.addEventListener('click', () => lightbox(src));
-  fig.append(img);
-  /* credit 은 적힌 그대로 찍는다. 비어 있으면 그 사진만 크레딧 없이 나온다. */
-  const credit = work.photoCreditShow === false ? '' : photoCreditFor(work, src);
-  if (credit) fig.append(el('figcaption.credit.meta', { text: credit }));
+  return img;
+}
+
+/* 크레딧이 같은 사진끼리 한 덩어리로 묶는다. 데이터 차례대로 읽으며 **이어진** 것만 묶는다 —
+   차례는 작품의 흐름이 정하므로 바꾸지 않는다. 같은 촬영자가 떨어져 나오면 덩어리도 둘이다.
+   크레딧이 빈 사진끼리도 묶인다(아래에 아무것도 나오지 않는다).
+   같은지는 화면에 나올 글자로 견준다 — 국문은 다르고 영문이 같으면 영문 화면에서는 한 덩어리다. */
+function photoGroups(work, photos) {
+  const groups = [];
+  photos.forEach((src) => {
+    const credit = work.photoCreditShow === false ? '' : photoCreditFor(work, src);
+    const last = groups[groups.length - 1];
+    if (last && last.credit === credit) last.srcs.push(src);
+    else groups.push({ credit, srcs: [src] });
+  });
+  return groups;
+}
+
+/** 덩어리 하나 — 사진들(사이 0) + 맨 아래 크레딧 한 번. */
+function shotGroup(group, start) {
+  const fig = el('figure.dshot', null, ...group.srcs.map((src, k) => photoImg(src, start + k)));
+  if (group.credit) fig.append(el('figcaption.credit.meta', { text: group.credit }));
   return fig;
 }
 
-/* SHOW_FIRST 장을 넘는 사진은 hidden 으로 접고 버튼 하나를 둔다.
+/* 모바일에서 본문 앞으로 올리는 첫 사진 한 장. 데스크톱에서는 감춘다(css/work.css).
+   덩어리에서 떨어져 혼자 서므로 그 덩어리의 크레딧을 자기 아래에 단다. */
+function liftedShot(group) {
+  const fig = el('figure.dshot.dlift', null, photoImg(group.srcs[0], 0));
+  if (group.credit) fig.append(el('figcaption.credit.meta', { text: group.credit }));
+  return fig;
+}
+
+/* SHOW_FIRST 장 가까이에서 접는다. 다만 덩어리 경계에서만 자른다 —
+   덩어리 중간을 자르면 크레딧이 엉뚱한 사진 아래에 붙는다.
+   경계(앞에서부터 센 장수) 가운데 SHOW_FIRST 에 가장 가까운 것을 고르고, 같으면 더 많이 보이는 쪽.
+   첫 덩어리는 늘 보인다. 고른 경계가 끝이면 접을 것이 없다.
    누르면 전부 펼치고 버튼은 사라진다 — 접기는 두지 않는다.
    접힌 사진도 loading="lazy" 이므로 펼치기 전에는 받지 않는다(display:none 은 받지 않는다). */
-function foldPhotos(shots) {
-  const rest = shots.slice(SHOW_FIRST);
+function foldGroups(groups, figs) {
+  let count = 0, cut = 1, best = Infinity;
+  groups.forEach((g, i) => {
+    count += g.srcs.length;
+    const d = Math.abs(count - SHOW_FIRST);
+    if (d <= best) { best = d; cut = i + 1; }
+  });
+  const rest = figs.slice(cut);
   if (!rest.length) return null;
+  const n = groups.slice(cut).reduce((sum, g) => sum + g.srcs.length, 0);
   rest.forEach((f) => { f.hidden = true; });
   const btn = el('button.dmore-photos.meta', {
     type: 'button',
-    text: t(UI.morePhotos).replace('{n}', rest.length),
+    text: t(UI.morePhotos).replace('{n}', n),
   });
   btn.addEventListener('click', () => {
     rest.forEach((f) => { f.hidden = false; });
@@ -518,14 +558,19 @@ async function main() {
     /* 사진 목록을 먼저 정한다 — 사진이 없으면 두 열을 만들지 않기 때문이다.
        photos 를 적은 작업은 기다릴 것이 없다. */
     const photos = await photoList(work);
-    const shots = photos.map((src, i) => shot(work, src, i));
-    /* 모바일에서는 첫 사진 한 장만 본문 앞으로 올라간다(css/work.css 의 order). */
-    shots[0]?.classList.add('first');
+    const groups = photoGroups(work, photos);
+    let at = 0;
+    const figs = groups.map((g) => { const f = shotGroup(g, at); at += g.srcs.length; return f; });
+    /* 모바일에서는 첫 사진 한 장만 본문 앞으로 올라간다(css/work.css 의 order).
+       첫 덩어리에 그 한 장뿐이면 덩어리째 모바일에서 감춘다. */
+    const lift = groups.length ? liftedShot(groups[0]) : null;
+    figs[0]?.classList.add('first');
+    if (groups[0]?.srcs.length === 1) figs[0].classList.add('single');
 
     /* 영상은 오른쪽 열 맨 위. 영상도 사진도 없으면 오른쪽 열 없이 글만 한 열로 둔다. */
     const vid = video(work);
-    const media = vid || shots.length
-      ? el('div.dcol-media', null, vid, ...shots, foldPhotos(shots))
+    const media = vid || figs.length
+      ? el('div.dcol-media', null, lift, vid, ...figs, foldGroups(groups, figs))
       : null;
     const text = textCol(work, site.producerById);
     const layout = el(`section.dlayout${media ? '' : '.solo'}`, null, text, media);

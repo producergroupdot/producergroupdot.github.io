@@ -196,15 +196,25 @@
 
 /* ---------- 오른쪽 영상·사진 열 ----------
    사진을 세로로 한 장씩 흘린다. 슬라이드·격자는 없다(js/work.js 의 머리말).
-   사진 사이 12px. 크레딧은 사진 바로 아래 4px — 위 사진에 속한다는 것이 간격으로 보인다.
-   크레딧은 figure 안에 있으므로 크레딧에서 다음 사진까지도 이 12px 이다. */
+   크레딧이 같은 사진끼리 한 덩어리(.dshot)로 묶이고(js/work.js 의 photoGroups),
+   크레딧은 덩어리 맨 아래에 한 번 나온다. 값은 여기 셋뿐이다.
+     --photo-gap   덩어리 안 사진끼리     0
+     --group-gap   덩어리 사이 · 영상 · '더 보기' 버튼 사이   24px
+     --credit-gap  사진 ↔ 크레딧         6px
+   0 에도 px 를 붙인다 — calc 안에 들어가도 무효가 되지 않게. */
 .dcol-media{
+  --photo-gap:0px;
+  --group-gap:24px;
+  --credit-gap:6px;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:var(--group-gap);
   min-width:0;              /* 그리드 칸이 사진 폭에 밀려 넓어지지 않게 */
   container-type:inline-size;   /* 사진 높이 상한(200cqw)이 이 열의 폭을 기준으로 잡힌다 */
 }
+.dshot img.cover + img.cover{ margin-top:var(--photo-gap) }
+/* 모바일에서 본문 앞으로 올리는 첫 사진. 데스크톱에서는 덩어리 안에 그대로 있으므로 감춘다. */
+.dlift{ display:none }
 
 /* 영상 — 열 맨 위, 열 폭에 꽉 차게. 16:9 는 여기서 잡는다. */
 .dvideo-box{
@@ -238,14 +248,14 @@
   cursor:zoom-in;
 }
 
-/* 그 사진의 촬영자·제공자 — 바로 아래 작은 글씨. */
+/* 그 덩어리의 촬영자·제공자 — 맨 아래 사진 바로 아래 작은 글씨. */
 .dshot .credit{
-  padding-top:4px;
+  padding-top:var(--credit-gap);
   opacity:.5;
   line-height:1.4;
 }
 
-/* 11번째부터 접힌 사진을 펼치는 버튼. 사진 열 맨 아래, 왼쪽에 붙는다. */
+/* 10장 가까운 덩어리 경계 뒤로 접힌 사진을 펼치는 버튼. 사진 열 맨 아래, 왼쪽에 붙는다. */
 .dshot[hidden]{ display:none }
 .dmore-photos{
   align-self:flex-start;
@@ -311,11 +321,14 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
   .dcol-text, .dcol-media{ display:contents }
   .dhead{ order:1; margin-bottom:0 }
   .dcol-text .lead{ order:2; margin-top:26px; margin-bottom:0 }
-  .dshot.first{ order:3; margin-top:30px }
+  .dlift{ display:block; order:3; margin-top:30px }
   .dbody{ order:4; margin-top:30px }
-  .dcol-media > *{ order:5; margin-top:12px }
-  .dcol-media > .dshot.first{ order:3; margin-top:30px }
-  .dcol-media > .dmore-photos{ order:5; margin-top:12px }
+  .dcol-media > *{ order:5; margin-top:var(--group-gap) }
+  /* 첫 사진은 .dlift 로 올라갔으므로 첫 덩어리에서는 감춘다. 그 한 장뿐이던 덩어리는 통째로. */
+  .dshot.first > img.cover:first-child{ display:none }
+  .dshot.first > img.cover:first-child + img.cover{ margin-top:0 }
+  .dcol-media > .dshot.first.single{ display:none }
+  .dcol-media > .dlift{ order:3; margin-top:30px }
   .acc{ order:6; margin-top:40px; padding-top:26px }
   .more{ padding-top:36px; margin-top:36px }
   .mgrid{ grid-template-columns:repeat(2,1fr); gap:18px }
