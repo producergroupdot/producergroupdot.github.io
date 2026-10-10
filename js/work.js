@@ -397,7 +397,7 @@ function textCol(work, producerById) {
    넘겨야 보이는 사진은 대부분 보지 않고 지나간다.
    흘려 두면 글을 읽는 동안 옆에서 사진이 지나간다.
 
-   가로 사진은 열 전체 폭, 세로 사진은 높이 68vh 에서 멈추고 왼쪽에 붙는다.
+   가로든 세로든 열 폭을 꽉 채운다(높이 상한은 열 폭의 2배 — css/work.css).
    어느 쪽이든 자르지 않는다. 크레딧은 그 사진 바로 아래에 붙는다. */
 
 const SHOW_FIRST = 10; //  처음에 펼쳐 두는 장수. 나머지는 '더 보기' 뒤에 접힌다
@@ -423,13 +423,10 @@ async function photoList(work) {
   return found.filter(Boolean);
 }
 
-/** 사진 한 장 + 그 사진의 크레딧. 세로인지는 뜬 뒤에 재어 .tall 을 건다. */
+/** 사진 한 장 + 그 사진의 크레딧. */
 function shot(work, src, i) {
   const fig = el('figure.dshot');
   const img = el('img.cover', { src, alt: '', loading: i < 2 ? 'eager' : 'lazy' });
-  img.addEventListener('load', () => {
-    if (img.naturalWidth / img.naturalHeight < 0.85) fig.classList.add('tall');
-  });
   img.addEventListener('error', () => fig.remove());   // 없는 파일은 조용히 빠진다
   img.addEventListener('click', () => lightbox(src));
   fig.append(img);
