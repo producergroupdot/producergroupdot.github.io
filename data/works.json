@@ -1611,38 +1611,73 @@
     "cover": "img/works/moving-a-forest/01.jpg",
     "photos": [
       {
-        "src": "01.jpg",
+        "src": "MAF01.jpg",
         "credit": {
-          "ko": "2022 SPAF · ⓒ옥상훈",
-          "en": "2022 SPAF · ⓒOk Sanghoon"
+          "ko": "",
+          "en": ""
         }
       },
       {
-        "src": "02.jpg",
+        "src": "MAF02.jpg",
         "credit": {
-          "ko": "2022 SPAF · ⓒ옥상훈",
-          "en": "2022 SPAF · ⓒOk Sanghoon"
+          "ko": "",
+          "en": ""
         }
       },
       {
-        "src": "03.jpg",
+        "src": "MAF03.jpg",
         "credit": {
-          "ko": "2022 SPAF · ⓒ옥상훈",
-          "en": "2022 SPAF · ⓒOk Sanghoon"
+          "ko": "",
+          "en": ""
         }
       },
       {
-        "src": "04.jpg",
+        "src": "MAF04.JPG",
         "credit": {
-          "ko": "2022 SPAF · ⓒ옥상훈",
-          "en": "2022 SPAF · ⓒOk Sanghoon"
+          "ko": "",
+          "en": ""
         }
       },
       {
-        "src": "05.jpg",
+        "src": "MAF05.JPG",
         "credit": {
-          "ko": "2022 SPAF · ⓒ옥상훈",
-          "en": "2022 SPAF · ⓒOk Sanghoon"
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "MAF06.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "MAF07.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "MAF08.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "MAF09.JPG",
+        "credit": {
+          "ko": "",
+          "en": ""
+        }
+      },
+      {
+        "src": "MAF10.jpg",
+        "credit": {
+          "ko": "",
+          "en": ""
         }
       }
     ],
