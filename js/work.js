@@ -3,15 +3,15 @@
    대부분의 작업은 본문·크레딧·회차가 비어 있으므로, 값이 없는 부분은
    빈 껍데기를 남기지 않고 통째로 빠진다. */
 
-import { loadSite } from './data.js?v=20261010';
-import { t, lang, isFallback, UI } from './i18n.js?v=20261010';
+import { loadSite } from './data.js?v=20261011';
+import { t, lang, isFallback, UI } from './i18n.js?v=20261011';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance, workPhotos, isPublic,
   latestRun, yearSpan, photoCreditFor, visibleWorks, videoId, videoIdOf, videoProvider,
   isEmbeddedVideo, lightbox, richNodes,
   runWhen,
-} from './ui.js?v=20261010';
+} from './ui.js?v=20261011';
 
 const MORE = 4; //  Explore more 카드 수
 
@@ -44,25 +44,17 @@ function head(work, producerById) {
     el('h1', null, titleNodes(main)),
     en ? el('p.dtitle-en', null, titleNodes(en)) : null,
     t(work.subtitle) ? el('p.dsub', { text: t(work.subtitle) }) : null,
-    t(work.artist) ? el('p.dartist', { text: t(work.artist) }) : null,
-    premiereLine(work)
+    t(work.artist) ? el('p.dartist', { text: t(work.artist) }) : null
   );
 }
 
-/* ---------- 초연 한 줄 ----------
-   제목 아래, 본문 위. 공연에만 붙는다.
-   초연 회차는 5.일정 탭의 '초연' 열(runs[].premiere)이 정한다. */
+/* ---------- 초연 회차 ----------
+   초연은 머스트헤드에 따로 적지 않고 일정 칸의 그 회차 줄 앞에 라벨로만 붙인다.
+   위에서 내린 것이지 버린 것이 아니다 — 라벨이 없으면 어느 회차가 초연이었는지가 사라진다.
+   공연에만 붙는다. 초연 회차는 5.일정 탭의 '초연' 열(runs[].premiere)이 정한다. */
 
 function premiereRun(work) {
   return isPerformance(work) ? (work.runs || []).find((r) => r.premiere === true) || null : null;
-}
-
-function premiereLine(work) {
-  const r = premiereRun(work);
-  if (!r) return null;
-  /* '초연' 은 라벨이다 — 라벨과 값 사이는 콜론, 값과 값 사이는 가운뎃점. */
-  const text = t(PREMIERE) + ' : ' + [runWhen(r), t(r.venue)].filter(Boolean).join(' · ');
-  return el('p.dpremiere.meta', { text });
 }
 
 /* ---------- 영상 ---------- */
@@ -178,7 +170,7 @@ function buildAccordions(work) {
   const runs = [...(work.runs || [])];
   const first = premiereRun(work);
 
-  /* 한 줄: 날짜·시간 · 도시 · 장소 · 도트의 역할 · 초연
+  /* 한 줄: (초연) · 날짜·시간 · 도시 · 장소 · 메모 · 도트의 역할
      도트의 역할이 비어 있으면 그 자리가 통째로 빠진다 — 도트가 관여하지 않은 회차다.
      도시와 장소가 같은 말이면 한 번만 적는다(도르트문트 · 도르트문트). */
   const where = (r, l) => [...new Set([t(r.city, l), t(r.venue, l)].filter(Boolean))].join(' · ');
@@ -192,13 +184,14 @@ function buildAccordions(work) {
   /* 회차 메모(축제 이름 같은 것)도 그린다 — 적어 두고 화면에 없으면 없는 값과 같다(함정 1). */
   const line = (r, l, mark) =>
     [
+      /* 초연 라벨은 줄 맨 앞 — 날짜보다 먼저 읽혀야 어느 회차인지 눈에 든다.
+         메모에 '런던 초연' 이 있어도 붙인다. 메모를 보고 빼면 그 회차만 라벨 자리가 비고,
+         대소문자가 다른 영문(UK premiere)에서는 언어에 따라 나왔다 사라졌다 한다. */
+      r === first ? mark : '',
       [runWhen(r, l), t(r.time, l)].filter(Boolean).join(' '),
       where(r, l),
       t(r.note, l),
       roleOf(r, l),
-      /* 메모에 이미 '초연' 이 적혀 있으면 표시를 또 붙이지 않는다 —
-         '런던 초연 · 국제공동제작 · 초연' 처럼 같은 말이 두 번 남는다. */
-      r === first && !t(r.note, l).includes(mark) ? mark : '',
     ]
       .filter(Boolean)
       .join(' · ');
@@ -303,9 +296,13 @@ function accordions(work) {
   const list = buildAccordions(work);
   if (!list.length) return null; // 다섯 개가 다 비면 본문 아래를 그냥 닫는다
 
+  /* 하나만 열어 둔다 — 맨 앞에 오는 일정 칸(예정이 있으면 '일정', 없으면 '지난 일정').
+     날짜가 클릭 뒤로 숨지 않게. 일정 칸이 없는 작업은 첫 항목을 연다. */
+  const openAt = Math.max(0, list.findIndex((a) => SCHEDULE_TITLE.test(a.title)));
+
   const box = el('div.acc');
   list.forEach((a, i) => {
-    const det = el('details', i === 0 ? { open: true } : null); // 첫 항목만 열어 둔다
+    const det = el('details', i === openAt ? { open: true } : null);
     det.append(el('summary', { text: a.title }));
 
     /* 세 가지 모양을 받는다 — 산문(paragraphs) · 목록(rows) · 만들어 둔 조각(node). */

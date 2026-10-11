@@ -2,13 +2,13 @@
    페이지 전체가 그 사람의 색이 된다. 어느 사람인지는 <body data-producer="…"> 가 정하므로
    다른 세 명의 페이지는 HTML 을 복사해 그 값만 바꾸면 된다. */
 
-import { loadSite } from './data.js?v=20261010';
-import { t, UI } from './i18n.js?v=20261010';
+import { loadSite } from './data.js?v=20261011';
+import { t, UI } from './i18n.js?v=20261011';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
   topBar, footer, pageUrl, link, formBadge, photo, faceCandidates,
   visibleWorks,
-} from './ui.js?v=20261010';
+} from './ui.js?v=20261011';
 
 /** 최근 것이 위로. works.html 과 같은 기준. */
 const byRecency = (a, b) => (b.yearFrom || 0) - (a.yearFrom || 0);

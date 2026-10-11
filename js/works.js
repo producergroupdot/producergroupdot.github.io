@@ -4,14 +4,14 @@
    필터는 넷이고 서로 곱해진다 — 형식 AND 시간 AND 장소 AND 프로듀서.
    형식만 늘 보이고, 나머지 셋은 '더 보기' 안에 접어 둔다. */
 
-import { loadSite } from './data.js?v=20261010';
-import { t, isEn, UI } from './i18n.js?v=20261010';
+import { loadSite } from './data.js?v=20261011';
+import { t, isEn, UI } from './i18n.js?v=20261011';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, isTempFile, formBadge,
   yearSpan, citiesLine, visibleWorks, kindLabel,
   FORMS, formKey, formLabelByKey, isRunningNow, placesOf, byYear,
-} from './ui.js?v=20261010';
+} from './ui.js?v=20261011';
 
 /* 화면 글자. 데이터와 같은 {ko,en} 모양으로 두고 t() 로 꺼낸다 —
    여기저기 isEn() 삼항식을 흩어 두면 한쪽 언어만 고쳐진다. */

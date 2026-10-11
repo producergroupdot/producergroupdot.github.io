@@ -1,7 +1,7 @@
 /* home.js — 홈 화면. data/*.json 을 읽어 모자이크와 Now 를 그린다. */
 
-import { loadSite } from './data.js?v=20261010';
-import { t, lang, UI } from './i18n.js?v=20261010';
+import { loadSite } from './data.js?v=20261011';
+import { t, lang, UI } from './i18n.js?v=20261011';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   logo, footer, pageUrl, link, photo, coverCandidates, producerTile,
@@ -11,9 +11,9 @@ import {
   langToggle,
   shownInLang, visibleWorks,
   mergeRuns,
-} from './ui.js?v=20261010';
+} from './ui.js?v=20261011';
 /* 돋보기는 상단 메뉴와 같은 것을 쓴다. */
-import { searchButton } from './search.js?v=20261010';
+import { searchButton } from './search.js?v=20261011';
 
 /* 모자이크 세 칸은 works.json 의 homeFeature 가 지정한다 — 그 자리의 비율에 맞는
    사진을 사람이 골라야 하기 때문이다.

@@ -1,12 +1,12 @@
 /* artists.js — 예술가 목록. 격자가 아니라 자유 배치 캔버스.
    좌표와 지름은 data/artists.json 의 pos 가 정한다. */
 
-import { loadSite } from './data.js?v=20261010';
-import { t, UI } from './i18n.js?v=20261010';
+import { loadSite } from './data.js?v=20261011';
+import { t, UI } from './i18n.js?v=20261011';
 import {
   el, injectProducerColors, dots, titleText, topBar, footer, pageUrl, link, shuffle,
   photo, withThumb,
-} from './ui.js?v=20261010';
+} from './ui.js?v=20261011';
 
 /** 사진이 없으면 담당 프로듀서 색 원 + 이름 앞 두 글자. 담당이 없으면 라벤더. */
 const faceClass = (a) => (a.producers?.length ? `field-${a.producers[0]}` : 'c-lav');

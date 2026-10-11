@@ -1,11 +1,11 @@
 /* about.js — 도트 소개 · 프로듀서 4인 · 둥지230 · 연결 */
 
-import { loadSite } from './data.js?v=20261010';
-import { t, UI } from './i18n.js?v=20261010';
+import { loadSite } from './data.js?v=20261011';
+import { t, UI } from './i18n.js?v=20261011';
 import {
   el, injectProducerColors, topBar, footer, pageUrl, link, photo, faceCandidates, shuffle,
   producerTile, titleNodes, withThumb,
-} from './ui.js?v=20261010';
+} from './ui.js?v=20261011';
 
 /* 사진은 파일만 올리면 뜬다 — JSON 을 고칠 필요가 없다.
    없는 파일은 조용히 건너뛴다. (얼굴 사진 고르기는 ui.js 의 faceCandidates 가 맡는다.) */

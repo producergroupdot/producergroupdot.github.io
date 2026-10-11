@@ -61,13 +61,6 @@
   margin-top:20px;
 }
 
-/* 초연 한 줄 — 제목 아래, 본문 위. 공연에만 붙는다.
-   바로 아래의 구분선이 제목 블록의 끝을 알린다. */
-.dhead .dpremiere{
-  margin-top:16px;
-  opacity:.7;
-}
-
 /* ---------- 36 : 64 두 열 ---------- */
 .dlayout{
   display:grid;
