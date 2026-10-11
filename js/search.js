@@ -5,8 +5,8 @@
    화면에 보여줄 때는 원문 그대로다. 그래서 공백을 지운 문자열의 자리에서
    원문의 자리로 되돌아올 수 있게 자리표(map)를 함께 만든다. 이것이 이 파일의 핵심이다. */
 
-import { el, link, pageUrl, shownInLang, byYear, titleNodes, titleText } from './ui.js?v=20261011';
-import { t, lang } from './i18n.js?v=20261011';
+import { el, link, pageUrl, shownInLang, byYear, titleNodes, titleText } from './ui.js?v=20261011b';
+import { t, lang } from './i18n.js?v=20261011b';
 
 const L = {
   open: { ko: '찾기', en: 'Search' },

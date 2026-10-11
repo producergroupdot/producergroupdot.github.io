@@ -1,13 +1,13 @@
 /* artist.js — 예술가 상세.
    어느 사람인지는 <body data-artist="…"> 가 정한다. 새 예술가는 HTML 을 복사해 값만 바꾸면 된다. */
 
-import { loadSite } from './data.js?v=20261011';
-import { t, UI } from './i18n.js?v=20261011';
+import { loadSite } from './data.js?v=20261011b';
+import { t, UI } from './i18n.js?v=20261011b';
 import {
   el, injectProducerColors, dots, titleNodes, titleText,
   topBar, footer, pageUrl, link, formBadge, creditLine,
   visibleWorks, photo, withThumb,
-} from './ui.js?v=20261011';
+} from './ui.js?v=20261011b';
 
 const byRecency = (a, b) => (b.yearFrom || 0) - (a.yearFrom || 0);
 const faceClass = (a) => (a.producers?.length ? `field-${a.producers[0]}` : 'c-lav');
