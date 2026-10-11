@@ -90,12 +90,14 @@ function video(work) {
   const id = videoId(work);
   if (!id) return null;
 
+  /* 사진 덩어리(.dshot)와 같은 모양 — figure 하나에 아래 figcaption.credit.
+     라벨이 사진 크레딧과 같은 자리·같은 크기로 나오게 같은 클래스를 쓴다. */
   const caption = typeof work.video === 'string' ? '' : t(work.video.label);
   return el(
-    'section.dvideo',
+    'figure.dvideo',
     null,
     embed(id, `${titleText(t(work.title))} ${caption || '영상'}`, videoProvider(work.video)),
-    caption ? el('p.dvideo-cap.meta', { text: caption }) : null
+    caption ? el('figcaption.credit.meta', { text: caption }) : null
   );
 }
 
