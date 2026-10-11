@@ -3,15 +3,15 @@
    대부분의 작업은 본문·크레딧·회차가 비어 있으므로, 값이 없는 부분은
    빈 껍데기를 남기지 않고 통째로 빠진다. */
 
-import { loadSite } from './data.js?v=20261011c';
-import { t, lang, isFallback, UI } from './i18n.js?v=20261011c';
+import { loadSite } from './data.js?v=20261011d';
+import { t, lang, isFallback, UI } from './i18n.js?v=20261011d';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance, workPhotos, isPublic,
   latestRun, yearSpan, photoCreditFor, visibleWorks, videoId, videoIdOf, videoProvider,
   isEmbeddedVideo, lightbox, richNodes,
   runWhen,
-} from './ui.js?v=20261011c';
+} from './ui.js?v=20261011d';
 
 const MORE = 4; //  Explore more 카드 수
 

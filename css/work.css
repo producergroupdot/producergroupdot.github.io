@@ -29,9 +29,14 @@
   letter-spacing:-.04em;
   line-height:1;
 }
-/* 제목 덩어리 — 제목 → 영문 제목(4px) → 부제(8px). 붙여서 한 덩어리로 읽힌다.
-   덩어리와 예술가 줄 사이는 20px. 부제나 영문 제목이 없어도 같은 20px —
-   덩어리가 짧아질 뿐 간격은 같다(예술가 줄의 margin-top 하나가 정하므로).
+/* 제목 덩어리 — 제목 → 영문 제목(4px) → 부제(4px). 붙여서 한 덩어리로 읽히고,
+   예술가 줄은 그 덩어리에서 26px 떨어져 혼자 선다.
+
+   눈에 보이는 간격은 margin 에 줄 높이의 위아래 여유(행간의 절반)가 더해진 것이다.
+   부제가 body 의 1.6 을 물려받으면 위에 6px 가 더 붙어 덩어리가 벌어진다 — 1.35 로 묶는다.
+   부제가 있든 없든 예술가 줄의 자리가 같아야 한다. 덩어리의 마지막 줄이 무엇이냐에 따라
+   그 줄의 아래 여유가 다르므로(영문 제목 .075em · 부제 .175em · 제목 0) 예술가 줄의
+   margin-top 에서 그만큼을 덜거나 더한다. 보이는 간격은 셋 다 약 26px + .25em.
 
    두 층으로 읽힌다 — 제목·예술가가 진한 층, 영문 제목·부제가 흐린 층.
 
@@ -49,8 +54,9 @@
 .dhead .dsub{
   font-size:clamp(16px,1.5vw,21px);
   font-weight:var(--w-body);
+  line-height:1.35;
   color:var(--mute);
-  margin-top:8px;
+  margin-top:4px;
   max-width:46ch;
 }
 /* 예술가 — 진한 층. 부제와 같은 크기에 한 단계 굵게, 글자색 그대로(--ink). */
@@ -58,8 +64,10 @@
   font-size:clamp(16px,1.5vw,21px);
   font-weight:var(--w-mid);
   line-height:1.35;
-  margin-top:20px;
+  margin-top:26px;                               /* 영문 제목 다음 */
 }
+.dhead .dsub + .dartist{ margin-top:calc(26px - .1em) }   /* 부제 다음 — 부제의 아래 여유가 .1em 더 크다 */
+.dhead h1 + .dartist{ margin-top:calc(26px + .075em) }    /* 제목 바로 다음 — 제목은 아래 여유가 없다 */
 
 /* ---------- 36 : 64 두 열 ---------- */
 .dlayout{
