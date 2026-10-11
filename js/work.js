@@ -3,15 +3,15 @@
    대부분의 작업은 본문·크레딧·회차가 비어 있으므로, 값이 없는 부분은
    빈 껍데기를 남기지 않고 통째로 빠진다. */
 
-import { loadSite } from './data.js?v=20261011b';
-import { t, lang, isFallback, UI } from './i18n.js?v=20261011b';
+import { loadSite } from './data.js?v=20261011c';
+import { t, lang, isFallback, UI } from './i18n.js?v=20261011c';
 import {
   el, injectProducerColors, dots, fieldClass, titleNodes, titleText,
   topBar, footer, pageUrl, link, photo, coverCandidates, formBadge, formKey, kindName, isPerformance, workPhotos, isPublic,
   latestRun, yearSpan, photoCreditFor, visibleWorks, videoId, videoIdOf, videoProvider,
   isEmbeddedVideo, lightbox, richNodes,
-  runWhen, photoSrc,
-} from './ui.js?v=20261011b';
+  runWhen,
+} from './ui.js?v=20261011c';
 
 const MORE = 4; //  Explore more 카드 수
 
@@ -28,11 +28,9 @@ function head(work, producerById) {
   const main = t(work.title);
   const en = work.title?.en && work.title.en !== main ? work.title.en : '';
 
-  /* 모바일 머리 사진. heroImage 를 적은 작업에만 깐다 — cardImage 나 photos[0] 으로
-     되돌리지 않는다. 없으면 지금처럼 글자만. 노트북 폭에서는 CSS 가 감춘다.
-     loading=lazy 라 감춰진 노트북 폭에서는 받지 않는다. */
-  const heroSrc = heroImageSrc(work);
-  const lines = [
+  return el(
+    'header.dhead',
+    null,
     el(
       'div.dmeta',
       null,
@@ -46,23 +44,8 @@ function head(work, producerById) {
     el('h1', null, titleNodes(main)),
     en ? el('p.dtitle-en', null, titleNodes(en)) : null,
     t(work.subtitle) ? el('p.dsub', { text: t(work.subtitle) }) : null,
-    t(work.artist) ? el('p.dartist', { text: t(work.artist) }) : null,
-  ];
-  if (!heroSrc) return el('header.dhead', null, ...lines);
-
-  /* 글자 띠(.dhead-in)는 크림이 거의 불투명하게 깔리고, 그 아래로 사진이 서서히 드러난다.
-     띠를 상자로 감싸야 제목 길이와 상관없이 글자 뒤가 늘 덮인다. */
-  return el('header.dhead.has-hero', null,
-    el('img.dhero', { src: heroSrc, alt: '', loading: 'lazy', decoding: 'async' }),
-    el('div.dhead-in', null, ...lines)
+    t(work.artist) ? el('p.dartist', { text: t(work.artist) }) : null
   );
-}
-
-/** heroImage 는 cardImage 처럼 파일명만 적어도 되고 { src, credit } 로 적어도 된다. */
-function heroImageSrc(work) {
-  const h = work.heroImage;
-  if (!h) return '';
-  return photoSrc(work, typeof h === 'string' ? h : h.src);
 }
 
 /* ---------- 초연 회차 ----------

@@ -61,9 +61,6 @@
   margin-top:20px;
 }
 
-/* 모바일 머리 사진(heroImage) — 노트북 폭에서는 쓰지 않는다. 모양은 아래 모바일 블록. */
-.dhero{ display:none }
-
 /* ---------- 36 : 64 두 열 ---------- */
 .dlayout{
   display:grid;
@@ -329,39 +326,6 @@ a.mcard:hover .t{ text-decoration-thickness:1.5px }
   .dcol-text{ position:static; max-height:none; overflow:visible; padding-right:0 }
   .dcol-text, .dcol-media{ display:contents }
   .dhead{ order:1; margin-bottom:0 }
-
-  /* 머리 사진 — heroImage 를 적은 작업만(js/work.js 의 head).
-     상단 바 바로 아래부터 화면 폭 꽉 차게, 높이 56vh. .dlayout 의 위·옆 여백만큼 바깥으로 뺀다.
-     글자 띠는 크림이 거의 불투명하게 덮고, 띠 아래로 크림이 투명으로 풀리며 사진이 드러난다.
-     글자 색은 --ink 그대로. 사진이 끝나는 자리가 제목 블록의 끝이라 구분선은 걷는다. */
-  .dhead.has-hero{
-    position:relative;
-    isolation:isolate;
-    min-height:56vh;
-    margin:-26px calc(var(--pad) * -1) 0;
-    padding:0;
-    border-bottom:0;
-  }
-  .dhero{
-    display:block;
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    object-fit:cover;
-    object-position:center top;
-    z-index:-1;
-  }
-  .dhead-in{
-    position:relative;
-    padding:26px var(--pad) 22px;
-    background:linear-gradient(to bottom, var(--cream), color-mix(in srgb, var(--cream) 90%, transparent));
-  }
-  .dhead-in::after{
-    content:'';
-    position:absolute; left:0; right:0; top:100%;
-    height:14vh;
-    background:linear-gradient(to bottom, color-mix(in srgb, var(--cream) 90%, transparent), transparent);
-    pointer-events:none;
-  }
   .dcol-text .lead{ order:2; margin-top:26px; margin-bottom:0 }
   .dlift{ display:block; order:3; margin-top:30px }
   .dbody{ order:4; margin-top:30px }

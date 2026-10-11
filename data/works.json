@@ -1567,7 +1567,6 @@
   {
     "id": "moving-a-forest",
     "order": 700,
-    "heroImage": "MAF01.jpg",
     "form": "performance",
     "title": {
       "ko": "움직이는 숲",
