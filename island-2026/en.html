@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Island of ⬡⬡ : Ganghwado 2026</title>
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jost:wght@200;300;400;500&family=Nanum+Pen+Script&display=swap">
+<style>
+/* Layout: follows the 2025 archive book — white pages, a colored divider per chapter
+   (sky / lavender / mint / yellow) with a white hand-lettered title, the walking figure,
+   page titles on the left margin and the text column indented to the right.
+   Deliberately light-only, like the printed book. */
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF; --ink:#111111; --muted:#5C5C5C; --rule:#111111; --hair:#DADADA;
+  --sky:#ABDFFF; --sky-d:#2E8FD0;
+  --lav:#B8A5F9; --lav-d:#7B61E8;
+  --mint:#79E8A6; --mint-d:#1C9F5E;
+  --yel:#FEDF4A; --yel-d:#A88400;
+  --todo:#8A5A00; --todo-bg:#FFF3CF;
+  --ko:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --en:"Jost","Futura","Century Gothic",sans-serif;
+  --hand:"Nanum Pen Script","Gaegu",cursive;
+  --text:var(--ko);
+  /* map tokens, recolored to the book palette */
+  --sea:#F5FBFF; --land:#FFFFFF; --edge:#9FB0B8;
+  --gil:#DDF1FF; --gil-s:#2E8FD0; --yang:#D9F8E6; --yang-s:#1C9F5E; --bul:#ECE6FE; --bul-s:#7B61E8;
+  --stay:#B88F00; --sight:#2E8FD0; --dol:#3A3A3A;
+}
+html[lang="en"], .page[lang="en"]{--text:var(--en)}
+body{background:var(--paper);color:var(--ink);font-family:var(--text);font-size:16px;line-height:2;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.page[lang="en"]{font-weight:300;letter-spacing:.015em;line-height:1.95}
+.page{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:0 64px}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1px}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+p{margin:0}
+.hx2{display:inline-block;width:1.15em;height:.68em;vertical-align:-.02em;margin-right:.08em;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 21'%3E%3Cg fill='none' stroke='%23111' stroke-width='1.3' stroke-linejoin='round'%3E%3Cpath d='M9 1l8 4.6v9.8L9 20 1 15.4V5.6z'/%3E%3Cpath d='M26 1l8 4.6v9.8L26 20l-8-4.6V5.6z'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+
+/* cover */
+.cover{position:relative;display:grid;justify-items:center;text-align:center;padding-block:72px 28px;gap:22px}
+.lang{position:absolute;top:20px;right:0;display:flex;gap:2px;font-family:var(--en);font-size:.82rem;letter-spacing:.14em;font-weight:400}
+.lang a,.lang span{padding:2px 8px;text-decoration:none;line-height:1.8}
+.lang span{border-bottom:1px solid var(--ink)}
+.lang a{color:var(--muted)} .lang a:hover{color:var(--ink)}
+h1{margin:0;display:grid;justify-items:center;gap:14px;font-weight:400}
+.t-island{font-family:var(--ko);font-size:clamp(1.9rem,7.5vw,2.8rem);letter-spacing:.06em;line-height:1.2}
+.t-island .hx2{width:1.35em;height:.8em}
+.t-letter{display:block;width:min(560px,86vw);height:auto}
+.t-en{font-family:var(--en);font-weight:200;font-size:clamp(2.2rem,9vw,3.8rem);letter-spacing:.02em;line-height:1.15}
+.t-en .hx2{width:1.25em;height:.74em}
+.vert{writing-mode:vertical-rl;font-family:var(--ko);font-size:.95rem;letter-spacing:.32em;line-height:1.4;font-variant-numeric:tabular-nums;margin-top:6px}
+.page[lang="en"] .vert{font-family:var(--en);font-weight:400}
+.walker{width:42px;height:auto;mix-blend-mode:multiply;margin-top:10px}
+.cover .sub{font-size:.95rem;color:var(--muted)}
+.todo-note{font-size:.82rem;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;line-height:1.6}
+
+/* contents nav, like the book's table of contents */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);margin-inline:-20px;padding-inline:20px;border-bottom:1px solid var(--hair)}
+nav ul{list-style:none;margin:0 auto;padding:0;display:flex;justify-content:safe center;gap:2px;overflow-x:auto;scrollbar-width:none;max-width:880px}
+nav a{display:flex;align-items:center;gap:7px;padding:12px 10px;text-decoration:none;font-size:.95rem;white-space:nowrap;border-bottom:3px dotted transparent}
+nav a i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+nav a.on{border-bottom-color:var(--c)}
+.page[lang="en"] nav a{font-family:var(--en);font-weight:400;letter-spacing:.12em;font-size:.82rem}
+
+/* chapters */
+.sky{--c:var(--sky);--cd:var(--sky-d)} .lav{--c:var(--lav);--cd:var(--lav-d)}
+.mint{--c:var(--mint);--cd:var(--mint-d)} .yel{--c:var(--yel);--cd:var(--yel-d)}
+.sec{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 50px);padding-top:56px}
+.divider{position:relative;background:var(--c);min-height:190px;padding:22px 22px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;overflow:hidden}
+.divider h2{margin:0;color:#fff;font-weight:400;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 22px;line-height:1}
+.divider .hand{font-family:var(--hand);font-size:clamp(3rem,13vw,4.4rem);line-height:.95}
+.divider .caps{font-family:var(--en);font-weight:200;font-size:clamp(2rem,9vw,3.2rem);letter-spacing:.04em}
+.divider .walker{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:30px;margin:0}
+.band{height:12px;background:var(--c)}
+.body{display:grid;gap:18px;padding-top:30px}
+.body > *{margin-left:clamp(0px,(100% - 600px)*.9,230px);max-width:600px;min-width:0}
+.body > .wide{margin-left:0;max-width:none}
+.pagetitle{font-family:var(--ko);font-size:1.55rem;font-weight:400;margin:0 0 4px;letter-spacing:.04em;line-height:1.4}
+.page[lang="en"] .pagetitle{font-family:var(--en);font-weight:400;letter-spacing:.01em}
+.sub{font-family:var(--hand);color:var(--cd);font-size:2rem;font-weight:400;margin:22px 0 0;line-height:1.1}
+.lede{font-size:1.05rem}
+.dots{border:0;border-top:4px dotted var(--c);margin:10px 0 0;height:0}
+
+/* bases */
+.bases{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 28px}
+.base{display:grid;gap:6px;align-content:start;padding-block:14px;border-top:1px solid var(--rule)}
+.base .lbl{display:flex;align-items:center;gap:8px;font-family:var(--en);font-size:.78rem;letter-spacing:.16em;color:var(--muted);line-height:1.6}
+.base h3{margin:0;font-weight:700;font-size:1.12rem;line-height:1.5}
+.page[lang="en"] .base h3{font-weight:500}
+.base h3 small{font-weight:400;font-size:.85rem;color:var(--muted);margin-left:6px}
+.people{font-size:.9rem;color:var(--muted);line-height:1.7}
+.hxb{display:inline-flex;gap:0;flex:none}
+.hxb i{width:12px;height:14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--ink);position:relative}
+.hxb i::after{content:"";position:absolute;inset:1.3px;clip-path:inherit;background:var(--paper)}
+.hxb.a i:first-child::after,.hxb.b i:last-child::after{background:var(--ink)}
+
+/* artists — entries like the book's participant pages */
+.group-h{display:flex;align-items:center;gap:10px;padding-top:8px}
+.group-h h3{margin:0;font-family:var(--hand);font-weight:400;font-size:1.9rem;color:var(--cd);line-height:1.1}
+.group-h span{font-family:var(--en);font-size:.78rem;letter-spacing:.16em;color:var(--muted)}
+.artist{display:grid;gap:8px;padding-block:18px;border-top:1px solid var(--rule)}
+.artist-h{display:flex;justify-content:space-between;align-items:baseline;gap:4px 14px;flex-wrap:wrap}
+.artist-h h4{margin:0;font-size:1.1rem;font-weight:700;line-height:1.5}
+.page[lang="en"] .artist-h h4{font-weight:500}
+.from{font-family:var(--en);font-size:.76rem;letter-spacing:.16em;color:var(--muted);white-space:nowrap}
+
+/* tables, like the research schedule */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.92rem;line-height:1.6}
+th,td{border:1px solid var(--rule);padding:8px 12px;vertical-align:middle}
+th{background:var(--c);font-weight:400;text-align:center}
+td.d{text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tag{font-weight:700}
+
+/* map */
+.map .mapbox{overflow-x:auto;border:1px solid var(--hair);background:var(--sea)}
+.map svg.island{width:100%;min-width:560px;height:auto;display:block}
+.map svg text{font-family:var(--text)}
+.map .land{fill:var(--land);stroke:var(--edge);stroke-width:.8;stroke-linejoin:round}
+.map .f-gil{fill:var(--gil)} .map .f-yang{fill:var(--yang)} .map .f-bul{fill:var(--bul)}
+.map .area{font-size:11.5px;fill:var(--muted);letter-spacing:.12em}
+.map .area-en{font-size:10px;fill:var(--muted);letter-spacing:.08em}
+.map .ko{font-size:11.5px;fill:var(--ink)}
+.map .en{font-size:10.5px;fill:var(--muted)}
+.map .pin{fill:var(--land);stroke-width:2} .map .pin.exact.gil{fill:var(--gil-s)} .map .pin.exact.bul{fill:var(--bul-s)} .map .pin.exact.yang{fill:var(--yang-s)}
+.map .gil{stroke:var(--gil-s)} .map .yang{stroke:var(--yang-s)} .map .bul{stroke:var(--bul-s)} .map .neu{stroke:var(--muted)}
+.map .lodge{fill:var(--stay)} .map .stay{fill:none;stroke:var(--stay);stroke-width:1.5}
+.map .sight{fill:var(--sight)} .map .dol rect{fill:var(--dol)}
+.map .sea{font-size:11.5px;fill:var(--sight);letter-spacing:.2em} .map .sea-en{font-size:10px;fill:var(--sight);letter-spacing:.08em}
+.map .gm{cursor:pointer} .map .gm:hover .ko,.map .gm:focus .ko{text-decoration:underline} .map .gm:focus{outline:none} .map .gm:focus-visible .pin{stroke-width:3.5}
+.map .lead{stroke:var(--muted);stroke-width:.7}
+.map .north path{fill:var(--ink)} .map .scale rect{fill:var(--ink)} .map .scale .half{fill:var(--land);stroke:var(--ink);stroke-width:.6}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:.86rem;color:var(--muted);list-style:none;padding:0;margin:0;line-height:1.6}
+.legend li{display:flex;align-items:center;gap:8px}
+.legend svg{width:20px;height:20px;flex:none}
+.swipe,.mapnote{font-size:.8rem;color:var(--muted);line-height:1.7}
+.places{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 24px;font-size:.95rem}
+.places li{border-bottom:1px solid var(--hair);line-height:1.6;padding-block:8px}
+.places a{text-decoration:none}
+.places a:hover{text-decoration:underline}
+.places small{color:var(--muted);margin-left:6px}
+
+/* visitor info */
+.info{margin:0;border-top:1px solid var(--rule)}
+.info-row{display:grid;grid-template-columns:7.5rem 1fr;gap:4px 18px;padding-block:14px;border-bottom:1px solid var(--rule)}
+.info-row dt{font-weight:700;line-height:1.8}
+.page[lang="en"] .info-row dt{font-weight:500}
+.info-row dd{margin:0;display:grid;gap:6px;min-width:0;line-height:1.8}
+@media (max-width:480px){.info-row{grid-template-columns:1fr}}
+
+/* placeholders */
+.todo{display:inline-block;font-family:var(--ko);font-weight:400;letter-spacing:0;border:1px dashed var(--todo);background:var(--todo-bg);color:var(--todo);border-radius:3px;padding:0 8px;font-size:.82rem;line-height:1.75}
+.todo::before{content:"입력 필요 · "}
+.todo.check::before{content:"확인 필요 · "}
+.page[lang="en"] .todo{font-family:var(--en)}
+.page[lang="en"] .todo::before{content:"To fill · "}
+.page[lang="en"] .todo.check::before{content:"To check · "}
+
+/* footer */
+footer{margin-top:72px;display:grid;gap:18px}
+.archive{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:4px dotted var(--sky);border-bottom:4px dotted var(--sky);padding:16px 2px;text-decoration:none}
+.archive b{font-weight:400;font-size:1.05rem}
+.archive span{font-family:var(--en);font-size:.85rem;letter-spacing:.06em}
+.archive:hover b{text-decoration:underline}
+.credit{font-size:.88rem;color:var(--muted);display:grid;gap:2px;line-height:1.8}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+</head><body>
+<div class="page" lang="en">
+<header class="cover">
+  <div class="lang" aria-label="Language"><a href="index.html" hreflang="ko" lang="ko">KO</a><span aria-current="true">EN</span></div>
+  <h1 aria-label="Island of ⬡⬡ : Ganghwado">
+    <span class="t-en" aria-hidden="true">Island of <span class="hx2"></span><br>Ganghwado</span>
+  </h1>
+  <p class="vert">2026 · 10.25 — 11.08</p>
+  <img class="walker" src="img/walker.png" alt="">
+  <p class="todo-note"><span class="todo">Working marks</span>Dashed boxes show what is still to be written. They will be removed before launch.</p>
+</header>
+
+<nav aria-label="Contents"><ul>
+  <li class="sky"><a href="#project"><i></i>ABOUT</a></li>
+  <li class="lav"><a href="#artists"><i></i>ARTISTS</a></li>
+  <li class="mint"><a href="#map"><i></i>MAP</a></li>
+  <li class="yel"><a href="#visit"><i></i>VISIT</a></li>
+</ul></nav>
+
+<section class="sec sky" id="project" aria-labelledby="h-project">
+  <div class="divider"><h2 id="h-project"><span class="caps">ABOUT</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="body">
+    <h3 class="pagetitle">About the Project</h3>
+    <p class="lede">The <span class="hx2" role="img" aria-label="⬡⬡"></span>Island project starts with questions about things that are disappearing. Artists, producers and citizens come together to face disappearance and create poetic spaces within everyday life.</p>
+    <p>For 2025–2026, the island is Ganghwado. The project began with a research phase in 2025, bringing together artists and producers from South Korea, Singapore and Italy. Walking Ganghwa's paths, visiting historical and cultural sites and meeting its people, each of us began to sense, in our own way, what has been disappearing here.</p>
+    <p>In 2026, artists from Japan and Malaysia join us. We return to Ganghwa with the questions found last year, to make poetic places where things are vanishing and let them slowly gather on the island.</p>
+    <p>The two hexagons symbolize the project. Hexagons interlock to create new spaces; each one is both “my island” and “our island.”</p>
+
+  </div>
+</section>
+
+<section class="sec lav" id="artists" aria-labelledby="h-artists">
+  <div class="divider"><h2 id="h-artists"><span class="caps">ARTISTS</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="body">
+    <h3 class="pagetitle">Participants &amp; Organizations</h3>
+    <p>Artists from Korea, Italy, Singapore, Malaysia and Japan live and work on Ganghwa.</p>
+    <article class="artist">
+      <div class="artist-h"><h4>A.N.D. Theatre</h4><span class="from">GANGHWA, KOREA</span></div>
+      <p class="people">KangYun Minji · Kwon Keunyoung · Min Jaewon · Jeon Yunhwan · Jo Naetmul · Byun Junseop <span class="todo check">Byun Junseop spelling</span></p>
+      <p>A.N.D. Theatre is an arts company based on Ganghwa Island. Since moving to Ganghwa in 2018, it has created the Void Theatre and the Void Theatre Residency with fellow artists, exploring new relationships between the region and art. Its works include 〈Ganghwa Walk: Peace Document〉 (2023), a walking performance that follows the memories of displaced grandmothers from Gyodong Island, and the 〈Jamsiseom Theatre Festival〉 (2021–), where invited artists stay and make work on the island. Believing in senses that stay alive amid disappearance, the company keeps testing new forms of art on Ganghwa.</p>
+      <p><span class="todo check">Not in the sheet; summarised from the 2025 archive book</span></p>
+    </article>
+    <article class="artist">
+      <div class="artist-h"><h4>Yonrimog</h4><span class="from">GANGHWA, KOREA</span></div>
+      <p>Yonrimog began her music career with the indie rock band “Open your eyes Cobain” and has released albums for more than twenty years. She has raised two children on Ganghwa for ten years, in a life where art and daily life are not separate. After the “TanEmotion” project with Korean traditional instruments and years of scoring dance, theatre and film, she began working under her own name in 2023, including the telephone sound installation 〈Reminiscence of Reminiscence〉. She also runs the street music theatre group “umdalda” with her family. For her, music is an art of time that lingers within disappearance.</p>
+    </article>
+    <article class="artist">
+      <div class="artist-h"><h4>Teatringestazione</h4><span class="from">NAPLES, ITALY</span></div>
+      <p class="people">Anna Gesualdi · Giovanni Trono</p>
+      <p>A multidisciplinary performing arts company founded in Naples in 2006 by Gesualdi | Trono, joined since 2007 by dramaturg Loretta Mesiti. Focused on sharing processes, the company works with people in fragile contexts, including prisons, migrants, the elderly and people with disabilities. Through Altofest, where citizens open their homes to artists for fifteen days, and Ilinea d'Aria (“Air Line Distance”), which reconnected depopulating mountain villages through performance and radio, it treats art as a social act that links people and places again.</p>
+    </article>
+    <article class="artist">
+      <div class="artist-h"><h4>Heewarae</h4><span class="from">GANGHWA, KOREA</span></div>
+      <p class="people">Kim Narae · Lee Gunhee</p>
+      <p>A community-art collective led by visual artists Kim Narae and Lee Gunhee, working in planning, education and running a space since moving from Seoul to Ganghwa. Since 2020 they have turned to people and places that went unseen, such as migrant women, social workers and Ganghwa's dondae (coastal forts). Since 2023, on the small island of Achado, they walk, farm and cook with its aging women residents, practicing art as the “rhythm of daily life.” Their keyword is care: like trees and gardens growing where a fort's stones have crumbled, they look for the life that blossoms within disappearance.</p>
+    </article>
+    <article class="artist">
+      <div class="artist-h"><h4>Drama Box (Heng Leun)</h4><span class="from">SINGAPORE</span></div>
+      <p>A socially engaged arts company in Singapore that seeks social change through art. Founder Heng Leun served as artistic director for thirty years before handing the role to fellow artists, and now works as a curator, dramaturg and artistic director. For two decades the company has worked on “land, space and place,” making multilingual performances in libraries, housing estates and streets. Its long-term 〈Project 12〉 takes place on Pulau Ubin, an island twelve minutes by boat from the main island whose population fell from 3,000 to 28, exploring ecology, capital and time with its residents.</p>
+    </article>
+    <article class="artist">
+      <div class="artist-h"><h4>Chew Shaw En</h4><span class="from">SINGAPORE</span></div>
+      <p>Shaw is a performing artist, a maker who views the world from the body, and a facilitator of community-based art who connects people, spaces and communities. She works mostly with children from vulnerable families, whom she calls “hidden children,” treating invisibility as a precursor to disappearance. In one Singapore neighbourhood she ran a “Community Performance Night” at the same time and place every week for two and a half years, building a practice of embeddedness in place, practice and people. For her, art is “the most important thing, yet at the same time the least important thing.”</p>
+    </article>
+    <article class="artist">
+      <div class="artist-h"><h4>Orang Orang Drum Theatre</h4><span class="from">PENANG, MALAYSIA</span></div>
+      <p class="people">Leow Hui Min · Leow Sze Yee · Chew Soon Heng</p>
+      <p>Founded in Malaysia in 2013 by Leow Sze Yee (Zyee) and Chew Soon Heng (Boyz Chew). Starting from the folk performance 24 Festive Drums, the group explores drum theatre, in which drummer-performers move between storyteller, musician and physical actor, with the interplay of sound and body as its core language. It has performed at festivals in France, Hungary, Australia, Poland, Taiwan and Korea, and is joined by Leow Hui Min, who studied performing arts in Bordeaux and Venice. Its current focus is the Shan-Ka-La Project, an orchard space that brings farming and performing arts together.</p>
+    </article>
+    <article class="artist">
+      <div class="artist-h"><h4>Sononochi</h4><span class="from">KYOTO, JAPAN</span></div>
+      <p class="people">Kazuyo Nakatani · Moe Nagasawa</p>
+      <p>A performing arts group founded in Kyoto in 2013. Its head, director and playwright Kazuyo Nakatani, works with artists in music, painting and architecture, treating spaces and bodies like slowly shifting seasons to weave a place's layered stories into the audience's time and memory. In its Landscape Theatre, performers slip into everyday scenes as extraordinary presences, in rural landscapes, galleries and former factory sites. Production manager Moe Nagasawa researches the role of theatres in local communities and their links with social welfare at Doshisha University.</p>
+    </article>
+    <article class="artist">
+      <div class="artist-h"><h4>Producer Group DOT</h4><span class="from">SEOUL, KOREA</span></div>
+      <p class="people">Park Jisun · Song Miseon</p>
+      <p>A collective of performing arts producers formed in 2014, with creativity, independence and horizontality at its core. Alongside domestic productions, international co-productions and tours, it builds process-based work through theme-based research, residencies and networks. From 〈Connected City〉 (2017–2021), which looked at what is disappearing in Seoul's old centre, and 〈DMZ Research〉, to the Artists' Residency – Climate Change with Arts Farm Tutbat in Hwacheon (since 2020), the Ganghwa project continues DOT's exploration of borders, friction, connection, the climate crisis and what is disappearing.</p>
+    </article>
+  </div>
+</section>
+
+<section class="sec mint map" id="map" aria-labelledby="h-map">
+  <div class="divider"><h2 id="h-map"><span class="caps">MAP</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="body">
+    <h3 class="pagetitle">Places</h3>
+    <p>The two bases, partner venues in the villages, places to stay, and nearby dolmens and sights. Tap a name to open it in Google Maps.</p>
+    <div class="mapbox wide"><svg class="island" viewBox="0 0 680 830" role="img" aria-label="Map of southern Ganghwa showing the bases, venues, stays, sights and dolmens">
+<path class="land" d="M-15 185 -13 189 -11 187 -9 187 -9 189 -9 193 -9 195 -17 217 -32 251 -36 275 -36 277 -38 294 -38 298 -38 306 -34 310 -26 310 -24 310 -11 308 -5 312 -3 318 -5 324 -7 332 1 338 7 336 12 338 16 346 16 356 36 368 45 370 49 370 53 370 68 374 86 378 90 378 99 380 109 382 113 386 117 394 117 402 119 406 119 410 124 420 128 422 130 430 128 442 122 451 124 457 124 459 122 467 122 481 93 509 63 539 53 549 51 551 43 557 39 561 36 563 26 569 9 571 -9 577 -26 577 -32 565 -30 535 -30 513 -28 501 -24 501 -20 501 -20 493 -20 489 -20 487 -20 485 -26 479 -30 477 -47 432 -59 420 -74 416 -105 402 -107 400 -127 388 -140 378 -142 372 -144 364 -154 358 -163 354 -169 344 -184 334 -190 328 -190 324 -184 322 -177 318 -171 320 -165 320 -154 318 -148 316 -144 312 -142 304 -140 300 -140 286 -138 279 -132 273 -134 265 -134 253 -134 239 -132 235 -132 229 -132 219 -134 213 -134 209 -130 205 -115 199 -103 197 -96 197 -86 197 -82 195 -71 189 -63 183 -47 173 -28 169 -24 179 -15 185ZM-194 235 -194 237 -194 239 -194 241 -194 243 -192 245 -192 247 -192 249 -192 251 -192 253 -190 253 -190 255 -188 257 -190 259 -190 261 -192 261 -192 263 -190 263 -190 265 -188 265 -188 267 -186 267 -186 269 -184 269 -184 271 -184 273 -186 275 -188 275 -190 275 -192 275 -192 277 -194 279 -196 279 -198 279 -200 279 -200 277 -202 275 -204 275 -204 273 -202 273 -202 271 -204 271 -204 269 -206 269 -208 271 -208 273 -211 273 -213 275 -215 275 -217 275 -217 277 -219 275 -221 273 -221 271 -219 271 -219 269 -219 267 -221 265 -221 263 -221 261 -221 259 -219 259 -219 257 -219 255 -217 255 -217 253 -219 251 -221 249 -219 249 -219 247 -219 245 -219 243 -217 243 -215 243 -213 243 -213 241 -211 241 -211 239 -208 237 -206 235 -204 235 -202 235 -202 233 -202 231 -200 231 -200 229 -200 227 -198 227 -196 227 -196 229 -196 231 -196 233 -194 233 -194 235ZM-252 292 -248 296 -246 296 -244 296 -244 298 -244 300 -246 300 -246 302 -248 302 -252 302 -254 302 -256 302 -258 302 -260 304 -262 304 -264 304 -267 304 -277 306 -283 302 -283 304 -285 304 -287 306 -289 306 -291 308 -294 306 -296 306 -298 304 -300 304 -302 302 -304 302 -304 300 -306 300 -308 300 -310 302 -312 300 -314 300 -316 300 -318 298 -323 298 -325 298 -325 296 -327 296 -329 296 -331 296 -331 294 -333 292 -333 290 -335 290 -335 288 -333 286 -331 286 -329 286 -329 284 -327 284 -325 284 -323 282 -296 247 -296 245 -294 243 -291 243 -289 243 -287 243 -285 245 -283 245 -283 247 -281 247 -281 253 -281 257 -281 259 -269 284 -267 284 -262 288 -258 290 -256 290 -252 292ZM-142 187 -140 187 -138 187 -136 189 -136 191 -138 193 -140 193 -140 195 -140 197 -140 199 -144 201 -144 203 -146 203 -148 205 -150 205 -152 203 -154 203 -157 201 -159 199 -157 197 -157 195 -154 195 -152 195 -152 193 -150 193 -150 191 -148 189 -146 189 -148 189 -148 187 -148 185 -146 185 -146 187 -144 187 -142 187ZM-356 300 -358 300 -358 298 -358 296 -356 294 -356 292 -356 290 -356 288 -358 288 -358 286 -358 282 -358 281 -356 281 -354 281 -352 282 -350 284 -350 286 -350 288 -350 290 -350 292 -350 296 -350 298 -352 298 -352 300 -354 300 -356 300ZM-215 322 -217 322 -219 322 -221 320 -221 318 -223 316 -223 314 -221 312 -221 310 -221 308 -219 308 -219 310 -219 312 -217 312 -217 314 -217 316 -217 318 -215 318 -215 320 -215 322ZM-94 455 -94 457 -94 459 -96 459 -98 459 -98 457 -96 457 -98 455 -101 455 -98 453 -98 451 -96 451 -96 449 -94 449 -94 451 -92 451 -92 453 -94 453 -94 455ZM-71 442 -69 442 -69 443 -71 443 -71 445 -74 445 -74 443 -74 442 -71 442Z"/>
+<path class="land" d="M342 -45 344 -43 356 -32 360 -26 369 -18 373 -14 381 -10 385 -8 387 -6 389 -2 391 0 400 8 412 16 416 20 418 20 425 24 431 28 437 34 439 34 439 42 437 46 437 48 433 72 431 74 431 76 429 76 431 84 429 84 429 86 431 88 433 90 435 90 435 92 435 94 435 96 433 98 433 100 437 102 437 108 437 110 437 114 433 125 431 125 427 129 425 131 422 135 420 139 420 141 420 145 420 147 420 149 420 151 420 155 420 159 420 161 416 161 412 157 406 153 404 153 404 151 402 151 400 151 398 151 398 153 396 153 396 155 396 157 396 159 396 161 393 161 393 163 391 163 389 165 389 167 385 171 383 173 381 181 379 183 375 183 369 187 356 191 352 191 350 189 346 187 344 187 342 187 339 187 337 189 335 189 333 189 329 191 323 197 319 201 313 205 304 205 306 201 306 195 308 193 310 191 310 189 313 185 313 175 310 165 313 161 310 155 313 153 313 149 313 147 313 139 315 137 317 133 319 131 323 129 325 129 319 123 317 121 317 120 317 116 315 116 315 114 313 114 313 112 310 112 308 110 308 106 308 102 315 94 317 92 319 92 319 90 317 86 317 82 317 80 319 78 323 74 323 72 321 72 317 70 315 70 313 68 313 64 313 60 315 54 315 52 313 50 310 46 300 44 298 44 294 44 292 44 288 44 286 44 281 42 277 40 273 32 275 18 277 14 281 10 283 8 286 6 298 -2 302 -6 306 -12 308 -14 310 -18 313 -22 319 -24 321 -26 323 -28 335 -40 339 -43 342 -45Z"/>
+<path class="land" d="M342 -45 339 -43 335 -40 323 -28 321 -26 319 -24 313 -22 310 -18 308 -14 306 -12 302 -6 298 -2 286 6 283 8 281 10 277 14 275 18 273 32 273 34 271 38 269 42 265 44 259 48 256 50 250 56 246 60 242 60 240 62 236 62 234 60 229 56 225 52 223 52 219 48 213 46 207 44 205 42 203 42 198 42 192 42 190 44 190 46 190 50 188 52 186 54 180 54 178 54 176 56 176 58 176 60 176 62 173 62 173 64 169 66 165 68 163 70 161 70 161 72 159 74 157 74 155 74 153 72 151 74 149 76 146 76 142 76 138 78 134 80 130 84 126 88 122 96 119 96 115 96 113 98 111 98 109 100 107 98 105 98 103 94 101 92 99 92 93 92 88 92 86 90 84 86 80 82 76 82 72 82 59 80 57 80 51 80 47 82 45 48 41 50 36 46 43 32 49 28 51 28 68 20 86 2 99 -8 109 -16 144 -59 146 -61 161 -79 163 -81 171 -87 192 -89 213 -85 215 -85 227 -85 244 -91 252 -101 265 -117 294 -109 296 -105 300 -93 304 -91 310 -91 310 -87 313 -81 321 -81 323 -77 323 -69 325 -65 342 -45Z"/>
+<path class="land" d="M57 80 59 80 72 82 76 82 80 82 84 86 86 90 88 92 93 92 99 92 101 92 103 94 105 98 107 98 109 100 111 98 113 98 115 96 119 96 122 96 126 88 130 84 134 80 138 78 142 76 146 76 149 76 151 74 153 72 155 74 157 74 159 74 161 72 161 70 163 70 165 68 169 66 173 64 173 62 176 62 176 60 176 58 176 56 178 54 180 54 186 54 188 52 190 50 190 46 190 44 192 42 198 42 203 42 205 42 207 44 213 46 219 48 223 52 225 52 229 56 234 60 236 62 240 62 242 60 246 60 250 56 256 50 259 48 265 44 269 42 271 38 273 34 273 32 277 40 281 42 286 44 288 44 292 44 294 44 298 44 300 44 310 46 313 50 315 52 315 54 313 60 313 64 313 68 315 70 317 70 321 72 323 72 323 74 319 78 317 80 317 82 317 86 319 90 319 92 317 92 315 94 308 102 308 106 308 110 310 112 313 112 313 114 315 114 315 116 317 116 317 120 317 121 319 123 325 129 323 129 319 131 317 133 315 137 313 139 313 147 313 149 313 153 310 155 313 161 310 165 313 175 313 185 310 189 310 191 308 193 306 195 306 201 304 205 296 207 292 207 290 205 286 203 281 203 277 203 273 203 271 203 269 205 267 207 263 209 261 209 256 211 252 215 250 215 244 217 240 217 238 219 236 219 234 219 232 219 217 221 217 223 215 223 211 225 209 225 203 227 198 227 192 223 188 223 186 223 184 223 178 225 171 223 169 223 167 223 163 223 161 223 159 221 157 221 155 221 149 223 146 223 140 229 138 229 136 229 132 229 130 229 119 225 107 219 105 219 90 219 88 219 76 217 59 217 59 215 59 213 59 209 59 199 59 195 59 185 57 181 59 175 59 173 59 171 59 167 59 161 59 153 59 151 59 147 57 143 57 141 57 139 57 137 57 127 57 125 57 120 57 118 57 114 55 114 55 112 55 110 53 110 55 108 57 108 57 106 57 102 55 94 55 92 55 88 55 86 57 84 59 82 57 80Z"/>
+<path class="land" d="M59 215 59 217 76 217 88 219 90 219 105 219 107 219 119 225 130 229 132 229 136 229 138 229 140 229 146 223 149 223 155 221 157 221 159 221 161 223 163 223 167 223 169 223 171 223 178 225 184 223 186 223 188 223 192 223 198 227 203 227 209 225 211 225 215 223 217 223 217 221 232 219 234 219 236 219 238 219 240 217 244 217 250 215 252 215 256 211 261 209 263 209 267 207 269 205 271 203 273 203 277 203 281 203 286 203 290 205 292 207 296 207 296 213 298 215 300 227 302 227 302 229 304 231 306 235 306 237 308 241 308 247 308 249 308 261 304 265 302 267 298 269 296 269 296 273 296 277 296 279 296 281 296 284 298 286 304 292 302 292 300 292 298 292 296 296 294 298 288 304 279 308 277 312 275 314 273 316 273 318 271 320 269 322 265 326 261 326 259 326 252 326 250 328 248 332 246 334 244 334 236 334 227 336 223 336 221 336 219 338 215 340 207 342 203 340 196 340 190 344 188 346 186 350 186 352 186 354 188 354 188 356 188 358 184 370 184 376 184 382 182 386 182 392 180 400 178 404 176 404 173 402 173 400 171 398 169 396 167 396 163 398 159 396 149 398 142 392 132 384 126 378 124 378 105 368 90 362 74 354 53 344 53 342 47 334 36 312 28 292 26 290 24 261 22 243 22 225 22 191 41 195 51 201 57 209 57 213 59 215Z"/>
+<path class="land" d="M203 543 207 543 211 545 221 551 223 553 225 553 227 553 229 551 236 547 238 547 240 545 244 545 246 549 248 551 248 553 248 555 254 557 256 557 259 557 263 559 267 559 269 559 271 561 273 559 275 561 271 565 271 569 271 571 277 577 283 581 288 581 292 581 292 579 296 579 300 579 304 579 308 579 308 581 310 581 310 579 315 579 333 579 339 581 342 581 342 583 344 583 348 587 350 589 354 591 358 591 362 589 364 589 366 589 369 591 373 593 373 599 375 601 375 603 377 606 377 608 383 628 387 638 389 648 391 652 389 652 387 652 381 652 379 652 377 654 379 658 379 662 383 670 385 678 387 684 389 692 389 694 391 706 393 710 393 718 396 728 398 736 377 742 373 742 371 744 369 748 371 750 369 754 369 760 369 763 364 765 364 767 364 765 362 758 346 750 342 750 335 752 333 752 323 746 321 748 313 748 310 750 306 750 304 752 302 756 300 756 298 754 292 754 292 752 275 752 244 750 229 750 227 750 219 750 198 748 176 730 171 724 157 718 149 712 146 708 146 704 146 698 138 696 134 694 132 694 128 692 126 692 124 688 117 684 107 684 103 684 101 680 99 672 101 670 109 674 113 674 117 672 124 670 124 666 124 660 124 656 122 654 117 652 117 650 117 648 117 642 117 636 109 632 111 628 115 626 113 614 109 606 101 603 95 603 93 603 86 603 86 601 86 597 93 591 95 591 103 589 115 591 130 591 134 585 149 583 155 579 161 577 176 575 184 569 190 563 192 561 196 555 203 543Z"/>
+<path class="land" d="M539 253 537 255 535 261 532 265 530 271 528 277 526 286 526 304 528 318 530 322 539 336 547 348 549 350 551 352 551 354 553 354 551 356 551 364 551 368 549 378 549 380 549 382 549 384 547 392 547 400 545 400 539 400 530 398 528 400 526 400 524 400 524 398 524 396 522 396 522 394 520 394 518 394 518 392 518 390 516 390 514 388 512 388 512 386 510 384 508 382 506 382 503 382 501 380 499 380 499 384 497 384 495 384 493 382 491 380 489 382 487 382 485 382 481 380 481 378 479 378 472 380 468 380 466 380 460 378 456 376 449 378 449 376 447 376 445 372 439 368 437 368 435 370 433 370 431 372 429 370 427 368 427 366 422 366 420 366 404 364 393 362 389 362 381 362 379 360 379 356 381 334 375 332 373 320 371 318 371 316 369 316 364 310 362 308 358 306 352 300 346 298 339 298 331 294 329 296 327 298 323 298 319 298 306 294 304 292 298 286 296 284 296 281 296 279 296 277 296 273 296 269 298 269 302 267 304 265 308 261 310 259 313 257 319 257 323 253 327 251 329 249 335 253 337 253 339 253 342 253 348 251 350 249 354 243 356 243 356 239 358 237 360 237 364 237 377 237 381 235 383 237 385 237 385 239 387 251 387 253 387 255 387 257 391 257 393 261 396 263 398 263 404 263 406 261 410 261 418 255 422 253 422 251 425 249 427 249 429 247 435 245 439 241 441 241 441 237 443 237 441 235 443 235 447 235 447 233 449 233 452 233 454 231 456 231 460 233 468 235 470 235 472 237 474 239 476 239 479 243 481 243 481 245 485 247 487 247 491 247 493 247 493 251 495 251 497 255 497 257 499 257 501 255 503 257 506 257 510 255 512 255 514 255 518 253 520 251 520 249 522 247 524 247 528 249 530 249 535 251 537 251 539 253Z"/>
+<path class="land" d="M304 205 313 205 319 201 323 197 329 191 333 189 335 189 337 189 339 187 342 187 344 187 346 187 350 189 352 191 356 191 369 187 375 183 379 183 381 181 383 173 385 171 389 167 389 165 391 163 393 163 393 161 396 161 396 159 396 157 396 155 396 153 398 153 398 151 400 151 402 151 404 151 404 153 406 153 412 157 416 161 420 161 420 159 420 155 420 151 420 149 420 147 420 145 420 141 420 139 422 135 425 131 427 129 431 125 433 125 437 114 437 110 437 108 437 102 433 100 433 98 435 96 435 94 435 92 435 90 433 90 431 88 429 86 429 84 431 84 429 76 431 76 431 74 433 72 437 48 437 46 439 42 439 34 447 42 470 48 479 52 491 60 497 64 503 76 503 86 506 94 516 108 516 112 512 120 510 121 510 125 510 131 510 135 514 145 524 157 526 159 526 161 539 177 551 193 549 199 547 203 547 213 547 221 549 225 549 227 545 237 545 239 543 241 541 247 539 253 537 251 535 251 530 249 528 249 524 247 522 247 520 249 520 251 518 253 514 255 512 255 510 255 506 257 503 257 501 255 499 257 497 257 497 255 495 251 493 251 493 247 491 247 487 247 485 247 481 245 481 243 479 243 476 239 474 239 472 237 470 235 468 235 460 233 456 231 454 231 452 233 449 233 447 233 447 235 443 235 441 235 443 237 441 237 441 241 439 241 435 245 429 247 427 249 425 249 422 251 422 253 418 255 410 261 406 261 404 263 398 263 396 263 393 261 391 257 387 257 387 255 387 253 387 251 385 239 385 237 383 237 381 235 377 237 364 237 360 237 358 237 356 239 356 243 354 243 350 249 348 251 342 253 339 253 337 253 335 253 329 249 327 251 323 253 319 257 313 257 310 259 308 261 308 249 308 247 308 241 306 237 306 235 304 231 302 229 302 227 300 227 298 215 296 213 296 207 304 205Z"/>
+<path class="land f-gil" d="M557 561 559 565 562 577 562 587 574 606 576 614 576 616 576 618 591 636 597 644 601 656 603 670 605 692 609 708 609 710 605 714 603 716 601 720 597 720 593 720 591 720 578 726 568 730 545 738 543 740 528 750 528 756 530 758 537 762 545 762 551 765 553 773 551 781 547 781 541 787 541 791 539 791 537 791 530 793 528 799 520 799 518 797 516 797 510 793 506 795 503 791 503 787 503 785 499 779 493 777 491 779 489 777 489 769 483 763 476 762 460 765 454 767 445 771 429 777 418 785 416 781 416 777 410 765 406 756 398 736 396 728 393 718 393 710 391 706 389 694 389 692 387 684 385 678 383 670 379 662 379 658 377 654 379 652 381 652 387 652 389 652 391 652 389 648 387 638 383 628 377 608 377 606 375 603 375 601 373 599 373 593 373 591 381 585 381 579 381 575 379 573 381 567 381 565 381 563 383 563 383 561 385 561 385 559 387 559 387 557 389 557 389 555 389 553 391 551 391 549 393 545 396 537 396 535 396 529 396 525 396 519 398 511 398 509 398 507 398 505 398 503 398 501 398 497 398 495 396 495 396 493 396 491 396 489 393 487 393 485 396 483 396 481 396 479 396 477 396 475 396 473 398 473 398 471 400 471 402 469 402 467 404 465 404 463 406 463 406 461 408 461 408 463 410 463 412 463 416 465 418 465 420 465 422 465 425 465 427 465 429 463 431 463 431 465 431 467 433 469 433 471 435 471 437 473 439 473 441 473 443 473 445 475 447 475 447 477 449 481 449 483 452 483 452 485 454 487 454 489 454 491 454 493 454 495 456 495 456 499 458 499 458 501 456 501 456 503 456 505 456 507 456 509 456 511 456 513 456 515 456 517 456 519 456 523 456 525 454 527 454 529 454 531 456 531 462 529 464 529 466 529 468 529 468 531 470 531 470 533 472 533 476 535 483 539 485 543 489 547 489 551 491 555 493 555 495 555 497 555 497 557 497 559 497 569 497 571 497 573 499 573 501 573 503 573 506 573 508 573 510 573 512 573 516 573 518 573 520 573 522 573 524 571 528 569 532 565 535 563 537 563 539 563 541 563 543 563 547 563 549 563 551 563 555 561 557 561Z"/>
+<path class="land f-yang" d="M149 398 159 396 163 398 167 396 169 396 171 398 173 400 173 402 176 404 178 404 180 400 182 392 182 386 184 382 184 376 184 370 188 358 188 356 188 354 186 354 186 352 186 350 188 346 190 344 196 340 203 340 207 342 215 340 219 338 221 336 223 336 227 336 236 334 244 334 246 334 248 332 250 328 252 326 259 326 261 326 265 326 267 328 269 330 279 342 286 352 288 358 290 360 290 362 290 364 292 364 292 366 292 368 292 366 294 366 294 368 296 370 296 372 300 374 302 378 308 394 310 400 310 402 306 404 306 406 304 406 306 412 306 414 306 416 308 420 315 426 317 428 319 430 321 432 323 432 325 432 333 434 342 434 344 434 346 436 348 438 356 438 366 445 373 445 375 445 377 447 379 447 381 447 381 449 383 451 385 451 391 451 393 451 396 451 398 457 400 457 402 459 406 461 406 463 404 463 404 465 402 467 402 469 400 471 398 471 398 473 396 473 396 475 396 477 396 479 396 481 396 483 393 485 393 487 396 489 396 491 396 493 396 495 398 495 398 497 398 501 398 503 398 505 398 507 398 509 398 511 396 519 396 525 396 529 396 535 396 537 393 545 391 549 391 551 389 553 389 555 389 557 387 557 387 559 385 559 385 561 383 561 383 563 381 563 381 565 381 567 379 573 381 575 381 579 381 585 373 591 373 593 369 591 366 589 364 589 362 589 358 591 354 591 350 589 348 587 344 583 342 583 342 581 339 581 333 579 315 579 310 579 310 581 308 581 308 579 304 579 300 579 296 579 292 579 292 581 288 581 283 581 277 577 271 571 271 569 271 565 275 561 273 559 271 561 269 559 267 559 263 559 259 557 256 557 254 557 248 555 248 553 248 551 246 549 244 545 240 545 238 547 236 547 229 551 227 553 225 553 223 553 221 551 211 545 207 543 203 543 194 539 182 533 157 523 151 525 161 515 169 503 176 493 176 479 173 469 171 455 169 449 169 445 157 414 153 404 151 400 149 398Z"/>
+<path class="land f-bul" d="M265 326 269 322 271 320 273 318 273 316 275 314 277 312 279 308 288 304 294 298 296 296 298 292 300 292 302 292 304 292 306 294 319 298 323 298 327 298 329 296 331 294 339 298 346 298 352 300 358 306 362 308 364 310 369 316 371 316 371 318 373 320 375 332 381 334 379 356 379 360 381 362 389 362 393 362 404 364 420 366 422 366 427 366 427 368 429 370 431 372 433 370 435 370 437 368 439 368 445 372 447 376 449 376 449 378 456 376 460 378 466 380 468 380 472 380 479 378 481 378 481 380 485 382 487 382 489 382 491 380 493 382 495 384 497 384 499 384 499 380 501 380 503 382 506 382 508 382 510 384 512 386 512 388 514 388 516 390 518 390 518 392 518 394 520 394 522 394 522 396 524 396 524 398 524 400 526 400 528 400 530 398 539 400 545 400 547 400 547 402 547 404 547 406 547 408 547 410 547 414 547 416 547 418 545 430 543 430 543 432 541 442 541 449 541 451 541 453 541 457 543 461 545 463 547 465 549 467 551 467 553 469 555 471 557 471 557 473 559 473 566 477 566 479 568 481 570 481 572 483 574 485 576 487 576 491 576 493 576 497 576 499 576 501 576 503 576 505 574 511 572 513 564 517 559 525 557 531 557 535 557 551 557 561 555 561 551 563 549 563 547 563 543 563 541 563 539 563 537 563 535 563 532 565 528 569 524 571 522 573 520 573 518 573 516 573 512 573 510 573 508 573 506 573 503 573 501 573 499 573 497 573 497 571 497 569 497 559 497 557 497 555 495 555 493 555 491 555 489 551 489 547 485 543 483 539 476 535 472 533 470 533 470 531 468 531 468 529 466 529 464 529 462 529 456 531 454 531 454 529 454 527 456 525 456 523 456 519 456 517 456 515 456 513 456 511 456 509 456 507 456 505 456 503 456 501 458 501 458 499 456 499 456 495 454 495 454 493 454 491 454 489 454 487 452 485 452 483 449 483 449 481 447 477 447 475 445 475 443 473 441 473 439 473 437 473 435 471 433 471 433 469 431 467 431 465 431 463 429 463 427 465 425 465 422 465 420 465 418 465 416 465 412 463 410 463 408 463 408 461 406 461 402 459 400 457 398 457 396 451 393 451 391 451 385 451 383 451 381 449 381 447 379 447 377 447 375 445 373 445 366 445 356 438 348 438 346 436 344 434 342 434 333 434 325 432 323 432 321 432 319 430 317 428 315 426 308 420 306 416 306 414 306 412 304 406 306 406 306 404 310 402 310 400 308 394 302 378 300 374 296 372 296 370 294 368 294 366 292 366 292 368 292 366 292 364 290 364 290 362 290 360 288 358 286 352 279 342 269 330 267 328 265 326Z"/>
+<text class="area" x="590" y="625" text-anchor="middle">Gilsang</text>
+<text class="area" x="210" y="445" text-anchor="middle">Yangdo</text>
+<text class="area" x="480" y="430" text-anchor="middle">Bureun</text>
+<text class="area" x="200" y="352" text-anchor="middle">Naega</text>
+<text class="area" x="330" y="150" text-anchor="middle">Hajeom</text>
+<text class="area" x="385" y="705" text-anchor="middle">Hwado</text>
+<text class="area" x="500" y="335" text-anchor="middle">Seonwon</text>
+<text class="area" x="470" y="160" text-anchor="middle">Ganghwa-eup</text>
+<text class="sea" x="640" y="395" text-anchor="middle">Yeomha</text>
+<text class="sea" x="78" y="500" text-anchor="middle">Seokmo Channel</text>
+<text class="sea" x="210" y="800" text-anchor="middle">West Sea</text>
+<line class="lead" x1="431" y1="566" x2="420" y2="584"/>
+<g class="dol"><rect x="238" y="68" width="16" height="4"/><rect x="241" y="72" width="2" height="6"/><rect x="249" y="72" width="2" height="6"/></g>
+<text class="ko" x="260" y="72" text-anchor="start">Bugeun-ri dolmen</text>
+<g class="dol"><rect x="175" y="97" width="16" height="4"/><rect x="178" y="101" width="2" height="6"/><rect x="186" y="101" width="2" height="6"/></g>
+<text class="ko" x="170" y="101" text-anchor="end">Samgeo-ri dolmens</text>
+<g class="dol"><rect x="214" y="233" width="16" height="4"/><rect x="217" y="237" width="2" height="6"/><rect x="225" y="237" width="2" height="6"/></g>
+<text class="ko" x="236" y="237" text-anchor="start">Gocheon-ri dolmens</text>
+<g class="dol"><rect x="169" y="292" width="16" height="4"/><rect x="172" y="296" width="2" height="6"/><rect x="180" y="296" width="2" height="6"/></g>
+<text class="ko" x="164" y="296" text-anchor="end">Osang-ri dolmen</text>
+<path class="sight" d="M436 605 L442 611 L436 617 L430 611Z"/>
+<text class="ko" x="448" y="622" text-anchor="start">Jeondeungsa Temple</text>
+<path class="sight" d="M281 661 L287 667 L281 673 L275 667Z"/>
+<text class="ko" x="294" y="664" text-anchor="start">Manisan</text>
+<path class="sight" d="M349 740 L355 746 L349 752 L343 746Z"/>
+<text class="ko" x="362" y="749" text-anchor="start">Dongmak Beach</text>
+<rect class="stay" x="447" y="705" width="18" height="18" rx="3"/>
+<rect class="stay" x="331" y="534" width="18" height="18" rx="3"/>
+<rect class="stay" x="445" y="479" width="18" height="18" rx="3"/>
+<rect class="stay" x="422" y="557" width="18" height="18" rx="3"/>
+<rect class="stay" x="445" y="519" width="18" height="18" rx="3"/>
+<a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EA%B8%B8%EC%83%81%EB%A9%B4%20%ED%95%B4%EC%95%88%EB%82%A8%EB%A1%9C%20627" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin gil exact" cx="456" cy="714" r="6"/><text class="ko" x="470" y="712" text-anchor="start">Void Theatre</text><text class="en" x="470" y="727" text-anchor="start">venue + residency</text></a>
+
+<a class="gm" href="https://maps.app.goo.gl/AvE2hGihxXPFGxZ48" target="_blank" rel="noopener"><title>Open in Google Maps</title><rect class="lodge" x="427.5" y="562.5" width="7" height="7" rx="1"/><text class="ko" x="418" y="597" text-anchor="end">Bookstore Sijeom</text></a>
+<a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%95%ED%99%94%20%EC%98%A4%EB%91%90%EB%8F%88%EB%8C%80" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin bul" cx="541" cy="423" r="4.5"/><text class="ko" x="554" y="420" text-anchor="start">Odu Dondae</text></a>
+<a class="gm" href="https://maps.app.goo.gl/f8aZryK3XZdrTY6G9" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin gil exact" cx="494" cy="504" r="6"/><text class="ko" x="507" y="503" text-anchor="start">Heewarae</text></a>
+<a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EB%B6%88%EC%9D%80%EB%A9%B4%20%EB%B6%88%EC%9D%80%EB%82%A8%EB%A1%9C%20261-9" target="_blank" rel="noopener"><title>Open in Google Maps</title><rect class="lodge" x="450.5" y="484.5" width="7" height="7" rx="1"/><text class="ko" x="442" y="485" text-anchor="end">Space Geurigo</text></a>
+<a class="gm" href="https://maps.app.goo.gl/7dW9LZdkhUjMbfA4A" target="_blank" rel="noopener"><title>Open in Google Maps</title><rect class="lodge" x="450.5" y="524.5" width="7" height="7" rx="1"/><text class="ko" x="442" y="530" text-anchor="end">Guesthouse Darak</text></a>
+<a class="gm" href="https://maps.app.goo.gl/gbtVBnuF3g4Hm4gy6" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin yang" cx="254" cy="471" r="4.5"/><text class="ko" x="266" y="460" text-anchor="start">Sanmaeul High School</text></a>
+<g class="hs"><title>House stay · approximate location</title><rect class="stay" x="334" y="556" width="18" height="18" rx="3"/><rect class="lodge" x="339.5" y="561.5" width="7" height="7" rx="1"/><text class="ko" x="357" y="569" text-anchor="start">House stay</text></g><a class="gm" href="https://maps.app.goo.gl/4qZwyeEvdKRBf2Dj7" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin yang" cx="340" cy="543" r="4.5"/><text class="ko" x="330" y="566" text-anchor="end">Gukja &amp; Jugeok</text></a>
+<a class="gm" href="https://maps.app.goo.gl/h5iS6uPKFxqeRRoq6" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin yang" cx="331" cy="514" r="4.5"/><text class="ko" x="319" y="530" text-anchor="end">Cafe Keunnamu</text></a>
+<a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EB%8F%84%EC%9E%A5%EB%A6%AC%201351" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin yang" cx="320" cy="499" r="4.5"/><text class="ko" x="308" y="492" text-anchor="end">Dojang-ri Village Library</text></a>
+<a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EA%B0%95%ED%99%94%EB%82%A8%EB%A1%9C%20990-1" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin yang" cx="269" cy="409" r="4.5"/><text class="ko" x="282" y="406" text-anchor="start">Jingangsan Village Co-op</text></a>
+<g class="north"><path d="M630 40 L638 66 L630 60 L622 66Z"/><text class="ko" x="630" y="84" text-anchor="middle">N</text></g>
+<g class="scale"><rect x="470" y="792" width="162.6" height="4"/><rect x="470" y="792" width="81.3" height="4" class="half"/><text class="en" x="470" y="814">0</text><text class="en" x="632.6" y="814" text-anchor="end">5 km</text></g>
+</svg></div>
+    <p class="swipe">On a phone, swipe sideways to see the whole map.</p>
+    <ul class="legend">
+<li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" style="fill:var(--gil-s)"/></svg>Base</li>
+<li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="4.5" style="fill:var(--land);stroke:var(--muted);stroke-width:2"/></svg>Partner venue</li>
+<li><svg viewBox="0 0 20 20"><rect x="1" y="1" width="18" height="18" rx="3" class="stay"/><rect x="6.5" y="6.5" width="7" height="7" rx="1" class="lodge"/></svg>Stay</li>
+<li><svg viewBox="0 0 20 20"><path class="sight" d="M10 4 L16 10 L10 16 L4 10Z"/></svg>Sights</li>
+<li><svg viewBox="0 0 20 20"><g class="dol"><rect x="2" y="6" width="16" height="4"/><rect x="5" y="10" width="2" height="6"/><rect x="13" y="10" width="2" height="6"/></g></svg>Dolmen</li>
+</ul>
+    <h3 class="sub">Bases</h3>
+    <ul class="places">
+      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EA%B8%B8%EC%83%81%EB%A9%B4%20%ED%95%B4%EC%95%88%EB%82%A8%EB%A1%9C%20627">Void Theatre <small lang="ko">없는극장</small></a></li>
+      <li><a href="https://maps.app.goo.gl/f8aZryK3XZdrTY6G9">Heewarae <small lang="ko">희와래</small></a></li>
+    </ul>
+    <h3 class="sub">Partner venues</h3>
+    <ul class="places">
+      <li><a href="https://maps.app.goo.gl/gbtVBnuF3g4Hm4gy6">Sanmaeul High School <small lang="ko">산마을고등학교</small></a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EA%B0%95%ED%99%94%EB%82%A8%EB%A1%9C%20990-1">Jingangsan Village Co-op <small lang="ko">진강산마을협동조합</small></a></li>
+      <li><a href="https://maps.app.goo.gl/h5iS6uPKFxqeRRoq6">Cafe Keunnamu <small lang="ko">카페 큰나무</small></a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EB%8F%84%EC%9E%A5%EB%A6%AC%201351">Dojang-ri Village Library <small lang="ko">도장리마을도서관</small></a></li>
+      <li><a href="https://maps.app.goo.gl/4qZwyeEvdKRBf2Dj7">Gukja &amp; Jugeok <small lang="ko">국자와 주걱</small></a></li>
+    </ul>
+    <p class="mapnote">Township borders and coastline follow Statistics Korea boundaries (2013). Some locations are approximate. Korean names are given so you can show them to a taxi driver.</p>
+  </div>
+</section>
+
+<section class="sec yel" id="visit" aria-labelledby="h-visit">
+  <div class="divider"><h2 id="h-visit"><span class="caps">VISIT</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="body">
+    <h3 class="pagetitle">For Visitors</h3>
+    <dl class="info">
+      <div class="info-row"><dt>Dates</dt><dd><p>25 October – 8 November 2026</p><p><span class="todo">Days and times open to the public</span></p></dd></div>
+      <div class="info-row"><dt>How to join</dt><dd><p><span class="todo">Free or ticketed · booking · booking link</span></p></dd></div>
+      <div class="info-row"><dt>Getting there</dt><dd><p><span class="todo">From Seoul or Incheon Airport by public transport / car</span></p><p><span class="todo">Parking</span></p></dd></div>
+      <div class="info-row"><dt>Between bases</dt><dd><p>Void Theatre (Gilsang) and Heewarae (Bureun) are a short drive apart. <span class="todo check">Travel time</span></p><p><span class="todo">Shuttle and timetable</span></p></dd></div>
+      <div class="info-row"><dt>What to bring</dt><dd><p>Some programs are outdoors and on foot. Comfortable shoes and warm, windproof layers are recommended. <span class="todo check">Matches the program</span></p></dd></div>
+      <div class="info-row"><dt>Access</dt><dd><p><span class="todo">Wheelchair access · English interpretation</span></p></dd></div>
+      <div class="info-row"><dt>Contact</dt><dd><p><span class="todo">Email · phone · social media</span></p></dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <a class="archive" href="http://hexagon-island.com"><b>2025 Research Archive</b><span>hexagon-island.com →</span></a>
+  <div class="credit">
+    <p>Supported by Arts Council Korea <span class="todo check">Program name and logo rules</span></p>
+    <p>Organized by <span class="todo">Organization</span></p>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function mark(){
+    var y=window.scrollY+120, cur=0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop<=y) cur=i; });
+    links.forEach(function(a,i){ a.classList.toggle('on',i===cur && window.scrollY>40); });
+  }
+  window.addEventListener('scroll',mark,{passive:true}); mark();
+})();
+</script>
+</body></html>
