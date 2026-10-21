@@ -21,6 +21,7 @@
   --lav:#B8A5F9; --lav-d:#7B61E8;
   --mint:#79E8A6; --mint-d:#1C9F5E;
   --yel:#FEDF4A; --yel-d:#A88400;
+  --peach:#FFB99A; --peach-d:#C8613A;
   --todo:#8A5A00; --todo-bg:#FFF3CF;
   --ko:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --en:"Jost","Futura","Century Gothic",sans-serif;
@@ -69,7 +70,7 @@ nav a.on{border-bottom-color:var(--c)}
 
 /* chapters */
 .sky{--c:var(--sky);--cd:var(--sky-d)} .lav{--c:var(--lav);--cd:var(--lav-d)}
-.mint{--c:var(--mint);--cd:var(--mint-d)} .yel{--c:var(--yel);--cd:var(--yel-d)}
+.mint{--c:var(--mint);--cd:var(--mint-d)} .yel{--c:var(--yel);--cd:var(--yel-d)} .peach{--c:var(--peach);--cd:var(--peach-d)}
 .sec{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 50px);padding-top:56px}
 .divider{position:relative;background:var(--c);min-height:190px;padding:22px 22px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;overflow:hidden}
 .divider h2{margin:0;color:#fff;font-weight:400;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 22px;line-height:1}
@@ -169,8 +170,83 @@ footer{margin-top:72px;display:grid;gap:18px}
 .archive:hover b{text-decoration:underline}
 .credit{font-size:.88rem;color:var(--muted);display:grid;gap:2px;line-height:1.8}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-</style>
+/* links inside the project intro */
+.links{display:flex;flex-wrap:wrap;gap:8px 20px}
+.arrow{text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:1px}
+.arrow span{font-family:var(--en);font-size:.85rem;color:var(--muted);margin-left:6px}
+.arrow::after{content:" →"}
+/* invitation to the disappearance archive */
+.invite{display:grid;gap:6px;margin-top:10px;padding:20px 22px;background:var(--c);text-decoration:none;color:var(--ink)}
+.invite-q{font-family:var(--hand);font-size:clamp(1.8rem,6.5vw,2.3rem);line-height:1.15}
+.invite-sub{font-size:.95rem;line-height:1.7}
+.invite-go{font-weight:700;margin-top:4px}
+.page[lang="en"] .invite-go{font-weight:500}
+.invite:hover .invite-go{text-decoration:underline;text-underline-offset:4px}
+.page[lang="en"] .invite-q{font-family:var(--en);font-weight:300;font-size:clamp(1.4rem,5vw,1.8rem)}
+/* programme: two tracks */
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 28px}
+.track{display:grid;gap:6px;align-content:start;padding-block:14px;border-top:1px solid var(--rule)}
+.track h4{margin:0;font-family:var(--hand);font-weight:400;font-size:2rem;color:var(--cd);line-height:1.1}
+.page[lang="en"] .track h4{font-family:var(--en);font-weight:400;font-size:1.25rem;color:var(--ink)}
+.soon{font-size:.85rem;color:var(--muted)}
+.info-row dd:empty{min-height:1.8em}
+.yel .divider h2{color:var(--ink)}
 
+/* ===== compact, mobile-first layout (2026-10-21) ===== */
+.cover{padding-block:44px 18px;gap:14px}
+.vert{writing-mode:horizontal-tb;letter-spacing:.18em;font-size:.88rem;margin-top:0}
+.cover .walker{width:30px;margin-top:2px}
+nav ul{justify-content:flex-start}
+@media (min-width:720px){nav ul{justify-content:center}}
+nav a{padding:13px 10px}
+.sec{padding-top:24px}
+.divider{min-height:0;padding:18px 20px 16px;align-items:flex-end}
+.divider h2{gap:2px 16px}
+.divider .hand{font-size:clamp(2.4rem,10vw,3.4rem)}
+.divider .caps{font-size:clamp(1.4rem,6vw,2.2rem)}
+.divider .walker{position:static;transform:none;width:22px;flex:none;margin:0 0 2px}
+.body{gap:14px;padding-top:22px}
+.pagetitle{font-size:1.3rem}
+@media (max-width:600px){
+  body{font-size:15.5px;line-height:1.85}
+  .page{padding-inline:18px}
+  nav{margin-inline:-18px;padding-inline:8px}
+}
+/* artists as a compact list that opens */
+details.artist{padding-block:0;gap:0;border-top:1px solid var(--rule)}
+details.artist:last-of-type{border-bottom:1px solid var(--rule)}
+details.artist > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px 12px;padding-block:14px;flex-wrap:nowrap}
+details.artist > summary::-webkit-details-marker{display:none}
+details.artist > summary h4{flex:1;min-width:0}
+details.artist > summary .from{font-size:.7rem}
+.tog{width:14px;height:14px;flex:none;position:relative}
+.tog::before,.tog::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--ink);transition:transform .2s}
+.tog::after{transform:rotate(90deg)}
+details[open] .tog::after{transform:rotate(0)}
+details.artist[open]{padding-bottom:16px}
+details.artist > p{margin:0 0 8px}
+details.artist > summary:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media (max-width:600px){details.artist > summary .from{display:none}}
+/* visitor info stays two columns on phones too */
+@media (max-width:480px){.info-row{grid-template-columns:5.6rem 1fr;gap:0 12px}}
+.info-row{padding-block:11px}
+/* section pager */
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:14px;border-top:4px dotted var(--c);font-size:.92rem}
+.pager a{text-decoration:none}
+.pager a:hover{text-decoration:underline}
+.pager .next{margin-left:auto;font-weight:700}
+.page[lang="en"] .pager .next{font-weight:500}
+.tabbed .sec{scroll-margin-top:0}
+footer{margin-top:40px}
+@media (prefers-reduced-motion:reduce){.tog::before,.tog::after{transition:none}}
+.walking{display:block;width:58px;margin-top:4px}
+.walking img{display:block;width:100%;height:auto}
+/* cover title: hexagons lead, lettering smaller (2026-10-22) */
+.t-island{font-size:clamp(1.45rem,5.6vw,1.95rem);letter-spacing:.08em;display:flex;align-items:center;gap:.3em}
+.t-island .hx2{width:2.7em;height:1.58em;margin:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 21'%3E%3Cg fill='none' stroke='%23111' stroke-width='1' stroke-linejoin='round'%3E%3Cpath d='M9 1l8 4.6v9.8L9 20 1 15.4V5.6z'/%3E%3Cpath d='M26 1l8 4.6v9.8L26 20l-8-4.6V5.6z'/%3E%3C/g%3E%3C/svg%3E")}
+.t-letter{width:min(250px,46vw)}
+h1{gap:10px}
+</style>
 
 </head>
 <body>
@@ -182,15 +258,15 @@ footer{margin-top:72px;display:grid;gap:18px}
     <img class="t-letter" src="img/ganghwado.png" alt="" aria-hidden="true">
   </h1>
   <p class="vert">2026 · 10.25 — 11.08</p>
-  <img class="walker" src="img/walker.png" alt="">
-  <p class="todo-note"><span class="todo">작업용 표시</span>점선 상자는 아직 채워야 할 곳입니다. 공개 전에 모두 지웁니다.</p>
+  <picture class="walking"><source media="(prefers-reduced-motion: reduce)" srcset="img/walk-still.png"><img src="img/walk.webp" alt="" width="130" height="315"></picture>
 </header>
 
 <nav aria-label="목차"><ul>
-  <li class="sky"><a href="#project"><i></i>프로젝트</a></li>
+  <li class="sky"><a href="#project"><i></i>프로젝트 소개</a></li>
   <li class="lav"><a href="#artists"><i></i>참여 예술가</a></li>
+  <li class="yel"><a href="#program"><i></i>세부 프로그램</a></li>
   <li class="mint"><a href="#map"><i></i>지도</a></li>
-  <li class="yel"><a href="#visit"><i></i>관객 정보</a></li>
+  <li class="peach"><a href="#visit"><i></i>관객 정보</a></li>
 </ul></nav>
 
 <section class="sec sky" id="project" aria-labelledby="h-project">
@@ -202,6 +278,13 @@ footer{margin-top:72px;display:grid;gap:18px}
     <p>2026년, 일본과 말레이시아의 예술가가 합류해 다시 강화에 모입니다. 작년에 발견한 질문을 안고, 사라짐의 자리에 시적 장소를 만들고 그 상상의 공간이 섬 위에 천천히 쌓여가기를 바랍니다.</p>
     <p>두 개의 육각형은 이 프로젝트의 상징입니다. 서로 맞물리며 새로운 공간을 만드는 육각형처럼, 각자의 ‘나의 섬’이 이어져 ‘우리의 섬’이 됩니다.</p>
 
+    <p>올해 프로젝트는 10월 25일부터 11월 8일까지 강화에서 진행됩니다. 11월 6일–8일에는 관객이 참여할 수 있습니다. 자세한 내용은 이 페이지에 계속 업데이트됩니다.</p>
+    <p class="links"><a class="arrow" href="http://hexagon-island.com">2025 리서치 아카이브 <span>hexagon-island.com</span></a></p>
+    <a class="invite" href="http://hexagon-island.com/disappear.html">
+      <span class="invite-q">소멸에 관한 당신의 이야기를 남겨주세요</span>
+      <span class="invite-sub">당신 곁에서 사라지고 있는 것은 무엇인가요? 이야기는 ⬡⬡의 섬의 일부가 됩니다.</span>
+      <span class="invite-go">이야기 남기기 →</span>
+    </a>
   </div>
 </section>
 
@@ -210,49 +293,60 @@ footer{margin-top:72px;display:grid;gap:18px}
   <div class="body">
     <h3 class="pagetitle">참여자 · 단체 소개</h3>
     <p>한국, 이탈리아, 싱가포르, 말레이시아, 일본의 예술가들이 강화에 머물며 작업합니다.</p>
-    <article class="artist">
-      <div class="artist-h"><h4>앤드씨어터</h4><span class="from">GANGHWA, KOREA</span></div>
+    <details class="artist">
+      <summary class="artist-h"><h4>앤드씨어터</h4><span class="from">GANGHWA, KOREA</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">강윤민지 · 권근영 · 민재원 · 전윤환 · 조냇물 · 변준섭</p>
       <p>앤드씨어터는 강화도를 기반으로 활동하는 예술 단체입니다. 2018년 강화로 이주한 뒤 동료 예술가들과 ‘없는극장’과 ‘없는극장 레지던시’를 만들며 지역과 예술의 새로운 관계를 모색해 왔습니다. 교동도 실향민 할머니들의 기억을 따라 걷는 이동형 공연 〈강화도산책: 평화도큐먼트〉(2023), 초대 예술가들이 섬에 머물며 작업하는 〈잠시섬 연극제〉(2021–)를 만들었습니다. 사라져 가는 것들 속에서도 여전히 살아 있는 감각과 보이지 않는 연결을 믿으며, 강화에서 예술의 새로운 형태를 실험하고 있습니다.</p>
-      <p><span class="todo check">시트에 소개글이 없어 2025 결과보고집에서 요약</span></p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>연리목</h4><span class="from">GANGHWA, KOREA</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>연리목</h4><span class="from">GANGHWA, KOREA</span><i class="tog" aria-hidden="true"></i></summary>
       <p>인디 록밴드 ‘눈뜨고 코베인’으로 음악을 시작해 20여 년간 여러 앨범을 발표한 음악가입니다. 강화도에서 10년째 두 아이를 키우며 예술과 일상이 분리되지 않는 삶을 살고 있습니다. 국악기와 밴드를 결합한 ‘타니모션’, 무용·연극·영화 음악 작곡을 거쳐 2023년부터 자기 이름으로 솔로 작업을 시작했고, 전화기를 통해 관객의 기억과 음악이 교차하는 사운드 설치 「회상의 회상」을 선보였습니다. 가족과 함께 거리 음악극단 ‘음악당 달다’도 운영합니다. 그에게 음악은 사라짐 속에 머무는 시간의 예술입니다.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>테아트린게스타치오네</h4><span class="from">NAPLES, ITALY</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>테아트린게스타치오네</h4><span class="from">NAPLES, ITALY</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">안나 게수알디 · 지오바니 트로노</p>
       <p>2006년 나폴리에서 게수알디|트로노가 세운 다학제 공연예술 단체로, 2007년부터 드라마투르그 로레타 메시티가 함께하고 있습니다. 과정의 공유를 중시하며 교도소, 이민자, 노인, 장애인 등 취약한 환경에 놓인 사람들과 작업해 왔습니다. 시민이 15일 동안 자기 집을 예술가에게 내어 주는 공동체 축제 〈알토페스타〉, 인구 소멸 위기에 놓인 산간 마을들을 공연과 라디오로 다시 잇는 〈일리냐 다리야(공중선 거리)〉를 통해, 예술을 타인과 공간을 다시 연결하는 사회적 행위로 실천합니다.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>희와래</h4><span class="from">GANGHWA, KOREA</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>희와래</h4><span class="from">GANGHWA, KOREA</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">김나래 · 이건희</p>
       <p>시각예술가 김나래와 이건희가 이끄는 커뮤니티 아트 기반의 예술 단체로, 서울에서 강화로 이주한 뒤 기획·교육·공간 운영을 이어 오고 있습니다. 2020년부터 이주 여성, 사회복지사, 강화의 돈대처럼 보이지 않던 존재와 장소에 주목해 왔습니다. 2023년부터는 부속섬 아차도에서 노년 여성 주민들과 산책하고, 함께 농사짓고, 거둔 작물로 음식을 나누며 예술을 ‘생활의 리듬’으로 실천합니다. 핵심어는 ‘돌봄’. 돈대의 돌이 허물어진 자리에 나무와 텃밭이 자라는 풍경처럼, 사라짐 속에서 피어나는 생명의 가능성을 탐구합니다.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>드라마박스 (헝러운)</h4><span class="from">SINGAPORE</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>드라마박스 (헝러운)</h4><span class="from">SINGAPORE</span><i class="tog" aria-hidden="true"></i></summary>
       <p>예술을 통한 사회 변화를 지향하는 싱가포르의 사회참여형 예술 단체입니다. 창립자 헝러운은 30년간 예술감독을 맡은 뒤 그 자리를 동료들에게 넘겼고, 지금은 큐레이터, 드라마투르그, 예술감독으로 활동합니다. 단체는 20여 년간 ‘땅, 공간, 장소’를 주제로 도서관, 주택가, 거리 등 극장 밖에서 다언어 공연을 만들어 왔습니다. 장기 프로젝트 〈프로젝트 12〉는 본섬에서 배로 12분 거리, 인구가 3,000명에서 28명으로 줄어든 섬 플라우 우빈에서 주민들과 함께 생태와 자본, 시간의 문제를 탐구합니다.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>츄 쇼 엔</h4><span class="from">SINGAPORE</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>츄 쇼 엔</h4><span class="from">SINGAPORE</span><i class="tog" aria-hidden="true"></i></summary>
       <p>‘몸의 관점에서 세계를 바라보는 메이커’이자 커뮤니티 아트 진행자로, 예술을 통해 사람과 공간, 공동체를 잇습니다. 주로 취약 계층 가정의 아이들, 그가 ‘숨겨진 아이들’이라 부르는 이들과 작업하며, 보이지 않음을 소멸의 전조로 보고 그 존재를 드러내는 일을 해 왔습니다. 싱가포르의 한 동네에서 2년 반 동안 매주 같은 시간, 같은 자리에서 ‘커뮤니티 퍼포먼스 나이트’를 열며 장소와 실천, 사람에 깊이 스며드는 방식을 다졌습니다. 그에게 예술은 “가장 중요하면서도 동시에 가장 중요하지 않은 것”입니다.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>오랑오랑 드럼 씨어터</h4><span class="from">PENANG, MALAYSIA</span></div>
-      <p class="people">리우 후이민 · 리우 즈이 · 츄 순헹 <span class="todo check">한글 표기</span></p>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>오랑오랑 드럼 씨어터</h4><span class="from">PENANG, MALAYSIA</span><i class="tog" aria-hidden="true"></i></summary>
+      <p class="people">리우 후이민 · 리우 즈이 · 츄 순헹</p>
       <p>2013년 리우 즈이와 츄 순헹(보이즈 츄)이 함께 세운 말레이시아의 공연 그룹입니다. 민속 공연 ‘24절기 북’에서 출발해, 드러머-퍼포머가 이야기꾼과 음악가, 신체 배우 사이를 넘나드는 ‘드럼 시어터’를 탐구하며 소리와 몸의 상호작용을 핵심 언어로 삼습니다. 프랑스, 헝가리, 호주, 폴란드, 대만, 한국 등의 축제에서 공연했고, 보르도와 베네치아에서 공연예술을 공부한 리우 후이민이 함께합니다. 지금은 과수원 속 공간에서 농사와 공연예술을 결합하는 〈샨-카-라〉 프로젝트에 힘을 쏟고 있습니다.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>소노노치</h4><span class="from">KYOTO, JAPAN</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>소노노치</h4><span class="from">KYOTO, JAPAN</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">나카타니 가즈요 · 나가사와 모에</p>
       <p>2013년 교토에서 활동을 시작한 공연예술 그룹입니다. 대표이자 연출가·극작가인 나카타니 가즈요는 음악, 회화, 건축 분야의 예술가들과 협업하며, 공간과 몸을 느리게 바뀌는 계절처럼 다루어 장소의 서사와 관객의 시간·기억을 교차시킵니다. 최근에는 공연자가 ‘비범한 존재’로 일상의 장면에 스며드는 〈풍경 연극〉을 농촌 풍경, 미술관, 폐공장 같은 극장 밖 공간에서 선보이고 있습니다. 프로덕션 매니저 나가사와 모에는 도시샤대학교 대학원에서 지역 사회 속 극장의 역할과 사회복지와의 협업을 연구합니다.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>프로듀서그룹 도트</h4><span class="from">SEOUL, KOREA</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>프로듀서그룹 도트</h4><span class="from">SEOUL, KOREA</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">박지선 · 송미선</p>
       <p>2014년 결성된 공연예술 프로듀서 콜렉티브로, ‘창의성, 독립성, 수평성’을 핵심 가치로 삼습니다. 국내 창작, 국제공동제작, 국제 투어뿐 아니라 주제 중심의 리서치, 레지던시, 네트워크 구축 등 과정 중심의 활동을 이어 왔습니다. 서울 구도심에서 사라져 가는 것들을 바라본 〈커넥티드 시티〉(2017–2021), 〈DMZ 리서치〉, 화천 예술텃밭과 함께하는 ‘예술가 레지던시–기후변화’(2020–)를 거쳐, 강화 프로젝트에서 경계와 마찰, 연결, 기후위기, 그리고 사라지는 것들에 대한 탐구를 이어 가고 있습니다.</p>
-    </article>
+    </details>
+  </div>
+</section>
+
+<section class="sec yel" id="program" aria-labelledby="h-program">
+  <div class="divider"><h2 id="h-program"><span class="hand">프로그램</span><span class="caps" aria-hidden="true">PROGRAM</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="body">
+    <h3 class="pagetitle">2026 세부 프로그램</h3>
+    <p>10월 25일부터 강화에서 이어지는 작업을 이곳에 차례로 기록합니다.</p>
+    <div class="tracks">
+      <article class="track"><h4>과정</h4><p>레지던시 기간의 워크숍과 작업 과정을 사진과 짧은 글로 나눕니다.</p><p class="soon">10월 25일부터 업데이트</p></article>
+      <article class="track"><h4>발표</h4><p>11월 6일–8일, 관객과 함께하는 발표 프로그램을 안내합니다.</p><p class="soon">추후 공개</p></article>
+    </div>
   </div>
 </section>
 
@@ -327,59 +421,67 @@ footer{margin-top:72px;display:grid;gap:18px}
 <li><svg viewBox="0 0 20 20"><path class="sight" d="M10 4 L16 10 L10 16 L4 10Z"/></svg>주요 관광지</li>
 <li><svg viewBox="0 0 20 20"><g class="dol"><rect x="2" y="6" width="16" height="4"/><rect x="5" y="10" width="2" height="6"/><rect x="13" y="10" width="2" height="6"/></g></svg>고인돌</li>
 </ul>
-    <h3 class="sub">거점</h3>
-    <ul class="places">
-      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EA%B8%B8%EC%83%81%EB%A9%B4%20%ED%95%B4%EC%95%88%EB%82%A8%EB%A1%9C%20627">없는극장</a></li>
-      <li><a href="https://maps.app.goo.gl/f8aZryK3XZdrTY6G9">희와래</a></li>
-    </ul>
-    <h3 class="sub">협력 공간</h3>
-    <ul class="places">
-      <li><a href="https://maps.app.goo.gl/gbtVBnuF3g4Hm4gy6">산마을고등학교</a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EA%B0%95%ED%99%94%EB%82%A8%EB%A1%9C%20990-1">진강산마을협동조합</a></li>
-      <li><a href="https://maps.app.goo.gl/h5iS6uPKFxqeRRoq6">카페 큰나무</a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EB%8F%84%EC%9E%A5%EB%A6%AC%201351">도장리마을도서관</a></li>
-      <li><a href="https://maps.app.goo.gl/4qZwyeEvdKRBf2Dj7">국자와 주걱</a></li>
-    </ul>
     <p class="mapnote">면 경계와 해안선은 통계청 행정경계(2013) 기준이며, 일부 장소 위치는 주소를 바탕으로 한 근사치입니다.</p>
   </div>
 </section>
 
-<section class="sec yel" id="visit" aria-labelledby="h-visit">
+<section class="sec peach" id="visit" aria-labelledby="h-visit">
   <div class="divider"><h2 id="h-visit"><span class="hand">관객 정보</span><span class="caps" aria-hidden="true">VISIT</span></h2><img class="walker" src="img/walker.png" alt=""></div>
   <div class="body">
     <h3 class="pagetitle">오시는 분들께</h3>
     <dl class="info">
-      <div class="info-row"><dt>기간</dt><dd><p>2026년 10월 25일 – 11월 8일</p><p><span class="todo">관객이 참여할 수 있는 날짜·시간</span></p></dd></div>
-      <div class="info-row"><dt>참여 방법</dt><dd><p><span class="todo">무료/유료 · 사전 예약 여부 · 예약 링크</span></p></dd></div>
-      <div class="info-row"><dt>오시는 길</dt><dd><p><span class="todo">서울·인천에서 대중교통 / 자가용 안내</span></p><p><span class="todo">주차 가능 여부</span></p></dd></div>
-      <div class="info-row"><dt>거점 간 이동</dt><dd><p>없는극장(길상면)과 희와래(불은면)는 차로 이동하는 거리입니다. <span class="todo check">소요 시간</span></p><p><span class="todo">셔틀 운행 여부 · 시간표</span></p></dd></div>
-      <div class="info-row"><dt>준비물</dt><dd><p>야외에서 걷는 프로그램이 있습니다. 걷기 편한 신발과 늦가을 바닷바람을 막을 옷을 권합니다. <span class="todo check">프로그램 성격에 맞는지</span></p></dd></div>
-      <div class="info-row"><dt>접근성</dt><dd><p><span class="todo">휠체어 접근, 통역 제공 여부</span></p></dd></div>
-      <div class="info-row"><dt>문의</dt><dd><p><span class="todo">이메일 · 전화 · SNS</span></p></dd></div>
+      <div class="info-row"><dt>기간</dt><dd><p>2026년 10월 25일 – 11월 8일</p><p>관객 참여 11월 6일 – 8일</p></dd></div>
+      <div class="info-row"><dt>장소</dt><dd></dd></div>
+      <div class="info-row"><dt>참여 방법</dt><dd></dd></div>
+      <div class="info-row"><dt>오시는 길</dt><dd></dd></div>
+      <div class="info-row"><dt>준비물</dt><dd></dd></div>
+      <div class="info-row"><dt>접근성</dt><dd></dd></div>
+      <div class="info-row"><dt>문의</dt><dd></dd></div>
     </dl>
   </div>
 </section>
 
 <footer>
-  <a class="archive" href="http://hexagon-island.com"><b>2025 리서치 아카이브</b><span>hexagon-island.com →</span></a>
   <div class="credit">
-    <p>지원 · 한국문화예술위원회 <span class="todo check">사업명·로고 표기 규정</span></p>
-    <p>주최·주관 <span class="todo">단체명</span></p>
+    <p>지원 · 한국문화예술위원회</p>
   </div>
 </footer>
 </div>
 
 <script>
 (function(){
-  var links=[].slice.call(document.querySelectorAll('nav a'));
-  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
-  function mark(){
-    var y=window.scrollY+120, cur=0;
-    secs.forEach(function(s,i){ if(s && s.offsetTop<=y) cur=i; });
-    links.forEach(function(a,i){ a.classList.toggle('on',i===cur && window.scrollY>40); });
+  var page=document.querySelector('.page'); if(!page) return;
+  var nav=document.querySelector('nav');
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  var ids=links.map(function(a){return a.getAttribute('href').slice(1)});
+  var secs=ids.map(function(id){return document.getElementById(id)});
+  var ko=page.getAttribute('lang')==='ko';
+  page.classList.add('tabbed');
+  // previous / next links at the foot of each section
+  secs.forEach(function(s,i){
+    var f=document.createElement('div'); f.className='pager';
+    if(i>0){var p=document.createElement('a');p.href='#'+ids[i-1];p.className='prev';p.textContent='← '+links[i-1].textContent.trim();f.appendChild(p);}
+    if(i<secs.length-1){var n=document.createElement('a');n.href='#'+ids[i+1];n.className='next';n.textContent=links[i+1].textContent.trim()+' →';f.appendChild(n);}
+    s.appendChild(f);
+  });
+  function show(id,scroll){
+    var i=ids.indexOf(id); if(i<0) i=0;
+    secs.forEach(function(s,j){s.hidden=(j!==i)});
+    links.forEach(function(a,j){a.classList.toggle('on',j===i); if(j===i) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');});
+    var on=links[i]; if(on&&on.scrollIntoView) on.scrollIntoView({block:'nearest',inline:'center'});
+    if(scroll){var y=nav.getBoundingClientRect().top+window.scrollY; if(window.scrollY>y||i>0) window.scrollTo(0,y);}
   }
-  window.addEventListener('scroll',mark,{passive:true}); mark();
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href').slice(1); if(ids.indexOf(id)<0) return;
+    e.preventDefault();
+    try{history.replaceState(null,'','#'+id)}catch(_){}
+    show(id,true);
+  });
+  var start=(location.hash||'').slice(1);
+  show(ids.indexOf(start)>=0?start:ids[0],ids.indexOf(start)>0);
 })();
 </script>
+
 </body>
 </html>

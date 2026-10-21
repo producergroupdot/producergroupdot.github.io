@@ -16,6 +16,7 @@
   --lav:#B8A5F9; --lav-d:#7B61E8;
   --mint:#79E8A6; --mint-d:#1C9F5E;
   --yel:#FEDF4A; --yel-d:#A88400;
+  --peach:#FFB99A; --peach-d:#C8613A;
   --todo:#8A5A00; --todo-bg:#FFF3CF;
   --ko:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --en:"Jost","Futura","Century Gothic",sans-serif;
@@ -64,7 +65,7 @@ nav a.on{border-bottom-color:var(--c)}
 
 /* chapters */
 .sky{--c:var(--sky);--cd:var(--sky-d)} .lav{--c:var(--lav);--cd:var(--lav-d)}
-.mint{--c:var(--mint);--cd:var(--mint-d)} .yel{--c:var(--yel);--cd:var(--yel-d)}
+.mint{--c:var(--mint);--cd:var(--mint-d)} .yel{--c:var(--yel);--cd:var(--yel-d)} .peach{--c:var(--peach);--cd:var(--peach-d)}
 .sec{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 50px);padding-top:56px}
 .divider{position:relative;background:var(--c);min-height:190px;padding:22px 22px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;overflow:hidden}
 .divider h2{margin:0;color:#fff;font-weight:400;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 22px;line-height:1}
@@ -164,8 +165,83 @@ footer{margin-top:72px;display:grid;gap:18px}
 .archive:hover b{text-decoration:underline}
 .credit{font-size:.88rem;color:var(--muted);display:grid;gap:2px;line-height:1.8}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-</style>
+/* links inside the project intro */
+.links{display:flex;flex-wrap:wrap;gap:8px 20px}
+.arrow{text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:1px}
+.arrow span{font-family:var(--en);font-size:.85rem;color:var(--muted);margin-left:6px}
+.arrow::after{content:" →"}
+/* invitation to the disappearance archive */
+.invite{display:grid;gap:6px;margin-top:10px;padding:20px 22px;background:var(--c);text-decoration:none;color:var(--ink)}
+.invite-q{font-family:var(--hand);font-size:clamp(1.8rem,6.5vw,2.3rem);line-height:1.15}
+.invite-sub{font-size:.95rem;line-height:1.7}
+.invite-go{font-weight:700;margin-top:4px}
+.page[lang="en"] .invite-go{font-weight:500}
+.invite:hover .invite-go{text-decoration:underline;text-underline-offset:4px}
+.page[lang="en"] .invite-q{font-family:var(--en);font-weight:300;font-size:clamp(1.4rem,5vw,1.8rem)}
+/* programme: two tracks */
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 28px}
+.track{display:grid;gap:6px;align-content:start;padding-block:14px;border-top:1px solid var(--rule)}
+.track h4{margin:0;font-family:var(--hand);font-weight:400;font-size:2rem;color:var(--cd);line-height:1.1}
+.page[lang="en"] .track h4{font-family:var(--en);font-weight:400;font-size:1.25rem;color:var(--ink)}
+.soon{font-size:.85rem;color:var(--muted)}
+.info-row dd:empty{min-height:1.8em}
+.yel .divider h2{color:var(--ink)}
 
+/* ===== compact, mobile-first layout (2026-10-21) ===== */
+.cover{padding-block:44px 18px;gap:14px}
+.vert{writing-mode:horizontal-tb;letter-spacing:.18em;font-size:.88rem;margin-top:0}
+.cover .walker{width:30px;margin-top:2px}
+nav ul{justify-content:flex-start}
+@media (min-width:720px){nav ul{justify-content:center}}
+nav a{padding:13px 10px}
+.sec{padding-top:24px}
+.divider{min-height:0;padding:18px 20px 16px;align-items:flex-end}
+.divider h2{gap:2px 16px}
+.divider .hand{font-size:clamp(2.4rem,10vw,3.4rem)}
+.divider .caps{font-size:clamp(1.4rem,6vw,2.2rem)}
+.divider .walker{position:static;transform:none;width:22px;flex:none;margin:0 0 2px}
+.body{gap:14px;padding-top:22px}
+.pagetitle{font-size:1.3rem}
+@media (max-width:600px){
+  body{font-size:15.5px;line-height:1.85}
+  .page{padding-inline:18px}
+  nav{margin-inline:-18px;padding-inline:8px}
+}
+/* artists as a compact list that opens */
+details.artist{padding-block:0;gap:0;border-top:1px solid var(--rule)}
+details.artist:last-of-type{border-bottom:1px solid var(--rule)}
+details.artist > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px 12px;padding-block:14px;flex-wrap:nowrap}
+details.artist > summary::-webkit-details-marker{display:none}
+details.artist > summary h4{flex:1;min-width:0}
+details.artist > summary .from{font-size:.7rem}
+.tog{width:14px;height:14px;flex:none;position:relative}
+.tog::before,.tog::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--ink);transition:transform .2s}
+.tog::after{transform:rotate(90deg)}
+details[open] .tog::after{transform:rotate(0)}
+details.artist[open]{padding-bottom:16px}
+details.artist > p{margin:0 0 8px}
+details.artist > summary:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media (max-width:600px){details.artist > summary .from{display:none}}
+/* visitor info stays two columns on phones too */
+@media (max-width:480px){.info-row{grid-template-columns:5.6rem 1fr;gap:0 12px}}
+.info-row{padding-block:11px}
+/* section pager */
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:34px;padding-top:14px;border-top:4px dotted var(--c);font-size:.92rem}
+.pager a{text-decoration:none}
+.pager a:hover{text-decoration:underline}
+.pager .next{margin-left:auto;font-weight:700}
+.page[lang="en"] .pager .next{font-weight:500}
+.tabbed .sec{scroll-margin-top:0}
+footer{margin-top:40px}
+@media (prefers-reduced-motion:reduce){.tog::before,.tog::after{transition:none}}
+.walking{display:block;width:58px;margin-top:4px}
+.walking img{display:block;width:100%;height:auto}
+/* cover title: hexagons lead, lettering smaller (2026-10-22) */
+.t-island{font-size:clamp(1.45rem,5.6vw,1.95rem);letter-spacing:.08em;display:flex;align-items:center;gap:.3em}
+.t-island .hx2{width:2.7em;height:1.58em;margin:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 21'%3E%3Cg fill='none' stroke='%23111' stroke-width='1' stroke-linejoin='round'%3E%3Cpath d='M9 1l8 4.6v9.8L9 20 1 15.4V5.6z'/%3E%3Cpath d='M26 1l8 4.6v9.8L26 20l-8-4.6V5.6z'/%3E%3C/g%3E%3C/svg%3E")}
+.t-letter{width:min(250px,46vw)}
+h1{gap:10px}
+</style>
 </head><body>
 <div class="page" lang="en">
 <header class="cover">
@@ -174,15 +250,15 @@ footer{margin-top:72px;display:grid;gap:18px}
     <span class="t-en" aria-hidden="true">Island of <span class="hx2"></span><br>Ganghwado</span>
   </h1>
   <p class="vert">2026 · 10.25 — 11.08</p>
-  <img class="walker" src="img/walker.png" alt="">
-  <p class="todo-note"><span class="todo">Working marks</span>Dashed boxes show what is still to be written. They will be removed before launch.</p>
+  <picture class="walking"><source media="(prefers-reduced-motion: reduce)" srcset="img/walk-still.png"><img src="img/walk.webp" alt="" width="130" height="315"></picture>
 </header>
 
 <nav aria-label="Contents"><ul>
   <li class="sky"><a href="#project"><i></i>ABOUT</a></li>
   <li class="lav"><a href="#artists"><i></i>ARTISTS</a></li>
+  <li class="yel"><a href="#program"><i></i>PROGRAM</a></li>
   <li class="mint"><a href="#map"><i></i>MAP</a></li>
-  <li class="yel"><a href="#visit"><i></i>VISIT</a></li>
+  <li class="peach"><a href="#visit"><i></i>VISIT</a></li>
 </ul></nav>
 
 <section class="sec sky" id="project" aria-labelledby="h-project">
@@ -194,6 +270,13 @@ footer{margin-top:72px;display:grid;gap:18px}
     <p>In 2026, artists from Japan and Malaysia join us. We return to Ganghwa with the questions found last year, to make poetic places where things are vanishing and let them slowly gather on the island.</p>
     <p>The two hexagons symbolize the project. Hexagons interlock to create new spaces; each one is both “my island” and “our island.”</p>
 
+    <p>This year the project runs on Ganghwa from 25 October to 8 November. Audiences can take part from 6 to 8 November. More details will be added to this page as the project unfolds.</p>
+    <p class="links"><a class="arrow" href="http://hexagon-island.com">2025 Research Archive <span>hexagon-island.com</span></a></p>
+    <a class="invite" href="http://hexagon-island.com/disappear.html">
+      <span class="invite-q">Leave your story of disappearance</span>
+      <span class="invite-sub">What is disappearing around you? Your story becomes part of ⬡⬡Island.</span>
+      <span class="invite-go">Share your story →</span>
+    </a>
   </div>
 </section>
 
@@ -202,49 +285,60 @@ footer{margin-top:72px;display:grid;gap:18px}
   <div class="body">
     <h3 class="pagetitle">Participants &amp; Organizations</h3>
     <p>Artists from Korea, Italy, Singapore, Malaysia and Japan live and work on Ganghwa.</p>
-    <article class="artist">
-      <div class="artist-h"><h4>A.N.D. Theatre</h4><span class="from">GANGHWA, KOREA</span></div>
-      <p class="people">KangYun Minji · Kwon Keunyoung · Min Jaewon · Jeon Yunhwan · Jo Naetmul · Byun Junseop <span class="todo check">Byun Junseop spelling</span></p>
+    <details class="artist">
+      <summary class="artist-h"><h4>A.N.D. Theatre</h4><span class="from">GANGHWA, KOREA</span><i class="tog" aria-hidden="true"></i></summary>
+      <p class="people">KangYun Minji · Kwon Keunyoung · Min Jaewon · Jeon Yunhwan · Jo Naetmul · Byun Junseop</p>
       <p>A.N.D. Theatre is an arts company based on Ganghwa Island. Since moving to Ganghwa in 2018, it has created the Void Theatre and the Void Theatre Residency with fellow artists, exploring new relationships between the region and art. Its works include 〈Ganghwa Walk: Peace Document〉 (2023), a walking performance that follows the memories of displaced grandmothers from Gyodong Island, and the 〈Jamsiseom Theatre Festival〉 (2021–), where invited artists stay and make work on the island. Believing in senses that stay alive amid disappearance, the company keeps testing new forms of art on Ganghwa.</p>
-      <p><span class="todo check">Not in the sheet; summarised from the 2025 archive book</span></p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>Yonrimog</h4><span class="from">GANGHWA, KOREA</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>Yonrimog</h4><span class="from">GANGHWA, KOREA</span><i class="tog" aria-hidden="true"></i></summary>
       <p>Yonrimog began her music career with the indie rock band “Open your eyes Cobain” and has released albums for more than twenty years. She has raised two children on Ganghwa for ten years, in a life where art and daily life are not separate. After the “TanEmotion” project with Korean traditional instruments and years of scoring dance, theatre and film, she began working under her own name in 2023, including the telephone sound installation 〈Reminiscence of Reminiscence〉. She also runs the street music theatre group “umdalda” with her family. For her, music is an art of time that lingers within disappearance.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>Teatringestazione</h4><span class="from">NAPLES, ITALY</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>Teatringestazione</h4><span class="from">NAPLES, ITALY</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">Anna Gesualdi · Giovanni Trono</p>
       <p>A multidisciplinary performing arts company founded in Naples in 2006 by Gesualdi | Trono, joined since 2007 by dramaturg Loretta Mesiti. Focused on sharing processes, the company works with people in fragile contexts, including prisons, migrants, the elderly and people with disabilities. Through Altofest, where citizens open their homes to artists for fifteen days, and Ilinea d'Aria (“Air Line Distance”), which reconnected depopulating mountain villages through performance and radio, it treats art as a social act that links people and places again.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>Heewarae</h4><span class="from">GANGHWA, KOREA</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>Heewarae</h4><span class="from">GANGHWA, KOREA</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">Kim Narae · Lee Gunhee</p>
       <p>A community-art collective led by visual artists Kim Narae and Lee Gunhee, working in planning, education and running a space since moving from Seoul to Ganghwa. Since 2020 they have turned to people and places that went unseen, such as migrant women, social workers and Ganghwa's dondae (coastal forts). Since 2023, on the small island of Achado, they walk, farm and cook with its aging women residents, practicing art as the “rhythm of daily life.” Their keyword is care: like trees and gardens growing where a fort's stones have crumbled, they look for the life that blossoms within disappearance.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>Drama Box (Heng Leun)</h4><span class="from">SINGAPORE</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>Drama Box (Heng Leun)</h4><span class="from">SINGAPORE</span><i class="tog" aria-hidden="true"></i></summary>
       <p>A socially engaged arts company in Singapore that seeks social change through art. Founder Heng Leun served as artistic director for thirty years before handing the role to fellow artists, and now works as a curator, dramaturg and artistic director. For two decades the company has worked on “land, space and place,” making multilingual performances in libraries, housing estates and streets. Its long-term 〈Project 12〉 takes place on Pulau Ubin, an island twelve minutes by boat from the main island whose population fell from 3,000 to 28, exploring ecology, capital and time with its residents.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>Chew Shaw En</h4><span class="from">SINGAPORE</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>Chew Shaw En</h4><span class="from">SINGAPORE</span><i class="tog" aria-hidden="true"></i></summary>
       <p>Shaw is a performing artist, a maker who views the world from the body, and a facilitator of community-based art who connects people, spaces and communities. She works mostly with children from vulnerable families, whom she calls “hidden children,” treating invisibility as a precursor to disappearance. In one Singapore neighbourhood she ran a “Community Performance Night” at the same time and place every week for two and a half years, building a practice of embeddedness in place, practice and people. For her, art is “the most important thing, yet at the same time the least important thing.”</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>Orang Orang Drum Theatre</h4><span class="from">PENANG, MALAYSIA</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>Orang Orang Drum Theatre</h4><span class="from">PENANG, MALAYSIA</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">Leow Hui Min · Leow Sze Yee · Chew Soon Heng</p>
       <p>Founded in Malaysia in 2013 by Leow Sze Yee (Zyee) and Chew Soon Heng (Boyz Chew). Starting from the folk performance 24 Festive Drums, the group explores drum theatre, in which drummer-performers move between storyteller, musician and physical actor, with the interplay of sound and body as its core language. It has performed at festivals in France, Hungary, Australia, Poland, Taiwan and Korea, and is joined by Leow Hui Min, who studied performing arts in Bordeaux and Venice. Its current focus is the Shan-Ka-La Project, an orchard space that brings farming and performing arts together.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>Sononochi</h4><span class="from">KYOTO, JAPAN</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>Sononochi</h4><span class="from">KYOTO, JAPAN</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">Kazuyo Nakatani · Moe Nagasawa</p>
       <p>A performing arts group founded in Kyoto in 2013. Its head, director and playwright Kazuyo Nakatani, works with artists in music, painting and architecture, treating spaces and bodies like slowly shifting seasons to weave a place's layered stories into the audience's time and memory. In its Landscape Theatre, performers slip into everyday scenes as extraordinary presences, in rural landscapes, galleries and former factory sites. Production manager Moe Nagasawa researches the role of theatres in local communities and their links with social welfare at Doshisha University.</p>
-    </article>
-    <article class="artist">
-      <div class="artist-h"><h4>Producer Group DOT</h4><span class="from">SEOUL, KOREA</span></div>
+    </details>
+    <details class="artist">
+      <summary class="artist-h"><h4>Producer Group DOT</h4><span class="from">SEOUL, KOREA</span><i class="tog" aria-hidden="true"></i></summary>
       <p class="people">Park Jisun · Song Miseon</p>
       <p>A collective of performing arts producers formed in 2014, with creativity, independence and horizontality at its core. Alongside domestic productions, international co-productions and tours, it builds process-based work through theme-based research, residencies and networks. From 〈Connected City〉 (2017–2021), which looked at what is disappearing in Seoul's old centre, and 〈DMZ Research〉, to the Artists' Residency – Climate Change with Arts Farm Tutbat in Hwacheon (since 2020), the Ganghwa project continues DOT's exploration of borders, friction, connection, the climate crisis and what is disappearing.</p>
-    </article>
+    </details>
+  </div>
+</section>
+
+<section class="sec yel" id="program" aria-labelledby="h-program">
+  <div class="divider"><h2 id="h-program"><span class="caps">PROGRAM</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="body">
+    <h3 class="pagetitle">2026 Programme</h3>
+    <p>From 25 October, the work unfolding on Ganghwa will be recorded here.</p>
+    <div class="tracks">
+      <article class="track"><h4>Process</h4><p>Workshops and work in progress during the residency, shared in photos and short notes.</p><p class="soon">Updated from 25 October</p></article>
+      <article class="track"><h4>Presentations</h4><p>Public presentations with audiences, 6–8 November.</p><p class="soon">Coming soon</p></article>
+    </div>
   </div>
 </section>
 
@@ -319,58 +413,66 @@ footer{margin-top:72px;display:grid;gap:18px}
 <li><svg viewBox="0 0 20 20"><path class="sight" d="M10 4 L16 10 L10 16 L4 10Z"/></svg>Sights</li>
 <li><svg viewBox="0 0 20 20"><g class="dol"><rect x="2" y="6" width="16" height="4"/><rect x="5" y="10" width="2" height="6"/><rect x="13" y="10" width="2" height="6"/></g></svg>Dolmen</li>
 </ul>
-    <h3 class="sub">Bases</h3>
-    <ul class="places">
-      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EA%B8%B8%EC%83%81%EB%A9%B4%20%ED%95%B4%EC%95%88%EB%82%A8%EB%A1%9C%20627">Void Theatre <small lang="ko">없는극장</small></a></li>
-      <li><a href="https://maps.app.goo.gl/f8aZryK3XZdrTY6G9">Heewarae <small lang="ko">희와래</small></a></li>
-    </ul>
-    <h3 class="sub">Partner venues</h3>
-    <ul class="places">
-      <li><a href="https://maps.app.goo.gl/gbtVBnuF3g4Hm4gy6">Sanmaeul High School <small lang="ko">산마을고등학교</small></a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EA%B0%95%ED%99%94%EB%82%A8%EB%A1%9C%20990-1">Jingangsan Village Co-op <small lang="ko">진강산마을협동조합</small></a></li>
-      <li><a href="https://maps.app.goo.gl/h5iS6uPKFxqeRRoq6">Cafe Keunnamu <small lang="ko">카페 큰나무</small></a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EB%8F%84%EC%9E%A5%EB%A6%AC%201351">Dojang-ri Village Library <small lang="ko">도장리마을도서관</small></a></li>
-      <li><a href="https://maps.app.goo.gl/4qZwyeEvdKRBf2Dj7">Gukja &amp; Jugeok <small lang="ko">국자와 주걱</small></a></li>
-    </ul>
-    <p class="mapnote">Township borders and coastline follow Statistics Korea boundaries (2013). Some locations are approximate. Korean names are given so you can show them to a taxi driver.</p>
+    <p class="mapnote">Township borders and coastline follow Statistics Korea boundaries (2013). Some locations are approximate.</p>
   </div>
 </section>
 
-<section class="sec yel" id="visit" aria-labelledby="h-visit">
+<section class="sec peach" id="visit" aria-labelledby="h-visit">
   <div class="divider"><h2 id="h-visit"><span class="caps">VISIT</span></h2><img class="walker" src="img/walker.png" alt=""></div>
   <div class="body">
     <h3 class="pagetitle">For Visitors</h3>
     <dl class="info">
-      <div class="info-row"><dt>Dates</dt><dd><p>25 October – 8 November 2026</p><p><span class="todo">Days and times open to the public</span></p></dd></div>
-      <div class="info-row"><dt>How to join</dt><dd><p><span class="todo">Free or ticketed · booking · booking link</span></p></dd></div>
-      <div class="info-row"><dt>Getting there</dt><dd><p><span class="todo">From Seoul or Incheon Airport by public transport / car</span></p><p><span class="todo">Parking</span></p></dd></div>
-      <div class="info-row"><dt>Between bases</dt><dd><p>Void Theatre (Gilsang) and Heewarae (Bureun) are a short drive apart. <span class="todo check">Travel time</span></p><p><span class="todo">Shuttle and timetable</span></p></dd></div>
-      <div class="info-row"><dt>What to bring</dt><dd><p>Some programs are outdoors and on foot. Comfortable shoes and warm, windproof layers are recommended. <span class="todo check">Matches the program</span></p></dd></div>
-      <div class="info-row"><dt>Access</dt><dd><p><span class="todo">Wheelchair access · English interpretation</span></p></dd></div>
-      <div class="info-row"><dt>Contact</dt><dd><p><span class="todo">Email · phone · social media</span></p></dd></div>
+      <div class="info-row"><dt>Dates</dt><dd><p>25 October – 8 November 2026</p><p>Open to audiences 6–8 November</p></dd></div>
+      <div class="info-row"><dt>Venues</dt><dd></dd></div>
+      <div class="info-row"><dt>How to join</dt><dd></dd></div>
+      <div class="info-row"><dt>Getting there</dt><dd></dd></div>
+      <div class="info-row"><dt>What to bring</dt><dd></dd></div>
+      <div class="info-row"><dt>Access</dt><dd></dd></div>
+      <div class="info-row"><dt>Contact</dt><dd></dd></div>
     </dl>
   </div>
 </section>
 
 <footer>
-  <a class="archive" href="http://hexagon-island.com"><b>2025 Research Archive</b><span>hexagon-island.com →</span></a>
   <div class="credit">
-    <p>Supported by Arts Council Korea <span class="todo check">Program name and logo rules</span></p>
-    <p>Organized by <span class="todo">Organization</span></p>
+    <p>Supported by Arts Council Korea</p>
   </div>
 </footer>
 </div>
 
 <script>
 (function(){
-  var links=[].slice.call(document.querySelectorAll('nav a'));
-  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
-  function mark(){
-    var y=window.scrollY+120, cur=0;
-    secs.forEach(function(s,i){ if(s && s.offsetTop<=y) cur=i; });
-    links.forEach(function(a,i){ a.classList.toggle('on',i===cur && window.scrollY>40); });
+  var page=document.querySelector('.page'); if(!page) return;
+  var nav=document.querySelector('nav');
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  var ids=links.map(function(a){return a.getAttribute('href').slice(1)});
+  var secs=ids.map(function(id){return document.getElementById(id)});
+  var ko=page.getAttribute('lang')==='ko';
+  page.classList.add('tabbed');
+  // previous / next links at the foot of each section
+  secs.forEach(function(s,i){
+    var f=document.createElement('div'); f.className='pager';
+    if(i>0){var p=document.createElement('a');p.href='#'+ids[i-1];p.className='prev';p.textContent='← '+links[i-1].textContent.trim();f.appendChild(p);}
+    if(i<secs.length-1){var n=document.createElement('a');n.href='#'+ids[i+1];n.className='next';n.textContent=links[i+1].textContent.trim()+' →';f.appendChild(n);}
+    s.appendChild(f);
+  });
+  function show(id,scroll){
+    var i=ids.indexOf(id); if(i<0) i=0;
+    secs.forEach(function(s,j){s.hidden=(j!==i)});
+    links.forEach(function(a,j){a.classList.toggle('on',j===i); if(j===i) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');});
+    var on=links[i]; if(on&&on.scrollIntoView) on.scrollIntoView({block:'nearest',inline:'center'});
+    if(scroll){var y=nav.getBoundingClientRect().top+window.scrollY; if(window.scrollY>y||i>0) window.scrollTo(0,y);}
   }
-  window.addEventListener('scroll',mark,{passive:true}); mark();
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href').slice(1); if(ids.indexOf(id)<0) return;
+    e.preventDefault();
+    try{history.replaceState(null,'','#'+id)}catch(_){}
+    show(id,true);
+  });
+  var start=(location.hash||'').slice(1);
+  show(ids.indexOf(start)>=0?start:ids[0],ids.indexOf(start)>0);
 })();
 </script>
+
 </body></html>
