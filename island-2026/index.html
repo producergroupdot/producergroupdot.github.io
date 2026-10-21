@@ -246,6 +246,22 @@ footer{margin-top:40px}
 .t-island .hx2{width:2.7em;height:1.58em;margin:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 21'%3E%3Cg fill='none' stroke='%23111' stroke-width='1' stroke-linejoin='round'%3E%3Cpath d='M9 1l8 4.6v9.8L9 20 1 15.4V5.6z'/%3E%3Cpath d='M26 1l8 4.6v9.8L26 20l-8-4.6V5.6z'/%3E%3C/g%3E%3C/svg%3E")}
 .t-letter{width:min(250px,46vw)}
 h1{gap:10px}
+/* archive card (2026-10-22) */
+.archive-card{display:grid;gap:4px;padding:18px 20px 16px;border:1.5px solid var(--ink);text-decoration:none;color:var(--ink);margin-top:6px;position:relative}
+.archive-card{box-shadow:7px 7px 0 var(--sky);margin-right:7px}
+.ac-eyebrow{font-family:var(--en);font-size:.72rem;letter-spacing:.2em;color:var(--muted);line-height:1.5}
+.ac-title{font-family:var(--hand);font-size:clamp(2rem,7vw,2.4rem);line-height:1.1}
+.page[lang="en"] .ac-title{font-family:var(--en);font-weight:400;font-size:1.45rem;line-height:1.3}
+.ac-sub{font-size:.92rem;line-height:1.6}
+.ac-go{font-family:var(--en);font-size:.9rem;letter-spacing:.04em;margin-top:6px;font-weight:500}
+.archive-card:hover .ac-go,.archive-card:focus-visible .ac-go{text-decoration:underline;text-underline-offset:4px}
+.page{position:relative;z-index:0}
+/* map view toggle and phone fit */
+.mapview{display:flex;gap:6px}
+.mapview button{font:inherit;font-size:.85rem;padding:5px 12px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:999px;cursor:pointer;line-height:1.5}
+.mapview button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.map svg.island{min-width:0}
+.map .mapbox{overflow:hidden}
 </style>
 
 </head>
@@ -279,7 +295,12 @@ h1{gap:10px}
     <p>두 개의 육각형은 이 프로젝트의 상징입니다. 서로 맞물리며 새로운 공간을 만드는 육각형처럼, 각자의 ‘나의 섬’이 이어져 ‘우리의 섬’이 됩니다.</p>
 
     <p>올해 프로젝트는 10월 25일부터 11월 8일까지 강화에서 진행됩니다. 11월 6일–8일에는 관객이 참여할 수 있습니다. 자세한 내용은 이 페이지에 계속 업데이트됩니다.</p>
-    <p class="links"><a class="arrow" href="http://hexagon-island.com">2025 리서치 아카이브 <span>hexagon-island.com</span></a></p>
+    <a class="archive-card" href="http://hexagon-island.com">
+      <span class="ac-eyebrow">2025 · 리서치</span>
+      <span class="ac-title">2025 리서치 아카이브</span>
+      <span class="ac-sub">작년 강화에서 걷고 만나며 발견한 질문들의 기록</span>
+      <span class="ac-go">hexagon-island.com →</span>
+    </a>
     <a class="invite" href="http://hexagon-island.com/disappear.html">
       <span class="invite-q">소멸에 관한 당신의 이야기를 남겨주세요</span>
       <span class="invite-sub">당신 곁에서 사라지고 있는 것은 무엇인가요? 이야기는 ⬡⬡의 섬의 일부가 됩니다.</span>
@@ -327,7 +348,7 @@ h1{gap:10px}
     </details>
     <details class="artist">
       <summary class="artist-h"><h4>소노노치</h4><span class="from">KYOTO, JAPAN</span><i class="tog" aria-hidden="true"></i></summary>
-      <p class="people">나카타니 가즈요 · 나가사와 모에</p>
+      <p class="people">나카타니 가즈요 · 후지와라 미호 · 나가사와 모에</p>
       <p>2013년 교토에서 활동을 시작한 공연예술 그룹입니다. 대표이자 연출가·극작가인 나카타니 가즈요는 음악, 회화, 건축 분야의 예술가들과 협업하며, 공간과 몸을 느리게 바뀌는 계절처럼 다루어 장소의 서사와 관객의 시간·기억을 교차시킵니다. 최근에는 공연자가 ‘비범한 존재’로 일상의 장면에 스며드는 〈풍경 연극〉을 농촌 풍경, 미술관, 폐공장 같은 극장 밖 공간에서 선보이고 있습니다. 프로덕션 매니저 나가사와 모에는 도시샤대학교 대학원에서 지역 사회 속 극장의 역할과 사회복지와의 협업을 연구합니다.</p>
     </details>
     <details class="artist">
@@ -355,6 +376,7 @@ h1{gap:10px}
   <div class="body">
     <h3 class="pagetitle">장소</h3>
     <p>두 거점과 함께 쓰는 마을 공간, 숙소, 가까운 고인돌과 명소입니다. 장소 이름을 누르면 구글 지도가 열립니다.</p>
+    <div class="mapview" role="group" aria-label="지도 범위"><button type="button" data-view="near" aria-pressed="false">거점 주변</button><button type="button" data-view="all" aria-pressed="true">섬 전체</button></div>
     <div class="mapbox wide"><svg class="island" viewBox="0 0 680 830" role="img" aria-label="강화도 남부와 서북부의 실제 면 경계 위에 거점, 숙소, 관광지, 고인돌을 표시한 지도">
 <path class="land" d="M-15 185 -13 189 -11 187 -9 187 -9 189 -9 193 -9 195 -17 217 -32 251 -36 275 -36 277 -38 294 -38 298 -38 306 -34 310 -26 310 -24 310 -11 308 -5 312 -3 318 -5 324 -7 332 1 338 7 336 12 338 16 346 16 356 36 368 45 370 49 370 53 370 68 374 86 378 90 378 99 380 109 382 113 386 117 394 117 402 119 406 119 410 124 420 128 422 130 430 128 442 122 451 124 457 124 459 122 467 122 481 93 509 63 539 53 549 51 551 43 557 39 561 36 563 26 569 9 571 -9 577 -26 577 -32 565 -30 535 -30 513 -28 501 -24 501 -20 501 -20 493 -20 489 -20 487 -20 485 -26 479 -30 477 -47 432 -59 420 -74 416 -105 402 -107 400 -127 388 -140 378 -142 372 -144 364 -154 358 -163 354 -169 344 -184 334 -190 328 -190 324 -184 322 -177 318 -171 320 -165 320 -154 318 -148 316 -144 312 -142 304 -140 300 -140 286 -138 279 -132 273 -134 265 -134 253 -134 239 -132 235 -132 229 -132 219 -134 213 -134 209 -130 205 -115 199 -103 197 -96 197 -86 197 -82 195 -71 189 -63 183 -47 173 -28 169 -24 179 -15 185ZM-194 235 -194 237 -194 239 -194 241 -194 243 -192 245 -192 247 -192 249 -192 251 -192 253 -190 253 -190 255 -188 257 -190 259 -190 261 -192 261 -192 263 -190 263 -190 265 -188 265 -188 267 -186 267 -186 269 -184 269 -184 271 -184 273 -186 275 -188 275 -190 275 -192 275 -192 277 -194 279 -196 279 -198 279 -200 279 -200 277 -202 275 -204 275 -204 273 -202 273 -202 271 -204 271 -204 269 -206 269 -208 271 -208 273 -211 273 -213 275 -215 275 -217 275 -217 277 -219 275 -221 273 -221 271 -219 271 -219 269 -219 267 -221 265 -221 263 -221 261 -221 259 -219 259 -219 257 -219 255 -217 255 -217 253 -219 251 -221 249 -219 249 -219 247 -219 245 -219 243 -217 243 -215 243 -213 243 -213 241 -211 241 -211 239 -208 237 -206 235 -204 235 -202 235 -202 233 -202 231 -200 231 -200 229 -200 227 -198 227 -196 227 -196 229 -196 231 -196 233 -194 233 -194 235ZM-252 292 -248 296 -246 296 -244 296 -244 298 -244 300 -246 300 -246 302 -248 302 -252 302 -254 302 -256 302 -258 302 -260 304 -262 304 -264 304 -267 304 -277 306 -283 302 -283 304 -285 304 -287 306 -289 306 -291 308 -294 306 -296 306 -298 304 -300 304 -302 302 -304 302 -304 300 -306 300 -308 300 -310 302 -312 300 -314 300 -316 300 -318 298 -323 298 -325 298 -325 296 -327 296 -329 296 -331 296 -331 294 -333 292 -333 290 -335 290 -335 288 -333 286 -331 286 -329 286 -329 284 -327 284 -325 284 -323 282 -296 247 -296 245 -294 243 -291 243 -289 243 -287 243 -285 245 -283 245 -283 247 -281 247 -281 253 -281 257 -281 259 -269 284 -267 284 -262 288 -258 290 -256 290 -252 292ZM-142 187 -140 187 -138 187 -136 189 -136 191 -138 193 -140 193 -140 195 -140 197 -140 199 -144 201 -144 203 -146 203 -148 205 -150 205 -152 203 -154 203 -157 201 -159 199 -157 197 -157 195 -154 195 -152 195 -152 193 -150 193 -150 191 -148 189 -146 189 -148 189 -148 187 -148 185 -146 185 -146 187 -144 187 -142 187ZM-356 300 -358 300 -358 298 -358 296 -356 294 -356 292 -356 290 -356 288 -358 288 -358 286 -358 282 -358 281 -356 281 -354 281 -352 282 -350 284 -350 286 -350 288 -350 290 -350 292 -350 296 -350 298 -352 298 -352 300 -354 300 -356 300ZM-215 322 -217 322 -219 322 -221 320 -221 318 -223 316 -223 314 -221 312 -221 310 -221 308 -219 308 -219 310 -219 312 -217 312 -217 314 -217 316 -217 318 -215 318 -215 320 -215 322ZM-94 455 -94 457 -94 459 -96 459 -98 459 -98 457 -96 457 -98 455 -101 455 -98 453 -98 451 -96 451 -96 449 -94 449 -94 451 -92 451 -92 453 -94 453 -94 455ZM-71 442 -69 442 -69 443 -71 443 -71 445 -74 445 -74 443 -74 442 -71 442Z"/>
 <path class="land" d="M342 -45 344 -43 356 -32 360 -26 369 -18 373 -14 381 -10 385 -8 387 -6 389 -2 391 0 400 8 412 16 416 20 418 20 425 24 431 28 437 34 439 34 439 42 437 46 437 48 433 72 431 74 431 76 429 76 431 84 429 84 429 86 431 88 433 90 435 90 435 92 435 94 435 96 433 98 433 100 437 102 437 108 437 110 437 114 433 125 431 125 427 129 425 131 422 135 420 139 420 141 420 145 420 147 420 149 420 151 420 155 420 159 420 161 416 161 412 157 406 153 404 153 404 151 402 151 400 151 398 151 398 153 396 153 396 155 396 157 396 159 396 161 393 161 393 163 391 163 389 165 389 167 385 171 383 173 381 181 379 183 375 183 369 187 356 191 352 191 350 189 346 187 344 187 342 187 339 187 337 189 335 189 333 189 329 191 323 197 319 201 313 205 304 205 306 201 306 195 308 193 310 191 310 189 313 185 313 175 310 165 313 161 310 155 313 153 313 149 313 147 313 139 315 137 317 133 319 131 323 129 325 129 319 123 317 121 317 120 317 116 315 116 315 114 313 114 313 112 310 112 308 110 308 106 308 102 315 94 317 92 319 92 319 90 317 86 317 82 317 80 319 78 323 74 323 72 321 72 317 70 315 70 313 68 313 64 313 60 315 54 315 52 313 50 310 46 300 44 298 44 294 44 292 44 288 44 286 44 281 42 277 40 273 32 275 18 277 14 281 10 283 8 286 6 298 -2 302 -6 306 -12 308 -14 310 -18 313 -22 319 -24 321 -26 323 -28 335 -40 339 -43 342 -45Z"/>
@@ -413,7 +435,6 @@ h1{gap:10px}
 <g class="north"><path d="M630 40 L638 66 L630 60 L622 66Z"/><text class="ko" x="630" y="84" text-anchor="middle">N</text></g>
 <g class="scale"><rect x="470" y="792" width="162.6" height="4"/><rect x="470" y="792" width="81.3" height="4" class="half"/><text class="en" x="470" y="814">0</text><text class="en" x="632.6" y="814" text-anchor="end">5 km</text></g>
 </svg></div>
-    <p class="swipe">휴대폰에서는 지도를 옆으로 밀어 볼 수 있습니다.</p>
     <ul class="legend">
 <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" style="fill:var(--gil-s)"/></svg>거점 공간</li>
 <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="4.5" style="fill:var(--land);stroke:var(--muted);stroke-width:2"/></svg>협력·사용 공간</li>
@@ -480,6 +501,16 @@ h1{gap:10px}
   });
   var start=(location.hash||'').slice(1);
   show(ids.indexOf(start)>=0?start:ids[0],ids.indexOf(start)>0);
+})();
+</script>
+<script>
+(function(){
+  var svg=document.querySelector('svg.island'); if(!svg) return;
+  var full=svg.getAttribute('viewBox'), near='200 380 440 440';
+  var btns=[].slice.call(document.querySelectorAll('.mapview button'));
+  function set(v){svg.setAttribute('viewBox',v==='near'?near:full);btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.view===v))});}
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.view)})});
+  set(window.matchMedia('(max-width: 600px)').matches?'near':'all');
 })();
 </script>
 
