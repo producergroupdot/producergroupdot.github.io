@@ -259,7 +259,18 @@ h1{gap:10px}
 .map .mapbox{overflow:hidden}
 .sponsor{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .sp-label{font-size:.82rem;color:var(--muted);letter-spacing:.06em}
-.sponsor img{height:64px;width:auto}
+.sponsor img{height:40px;width:auto}
+/* illustrations by Gu Jimin (2026-10-25) */
+.divider .dv-ill{height:96px;width:auto;flex:none;align-self:flex-end;margin:0 -4px -16px 0;position:static;transform:none}
+@media (max-width:600px){.divider .dv-ill{height:74px}}
+.wide-ill{margin:6px 0 2px}
+.wide-ill img{display:block;width:100%;height:auto}
+.strip{display:grid;gap:8px;margin-top:8px}
+.strip-h{font-size:.82rem;color:var(--muted);letter-spacing:.04em}
+.strip ul{list-style:none;margin:0;padding:0 0 6px;display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;align-items:flex-end;scrollbar-width:thin}
+.strip li{flex:none;scroll-snap-align:start}
+.strip img{display:block;height:118px;width:auto}
+.ill-credit{font-size:.8rem;color:var(--muted)}
 </style>
 </head><body>
 <div class="page" lang="en">
@@ -281,10 +292,11 @@ h1{gap:10px}
 </ul></nav>
 
 <section class="sec sky" id="project" aria-labelledby="h-project">
-  <div class="divider"><h2 id="h-project"><span class="caps">ABOUT</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="divider"><h2 id="h-project"><span class="caps">ABOUT</span></h2><img class="dv-ill" src="img/ill/oldtree.webp" alt=""></div>
   <div class="body">
     <h3 class="pagetitle">About the Project</h3>
     <p class="lede">The <span class="hx2" role="img" aria-label="⬡⬡"></span>Island project starts with questions about things that are disappearing. Artists, producers and citizens come together to face disappearance and create poetic spaces within everyday life.</p>
+    <figure class="wide-ill"><img src="img/ill/field.webp" alt="People walking together along a path through rice fields" width="1400" height="836" loading="lazy"></figure>
     <p>For 2025–2026, the island is Ganghwado. The project began with a research phase in 2025, bringing together artists and producers from South Korea, Singapore and Italy. Walking Ganghwa's paths, visiting historical and cultural sites and meeting its people, each of us began to sense, in our own way, what has been disappearing here.</p>
     <p>In 2026, artists from Japan and Malaysia join us. We return to Ganghwa with the questions found last year, to make poetic places where things are vanishing and let them slowly gather on the island.</p>
     <p>The two hexagons symbolize the project. Hexagons interlock to create new spaces; each one is both “my island” and “our island.”</p>
@@ -305,7 +317,7 @@ h1{gap:10px}
 </section>
 
 <section class="sec lav" id="artists" aria-labelledby="h-artists">
-  <div class="divider"><h2 id="h-artists"><span class="caps">ARTISTS</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="divider"><h2 id="h-artists"><span class="caps">ARTISTS</span></h2><img class="dv-ill" src="img/ill/sitting.webp" alt=""></div>
   <div class="body">
     <h3 class="pagetitle">Participants &amp; Organizations</h3>
     <p>Artists from Korea, Italy, Singapore, Malaysia and Japan live and work on Ganghwa.</p>
@@ -355,7 +367,7 @@ h1{gap:10px}
 </section>
 
 <section class="sec yel" id="program" aria-labelledby="h-program">
-  <div class="divider"><h2 id="h-program"><span class="caps">PROGRAM</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="divider"><h2 id="h-program"><span class="caps">PROGRAM</span></h2><img class="dv-ill" src="img/ill/mudflat.webp" alt=""></div>
   <div class="body">
     <h3 class="pagetitle">2026 Programme</h3>
     <p>From 25 October, the work unfolding on Ganghwa will be recorded here.</p>
@@ -367,7 +379,7 @@ h1{gap:10px}
 </section>
 
 <section class="sec mint map" id="map" aria-labelledby="h-map">
-  <div class="divider"><h2 id="h-map"><span class="caps">MAP</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="divider"><h2 id="h-map"><span class="caps">MAP</span></h2><img class="dv-ill" src="img/ill/dolmen.webp" alt=""></div>
   <div class="body">
     <h3 class="pagetitle">Places</h3>
     <p>The two bases, partner venues in the villages, places to stay, and nearby dolmens and sights. Tap a name to open it in Google Maps.</p>
@@ -442,7 +454,7 @@ h1{gap:10px}
 </section>
 
 <section class="sec peach" id="visit" aria-labelledby="h-visit">
-  <div class="divider"><h2 id="h-visit"><span class="caps">VISIT</span></h2><img class="walker" src="img/walker.png" alt=""></div>
+  <div class="divider"><h2 id="h-visit"><span class="caps">VISIT</span></h2><img class="dv-ill" src="img/ill/dog.webp" alt=""></div>
   <div class="body">
     <h3 class="pagetitle">For Visitors</h3>
     <dl class="info">
@@ -459,6 +471,7 @@ h1{gap:10px}
 
 <footer>
   <div class="sponsor"><span class="sp-label">Supported by</span><img src="img/arko-en.png" alt="Arts Council Korea" width="640" height="301"></div>
+<p class="ill-credit">Illustrations by Gu Jimin</p>
 </footer>
 </div>
 
