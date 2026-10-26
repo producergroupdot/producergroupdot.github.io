@@ -276,6 +276,11 @@ h1{gap:10px}
 .strip li{flex:none;scroll-snap-align:start}
 .strip img{display:block;height:118px;width:auto}
 .ill-credit{font-size:.8rem;color:var(--muted)}
+/* cover = moving poster (2026-10-26) */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cover:has(.hero){padding:0;gap:0;display:block}
+.hero{display:block;width:100%;max-width:min(100%,calc(92svh * 9 / 16));height:auto;aspect-ratio:9/16;margin:0 auto;background:#fff}
+.cover:has(.hero) .lang{position:absolute;z-index:2}
 </style>
 
 </head>
@@ -283,12 +288,9 @@ h1{gap:10px}
 <div class="page" lang="ko">
 <header class="cover">
   <div class="lang" aria-label="언어"><span aria-current="true">KO</span><a href="en.html" hreflang="en" lang="en">EN</a></div>
-  <h1 aria-label="⬡⬡의 섬 : 강화도">
-    <span class="t-island" aria-hidden="true"><span class="hx2"></span>의 섬 :</span>
-    <img class="t-letter" src="img/ganghwado.png" alt="" aria-hidden="true">
-  </h1>
-  <p class="vert">2026 · 10.25 — 11.08</p>
-  <picture class="walking"><source media="(prefers-reduced-motion: reduce)" srcset="img/walk-still.png"><img src="img/walk.webp" alt="" width="130" height="315"></picture>
+  <h1 class="sr">⬡⬡의 섬 : 강화도</h1>
+  <p class="sr">2026 · 10.25 — 11.08 · 오픈 프로그램 11.06 — 11.08</p>
+  <video class="hero" src="img/hero.mp4" poster="img/hero-end.jpg" muted playsinline preload="auto" aria-hidden="true"></video>
 </header>
 
 <nav aria-label="목차"><ul>
@@ -503,6 +505,10 @@ h1{gap:10px}
   var start=(location.hash||'').slice(1);
   show(ids.indexOf(start)>=0?start:ids[0],ids.indexOf(start)>0);
 })();
+
+(function(){var v=document.querySelector('video.hero');if(!v)return;
+ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('src');v.load();return}
+ var p=v.play();if(p&&p.catch)p.catch(function(){});})();
 </script>
 <script>
 (function(){

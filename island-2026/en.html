@@ -271,6 +271,11 @@ h1{gap:10px}
 .strip li{flex:none;scroll-snap-align:start}
 .strip img{display:block;height:118px;width:auto}
 .ill-credit{font-size:.8rem;color:var(--muted)}
+/* cover = moving poster (2026-10-26) */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cover:has(.hero){padding:0;gap:0;display:block}
+.hero{display:block;width:100%;max-width:min(100%,calc(92svh * 9 / 16));height:auto;aspect-ratio:9/16;margin:0 auto;background:#fff}
+.cover:has(.hero) .lang{position:absolute;z-index:2}
 </style>
 </head><body>
 <div class="page" lang="en">
@@ -495,6 +500,10 @@ h1{gap:10px}
   var start=(location.hash||'').slice(1);
   show(ids.indexOf(start)>=0?start:ids[0],ids.indexOf(start)>0);
 })();
+
+(function(){var v=document.querySelector('video.hero');if(!v)return;
+ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('src');v.load();return}
+ var p=v.play();if(p&&p.catch)p.catch(function(){});})();
 </script>
 <script>
 (function(){
