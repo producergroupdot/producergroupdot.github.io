@@ -281,6 +281,23 @@ h1{gap:10px}
 .cover:has(.hero){padding:0;gap:0;display:block}
 .hero{display:block;width:100%;max-width:min(100%,calc(92svh * 9 / 16));height:auto;aspect-ratio:9/16;margin:0 auto;background:#fff}
 .cover:has(.hero) .lang{position:absolute;z-index:2}
+/* process log (2026-10-26) */
+.log{margin-top:34px}
+.log-h{font-size:1.05rem;margin:0 0 6px;padding-bottom:6px;border-bottom:1.5px solid var(--ink)}
+.entry{padding:16px 0 26px;border-bottom:1px dotted var(--muted)}
+.entry-date{font-family:var(--en);font-size:1.25rem;letter-spacing:.06em;margin:0 0 4px;line-height:1.4}
+.entry-date span{font-size:.8rem;color:var(--muted);margin-left:.4em;letter-spacing:.04em}
+.entry>p{margin:0 0 12px}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.photos a{display:block;line-height:0}
+.photos img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.photos a:first-child,.photos a:last-child:nth-child(even){grid-column:1/-1}
+.sub-h{font-size:.92rem;margin:18px 0 8px;font-weight:700;letter-spacing:.02em}
+.photos:has(a:only-child) a{grid-column:1/-1}
+.part{margin-top:22px;padding-top:14px;border-top:1px solid #d9d9d9}
+.part .sub-h{margin:0 0 6px;display:flex;gap:.5em;align-items:baseline}
+.part .sub-h::before{content:"";flex:none;width:.55em;height:.55em;background:var(--yel,#FFD84D);transform:translateY(-.05em)}
+.part>p:not(.sub-h){margin:0 0 10px;font-size:.95rem}
 </style>
 
 </head>
@@ -383,8 +400,36 @@ h1{gap:10px}
     <h3 class="pagetitle">2026 세부 프로그램</h3>
     <p>10월 25일부터 강화에서 이어지는 작업을 이곳에 차례로 기록합니다.</p>
     <div class="tracks">
-      <article class="track"><h4>과정</h4><p>레지던시 기간의 워크숍과 작업 과정을 사진과 짧은 글로 나눕니다.</p><p class="soon">10월 25일부터 업데이트</p></article>
+      <article class="track"><h4>과정</h4><p>레지던시 기간의 워크숍과 작업 과정을 사진과 짧은 글로 나눕니다.</p><p class="soon">아래에 날짜별로 기록합니다</p></article>
       <article class="track"><h4>발표</h4><p>11월 6일–8일, 관객과 함께하는 발표 프로그램을 안내합니다.</p><p class="soon">추후 공개</p></article>
+    </div>
+    <div class="log">
+      <h4 class="log-h">과정 기록</h4>
+      <article class="entry">
+        <p class="entry-date">10.26 <span>월</span></p>
+        <p>1년 만에 다시 강화에 모였다. 두 팀으로 나누어 그동안 논의해 온 ‘소멸’에 대한 아이디어를 나누고, 서로 어떻게 만나고 협업할 수 있을지를 논의했다.</p>
+        <section class="part">
+          <p class="sub-h">전체 회의</p>
+        <div class="photos"><a href="img/log/1026-1.webp" target="_blank" rel="noopener"><img src="img/log/1026-1.webp" alt="디귿자로 놓인 테이블에 둘러앉은 참여자들" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-2.webp" target="_blank" rel="noopener"><img src="img/log/1026-2.webp" alt="서서 이야기하는 참여자" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-3.webp" target="_blank" rel="noopener"><img src="img/log/1026-3.webp" alt="이야기를 듣는 참여자들" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-5.webp" target="_blank" rel="noopener"><img src="img/log/1026-5.webp" alt="두 팔을 들어 설명하는 참여자" loading="lazy" width="1600" height="900"></a></div>
+        </section>
+        <section class="part">
+          <p class="sub-h">A팀 회의</p>
+        <div class="photos"><a href="img/log/1026-7.webp" target="_blank" rel="noopener"><img src="img/log/1026-7.webp" alt="테이블에 모여 회의하는 A팀" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-6.webp" target="_blank" rel="noopener"><img src="img/log/1026-6.webp" alt="노트북 앞에서 웃는 A팀 참여자 세 사람" loading="lazy" width="1600" height="900"></a></div>
+        </section>
+        <section class="part">
+          <p class="sub-h">B팀 회의</p>
+        <div class="photos"><a href="img/log/1026-4.webp" target="_blank" rel="noopener"><img src="img/log/1026-4.webp" alt="바닥에 둥글게 모여 앉아 회의하는 B팀" loading="lazy" width="1600" height="900"></a></div>
+        </section>
+        <section class="part">
+          <p class="sub-h">A팀 〈Good Mourning and Good Morning〉 · 첫 번째 커뮤니티와의 만남과 대화 (황구 형님)</p>
+        <div class="photos"><a href="img/log/1026-8.webp" target="_blank" rel="noopener"><img src="img/log/1026-8.webp" alt="마당 테이블에 둘러앉아 이야기 나누는 모습" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-9.webp" target="_blank" rel="noopener"><img src="img/log/1026-9.webp" alt="크게 웃는 황구 형님과 참여자들" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-10.webp" target="_blank" rel="noopener"><img src="img/log/1026-10.webp" alt="마당에서 서서 이야기하는 모습" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-11.webp" target="_blank" rel="noopener"><img src="img/log/1026-11.webp" alt="강화군 산불감시원 조끼가 걸린 집 입구" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-12.webp" target="_blank" rel="noopener"><img src="img/log/1026-12.webp" alt="큰 무를 들고 웃는 참여자와 황구 형님" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-13.webp" target="_blank" rel="noopener"><img src="img/log/1026-13.webp" alt="마당에서 바라본 추수가 끝난 들판과 산" loading="lazy" width="1600" height="900"></a><a href="img/log/1026-14.webp" target="_blank" rel="noopener"><img src="img/log/1026-14.webp" alt="산불감시원 조끼를 들고 함께 찍은 단체 사진" loading="lazy" width="1600" height="900"></a></div>
+        </section>
+        <section class="part">
+          <p class="sub-h">최영두</p>
+        <p>오늘 돌아가는 길에 빈집과, 물이 들어오기 시작하는 갯벌에 들러 첫 소리를 채집했다.</p>
+        <div class="photos"><a href="img/log/1026-15.webp" target="_blank" rel="noopener"><img src="img/log/1026-15.webp" alt="수풀에 덮인 빈집 앞에 놓인 녹음 장비" loading="lazy" width="1600" height="1200"></a><a href="img/log/1026-16.webp" target="_blank" rel="noopener"><img src="img/log/1026-16.webp" alt="갯벌 앞에 놓인 마이크와 녹음 장비" loading="lazy" width="1600" height="1200"></a></div>
+        </section>
+      </article>
     </div>
   </div>
 </section>
