@@ -367,6 +367,18 @@ h1{gap:10px}
 .photos+.photos{margin-top:6px}
 .photos.solo{grid-template-columns:1fr}.photos.solo a{grid-column:1!important;width:62%;margin:0 auto}
 .photos a:first-child+a:last-child:not(.tall){grid-column:1/-1}
+/* photo slider (2026-10-29) */
+.slider{margin-top:6px}
+.slider ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.slider ul::-webkit-scrollbar{display:none}
+.slider li{flex:none;scroll-snap-align:start}
+.slider li a{display:block;line-height:0}
+.slider img{display:block;height:min(52vw,380px);width:auto;max-width:none}
+.sl-bar{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:8px;font-family:var(--en);font-size:.9rem}
+.sl-bar button{all:unset;cursor:pointer;width:36px;height:36px;display:grid;place-items:center;border:1.5px solid var(--ink);background:#fff;font-size:1rem}
+.sl-bar button:disabled{opacity:.3;cursor:default}
+.sl-bar button:focus-visible{outline:2px solid var(--yel);outline-offset:2px}
+.sl-count{min-width:4.5em;text-align:center;color:var(--muted)}
 </style>
 
 </head>
@@ -513,6 +525,11 @@ h1{gap:10px}
       
       <article class="entry" data-date="1028">
         <p class="entry-date">10.28 <span>수</span></p>
+        <section class="part">
+          <p class="sub-h">A팀 · 전체 루트 함께 걷기</p>
+          <p>늘 차로 지나던 강화의 길을 두 발로 걸으며 풍경과 자연, 사람, 그리고 소멸의 흔적을 몸에 담았다. 걷는 길마다 컹컹 짖는 개들과 어디선가 불쑥 나타나는 고양이들을 만났고, 도로를 따라 걸어야 할 때는 날리는 먼지에 몸을 맡겼다. 깊어 가는 가을 속에서 꽃을 피운 뒤 서서히 말라 가는 식물의 시간을 감각했다. 우리는 동쪽에서 서쪽으로 해를 따라 걸었다. 해가 저무는 동안 점점 지치고 무거워지는 몸을 느끼며, 자연의 일부로서의 소멸을 생각했다. 11월 6일부터 8일까지, 이 길을 모두와 함께 다시 걸을 예정이다.</p>
+          <div class="slider" aria-label="걷기 사진 모음"><ul><li><a href="img/log/1028w-1.webp" target="_blank" rel="noopener"><img src="img/log/1028w-1.webp" alt="텃밭에서 웃으며 이야기하는 참여자들" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-2.webp" target="_blank" rel="noopener"><img src="img/log/1028w-2.webp" alt="불은남로 길가를 함께 걷는 사람들" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-3.webp" target="_blank" rel="noopener"><img src="img/log/1028w-3.webp" alt="홀로 언덕길을 걷는 사람" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-4.webp" target="_blank" rel="noopener"><img src="img/log/1028w-4.webp" alt="파란 지붕 창고 옆 길을 걷는 사람들" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-5.webp" target="_blank" rel="noopener"><img src="img/log/1028w-5.webp" alt="논 사이 길을 걸으며 손을 흔드는 세 사람" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-6.webp" target="_blank" rel="noopener"><img src="img/log/1028w-6.webp" alt="갈아엎은 논과 마른 풀" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-7.webp" target="_blank" rel="noopener"><img src="img/log/1028w-7.webp" alt="말라 가는 고추밭" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-8.webp" target="_blank" rel="noopener"><img src="img/log/1028w-8.webp" alt="그물을 씌운 과수원" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-9.webp" target="_blank" rel="noopener"><img src="img/log/1028w-9.webp" alt="검은 차광막에 매달려 말라 가는 수세미" loading="lazy" width="792" height="1400"></a></li><li><a href="img/log/1028w-10.webp" target="_blank" rel="noopener"><img src="img/log/1028w-10.webp" alt="추수가 끝난 논둑을 걷는 사람들" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-11.webp" target="_blank" rel="noopener"><img src="img/log/1028w-11.webp" alt="붉게 물든 나무" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-12.webp" target="_blank" rel="noopener"><img src="img/log/1028w-12.webp" alt="추수 끝난 논의 하얀 곤포와 성당" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-13.webp" target="_blank" rel="noopener"><img src="img/log/1028w-13.webp" alt="논 앞의 허수아비" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-14.webp" target="_blank" rel="noopener"><img src="img/log/1028w-14.webp" alt="곡선을 그리며 남은 벼 그루터기와 성당" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-15.webp" target="_blank" rel="noopener"><img src="img/log/1028w-15.webp" alt="길을 걷는 안나와 뒤따르는 사람들" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-16.webp" target="_blank" rel="noopener"><img src="img/log/1028w-16.webp" alt="반사경 너머로 걸어가는 일행" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-17.webp" target="_blank" rel="noopener"><img src="img/log/1028w-17.webp" alt="노랗게 마른 콩밭" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-18.webp" target="_blank" rel="noopener"><img src="img/log/1028w-18.webp" alt="논 사이의 붉은 풀 띠" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-19.webp" target="_blank" rel="noopener"><img src="img/log/1028w-19.webp" alt="배낭을 메고 서쪽으로 걷는 일행" loading="lazy" width="1400" height="792"></a></li><li><a href="img/log/1028w-20.webp" target="_blank" rel="noopener"><img src="img/log/1028w-20.webp" alt="길 위에서 함께 점프하는 사람들" loading="lazy" width="1400" height="792"></a></li></ul><div class="sl-bar"><button type="button" class="sl-prev" aria-label="이전 사진">←</button><span class="sl-count">1 / 20</span><button type="button" class="sl-next" aria-label="다음 사진">→</button></div></div>
+        </section>
         <section class="part">
           <p class="sub-h">B팀 · 흥왕2리 마을회관에서</p>
           <p>흥왕2리 마을회관에서 마을의 어르신들을 만나 몸풀기와 리듬 활동을 함께하고, 데미안의 드럼 연주를 감상하며 여러 방식으로 어울리는 시간을 가졌다. 이어서 어르신들이 살아오며 겪은 마을의 변화와, 조금씩 사라져 가는 삶의 방식에 대해 이야기를 나누었다. 특히 농사가 생활의 중심이던 시절의 품앗이와 공동체의 정에 관한 이야기를 들으며, 보존과 변화의 의미를 함께 생각해 보았다.</p>
@@ -726,6 +743,13 @@ h1{gap:10px}
  es.forEach(function(e,i){var b=document.createElement('button');b.type='button';var d=e.querySelector('.entry-date');b.textContent=d?d.firstChild.textContent.trim():e.dataset.date;
   b.setAttribute('aria-pressed',i===0?'true':'false');b.addEventListener('click',function(){es.forEach(function(x){x.hidden=x!==e});[].forEach.call(nav.children,function(y){y.setAttribute('aria-pressed',y===b?'true':'false')});});nav.appendChild(b);if(i>0)e.hidden=true;});
  var intro=log.querySelector('.log-intro');(intro||log.firstChild).after?((intro)?intro.after(nav):log.prepend(nav)):log.insertBefore(nav,log.firstChild);})();
+
+(function(){[].forEach.call(document.querySelectorAll('.slider'),function(sl){var ul=sl.querySelector('ul'),lis=[].slice.call(ul.children),cnt=sl.querySelector('.sl-count'),pv=sl.querySelector('.sl-prev'),nx=sl.querySelector('.sl-next');
+ function cur(){var x=ul.scrollLeft,best=0,d=1e9;lis.forEach(function(li,i){var dd=Math.abs(li.offsetLeft-ul.offsetLeft-x);if(dd<d){d=dd;best=i}});return best}
+ function upd(){var i=cur();cnt.textContent=(i+1)+' / '+lis.length;pv.disabled=i===0;nx.disabled=ul.clientWidth>0&&ul.scrollLeft+ul.clientWidth>=ul.scrollWidth-4}
+ function go(dir){var i=Math.max(0,Math.min(lis.length-1,cur()+dir));ul.scrollTo({left:lis[i].offsetLeft-ul.offsetLeft,behavior:'smooth'})}
+ pv.addEventListener('click',function(){go(-1)});nx.addEventListener('click',function(){go(1)});
+ var t;ul.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(upd,60)});window.addEventListener('resize',upd);upd();});})();
 </script>
 <script>
 (function(){
