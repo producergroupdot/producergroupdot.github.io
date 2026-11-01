@@ -433,6 +433,20 @@ h1{gap:10px}
 .op-ja p{margin:0 0 10px;font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;font-size:.92rem;line-height:1.8}
 .op-ja .op-ja-t{font-weight:700;font-size:1rem}
 .op-ja,.op-ja *{word-break:normal;line-break:strict;overflow-wrap:anywhere}
+.openprog.dondae{box-shadow:7px 7px 0 #8CCBF2}
+.dondae blockquote{border-left-color:#8CCBF2}
+.dondae .op-dates b,.dondae .op-dates span{display:block}
+.og-day a.dondae{--c:#1F6FB2;--cb:#E6F1FB}
+.op-gal{margin:4px 0 14px}
+.op-artists li span,.op-acts li span{line-height:1.6}
+.op-acts{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
+.op-acts li{padding:10px 12px;background:#EEF6FC;border-left:3px solid #8CCBF2}
+.op-acts b{display:block;font-weight:600}.op-acts i{font-style:normal;font-weight:400;color:#666;margin-left:6px;font-size:.9em}
+
+.op-credit{font-size:.85rem;color:#555;line-height:1.7;margin-top:10px;padding-top:10px;border-top:1px solid #ddd}
+.op-artists li{grid-template-columns:1fr;gap:2px;background:#EEF6FC}.op-artists li b{color:var(--ink);font-weight:600}
+.og-pin3{fill:#2E86C8;stroke:#fff;stroke-width:2}.og-pinlbl3{font-size:12px;font-weight:700;fill:#1F6FB2;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.og-route:not([data-day="3"]) .og-rmap .og-dondae{display:none}
+.og-move3{fill:none;stroke:#2E86C8;stroke-width:2.5;stroke-dasharray:3 6;stroke-linecap:round}.og-way{display:inline-block;font-size:.8rem;font-weight:700;padding:0 6px;margin:4px 4px 0 0;background:#FFF1B3}.og-way.b{background:#DDEEFB;color:#1F6FB2}
 </style>
 </head><body>
 <div class="page" lang="en">
@@ -549,13 +563,14 @@ h1{gap:10px}
           <li><a href="#op-02" class="sono"><i>9:00–17:00</i><b>A Homeland We Cannot Return To, and a Woman Who Shares the Seasons Here</b><span>Sononochi · Gukja &amp; Jugeok · booking</span></a></li>
           <li><a href="#op-01"><i>10:00–15:00</i><b>Walking as Witnesses to Disappearance · day 2</b><span>A.N.D. Theatre · from Space And</span></a></li></ul></div>
         <div class="og-day"><p>8 Nov<span>Sun</span></p><ul>
-          <li><a href="#op-01"><i>10:00–14:00</i><b>Walking as Witnesses to Disappearance · day 3</b><span>A.N.D. Theatre · to the Void Theatre</span></a></li></ul></div>
+          <li><a href="#op-01"><i>10:00–14:00</i><b>Walking as Witnesses to Disappearance · day 3</b><span>A.N.D. Theatre · to the Void Theatre</span></a></li>
+          <li><a href="#op-03" class="dondae"><i>13:00–15:30</i><b>Looking Out for All @Dondae</b><span>Team B · Odu Dondae</span></a></li></ul></div>
       </div>
       
       <div class="og-route" data-day="2">
         <div class="og-rhead"><b>Route by day</b><div class="og-tabs" role="group"><button type="button" data-d="1" aria-pressed="false">Fri 6</button><button type="button" data-d="2" aria-pressed="true">Sat 7</button><button type="button" data-d="3" aria-pressed="false">Sun 8</button></div></div>
         <div class="og-rmap"></div>
-        <p class="og-note" data-d="1" hidden><b>13:00</b> leave Ganghwa Bus Terminal → <b>16:00</b> arrive at Space And, along the coast path.</p><p class="og-note" data-d="2"><b>10:00</b> leave Space And → Heewarae → <b>15:00</b> arrive at Gukja &amp; Jugeok. Walkers can join Sononochi on the spot in the <b>15:00–16:30</b> slots (remaining places). If you are not walking, come straight to Gukja &amp; Jugeok any time <b>9:00–17:00</b>.</p><p class="og-note" data-d="3" hidden><b>10:00</b> leave Gukja &amp; Jugeok → <b>14:00</b> arrive at the Void Theatre.</p>
+        <p class="og-note" data-d="1" hidden><b>13:00</b> leave Ganghwa Bus Terminal → <b>16:00</b> arrive at Space And, along the coast path.</p><p class="og-note" data-d="2"><b>10:00</b> leave Space And → Heewarae → <b>15:00</b> arrive at Gukja &amp; Jugeok. Walkers can join Sononochi on the spot in the <b>15:00–16:30</b> slots (remaining places). If you are not walking, come straight to Gukja &amp; Jugeok any time <b>9:00–17:00</b>.</p><p class="og-note" data-d="3" hidden><b>10:00</b> leave Gukja &amp; Jugeok → <b>14:00</b> arrive at the Void Theatre.<br>Team B’s <i>Looking Out for All @Dondae</i> takes place at Odu Dondae, <b>13:00–15:30</b>. No booking needed, just come along.</p>
       </div>
       <p class="og-more">Tap a title to jump to the programme. More programmes will be announced one by one.</p>
     </div>
@@ -623,7 +638,27 @@ h1{gap:10px}
       </details>
       <a class="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfkZhrDJ-JzfqjndNZdBQeQblilMbXXJzPE8qUvEJMvXq9wNw/viewform" target="_blank" rel="noopener">Book a slot →</a>
     </article>
-    <div class="op-next"><b>Open programme 03 –</b><span>More programmes coming soon</span></div>
+        <article class="openprog dondae" id="op-03">
+      <p class="op-kicker">Open programme 03 · Team B</p>
+      <h4 class="op-title">Looking Out for All @Dondae</h4>
+      <p class="op-sub">모두를 위한 망보기 @돈대</p>
+      <p class="op-dates"><b>Sun 8 Nov, 13:00–15:30</b><span>Odu Dondae</span></p>
+      <figure class="op-photo"><img src="img/log/op03.webp" alt="Two chairs facing each other in a leaf-covered forest" loading="lazy" width="1600" height="1200"></figure>
+      <p>This project brings together artists from Korea, Malaysia and Singapore, who gathered on Ganghwa Island to research disappearance and create work together.</p>
+      <blockquote>In the past, soldiers defended against enemies and kept watch. What should we be watching for now?</blockquote>
+      <p>In difficult times, disappearance accelerates, and it is a phenomenon that appears in many different forms all over the world.</p>
+      <p>We met farmers, children, musicians, pension owners and elders who have lived on Ganghwa for a long time. We listened to stories of the disappearance of people and places, and of cultural practices such as <i>pumasi</i> (mutual help among neighbours). We heard how a bridge built for convenience has changed the marine ecosystem and caused the mudflats to disappear. We heard about the disappearance of the memory of believing in Santa Claus, and about a body that no longer aches and the labour it once did.</p>
+      <p>We also went looking for the dondae that had been left neglected. The beacon towers stood abandoned in the cold, yet trees and grass grew thick around them. Every act of disappearance brings a new appearance. So when is disappearance good, and when is it harmful?</p>
+      <div class="photos pair op-gal"><a href="img/log/op03-1.webp" target="_blank" rel="noopener" class="tall"><img src="img/log/op03-1.webp" alt="Team B walking along a stone wall beneath old trees" loading="lazy" width="1200" height="1600"></a><a href="img/log/op03-2.webp" target="_blank" rel="noopener" class="tall"><img src="img/log/op03-2.webp" alt="Team B looking out over the sea beyond the reeds" loading="lazy" width="1200" height="1600"></a></div>
+      <div class="photos pair op-gal"><a href="img/log/op03-3.webp" target="_blank" rel="noopener" class="tall"><img src="img/log/op03-3.webp" alt="Remains of a dondae's stone walls on the forest floor" loading="lazy" width="1200" height="1600"></a><a href="img/log/op03-4.webp" target="_blank" rel="noopener" class="tall"><img src="img/log/op03-4.webp" alt="Team B standing together in the forest, talking" loading="lazy" width="960" height="1280"></a></div>
+      <p>Standing at Odu Dondae, listening to its history and to how its importance is fading from people’s everyday lives, we asked ourselves: do we only grieve after a disappearance is over? We began to think deeply not only about the disappearances that have already happened, but about the present moment.</p>
+      <p>Rather than mourning what has happened, what can we do while disappearance is going on, constantly, right now?</p>
+      <p>In response to this research, we decided to collaborate, as an act of being together with one another and with the local community. Let us all come together in the act of keeping a lookout.</p>
+      <h5>How to join</h5>
+      <ul class="op-info"><li><b>Booking</b><span>No booking needed. Just come to Odu Dondae.</span></li><li><b>After</b><span>When it ends, we move on towards the Void Theatre to meet the audience walking from Gukja &amp; Jugeok.</span></li><li><b>Venue</b><span>Odu Dondae (Odu-ri, Bureun-myeon, Ganghwa) · <a href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%95%ED%99%94%20%EC%98%A4%EB%91%90%EB%8F%88%EB%8C%80" target="_blank" rel="noopener">Open map</a></span></li></ul>
+      <p class="op-credit">Artists Heewarae (Korea, Ganghwa), Chew Shaw En (Singapore), Orang Orang Drum Theatre (Malaysia), Kok Heng Leun (Singapore)<br>Producers Song Miseon, Kwon Geun-young · Interpreter Park Hyeong-jun · Stage manager Lee Jeong-yeon · Staff Na Jong-yeon</p>
+    </article>
+    <div class="op-next"><b>Open programme 04 –</b><span>More programmes coming soon</span></div>
     </div>
     <div class="ppanel" data-panel="log" role="tabpanel" hidden>
     <div class="log">
@@ -939,7 +974,7 @@ var svg=src.cloneNode(true);svg.removeAttribute('id');
 [].forEach.call(svg.querySelectorAll('.rm-day'),function(t,i){t.classList.add('d'+(i+1))});
 var NS='http://www.w3.org/2000/svg',g=document.createElementNS(NS,'g');g.setAttribute('class','og-sono');
 g.innerHTML='<circle class="og-pin" cx="340" cy="543" r="11" fill-opacity=".25"/><text class="og-pinlbl" x="352" y="578">'+(en?'Sononochi 9:00–17:00':'소노노치 9:00–17:00')+'</text>';
-svg.appendChild(g);box.querySelector('.og-rmap').appendChild(svg);
+svg.appendChild(g);var g3=document.createElementNS(NS,'g');g3.setAttribute('class','og-dondae');g3.innerHTML='<path class="og-move3" d="M538 436 C 520 560, 500 650, 462 704"/><text class="og-pinlbl3" x="530" y="600">'+(en?'on to the Void Theatre':'없는극장 쪽으로')+'</text><polygon class="og-pin3" points="541,413 549.7,418 549.7,428 541,433 532.3,428 532.3,418"/><text class="og-pinlbl3" x="528" y="411" text-anchor="end">'+(en?'Team B 13:00–15:30':'B팀 13:00–15:30')+'</text><text class="og-pinlbl3" x="528" y="426" text-anchor="end">'+(en?'Odu Dondae':'오두돈대')+'</text>';svg.appendChild(g3);box.querySelector('.og-rmap').appendChild(svg);
 var bs=[].slice.call(box.querySelectorAll('.og-tabs button'));
 bs.forEach(function(b){b.addEventListener('click',function(){var d=b.dataset.d;box.dataset.day=d;
  bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
