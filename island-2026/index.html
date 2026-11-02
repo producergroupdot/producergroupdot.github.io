@@ -456,6 +456,8 @@ h1{gap:10px}
 .og-move3{fill:none;stroke:#2E86C8;stroke-width:2.5;stroke-dasharray:3 6;stroke-linecap:round}.og-way{display:inline-block;font-size:.8rem;font-weight:700;padding:0 6px;margin:4px 4px 0 0;background:#FFF1B3}.og-way.b{background:#DDEEFB;color:#1F6FB2}
 .openprog.yrm{box-shadow:7px 7px 0 #7FD6D2}.yrm blockquote{border-left-color:#7FD6D2}.yrm .op-dates b,.yrm .op-dates span,.snd .op-dates b,.snd .op-dates span{display:block}
 .og-day a.yrm{--c:#138A85;--cb:#E3F6F5}
+.og-head{position:relative}.og-head .og-guide{position:absolute;right:10px;top:50%;transform:translateY(-50%)}.og-guide{font-size:.88rem;font-weight:700;color:var(--ink);background:#fff;border:1.5px solid var(--ink);padding:4px 12px;text-decoration:none;white-space:nowrap}
+.og-day a.gm{--c:#7B61E8;--cb:#ECE6FE}
 .openprog.snd{box-shadow:7px 7px 0 #F6B98A}.snd blockquote{border-left-color:#F6B98A}
 .og-day a.snd{--c:#C0601C;--cb:#FDF0E6}
 .op-photo.tall img{max-width:62%;margin:0 auto;display:block;height:auto}
@@ -465,6 +467,7 @@ h1{gap:10px}
 .apply.walklog{background:var(--yel,#FEDF4A);color:var(--ink);border:1.5px solid var(--ink);margin-top:8px}.apply.walklog:hover{background:#fff}.og-walklog{margin:10px 0 0;font-size:.92rem}.og-walklog a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .team-photos{margin:16px 0 22px}.team-photos figcaption{font-size:.85rem;color:var(--muted,#666);margin-top:6px}
 
+.openprog.gm{box-shadow:7px 7px 0 #B8A5F9}.gm blockquote{border-left-color:#B8A5F9}.gm .op-dates b,.gm .op-dates span{display:block}
 /* visitor guide */
 .vguide{margin-bottom:14px}
 .vguide h4{font-size:1.25rem;margin:0 0 12px;font-weight:700}
@@ -620,9 +623,8 @@ h1{gap:10px}
     <h3 class="pagetitle">2026 세부 프로그램</h3>
     <div class="ptabs" role="tablist"><button type="button" role="tab" data-ptab="open" aria-selected="true"><b>오픈 프로그램</b><span>11월 6일–8일, 관객과 함께</span></button><button type="button" role="tab" data-ptab="log" aria-selected="false"><b>과정 기록</b><span>매일의 작업 과정</span></button></div>
     <div class="ppanel" data-panel="open" role="tabpanel">
-    <p class="op-intro">11월 6일–8일 오픈 프로그램을 차례로 공개합니다. 앤드씨어터의 사흘 걷기를 따라 곳곳에서 다른 예술가들의 프로그램이 열립니다.</p>
     <div class="op-glance" aria-label="오픈 프로그램 한눈에 보기">
-      <h4>한눈에 보기</h4>
+      <div class="og-head"><h4>한눈에 보기</h4></div>
       <div class="og-days">
         <div class="og-day"><p>11. 6<span>금</span></p><ul>
           <li><a href="#op-05" class="snd"><i>종일</i><b>지금은 없지만</b><span>연리목 + 최영두 · 국자와주걱 출발 · 이어폰 지참</span></a></li>
@@ -772,7 +774,8 @@ h1{gap:10px}
       </ul>
       <p class="op-credit">작 · 연출 · 이야기 채집 연리목 · 음악 · 녹음 · 사운드 채집 최영두</p>
     </article>
-    <div class="op-next"><b>오픈 프로그램 06 –</b><span>다음 프로그램을 곧 공개합니다</span></div>
+
+    <div class="op-next"><b>다음 오픈 프로그램 –</b><span>곧 공개합니다</span></div>
     </div>
     <div class="ppanel" data-panel="log" role="tabpanel" hidden>
     <div class="log">
@@ -789,6 +792,19 @@ h1{gap:10px}
         <section class="part">
           <p class="sub-h">A팀 · 테아트린게스타치오네</p>
           <p>안나와 지오바니는 오전에 섬섬을 만나, 그의 장례식을 구상하기 위한 인터뷰와 녹음을 진행했다. 당신이 죽은 뒤 가장 사랑하는 사람과 가장 미워하는 사람의 꿈에 나타난다면, 어떤 말을 전하겠는가. 당신이 남기는 유산은 무엇인가. 이어서 기술팀과 함께 필요한 기술 사항과 물품을 정리했다. 늦은 오후에는 황구님을 만나 공연으로서의 장례식 구성안을 공유하며 이야기를 나누었고, 늦은 밤에는 세븐일레븐 사장님을 다시 만나 기본 구성을 공유했다. 세 사람의 장례식 퍼포먼스가 이제 조금씩 선명해지고 있다.</p>
+        </section>
+        <section class="part">
+          <p class="sub-h">B팀 · 강화군장애인복지관에서</p>
+          <p>강화군장애인복지관에서 일하시는 분들을 만나, 장애인들과 함께하며 느낀 변화와 돌봄의 경험에 대해 이야기를 나누었다. 어떤 커뮤니티에서든 사라져 아쉬운 것들을 이야기하다 보면 ‘품앗이’와 ‘정’이 등장한다는 점이 흥미로웠다. 오랑오랑 드럼 씨어터의 농사와 생활 방식을 소개하며 다른 지역의 삶의 방식에 대해서도 이야기를 나누었다.</p>
+          <p>70년 가까이 소창을 만들어 온 친할아버지 이야기를 들려주신 선생님의 이야기도 인상 깊었다. 전망이 없다고 여겨 공장 문을 닫았는데, 그 뒤 소창이 강화의 문화 자원으로 다시 주목받기 시작했다고 한다. 할아버지가 평생 해 온 일이 지금 강화의 문화적 자산으로 인정받는 데 의미를 느끼면서도, 그 변화가 조금만 더 일찍 찾아왔다면 어땠을까 하는 아쉬움을 전하셨다. 이제는 농업이든 다른 산업이든 문화와 연결되지 않으면 살아남기 어려운 것 같다는 생각도 덧붙이셨다.</p>
+          <div class="photos"><a href="img/log/1102b-1.webp" target="_blank" rel="noopener"><img src="img/log/1102b-1.webp" alt="복지관 회의실에 둥글게 둘러앉아 이야기를 나누는 복지관 선생님들과 B팀" loading="lazy" width="1600" height="1200"></a></div>
+        </section>
+        <section class="part">
+          <p class="sub-h">B팀 · 아름다운지역아동센터에서</p>
+          <p>쇼와 희와래는 세 아이와 함께 ‘사라짐’에 관한 이야기를 작업했다. 아이들은 먼저 자신의 이야기를 글로 쓰는 데 집중했고, 이어 이야기 속에 등장하는 캐릭터를 인형으로 만들었다. 오늘은 사흘 동안 이어지는 작업의 첫날이었다. 우리는 아이들의 이야기에 담긴 복잡하고 깊은 감정에 크게 감동했다. 이야기는 상실을 다루지만, 아이들과 함께한 시간은 활기차고 즐거웠다. 아이들도, 우리도 무척 즐거웠다. 내일 아이들을 다시 만날 시간이 기대된다.</p>
+          <div class="photos"><a href="img/log/1102b-2.webp" target="_blank" rel="noopener"><img src="img/log/1102b-2.webp" alt="책장으로 둘러싸인 방에서 조명을 세워 두고 이야기와 인형을 만드는 아이들" loading="lazy" width="1600" height="1200"></a></div>
+          <div class="photos"><a href="img/log/1102b-3.webp" target="_blank" rel="noopener"><img src="img/log/1102b-3.webp" alt="검은 배경 위에 놓인 종이 인형과 고양이 머리 모양 종이" loading="lazy" width="1280" height="718"></a></div>
+          <div class="photos pair"><a href="img/log/1102b-4.webp" target="_blank" rel="noopener" class="tall"><img src="img/log/1102b-4.webp" alt="조명 아래 책상에 앉아 그림을 그리는 아이의 뒷모습" loading="lazy" width="1200" height="1600"></a><a href="img/log/1102b-5.webp" target="_blank" rel="noopener" class="tall"><img src="img/log/1102b-5.webp" alt="색연필로 그린 캐릭터를 오려 내는 아이" loading="lazy" width="900" height="1600"></a></div>
         </section>
       </article>
       <article class="entry" data-date="1101">
