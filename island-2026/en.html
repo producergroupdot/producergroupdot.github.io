@@ -441,6 +441,8 @@ h1{gap:10px}
 .op-artists li span,.op-acts li span{line-height:1.6}
 .op-acts{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
 .op-acts li{padding:10px 12px;background:#EEF6FC;border-left:3px solid #8CCBF2}
+.op-kok{margin-top:8px}.op-kok p{margin:0 0 8px}.op-kok .op-acts li{background:#fff}
+.op-artists b i{font-style:normal;font-weight:400;color:#666;margin-left:6px;font-size:.9em}
 .op-acts b{display:block;font-weight:600}.op-acts i{font-style:normal;font-weight:400;color:#666;margin-left:6px;font-size:.9em}
 
 .op-credit{font-size:.85rem;color:#555;line-height:1.7;margin-top:10px;padding-top:10px;border-top:1px solid #ddd}
@@ -457,6 +459,52 @@ h1{gap:10px}
 .og-ring5{fill:none;stroke:#E8862E;stroke-width:2.5;stroke-dasharray:4 3}.og-pinlbl5{font-size:11.5px;font-weight:700;fill:#C0601C;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.og-route[data-day="2"] .og-pinlbl5.a,.og-route:not([data-day="2"]) .og-pinlbl5.b{display:none}
 .apply.walklog{background:var(--yel,#FEDF4A);color:var(--ink);border:1.5px solid var(--ink);margin-top:8px}.apply.walklog:hover{background:#fff}.og-walklog{margin:10px 0 0;font-size:.92rem}.og-walklog a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .team-photos{margin:16px 0 22px}.team-photos figcaption{font-size:.85rem;color:var(--muted,#666);margin-top:6px}
+
+/* visitor guide */
+.vguide{margin-bottom:14px}
+.vguide h4{font-size:1.25rem;margin:0 0 12px;font-weight:700}
+.page[lang="en"] .vguide h4{font-weight:500}
+.vg-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:0 0 20px}
+.vg-tabs button{font:inherit;font-size:.92rem;line-height:1.35;cursor:pointer;border:1.5px solid var(--ink);background:#fff;color:var(--ink);padding:10px 8px;text-align:center;border-radius:0}
+.vg-tabs button:hover{background:#FFF1EA}
+.vg-tabs button[aria-selected="true"]{background:var(--ink);color:#fff;font-weight:700}
+.page[lang="en"] .vg-tabs button[aria-selected="true"]{font-weight:500}
+.vg-tabs button:focus-visible{outline:2px solid var(--sky-d);outline-offset:2px}
+@media (max-width:640px){.vg-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.vg-tabs button:first-child{grid-column:1/-1}}
+.vg-lead{margin:0 0 16px;line-height:1.7;font-size:.92rem;padding:10px 12px;background:#FFF1EA}
+.vg-day{margin:0 0 20px}
+.vg-day h5{margin:0 0 4px;font-size:1rem;font-weight:700}
+.page[lang="en"] .vg-day h5{font-weight:500}
+.vg-day ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.vg-day li{display:grid;grid-template-columns:9.2rem 9.5rem 1fr;gap:0 16px;padding:9px 0;border-bottom:1px solid var(--hair);line-height:1.6;font-size:.95rem}
+.vg-t{font-family:var(--en);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vg-p{color:var(--muted)}
+.vg-p a,.vg-w a{color:inherit;text-decoration-color:var(--hair);text-underline-offset:3px}
+.vg-w{font-weight:600}
+.page[lang="en"] .vg-w{font-weight:500}
+.vg-w small{display:block;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:1px}
+.vg-day li.mv{color:var(--muted);padding:5px 0;font-size:.9rem}
+.vg-day li.mv .vg-w{font-weight:400}
+.vg-foot{margin:0;padding-top:4px;color:var(--muted);font-size:.92rem;line-height:1.8}
+.vg-lead a{color:inherit}
+.vg-info{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;margin-top:8px;font-size:.9rem;line-height:1.7}
+.vg-side{display:grid;gap:12px;align-content:start}
+.vg-card{background:#FFF1EA;padding:16px 18px}
+.vg-card h4{margin:0 0 10px;font-size:1rem;font-weight:700}
+.page[lang="en"] .vg-card h4{font-weight:500}
+.vg-card p{margin:0}
+.vg-card ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.vg-join ul{list-style:none;padding:0;gap:14px}
+.vg-join li{display:grid;gap:6px;justify-items:start}
+.vg-join li b{font-weight:600}
+.vg-join li small{font-weight:400;color:var(--muted);font-size:.85em;margin-left:4px}
+.vg-join li span{color:var(--muted);font-size:.85rem}
+.vg-btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:.88rem;padding:7px 16px;line-height:1.4}
+.vg-btn:hover{background:#333}
+.vg-btn.off{background:#fff;color:var(--muted);border:1px dashed var(--muted);font-weight:400}
+.vg-star{margin:14px 0 0!important;color:var(--muted);font-size:.85rem}
+@media (max-width:760px){.vg-info{grid-template-columns:1fr}}
+@media (max-width:640px){.vg-day li{grid-template-columns:7.4rem 1fr;gap:0 10px}.vg-t{font-size:.88rem}.vg-p{grid-column:2;grid-row:2;font-size:.88rem}.vg-w{grid-column:2;grid-row:1}}
 </style>
 </head><body>
 <div class="page" lang="en">
@@ -474,7 +522,6 @@ h1{gap:10px}
   <li class="lav"><a href="#artists"><i></i>ARTISTS</a></li>
   <li class="yel"><a href="#program"><i></i>PROGRAM</a></li>
   <li class="mint"><a href="#map"><i></i>MAP</a></li>
-  <li class="peach"><a href="#visit"><i></i>VISIT</a></li>
 </ul></nav>
 
 <section class="sec sky" id="project" aria-labelledby="h-project">
@@ -582,15 +629,15 @@ h1{gap:10px}
         <div class="og-day"><p>8 Nov<span>Sun</span></p><ul>
           <li><a href="#op-05" class="snd"><i>All day</i><b>No Longer, But</b><span>Yonrimog + Choi Yeongdoo · from Gukja &amp; Jugeok · bring earphones</span></a></li>
           <li><a href="#op-01"><i>10:00–15:00</i><b>Walking as Witnesses to Disappearance · day 3</b><span>A.N.D. Theatre · to the Void Theatre</span></a></li>
-          <li><a href="#op-03" class="dondae"><i>13:00–15:30</i><b>Looking Out for All @Dondae</b><span>Team B · Odu Dondae</span></a></li>
+          <li><a href="#op-03" class="dondae"><i>13:00–15:30</i><b>Looking Out for All @Dondae</b><span>Heewarae × Orang Orang Drum Theatre × Kok Heng Leun × Chew Shaw En · Odu Dondae</span></a></li>
           <li><a href="#op-04" class="yrm"><i>18:00</i><b>About Things</b><span>Yonrimog + Choi Yeongdoo · Huae Dondae</span></a></li></ul></div>
       </div>
       
       <div class="og-route" data-day="2">
         <div class="og-rhead"><b>Route by day</b><div class="og-tabs" role="group"><button type="button" data-d="1" aria-pressed="false">Fri 6</button><button type="button" data-d="2" aria-pressed="true">Sat 7</button><button type="button" data-d="3" aria-pressed="false">Sun 8</button></div></div>
         <div class="og-rmap"></div>
-        <p class="og-note" data-d="1" hidden><b>13:00</b> leave Ganghwa Bus Terminal → <b>16:00</b> arrive at Space And, along the coast path.</p><p class="og-note" data-d="2"><b>10:00</b> leave Space And → Heewarae → <b>15:00</b> arrive at Gukja &amp; Jugeok. Walkers can join Sononochi on the spot in the <b>15:00–16:30</b> slots (remaining places). If you are not walking, come straight to Gukja &amp; Jugeok any time <b>9:00–17:00</b>.</p><p class="og-note" data-d="3" hidden><b>10:00</b> leave Gukja &amp; Jugeok → <b>15:00</b> arrive at the Void Theatre.<br>Team B’s <i>Looking Out for All @Dondae</i> takes place at Odu Dondae, <b>13:00–15:30</b>. No booking needed, just come along.<br>At <b>18:00</b>, Yonrimog + Choi Yeongdoo’s <i>About Things</i> follows at Huae Dondae. No booking needed.</p>
-        <p class="og-walklog"><a href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s" target="_blank" rel="noopener">During the three days, moments from the walk build up live on a map → see the walk log</a></p>
+        <p class="og-note" data-d="1" hidden><b>13:00</b> leave Ganghwa Bus Terminal → <b>16:00</b> arrive at Space And, along the coast path.</p><p class="og-note" data-d="2"><b>10:00</b> leave Space And → Heewarae → <b>15:00</b> arrive at Gukja &amp; Jugeok. Walkers can join Sononochi on the spot in the <b>15:00–16:30</b> slots (remaining places). If you are not walking, come straight to Gukja &amp; Jugeok any time <b>9:00–17:00</b>.</p><p class="og-note" data-d="3" hidden><b>10:00</b> leave Gukja &amp; Jugeok → <b>15:00</b> arrive at the Void Theatre.<br><i>Looking Out for All @Dondae</i> by Heewarae × Orang Orang Drum Theatre × Kok Heng Leun × Chew Shaw En takes place at Odu Dondae, <b>13:00–15:30</b>. No booking needed, just come along.<br>At <b>18:00</b>, Yonrimog + Choi Yeongdoo’s <i>About Things</i> follows at Huae Dondae. No booking needed.</p>
+        <p class="og-walklog"><a href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s#en" target="_blank" rel="noopener">During the three days, moments from the walk build up live on a map → see the walk log</a></p>
       </div>
       <p class="og-more">Tap a title to jump to the programme. More programmes will be announced one by one.</p>
     </div>
@@ -624,7 +671,7 @@ h1{gap:10px}
       <p>We will eat together at restaurants along the way. Each person pays for their own meals.</p>
       <p class="op-end">Choose the days you will walk and the nights you will stay, and join this journey for as long as you can.</p>
       <a class="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSdHwscY3CPOekZANM2vZDnrTf1ypp5c0A4RQe-QA1MSfOc4bg/viewform" target="_blank" rel="noopener">Sign up (form in Korean) →</a>
-      <a class="apply walklog" href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s" target="_blank" rel="noopener">Follow the walk log · updated live over three days (in Korean) →</a>
+      <a class="apply walklog" href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s#en" target="_blank" rel="noopener">Follow the walk log · updated live over three days →</a>
       <p class="op-contact">Questions <a href="mailto:sotanf33@naver.com">sotanf33@naver.com</a></p>
     </article>
     <article class="openprog sono" id="op-02">
@@ -660,11 +707,11 @@ h1{gap:10px}
       <a class="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfkZhrDJ-JzfqjndNZdBQeQblilMbXXJzPE8qUvEJMvXq9wNw/viewform" target="_blank" rel="noopener">Book a slot →</a>
     </article>
         <article class="openprog dondae" id="op-03">
-      <p class="op-kicker">Open programme 03 · Team B</p>
+      <p class="op-kicker">Open programme 03 · Heewarae × Orang Orang Drum Theatre × Kok Heng Leun × Chew Shaw En</p>
       <h4 class="op-title">Looking Out for All @Dondae</h4>
       <p class="op-sub">모두를 위한 망보기 @돈대</p>
       <p class="op-dates"><b>Sun 8 Nov, 13:00–15:30</b><span>Odu Dondae</span></p>
-      <figure class="op-photo"><img src="img/log/op03.webp" alt="Two chairs facing each other in a leaf-covered forest" loading="lazy" width="1600" height="1200"></figure>
+      <figure class="op-photo"><img src="img/log/op03.webp" alt="The stone walls and cannon port of Odu Dondae, with the sea beyond" loading="lazy" width="1600" height="1200"></figure>
       <p>This project brings together artists from Korea, Malaysia and Singapore, who gathered on Ganghwa Island to research disappearance and create work together.</p>
       <blockquote>In the past, soldiers defended against enemies and kept watch. What should we be watching for now?</blockquote>
       <p>In difficult times, disappearance accelerates, and it is a phenomenon that appears in many different forms all over the world.</p>
@@ -675,6 +722,13 @@ h1{gap:10px}
       <p>Standing at Odu Dondae, listening to its history and to how its importance is fading from people’s everyday lives, we asked ourselves: do we only grieve after a disappearance is over? We began to think deeply not only about the disappearances that have already happened, but about the present moment.</p>
       <p>Rather than mourning what has happened, what can we do while disappearance is going on, constantly, right now?</p>
       <p>In response to this research, we decided to collaborate, as an act of being together with one another and with the local community. Let us all come together in the act of keeping a lookout.</p>
+      <h5>Artists and works</h5>
+      <ul class="op-info op-artists">
+        <li><b>Heewarae</b><span>An installation drawn from the stories of the local communities met during the research, holding a community that is fragile yet resilient. It is a symbol of <i>jeong</i> (affection), and a complex textile that connects each story of longing and hope. Drawing on Heewarae's research into the dondae, the work also tells of their own relationship with the dondae.</span></li>
+        <li><b>Chew Shaw En</b><span>An animation titled <i>Story on Disappearance</i>, made with the children we met from their own stories of disappearance, asking what comes after every goodbye. (with Heewarae)</span></li>
+        <li><b>Orang Orang Drum Theatre</b><span>A workshop with participants to share and exchange cultural customs through music and movement, followed by a performance exploring how appearance and disappearance are connected.</span></li>
+        <li><b>Kok Heng Leun</b><span>An invitation for the audience to notice and begin to think about things in the process of disappearing, asking whether, like the dondae of the past, we can keep a lookout together.</span><div class="op-kok"><p>We hope our responses invite the audience to join in these acts of responding to disappearance.</p><ul class="op-acts"><li><b>Noticing</b><span>Rather than lamenting after a disappearance is complete, how can we make it possible to notice that something is in the process of disappearing?</span></li><li><b>Choosing</b><span>What will I choose? To let go, to hold on, or to fight back?</span></li><li><b>Acting</b><span>What will I do after it has disappeared?</span></li><li><b>Gathering</b><span>How can we escape the isolation we feel in the face of disappearance? Can I act together with countless other “I”s?</span></li></ul></div></li>
+      </ul>
       <h5>How to join</h5>
       <ul class="op-info"><li><b>Booking</b><span>No booking needed. Just come to Odu Dondae.</span></li><li><b>After</b><span>When it ends, we move on towards the Void Theatre to meet the audience walking from Gukja &amp; Jugeok.</span></li><li><b>Venue</b><span>Odu Dondae (Odu-ri, Bureun-myeon, Ganghwa) · <a href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%95%ED%99%94%20%EC%98%A4%EB%91%90%EB%8F%88%EB%8C%80" target="_blank" rel="noopener">Open map</a></span></li></ul>
       <p class="op-credit">Artists Heewarae (Korea, Ganghwa), Chew Shaw En (Singapore), Orang Orang Drum Theatre (Malaysia), Kok Heng Leun (Singapore)<br>Producers Song Miseon, Kwon Keunyoung · Interpreter Park Hyungjoon · Stage managers Lee Jungyeon, Ahn Seoyeon · Staff Na Jonggun</p>
@@ -720,6 +774,19 @@ h1{gap:10px}
     <div class="log">
       <p class="log-intro">From 25 October, the work unfolding on Ganghwa will be recorded here.</p>
       
+      <article class="entry" data-date="1102">
+        <p class="entry-date">2.11 <span>Mon</span></p>
+        <section class="part">
+          <p class="sub-h">Team A · Sononochi</p>
+          <p>Following their Saturday performance at the bookshop Gukja &amp; Jugeok, <i>A Homeland We Cannot Return To, and a Woman Who Shares the Seasons Here</i>, Sononochi are preparing a Sunday performance set within the vast landscape of the mudflat. Today, for as long as the sun was up, they walked and walked along the mudflat on the shore behind the Void Theatre. Where the landscape and the performers meet, where should the audience be? They are shaping the work around how the performers and the landscape will sit together in the audience’s view.</p>
+          <div class="photos"><a href="img/log/1102-1.webp" target="_blank" rel="noopener"><img src="img/log/1102-1.webp" alt="At dusk, a silver channel of water winding across the mudflat beside the reeds" loading="lazy" width="1600" height="906"></a></div>
+          <div class="photos"><a href="img/log/1102-2.webp" target="_blank" rel="noopener"><img src="img/log/1102-2.webp" alt="The sun setting behind the hills over a wide mudflat glinting with channels of water" loading="lazy" width="1600" height="906"></a></div>
+        </section>
+        <section class="part">
+          <p class="sub-h">Team A · Teatringestazione</p>
+          <p>In the morning, Anna and Giovanni met Seomseom to interview and record him as they shape his funeral. If, after you die, you appeared in the dreams of the person you love most and the person you hate most, what would you say to them? What is the legacy you leave behind? They then went through the technical needs and materials with the tech team. In the late afternoon they met Hwanggu and talked through their plan for a funeral as performance, and late at night they met the owner of the 7-Eleven again to share the basic structure. The three funeral performances are slowly coming into focus.</p>
+        </section>
+      </article>
       <article class="entry" data-date="1101">
         <p class="entry-date">1.11 <span>Sun</span></p>
         <section class="part">
@@ -951,27 +1018,13 @@ h1{gap:10px}
 <a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EA%B0%95%ED%99%94%EB%82%A8%EB%A1%9C%20990-1" target="_blank" rel="noopener"><title>Open in Google Maps</title><circle class="pin yang" cx="269" cy="409" r="4.5"/><text class="ko" x="282" y="406" text-anchor="start">Jingangsan Village Co-op</text></a>
 <g class="north"><path d="M630 40 L638 66 L630 60 L622 66Z"/><text class="ko" x="630" y="84" text-anchor="middle">N</text></g>
 <g class="scale"><rect x="470" y="792" width="162.6" height="4"/><rect x="470" y="792" width="81.3" height="4" class="half"/><text class="en" x="470" y="814">0</text><text class="en" x="632.6" y="814" text-anchor="end">5 km</text></g>
-<text class="prog" x="330" y="582" text-anchor="end">7 Nov · Sononochi 9:00–17:00</text><text class="prog" x="470" y="226" text-anchor="start">6–8 Nov walk →</text><g class="perf"><text class="pt pt-ko c-snd" x="330" y="596" text-anchor="end">11.6–8 지금은 없지만 종일</text><text class="pt pt-en c-snd" x="330" y="596" text-anchor="end">6–8 Nov · No Longer, But all day</text><text class="pt pt-ko c-dondae" x="554" y="450" text-anchor="start">11.8 B팀</text><text class="pt pt-ko c-dondae" x="554" y="463" text-anchor="start">13:00–15:30</text><text class="pt pt-en c-dondae" x="554" y="450" text-anchor="start">8 Nov · Team B</text><text class="pt pt-en c-dondae" x="554" y="463" text-anchor="start">13:00–15:30</text><a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%95%ED%99%94%20%ED%9B%84%EC%95%A0%EB%8F%88%EB%8C%80" target="_blank" rel="noopener"><title>Open in Google Maps</title><polygon class="pin gil exact" points="428,724 421.1,720.0 421.1,712.0 428,708 434.9,712.0 434.9,720.0"/><text class="ko" x="416" y="714" text-anchor="end">Huae Dondae</text></a><text class="pt pt-ko c-yrm" x="416" y="728" text-anchor="end">11.8 About Things 18:00</text><text class="pt pt-en c-yrm" x="416" y="728" text-anchor="end">8 Nov · About Things 18:00</text></g><style>.perf .pt{font-size:10.5px;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}.perf .c-sono{fill:#14774A}.perf .c-snd{fill:#C0601C}.perf .c-dondae{fill:#1F6FB2}.perf .c-yrm{fill:#138A85}html[lang="en"] .perf .pt-ko,html:not([lang="en"]) .perf .pt-en{display:none}</style></svg></div>
+<text class="prog" x="330" y="582" text-anchor="end">7 Nov · Sononochi 9:00–17:00</text><text class="prog" x="470" y="226" text-anchor="start">6–8 Nov walk →</text><g class="perf"><text class="pt pt-ko c-snd" x="330" y="596" text-anchor="end">11.6–8 지금은 없지만 종일</text><text class="pt pt-en c-snd" x="330" y="596" text-anchor="end">6–8 Nov · No Longer, But all day</text><text class="pt pt-ko c-dondae" x="554" y="450" text-anchor="start">11.8 모두를 위한 망보기</text><text class="pt pt-ko c-dondae" x="554" y="463" text-anchor="start">13:00–15:30</text><text class="pt pt-en c-dondae" x="554" y="450" text-anchor="start">8 Nov · Looking Out for All</text><text class="pt pt-en c-dondae" x="554" y="463" text-anchor="start">13:00–15:30</text><a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%95%ED%99%94%20%ED%9B%84%EC%95%A0%EB%8F%88%EB%8C%80" target="_blank" rel="noopener"><title>Open in Google Maps</title><polygon class="pin gil exact" points="428,724 421.1,720.0 421.1,712.0 428,708 434.9,712.0 434.9,720.0"/><text class="ko" x="416" y="714" text-anchor="end">Huae Dondae</text></a><text class="pt pt-ko c-yrm" x="416" y="728" text-anchor="end">11.8 About Things 18:00</text><text class="pt pt-en c-yrm" x="416" y="728" text-anchor="end">8 Nov · About Things 18:00</text></g><style>.perf .pt{font-size:10.5px;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}.perf .c-sono{fill:#14774A}.perf .c-snd{fill:#C0601C}.perf .c-dondae{fill:#1F6FB2}.perf .c-yrm{fill:#138A85}html[lang="en"] .perf .pt-ko,html:not([lang="en"]) .perf .pt-en{display:none}</style></svg></div>
     
     <p class="mapnote">Township borders and coastline follow Statistics Korea boundaries (2013). Some locations are approximate.</p>
   </div>
 </section>
 
-<section class="sec peach" id="visit" aria-labelledby="h-visit">
-  <div class="divider"><h2 id="h-visit"><span class="caps">VISIT</span></h2><img class="dv-ill" src="img/ill/dog.webp" alt=""></div>
-  <div class="body">
-    <h3 class="pagetitle">For Visitors</h3>
-    <dl class="info">
-      <div class="info-row"><dt>Dates</dt><dd><p>25 October – 8 November 2026</p><p>Open to audiences 6–8 November</p></dd></div>
-      <div class="info-row"><dt>Venues</dt><dd></dd></div>
-      <div class="info-row"><dt>How to join</dt><dd></dd></div>
-      <div class="info-row"><dt>Getting there</dt><dd></dd></div>
-      <div class="info-row"><dt>What to bring</dt><dd></dd></div>
-      <div class="info-row"><dt>Access</dt><dd></dd></div>
-      <div class="info-row"><dt>Contact</dt><dd></dd></div>
-    </dl>
-  </div>
-</section>
+
 
 <footer>
   <div class="sponsor"><span class="sp-label">Supported by</span><img src="img/arko-en.png" alt="Arts Council Korea" width="640" height="301"></div>
@@ -1056,12 +1109,16 @@ var svg=src.cloneNode(true);svg.removeAttribute('id');
 [].forEach.call(svg.querySelectorAll('.rm-day'),function(t,i){t.classList.add('d'+(i+1))});
 var NS='http://www.w3.org/2000/svg',g=document.createElementNS(NS,'g');g.setAttribute('class','og-sono');
 g.innerHTML='<circle class="og-pin" cx="340" cy="543" r="11" fill-opacity=".25"/><text class="og-pinlbl" x="352" y="578">'+(en?'Sononochi 9:00–17:00':'소노노치 9:00–17:00')+'</text>';
-svg.appendChild(g);var g5=document.createElementNS(NS,'g');g5.setAttribute('class','og-snd');g5.innerHTML='<circle class="og-ring5" cx="340" cy="543" r="15"/><text class="og-pinlbl5 a" x="352" y="578">'+(en?'Sound walk · all day':'연리목 + 최영두 사운드 워크 · 종일')+'</text><text class="og-pinlbl5 b" x="352" y="594">'+(en?'Sound walk · all day':'연리목 + 최영두 사운드 워크 · 종일')+'</text>';svg.appendChild(g5);var g3=document.createElementNS(NS,'g');g3.setAttribute('class','og-dondae');g3.innerHTML='<path class="og-move3" d="M538 436 C 520 560, 500 650, 462 704"/><text class="og-pinlbl3" x="530" y="600">'+(en?'on to the Void Theatre':'없는극장 쪽으로')+'</text><polygon class="og-pin3" points="541,413 549.7,418 549.7,428 541,433 532.3,428 532.3,418"/><text class="og-pinlbl3" x="528" y="411" text-anchor="end">'+(en?'Team B 13:00–15:30':'B팀 13:00–15:30')+'</text><text class="og-pinlbl3" x="528" y="426" text-anchor="end">'+(en?'Odu Dondae':'오두돈대')+'</text>';svg.appendChild(g3);var g4=document.createElementNS(NS,'g');g4.setAttribute('class','og-huae');g4.innerHTML='<polygon class="og-pin4" points="428,706 436.7,711 436.7,721 428,726 419.3,721 419.3,711"/><text class="og-pinlbl4" x="416" y="714" text-anchor="end">'+(en?'18:00 About Things':'18:00 About Things')+'</text><text class="og-pinlbl4" x="416" y="728" text-anchor="end">'+(en?'Huae Dondae':'후애돈대')+'</text>';svg.appendChild(g4);box.querySelector('.og-rmap').appendChild(svg);
+svg.appendChild(g);var g5=document.createElementNS(NS,'g');g5.setAttribute('class','og-snd');g5.innerHTML='<circle class="og-ring5" cx="340" cy="543" r="15"/><text class="og-pinlbl5 a" x="352" y="578">'+(en?'Sound walk · all day':'연리목 + 최영두 사운드 워크 · 종일')+'</text><text class="og-pinlbl5 b" x="352" y="594">'+(en?'Sound walk · all day':'연리목 + 최영두 사운드 워크 · 종일')+'</text>';svg.appendChild(g5);var g3=document.createElementNS(NS,'g');g3.setAttribute('class','og-dondae');g3.innerHTML='<path class="og-move3" d="M538 436 C 520 560, 500 650, 462 704"/><text class="og-pinlbl3" x="530" y="600">'+(en?'on to the Void Theatre':'없는극장 쪽으로')+'</text><polygon class="og-pin3" points="541,413 549.7,418 549.7,428 541,433 532.3,428 532.3,418"/><text class="og-pinlbl3" x="528" y="411" text-anchor="end">'+(en?'Looking Out for All 13:00–15:30':'모두를 위한 망보기 13:00–15:30')+'</text><text class="og-pinlbl3" x="528" y="426" text-anchor="end">'+(en?'Odu Dondae':'오두돈대')+'</text>';svg.appendChild(g3);var g4=document.createElementNS(NS,'g');g4.setAttribute('class','og-huae');g4.innerHTML='<polygon class="og-pin4" points="428,706 436.7,711 436.7,721 428,726 419.3,721 419.3,711"/><text class="og-pinlbl4" x="416" y="714" text-anchor="end">'+(en?'18:00 About Things':'18:00 About Things')+'</text><text class="og-pinlbl4" x="416" y="728" text-anchor="end">'+(en?'Huae Dondae':'후애돈대')+'</text>';svg.appendChild(g4);box.querySelector('.og-rmap').appendChild(svg);
 var bs=[].slice.call(box.querySelectorAll('.og-tabs button'));
 bs.forEach(function(b){b.addEventListener('click',function(){var d=b.dataset.d;box.dataset.day=d;
  bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
  [].forEach.call(box.querySelectorAll('.og-note'),function(n){n.hidden=n.dataset.d!==d})})});
 })();
+
+(function(){var bs=[].slice.call(document.querySelectorAll('.vg-tabs button'));if(!bs.length)return;
+ bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+  [].forEach.call(document.querySelectorAll('.vg-panel'),function(p){p.hidden=p.dataset.vgp!==b.dataset.vg})})});})();
 </script>
 
 </body></html>

@@ -446,6 +446,8 @@ h1{gap:10px}
 .op-artists li span,.op-acts li span{line-height:1.6}
 .op-acts{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
 .op-acts li{padding:10px 12px;background:#EEF6FC;border-left:3px solid #8CCBF2}
+.op-kok{margin-top:8px}.op-kok p{margin:0 0 8px}.op-kok .op-acts li{background:#fff}
+.op-artists b i{font-style:normal;font-weight:400;color:#666;margin-left:6px;font-size:.9em}
 .op-acts b{display:block;font-weight:600}.op-acts i{font-style:normal;font-weight:400;color:#666;margin-left:6px;font-size:.9em}
 
 .op-credit{font-size:.85rem;color:#555;line-height:1.7;margin-top:10px;padding-top:10px;border-top:1px solid #ddd}
@@ -462,6 +464,52 @@ h1{gap:10px}
 .og-ring5{fill:none;stroke:#E8862E;stroke-width:2.5;stroke-dasharray:4 3}.og-pinlbl5{font-size:11.5px;font-weight:700;fill:#C0601C;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.og-route[data-day="2"] .og-pinlbl5.a,.og-route:not([data-day="2"]) .og-pinlbl5.b{display:none}
 .apply.walklog{background:var(--yel,#FEDF4A);color:var(--ink);border:1.5px solid var(--ink);margin-top:8px}.apply.walklog:hover{background:#fff}.og-walklog{margin:10px 0 0;font-size:.92rem}.og-walklog a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .team-photos{margin:16px 0 22px}.team-photos figcaption{font-size:.85rem;color:var(--muted,#666);margin-top:6px}
+
+/* visitor guide */
+.vguide{margin-bottom:14px}
+.vguide h4{font-size:1.25rem;margin:0 0 12px;font-weight:700}
+.page[lang="en"] .vguide h4{font-weight:500}
+.vg-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:0 0 20px}
+.vg-tabs button{font:inherit;font-size:.92rem;line-height:1.35;cursor:pointer;border:1.5px solid var(--ink);background:#fff;color:var(--ink);padding:10px 8px;text-align:center;border-radius:0}
+.vg-tabs button:hover{background:#FFF1EA}
+.vg-tabs button[aria-selected="true"]{background:var(--ink);color:#fff;font-weight:700}
+.page[lang="en"] .vg-tabs button[aria-selected="true"]{font-weight:500}
+.vg-tabs button:focus-visible{outline:2px solid var(--sky-d);outline-offset:2px}
+@media (max-width:640px){.vg-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.vg-tabs button:first-child{grid-column:1/-1}}
+.vg-lead{margin:0 0 16px;line-height:1.7;font-size:.92rem;padding:10px 12px;background:#FFF1EA}
+.vg-day{margin:0 0 20px}
+.vg-day h5{margin:0 0 4px;font-size:1rem;font-weight:700}
+.page[lang="en"] .vg-day h5{font-weight:500}
+.vg-day ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.vg-day li{display:grid;grid-template-columns:9.2rem 9.5rem 1fr;gap:0 16px;padding:9px 0;border-bottom:1px solid var(--hair);line-height:1.6;font-size:.95rem}
+.vg-t{font-family:var(--en);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vg-p{color:var(--muted)}
+.vg-p a,.vg-w a{color:inherit;text-decoration-color:var(--hair);text-underline-offset:3px}
+.vg-w{font-weight:600}
+.page[lang="en"] .vg-w{font-weight:500}
+.vg-w small{display:block;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:1px}
+.vg-day li.mv{color:var(--muted);padding:5px 0;font-size:.9rem}
+.vg-day li.mv .vg-w{font-weight:400}
+.vg-foot{margin:0;padding-top:4px;color:var(--muted);font-size:.92rem;line-height:1.8}
+.vg-lead a{color:inherit}
+.vg-info{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;margin-top:8px;font-size:.9rem;line-height:1.7}
+.vg-side{display:grid;gap:12px;align-content:start}
+.vg-card{background:#FFF1EA;padding:16px 18px}
+.vg-card h4{margin:0 0 10px;font-size:1rem;font-weight:700}
+.page[lang="en"] .vg-card h4{font-weight:500}
+.vg-card p{margin:0}
+.vg-card ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.vg-join ul{list-style:none;padding:0;gap:14px}
+.vg-join li{display:grid;gap:6px;justify-items:start}
+.vg-join li b{font-weight:600}
+.vg-join li small{font-weight:400;color:var(--muted);font-size:.85em;margin-left:4px}
+.vg-join li span{color:var(--muted);font-size:.85rem}
+.vg-btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:.88rem;padding:7px 16px;line-height:1.4}
+.vg-btn:hover{background:#333}
+.vg-btn.off{background:#fff;color:var(--muted);border:1px dashed var(--muted);font-weight:400}
+.vg-star{margin:14px 0 0!important;color:var(--muted);font-size:.85rem}
+@media (max-width:760px){.vg-info{grid-template-columns:1fr}}
+@media (max-width:640px){.vg-day li{grid-template-columns:7.4rem 1fr;gap:0 10px}.vg-t{font-size:.88rem}.vg-p{grid-column:2;grid-row:2;font-size:.88rem}.vg-w{grid-column:2;grid-row:1}}
 </style>
 
 </head>
@@ -479,7 +527,6 @@ h1{gap:10px}
   <li class="lav"><a href="#artists"><i></i>참여 예술가</a></li>
   <li class="yel"><a href="#program"><i></i>세부 프로그램</a></li>
   <li class="mint"><a href="#map"><i></i>지도</a></li>
-  <li class="peach"><a href="#visit"><i></i>관객 정보</a></li>
 </ul></nav>
 
 <section class="sec sky" id="project" aria-labelledby="h-project">
@@ -587,14 +634,14 @@ h1{gap:10px}
         <div class="og-day"><p>11. 8<span>일</span></p><ul>
           <li><a href="#op-05" class="snd"><i>종일</i><b>지금은 없지만</b><span>연리목 + 최영두 · 국자와주걱 출발 · 이어폰 지참</span></a></li>
           <li><a href="#op-01"><i>10:00–15:00</i><b>소멸의 목격자로서 걷기 · 3일차</b><span>앤드씨어터 · 없는극장 도착</span></a></li>
-          <li><a href="#op-03" class="dondae"><i>13:00–15:30</i><b>모두를 위한 망보기 @돈대</b><span>B팀 · 오두돈대</span></a></li>
+          <li><a href="#op-03" class="dondae"><i>13:00–15:30</i><b>모두를 위한 망보기 @돈대</b><span>희와래 × 오랑오랑 드럼 씨어터 × 헝 러운 × 츄 쇼 엔 · 오두돈대</span></a></li>
           <li><a href="#op-04" class="yrm"><i>18:00</i><b>About Things</b><span>연리목 + 최영두 · 후애돈대</span></a></li></ul></div>
       </div>
       
       <div class="og-route" data-day="2">
         <div class="og-rhead"><b>날짜별 동선</b><div class="og-tabs" role="group"><button type="button" data-d="1" aria-pressed="false">11. 6 금</button><button type="button" data-d="2" aria-pressed="true">11. 7 토</button><button type="button" data-d="3" aria-pressed="false">11. 8 일</button></div></div>
         <div class="og-rmap"></div>
-        <p class="og-note" data-d="1" hidden><b>13:00</b> 강화터미널 출발 → <b>16:00</b> 공간 그리고 도착. 해안길을 따라 걷습니다.</p><p class="og-note" data-d="2"><b>10:00</b> 공간 그리고 출발 → 희와래 → <b>15:00</b> 국자와주걱 도착. 걸어서 오면 <b>15:00–16:30</b> 회차의 소노노치를 현장에서 볼 수 있어요(회당 남는 자리). 걷지 않는 분은 <b>9:00–17:00</b> 사이 원하는 시간에 국자와주걱으로 바로 오세요.</p><p class="og-note" data-d="3" hidden><b>10:00</b> 국자와주걱 출발 → <b>15:00</b> 없는극장 도착.<br>B팀의 〈모두를 위한 망보기 @돈대〉는 <b>13:00–15:30</b> 오두돈대에서 열려요. 사전 신청 없이 바로 오세요.<br><b>18:00</b> 후애돈대에서 연리목 + 최영두의 〈About Things〉가 이어집니다. 사전 신청 없이 바로 오세요.</p>
+        <p class="og-note" data-d="1" hidden><b>13:00</b> 강화터미널 출발 → <b>16:00</b> 공간 그리고 도착. 해안길을 따라 걷습니다.</p><p class="og-note" data-d="2"><b>10:00</b> 공간 그리고 출발 → 희와래 → <b>15:00</b> 국자와주걱 도착. 걸어서 오면 <b>15:00–16:30</b> 회차의 소노노치를 현장에서 볼 수 있어요(회당 남는 자리). 걷지 않는 분은 <b>9:00–17:00</b> 사이 원하는 시간에 국자와주걱으로 바로 오세요.</p><p class="og-note" data-d="3" hidden><b>10:00</b> 국자와주걱 출발 → <b>15:00</b> 없는극장 도착.<br>희와래 × 오랑오랑 드럼 씨어터 × 헝 러운 × 츄 쇼 엔의 〈모두를 위한 망보기 @돈대〉는 <b>13:00–15:30</b> 오두돈대에서 열려요. 사전 신청 없이 바로 오세요.<br><b>18:00</b> 후애돈대에서 연리목 + 최영두의 〈About Things〉가 이어집니다. 사전 신청 없이 바로 오세요.</p>
         <p class="og-walklog"><a href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s" target="_blank" rel="noopener">걷는 사흘 동안 길 위의 기록이 지도 위에 실시간으로 쌓여요 → 기록 보기</a></p>
       </div>
       <p class="og-more">이름을 누르면 해당 프로그램으로 이동합니다. 다른 예술가들의 프로그램도 차례로 공개합니다.</p>
@@ -664,11 +711,11 @@ h1{gap:10px}
       <a class="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfkZhrDJ-JzfqjndNZdBQeQblilMbXXJzPE8qUvEJMvXq9wNw/viewform" target="_blank" rel="noopener">관람 예약하기 →</a>
     </article>
         <article class="openprog dondae" id="op-03">
-      <p class="op-kicker">오픈 프로그램 03 · B팀</p>
+      <p class="op-kicker">오픈 프로그램 03 · 희와래 × 오랑오랑 드럼 씨어터 × 헝 러운 × 츄 쇼 엔</p>
       <h4 class="op-title">모두를 위한 망보기 @돈대</h4>
       <p class="op-sub">Looking Out for All @Dondae</p>
       <p class="op-dates"><b>11. 8 (일) 13:00–15:30</b><span>오두돈대</span></p>
-      <figure class="op-photo"><img src="img/log/op03.webp" alt="낙엽이 쌓인 숲속에 마주 놓인 의자 두 개" loading="lazy" width="1600" height="1200"></figure>
+      <figure class="op-photo"><img src="img/log/op03.webp" alt="오두돈대의 돌로 쌓은 성벽과 포좌, 그 너머로 보이는 바다" loading="lazy" width="1600" height="1200"></figure>
       <p>한국, 말레이시아, 싱가포르의 예술가들이 강화도에 모여 ‘사라짐’을 리서치하고 함께 만든 작업입니다.</p>
       <blockquote>과거에 군인들은 적을 막고 살피는 일을 했습니다. 그렇다면 우리는 지금 무엇을 살펴야 할까요?</blockquote>
       <p>어려운 시기에 사라짐은 더욱 빨라지며, 이는 전 세계에서 다양한 모습으로 나타나고 있는 현상입니다.</p>
@@ -679,6 +726,13 @@ h1{gap:10px}
       <p>오두돈대에 서서 그 역사와, 사람들의 일상에서 점점 잊혀 가는 돈대의 의미에 귀 기울이며 우리는 스스로에게 물었습니다. 우리는 사라짐이 끝난 뒤에야 애도하는 것일까요? 이미 일어난 사라짐뿐 아니라 ‘지금’에 대해서도 깊이 생각하게 되었습니다.</p>
       <p>일어난 일을 슬퍼하기보다, 사라짐이 지금 이 순간에도 끊임없이 일어나고 있을 때 우리가 할 수 있는 행동은 무엇일까요?</p>
       <p>우리는 이 리서치에 응답하며, 서로 그리고 지역 공동체와 함께하는 하나의 행위로서 협업을 하기로 했습니다. ‘망보기’라는 행위 안에서 우리 모두 함께 모여 봅시다.</p>
+      <h5>참여 예술가와 작업</h5>
+      <ul class="op-info op-artists">
+        <li><b>희와래 <i>Heewarae</i></b><span>리서치 과정에서 만난 지역 공동체의 이야기를 담아, 연약하면서도 단단한 커뮤니티를 품는 설치 작품을 만듭니다. 이는 정(情)의 상징이면서, 하나하나의 이야기를 그리움과 희망을 담은 복잡한 직물로 서로 이어 줍니다. 또한 희와래가 그동안 돈대에 대해 리서치한 내용을 바탕으로, 그들과 돈대의 관계에 대한 이야기도 펼쳐집니다.</span></li>
+        <li><b>츄 쇼 엔 <i>Chew Shaw En</i></b><span>우리가 만난 아이들과 함께 그들의 사라짐 이야기를 담은 애니메이션 〈사라짐에 대한 이야기(Story on Disappearance)〉를 만들고, 모든 작별 뒤에 무엇이 오는지 생각하게 합니다. (희와래 협력)</span></li>
+        <li><b>오랑오랑 드럼 씨어터 <i>Orang Orang Drum Theatre</i></b><span>참여자들과 워크숍을 열어 음악과 움직임으로 문화적 풍습을 나누고 교환한 뒤, 나타남과 사라짐이 어떻게 이어져 있는지 살피는 작품을 공연합니다.</span></li>
+        <li><b>헝 러운 <i>Kok Heng Leun</i></b><span>관객이 사라지는 과정에 있는 것들을 알아차리고 생각하기 시작하도록 초대하며, 과거의 돈대처럼 우리가 함께 망을 볼 수 있을지 묻습니다.</span><div class="op-kok"><p>우리의 응답이 관객을 사라짐에 반응하는 다음과 같은 행위에 동참하게 하기를 바랍니다.</p><ul class="op-acts"><li><b>알아차리기 <i>Noticing</i></b><span>사라짐이 끝난 뒤에 한탄하기보다, 무언가가 사라지는 과정에 있음을 어떻게 알아차리게 할 수 있을까?</span></li><li><b>선택하기 <i>Choosing</i></b><span>나는 무엇을 선택할까? 놓아줄 것인가, 붙들 것인가, 맞서 싸울 것인가?</span></li><li><b>행동하기 <i>Acting</i></b><span>그것이 사라진 뒤에 나는 무엇을 할까?</span></li><li><b>모이기 <i>Gathering</i></b><span>사라짐 앞에서 느끼는 소외감에서 어떻게 벗어날 수 있을까? 나는 수많은 다른 ‘나’들과 함께 행동할 수 있을까?</span></li></ul></div></li>
+      </ul>
       <h5>참여 안내</h5>
       <ul class="op-info"><li><b>신청</b><span>사전 신청 없이 오두돈대로 바로 오세요.</span></li><li><b>이후</b><span>공연이 끝나면 없는극장 쪽으로 이동해, 국자와주걱에서 걸어온 관객과 만납니다.</span></li><li><b>장소</b><span>오두돈대 (인천 강화군 불은면 오두리) · <a href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%95%ED%99%94%20%EC%98%A4%EB%91%90%EB%8F%88%EB%8C%80" target="_blank" rel="noopener">지도 보기</a></span></li></ul>
       <p class="op-credit">참여 예술가 희와래(한국, 강화), 츄 쇼 엔(싱가포르), 오랑오랑 드럼 씨어터(말레이시아), 헝 러운(싱가포르)<br>프로듀서 송미선, 권근영 · 통역 박형준 · 무대감독 이정연, 안서연 · 스태프 나종건</p>
@@ -724,6 +778,19 @@ h1{gap:10px}
     <div class="log">
       <p class="log-intro">10월 25일부터 강화에서 이어지는 작업을 이곳에 차례로 기록합니다.</p>
       
+      <article class="entry" data-date="1102">
+        <p class="entry-date">11.2 <span>월</span></p>
+        <section class="part">
+          <p class="sub-h">A팀 · 소노노치</p>
+          <p>책방 국자와주걱에서 여는 토요일 공연 〈돌아갈 수 없는 고향과, 함께 계절을 보내는 그녀에 대하여〉에 이어, 일요일에는 갯벌의 광활한 풍경과 함께하는 퍼포먼스를 준비하고 있다. 오늘은 해가 떠 있는 내내 없는극장 뒤편 바닷가의 갯벌을 따라 걷고 또 걸었다. 풍경과 퍼포머가 만나는 곳에서 관객은 어디에 있어야 할까. 관객의 시선 안에 퍼포머와 풍경이 어떻게 담길지 고민하며 작품을 구상하고 있다.</p>
+          <div class="photos"><a href="img/log/1102-1.webp" target="_blank" rel="noopener"><img src="img/log/1102-1.webp" alt="해 질 녘, 갈대숲 옆으로 갯벌 위를 굽이쳐 흐르는 은빛 물길" loading="lazy" width="1600" height="906"></a></div>
+          <div class="photos"><a href="img/log/1102-2.webp" target="_blank" rel="noopener"><img src="img/log/1102-2.webp" alt="산 너머로 해가 지는 넓은 갯벌과 그 위에 반짝이는 물길" loading="lazy" width="1600" height="906"></a></div>
+        </section>
+        <section class="part">
+          <p class="sub-h">A팀 · 테아트린게스타치오네</p>
+          <p>안나와 지오바니는 오전에 섬섬을 만나, 그의 장례식을 구상하기 위한 인터뷰와 녹음을 진행했다. 당신이 죽은 뒤 가장 사랑하는 사람과 가장 미워하는 사람의 꿈에 나타난다면, 어떤 말을 전하겠는가. 당신이 남기는 유산은 무엇인가. 이어서 기술팀과 함께 필요한 기술 사항과 물품을 정리했다. 늦은 오후에는 황구님을 만나 공연으로서의 장례식 구성안을 공유하며 이야기를 나누었고, 늦은 밤에는 세븐일레븐 사장님을 다시 만나 기본 구성을 공유했다. 세 사람의 장례식 퍼포먼스가 이제 조금씩 선명해지고 있다.</p>
+        </section>
+      </article>
       <article class="entry" data-date="1101">
         <p class="entry-date">11.1 <span>일</span></p>
         <section class="part">
@@ -955,27 +1022,13 @@ h1{gap:10px}
 <a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EC%96%91%EB%8F%84%EB%A9%B4%20%EA%B0%95%ED%99%94%EB%82%A8%EB%A1%9C%20990-1" target="_blank" rel="noopener"><title>구글 지도에서 열기</title><circle class="pin yang" cx="269" cy="409" r="4.5"/><text class="ko" x="282" y="406" text-anchor="start">진강산마을협동조합</text></a>
 <g class="north"><path d="M630 40 L638 66 L630 60 L622 66Z"/><text class="ko" x="630" y="84" text-anchor="middle">N</text></g>
 <g class="scale"><rect x="470" y="792" width="162.6" height="4"/><rect x="470" y="792" width="81.3" height="4" class="half"/><text class="en" x="470" y="814">0</text><text class="en" x="632.6" y="814" text-anchor="end">5 km</text></g>
-<text class="prog" x="330" y="582" text-anchor="end">11.7 소노노치 9:00–17:00</text><text class="prog" x="470" y="226" text-anchor="start">11.6–8 걷기 →</text><g class="perf"><text class="pt pt-ko c-snd" x="330" y="596" text-anchor="end">11.6–8 지금은 없지만 종일</text><text class="pt pt-en c-snd" x="330" y="596" text-anchor="end">6–8 Nov · No Longer, But all day</text><text class="pt pt-ko c-dondae" x="554" y="450" text-anchor="start">11.8 B팀</text><text class="pt pt-ko c-dondae" x="554" y="463" text-anchor="start">13:00–15:30</text><text class="pt pt-en c-dondae" x="554" y="450" text-anchor="start">8 Nov · Team B</text><text class="pt pt-en c-dondae" x="554" y="463" text-anchor="start">13:00–15:30</text><a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%95%ED%99%94%20%ED%9B%84%EC%95%A0%EB%8F%88%EB%8C%80" target="_blank" rel="noopener"><title>구글 지도에서 열기</title><polygon class="pin gil exact" points="428,724 421.1,720.0 421.1,712.0 428,708 434.9,712.0 434.9,720.0"/><text class="ko" x="416" y="714" text-anchor="end">후애돈대</text></a><text class="pt pt-ko c-yrm" x="416" y="728" text-anchor="end">11.8 About Things 18:00</text><text class="pt pt-en c-yrm" x="416" y="728" text-anchor="end">8 Nov · About Things 18:00</text></g><style>.perf .pt{font-size:10.5px;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}.perf .c-sono{fill:#14774A}.perf .c-snd{fill:#C0601C}.perf .c-dondae{fill:#1F6FB2}.perf .c-yrm{fill:#138A85}html[lang="en"] .perf .pt-ko,html:not([lang="en"]) .perf .pt-en{display:none}</style></svg></div>
+<text class="prog" x="330" y="582" text-anchor="end">11.7 소노노치 9:00–17:00</text><text class="prog" x="470" y="226" text-anchor="start">11.6–8 걷기 →</text><g class="perf"><text class="pt pt-ko c-snd" x="330" y="596" text-anchor="end">11.6–8 지금은 없지만 종일</text><text class="pt pt-en c-snd" x="330" y="596" text-anchor="end">6–8 Nov · No Longer, But all day</text><text class="pt pt-ko c-dondae" x="554" y="450" text-anchor="start">11.8 모두를 위한 망보기</text><text class="pt pt-ko c-dondae" x="554" y="463" text-anchor="start">13:00–15:30</text><text class="pt pt-en c-dondae" x="554" y="450" text-anchor="start">8 Nov · Looking Out for All</text><text class="pt pt-en c-dondae" x="554" y="463" text-anchor="start">13:00–15:30</text><a class="gm" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%95%ED%99%94%20%ED%9B%84%EC%95%A0%EB%8F%88%EB%8C%80" target="_blank" rel="noopener"><title>구글 지도에서 열기</title><polygon class="pin gil exact" points="428,724 421.1,720.0 421.1,712.0 428,708 434.9,712.0 434.9,720.0"/><text class="ko" x="416" y="714" text-anchor="end">후애돈대</text></a><text class="pt pt-ko c-yrm" x="416" y="728" text-anchor="end">11.8 About Things 18:00</text><text class="pt pt-en c-yrm" x="416" y="728" text-anchor="end">8 Nov · About Things 18:00</text></g><style>.perf .pt{font-size:10.5px;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}.perf .c-sono{fill:#14774A}.perf .c-snd{fill:#C0601C}.perf .c-dondae{fill:#1F6FB2}.perf .c-yrm{fill:#138A85}html[lang="en"] .perf .pt-ko,html:not([lang="en"]) .perf .pt-en{display:none}</style></svg></div>
     
     <p class="mapnote">면 경계와 해안선은 통계청 행정경계(2013) 기준이며, 일부 장소 위치는 주소를 바탕으로 한 근사치입니다.</p>
   </div>
 </section>
 
-<section class="sec peach" id="visit" aria-labelledby="h-visit">
-  <div class="divider"><h2 id="h-visit"><span class="hand">관객 정보</span><span class="caps" aria-hidden="true">VISIT</span></h2><img class="dv-ill" src="img/ill/dog.webp" alt=""></div>
-  <div class="body">
-    <h3 class="pagetitle">오시는 분들께</h3>
-    <dl class="info">
-      <div class="info-row"><dt>기간</dt><dd><p>2026년 10월 25일 – 11월 8일</p><p>관객 참여 11월 6일 – 8일</p></dd></div>
-      <div class="info-row"><dt>장소</dt><dd></dd></div>
-      <div class="info-row"><dt>참여 방법</dt><dd></dd></div>
-      <div class="info-row"><dt>오시는 길</dt><dd></dd></div>
-      <div class="info-row"><dt>준비물</dt><dd></dd></div>
-      <div class="info-row"><dt>접근성</dt><dd></dd></div>
-      <div class="info-row"><dt>문의</dt><dd></dd></div>
-    </dl>
-  </div>
-</section>
+
 
 <footer>
   <div class="sponsor"><span class="sp-label">후원</span><img src="img/arko-ko.png" alt="한국문화예술위원회" width="621" height="334"></div>
@@ -1060,12 +1113,16 @@ var svg=src.cloneNode(true);svg.removeAttribute('id');
 [].forEach.call(svg.querySelectorAll('.rm-day'),function(t,i){t.classList.add('d'+(i+1))});
 var NS='http://www.w3.org/2000/svg',g=document.createElementNS(NS,'g');g.setAttribute('class','og-sono');
 g.innerHTML='<circle class="og-pin" cx="340" cy="543" r="11" fill-opacity=".25"/><text class="og-pinlbl" x="352" y="578">'+(en?'Sononochi 9:00–17:00':'소노노치 9:00–17:00')+'</text>';
-svg.appendChild(g);var g5=document.createElementNS(NS,'g');g5.setAttribute('class','og-snd');g5.innerHTML='<circle class="og-ring5" cx="340" cy="543" r="15"/><text class="og-pinlbl5 a" x="352" y="578">'+(en?'Sound walk · all day':'연리목 + 최영두 사운드 워크 · 종일')+'</text><text class="og-pinlbl5 b" x="352" y="594">'+(en?'Sound walk · all day':'연리목 + 최영두 사운드 워크 · 종일')+'</text>';svg.appendChild(g5);var g3=document.createElementNS(NS,'g');g3.setAttribute('class','og-dondae');g3.innerHTML='<path class="og-move3" d="M538 436 C 520 560, 500 650, 462 704"/><text class="og-pinlbl3" x="530" y="600">'+(en?'on to the Void Theatre':'없는극장 쪽으로')+'</text><polygon class="og-pin3" points="541,413 549.7,418 549.7,428 541,433 532.3,428 532.3,418"/><text class="og-pinlbl3" x="528" y="411" text-anchor="end">'+(en?'Team B 13:00–15:30':'B팀 13:00–15:30')+'</text><text class="og-pinlbl3" x="528" y="426" text-anchor="end">'+(en?'Odu Dondae':'오두돈대')+'</text>';svg.appendChild(g3);var g4=document.createElementNS(NS,'g');g4.setAttribute('class','og-huae');g4.innerHTML='<polygon class="og-pin4" points="428,706 436.7,711 436.7,721 428,726 419.3,721 419.3,711"/><text class="og-pinlbl4" x="416" y="714" text-anchor="end">'+(en?'18:00 About Things':'18:00 About Things')+'</text><text class="og-pinlbl4" x="416" y="728" text-anchor="end">'+(en?'Huae Dondae':'후애돈대')+'</text>';svg.appendChild(g4);box.querySelector('.og-rmap').appendChild(svg);
+svg.appendChild(g);var g5=document.createElementNS(NS,'g');g5.setAttribute('class','og-snd');g5.innerHTML='<circle class="og-ring5" cx="340" cy="543" r="15"/><text class="og-pinlbl5 a" x="352" y="578">'+(en?'Sound walk · all day':'연리목 + 최영두 사운드 워크 · 종일')+'</text><text class="og-pinlbl5 b" x="352" y="594">'+(en?'Sound walk · all day':'연리목 + 최영두 사운드 워크 · 종일')+'</text>';svg.appendChild(g5);var g3=document.createElementNS(NS,'g');g3.setAttribute('class','og-dondae');g3.innerHTML='<path class="og-move3" d="M538 436 C 520 560, 500 650, 462 704"/><text class="og-pinlbl3" x="530" y="600">'+(en?'on to the Void Theatre':'없는극장 쪽으로')+'</text><polygon class="og-pin3" points="541,413 549.7,418 549.7,428 541,433 532.3,428 532.3,418"/><text class="og-pinlbl3" x="528" y="411" text-anchor="end">'+(en?'Looking Out for All 13:00–15:30':'모두를 위한 망보기 13:00–15:30')+'</text><text class="og-pinlbl3" x="528" y="426" text-anchor="end">'+(en?'Odu Dondae':'오두돈대')+'</text>';svg.appendChild(g3);var g4=document.createElementNS(NS,'g');g4.setAttribute('class','og-huae');g4.innerHTML='<polygon class="og-pin4" points="428,706 436.7,711 436.7,721 428,726 419.3,721 419.3,711"/><text class="og-pinlbl4" x="416" y="714" text-anchor="end">'+(en?'18:00 About Things':'18:00 About Things')+'</text><text class="og-pinlbl4" x="416" y="728" text-anchor="end">'+(en?'Huae Dondae':'후애돈대')+'</text>';svg.appendChild(g4);box.querySelector('.og-rmap').appendChild(svg);
 var bs=[].slice.call(box.querySelectorAll('.og-tabs button'));
 bs.forEach(function(b){b.addEventListener('click',function(){var d=b.dataset.d;box.dataset.day=d;
  bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
  [].forEach.call(box.querySelectorAll('.og-note'),function(n){n.hidden=n.dataset.d!==d})})});
 })();
+
+(function(){var bs=[].slice.call(document.querySelectorAll('.vg-tabs button'));if(!bs.length)return;
+ bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+  [].forEach.call(document.querySelectorAll('.vg-panel'),function(p){p.hidden=p.dataset.vgp!==b.dataset.vg})})});})();
 </script>
 
 </body>
