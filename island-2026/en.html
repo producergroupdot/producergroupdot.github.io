@@ -1322,7 +1322,7 @@ h1{gap:10px}
 (function(){var bs=[].slice.call(document.querySelectorAll('.ptabs button'));if(!bs.length)return;
  function show(k,scroll){bs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.ptab===k?'true':'false')});
   [].forEach.call(document.querySelectorAll('.ppanel'),function(p){p.hidden=p.dataset.panel!==k});
-  if(scroll){var t=document.querySelector('.ptabs');if(t&&t.getBoundingClientRect().top<0)t.scrollIntoView({block:'start'})}}
+  if(scroll){var t=document.querySelector('.ptabs'),p=document.querySelector('.ppanel[data-panel="'+k+'"]');if(t&&p){var n=document.querySelector('nav'),off=(n?n.offsetHeight:0)+t.offsetHeight+6,y=p.getBoundingClientRect().top+window.pageYOffset-off;if(Math.abs(window.pageYOffset-y)>4)window.scrollTo({top:y,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});if(history.replaceState)history.replaceState(null,'',location.pathname+location.search+(k==='log'?'#log':'#program'))}}}
  bs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.ptab,true)})});
  if(/log/.test(location.hash))show('log');})();
 
