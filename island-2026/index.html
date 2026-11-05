@@ -549,6 +549,20 @@ h1{gap:10px}
 .op-acts .op-poem{display:block;margin-top:8px;line-height:1.75}.op-acts li>span:first-of-type{display:block}
 .op-artists{gap:14px;margin-top:10px}.op-artists li.op-a{display:block;padding:16px 16px 14px;background:#EEF6FC;border-left:6px solid #1F6FB2}.op-artists li.op-a>b{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:1.3rem;font-weight:700;line-height:1.3;margin:0 0 6px;color:var(--ink)}.op-artists li.op-a>b i{margin:0;font-size:.82rem;font-weight:500;color:#1F6FB2;letter-spacing:.02em}.op-a-title{display:inline;margin:0;font-size:.98rem;font-weight:700;background:linear-gradient(transparent 55%,#CFE5F7 55%,#CFE5F7 92%,transparent 92%);line-height:1.6}.op-a-title i{font-style:normal;font-weight:500}.op-a-title+span{margin-top:10px}.op-artists li.op-a>span{display:block}
 .snd-go{display:flex;gap:14px 20px;align-items:center;flex-wrap:wrap;margin:6px 0 12px}.snd-btn{display:inline-block;background:#C0601C;color:#fff;padding:12px 20px;font-weight:700;text-decoration:none;letter-spacing:.02em}.snd-btn:hover{background:#9E4C14}.snd-qr{display:flex;gap:10px;align-items:center}.snd-qr img{width:96px;height:96px;display:block}.snd-qr span{font-size:.82rem;color:var(--muted);max-width:15em;line-height:1.5}.snd-steps{margin:0 0 12px;padding-left:1.4em;display:grid;gap:5px;font-size:.92rem;line-height:1.6}.snd-steps mark{background:#FBE3D2;color:inherit;padding:0 2px}
+.livebar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);border-top:1.5px solid var(--ink);box-shadow:0 -4px 16px rgba(0,0,0,.06)}
+.livebar .lb-in{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:stretch}
+.livebar a{display:grid;gap:0;padding:8px 12px;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink);line-height:1.35}
+.livebar a b{font-size:.95rem;font-weight:700}
+.page[lang="en"] .livebar a b{font-weight:500}
+.livebar a span{font-size:.75rem;color:var(--muted)}
+.livebar .lb-walk{background:var(--yel)}
+.livebar .lb-snd{background:#FBE3D2}
+.livebar .lb-walk.on b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#D2321E;margin-right:6px;vertical-align:.12em;animation:lbp 1.6s infinite}
+@keyframes lbp{0%{box-shadow:0 0 0 0 rgba(210,50,30,.55)}70%{box-shadow:0 0 0 8px rgba(210,50,30,0)}100%{box-shadow:0 0 0 0 rgba(210,50,30,0)}}
+.livebar .lb-x{all:unset;cursor:pointer;width:30px;display:grid;place-items:center;font-size:1.3rem;color:var(--muted)}
+.livebar .lb-x:focus-visible{outline:2px solid var(--ink)}
+body.has-lb{padding-bottom:84px}
+@media (prefers-reduced-motion:reduce){.livebar .lb-walk.on b::before{animation:none}}
 </style>
 
 </head>
@@ -568,6 +582,7 @@ h1{gap:10px}
   <li class="mint"><a href="#map"><i></i>지도</a></li>
 <!--GUIDE-->  <li class="peach"><a href="#visit"><i></i>관람 가이드</a></li>
 <!--/GUIDE--></ul></nav>
+<div class="livebar" id="livebar" hidden><div class="lb-in"><a class="lb-walk" id="lbWalk" href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s" target="_blank" rel="noopener"><b>길 위의 기록 보기</b><span id="lbWalkSub">소멸의 목격자로서 걷기</span></a><a class="lb-snd" href="https://m.site.naver.com/2kp1H" target="_blank" rel="noopener"><b>사운드 워크 시작하기</b><span>이어폰 지참</span></a><button type="button" class="lb-x" id="lbX" aria-label="닫기">×</button></div></div>
 
 <section class="sec sky" id="project" aria-labelledby="h-project">
   <div class="divider"><h2 id="h-project"><span class="hand">프로젝트</span><span class="caps" aria-hidden="true">ABOUT</span></h2><img class="dv-ill" src="img/ill/oldtree.webp" alt=""></div>
@@ -1387,5 +1402,16 @@ bs.forEach(function(b){b.addEventListener('click',function(){var d=b.dataset.d;b
    [].forEach.call(scope.querySelectorAll(':scope > .vg-panel'),function(p){p.hidden=p.dataset.vgp!==b.dataset.vg})})});});})();
 </script>
 
+<script>(function(){var bar=document.getElementById('livebar');if(!bar)return;
+var W=[['2026-11-06T13:00:00+09:00','2026-11-06T16:00:00+09:00'],['2026-11-07T10:00:00+09:00','2026-11-07T15:00:00+09:00'],['2026-11-08T10:00:00+09:00','2026-11-08T15:00:00+09:00']];
+var start=new Date('2026-11-06T00:00:00+09:00'),end=new Date('2026-11-09T00:00:00+09:00'),closed=false;
+function tick(){var n=new Date();if(closed||n<start||n>=end){bar.hidden=true;document.body.classList.remove('has-lb');return}
+bar.hidden=false;document.body.classList.add('has-lb');
+var on=W.some(function(w){return n>=new Date(w[0])&&n<new Date(w[1])});
+document.getElementById('lbWalk').classList.toggle('on',on);
+document.getElementById('lbWalkSub').textContent=on?'지금 걷는 시간이에요':'소멸의 목격자로서 걷기';}
+tick();setInterval(tick,60000);
+document.getElementById('lbX').addEventListener('click',function(){closed=true;tick()});
+document.querySelectorAll('nav a').forEach(function(x){x.addEventListener('click',function(){if(closed){closed=false;tick()}})});})();</script>
 </body>
 </html>
