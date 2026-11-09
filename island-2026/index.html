@@ -334,12 +334,13 @@ h1{gap:10px}
 .rm-scale rect{fill:#111} .rm-scale text{font-size:9.5px;fill:#555}
 .rm figcaption{font-size:.82rem;color:var(--muted);margin-top:6px;line-height:1.6}
 /* programme sub-tabs (2026-10-27) */
-.ptabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0 4px;position:sticky;top:var(--navh,52px);z-index:3;background:var(--paper);padding:6px 0}
+.ptabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:18px 0 4px;position:sticky;top:var(--navh,52px);z-index:3;background:var(--paper);padding:6px 0}
 .ptabs button{all:unset;cursor:pointer;display:grid;gap:2px;padding:10px 12px;border:1.5px solid var(--ink);background:#fff;font-family:inherit}
 .ptabs button b{font-size:1rem}
 .ptabs button span{font-size:.8rem;color:var(--muted);line-height:1.4}
 .ptabs button[aria-selected="true"]{background:var(--yel)}
 .ptabs button[aria-selected="true"] span{color:var(--ink)}
+.ptabs a.ptab-walk{display:grid;gap:2px;padding:10px 12px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);text-decoration:none}.ptabs a.ptab-walk b{font-size:1rem}.ptabs a.ptab-walk span{font-size:.8rem;color:var(--muted);line-height:1.4}.ptabs a.ptab-walk:hover{background:var(--yel)}.ptabs a.ptab-walk:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .ptabs button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .ppanel .openprog,.ppanel .log{margin-top:16px}
 .log-intro{margin:0 0 4px;color:var(--muted);font-size:.95rem}
@@ -550,13 +551,14 @@ h1{gap:10px}
 .op-artists{gap:14px;margin-top:10px}.op-artists li.op-a{display:block;padding:16px 16px 14px;background:#EEF6FC;border-left:6px solid #1F6FB2}.op-artists li.op-a>b{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:1.3rem;font-weight:700;line-height:1.3;margin:0 0 6px;color:var(--ink)}.op-artists li.op-a>b i{margin:0;font-size:.82rem;font-weight:500;color:#1F6FB2;letter-spacing:.02em}.op-a-title{display:inline;margin:0;font-size:.98rem;font-weight:700;background:linear-gradient(transparent 55%,#CFE5F7 55%,#CFE5F7 92%,transparent 92%);line-height:1.6}.op-a-title i{font-style:normal;font-weight:500}.op-a-title+span{margin-top:10px}.op-artists li.op-a>span{display:block}
 .snd-go{display:flex;gap:14px 20px;align-items:center;flex-wrap:wrap;margin:6px 0 12px}.snd-btn{display:inline-block;background:#C0601C;color:#fff;padding:12px 20px;font-weight:700;text-decoration:none;letter-spacing:.02em}.snd-btn:hover{background:#9E4C14}.snd-qr{display:flex;gap:10px;align-items:center}.snd-qr img{width:96px;height:96px;display:block}.snd-qr span{font-size:.82rem;color:var(--muted);max-width:15em;line-height:1.5}.snd-steps{margin:0 0 12px;padding-left:1.4em;display:grid;gap:5px;font-size:.92rem;line-height:1.6}.snd-steps mark{background:#FBE3D2;color:inherit;padding:0 2px}
 .livebar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);border-top:1.5px solid var(--ink);box-shadow:0 -4px 16px rgba(0,0,0,.06)}
-.livebar .lb-in{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:stretch}
+.livebar .lb-in{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:stretch}
 .livebar a{display:grid;gap:0;padding:8px 12px;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink);line-height:1.35}
 .livebar a b{font-size:.95rem;font-weight:700}
 .page[lang="en"] .livebar a b{font-weight:500}
 .livebar a span{font-size:.75rem;color:var(--muted)}
 .livebar .lb-walk{background:var(--yel)}
 .livebar .lb-snd{background:#FBE3D2}
+.livebar a.lb-more{align-content:center;font-size:.85rem;background:#fff}
 .livebar .lb-walk.on b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#D2321E;margin-right:6px;vertical-align:.12em;animation:lbp 1.6s infinite}
 @keyframes lbp{0%{box-shadow:0 0 0 0 rgba(210,50,30,.55)}70%{box-shadow:0 0 0 8px rgba(210,50,30,0)}100%{box-shadow:0 0 0 0 rgba(210,50,30,0)}}
 .livebar .lb-x{all:unset;cursor:pointer;width:30px;display:grid;place-items:center;font-size:1.3rem;color:var(--muted)}
@@ -582,7 +584,7 @@ body.has-lb{padding-bottom:84px}
   <li class="mint"><a href="#map"><i></i>지도</a></li>
 <!--GUIDE-->  <li class="peach"><a href="#visit"><i></i>관람 가이드</a></li>
 <!--/GUIDE--></ul></nav>
-<div class="livebar" id="livebar" hidden><div class="lb-in"><a class="lb-walk" id="lbWalk" href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s" target="_blank" rel="noopener"><b>길 위의 기록 보기</b><span id="lbWalkSub">소멸의 목격자로서 걷기</span></a><a class="lb-snd" href="https://m.site.naver.com/2kp1H" target="_blank" rel="noopener"><b>사운드 워크 시작하기</b><span>이어폰 지참</span></a><button type="button" class="lb-x" id="lbX" aria-label="닫기">×</button></div></div>
+<div class="livebar" id="livebar" hidden><div class="lb-in"><a class="lb-snd" href="https://m.site.naver.com/2kp1H" target="_blank" rel="noopener"><b>사운드 워크 시작하기 →</b><span>연리목 + 최영두 · 2026년 연말까지 언제든 · 이어폰 지참</span></a><a class="lb-more" href="#op-05">접속 방법</a><button type="button" class="lb-x" id="lbX" aria-label="닫기">×</button></div></div>
 
 <section class="sec sky" id="project" aria-labelledby="h-project">
   <div class="divider"><h2 id="h-project"><span class="hand">프로젝트</span><span class="caps" aria-hidden="true">ABOUT</span></h2><img class="dv-ill" src="img/ill/oldtree.webp" alt=""></div>
@@ -675,7 +677,7 @@ body.has-lb{padding-bottom:84px}
   <div class="divider"><h2 id="h-program"><span class="hand">프로그램</span><span class="caps" aria-hidden="true">PROGRAM</span></h2><img class="dv-ill" src="img/ill/mudflat.webp" alt=""></div>
   <div class="body">
     <h3 class="pagetitle">2026 세부 프로그램</h3>
-    <div class="ptabs" role="tablist"><button type="button" role="tab" data-ptab="open" aria-selected="true"><b>오픈 프로그램</b><span>11월 6일–8일, 관객과 함께</span></button><button type="button" role="tab" data-ptab="log" aria-selected="false"><b>과정 기록</b><span>매일의 작업 과정</span></button></div>
+    <div class="ptabs" role="tablist"><button type="button" role="tab" data-ptab="open" aria-selected="true"><b>오픈 프로그램</b><span>11월 6일–8일, 관객과 함께</span></button><button type="button" role="tab" data-ptab="log" aria-selected="false"><b>과정 기록</b><span>매일의 작업 과정</span></button><a class="ptab-walk" href="walk.html"><b>3일 간의 기록 보기 →</b><span>길 위에서 남긴 사진과 이야기</span></a></div>
     <div class="ppanel" data-panel="open" role="tabpanel">
     <div class="op-glance" aria-label="오픈 프로그램 한눈에 보기">
       <div class="og-head"><h4>한눈에 보기</h4><!--GUIDE--><a class="og-guide" href="#guide">관람 가이드 보기 →</a><!--/GUIDE--></div>
@@ -704,7 +706,6 @@ body.has-lb{padding-bottom:84px}
         <div class="og-rhead"><b>날짜별 동선</b><div class="og-tabs" role="group"><button type="button" data-d="1" aria-pressed="false">11. 6 금</button><button type="button" data-d="2" aria-pressed="true">11. 7 토</button><button type="button" data-d="3" aria-pressed="false">11. 8 일</button></div></div>
         <div class="og-rmap"></div>
         <p class="og-note" data-d="1" hidden><b>13:00</b> 강화터미널 출발 → <b>16:00</b> 공간 그리고 도착. 해안길을 따라 걷습니다.<br><b>18:00</b> 공간 그리고에서 테아트린게스타치오네의 첫 번째 장례식이 열려요. 사전 신청이 필요해요.</p><p class="og-note" data-d="2"><b>10:00</b> 공간 그리고 출발 → 희와래 → <b>15:00</b> 국자와주걱 도착. 걸어서 오면 <b>15:00–16:30</b> 회차의 소노노치를 현장에서 볼 수 있어요(회당 남는 자리). 걷지 않는 분은 <b>9:00–17:00</b> 사이 원하는 시간에 국자와주걱으로 바로 오세요.<br><b>19:00</b> 황구님 댁 마당에서 두 번째 장례식이 열려요. 사전 신청이 필요해요.</p><p class="og-note" data-d="3" hidden><b>10:00</b> 황구님 댁 출발 → <b>15:00</b> 없는극장 도착.<br>희와래 × 오랑오랑 드럼 씨어터 × 헝 러운 × 츄 쇼 엔의 〈모두를 위한 망보기 @돈대〉는 <b>13:00–15:30</b> 오두돈대에서 열려요. 사전 신청 없이 바로 오세요.<br>이어서 <b>16:00</b> 편의점 앞 세 번째 장례식 → <b>16:45</b> 없는극장 설치와 마지막 의식 → <b>17:30</b> 갯벌에서 소노노치 → <b>18:10</b> 후애돈대에서 연리목 + 최영두의 〈About Things〉까지 하나의 흐름으로 이어져요. 모두 사전 신청 없이 바로 오세요.</p>
-        <p class="og-walklog"><a href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s" target="_blank" rel="noopener">걷는 사흘 동안 길 위의 기록이 지도 위에 실시간으로 쌓여요 → 기록 보기</a></p>
       </div>
       <p class="og-more">이름을 누르면 해당 프로그램으로 이동합니다. 다른 예술가들의 프로그램도 차례로 공개합니다.</p>
     </div>
@@ -737,7 +738,6 @@ body.has-lb{padding-bottom:84px}
       <p>식사는 걷는 길에 식당에서 함께하며, 식비는 각자 부담합니다.</p>
       <p class="op-end">걷는 날과 머무는 밤을 골라, 각자의 시간만큼 이 여정에 함께해 주세요.</p>
       <a class="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSdHwscY3CPOekZANM2vZDnrTf1ypp5c0A4RQe-QA1MSfOc4bg/viewform" target="_blank" rel="noopener">참가 신청하기 →</a>
-      <a class="apply walklog" href="https://claude.ai/artifact/7nVbVXseeDtdCrtKCAcM2s" target="_blank" rel="noopener">길 위의 기록 보기 · 사흘 동안 실시간으로 쌓여요 →</a>
       <p class="op-contact">문의 <a href="mailto:sotanf33@naver.com">sotanf33@naver.com</a></p>
     </article>
     <article class="openprog sono" id="op-02">
@@ -1403,16 +1403,13 @@ bs.forEach(function(b){b.addEventListener('click',function(){var d=b.dataset.d;b
 </script>
 
 <script>(function(){var bar=document.getElementById('livebar');if(!bar)return;
-var W=[['2026-11-06T13:00:00+09:00','2026-11-06T16:00:00+09:00'],['2026-11-07T10:00:00+09:00','2026-11-07T15:00:00+09:00'],['2026-11-08T10:00:00+09:00','2026-11-08T15:00:00+09:00']];
-var start=new Date('2026-11-06T00:00:00+09:00'),end=new Date('2026-11-09T00:00:00+09:00'),closed=false;
-function tick(){var n=new Date();if(closed||n<start||n>=end){bar.hidden=true;document.body.classList.remove('has-lb');return}
-bar.hidden=false;document.body.classList.add('has-lb');
-var on=W.some(function(w){return n>=new Date(w[0])&&n<new Date(w[1])});
-document.getElementById('lbWalk').classList.toggle('on',on);
-document.getElementById('lbWalkSub').textContent=on?'지금 걷는 시간이에요':'소멸의 목격자로서 걷기';}
+var end=new Date('2027-01-01T00:00:00+09:00'),closed=false;
+function tick(){var n=new Date();if(closed||n>=end){bar.hidden=true;document.body.classList.remove('has-lb');return}
+bar.hidden=false;document.body.classList.add('has-lb');}
 tick();setInterval(tick,60000);
 document.getElementById('lbX').addEventListener('click',function(){closed=true;tick()});
 document.querySelectorAll('nav a').forEach(function(x){x.addEventListener('click',function(){if(closed){closed=false;tick()}})});})();</script>
 </body>
 </html>
 
+</body></html>
